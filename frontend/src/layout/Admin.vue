@@ -10,6 +10,7 @@
       clipped
       app
     >
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
       <v-list dense>
         <v-list-tile v-for="item in items" :key="item.text" @click="">
           <v-list-tile-action>
@@ -21,7 +22,7 @@
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-subheader class="mt-3 grey--text text--darken-1">SUBSCRIPTIONS</v-subheader>
+        <v-subheader class="mt-3 grey--text text--darken-1 ">SUBSCRIPTIONS</v-subheader>
         <v-list>
           <v-list-tile v-for="item in items2" :key="item.text" avatar @click="">
             <v-list-tile-avatar>
@@ -34,7 +35,7 @@
           <v-list-tile-action>
             <v-icon color="grey darken-1">add_circle_outline</v-icon>
           </v-list-tile-action>
-          <v-list-tile-title class="grey--text text--darken-1">Browse Channels</v-list-tile-title>
+          <v-list-tile-title class="grey--text text--daren-k1">Browse Channels</v-list-tile-title>
         </v-list-tile>
         <v-list-tile @click="">
           <v-list-tile-action>
@@ -51,10 +52,11 @@
       clipped-left
       app
     >
+    
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-icon class="mx-3">fab fa-youtube</v-icon>
       <v-toolbar-title class="mr-5 align-center">
-        <span class="title">Chon´s Gym</span>
+      <span class="title">Chon´s Gym</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-layout row align-center style="max-width: 650px">
@@ -100,11 +102,16 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { icon: 'trending_up', text: 'Most Popular' },
-      { icon: 'subscriptions', text: 'Subscriptions' },
-      { icon: 'history', text: 'History' },
-      { icon: 'featured_play_list', text: 'Playlists' },
-      { icon: 'watch_later', text: 'Watch Later' }
+      { icon: 'fas fa-edit', text: 'Mi Perfil' },
+      { icon: 'fas fa-box', text: 'Inventario' },
+      { icon: 'history', text: 'Registro de compras' },
+      { icon: 'featured_play_list', text: 'Gestión de clases' },
+      { icon: 'add', text: 'Proveedores' },
+      { icon: 'money', text: 'Registro de Ventas' },
+      { icon: 'info', text: 'Tips' },
+      { icon: 'place', text: 'Instalaciones' },
+      { icon: 'event', text: 'Reportes' },
+      { icon: 'close', text: 'Salir' }
     ],
     items2: [
       { picture: 28, text: 'Joseph' },
