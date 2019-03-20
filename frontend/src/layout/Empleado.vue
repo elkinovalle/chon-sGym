@@ -36,20 +36,12 @@
       app
     >
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <img src="../assets/Logo-gym.png" alt="">
+      <img src="../assets/lofo-fondo-blanco.png" alt="">
       <v-toolbar-title class="mr-5 align-center ">
         <span class="display-1 font-weight-black font-italic">Chon's Gym</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-layout row align-center style="max-width: 650px">
-        <v-text-field
-          :append-icon-cb="() => {}"
-          placeholder="Search..."
-          single-line
-          append-icon="search"
-          color="white"
-          hide-details
-        ></v-text-field>
       </v-layout>
     </v-toolbar>
     <v-content>
@@ -98,8 +90,11 @@ export default {
 }
 </script>
 <style lang="stylus">
-  img{
-    width 40px
+  img {
+    width 60px !important
     height 40px
+  }
+  .v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile{
+    height 65px !important
   }
 </style>
