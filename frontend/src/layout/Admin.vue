@@ -40,7 +40,7 @@
     >
 
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <img src="../assets/Logo-gym.png" alt="">
+      <img src="../assets/lofo-fondo-blanco.png" alt="">
       <v-toolbar-title class="mr-5 align-center">
       <span class="title ">Chon´s Gym</span>
       </v-toolbar-title>
@@ -102,7 +102,7 @@ export default {
     height 40px
     width 40px
   }
-  div.application--wrap{
+  .v-content{
     background-image url("../assets/fondo.jpg") !important
   }
   aside.v-navigation-drawer{
