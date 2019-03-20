@@ -7,6 +7,7 @@
     dark
   >
     <v-navigation-drawer
+      class="green darken-4"
       v-model="drawer"
       fixed
       clipped
@@ -14,7 +15,7 @@
 
     >
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
-      <v-list dense>
+      <v-list >
         <v-list-tile v-for="item in items" :key="item.text" @click="">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -25,31 +26,10 @@
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        
-        <v-list>
-          <v-list-tile v-for="item in items2" :key="item.text" avatar @click="">
-            <v-list-tile-avatar>
-              <img :src="`https://randomuser.me/api/portraits/men/${item.picture}.jpg`" alt="">
-            </v-list-tile-avatar>
-            <v-list-tile-title v-text="item.text"></v-list-tile-title>
-          </v-list-tile>
-        </v-list>
-       <!-- <v-list-tile class="mt-3" @click="">
-          <v-list-tile-action>
-            <v-icon color="grey darken-1">add_circle_outline</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title class="grey--text text--darken-">Browse Channels</v-list-tile-title>
-        </v-list-tile>
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon color="grey darken-1">settings</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title class="grey--text text--darken-1">Manage Subscriptions</v-list-tile-title>
-        </v-list-tile> -->
       </v-list>
     </v-navigation-drawer>
     <v-toolbar
-      color="green accent-4"
+      color="green darken-4"
       dense
       fixed
       clipped-left
@@ -58,7 +38,7 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <img src="../assets/Logo-gym.png" alt="">
       <v-toolbar-title class="mr-5 align-center ">
-        <span class="title">Empleado</span>
+        <span class="display-1 font-weight-black font-italic">Chon's Gym</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-layout row align-center style="max-width: 650px">
@@ -104,7 +84,7 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { icon: 'trending_up', text: 'Mi Perfil',color:'red' },
+      { icon: 'person', text: 'Mi Perfil' },
       { icon: 'shopping_cart', text: 'Membresia' },
       { icon: 'history', text: 'Rutina' },
       { icon: 'poll', text: 'Valoracion' },
