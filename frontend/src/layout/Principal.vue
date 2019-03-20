@@ -1,7 +1,7 @@
 <template>
 <div>
   <v-toolbar class="blue darken-4">
-    <img src="../assets/Logo-gym.png" alt="">
+    <img src="../assets/lofo-fondo-blanco.png" alt="">
     <v-toolbar-title class="font-weight-black font-italic white--text display-1">Chon's Gym</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
@@ -16,14 +16,19 @@
   </v-toolbar>
 
  <v-footer dark height="auto" >
-    <v-card
-      flat
-      tile
-      class="class= blue darken-4 white--text text-xs-center"
-    >
-    <h1 class="white--text body-1">SIGUENOS EN NUESTRAS REDES:</h1>
-      <v-card-text>
-        <v-btn
+   <v-container fluid>
+      <v-layout row wrap>
+         <v-flex d-flex xs12 sm6 md2 child-flex>
+          <v-card color="blue darken-4" dark>
+          </v-card>
+        </v-flex>
+        <v-flex d-flex xs12 sm3 md4>
+          <v-card color="blue darken-4" dark flat="true">
+            <img src="../assets/lofo-fondo-blanco.png" class='footer_imagen' alt="">
+            <v-card-title flat tile class="blue darken-4 white--text text-xs-center-justify">En Chon's Gym contamos con un gimnasio de buen amplitud donde podrás realizar rutinas de ejercicios y encontrar un equipo perfecto para obtener el cuerpo que deseas.</v-card-title>
+            <v-card-title flat tile class="blue darken-4 white--text text-xs-center font-weight-black">SÍGUENOS EN NUESTRAS REDES:</v-card-title>
+            <v-card-text>
+                <v-btn
           v-for="icon in icons"
           :key="icon"
           class="mx-3 white--text"
@@ -31,9 +36,12 @@
         >
           <v-icon size="24px">{{ icon }}</v-icon>
         </v-btn>
-
-      </v-card-text>
-       <v-btn
+            </v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex d-flex xs12 sm6 md2 child-flex>
+          <v-card color="green lighten-2" dark>
+              <v-btn
         v-for="link in links"
         :key="link"
         color="white"
@@ -42,18 +50,19 @@
       >
         {{ link }}
       </v-btn>
-      <v-card-text class="white--text pt-0">
-        <strong class="subheading">Get connected with us on social networks!</strong><br>
-        <strong class="subheading">Get connected with us on social networks!</strong>
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </v-card-text>
-
-      <v-divider></v-divider>
-
-      <v-card-text class="white--text caption">
-        &copy;COPYRIGHT CHON'S GYM © 2019 · Desarrollo de página web y posicionamiento SEO por ADSI-GROUP · TODOS LOS DERECHOS RESERVADOS · POLÍTICA DE PRIVACIDAD.
-      </v-card-text>
-    </v-card>
+          </v-card>
+        </v-flex>
+        <v-flex d-flex xs12 sm6 md2>
+          <v-card color="blue lighten-2" dark>
+            <v-card-text></v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex d-flex xs12 sm6 md2 child-flex>
+          <v-card color="blue darken-4" dark>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
   </v-footer>
   </div>
 </template>
@@ -85,5 +94,9 @@ export default {
     font-family Helvetica
     font-style italic
   }
-
+  img.footer_imagen{
+    margin  0px 50px !important
+    height 60px
+    width 60px
+  }
 </style>
