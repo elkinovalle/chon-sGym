@@ -102,8 +102,8 @@ export default {
     height 40px
     width 40px
   }
-  main.v-content{
-    background-image url("../assets/fondo.jpg")
+  div.application--wrap{
+    background-image url("../assets/fondo.jpg") !important
   }
   aside.v-navigation-drawer{
     background-color rgba(0,0,0,0.8) !important
