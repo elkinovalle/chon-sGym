@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Principal from './layout/Principal.vue'
-import Empleado from './layout/Empleado.vue'
-import Admin from './layout/Admin.vue'
+
+import Login from '@/views/Login.vue'
+import ClaseNueva from '@/views/ClaseNueva.vue'
 
 Vue.use(Router)
 
@@ -12,32 +11,14 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    },
-    {
-      path: '/principal',
-      name: 'principal',
-      component: Principal
-    },
-    {
-      path: '/empleado',
-      name: 'empleado',
-      component: Empleado
-    },
-    {
-      path: '/admin',
-      name: 'admin',
-      component: Admin
+      path: '/clase-nueva',
+      name: 'clase-nueva',
+      component: ClaseNueva
     }
   ]
 })

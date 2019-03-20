@@ -14,7 +14,9 @@
       <v-btn flat class="white--text">Iniciar Sesion</v-btn>
     </v-toolbar-items>
   </v-toolbar>
-
+  <v-content>
+    <router-view></router-view>
+  </v-content>
  <v-footer dark height="auto" >
    <v-container fluid>
       <v-layout row wrap>
@@ -23,7 +25,7 @@
           </v-card>
         </v-flex>
         <v-flex d-flex xs12 sm3 md4>
-          <v-card color="blue darken-4" dark flat="true">
+          <v-card color="blue darken-4" dark flat>
             <img src="../assets/lofo-fondo-blanco.png" class='footer_imagen' alt="">
             <v-card-title flat tile class="blue darken-4 white--text text-xs-center-justify">En Chon's Gym contamos con un gimnasio de buen amplitud donde podrás realizar rutinas de ejercicios y encontrar un equipo perfecto para obtener el cuerpo que deseas.</v-card-title>
             <v-card-title flat tile class="blue darken-4 white--text text-xs-center font-weight-black">SÍGUENOS EN NUESTRAS REDES:</v-card-title>
