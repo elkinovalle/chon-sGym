@@ -102,15 +102,14 @@
 </template>
 <script>
 export default {
-  
+
 }
 </script>
 <style lang="stylus">
  .v-btn{
     font-size 16px !important
-    font-family Helvetica 
+    font-family Helvetica
     font-style italic
   }
 
 </style>
-
