@@ -32,7 +32,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar
-      color="rgba(0,0,0,0.9)"
+      color="#9A0101"
       dense
       fixed
       clipped-left
@@ -99,16 +99,18 @@ export default {
 </script>
 <style lang="stylus">
   img{
-    height 40px
-    width 40px
-  }
-  .v-content{
-    background-image url("../assets/fondo.jpg") !important
+  width 60px
+  height 45px
   }
   aside.v-navigation-drawer{
-    background-color rgba(0,0,0,0.8) !important
+    background-color #9A0101 !important
   }
   span.title{
     font-size 40px !important
+  }
+  .v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile {
+    font-family Times New Roman, Times, serif
+    font-size 20px
+    height 57.7px
   }
 </style>
