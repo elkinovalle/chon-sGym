@@ -131,6 +131,9 @@ export default {
     width 80px !important
     margin  0px 180px
     height 60px
+<<<<<<< HEAD
 
+=======
+>>>>>>> a82f9e3ec2700744987e2c2c0edd44cd0f1a36d1
   }
 </style>
