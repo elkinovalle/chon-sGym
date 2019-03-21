@@ -32,7 +32,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar
-      color="rgba(0,0,0,0.9)"
+      color="#9A0101"
       dense
       fixed
       clipped-left
@@ -51,22 +51,7 @@
       <v-container fill-height>
         <v-layout justify-center align-center>
           <v-flex shrink>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn :href="source" icon large target="_blank" v-on="on">
-                  <v-icon large>code</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn icon large href="https://codepen.io/johnjleider/pen/YeRKwQ" target="_blank" v-on="on">
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
+            <router-view></router-view>
           </v-flex>
         </v-layout>
       </v-container>
@@ -99,16 +84,18 @@ export default {
 </script>
 <style lang="stylus">
   img{
-    height 40px
-    width 40px
-  }
-  .v-content{
-    background-image url("../assets/fondo.jpg") !important
+  width 60px
+  height 45px
   }
   aside.v-navigation-drawer{
-    background-color rgba(0,0,0,0.8) !important
+    background-color #9A0101 !important
   }
   span.title{
     font-size 40px !important
+  }
+  .v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile {
+    font-family Times New Roman, Times, serif
+    font-size 20px
+    height 57.7px
   }
 </style>

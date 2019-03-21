@@ -36,42 +36,19 @@
       app
     >
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <img src="../assets/Logo-gym.png" alt="">
+      <img src="../assets/lofo-fondo-blanco.png" alt="">
       <v-toolbar-title class="mr-5 align-center ">
         <span class="display-1 font-weight-black font-italic">Chon's Gym</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-layout row align-center style="max-width: 650px">
-        <v-text-field
-          :append-icon-cb="() => {}"
-          placeholder="Search..."
-          single-line
-          append-icon="search"
-          color="white"
-          hide-details
-        ></v-text-field>
       </v-layout>
     </v-toolbar>
     <v-content>
       <v-container fill-height>
         <v-layout justify-center align-center>
           <v-flex shrink>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn :href="source" icon large target="_blank" v-on="on">
-                  <v-icon large>code</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn icon large href="https://codepen.io/johnjleider/pen/YeRKwQ" target="_blank" v-on="on">
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
+            <router-view></router-view>
           </v-flex>
         </v-layout>
       </v-container>
@@ -98,8 +75,11 @@ export default {
 }
 </script>
 <style lang="stylus">
-  img{
-    width 40px
+  img {
+    width 60px !important
     height 40px
+  }
+  .v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile{
+    height 65px !important
   }
 </style>
