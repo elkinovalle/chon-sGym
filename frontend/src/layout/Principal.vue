@@ -74,7 +74,7 @@
           </v-card>
         </v-flex>
         <v-flex d-flex xs12 sm12 md12 child-flex >
-      <v-divider></v-divider> <br> 
+      <v-divider></v-divider> <br>
         </v-flex>
             <v-flex class="font-weight-black white--text caption"
         primary
@@ -85,7 +85,7 @@
         xs12
       >
        COPYRIGHT CHON'S GYM © 2019 · Desarrollo de página web y posicionamiento SEO por ADSI-GROUP · TODOS LOS DERECHOS RESERVADOS · POLÍTICA DE PRIVACIDAD.
-      </v-flex>     
+      </v-flex>
       </v-layout>
     </v-container>
   </v-footer>
@@ -109,7 +109,7 @@ export default {
       'Lo Nuevo',
       'Dietas'
     ],
-      links2: [
+    links2: [
       'Tips',
       'Nuestras instalaciones',
       'Productos',
@@ -129,8 +129,8 @@ export default {
   }
   img.footer_imagen{
     width 80px !important
-    margin  0px 180px 
+    margin  0px 180px
     height 60px
-    
+
   }
 </style>

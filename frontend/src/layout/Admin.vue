@@ -82,7 +82,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style scoped lang="stylus">
   img{
   width 60px
   height 45px
