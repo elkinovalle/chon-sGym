@@ -131,6 +131,5 @@ export default {
     width 80px !important
     margin  0px 180px
     height 60px
-
   }
 </style>
