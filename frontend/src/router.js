@@ -7,6 +7,7 @@ import MiPerfilAdmin from '@/views/MiPerfilAdmin.vue'
 import Inventario from '@/views/Inventario.vue'
 import RegistroCompras from '@/views/RegistroCompras.vue'
 import Proveedores from '@/views/Proveedores.vue'
+import PlanesCliente from '@/views/PlanesCliente.vue'
 
 Vue.use(Router)
 
@@ -43,6 +44,11 @@ export default new Router({
       path: '/proveedores',
       name: 'proveedores',
       component: Proveedores
+    },
+    {
+      path: '/planes-cliente',
+      name: 'planes-cliente',
+      component: PlanesCliente
     }
   ]
 })
