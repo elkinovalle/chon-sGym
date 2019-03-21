@@ -33,7 +33,7 @@
                 <v-btn
           v-for="icon in icons"
           :key="icon"
-          class="mx-3 white--text"
+          class="mx-4 white--text"
           icon
         >
           <v-icon size="24px">{{ icon }}</v-icon>
@@ -70,13 +70,22 @@
           </v-card>
         </v-flex>
         <v-flex d-flex xs12 sm6 md2 child-flex>
-          <v-card color="blue darken-4" dark flat>
+          <v-card  dark flat>
           </v-card>
         </v-flex>
         <v-flex d-flex xs12 sm12 md12 child-flex >
-      <v-divider></v-divider>  
+      <v-divider></v-divider> <br> 
         </v-flex>
-               
+            <v-flex class="font-weight-black white--text caption"
+        primary
+        lighten-2
+        py-3
+        text-xs-center
+        white--text
+        xs12
+      >
+       COPYRIGHT CHON'S GYM © 2019 · Desarrollo de página web y posicionamiento SEO por ADSI-GROUP · TODOS LOS DERECHOS RESERVADOS · POLÍTICA DE PRIVACIDAD.
+      </v-flex>     
       </v-layout>
     </v-container>
   </v-footer>
@@ -119,8 +128,9 @@ export default {
     font-style italic
   }
   img.footer_imagen{
-    margin  0px 50px !important
+    width 80px !important
+    margin  0px 180px 
     height 60px
-    width 80px
+    
   }
 </style>
