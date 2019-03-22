@@ -12,13 +12,13 @@
           <v-card color="white" dark flat>
         <p class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></p>
         <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p><br>
-        <p class="text-xs black--text subheading"><strong>En CHON'S GYM te ayudaremos a cumplir tu
+        <span class="text-xs black--text subheading"><strong>En CHON'S GYM te ayudaremos a cumplir tu
 meta, realizando planes y rutinas
 personalizadas para adelgazar, fortalecer o
 definir, también tendrás consejos
 alimenticios para que complementes y logres
 un mayor avance hacia tus objetivos.
-</strong></p>
+</strong></span>
           </v-card>
         </v-flex>
 
@@ -109,7 +109,7 @@ un mayor avance hacia tus objetivos.
         </v-flex>
           <v-flex d-flex xs12 sm6 md2 child-flex>
           <v-card color="white" dark flat>
-  
+
 <v-btn color="blue darken-4" class="font-weight-black white--text caption">TODOS</v-btn>
           <v-btn
         v-for="link in links"
@@ -203,7 +203,6 @@ un mayor avance hacia tus objetivos.
       </v-layout>
     </v-container>
 
-
 </div>
 
 </template>
@@ -212,18 +211,18 @@ export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
-   data: () => ({
+  data: () => ({
     links: [
       'GIMNASIO',
       'HARD VITAL',
       'NEUROFITNESS',
       'PERSONALIZADOS'
     ],
-          cards: [
-        { src: '../assets/un_mes.jpg', flex: 12 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 }
-      ]
+    cards: [
+      { src: '../assets/un_mes.jpg', flex: 12 },
+      { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
+      { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 }
+    ]
   })
 }
 </script>
