@@ -1,7 +1,5 @@
 <template>
 <div>
-<<<<<<< HEAD
-=======
     <p></p>
         <h1 class="text-xs-center display-1">CONOCE NUESTROS <strong>PLANES</strong></h1>
 <v-container fluid>
@@ -204,9 +202,6 @@ un mayor avance hacia tus objetivos.
         </v-flex>
       </v-layout>
     </v-container>
-
->>>>>>> a82f9e3ec2700744987e2c2c0edd44cd0f1a36d1
-
 </div>
 
 </template>
@@ -221,12 +216,7 @@ export default {
       'HARD VITAL',
       'NEUROFITNESS',
       'PERSONALIZADOS'
-    ],
-          cards: [
-        { src: '../assets/un_mes.jpg', flex: 12 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 }
-      ]
+    ]
   })
 }
 </script>
