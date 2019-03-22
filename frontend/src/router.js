@@ -8,6 +8,7 @@ import Inventario from '@/views/Inventario.vue'
 import RegistroCompras from '@/views/RegistroCompras.vue'
 import Proveedores from '@/views/Proveedores.vue'
 import PlanesCliente from '@/views/PlanesCliente.vue'
+import PlanUnMesCliente from '@/views/PlanUnMesCliente.vue'
 
 Vue.use(Router)
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/planes-cliente',
       name: 'planes-cliente',
       component: PlanesCliente
+    },
+    {
+      path: '/plan-un-mes-cliente',
+      name: 'plan-un-mes-cliente',
+      component: PlanUnMesCliente
     }
   ]
 })

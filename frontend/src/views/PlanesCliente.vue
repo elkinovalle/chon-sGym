@@ -10,9 +10,9 @@
         </v-flex>
           <v-flex d-flex xs12 sm6 md2 child-flex>
           <v-card color="white" dark flat>
-        <p class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></p>
-        <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p><br>
-        <span class="text-xs black--text subheading"><strong>En CHON'S GYM te ayudaremos a cumplir tu
+        <h1 class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></h1><br>
+        <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p>
+        <span class="text-xs black--text caption"><strong>En CHON'S GYM te ayudaremos a cumplir tu
 meta, realizando planes y rutinas
 personalizadas para adelgazar, fortalecer o
 definir, también tendrás consejos
