@@ -9,6 +9,14 @@ import RegistroCompras from '@/views/RegistroCompras.vue'
 import Proveedores from '@/views/Proveedores.vue'
 import PlanesCliente from '@/views/PlanesCliente.vue'
 import PlanUnMesCliente from '@/views/PlanUnMesCliente.vue'
+import PlanDosMesesCliente from '@/views/PlanDosMesesCliente.vue'
+import PlanTresMesesCliente from '@/views/PlanTresMesesCliente.vue'
+import PlanSeisMesesCliente from '@/views/PlanSeisMesesCliente.vue'
+import PlanDoceMesesCliente from '@/views/PlanDoceMesesCliente.vue'
+import PlanQuinceMesesCliente from '@/views/PlanQuinceMesesCliente.vue'
+import HardVitalCliente from '@/views/HardVitalCliente.vue'
+import NeurofitnessCliente from '@/views/NeurofitnessCliente.vue'
+import PersonalizadosCliente from '@/views/PersonalizadosCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 
 Vue.use(Router)
@@ -56,6 +64,46 @@ export default new Router({
       path: '/plan-un-mes-cliente',
       name: 'plan-un-mes-cliente',
       component: PlanUnMesCliente
+    },
+    {
+      path: '/plan-dos-meses-cliente',
+      name: 'plan-dos-meses-cliente',
+      component: PlanDosMesesCliente
+    },
+    {
+      path: '/plan-tres-meses-cliente',
+      name: 'plan-tres-meses-cliente',
+      component: PlanTresMesesCliente
+    },
+    {
+      path: '/plan-seis-meses-cliente',
+      name: 'plan-seis-meses-cliente',
+      component: PlanSeisMesesCliente
+    },
+    {
+      path: '/plan-doce-meses-cliente',
+      name: 'plan-doce-meses-cliente',
+      component: PlanDoceMesesCliente
+    },
+    {
+      path: '/plan-quince-meses-cliente',
+      name: 'plan-quince-meses-cliente',
+      component: PlanQuinceMesesCliente
+    },
+    {
+      path: '/hard-vital-cliente',
+      name: 'hard-vital-cliente',
+      component: HardVitalCliente
+    },
+    {
+      path: '/neurofitness-cliente',
+      name: 'neurofitness-cliente',
+      component: NeurofitnessCliente
+    },
+    {
+      path: '/personalizados-cliente',
+      name: 'personalizados-cliente',
+      component: PersonalizadosCliente
     },
     {
       path: '/membresias-empleado',
