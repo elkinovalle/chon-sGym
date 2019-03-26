@@ -29,8 +29,8 @@ un mayor avance hacia tus objetivos.
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text headline">Descripción del plan</v-toolbar-title>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/un_mes.jpg" alt="">
-       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 40.000<br> Total a pagar 40.000
+        <img class="imagen_layout" src="../assets/hard-vital.png" alt="">
+       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 100.000<br> Total a pagar 100.000
 </strong></p>
     </v-flex>
   </v-layout>
@@ -110,21 +110,24 @@ un mayor avance hacia tus objetivos.
           <v-card color="white" dark flat>
           </v-card>
         </v-flex>
-        <li class="text-xs black--text title">Incluye valoración inicial<br></li>
-        <li class="text-xs black--text title">Incluye Membresía Neurofitness <br></li>
-        <li class="text-xs black--text title">No aplica congelación<br> </li>
-  <li class="text-xs black--text title">El valor del plan se debitará mensualmente de la tarjeta
- asociada por el usuario<br></li>
+        <ul class="text-xs black--text title"><strong> Solo aplica para Afiliados.</strong><br></ul>
+        <ul class="text-xs black--text title"><strong> Duración del servicio:</strong> 60 minutos<br></ul>
+        <ul class="text-xs black--text title"><strong> Profesionales:</strong> Auxiliar de Enfermería, Medico o Fisioterapeuta
+Nutricionista<br></ul>
+ <p></p>
+<h1 class="text-xs-center black--text display-1"><strong>Pruebas</strong></h1><br>
+       <article class="text-xs black--text title justify">Harvital + Valoración Nutricional</article>
  <p></p>
  <h1 class="text-xs-center black--text display-1"><strong>Beneficios</strong></h1><br>
-       <article class="text-xs black--text title justify">Membresía que te permite acceder a todas nuestras
-sedes durante la vigencia de tu plan.
-Ingreso a zona cardio vascular, zona de pesas, clases grupales,
-spinning, jaula y zonas húmedas</article>
-<p></p>
-<h1 class="text-xs-center black--text display-1"><strong>Planes</strong></h1><br>
-       <article class="text-xs black--text title justify">Mayores de 14 años, ingreso a zona cardio vascular, zona de pesas, clases
-grupales, clases de spinning, jaula, zonas húmedas si está disponible</article>
+         <li class="text-xs black--text title">Conocer tu composición corporal y riesgo cardiovascular,
+ osteo- muscular y metabólico<br></li>
+        <li class="text-xs black--text title">Determinar que no tengas diabetes<br></li>
+        <li class="text-xs black--text title">Verificar tus antecedentes<br> </li>
+  <li class="text-xs black--text title">Prescripción del ejercicio para cumplir tus objetivos (perder
+ peso, mejorar rendimiento deportivo)<br></li>
+ <li class="text-xs black--text title">Plan alimentación acuerdo tus necesidades.<br> </li>
+ <li class="text-xs black--text title">Programa tu cita en una de nuestras sedes.<br> </li>
+
 <p></p>
           </v-card>
         </v-flex>
@@ -174,6 +177,9 @@ export default {
   }
   li{
     margin 0px 0px 0px 60px
+  }
+  ul{
+    margin 0px 0px 0px 30px
   }
   article{
     margin 0px 0px 0px 60px

@@ -29,8 +29,8 @@ un mayor avance hacia tus objetivos.
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text headline">Descripción del plan</v-toolbar-title>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/un_mes.jpg" alt="">
-       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 40.000<br> Total a pagar 40.000
+        <img class="imagen_layout" src="../assets/15_meses.jpg" alt="">
+       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 400.000<br> Total a pagar 400.000
 </strong></p>
     </v-flex>
   </v-layout>

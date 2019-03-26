@@ -29,9 +29,8 @@ un mayor avance hacia tus objetivos.
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text headline">Descripción del plan</v-toolbar-title>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/un_mes.jpg" alt="">
-       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 40.000<br> Total a pagar 40.000
-</strong></p>
+        <img class="imagen_layout" src="../assets/12_meses.jpg" alt="">
+       <p class="texto"><strong>1 Mes + 4 Sesiones de Personalizado<br> Subtotal 169.000 <br> Total a pagar 169.000</strong></p>
     </v-flex>
   </v-layout>
           </v-card>
@@ -122,9 +121,21 @@ sedes durante la vigencia de tu plan.
 Ingreso a zona cardio vascular, zona de pesas, clases grupales,
 spinning, jaula y zonas húmedas</article>
 <p></p>
-<h1 class="text-xs-center black--text display-1"><strong>Planes</strong></h1><br>
-       <article class="text-xs black--text title justify">Mayores de 14 años, ingreso a zona cardio vascular, zona de pesas, clases
-grupales, clases de spinning, jaula, zonas húmedas si está disponible</article>
+<h1 class="text-xs-center black--text display-1"><strong>Condiciones</strong></h1><br>
+       <article class="text-xs black--text title justify">Tiene derecho a 4 clases de entrenamiento personalizado con una duración de 1
+hora cada una.
+Las clases podrán ser tomadas en un mínimo de 1 semana y en un máximo de 4
+semanas.
+No tiene derecho a congelación o cancelación de las clases dentro del mes
+pagado.
+Las clases solo pueden ser tomadas por la persona que adquirió el plan y no
+tiene derecho a ser trasferidas a otra persona.
+El horario de programación de las clases, se hará directamente con el entrenador
+personalizado en caso de querer cambiar el horario deberá informar a este con
+12 horas de anticipación.
+En caso de no asistir a la clase acordada y no informar con anticipación al
+entrenador, se dará como tomada la clase.
+</article>
 <p></p>
           </v-card>
         </v-flex>

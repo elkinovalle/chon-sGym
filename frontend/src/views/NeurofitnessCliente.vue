@@ -29,9 +29,8 @@ un mayor avance hacia tus objetivos.
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text headline">Descripción del plan</v-toolbar-title>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/un_mes.jpg" alt="">
-       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 40.000<br> Total a pagar 40.000
-</strong></p>
+        <img class="imagen_layout" src="../assets/neurofitness.jpg" alt="">
+       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 120.000 <br> Total a pagar 120.000</strong></p>
     </v-flex>
   </v-layout>
           </v-card>
@@ -110,21 +109,16 @@ un mayor avance hacia tus objetivos.
           <v-card color="white" dark flat>
           </v-card>
         </v-flex>
-        <li class="text-xs black--text title">Incluye valoración inicial<br></li>
-        <li class="text-xs black--text title">Incluye Membresía Neurofitness <br></li>
-        <li class="text-xs black--text title">No aplica congelación<br> </li>
-  <li class="text-xs black--text title">El valor del plan se debitará mensualmente de la tarjeta
- asociada por el usuario<br></li>
  <p></p>
- <h1 class="text-xs-center black--text display-1"><strong>Beneficios</strong></h1><br>
-       <article class="text-xs black--text title justify">Membresía que te permite acceder a todas nuestras
-sedes durante la vigencia de tu plan.
-Ingreso a zona cardio vascular, zona de pesas, clases grupales,
-spinning, jaula y zonas húmedas</article>
+ <h1 class="text-xs-center black--text display-1"><strong>Mapeo Cerebral</strong></h1><br>
+       <article class="text-xs black--text headline justify">8 Sesiones de 30 minutos, protocolo de estimulación para regular
+la actividad cerebral ayuda a sincronizar los procesos funcionales
+para relajar el sistema nervio</article>
 <p></p>
-<h1 class="text-xs-center black--text display-1"><strong>Planes</strong></h1><br>
-       <article class="text-xs black--text title justify">Mayores de 14 años, ingreso a zona cardio vascular, zona de pesas, clases
-grupales, clases de spinning, jaula, zonas húmedas si está disponible</article>
+<h1 class="text-xs-center black--text display-1"><strong>Usos y restricciones</strong></h1><br>
+ <article class="text-xs black--text headline">1. Mujeres en estado de embarazo.</article>
+ <article class="text-xs black--text headline">2. Personas que padecen epilepsia o migraña</article>
+ <article class="text-xs black--text headline">3. Personas con marcapasos.</article>
 <p></p>
           </v-card>
         </v-flex>
