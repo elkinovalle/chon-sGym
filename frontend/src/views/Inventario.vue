@@ -1,203 +1,162 @@
 <template>
-<div id="app">
-  <v-app id="inspire">
-    <div>
-      <v-toolbar flat color="white">
-        <v-toolbar-title>Tabla de contenido</v-toolbar-title>
-        <v-divider
-          class="mx-2"
-          inset
-          vertical
-        ></v-divider>
+  <div>
+    <v-subheader class="subheader black--text" >Inventario</v-subheader>
+    <v-form>
+      <v-container>
+        <v-layout row wrap>
+
+          <v-flex xs12 sm6>
+            <v-text-field
+              v-model="message1"
+              box
+              label="Número de serial o codigo"
+              clearable
+            ></v-text-field>
+          </v-flex>
+
+          <v-flex xs12 sm6>
+            <v-text-field
+              v-model="message2"
+              box
+              label="Nombre del Producto"
+              clearable
+            ></v-text-field>
+          </v-flex>
+
+          <v-flex xs12 sm6>
+            <v-text-field
+              v-model="message3"
+              box
+              label= "Marca"
+              clearable
+            ></v-text-field>
+          </v-flex>
+
+          <v-flex xs12 sm6>
+            <v-text-field
+              v-model="message4"
+              box
+              label="Descripción"
+              clearable
+            ></v-text-field>
+          </v-flex>
+
+          <v-flex xs12 sm6>
+            <v-text-field
+              v-model="message5"
+              box
+              label="Cantidad"
+              clearable
+            ></v-text-field>
+          </v-flex>
+
+          <v-btn color="green darken-4" class=" white--text display-1" >Agregar Producto</v-btn>
+          <v-btn color="red darken-4" class=" white--text display-1" >Cancelar</v-btn>
+
+        </v-layout>
+      </v-container>
+    </v-form>
+    <v-card>
+      <v-card-title>
+        Inventario
         <v-spacer></v-spacer>
-        <v-dialog v-model="dialog" max-width="500px">
-          <template v-slot:activator="{ on }">
-            <v-btn color="primary" dark class="mb-2" v-on="on">Agregar Item</v-btn>
-          </template>
-          <v-card>
-            <v-card-title>
-              <span class="headline">{{ formTitle }}</span>
-            </v-card-title>
-
-            <v-card-text>
-              <v-container grid-list-md>
-                <v-layout wrap>
-                  <v-flex xs12 sm6 md3>
-                    <v-text-field v-model="editedItem.name" label="Dessert name"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm6 md3>
-                    <v-text-field v-model="editedItem.codigo" label="Código"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm6 md3>
-                    <v-text-field v-model="editedItem.nombre" label="Nombre"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm6 md3>
-                    <v-text-field v-model="editedItem.marca" label="Marca"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm6 md3>
-                    <v-text-field v-model="editedItem.descripcion" label="Descripción"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm6 md3>
-                    <v-text-field v-model="editedItem.cantidad" label="Cantidad"></v-text-field>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card-text>
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-              <v-btn color="blue darken-1" flat @click="save">Guardar</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-      </v-toolbar>
+        <v-text-field
+          v-model="search"
+          append-icon="search"
+          label="Buscar"
+          single-line
+          hide-details
+        ></v-text-field>
+      </v-card-title>
       <v-data-table
         :headers="headers"
         :items="desserts"
-        class="elevation-1"
+        :search="search"
       >
         <template v-slot:items="props">
-          <td>{{ props.item.name }}</td>
           <td class="text-xs-right">{{ props.item.codigo }}</td>
           <td class="text-xs-right">{{ props.item.nombre }}</td>
           <td class="text-xs-right">{{ props.item.marca }}</td>
           <td class="text-xs-right">{{ props.item.descripcion }}</td>
           <td class="text-xs-right">{{ props.item.cantidad }}</td>
-          <td class="justify-center layout px-0">
-            <v-icon
-              small
-              class="mr-2"
-              @click="editItem(props.item)"
-            >
-              Editar
-            </v-icon>
-            <v-icon
-              small
-              @click="deleteItem(props.item)"
-            >
-              Borrar
-            </v-icon>
-          </td>
         </template>
-        <template v-slot:no-data>
-          <v-btn color="primary" @click="initialize">Reiniciar</v-btn>
-        </template>
+        <v-alert v-slot:no-results :value="true" color="error" icon="warning">
+          Your search for "{{ search }}" found no results.
+        </v-alert>
       </v-data-table>
-    </div>
-  </v-app>
-</div>
+    </v-card>
+  </div>
 </template>
 <script>
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
   },
-  data: () => ({
-    dialog: false,
-    headers: [
-      {
-        text: '',
-        align: 'left',
-        sortable: false,
-        value: 'name'
-      },
-      { text: 'Código', value: 'codigo' },
-      { text: 'Nombre', value: 'nombre' },
-      { text: 'Marca', value: 'marca' },
-      { text: 'Descripción', value: 'descripcion' },
-      { text: 'Cantidad', value: 'cantidad' },
-      { text: 'Opciones', value: 'name', sortable: false }
-    ],
-    desserts: [],
-    editedIndex: -1,
-    editedItem: {
-      codigo: 0,
-      nombre: 0,
-      marca: 0,
-      descripcion: 0,
-      cantidad: 0
-    },
-    defaultItem: {
-      codigo: 0,
-      nombre: 0,
-      marca: 0,
-      descripcion: 0,
-      cantidad: 0
-
-    }
-  }),
-
-  computed: {
-    formTitle () {
-      //return this.editedIndex = 1 ? 'Nuevo Item' : 'Editar Item'
-    }
-  },
- 
-  watch: {
-    dialog (val) {
-      val || this.close()
-    }
-  },
-
-  created () {
-    this.initialize()
-  },
-
-  methods: {
-    initialize () {
-      this.desserts = [
+  data () {
+    return {
+      search: '',
+      headers: [
+        {
+          align: 'left',
+          sortable: false
+        },
+        { text: 'Codigo', value: 'codigo' },
+        { text: 'Nombre', value: 'nombre' },
+        { text: 'Marca', value: 'marca' },
+        { text: 'Descripcion', value: 'descripcion' },
+        { text: 'Cantidad', value: 'cantidad' }
+      ],
+      desserts: [
         {
           codigo: 1001,
           nombre: 'Megaplex',
           marca: 'Megaplex',
-          descripcion: '10 Lbs Vainilla',
-          cantidad: '25 unidades'
+          descripcion: '10 lbs Vainilla',
+          cantidad: '42 unidades'
         },
         {
           codigo: 1002,
           nombre: 'Omega 3',
           marca: 'Megaplex',
-          descripcion: '120 Tabletas',
-          cantidad: '35 unidades'
+          descripcion: '120 tabletas',
+          cantidad: '32 unidades'
         },
         {
           codigo: 1003,
           nombre: 'Testo Ultra',
           marca: 'Megaplex',
-          descripcion: '1.5 Lbs ',
-          cantidad: '50 unidades'
+          descripcion: '1.5 lbs ',
+          cantidad: '12 unidades'
+        },
+        {
+          codigo: 1004,
+          nombre: 'Megaplex',
+          marca: 'Megaplex',
+          descripcion: '10 lbs Vainilla',
+          cantidad: '23 unidades'
         }
       ]
-    },
-
-    editItem (item) {
-      this.editedIndex = this.desserts.indexOf(item)
-      this.editedItem = Object.assign({}, item)
-      this.dialog = true
-    },
-
-    deleteItem (item) {
-      const index = this.desserts.indexOf(item)
-      confirm('Esta seguro de eliminar este item?') && this.desserts.splice(index, 1)
-    },
-
-    close () {
-      this.dialog = false
-      setTimeout(() => {
-        this.editedItem = Object.assign({}, this.defaultItem)
-        this.editedIndex = -1
-      }, 300)
-    },
-
-    save () {
-      if (this.editedIndex > -1) {
-        Object.assign(this.desserts[this.editedIndex], this.editedItem)
-      } else {
-        this.desserts.push(this.editedItem)
-      }
-      this.close()
     }
   }
 }
+
 </script>
+<style lang="stylus">
+  .subheader{
+    text-align center !important
+    display 1
+  }
+  .theme--dark.v-label {
+    color black
+  }
+  .v-text-field.v-text-field--enclosed {
+    --v-primary-base #6D0404
+  }
+  .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
+    background rgba(0,0,0,0.3)
+  }
+  .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
+    color black
+    font-size 20px
+}
+</style>

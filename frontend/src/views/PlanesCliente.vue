@@ -216,14 +216,11 @@ export default {
       'HARD VITAL',
       'NEUROFITNESS',
       'PERSONALIZADOS'
-<<<<<<< HEAD
     ],
     cards: [
       { src: '../assets/un_mes.jpg', flex: 12 },
       { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
       { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 }
-=======
->>>>>>> b110a5c25b9118eebd63f728ff11f15fa7ee2912
     ]
   })
 }

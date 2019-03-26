@@ -82,7 +82,7 @@ export default {
   }
 }
 </script>
-<style scoped lang="stylus">
+<style lang="stylus" scoped>
   img{
   width 60px
   height 45px
@@ -97,5 +97,11 @@ export default {
     font-family Times New Roman, Times, serif
     font-size 20px
     height 57.7px
+  }
+  div.v-content{
+    background-color white !important
+  }
+  .container.fill-height {
+   background-color white
   }
 </style>
