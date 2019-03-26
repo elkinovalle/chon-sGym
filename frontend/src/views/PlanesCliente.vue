@@ -10,15 +10,15 @@
         </v-flex>
           <v-flex d-flex xs12 sm6 md2 child-flex>
           <v-card color="white" dark flat>
-        <p class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></p>
-        <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p><br>
-        <p class="text-xs black--text subheading"><strong>En CHON'S GYM te ayudaremos a cumplir tu
+        <h1 class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></h1><br>
+        <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p>
+        <span class="text-xs black--text caption"><strong>En CHON'S GYM te ayudaremos a cumplir tu
 meta, realizando planes y rutinas
 personalizadas para adelgazar, fortalecer o
 definir, también tendrás consejos
 alimenticios para que complementes y logres
 un mayor avance hacia tus objetivos.
-</strong></p>
+</strong></span>
           </v-card>
         </v-flex>
 
@@ -109,7 +109,7 @@ un mayor avance hacia tus objetivos.
         </v-flex>
           <v-flex d-flex xs12 sm6 md2 child-flex>
           <v-card color="white" dark flat>
-  
+
 <v-btn color="blue darken-4" class="font-weight-black white--text caption">TODOS</v-btn>
           <v-btn
         v-for="link in links"
@@ -210,7 +210,7 @@ export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
-   data: () => ({
+  data: () => ({
     links: [
       'GIMNASIO',
       'HARD VITAL',

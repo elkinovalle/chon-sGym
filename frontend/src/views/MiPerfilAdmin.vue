@@ -98,7 +98,7 @@ export default {
       {
         color: 'blue darken-4',
         icon: 'battery_charging_full',
-        name: 'Mi rutina',
+        name: 'Mi rutina'
       },
       {
         color: 'green darken-4',
@@ -108,9 +108,9 @@ export default {
         exceprt: 'New deals available, Join Today'
       },
       {
-        
+
         name: 'Entrenador',
-        title: "Chon",
+        title: 'Chon',
         excerpt: ''
       }
     ],
