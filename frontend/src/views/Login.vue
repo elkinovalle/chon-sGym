@@ -1,14 +1,16 @@
 <template v-slot:label>
   <div>   
     <v-content>
-      <h1 class="display-3">Iniciar sesión</h1>
+      <h1 class="display-4">Iniciar sesión</h1>
       <v-container fluid fill-height>
         <v-layout align-left justify-left>
-          <v-flex xs12 sm8 md5>
+          <v-flex xs12 sm8 md4>
               <v-card class="elevation-12">
-                <v-toolbar color="black" height="150">
-                <img class="Icono" src="../assets/lofo-fondo-blanco.png" alt="">
-    <v-toolbar-title class="font-weight-medium white--text display-3">Chon's Gym</v-toolbar-title>
+                <v-toolbar color="black" height="250">
+                  <v-toolbar-title>
+                    <img class="Icono" src="../assets/lofo-fondo-blanco.png" alt="">
+                  </v-toolbar-title>
+                <v-toolbar-title class="font-weight-medium white--text display-3">Chon's Gym</v-toolbar-title>
                 </v-toolbar>
               <v-card-text class="white">
                 <v-form class="black--text">
@@ -20,21 +22,18 @@
                 <v-btn color="black" block>
                   <v-icon color="white" class="font-weight-black white--text">Ingresar</v-icon></v-btn>
               </v-card-actions>
-            </v-card>
-            <v-checkbox class="white"
+              
+              <v-checkbox class="white"
               v-model="agreement"
               color="blue darken-4" >
               <template v-slot:label>
                 <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>         
-              </template>
+               </template>
             </v-checkbox>
+            
 
-
-
-
-
-
-
+            </v-card>
+            
           </v-flex>
           
         </v-layout>
@@ -52,8 +51,14 @@ export default {
 
 <style lang="stylus">
 img.Icono {
-  margin-right: 30px;
-  height: 100px;
-}
+  margin-left 10px
+  height: 85px;
+  width 85px !important
+} 
+
+
+
+  
+
 
 </style>
