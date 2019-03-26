@@ -1,5 +1,5 @@
 <template v-slot:label>
-  <div>   
+  <div>
     <v-content>
       <h1 class="display-4">Iniciar sesión</h1>
       <v-container fluid fill-height>
@@ -22,20 +22,19 @@
                 <v-btn color="black" block>
                   <v-icon color="white" class="font-weight-black white--text">Ingresar</v-icon></v-btn>
               </v-card-actions>
-              
+
               <v-checkbox class="white"
               v-model="agreement"
               color="blue darken-4" >
               <template v-slot:label>
-                <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>         
+                <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>
                </template>
             </v-checkbox>
-            
 
             </v-card>
-            
+
           </v-flex>
-          
+
         </v-layout>
       </v-container>
     </v-content>
@@ -54,11 +53,6 @@ img.Icono {
   margin-left 10px
   height: 85px;
   width 85px !important
-} 
-
-
-
-  
-
+}
 
 </style>
