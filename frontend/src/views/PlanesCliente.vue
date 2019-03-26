@@ -178,7 +178,8 @@ un mayor avance hacia tus objetivos.
   </v-layout>
           </v-card>
         </v-flex>
-           <v-flex d-flex xs12 sm3 md2>
+           <v-flex d-flex xs12 sm3 md2
+           >
               <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
