@@ -1,5 +1,5 @@
 <template v-slot:label>
-  <div>
+  <div>   
     <v-content>
       <h1 class="display-3">Iniciar sesión</h1>
       <v-container fluid fill-height>
@@ -8,7 +8,7 @@
               <v-card class="elevation-12">
                 <v-toolbar color="black" height="150">
                 <img class="Icono" src="../assets/lofo-fondo-blanco.png" alt="">
-    <v-toolbar-title class="font-weight-black font-italic white--text display-3">Chon's Gym</v-toolbar-title>
+    <v-toolbar-title class="font-weight-medium white--text display-3">Chon's Gym</v-toolbar-title>
                 </v-toolbar>
               <v-card-text class="white">
                 <v-form class="black--text">
@@ -25,12 +25,18 @@
               v-model="agreement"
               color="blue darken-4" >
               <template v-slot:label>
-                <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>
+                <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>         
               </template>
             </v-checkbox>
 
-          </v-flex>
 
+
+
+
+
+
+          </v-flex>
+          
         </v-layout>
       </v-container>
     </v-content>
@@ -46,7 +52,7 @@ export default {
 
 <style lang="stylus">
 img.Icono {
-  margin: center;
+  margin-right: 30px;
   height: 100px;
 }
 
