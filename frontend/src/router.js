@@ -17,6 +17,7 @@ import PlanQuinceMesesCliente from '@/views/PlanQuinceMesesCliente.vue'
 import HardVitalCliente from '@/views/HardVitalCliente.vue'
 import NeurofitnessCliente from '@/views/NeurofitnessCliente.vue'
 import PersonalizadosCliente from '@/views/PersonalizadosCliente.vue'
+import ClasesGrupalesCliente from '@/views/ClasesGrupalesCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 
 Vue.use(Router)
@@ -104,6 +105,11 @@ export default new Router({
       path: '/personalizados-cliente',
       name: 'personalizados-cliente',
       component: PersonalizadosCliente
+    },
+    {
+      path: '/clases-grupales-cliente',
+      name: 'clases-grupales-cliente',
+      component: ClasesGrupalesCliente
     },
     {
       path: '/membresias-empleado',

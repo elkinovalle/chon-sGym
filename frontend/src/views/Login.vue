@@ -1,8 +1,9 @@
 <template v-slot:label>
   <div>
     <v-content>
-      <h1 class="display-4">Iniciar sesión</h1>
-      <v-container fluid fill-height>
+
+      <v-container fluid fll-height>
+
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md4>
               <v-card class="elevation-12">
