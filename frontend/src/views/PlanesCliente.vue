@@ -203,10 +203,6 @@ un mayor avance hacia tus objetivos.
         </v-flex>
       </v-layout>
     </v-container>
-<<<<<<< HEAD
-
-=======
->>>>>>> 42507cc29d36f9033242f2608002523131cf8b94
 </div>
 
 </template>
