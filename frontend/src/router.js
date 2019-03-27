@@ -19,6 +19,8 @@ import NeurofitnessCliente from '@/views/NeurofitnessCliente.vue'
 import PersonalizadosCliente from '@/views/PersonalizadosCliente.vue'
 import ClasesGrupalesCliente from '@/views/ClasesGrupalesCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
+import VentasEmpleado from '@/views/VentasEmpleado.vue'
+import ShiatsuCliente from '@/views/ShiatsuCliente.vue'
 
 Vue.use(Router)
 
@@ -112,9 +114,19 @@ export default new Router({
       component: ClasesGrupalesCliente
     },
     {
+      path: '/shiatsu-cliente',
+      name: 'shiatsu-cliente',
+      component: ShiatsuCliente
+    },
+    {
       path: '/membresias-empleado',
       name: 'membresias-empleado',
       component: MembresiasEmpleado
+    },
+    {
+      path: '/ventas-empleado',
+      name: 'ventas-empleado',
+      component: VentasEmpleado
     }
   ]
 })
