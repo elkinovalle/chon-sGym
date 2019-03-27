@@ -7,7 +7,6 @@
     <v-content>
 
       <v-container fluid fll-height>
-        
 
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md4>
@@ -63,4 +62,3 @@ img.Icono {
 }
 div.fondo{
       background-image: url('../assets/spinning-1.jpg');
-
