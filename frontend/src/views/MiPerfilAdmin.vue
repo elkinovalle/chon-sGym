@@ -1,9 +1,48 @@
 <template>
+
+<div>
+    <v-layout
+    align-center
+    justify-space-around
+    wrap
+  >
+    <v-avatar color="indigo">
+      <v-icon dark>account_circle</v-icon>
+    </v-avatar>
+
+    <v-avatar>
+      <img
+        src="../assets/perfil.jpg"
+        alt="John"
+      >
+    </v-avatar>
+
+    <v-badge overlap>
+      <template v-slot:badge>
+        <span>3</span>
+      </template>
+
+      <v-avatar
+        color="purple red--after"
+      >
+        <v-icon dark>notifications</v-icon>
+      </v-avatar>
+    </v-badge>
+
+    <v-avatar color="teal">
+      <span class="white--text headline">C</span>
+    </v-avatar>
+
+    <v-avatar color="red">
+      <span class="white--text headline">J</span>
+    </v-avatar>
+  </v-layout>
+
 <v-layout
     column
     justify-center
   >
-    <subheader class='subheader'>Mi Perfil </subheader>
+    <subheader class='subheader'> Mi perfil </subheader>
 
     <v-expansion-panel popout >
       <v-expansion-panel-content
@@ -76,11 +115,36 @@
 
         <v-card>
           <v-divider></v-divider>
-          <v-card-text v-text="lorem" class="black"></v-card-text>
+          <v-card-text  class="black">
+            <v-container fluid grid-list-sm>
+    <v-layout>
+      <v-flex xs6 sm4>
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
+        ></v-img>
+      </v-flex>
+
+      <v-flex xs6 sm4>
+        <v-img src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
+          <div class="fill-height bottom-gradient"></div>
+        </v-img>
+      </v-flex>
+
+      <v-flex xs6 sm4>
+        <v-img src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
+          <div class="fill-height repeating-gradient"></div>
+        </v-img>
+      </v-flex>
+    </v-layout>
+  </v-container>
+          </v-card-text>
         </v-card>
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-layout>
+</div>
+
 </template>
 <script>
 export default {
@@ -92,7 +156,7 @@ export default {
       {
         avatar: '../assets/perfil.jpg',
         name: 'Wilder Ruiz',
-        title: 'Administrador',
+        title: 'Cliente',
         excerpt: 'Thank you for joining our community...'
       },
       {
@@ -109,8 +173,8 @@ export default {
       },
       {
 
-        name: 'Entrenador',
-        title: 'Chon',
+        name: 'Entrenadores ',
+        title: '',
         excerpt: ''
       }
     ],

@@ -1,6 +1,6 @@
 <template>
 <div class="fondo">
-    <p></p>
+    <p></p><br>
 <v-container fluid>
       <v-layout row wrap>
           <v-flex d-flex xs12 sm6 md1 child-flex>
@@ -46,8 +46,8 @@
           <v-card color="transparent" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md8>
-        <v-img height="270px" width="370px" :src="spinning" class="spinning">
-        <h1 class="black--text font-weight-black display-2" >SPINNING</h1>
+        <v-img height="240px" width="370px" :src="spinning" class="spinning">
+        <h1 class="text-xs-center black--text font-weight-black white--text display-2" >SPINNING</h1>
         </v-img>
     </v-flex>
   </v-layout>
@@ -57,8 +57,8 @@
               <v-card color="transparent" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md11>
-         <v-img height="270px" width="370px" :src="aerobicos" class="spinning">
-        <h1 class="black--text font-weight-black display-2" >AEROBICOS</h1>
+         <v-img height="240px" width="370px" :src="aerobicos" class="spinning">
+        <h1 class="font-weight-black white--text display-2" >AEROBICOS</h1>
         </v-img>
     </v-flex>
   </v-layout>
@@ -68,7 +68,9 @@
               <v-card color="transparent" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md8>
-        <img class="imagen_gym" src="../assets/cross-fit.jpg" alt="">
+        <v-img height="240px" width="370px" :src="crossfit" class="spinning">
+        <h1 class="text-xs-center font-weight-black white--text display-2" >CROSSFIT</h1>
+        </v-img>
     </v-flex>
   </v-layout>
           </v-card>
@@ -84,8 +86,10 @@
           <v-card color="transparent" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md8>
-        <img class="imagen_gym" src="../assets/circuitos-de-entrenamiento.jpg" alt="">
-    </v-flex>
+  <v-img height="240px" width="370px" :src="entrenamiento" class="spinning">
+        <h1 class="font-weight-black white--text display-1" >CIRCUITO DE <br> ENTRENAMIENTO</h1>
+        </v-img>
+           </v-flex>
   </v-layout>
           </v-card>
         </v-flex>
@@ -93,7 +97,9 @@
               <v-card color="transparent" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md11>
-        <img class="imagen_gym" src="../assets/cardio-box.jpg" alt="">
+          <v-img height="240px" width="370px" :src="cardio" class="spinning">
+        <h1 class="font-weight-black white--text display-2" >CARDIO BOX</h1>
+        </v-img>
     </v-flex>
   </v-layout>
           </v-card>
@@ -102,7 +108,9 @@
               <v-card color="transparent" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md8>
-        <img class="imagen_gym" src="../assets/hard-cycling.jpg" alt="">
+        <v-img height="240px" width="370px" :src="hard" class="spinning">
+        <h1 class="font-weight-black white--text display-1" >HARD CYCLING</h1>
+        </v-img>
     </v-flex>
   </v-layout>
           </v-card>
@@ -112,15 +120,16 @@
           </v-card>
         </v-flex>
    </v-layout>
-    </v-layout>
    <p></p><br>
       <v-layout row wrap>
  <v-flex d-flex xs12 sm6 md4 >
           <v-card color="transparent" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md8>
-        <img class="imagen_gym" src="../assets/rumba.jpg" alt="">
-    </v-flex>
+<v-img height="240px" width="370px" :src="rumba" class="spinning">
+        <h1 class="text-xs-center font-weight-black white--text display-2" >RUMBA</h1>
+        </v-img>
+            </v-flex>
   </v-layout>
           </v-card>
         </v-flex>
@@ -128,7 +137,9 @@
               <v-card color="transparent" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md11>
-        <img class="imagen_gym" src="../assets/multiterreno.jpg" alt="">
+        <v-img height="240px" width="370px" :src="multiterreno" class="spinning">
+        <h1 class="font-weight-black white--text display-1" >MULTITERRENO</h1>
+        </v-img>
     </v-flex>
   </v-layout>
           </v-card>
@@ -137,7 +148,9 @@
               <v-card color="transparent" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md8>
-        <img class="imagen_gym" src="../assets/shiatsu.jpg" alt="">
+        <v-img height="240px" width="370px" :src="shiatsu" class="spinning">
+        <h1 class="text-xs-center font-weight-black white--text display-2" >SHIATSU</h1>
+        </v-img>
     </v-flex>
   </v-layout>
           </v-card>
@@ -153,8 +166,15 @@
 
 </template>
 <script>
-import SPINNING from '@/assets/spinning-1.jpg'
-import AEROBICOS from '@/assets/aerobicos.jpg'
+import SPINNING from '@/assets/spinning-f.jpg'
+import AEROBICOS from '@/assets/aerobicos-f.jpg'
+import CROSSFIT from '@/assets/cross-fit-f.jpg'
+import ENTRENAMIENTO from '@/assets/circuitos-de-entrenamiento-f.jpg'
+import CARDIO from '@/assets/cardio-box-f.jpg'
+import HARD from '@/assets/cycling-f.jpg'
+import RUMBA from '@/assets/rumba-f.jpg'
+import MULTITERRENO from '@/assets/multiterreno-f.jpg'
+import SHIATSU from '@/assets/shiatsu-f.jpg'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
@@ -162,7 +182,14 @@ export default {
   data () {
     return {
       spinning: SPINNING,
-      aerobicos: AEROBICOS
+      aerobicos: AEROBICOS,
+      crossfit: CROSSFIT,
+      entrenamiento: ENTRENAMIENTO,
+      cardio: CARDIO,
+      hard: HARD,
+      rumba: RUMBA,
+      multiterreno: MULTITERRENO,
+      shiatsu: SHIATSU
     }
   }
 }
@@ -174,8 +201,9 @@ export default {
     margin 0px 20px 0px 20px
   }
   .spinning{
-    padding 110px 0px 0px 80px
+    padding 90px 30px 0px 50px
     margin 0px 20px 0px 20px!important
+
   }
   img.imagen_logo{
     height 60px
@@ -199,6 +227,6 @@ export default {
   }
   div.fondo{
       background-image url('../assets/gym.jpg') !important
+      margin-top -14px
   }
-
 </style>
