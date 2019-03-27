@@ -21,6 +21,7 @@ import ClasesGrupalesCliente from '@/views/ClasesGrupalesCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import ShiatsuCliente from '@/views/ShiatsuCliente.vue'
+import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 
 Vue.use(Router)
 
@@ -127,6 +128,11 @@ export default new Router({
       path: '/ventas-empleado',
       name: 'ventas-empleado',
       component: VentasEmpleado
+    },
+    {
+      path: '/rutina-empleado',
+      name: 'rutina-empleado',
+      component: RutinaEmpleado
     }
   ]
 })
