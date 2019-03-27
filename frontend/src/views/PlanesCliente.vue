@@ -229,6 +229,6 @@ export default {
 <style lang="stylus">
  img.imagen_layout{
     height 170px
-    width 190px !important
+    width 180px !important
   }
 </style>

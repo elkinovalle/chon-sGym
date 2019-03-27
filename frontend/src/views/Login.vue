@@ -1,9 +1,9 @@
 <template v-slot:label>
-<div>   
+<div>
     <v-content>
-      
+
       <v-container fluid fll-height>
-        
+
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md4>
               <v-card class="elevation-12">
@@ -26,15 +26,15 @@
                     </v-btn>
                     <v-spacer></v-spacer>
                 </v-card-actions>
-              
+
               <v-checkbox class="checkbox-xs-center white--text" v-model="agreement" color="blue darken-4" >
               <template v-slot:label>
-                <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>         
+                <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>
                </template>
              </v-checkbox>
               </v-card>
               </v-flex>
-              
+
            </v-layout>
       </v-container>
     </v-content>
@@ -54,16 +54,5 @@ img.Icono {
   height: 85px;
   width 85px !important
 }
-
-
-
-
-
-
-
-
-
-  
-
 
 </style>
