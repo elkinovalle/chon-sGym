@@ -1,8 +1,9 @@
 <template v-slot:label>
-<div>
+<div class="fondo">
     <v-content>
 
       <v-container fluid fll-height>
+        
 
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md4>
@@ -26,12 +27,14 @@
                     </v-btn>
                     <v-spacer></v-spacer>
                 </v-card-actions>
-
               <v-checkbox class="checkbox-xs-center white--text" v-model="agreement" color="blue darken-4" >
               <template v-slot:label>
                 <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>
                </template>
              </v-checkbox>
+             <p>¿Olvidó su contraseña?</p>
+             <a>¿No tienes cuenta?</a>
+
               </v-card>
               </v-flex>
 
@@ -50,9 +53,10 @@ export default {
 
 <style lang="stylus">
 img.Icono {
-  margin-left 10px
+  margin-left 10px;
   height: 85px;
   width 85px !important
 }
+div.fondo{
+      background-image: url('../assets/spinning-1.jpg');
 
-</style>
