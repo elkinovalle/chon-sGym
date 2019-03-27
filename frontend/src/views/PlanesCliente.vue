@@ -10,15 +10,15 @@
         </v-flex>
           <v-flex d-flex xs12 sm6 md2 child-flex>
           <v-card color="white" dark flat>
-        <p class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></p>
-        <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p><br>
-        <p class="text-xs black--text subheading"><strong>En CHON'S GYM te ayudaremos a cumplir tu
+        <h1 class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></h1><br>
+        <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p>
+        <span class="text-xs black--text caption"><strong>En CHON'S GYM te ayudaremos a cumplir tu
 meta, realizando planes y rutinas
 personalizadas para adelgazar, fortalecer o
 definir, también tendrás consejos
 alimenticios para que complementes y logres
 un mayor avance hacia tus objetivos.
-</strong></p>
+</strong></span>
           </v-card>
         </v-flex>
 
@@ -178,7 +178,8 @@ un mayor avance hacia tus objetivos.
   </v-layout>
           </v-card>
         </v-flex>
-           <v-flex d-flex xs12 sm3 md2>
+           <v-flex d-flex xs12 sm3 md2
+           >
               <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
@@ -202,7 +203,10 @@ un mayor avance hacia tus objetivos.
         </v-flex>
       </v-layout>
     </v-container>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42507cc29d36f9033242f2608002523131cf8b94
 </div>
 
 </template>
@@ -229,6 +233,6 @@ export default {
 <style lang="stylus">
  img.imagen_layout{
     height 170px
-    width 190px !important
+    width 180px !important
   }
 </style>

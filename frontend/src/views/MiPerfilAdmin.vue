@@ -173,8 +173,13 @@ export default {
       },
       {
 
+<<<<<<< HEAD
         name: 'Entrenadores ',
         title: '',
+=======
+        name: 'Entrenador',
+        title: 'Chon',
+>>>>>>> 42507cc29d36f9033242f2608002523131cf8b94
         excerpt: ''
       }
     ],
