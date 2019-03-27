@@ -1,5 +1,9 @@
 <template v-slot:label>
+<<<<<<< HEAD
 <div class="fondo">
+=======
+  <div>
+>>>>>>> 6d5fd16e64a6409fb003056f5c57bdb6ffb63c1e
     <v-content>
 
       <v-container fluid fll-height>
@@ -38,7 +42,7 @@
               </v-card>
               </v-flex>
 
-           </v-layout>
+        </v-layout>
       </v-container>
     </v-content>
   </div>
