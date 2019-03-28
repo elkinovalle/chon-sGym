@@ -12,10 +12,9 @@
               <p></p><br>
         <h1 class="text-xs blue--text display-1 font-italic"><strong>Shiatsu</strong></h1>
         <p class="text-xs blue--text title"><strong>Aérobicos</strong></p>
-        <span class="text-xs black--text caption justify"><strong>Es una técnica oriental que se trata de un modo de influir en el estado general que posee una persona, incidiendo tanto en el propio equilibrio de la misma como en el reparto de las energías internas.</strong></span><br>
-        <p></p>
-        <span class="text-xs black--text caption justify"><strong>Por todo ello, el principal objetivo de esta técnica es hacer que el receptor armonice con la energía del entorno y de la vida, contribuyendo a normalizar las situaciones energéticas a partir de tres maneras: estabilizando los excesos –o defectos- del qi, reduciendo sus desequilibrios y reparando los bloqueos que existan en su flujo.</strong></span>
-<p></p><br>
+        <span class="text-xs black--text caption justify">Es una técnica oriental que se trata de un modo de influir en el estado general que posee una persona, incidiendo tanto en el propio equilibrio de la misma como en el reparto de las energías internas.</span><br>
+        <span class="text-xs black--text caption justify">Por todo ello, el principal objetivo de esta técnica es hacer que el receptor armonice con la energía del entorno y de la vida, contribuyendo a normalizar las situaciones energéticas a partir de tres maneras: estabilizando los excesos –o defectos- del qi, reduciendo sus desequilibrios y reparando los bloqueos que existan en su flujo.</span>
+<p></p>
 <h1 class="text-xs black--text body-1"><strong>BENEFICIOS</strong></h1>
 <p></p>
 <li class="text-xs black--text body-1">Ayuda a bajar los niveles de stress y tensión corporal<br></li>
@@ -31,7 +30,7 @@
       <h1 class="text-xs-center black--text display-1">CLASE<strong> GRUPAL</strong></h1>
       <p></p>
         <img class="imagen_layout" src="../assets/shiatsu.jpg" alt="">
-        <p></p>
+        <p></p><br>
         <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
         <p></p><br>
         <p class="mensaje">*Horarios sujetos a cambios sin previo aviso</p>
