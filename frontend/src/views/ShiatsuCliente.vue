@@ -3,11 +3,11 @@
     <p></p>
 <v-container fluid>
       <v-layout row wrap>
-           <v-flex d-flex xs12 sm6 md2 child-flex>
+           <v-flex d-flex xs12 sm6 md1 child-flex>
           <v-card color="white" dark flat>
           </v-card>
         </v-flex>
-          <v-flex d-flex xs12 sm6 md2 child-flex>
+          <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
               <p></p><br>
         <h1 class="text-xs blue--text display-1 font-italic"><strong>Shiatsu</strong></h1>
@@ -38,15 +38,9 @@
         <p></p>
     </v-flex>
   </v-layout>
-   <v-layout>
-    <v-flex xs12 sm6 md10 offset-xs1>
-      <v-card color="white" drak flat>
-      </v-card>
-    </v-flex>
-  </v-layout>
           </v-card>
         </v-flex>
-       <v-flex d-flex xs12 sm6 md1>
+       <v-flex d-flex xs12 sm6 md4>
           <v-card color="white" dark flat>
           </v-card>
         </v-flex>
