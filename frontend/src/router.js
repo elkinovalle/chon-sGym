@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 import Login from '@/views/Login.vue'
 import GestionClases from '@/views/GestionClases.vue'
 import MiPerfilAdmin from '@/views/MiPerfilAdmin.vue'
@@ -18,9 +17,17 @@ import HardVitalCliente from '@/views/HardVitalCliente.vue'
 import NeurofitnessCliente from '@/views/NeurofitnessCliente.vue'
 import PersonalizadosCliente from '@/views/PersonalizadosCliente.vue'
 import ClasesGrupalesCliente from '@/views/ClasesGrupalesCliente.vue'
+import ShiatsuCliente from '@/views/ShiatsuCliente.vue'
+import SpinningCliente from '@/views/SpinningCliente.vue'
+import AerobicosCliente from '@/views/AerobicosCliente.vue'
+import CrossfitCliente from '@/views/CrossfitCliente.vue'
+import EntrenamientoCliente from '@/views/EntrenamientoCliente.vue'
+import CardioCliente from '@/views/CardioCliente.vue'
+import RumbaCliente from '@/views/RumbaCliente.vue'
+import HardCliente from '@/views/HardCliente.vue'
+import MultiterrenoCliente from '@/views/MultiterrenoCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
-import ShiatsuCliente from '@/views/ShiatsuCliente.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 
 Vue.use(Router)
@@ -118,6 +125,46 @@ export default new Router({
       path: '/shiatsu-cliente',
       name: 'shiatsu-cliente',
       component: ShiatsuCliente
+    },
+    {
+      path: '/spinning-cliente',
+      name: 'spinning-cliente',
+      component: SpinningCliente
+    },
+    {
+      path: '/aerobicos-cliente',
+      name: 'aerobicos-cliente',
+      component: AerobicosCliente
+    },
+    {
+      path: '/crossfit-cliente',
+      name: 'crossfit-cliente',
+      component: CrossfitCliente
+    },
+    {
+      path: '/entrenamiento-cliente',
+      name: 'entrenamiento-cliente',
+      component: EntrenamientoCliente
+    },
+    {
+      path: '/cardio-cliente',
+      name: 'cardio-cliente',
+      component: CardioCliente
+    },
+    {
+      path: '/hard-cliente',
+      name: 'hard-cliente',
+      component: HardCliente
+    },
+    {
+      path: '/rumba-cliente',
+      name: 'rumba-cliente',
+      component: RumbaCliente
+    },
+    {
+      path: '/multiterreno-cliente',
+      name: 'multiterreno-cliente',
+      component: MultiterrenoCliente
     },
     {
       path: '/membresias-empleado',
