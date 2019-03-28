@@ -25,6 +25,7 @@ import EntrenamientoCliente from '@/views/EntrenamientoCliente.vue'
 import CardioCliente from '@/views/CardioCliente.vue'
 import RumbaCliente from '@/views/RumbaCliente.vue'
 import HardCliente from '@/views/HardCliente.vue'
+import LoNuevoCliente from '@/views/LoNuevoCliente.vue'
 import MultiterrenoCliente from '@/views/MultiterrenoCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
@@ -165,6 +166,11 @@ export default new Router({
       path: '/multiterreno-cliente',
       name: 'multiterreno-cliente',
       component: MultiterrenoCliente
+    },
+    {
+      path: '/lo-nuevo-cliente',
+      name: 'lo-nuevo-cliente',
+      component: LoNuevoCliente
     },
     {
       path: '/membresias-empleado',
