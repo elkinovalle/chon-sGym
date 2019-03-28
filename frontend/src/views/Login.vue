@@ -1,19 +1,12 @@
 <template v-slot:label>
-<<<<<<< HEAD
 <div class="fondo">
-=======
-  <div>
->>>>>>> 6d5fd16e64a6409fb003056f5c57bdb6ffb63c1e
     <v-content>
-
       <v-container fluid fll-height>
-
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md4>
               <v-card class="elevation-12">
                 <v-toolbar color="black" height="250">
                   <v-toolbar-title>
-                    <img class="Icono" src="../assets/lofo-fondo-blanco.png" alt="">
                   </v-toolbar-title>
                 <v-toolbar-title class="font-weight-medium white--text display-3">Chon's Gym</v-toolbar-title>
                 </v-toolbar>
@@ -37,10 +30,8 @@
              </v-checkbox>
              <p>¿Olvidó su contraseña?</p>
              <a>¿No tienes cuenta?</a>
-
               </v-card>
               </v-flex>
-
         </v-layout>
       </v-container>
     </v-content>

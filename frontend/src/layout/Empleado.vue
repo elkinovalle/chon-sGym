@@ -1,6 +1,4 @@
-<!--<template>
-    <h1>Empleado</h1>
-</template> -->
+
 <template>
   <v-app
     id="inspire"
@@ -16,7 +14,7 @@
     >
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
       <v-list >
-        <v-list-tile v-for="item in items" :key="item.text" @click="">
+        <v-list-tile v-for="item in items" :key="item.text" @click="clickMenu(item)">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -58,14 +56,22 @@
 
 <script>
 export default {
+  name: 'empleado-layaout',
+  methods: {
+    clickMenu (value) {
+      console.log(value.link)
+      this.$router.push(value.link)
+    }
+  },
   data: () => ({
     drawer: null,
+
     items: [
-      { icon: 'person', text: 'Mi Perfil' },
-      { icon: 'shopping_cart', text: 'Membresia' },
-      { icon: 'history', text: 'Rutina' },
+      { icon: 'person', text: 'Mi Perfil', link: '' },
+      { icon: 'shopping_cart', text: 'Membresia', link:'membresias-empleado' },
+      { icon: 'history', text: 'Rutina', link:'rutina-empleado' },
       { icon: 'poll', text: 'Valoracion' },
-      { icon: 'money', text: 'Ventas' },
+      { icon: 'money', text: 'Ventas',link:'ventas-empleado' },
       { icon: 'close', text: 'Salir' }
     ]
   }),
