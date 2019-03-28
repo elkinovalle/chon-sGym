@@ -158,5 +158,8 @@ export default {
   .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
     color black
     font-size 20px
-}
+  }
+  .v-input{
+    --v-primary-base black
+  }
 </style>
