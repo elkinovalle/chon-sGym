@@ -10,15 +10,14 @@
           <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
               <p></p><br>
-        <h1 class="text-xs blue--text display-1 font-italic"><strong>Shiatsu</strong></h1>
-        <p class="text-xs blue--text title"><strong>Aérobicos</strong></p>
-        <span class="text-xs black--text caption justify">Es una técnica oriental que se trata de un modo de influir en el estado general que posee una persona, incidiendo tanto en el propio equilibrio de la misma como en el reparto de las energías internas.</span><br>
-        <span class="text-xs black--text caption justify">Por todo ello, el principal objetivo de esta técnica es hacer que el receptor armonice con la energía del entorno y de la vida, contribuyendo a normalizar las situaciones energéticas a partir de tres maneras: estabilizando los excesos –o defectos- del qi, reduciendo sus desequilibrios y reparando los bloqueos que existan en su flujo.</span>
+        <h1 class="text-xs blue--text headline font-italic"><strong>Multiterreno</strong></h1>
+        <p class="text-xs blue--text title"><strong>Spinning</strong></p>
+        <span class="text-xs black--text caption justify">Es una clase donde el objetivo es fortalecer, tonificar y metabolizar grasas ala vez que el alumno adquiere estado físico, dentro de los parámetros se trabaja una intensidad del 60% al 70% de la capacidad física.</span><br>
 <p></p>
 <h1 class="text-xs black--text body-1"><strong>BENEFICIOS</strong></h1>
 <p></p>
-<li class="text-xs black--text body-1">Ayuda a bajar los niveles de stress y tensión corporal<br></li>
-<li class="text-xs black--text body-1">Ideal en personas con dolencia a nivel muscular.<br></li>
+<li class="text-xs black--text body-1">Tus resultados en los entrenamientos mejoran notablemente al asumir nuevos retos virtuales.<br></li>
+<li class="text-xs black--text body-1">Reduce el estrés y supone un mayor gasto de energía que otros entrenamientos en bici.<br></li>
 <p></p>
 <v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
           </v-card>
@@ -29,7 +28,7 @@
     <v-flex xs12 sm6 md12 offset-xs1>
       <h1 class="text-xs-center black--text display-1">CLASE<strong> GRUPAL</strong></h1>
       <p></p>
-        <img class="imagen_layout" src="../assets/shiatsu.jpg" alt="">
+        <img class="imagen_layout" src="../assets/multiterreno.jpg" alt="">
         <p></p><br>
         <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
         <p></p><br>

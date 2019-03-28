@@ -10,15 +10,15 @@
           <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
               <p></p><br>
-        <h1 class="text-xs blue--text display-1 font-italic"><strong>Shiatsu</strong></h1>
-        <p class="text-xs blue--text title"><strong>Aérobicos</strong></p>
-        <span class="text-xs black--text caption justify">Es una técnica oriental que se trata de un modo de influir en el estado general que posee una persona, incidiendo tanto en el propio equilibrio de la misma como en el reparto de las energías internas.</span><br>
-        <span class="text-xs black--text caption justify">Por todo ello, el principal objetivo de esta técnica es hacer que el receptor armonice con la energía del entorno y de la vida, contribuyendo a normalizar las situaciones energéticas a partir de tres maneras: estabilizando los excesos –o defectos- del qi, reduciendo sus desequilibrios y reparando los bloqueos que existan en su flujo.</span>
+        <h1 class="text-xs blue--text display-2 font-italic"><strong>Cardio box</strong></h1>
+        <p class="text-xs blue--text title"><strong>Aerobicos</strong></p>
+        <span class="text-xs black--text caption justify">Es una actividad energética que le permite tonificar los músculos y mejorar la condición cardiovascular con un método de entrenamiento que combina el trabajo  de kick boxing, step y entrenamiento de fuerza mediante el propio auto carga corporal. Es un método muy eficiente ya que trabaja la psicología del entrenamiento con un sistema que exigente y motivacional.</span><br>
 <p></p>
 <h1 class="text-xs black--text body-1"><strong>BENEFICIOS</strong></h1>
 <p></p>
-<li class="text-xs black--text body-1">Ayuda a bajar los niveles de stress y tensión corporal<br></li>
-<li class="text-xs black--text body-1">Ideal en personas con dolencia a nivel muscular.<br></li>
+<li class="text-xs black--text body-1">Es un ejercicio perfecto para la pérdida de peso de manera efectiva.<br></li>
+<li class="text-xs black--text body-1">Aumenta la autoestima y la sensación de control.<br></li>
+<li class="text-xs black--text body-1">Tonifica prácticamente la totalidad del cuerpo, fortaleciendo multitud de grupos musculares.<br></li>
 <p></p>
 <v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
           </v-card>
@@ -29,7 +29,7 @@
     <v-flex xs12 sm6 md12 offset-xs1>
       <h1 class="text-xs-center black--text display-1">CLASE<strong> GRUPAL</strong></h1>
       <p></p>
-        <img class="imagen_layout" src="../assets/shiatsu.jpg" alt="">
+        <img class="imagen_layout" src="../assets/cardio-box.jpg" alt="">
         <p></p><br>
         <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
         <p></p><br>

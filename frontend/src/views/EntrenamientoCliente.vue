@@ -10,16 +10,10 @@
           <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
               <p></p><br>
-        <h1 class="text-xs blue--text display-1 font-italic"><strong>Shiatsu</strong></h1>
-        <p class="text-xs blue--text title"><strong>Aérobicos</strong></p>
-        <span class="text-xs black--text caption justify">Es una técnica oriental que se trata de un modo de influir en el estado general que posee una persona, incidiendo tanto en el propio equilibrio de la misma como en el reparto de las energías internas.</span><br>
-        <span class="text-xs black--text caption justify">Por todo ello, el principal objetivo de esta técnica es hacer que el receptor armonice con la energía del entorno y de la vida, contribuyendo a normalizar las situaciones energéticas a partir de tres maneras: estabilizando los excesos –o defectos- del qi, reduciendo sus desequilibrios y reparando los bloqueos que existan en su flujo.</span>
-<p></p>
-<h1 class="text-xs black--text body-1"><strong>BENEFICIOS</strong></h1>
-<p></p>
-<li class="text-xs black--text body-1">Ayuda a bajar los niveles de stress y tensión corporal<br></li>
-<li class="text-xs black--text body-1">Ideal en personas con dolencia a nivel muscular.<br></li>
-<p></p>
+        <h1 class="text-xs blue--text headline font-italic"><strong>Circuitos de entrenamiento</strong></h1><br>
+        <p class="text-xs blue--text title"><strong>Jaula</strong></p>
+        <span class="text-xs black--text caption justify">Consiste en realizar una serie de ejercicios ordenado de manera que conforman una circuito en los cuales se realizan una serie de ejercicios de diferentes efectos con o sin implementos que se denomina estaciones. El profesor va indicando las diferentes rotaciones por donde va ejecutando diferentes ejercicios para todo el cuerpo, con este sistema se trabaja, tono quema de grasas y definición muscular en una actividad integrada donde pueden trabajar desde 2 hasta 50 personas.</span><br>
+<p></p><br>
 <v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
           </v-card>
         </v-flex>
@@ -29,10 +23,9 @@
     <v-flex xs12 sm6 md12 offset-xs1>
       <h1 class="text-xs-center black--text display-1">CLASE<strong> GRUPAL</strong></h1>
       <p></p>
-        <img class="imagen_layout" src="../assets/shiatsu.jpg" alt="">
+        <img class="imagen_layout" src="../assets/circuitos-de-entrenamiento.jpg" alt="">
         <p></p><br>
         <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
-        <p></p><br>
         <p class="mensaje">*Horarios sujetos a cambios sin previo aviso</p>
         <p></p>
     </v-flex>

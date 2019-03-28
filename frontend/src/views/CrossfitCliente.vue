@@ -10,15 +10,9 @@
           <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
               <p></p><br>
-        <h1 class="text-xs blue--text display-1 font-italic"><strong>Shiatsu</strong></h1>
-        <p class="text-xs blue--text title"><strong>Aérobicos</strong></p>
-        <span class="text-xs black--text caption justify">Es una técnica oriental que se trata de un modo de influir en el estado general que posee una persona, incidiendo tanto en el propio equilibrio de la misma como en el reparto de las energías internas.</span><br>
-        <span class="text-xs black--text caption justify">Por todo ello, el principal objetivo de esta técnica es hacer que el receptor armonice con la energía del entorno y de la vida, contribuyendo a normalizar las situaciones energéticas a partir de tres maneras: estabilizando los excesos –o defectos- del qi, reduciendo sus desequilibrios y reparando los bloqueos que existan en su flujo.</span>
-<p></p>
-<h1 class="text-xs black--text body-1"><strong>BENEFICIOS</strong></h1>
-<p></p>
-<li class="text-xs black--text body-1">Ayuda a bajar los niveles de stress y tensión corporal<br></li>
-<li class="text-xs black--text body-1">Ideal en personas con dolencia a nivel muscular.<br></li>
+        <h1 class="text-xs blue--text display-1 font-italic"><strong>Crossfit</strong></h1>
+        <p class="text-xs blue--text title"><strong>Jaula</strong></p>
+        <span class="text-xs black--text caption justify">Es  un sistema de entrenamiento de fuerza y acondicionamiento basado en ejercicios funcionales constantemente variados realizados a una alta intensidad. Esto significa que nos valemos de una gran cantidad de ejercicios y disciplinas deportivas (gimnasia, halterofilia, carrera…), de entre las cuales seleccionamos técnicas o movimientos aplicables a la vida diaria y los combinamos de muchas formas diferentes en entrenamientos intensos, resultando no solo un experiencia exigente durante la cual el carácter lúdico y la camaradería cobran un papel primordial, sino también un programa insuperable para desarrollar las diez capacidades físicas generales: resistencia cardiovascular, resistencia energética, fuerza, flexibilidad, potencia, velocidad, coordinación, agilidad, equilibrio y precisión.</span><br>
 <p></p>
 <v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
           </v-card>
@@ -29,7 +23,7 @@
     <v-flex xs12 sm6 md12 offset-xs1>
       <h1 class="text-xs-center black--text display-1">CLASE<strong> GRUPAL</strong></h1>
       <p></p>
-        <img class="imagen_layout" src="../assets/shiatsu.jpg" alt="">
+        <img class="imagen_layout" src="../assets/cross-fit.jpg" alt="">
         <p></p><br>
         <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
         <p></p><br>
