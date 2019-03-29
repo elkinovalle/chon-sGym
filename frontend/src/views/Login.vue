@@ -1,14 +1,13 @@
-<template v-slot:label>
+<template>
 <div class="fondo">
     <v-content>
-      <v-container fluid fll-height>
+      <v-container>
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md4>
               <v-card class="elevation-12">
                 <v-toolbar color="black" height="250">
-                  <v-toolbar-title>
-                  </v-toolbar-title>
-                <v-toolbar-title class="font-weight-medium white--text display-3">Chon's Gym</v-toolbar-title>
+                    <img class="logo" src="../assets/lofo-fondo-blanco.png" alt="">
+                <v-toolbar-title class="font-weight-medium white--text display-2">Chon's Gym</v-toolbar-title>
                 </v-toolbar>
               <v-card-text class="white">
                 <v-form class="black--text">
@@ -30,8 +29,8 @@
              </v-checkbox>
              <p>¿Olvidó su contraseña?</p>
              <a>¿No tienes cuenta?</a>
-              </v-card>
-              </v-flex>
+            </v-card>
+          </v-flex>
         </v-layout>
       </v-container>
     </v-content>
@@ -46,10 +45,10 @@ export default {
 </script>
 
 <style lang="stylus">
-img.Icono {
-  margin-left 10px;
-  height: 85px;
-  width 85px !important
+img.logo {
+  margin-left 100px
+  height: 200px
+
 }
 div.fondo{
       background-image: url('../assets/spinning-1.jpg');
