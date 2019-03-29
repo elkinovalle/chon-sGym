@@ -30,7 +30,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">UN MES</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/un_mes.jpg" alt="">
+        <img class="imagen_plan" src="../assets/un_mes.jpg">
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text display-1">$40.000</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -48,7 +48,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text headline">DOS MESES</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/dos_meses.jpg" alt="">
+        <img class="imagen_plan" src="../assets/dos_meses.jpg" alt="">
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text display-1">$70.000</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -66,7 +66,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text headline">TRES MESES</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/3meses.jpg" alt="">
+        <img class="imagen_plan" src="../assets/3meses.jpg" alt="">
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text display-1">$100.000</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -84,7 +84,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text headline">SEIS MESES</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/6_meses.jpg" alt="">
+        <img class="imagen_plan" src="../assets/6_meses.jpg" alt="">
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text display-1">$180.000</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -132,7 +132,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text title">DOCE MESES</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/12_meses.jpg" alt="">
+        <img class="imagen_plan" src="../assets/12_meses.jpg" alt="">
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text display-1">$320.000</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -150,7 +150,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text title">Quince Meses</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/15_meses.jpg" alt="">
+        <img class="imagen_plan" src="../assets/15_meses.jpg" alt="">
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text display-1">$400.000</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -168,7 +168,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text headline">HARD VITAL</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/hard-vital.png" alt="">
+        <img class="imagen_plan" src="../assets/hard-vital.png" alt="">
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text display-1">$80.000</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -187,7 +187,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text headline">NeuroFitness</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-        <img class="imagen_layout" src="../assets/neurofitness.jpg" alt="">
+        <img class="imagen_plan" src="../assets/neurofitness.jpg" alt="">
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text display-1">$100.000</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -227,8 +227,8 @@ export default {
 }
 </script>
 <style lang="stylus">
- img.imagen_layout{
+ img.imagen_plan{
     height 170px
-    width 180px !important
+    width 190px !important
   }
 </style>
