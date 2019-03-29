@@ -48,7 +48,7 @@ export default {
 img.logo {
   margin-left 100px
   height: 200px
-  
+
 }
 div.fondo{
       background-image: url('../assets/spinning-1.jpg');
