@@ -30,7 +30,7 @@ import MultiterrenoCliente from '@/views/MultiterrenoCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
-import ValoracionEmpleado from '@/views/ValoracionEmplado.vue'
+import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
 
 Vue.use(Router)
 
