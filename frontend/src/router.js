@@ -29,6 +29,7 @@ import MultiterrenoCliente from '@/views/MultiterrenoCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
+import ValoracionEmpleado from '@/views/ValoracionEmplado.vue'
 
 Vue.use(Router)
 
@@ -180,6 +181,11 @@ export default new Router({
       path: '/rutina-empleado',
       name: 'rutina-empleado',
       component: RutinaEmpleado
+    },
+    {
+      path: '/valoracion-empleado',
+      name: 'valoracion-empleado',
+      component: ValoracionEmpleado
     }
   ]
 })
