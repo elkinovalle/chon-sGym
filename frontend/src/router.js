@@ -25,11 +25,7 @@ import EntrenamientoCliente from '@/views/EntrenamientoCliente.vue'
 import CardioCliente from '@/views/CardioCliente.vue'
 import RumbaCliente from '@/views/RumbaCliente.vue'
 import HardCliente from '@/views/HardCliente.vue'
-<<<<<<< HEAD
 import RegistroCliente from '@/views/RegistroCliente.vue'
-=======
-import LoNuevoCliente from '@/views/LoNuevoCliente.vue'
->>>>>>> 55460b826a4ab2af32ee2d2d188a89eee14b4bcf
 import MultiterrenoCliente from '@/views/MultiterrenoCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
@@ -172,20 +168,8 @@ export default new Router({
       component: MultiterrenoCliente
     },
     {
-<<<<<<< HEAD
-      path: '/registro-cliente',
       name: 'registro-cliente',
       component: RegistroCliente
-=======
-      path: '/lo-nuevo-cliente',
-      name: 'lo-nuevo-cliente',
-      component: LoNuevoCliente
->>>>>>> 55460b826a4ab2af32ee2d2d188a89eee14b4bcf
-    },
-    {
-      path: '/membresias-empleado',
-      name: 'membresias-empleado',
-      component: MembresiasEmpleado
     },
     {
       path: '/ventas-empleado',
