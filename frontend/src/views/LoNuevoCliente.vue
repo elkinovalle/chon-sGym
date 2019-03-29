@@ -3,144 +3,78 @@
     <p></p><br>
 <v-container fluid>
       <v-layout row wrap>
-          <v-flex d-flex xs12 sm6 md1 child-flex>
-          <v-card color="transparent" dark flat>
-          </v-card>
-        </v-flex>
           <p></p><br>
-         <v-flex d-flex xs12 sm6 md12>
+          <v-flex xs12 sm6 md3>
+    </v-flex>
+         <v-flex d-flex xs12 sm6 md6 class="campo">
        <v-btn class="botones" flat><h1 class="letras">HARD BODY</h1></v-btn>
-       <v-btn class="botones" flat><h1 class="letras">HARD BODY</h1></v-btn>
-       <v-btn class="botones" flat><h1 class="letras">HARD BODY</h1></v-btn>
+       <v-btn class="botones" flat><h1 class="letras">NEUROFITNESS</h1></v-btn>
+       <v-btn class="botones" flat><h1 class="letras">PERSONALIZADOS</h1></v-btn>
         </v-flex>
+         <v-flex xs12 sm6 md3>
+    </v-flex>
       </v-layout>
     </v-container>
-       <p></p>
-        <h1 class="text-xs-center white--text display-2">DESCUBRE NUESTRAS <strong>CLASES GRUPALES</strong></h1><br>
+    <v-container fluid>
+      <v-layout row wrap>
+          <p></p><br>
+          <v-flex xs12 sm6 md3>
+    </v-flex>
+         <v-flex d-flex xs12 sm6 md6 class="campo">
+  <h1 class="text-xs white--text display-2">EN CHON´S GYM <br><strong>LO TENEMOS TODO</strong></h1>
+        </v-flex>
+         <v-flex xs12 sm6 md3>
+    </v-flex>
+      </v-layout>
+       <v-layout row wrap>
+          <p></p><br>
+          <v-flex xs12 sm6 md3>
+    </v-flex>
+         <v-flex d-flex xs12 sm6 md6 class="campo">
+  <h1 class="text-xs white--text title"><strong>#SALUDEXTREMA</strong></h1>
+        </v-flex>
+         <v-flex xs12 sm6 md3>
+    </v-flex>
+      </v-layout>
+       <v-layout row wrap>
+          <p></p><br>
+          <v-flex xs12 sm6 md3>
+    </v-flex>
+         <v-flex d-flex xs12 sm6 md6 class="campo">
+  <p class="text-xs white--text headline">Ahora podrás disfrutar de servicios únicos que harán de tu experiencia algo diferente. Con Hard Vital, NeuroFitness y Plan personalizado podrás cuidar de tu cuerpo y tu mente sin limitaciones ni excusas.</p>
+        </v-flex>
+         <v-flex xs12 sm6 md3>
+    </v-flex>
+      </v-layout>
+           <v-layout row wrap>
+          <p></p><br>
+          <v-flex xs12 sm6 md3>
+    </v-flex>
+         <v-flex d-flex xs12 sm6 md6 class="campo">
+        </v-flex>
+         <v-flex xs12 sm6 md3>
+            <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Ver planes</v-btn>
+    </v-flex>
+      </v-layout>
+    </v-container>
+    <h1 class="text-xs-center white--text display-2">PRUEBA UN NUEVO <strong>ESTILO DE VIDA</strong></h1><br>
 <v-container fluid >
    <v-layout row wrap>
- <v-flex d-flex xs12 sm6 md4 >
-          <v-card color="transparent" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md8>
-        <v-img height="240px" width="370px" :src="spinning" class="spinning">
-        <h1 class="text-xs-center black--text font-weight-black white--text display-2" >SPINNING</h1>
+    <v-flex xs12 sm6 md12 class="contenedor">
+        <v-img  :src="spinning" class="spinning">
+        <h1 class="escrito" >Servicio de <strong>Neurofitness</strong></h1>
+          <v-btn color="blue darken-4" class="detalles" ><h1 class="letras">Ver más</h1></v-btn>
+        </v-img>
+          <v-img :src="aerobicos" class="spinning">
+        <h1 class="escrito" >AEROBICOS</h1>
+        </v-img>
+       <v-img :src="crossfit" class="spinning">
+        <h1 class="escrito" >CROSSFIT</h1>
         </v-img>
     </v-flex>
-  </v-layout>
-          </v-card>
-        </v-flex>
-        <v-flex d-flex xs12 sm3 m4>
-              <v-card color="transparent" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md11>
-         <v-img height="240px" width="370px" :src="aerobicos" class="spinning">
-        <h1 class="font-weight-black white--text display-2" >AEROBICOS</h1>
-        </v-img>
-    </v-flex>
-  </v-layout>
-          </v-card>
-        </v-flex>
-                <v-flex d-flex xs12 sm3 md4>
-              <v-card color="transparent" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md8>
-        <v-img height="240px" width="370px" :src="crossfit" class="spinning">
-        <h1 class="text-xs-center font-weight-black white--text display-2" >CROSSFIT</h1>
-        </v-img>
-    </v-flex>
-  </v-layout>
-          </v-card>
-        </v-flex>
-        <v-flex d-flex xs12 sm3 md3>
-              <v-card color="transparent" dark flat>
-          </v-card>
-        </v-flex>
    </v-layout>
-   <p></p><br>
-      <v-layout row wrap>
- <v-flex d-flex xs12 sm6 md4 >
-          <v-card color="transparent" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md8>
-  <v-img height="240px" width="370px" :src="entrenamiento" class="spinning">
-        <h1 class="font-weight-black white--text display-1" >CIRCUITO DE <br> ENTRENAMIENTO</h1>
-        </v-img>
-           </v-flex>
-  </v-layout>
-          </v-card>
-        </v-flex>
-        <v-flex d-flex xs12 sm3 m4>
-              <v-card color="transparent" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md11>
-          <v-img height="240px" width="370px" :src="cardio" class="spinning">
-        <h1 class="font-weight-black white--text display-2" >CARDIO BOX</h1>
-        </v-img>
-    </v-flex>
-  </v-layout>
-          </v-card>
-        </v-flex>
-                <v-flex d-flex xs12 sm3 md4>
-              <v-card color="transparent" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md8>
-        <v-img height="240px" width="370px" :src="hard" class="spinning">
-        <h1 class="font-weight-black white--text display-1" >HARD CYCLING</h1>
-        </v-img>
-    </v-flex>
-  </v-layout>
-          </v-card>
-        </v-flex>
-        <v-flex d-flex xs12 sm3 md3>
-              <v-card color="transparent" dark flat>
-          </v-card>
-        </v-flex>
-   </v-layout>
-   <p></p><br>
-      <v-layout row wrap>
- <v-flex d-flex xs12 sm6 md4 >
-          <v-card color="transparent" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md8>
-<v-img height="240px" width="370px" :src="rumba" class="spinning">
-        <h1 class="text-xs-center font-weight-black white--text display-2" >RUMBA</h1>
-        </v-img>
-            </v-flex>
-  </v-layout>
-          </v-card>
-        </v-flex>
-        <v-flex d-flex xs12 sm3 m4>
-              <v-card color="transparent" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md11>
-        <v-img height="240px" width="370px" :src="multiterreno" class="spinning">
-        <h1 class="font-weight-black white--text display-1" >MULTITERRENO</h1>
-        </v-img>
-    </v-flex>
-  </v-layout>
-          </v-card>
-        </v-flex>
-                <v-flex d-flex xs12 sm3 md4>
-              <v-card color="transparent" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md8>
-        <v-img height="240px" width="370px" :src="shiatsu" class="spinning">
-        <h1 class="text-xs-center font-weight-black white--text display-2" >SHIATSU</h1>
-        </v-img>
-    </v-flex>
-  </v-layout>
-          </v-card>
-        </v-flex>
-        <v-flex d-flex xs12 sm3 md3>
-              <v-card color="transparent" dark flat>
-          </v-card>
-        </v-flex>
-   </v-layout>
-
     </v-container>
 </div>
-
 </template>
 <script>
 import SPINNING from '@/assets/spinning-f.jpg'
@@ -180,7 +114,6 @@ export default {
   .spinning{
     padding 90px 30px 0px 50px
     margin 0px 20px 0px 20px!important
-
   }
   img.imagen_logo{
     height 60px
@@ -203,16 +136,26 @@ export default {
     margin 0px 0px 0px 60px
   }
   div.lonuevo{
-      background-image url('../assets/wallpapers-gym.jpg') !important
+      background-image url('../assets/pesas.jpg') !important
       margin-top -14px
   }
   .v-btn.botones{
       height 100px !important
-      width 200px
-      border solid 4px black
+      width 100px
+      border solid 4px white
+  }
+   .v-btn.detalles{
+    margin 40px 210px 0px -40px !important
   }
   h1.letras{
-       font-size 26px
-       color black
+       font-size 18px
+       color white
+  }
+    h1.escrito{
+       font-size 19px
+       color white
+  }
+  .campo {
+    padding 10px !important
   }
 </style>
