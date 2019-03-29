@@ -25,11 +25,12 @@ import EntrenamientoCliente from '@/views/EntrenamientoCliente.vue'
 import CardioCliente from '@/views/CardioCliente.vue'
 import RumbaCliente from '@/views/RumbaCliente.vue'
 import HardCliente from '@/views/HardCliente.vue'
-import LoNuevoCliente from '@/views/LoNuevoCliente.vue'
+import RegistroCliente from '@/views/RegistroCliente.vue'
 import MultiterrenoCliente from '@/views/MultiterrenoCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
+import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
 
 Vue.use(Router)
 
@@ -168,9 +169,9 @@ export default new Router({
       component: MultiterrenoCliente
     },
     {
-      path: '/lo-nuevo-cliente',
-      name: 'lo-nuevo-cliente',
-      component: LoNuevoCliente
+      path: '/registro-cliente',
+      name: 'registro-cliente',
+      component: RegistroCliente
     },
     {
       path: '/membresias-empleado',
@@ -186,6 +187,11 @@ export default new Router({
       path: '/rutina-empleado',
       name: 'rutina-empleado',
       component: RutinaEmpleado
+    },
+    {
+      path: '/valoracion-empleado',
+      name: 'valoracion-empleado',
+      component: ValoracionEmpleado
     }
   ]
 })

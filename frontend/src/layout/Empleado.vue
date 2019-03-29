@@ -66,12 +66,12 @@ export default {
   data: () => ({
     drawer: null,
 
-    items: [
+    items: [ 
       { icon: 'person', text: 'Mi Perfil', link: '' },
-      { icon: 'shopping_cart', text: 'Membresia', link: 'membresias-empleado' },
-      { icon: 'history', text: 'Rutina', link: 'rutina-empleado' },
-      { icon: 'poll', text: 'Valoracion' },
-      { icon: 'money', text: 'Ventas', link: 'ventas-empleado' },
+      { icon: 'shopping_cart', text: 'Membresia', link:'membresias-empleado' },
+      { icon: 'history', text: 'Rutina', link:'rutina-empleado' },
+      { icon: 'poll', text: 'Valoracion'},
+      { icon: 'money', text: 'Ventas',link:'ventas-empleado' },
       { icon: 'close', text: 'Salir' }
     ]
   }),
