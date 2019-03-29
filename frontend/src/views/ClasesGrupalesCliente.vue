@@ -43,7 +43,7 @@
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img  :src="spinning" class="spinning">
+        <v-img  :src="spinning" class="spinning" @click="clickMenu(link)">
         <h1 class="escrito" >SPINNING</h1>
         </v-img>
           <v-img :src="aerobicos" class="spinning">
@@ -97,6 +97,12 @@ export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
+  methods: {
+    clickMenu (value) {
+      console.log(value.link)
+      this.$router.push(value.link)
+    }
+  },
   data () {
     return {
       spinning: SPINNING,
@@ -109,6 +115,8 @@ export default {
       multiterreno: MULTITERRENO,
       shiatsu: SHIATSU
     }
+
+    link: 'spinning-cliente'
   }
 }
 </script>
