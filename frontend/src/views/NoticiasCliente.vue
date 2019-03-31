@@ -1,0 +1,163 @@
+<template>
+<div class="noticia">
+    <p></p><br>
+<v-container fluid>
+      <v-layout row wrap>
+                <v-flex d-flex xs12 sm6 md12>
+          <h1 class="text-xs-center white--text display-3">ÚLTIMAS <strong>NOTICIAS</strong></h1>
+             </v-flex>
+           <v-flex d-flex xs12 sm6 md1 >
+        </v-flex>
+          <v-flex d-flex xs12 sm6 md6>
+             <img class="belleza" src="../assets/categoria-belleza.jpg" alt="">
+        </v-flex>
+         <v-flex d-flex xs12 sm6 md4 class="letrero">
+                     <v-card class="caja" dark flat>
+                      <p></p>          
+        <h1 class="text-xs white--text display-1 font-italic">NOTICIAS DE <br><strong>BELLEZA</strong></h1><br>
+        <span class="text-xs white--text title">Resalta tu belleza natural conociendo todos los beneficios que traen las rutinas de ejercicios para tu cuerpo, no hay excusas para dar inicio a este nuevo estilo de vida</span><br>
+        <p></p><br>
+ <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/planes-cliente" >Ver más</v-btn>
+          </v-card>
+        </v-flex>
+    <v-flex xs12 sm6 md1>
+    </v-flex>
+  </v-layout>
+</v-container>
+
+<v-container fluid>
+      <v-layout row wrap>
+           <v-flex d-flex xs12 sm6 md1 >
+        </v-flex>
+          <v-flex d-flex xs12 sm6 md4>
+             <img class="belleza2" src="../assets/Equilibrio.jpg" alt="">
+        </v-flex>
+         <v-flex d-flex xs12 sm6 md6 class="cajon">
+                     <v-card class="caja" dark flat>
+                      <p></p>          
+        <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
+        <span class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</span><br>
+        <p></p><br>
+ <v-btn color="white" class="right font-weight-black blue--text title" to="/planes-cliente" >Ver más</v-btn>
+          </v-card>
+        </v-flex>
+    <v-flex xs12 sm6 md1>
+    </v-flex>
+  </v-layout>
+</v-container>
+
+<v-container fluid>
+      <v-layout row wrap>
+           <v-flex d-flex xs12 sm6 md1 >
+        </v-flex>
+          <v-flex d-flex xs12 sm6 md10>
+             <img class="belleza2" src="../assets/salud.jpg" alt="">
+        </v-flex>
+           <v-flex d-flex xs12 sm6 md1 >
+        </v-flex>
+           <v-flex d-flex xs12 sm6 md1 >
+        </v-flex>
+          <v-flex d-flex xs12 sm6 md10>
+             <v-card class="caja" dark flat>
+                      <p></p>          
+        <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
+        <span class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</span><br>
+        <p></p><br>
+ <v-btn color="white" class="right font-weight-black blue--text title" to="/planes-cliente" >Ver más</v-btn>
+          </v-card>
+        </v-flex>
+           <v-flex d-flex xs12 sm6 md1 >
+        </v-flex>
+         <v-flex d-flex xs12 sm6 md6 class="cajon">
+                     <v-card class="caja" dark flat>
+                      <p></p>          
+        <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
+        <span class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</span><br>
+        <p></p><br>
+ <v-btn color="white" class="right font-weight-black blue--text title" to="/planes-cliente" >Ver más</v-btn>
+          </v-card>
+        </v-flex>
+    <v-flex xs12 sm6 md1>
+    </v-flex>
+  </v-layout>
+</v-container>
+
+</div>
+
+</template>
+<script>
+export default {
+  created () {
+    this.$store.commit('SET_LAYOUT', 'principal-layout')
+  },
+  data: () => ({
+  })
+}
+</script>
+<style lang="stylus">
+ img.belleza{
+    height 460px
+    width 385px !important
+    margin-top 20px
+  }
+  img.belleza2{
+    height 460px
+    width 363px !important
+  }
+ img.imagen_layout{
+    height 260px
+    width 285px !important
+  }
+  img.imagen_logo{
+    height 160px
+    width 160px !important
+  }
+  p.texto{
+    background-color silver !important
+    text-align center
+    border solid 2px
+    font-size 16px
+    margin -5px 0px 0px -1px
+    padding 10px
+    font-family sans-serif
+  }
+  li{
+    margin 0px 0px 0px 60px
+  }
+  article{
+    margin 0px 0px 0px 60px
+  }
+  div.noticia{
+      background-color black !important
+      margin-top -14px
+  }
+  .letrero {
+      padding 40px
+      background-color rgb(49, 53, 49)
+      margin-top 20px
+      border-top-right-radius 10%
+  }
+  .letrero2 {
+      padding 40px
+      background-color rgb(49, 53, 49)
+      border-bottom-right-radius 10%
+  }
+  .cajon {
+      padding 80px
+      background-color rgb(9, 26, 182)
+      margin -1px 
+      border-bottom-right-radius  10%
+  }
+  .caja{
+        background-color transparent !important
+  }
+  h1.fuente {
+      font-size 30px
+      color white
+  }
+  span.significado {
+      font-size 20px
+      color white
+      margin-top 100px
+  }
+</style>
