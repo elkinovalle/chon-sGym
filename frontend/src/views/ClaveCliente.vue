@@ -52,6 +52,8 @@
         <p></p><br>
         <span class="text-xs black--text title justify">Para poder deshacerte de ese peso de más ganado el mes pasado necesitas rutinas de gimnasio efectivas, por eso es más aconsejable realizar ejercicios en movimiento o rutinas de cardio que permitan que tu corazón bombee mayor cantidad de sangre y así se puedan gastar las calorías acumuladas en tu cuerpo.</span>
         <p></p><br>
+        <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/planes-cliente" >Ver planes</v-btn>
+        <p></p><br>
                </v-card>
           </v-flex>
                </v-layout>

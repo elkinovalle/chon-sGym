@@ -50,7 +50,7 @@
         <h1 class="text-xs black--text headline font-italic"><strong>¿CÓMO PERDER GRASA ABDOMINAL? <br> NOSOTROS TE DECIMOS CÓMO LOGRARLO</strong></h1><br>
         <span class="text-xs black--text title">Tonificar el abdomen es algo muy difícil, ya que primero se debe eliminar la grasa extra, Chon's Gym te contará como reducir la grasa abdominal y tener el cuerpo que deseas.</span><br>
         <p></p>
-<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/planes-cliente" >Ver nota</v-btn>
+<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/perder-grasa-cliente" >Ver nota</v-btn>
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 class="cajon7">
@@ -58,7 +58,7 @@
         <h1 class="text-xs black--text headline font-italic"><strong>RUTINAS Y HÁBITOS SALUDABLES DE UNA MISS UNIVERSO</strong></h1><br>
         <span class="text-xs black--text subheading">Las rutinas de entrenamiento son solo una parte de los cuidados que una participante a Miss Universo debe tener para estar en forma, los hábitos saludables de alimentación y cuidados también son importantes. Conoce los secretos que 4 Miss Universo practican y atrévete a iniciar tu propia transformación con Hard Body, luego de leer la siguiente nota.</span><br>
         <p></p>
-<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/planes-cliente" >Ver nota</v-btn>
+<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/miss-universo-cliente" >Ver nota</v-btn>
           </v-card>
         </v-flex>
     <v-flex xs12 sm6 md2>
