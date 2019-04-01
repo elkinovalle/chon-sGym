@@ -13,7 +13,7 @@
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 class="letrero">
                      <v-card class="caja" dark flat>
-                      <p></p>          
+                      <p></p>
         <h1 class="text-xs white--text display-1 font-italic">NOTICIAS DE <br><strong>BELLEZA</strong></h1><br>
         <span class="text-xs white--text title">Resalta tu belleza natural conociendo todos los beneficios que traen las rutinas de ejercicios para tu cuerpo, no hay excusas para dar inicio a este nuevo estilo de vida</span><br>
         <p></p><br>
@@ -34,7 +34,7 @@
         </v-flex>
          <v-flex d-flex xs12 sm6 md6 class="cajon">
                      <v-card class="caja" dark flat>
-                      <p></p>          
+                      <p></p>
         <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
         <span class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</span><br>
         <p></p><br>
@@ -56,7 +56,7 @@
         <span class="text-xs black--text title">Para estar saludable debes estar al tanto de todo lo que pasa a tu alrededor, enterate de los diferentes métodos alimenticios y rutinas de ejercicio físico.</span><br>
         <p></p>
 <v-btn color="black" class="right font-weight-black white--text title" to="/planes-cliente" >Ver más</v-btn>
-          </v-card>  
+          </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md6 >
       <img class="belleza2" src="../assets/salud.jpg" alt="">
@@ -78,7 +78,7 @@
         <span class="text-xs black--text headline">Conoce los beneficios que traen las rutinas de ejercicios para recuperar no solo la figura, sino la salud de tu cuerpo. </span><br>
         <p></p><br>
 <v-btn color="black" class="right font-weight-black white--text title" to="/planes-cliente" >Ver más</v-btn>
-          </v-card>  
+          </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 >
       <img class="belleza2" src="../assets/Rutinas.jpg" alt="">
@@ -150,19 +150,19 @@ export default {
   .cajon {
       padding 80px
       background-color rgb(9, 26, 182)
-      margin -1px 
+      margin -1px
       border-bottom-right-radius  10%
   }
   .cajon2 {
       padding 70px
       background-color white
-      margin -1px 
+      margin -1px
       border-bottom-left-radius  10%
   }
   .cajon3  {
       padding 70px
       background-color rgb(5, 159, 197)
-      margin -1px 
+      margin -1px
       border-top-left-radius  10%
   }
   .caja{

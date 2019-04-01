@@ -5,7 +5,7 @@
       <v-layout row wrap>
            <v-flex d-flex xs12 sm6 md12>
             <h1 class="text-xs-center black--text display-2">CONOCE NUESTRAS <br><strong>NOTICIAS DE BELLEZA</strong></h1>
-     
+
         </v-flex>
           <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>

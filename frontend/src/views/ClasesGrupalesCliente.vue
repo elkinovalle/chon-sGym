@@ -20,11 +20,11 @@
         </v-flex>
                 <v-flex d-flex xs12 sm3 md1 offset-xs1>
               <v-card color="transparent" dark flat>
-                  <img class="imagen_logo" src="../assets/transport.png" alt=""><br>
+                  <img class="imagen_icon" src="../assets/transport.png" alt=""><br>
                   <p></p>
-                  <img class="imagen_logo" src="../assets/sports (2).png" alt=""><br>
+                  <img class="imagen_icon" src="../assets/sports (2).png" alt=""><br>
                   <p></p>
-                  <img class="imagen_logo" src="../assets/sports (3).png" alt="">
+                  <img class="imagen_icon" src="../assets/sports (3).png" alt="">
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm3 md1>
@@ -43,39 +43,39 @@
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img  :src="spinning" class="spinning" @click="clickMenu(link)">
+        <v-img  :src="spinning" class="spinning" @click="clickSpinning">
         <h1 class="escrito" >SPINNING</h1>
         </v-img>
-          <v-img :src="aerobicos" class="spinning">
+          <v-img :src="aerobicos" class="spinning" @click="clickAerobicos">
         <h1 class="escrito" >AEROBICOS</h1>
         </v-img>
-       <v-img :src="crossfit" class="spinning">
+       <v-img :src="crossfit" class="spinning" @click="clickCrossfit">
         <h1 class="escrito" >CROSSFIT</h1>
         </v-img>
     </v-flex>
    </v-layout>
       <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img :src="cardio" class="spinning">
+        <v-img :src="cardio" class="spinning" @click="clickCardio">
         <h1 class="escrito" >CARDIO BOX</h1>
         </v-img>
-          <v-img :src="hard" class="spinning">
+          <v-img :src="hard" class="spinning" @click="clickHard">
         <h1 class="escrito" >HARD CYCLING</h1>
         </v-img>
-       <v-img :src="rumba" class="spinning">
+       <v-img :src="rumba" class="spinning" @click="clickRumba">
         <h1 class="escrito" >RUMBA</h1>
         </v-img>
     </v-flex>
    </v-layout>
      <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img :src="multiterreno" class="spinning">
+        <v-img :src="multiterreno" class="spinning" @click="clickMulti">
         <h1 class="escrito" >MULTITERRENO</h1>
         </v-img>
-          <v-img :src="entrenamiento" class="spinning">
+          <v-img :src="entrenamiento" class="spinning" @click="clickEntrenamiento">
         <h1 class="escrito" >CIRCUITOS DE ENTRENAMIENTO</h1>
         </v-img>
-       <v-img :src="shiatsu" class="spinning">
+       <v-img :src="shiatsu" class="spinning" @click="clickShiatsu">
         <h1 class="escrito" >SHIATSU</h1>
         </v-img>
     </v-flex>
@@ -98,9 +98,32 @@ export default {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
   methods: {
-    clickMenu (value) {
-      console.log(value.link)
-      this.$router.push(value.link)
+    clickSpinning (value) {
+      this.$router.push('/spinning-cliente')
+    },
+    clickAerobicos (value) {
+      this.$router.push('/aerobicos-cliente')
+    },
+    clickCrossfit (value) {
+      this.$router.push('/crossfit-cliente')
+    },
+    clickCardio (value) {
+      this.$router.push('/cardio-cliente')
+    },
+    clickHard (value) {
+      this.$router.push('/hard-cliente')
+    },
+    clickRumba (value) {
+      this.$router.push('/rumba-cliente')
+    },
+    clickMulti (value) {
+      this.$router.push('/multiterreno-cliente')
+    },
+    clickEntrenamiento (value) {
+      this.$router.push('/entrenamiento-cliente')
+    },
+    clickShiatsu (value) {
+      this.$router.push('/shiatsu-cliente')
     }
   },
   data () {
@@ -115,8 +138,6 @@ export default {
       multiterreno: MULTITERRENO,
       shiatsu: SHIATSU
     }
-
-    link: 'spinning-cliente'
   }
 }
 </script>
@@ -131,8 +152,11 @@ export default {
     display inline-block
     height 215px
     width 350px
+    &:hover{
+      cursor pointer
+    }
   }
-  img.imagen_logo{
+  img.imagen_icon{
     height 60px
     width 60px !important
     margin 0px 0px 0px 40px
