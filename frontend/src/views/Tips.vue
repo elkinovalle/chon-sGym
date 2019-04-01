@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>instalaciones</h1>
+        <h1>tips</h1>
     </div>
 </template>
 <script>

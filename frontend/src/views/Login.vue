@@ -1,17 +1,13 @@
-<template v-slot:label>
-<div>
+<template>
+<div class="fondo">
     <v-content>
-
-      <v-container fluid fll-height>
-
+      <v-container>
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md4>
               <v-card class="elevation-12">
                 <v-toolbar color="black" height="250">
-                  <v-toolbar-title>
-                    <img class="Icono" src="../assets/lofo-fondo-blanco.png" alt="">
-                  </v-toolbar-title>
-                <v-toolbar-title class="font-weight-medium white--text display-3">Chon's Gym</v-toolbar-title>
+                    <img class="logo" src="../assets/lofo-fondo-blanco.png" alt="">
+                <v-toolbar-title class="font-weight-medium white--text display-2">Chon's Gym</v-toolbar-title>
                 </v-toolbar>
               <v-card-text class="white">
                 <v-form class="black--text">
@@ -26,16 +22,16 @@
                     </v-btn>
                     <v-spacer></v-spacer>
                 </v-card-actions>
-
               <v-checkbox class="checkbox-xs-center white--text" v-model="agreement" color="blue darken-4" >
               <template v-slot:label>
                 <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>
                </template>
              </v-checkbox>
-              </v-card>
-              </v-flex>
-
-           </v-layout>
+             <p>¿Olvidó su contraseña?</p>
+             <a>¿No tienes cuenta?</a>
+            </v-card>
+          </v-flex>
+        </v-layout>
       </v-container>
     </v-content>
   </div>
@@ -49,10 +45,10 @@ export default {
 </script>
 
 <style lang="stylus">
-img.Icono {
-  margin-left 10px
-  height: 85px;
-  width 85px !important
-}
+img.logo {
+  margin-left 100px
+  height: 200px
 
-</style>
+}
+div.fondo{
+      background-image: url('../assets/spinning-1.jpg');

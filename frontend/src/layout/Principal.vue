@@ -5,13 +5,13 @@
     <v-toolbar-title class="font-weight-black font-italic white--text display-1">Chon's Gym</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat class="white--text">Planes</v-btn>
-      <v-btn flat class="white--text">Clases</v-btn>
-      <v-btn flat class="white--text">Lo Nuevo</v-btn>
-      <v-btn flat class="white--text">Noticias</v-btn>
+      <v-btn flat class="white--text" to="/planes-cliente">Planes</v-btn>
+      <v-btn flat class="white--text" to="/clases-grupales-cliente">Clases</v-btn>
+      <v-btn flat class="white--text" to="/lo-nuevo-cliente">Lo Nuevo</v-btn>
+      <v-btn flat class="white--text" to="/noticias-cliente">Noticias</v-btn>
       <v-btn flat class="white--text">Tips</v-btn>
       <v-btn flat class="white--text">Contacto</v-btn>
-      <v-btn flat class="white--text">Iniciar Sesion</v-btn>
+      <v-btn flat class="white--text">Mi perfil</v-btn>
     </v-toolbar-items>
   </v-toolbar>
   <v-content>
@@ -27,13 +27,13 @@
         <v-flex d-flex xs12 sm3 md4>
           <v-card color="blue darken-4" dark flat>
             <img src="../assets/lofo-fondo-blanco.png" class='footer_imagen' alt="">
-            <v-card-title flat tile class="blue darken-4 white--text text-xs-center-justify">En Chon's Gym contamos con un gimnasio de buen amplitud donde podrás realizar rutinas de ejercicios y encontrar un equipo perfecto para obtener el cuerpo que deseas.</v-card-title>
+            <v-card-title flat tile class="blue darken-4 white--text text-xs-center-justify body-1">En Chon's Gym contamos con un gimnasio de buen amplitud donde podrás realizar rutinas de ejercicios y encontrar un equipo perfecto para obtener el cuerpo que deseas.</v-card-title>
             <v-card-title flat tile class="blue darken-4 white--text text-xs-center font-weight-black">SÍGUENOS EN NUESTRAS REDES:</v-card-title>
             <v-card-text>
                 <v-btn
           v-for="icon in icons"
           :key="icon"
-          class="mx-4 white--text"
+          class="mx-3 white--text"
           icon
         >
           <v-icon size="24px">{{ icon }}</v-icon>
