@@ -17,7 +17,7 @@
         <h1 class="text-xs white--text display-1 font-italic">NOTICIAS DE <br><strong>BELLEZA</strong></h1><br>
         <span class="text-xs white--text title">Resalta tu belleza natural conociendo todos los beneficios que traen las rutinas de ejercicios para tu cuerpo, no hay excusas para dar inicio a este nuevo estilo de vida</span><br>
         <p></p><br>
- <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/planes-cliente" >Ver más</v-btn>
+ <v-btn color="white" class="right font-weight-black black--text title" to="/noticias-belleza-cliente" >Ver más</v-btn>
           </v-card>
         </v-flex>
     <v-flex xs12 sm6 md1>
@@ -50,40 +50,45 @@
       <v-layout row wrap>
            <v-flex d-flex xs12 sm6 md1 >
         </v-flex>
-          <v-flex d-flex xs12 sm6 md10>
-             <img class="belleza2" src="../assets/salud.jpg" alt="">
+          <v-flex d-flex xs12 sm6 md4 class="cajon2">
+                             <v-card class="caja" dark flat>
+        <h1 class="text-xs black--text display-1 font-italic">BIENESTAR Y <br><strong>SALUD</strong></h1><br>
+        <span class="text-xs black--text title">Para estar saludable debes estar al tanto de todo lo que pasa a tu alrededor, enterate de los diferentes métodos alimenticios y rutinas de ejercicio físico.</span><br>
+        <p></p>
+<v-btn color="black" class="right font-weight-black white--text title" to="/planes-cliente" >Ver más</v-btn>
+          </v-card>  
         </v-flex>
-           <v-flex d-flex xs12 sm6 md1 >
-        </v-flex>
-           <v-flex d-flex xs12 sm6 md1 >
-        </v-flex>
-          <v-flex d-flex xs12 sm6 md10>
-             <v-card class="caja" dark flat>
-                      <p></p>          
-        <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
-        <span class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</span><br>
-        <p></p><br>
- <v-btn color="white" class="right font-weight-black blue--text title" to="/planes-cliente" >Ver más</v-btn>
-          </v-card>
-        </v-flex>
-           <v-flex d-flex xs12 sm6 md1 >
-        </v-flex>
-         <v-flex d-flex xs12 sm6 md6 class="cajon">
-                     <v-card class="caja" dark flat>
-                      <p></p>          
-        <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
-        <span class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</span><br>
-        <p></p><br>
- <v-btn color="white" class="right font-weight-black blue--text title" to="/planes-cliente" >Ver más</v-btn>
-          </v-card>
+         <v-flex d-flex xs12 sm6 md6 >
+      <img class="belleza2" src="../assets/salud.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md1>
     </v-flex>
   </v-layout>
 </v-container>
 
+<v-container fluid>
+      <v-layout row wrap>
+           <v-flex d-flex xs12 sm6 md1 >
+        </v-flex>
+          <v-flex d-flex xs12 sm6 md6 class="cajon3">
+                             <v-card class="caja" dark flat>
+                               <p></p><br>
+        <h1 class="text-xs black--text display-2 font-italic">NUEVAS <strong>RUTINAS</strong></h1>
+        <p></p><br>
+        <span class="text-xs black--text headline">Conoce los beneficios que traen las rutinas de ejercicios para recuperar no solo la figura, sino la salud de tu cuerpo. </span><br>
+        <p></p><br>
+<v-btn color="black" class="right font-weight-black white--text title" to="/planes-cliente" >Ver más</v-btn>
+          </v-card>  
+        </v-flex>
+         <v-flex d-flex xs12 sm6 md4 >
+      <img class="belleza2" src="../assets/Rutinas.jpg" alt="">
+        </v-flex>
+    <v-flex xs12 sm6 md1>
+    </v-flex>
+  </v-layout>
+    <p></p><br>
+</v-container>
 </div>
-
 </template>
 <script>
 export default {
@@ -147,6 +152,18 @@ export default {
       background-color rgb(9, 26, 182)
       margin -1px 
       border-bottom-right-radius  10%
+  }
+  .cajon2 {
+      padding 70px
+      background-color white
+      margin -1px 
+      border-bottom-left-radius  10%
+  }
+  .cajon3  {
+      padding 70px
+      background-color rgb(5, 159, 197)
+      margin -1px 
+      border-top-left-radius  10%
   }
   .caja{
         background-color transparent !important
