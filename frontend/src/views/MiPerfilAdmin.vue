@@ -6,7 +6,8 @@
     justify-space-around
     wrap
   >
-    <v-avatar color="indigo">
+
+    <v-avatar color="black ">
       <v-icon dark>account_circle</v-icon>
     </v-avatar>
 
@@ -116,7 +117,15 @@
         <v-card>
           <v-divider></v-divider>
           <v-card-text  class="black">
-            <v-container fluid grid-list-sm>
+            <v-carousel>
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
+    ></v-carousel-item>
+  </v-carousel>
+
+            <!-- <v-container fluid grid-list-sm>
     <v-layout>
       <v-flex xs6 sm4>
         <v-img
@@ -137,7 +146,7 @@
         </v-img>
       </v-flex>
     </v-layout>
-  </v-container>
+  </v-container> -->
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -173,16 +182,26 @@ export default {
       },
       {
 
-<<<<<<< HEAD
         name: 'Entrenadores ',
         title: '',
-=======
-        name: 'Entrenador',
-        title: 'Chon',
->>>>>>> 42507cc29d36f9033242f2608002523131cf8b94
         excerpt: ''
       }
     ],
+    items: [
+      {
+        src: '../assets/foto1.jpg'
+      },
+      {
+        src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+      },
+      {
+        src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+      },
+      {
+        src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+      }
+    ],
+
     lorem: 'Lorem ipsum dolor sit amet, at aliquam vivendum vel, everti delicatissimi cu eos. Dico iuvaret debitis mel an, et cum zril menandri. Eum in consul legimus accusam. Ea dico abhorreant duo, quo illum minimum incorrupte no, nostro voluptaria sea eu. Suas eligendi ius at, at nemore equidem est. Sed in error hendrerit, in consul constituam cum.'
   })
 }
@@ -194,9 +213,10 @@ export default {
    font-family 'Lucida Sans'
  }
  .subheader{
-   color white
+   color black
    font-size 30px
    text-align center
    font-family 'Lucida Sans'
  }
+
 </style>
