@@ -132,23 +132,14 @@
     </v-card>
 </div>
 </template>
-<<<<<<< HEAD
-
-=======
->>>>>>> 13ec9430f325cfa2ad2c7929c474ce019c1c0557
 <script>
 export default {
   data () {
     const defaultForm = Object.freeze({
       first: '',
       last: '',
-<<<<<<< HEAD
       bio: '',
       favoriteAnimal: '',
-=======
-      gender: '',
-      adress: '',
->>>>>>> 13ec9430f325cfa2ad2c7929c474ce019c1c0557
       age: null,
       terms: false
     })
@@ -157,7 +148,6 @@ export default {
       form: Object.assign({}, defaultForm),
       rules: {
         age: [
-<<<<<<< HEAD
           val => val < 10 || `I don't believe you!`
         ],
         animal: [val => (val || '').length > 0 || 'This field is required'],
@@ -166,16 +156,6 @@ export default {
 
       conditions: false,
       content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.`,
-=======
-          val => val >= 15 || `No puedes ingresar!`
-        ],
-        gender: [val => (val || '').length > 0 || 'Este campo es requerido'],
-        name: [val => (val || '').length > 0 || 'Este campo es requerido']
-      },
-      gender: ['Masculino', 'Femenino'],
-      conditions: false,
-      content: ``,
->>>>>>> 13ec9430f325cfa2ad2c7929c474ce019c1c0557
       snackbar: false,
       terms: false,
       defaultForm
@@ -204,8 +184,4 @@ export default {
     }
   }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 13ec9430f325cfa2ad2c7929c474ce019c1c0557
 </script>

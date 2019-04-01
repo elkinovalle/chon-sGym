@@ -1,9 +1,8 @@
 <template>
     <div>
-        <h1>registro de ventas</h1>
+        <h1>tips</h1>
     </div>
 </template>
-
 <script>
 export default {
   created () {

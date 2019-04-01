@@ -1,11 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import Login from '@/views/Login.vue'
-import GestionClases from '@/views/GestionClases.vue'
 import MiPerfilAdmin from '@/views/MiPerfilAdmin.vue'
 import Inventario from '@/views/Inventario.vue'
 import RegistroCompras from '@/views/RegistroCompras.vue'
+import RegistroEmpleados from '@/views/RegistroEmpleados.vue'
+import GestionClases from '@/views/GestionClases.vue'
 import Proveedores from '@/views/Proveedores.vue'
+import RegistroVentas from '@/views/RegistroVentas.vue'
+import Novedades from '@/views/Novedades.vue'
+import Tips from '@/views/Tips.vue'
+import InstalacionesAdmin from '@/views/InstalacionesAdmin.vue'
+import Reportes from '@/views/Reportes.vue'
 import PlanesCliente from '@/views/PlanesCliente.vue'
 import PlanUnMesCliente from '@/views/PlanUnMesCliente.vue'
 import PlanDosMesesCliente from '@/views/PlanDosMesesCliente.vue'
@@ -47,11 +54,6 @@ export default new Router({
       component: Login
     },
     {
-      path: '/gestion-clases',
-      name: 'gestion-clases',
-      component: GestionClases
-    },
-    {
       path: '/mi-perfil-admin',
       name: 'mi-perfil-admin',
       component: MiPerfilAdmin
@@ -67,9 +69,44 @@ export default new Router({
       component: RegistroCompras
     },
     {
+      path: '/registro-empleados',
+      name: 'registro-empleados',
+      component: RegistroEmpleados
+    },
+    {
+      path: '/gestion-clases',
+      name: 'gestion-clases',
+      component: GestionClases
+    },
+    {
       path: '/proveedores',
       name: 'proveedores',
       component: Proveedores
+    },
+    {
+      path: '/registro-ventas',
+      name: 'registro-ventas',
+      component: RegistroVentas
+    },
+    {
+      path: '/novedades',
+      name: 'novedades',
+      component: Novedades
+    },
+    {
+      path: '/tips',
+      name: 'tips',
+      component: Tips
+    },
+    {
+      path: '/instalaciones',
+      name: 'instalaciones',
+      component: InstalacionesAdmin
+    },
+    {
+      path: '/reportes',
+      name: 'reportes',
+      component: Reportes
     },
     {
       path: '/planes-cliente',
