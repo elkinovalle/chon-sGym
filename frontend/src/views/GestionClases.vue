@@ -1,107 +1,137 @@
 <template>
-  <!-- <div>
-    <v-btn color="#B50000" class="white--text display-1">
-      <v-icon left>add</v-icon>
-      Crear
-    </v-btn>
-    <v-btn color="#B50000" class="white--text display-1">
-      <v-icon left>check</v-icon>
-      Mis Clases
-    </v-btn>
-    <v-text-field
-          v-model="search"
-          append-icon="search"
-          label="Buscar Clase"
-          single-line
-          hide-details
-    ></v-text-field>
-    <v-layout row>
-      <v-flex xs4 sm4 >
-        <v-date-picker v-model="picker" color="#6D0404"></v-date-picker>
-      </v-flex>
-    </v-layout>
-  </div>-->
-  <div id="app">
-  <v-app id="inspire">
-    <v-layout>
+  <div>
+    <v-date-picker v-model="picker"></v-date-picker>
+
       <v-flex>
-        <v-sheet height="600" width="900">
+        <v-sheet height="500">
           <v-calendar
-            ref="calendar"
             :now="today"
             :value="today"
             color="primary"
-            type="week"
           >
-            <template v-slot:dayHeadere="{ date }">
-              <template v-for="event in eventsMap[date]">
-                <div
-                  v-if="!event.time"
-                  :key="event.title"
-                  class="my-event"
-                  @click="open(event)"
-                  v-html="event.title"
-                ></div>
-              </template>
+        <template v-slot:day="{ date }">
+          <template v-for="event in eventsMap[date]">
+            <v-menu
+              :key="event.title"
+              v-model="event.open"
+              full-width
+              offset-x
+            >
+        <template v-slot:activator="{ on }">
+          <div
+            v-if="!event.time"
+            v-ripple
+            class="my-event"
+            v-on="on"
+            v-html="event.title"
+          ></div>
+        </template>
+        <v-card
+          color="grey lighten-4"
+          min-width="350px"
+          flat
+        >
+          <v-toolbar
+            color="primary"
+            dark
+          >
+            <v-btn icon>
+              <v-icon>edit</v-icon>
+            </v-btn>
+            <v-toolbar-title v-html="event.title"></v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn icon>
+              <v-icon>favorite</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>more_vert</v-icon>
+            </v-btn>
+          </v-toolbar>
+          <v-card-title primary-title>
+            <span v-html="event.details"></span>
+          </v-card-title>
+          <v-card-actions>
+            <v-btn
+              flat
+              color="secondary"
+            >
+                      Cancel
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-menu>
             </template>
-            <template v-slot:dayBody="{ date, timeToY, minutesToPixels }">
-              <template v-for="event in eventsMap[date]">
-                <div
-                  v-if="event.time"
-                  :key="event.title"
-                  :style="{ top: timeToY(event.time) + 'px', height: minutesToPixels(event.duration) + 'px' }"
-                  class="my-event with-time"
-                  @click="open(event)"
-                  v-html="event.title"
-                ></div>
-              </template>
-            </template>
-          </v-calendar>
-        </v-sheet>
-      </v-flex>
-    </v-layout>
-  </v-app>
-</div>
+          </template>
+        </v-calendar>
+      </v-sheet>
+    </v-flex>
+  </div>
 </template>
-
 <script>
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
   },
-  // data: () => ({
-  //   picker: new Date().toISOString().substr(0, 10)
-  // })
   data: () => ({
     today: '2019-01-08',
     events: [
       {
-        title: 'Weekly Meeting',
+        title: 'Vacation',
+        details: 'Going to the beach!',
+        date: '2018-12-30',
+        open: false
+      },
+      {
+        title: 'Vacation',
+        details: 'Going to the beach!',
+        date: '2018-12-31',
+        open: false
+      },
+      {
+        title: 'Vacation',
+        details: 'Going to the beach!',
+        date: '2019-01-01',
+        open: false
+      },
+      {
+        title: 'Meeting',
+        details: 'Spending time on how we do not have enough time',
         date: '2019-01-07',
-        time: '09:00',
-        duration: 45
+        open: false
       },
       {
-        title: 'Thomas\' Birthday',
-        date: '2019-01-10'
+        title: '30th Birthday',
+        details: 'Celebrate responsibly',
+        date: '2019-01-03',
+        open: false
       },
       {
-        title: 'Mash Potatoes',
-        date: '2019-01-09',
-        time: '12:30',
-        duration: 180
+        title: 'New Year',
+        details: 'Eat chocolate until you pass out',
+        date: '2019-01-01',
+        open: false
+      },
+      {
+        title: 'Conference',
+        details: 'Mute myself the whole time and wonder why I am on this call',
+        date: '2019-01-21',
+        open: false
+      },
+      {
+        title: 'Hackathon',
+        details: 'Code like there is no tommorrow',
+        date: '2019-02-01',
+        open: false
       }
     ]
   }),
   computed: {
+    // convert the list of events into a map of lists keyed by date
     eventsMap () {
       const map = {}
       this.events.forEach(e => (map[e.date] = map[e.date] || []).push(e))
       return map
     }
-  },
-  mounted () {
-    this.$refs.calendar.scrollToTime('08:00')
   },
   methods: {
     open (event) {
@@ -110,41 +140,19 @@ export default {
   }
 }
 </script>
-
 <style lang="stylus">
-  // .v-text-field.v-text-field--enclosed {
-  //   --v-primary-base #6D0404
-  // }
-  // .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
-  //   background rgba(0,0,0,0.3)
-  // }
-  // .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
-  //   color black
-  //   font-size 20px
-  // }
-  // .v-input{
-  //   --v-primary-base darkblue
-  // }
   .my-event {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  border-radius: 2px;
-  background-color: #1867c0;
-  color: #ffffff;
-  border: 1px solid #1867c0;
-  font-size: 12px;
-  padding: 3px;
-  cursor: pointer;
-  margin-bottom: 1px;
-  left: 4px;
-  margin-right: 8px;
-  position: relative;
-
-  &.with-time {
-    position: absolute;
-    right: 4px;
-    margin-right: 0px;
+    width 700px
+    white-space nowrap
+    border-radius 2px
+    background-color darkblue
+    color white
+    border 1px solid white
+    font-size 12px
+    padding 3px
+    cursor pointer
   }
-}
+  .flex{
+    width 100%
+  }
 </style>

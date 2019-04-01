@@ -11,7 +11,7 @@
     >
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
       <v-list>
-        <v-list-tile v-for="item in items" :key="item.text">
+        <v-list-tile v-for="item in items" :key="item.text" @click="clickMenu(item)">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -21,14 +21,6 @@
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list>
-          <v-list-tile v-for="item in items2" :key="item.text" avatar> //Agregar @Click""
-            <v-list-tile-avatar>
-              <img :src="`https://randomuser.me/api/portraits/men/${item.picture}.jpg`" alt="">
-            </v-list-tile-avatar>
-            <v-list-tile-title v-text="item.text"></v-list-tile-title>
-          </v-list-tile>
-        </v-list>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar
@@ -62,15 +54,21 @@
 <script>
 export default {
   name: 'admin',
+  methods: {
+    clickMenu (value) {
+      console.log(value.link)
+      this.$router.push(value.link)
+    }
+  },
   data: () => ({
     drawer: null,
     items: [
-      { icon: 'fas fa-edit', text: 'Mi Perfil' },
-      { icon: 'fas fa-box', text: 'Inventario' },
-      { icon: 'history', text: 'Registro de compras' },
-      { icon: 'featured_play_list', text: 'Gestión de clases' },
-      { icon: 'add', text: 'Proveedores' },
-      { icon: 'money', text: 'Registro de Ventas' },
+      { icon: 'fas fa-edit', text: 'Mi Perfil', link: 'mi-perfil-admin' },
+      { icon: 'fas fa-box', text: 'Inventario', link: 'inventario' },
+      { icon: 'history', text: 'Registro de compras', link: 'registro-compras' },
+      { icon: 'featured_play_list', text: 'Gestión de clases', link: 'gestion-clases' },
+      { icon: 'add', text: 'Proveedores', link: 'proveedores' },
+      { icon: 'money', text: 'Registro de Ventas', link: 'registro-ventas' },
       { icon: 'info', text: 'Tips' },
       { icon: 'place', text: 'Instalaciones' },
       { icon: 'event', text: 'Reportes' },
