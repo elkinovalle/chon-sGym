@@ -69,7 +69,7 @@ export default {
       { icon: 'featured_play_list', text: 'Gestión de clases', link: 'gestion-clases' },
       { icon: 'add', text: 'Proveedores', link: 'proveedores' },
       { icon: 'money', text: 'Registro de Ventas', link: 'registro-ventas' },
-      { icon: 'new', text: 'Novedades', link: 'novedades' },
+      { icon: 'present_to_all', text: 'Novedades', link: 'novedades' },
       { icon: 'info', text: 'Tips', link: 'tips' },
       { icon: 'place', text: 'Instalaciones', link: 'instalaciones' },
       { icon: 'event', text: 'Reportes', link: 'reportes' },
