@@ -17,7 +17,7 @@
         <h1 class="text-xs white--text display-1 font-italic">NOTICIAS DE <br><strong>BELLEZA</strong></h1><br>
         <span class="text-xs white--text title">Resalta tu belleza natural conociendo todos los beneficios que traen las rutinas de ejercicios para tu cuerpo, no hay excusas para dar inicio a este nuevo estilo de vida</span><br>
         <p></p><br>
- <v-btn color="white" class="right font-weight-black black--text title" to="/noticias-belleza-cliente" >Ver más</v-btn>
+ <v-btn color="white" class="right font-weight-black black--text title" to="/noticias-belleza-cliente">Ver más</v-btn>
           </v-card>
         </v-flex>
     <v-flex xs12 sm6 md1>
@@ -167,6 +167,10 @@ export default {
   }
   .caja{
         background-color transparent !important
+  }
+  .informacion{
+        background-color transparent !important
+        margin-top -70px
   }
   h1.fuente {
       font-size 30px

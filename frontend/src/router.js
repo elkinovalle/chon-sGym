@@ -37,6 +37,9 @@ import MultiterrenoCliente from '@/views/MultiterrenoCliente.vue'
 import LoNuevoCliente from '@/views/LoNuevoCliente.vue'
 import NoticiasCliente from '@/views/NoticiasCliente.vue'
 import NoticiasBellezaCliente from '@/views/NoticiasBellezaCliente.vue'
+import ClaveCliente from '@/views/ClaveCliente.vue'
+import PerderGrasaCliente from '@/views/PerderGrasaCliente.vue'
+import MissUniversoCliente from '@/views/MissUniversoCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -227,6 +230,21 @@ export default new Router({
       path: '/noticias-belleza-cliente',
       name: 'noticias-belleza-cliente',
       component: NoticiasBellezaCliente
+    },
+    {
+      path: '/clave-cliente',
+      name: 'clave-cliente',
+      component: ClaveCliente
+    },
+    {
+      path: '/perder-grasa-cliente',
+      name: 'perder-grasa-cliente',
+      component: PerderGrasaCliente
+    },
+    {
+      path: '/miss-universo-cliente',
+      name: 'miss-universo-cliente',
+      component: MissUniversoCliente
     },
     {
       path: '/membresias-empleado',
