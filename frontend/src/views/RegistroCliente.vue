@@ -1,20 +1,19 @@
 <template>
-    <div>
-  <v-card flat>
+  <div>
+     <v-card flat>
     <v-snackbar
       v-model="snackbar"
       absolute
       top
       right
-      color="success"
+      color="blue darken-4"
     >
-      <span>Registration successful!</span>
-      <v-icon dark>check_circle</v-icon>
+      <span>Registro exitoso!</span>
     </v-snackbar>
     <v-form ref="form" @submit.prevent="submit">
       <v-container grid-list-xl fluid>
         <v-layout wrap>
-          <v-flex xs6 sm3>
+          <v-flex xs4 sm4>
             <v-text-field
               v-model="form.first"
               :rules="rules.name"
@@ -23,7 +22,7 @@
               required
             ></v-text-field>
           </v-flex>
-          <v-flex xs6 sm3>
+          <v-flex xs4 sm4>
             <v-text-field
               v-model="form.last"
               :rules="rules.name"
@@ -32,40 +31,44 @@
               required
             ></v-text-field>
           </v-flex>
-          <v-flex xs12 sm5>
-            <v-textarea
+          <v-flex xs4 sm4>
+            <v-slider
+              v-model="form.age"
+              :rules="rules.age"
               color="blue darken-4"
-            >
-              <template v-slot:label>
-                <div>
-                  sexo
-                </div>
-              </template>
-            </v-textarea>
+              label="Edad"
+              hint="ser honesto"
+              min="1"
+              max="100"
+              thumb-label
+            ></v-slider>
           </v-flex>
-          <v-flex xs5 sm3>
+          <v-flex xs4 sm4>
             <v-select
-              v-model="form.genero"
-              :items="genero"
-              :rules="genero"
+              v-model="form.gender"
+              :items="gender"
+              :rules="rules.gender"
               color="blue darken-4"
               label="Género"
               required
             ></v-select>
           </v-flex>
-          <v-layout row>
-      <v-flex xs4>
-        <v-subheader>Suffix for email domain</v-subheader>
-      </v-flex>
-      <v-flex xs8>
+          <v-flex xs4 sm4>
+            <v-text-field
+              v-model="form.adress"
+              :rules="rules.name"
+              color="blue darken-4"
+              label="Dirección"
+              required
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs4>
         <v-text-field
-          label="Email address"
-          value="ejemplo"
-          suffix="@gmail.com"
+        color="blue darken-4"
+        :rules="rules.name"
+          label="Correo electrónico"
         ></v-text-field>
       </v-flex>
-    </v-layout>
-
           <v-flex xs12>
             <v-checkbox
               v-model="form.terms"
@@ -89,9 +92,9 @@
         <v-btn
           :disabled="!formIsValid"
           flat
-          color="primary"
+          color="blue darken-4"
           type="submit"
-        >Registrar</v-btn>
+        >Registrarse</v-btn>
       </v-card-actions>
     </v-form>
     <v-dialog v-model="terms" width="70%">
@@ -104,7 +107,7 @@
           <v-spacer></v-spacer>
           <v-btn
             flat
-            color="purple"
+            color="blue darken-4"
             @click="terms = false"
           >Ok</v-btn>
         </v-card-actions>
@@ -112,7 +115,7 @@
     </v-dialog>
     <v-dialog v-model="conditions" width="70%">
       <v-card>
-        <v-card-title class="title">Condiciones</v-card-title>
+        <v-card-title class="title">Conditions</v-card-title>
         <v-card-text v-for="n in 5" :key="n">
           {{ content }}
         </v-card-text>
@@ -120,28 +123,32 @@
           <v-spacer></v-spacer>
           <v-btn
             flat
-            color="purple"
+            color="blue darken-4"
             @click="conditions = false"
           >Ok</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </v-card>
-  </div>
-
+    </v-card>
+</div>
 </template>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 13ec9430f325cfa2ad2c7929c474ce019c1c0557
 <script>
 export default {
-  created () {
-    this.$store.commit('SET_LAYOUT', 'principal-layout')
-  },
   data () {
     const defaultForm = Object.freeze({
       first: '',
       last: '',
+<<<<<<< HEAD
       bio: '',
       favoriteAnimal: '',
+=======
+      gender: '',
+      adress: '',
+>>>>>>> 13ec9430f325cfa2ad2c7929c474ce019c1c0557
       age: null,
       terms: false
     })
@@ -150,6 +157,7 @@ export default {
       form: Object.assign({}, defaultForm),
       rules: {
         age: [
+<<<<<<< HEAD
           val => val < 10 || `I don't believe you!`
         ],
         animal: [val => (val || '').length > 0 || 'This field is required'],
@@ -158,6 +166,16 @@ export default {
 
       conditions: false,
       content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.`,
+=======
+          val => val >= 15 || `No puedes ingresar!`
+        ],
+        gender: [val => (val || '').length > 0 || 'Este campo es requerido'],
+        name: [val => (val || '').length > 0 || 'Este campo es requerido']
+      },
+      gender: ['Masculino', 'Femenino'],
+      conditions: false,
+      content: ``,
+>>>>>>> 13ec9430f325cfa2ad2c7929c474ce019c1c0557
       snackbar: false,
       terms: false,
       defaultForm
@@ -169,7 +187,7 @@ export default {
       return (
         this.form.first &&
           this.form.last &&
-          this.form.favoriteAnimal &&
+          this.form.gender &&
           this.form.terms
       )
     }
@@ -186,5 +204,8 @@ export default {
     }
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 13ec9430f325cfa2ad2c7929c474ce019c1c0557
 </script>

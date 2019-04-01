@@ -31,7 +31,7 @@
     <v-flex xs12 sm6 md12 offset-xs1>
       <h1 class="text-xs-center black--text display-1">CLASE<strong> GRUPAL</strong></h1>
       <p></p>
-        <img class="imagen_layout" src="../assets/spinning-1.jpg" alt="">
+        <img class="imagen_clases" src="../assets/spinning-1.jpg" alt="">
         <p></p><br>
         <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
         <p></p><br>

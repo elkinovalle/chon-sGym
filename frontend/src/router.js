@@ -27,6 +27,9 @@ import RumbaCliente from '@/views/RumbaCliente.vue'
 import HardCliente from '@/views/HardCliente.vue'
 import RegistroCliente from '@/views/RegistroCliente.vue'
 import MultiterrenoCliente from '@/views/MultiterrenoCliente.vue'
+import LoNuevoCliente from '@/views/LoNuevoCliente.vue'
+import NoticiasCliente from '@/views/NoticiasCliente.vue'
+import NoticiasBellezaCliente from '@/views/NoticiasBellezaCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -172,6 +175,21 @@ export default new Router({
       path: '/registro-cliente',
       name: 'registro-cliente',
       component: RegistroCliente
+    },
+    {
+      path: '/lo-nuevo-cliente',
+      name: 'lo-nuevo-cliente',
+      component: LoNuevoCliente
+    },
+    {
+      path: '/noticias-cliente',
+      name: 'noticias-cliente',
+      component: NoticiasCliente
+    },
+    {
+      path: '/noticias-belleza-cliente',
+      name: 'noticias-belleza-cliente',
+      component: NoticiasBellezaCliente
     },
     {
       path: '/membresias-empleado',
