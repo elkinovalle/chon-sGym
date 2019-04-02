@@ -25,7 +25,7 @@
     <v-flex xs12 sm6 md12 offset-xs1>
       <h1 class="text-xs-center black--text display-1">CLASE<strong> GRUPAL</strong></h1>
       <p></p>
-        <img class="imagen_layout" src="../assets/aerobicos.jpg" alt="">
+        <img class="imagen_clases" src="../assets/aerobicos.jpg" alt="">
         <p></p><br>
         <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
         <p class="mensaje">*Horarios sujetos a cambios sin previo aviso</p>
@@ -53,6 +53,15 @@ export default {
  img.imagen_layout{
     height 500px
     width 700px !important
+  }
+  p.texto{
+    background-color silver !important
+    text-align center
+    border solid 2px
+    font-size 16px
+    margin -5px 0px 0px -1px
+    padding 10px
+    font-family sans-serif
   }
   li{
     margin 0px 0px 0px 0px
