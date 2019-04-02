@@ -195,11 +195,6 @@ export default {
       val || this.close()
     }
   },
-
-  created () {
-    this.$store.commit('SET_LAYOUT', 'empleado-layout')
-  },
-
   methods: {
     initialize () {
       this.desserts = [
