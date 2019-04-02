@@ -44,7 +44,6 @@ img.logo {
   margin-left 100px
   height: 300px
 
-
 }
 div.fondo{
       background-image: url('../assets/spinning-1.jpg');
