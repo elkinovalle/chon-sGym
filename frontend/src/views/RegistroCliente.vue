@@ -155,7 +155,7 @@ export default {
       },
       gender: ['Masculino', 'Femenino'],
       conditions: false,
-      content: ``,
+      content: `chon es gay`,
       snackbar: false,
       terms: false,
       defaultForm

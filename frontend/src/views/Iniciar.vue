@@ -5,8 +5,8 @@
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md4>
               <v-card class="elevation-12">
-                <v-toolbar color="black" height="150">
-                    <img class="logo" src="../assets/lofo-fondo-blanco.png" alt="">
+                  <v-toolbar color="black" height="150">
+                       <img class="logo" src="../assets/lofo-fondo-blanco.png" alt="">
                 <v-toolbar-title class="font-weight-medium white--text display-2">Chon's Gym</v-toolbar-title>
                 </v-toolbar>
               <v-card-text class="white">
@@ -22,11 +22,6 @@
                     </v-btn>
                     <v-spacer></v-spacer>
                 </v-card-actions>
-              <v-checkbox class="checkbox-xs-center white--text" v-model="agreement" color="blue darken-4" >
-              <template v-slot:label>
-                <v-toolbar-title class="font-weight-black black--text">Recordarme</v-toolbar-title>
-               </template>
-             </v-checkbox>
              <p>¿Olvidó su contraseña?</p>
              <a>¿No tienes cuenta?</a>
             </v-card>
@@ -47,7 +42,8 @@ export default {
 <style lang="stylus">
 img.logo {
   margin-left 100px
-  height: 200px
+  height: 300px
+
 
 }
 div.fondo{
