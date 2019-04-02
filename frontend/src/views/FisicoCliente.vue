@@ -43,7 +43,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_universo" src="../assets/miss-universo.jpg" alt="">
+               <img class="imagen_universo" src="../assets/entrenador.jpg" alt="">
                <p></p>
                 </v-card>
           </v-flex>
@@ -51,6 +51,34 @@
           </v-flex>
                </v-layout>
     </v-container>
+
+
+           <v-container>
+             <v-flex d-flex xs12 sm6 md3>
+               </v-flex>
+          <v-flex d-flex xs12 sm6 md12>
+          <v-card color="white" dark flat>
+        <span class="text-xs black--text title justify">En Chon's Gym contamos con los mejores planes y entrenadores físicos para que tú decidas seguir mejorando tu condición física y estética. Planear un entrenamiento es cuestión de voluntad y decisión, se debe tener en cuenta que primero se deben plantear unos objetivos, y después buscar factores que ayuden a motivar cada día tu entrenamiento. Conoce más en la siguiente nota.</span>
+            <p></p><br>
+        <span class="text-xs black--text title justify">Para poder hacer un cambio en tu estado de salud y también en tu físico tienes que poder demostrar que eres capaz de hacerlo. Para poder poner en marcha un gran plan de entrenamiento físico necesitas dos cosas importantes:</span>
+        <p></p><br>
+        <span class="text-xs black--text title justify">1. Buena actitud para querer hacer este cambio en tu vida.</span>
+        <p></p><br>
+        <span class="text-xs black--text title justify">2. Determinación para alcanzar tu objetivo.</span>
+        <p></p><br>
+        <span class="text-xs black--text title justify">Con la ayuda de Chon's Gym estamos seguros de que lograrás transformar tu cuerpo para lograr tener uno mucho más saludable. Nuestros entrenadores personales te ayudarán a dejar la pereza a un lado para ayudarte a tener mayor voluntad en tu entrenamiento físico y fijar juntos un objetivo: tener una vida mucho más saludable.</span>
+        <p></p><br>
+        <h2 class="text-xs black--text headline justify"><strong>¿Puedes crear un plan de entrenamiento físico?</strong></h2>
+        <p></p><br>
+        <span class="text-xs black--text title justify">Para dar inicio a un cambio en tu salud, puedes empezar con algo simple: un plan de entrenamiento físico donde el rey sea salir a correr. Realizando esa actividad es como verás una gran evolución y mejora en tu cuerpo; lo ideal para que todo resulte de la mejor manera es tener una organización en este plan.</span>
+        <p></p><br>
+        <span class="text-xs black--text title justify">¡No pienses en fracasos! Recuerda que todo dependerá de ti y de las ganas que tengas de alcanzar tus objetivos, con la ayuda de un entrenador personal sabemos que podrás hacerlo.</span>
+        <p></p><br>
+         </v-card>
+        </v-flex>
+         <v-flex d-flex xs12 sm6 md3>
+          </v-flex>
+           </v-container>
 
            <v-container>
                <v-layout>
