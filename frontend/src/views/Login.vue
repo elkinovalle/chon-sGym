@@ -1,13 +1,13 @@
 <template>
-<div class="fondo">
+<div class="found">
     <v-content>
       <v-container>
         <v-layout align-left justify-left>
-          <v-flex xs12 sm8 md4>
+          <v-flex xs12 sm8 md5>
               <v-card class="elevation-12">
                 <v-toolbar color="black" height="150">
-                    <img class="logo" src="../assets/lofo-fondo-blanco.png" alt="">
-                <v-toolbar-title class="font-weight-medium white--text display-2">Chon's Gym</v-toolbar-title>
+                    <img src="../assets/lofo-fondo-blanco.png" alt="" class="symbol">
+                <v-toolbar-title class="font-weight-medium white--text display-1">Chon's Gym</v-toolbar-title>
                 </v-toolbar>
               <v-card-text class="white">
                 <v-form class="black--text">
@@ -42,13 +42,17 @@ export default {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   }
 }
+
 </script>
 
 <style lang="stylus">
-img.logo {
-  margin-left 100px
-  height: 200px
-
+img.symbol {
+  margin-right 5px
+  height 100px
+  width 100px !important
 }
-div.fondo{
-      background-image: url('../assets/spinning-1.jpg');
+div.found{
+      background-image: url('../assets/gym.jpg');
+}
+
+</style>

@@ -44,7 +44,6 @@ import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
-import Iniciar from '@/views/Iniciar.vue'
 
 Vue.use(Router)
 
@@ -53,8 +52,8 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/login',
-      name: 'login',
+      path: '/Login',
+      name: 'Login',
       component: Login
     },
     {
@@ -266,11 +265,6 @@ export default new Router({
       path: '/valoracion-empleado',
       name: 'valoracion-empleado',
       component: ValoracionEmpleado
-    },
-    {
-      path: '/Iniciar',
-      name: 'Iniciar',
-      component: Iniciar
     }
   ]
 })
