@@ -97,14 +97,19 @@
         :search="search"
       >
         <template v-slot:items="props">
-          <td class="text-xs-right">{{ props.item.codigo }}</td>
-          <td class="text-xs-right">{{ props.item.nombre }}</td>
-          <td class="text-xs-right">{{ props.item.marca }}</td>
-          <td class="text-xs-right">{{ props.item.descripcion }}</td>
-          <td class="text-xs-right">{{ props.item.cantidad }}</td>
+          <td></td>
+          <td class="text-xs-right">{{ props.item.documento }}</td>
+          <td class="text-xs-right">{{ props.item.nombres }}</td>
+          <td class="text-xs-right">{{ props.item.apellidos }}</td>
+          <td class="text-xs-right">{{ props.item.telefono }}</td>
+          <td class="text-xs-right">{{ props.item.direccion }}</td>
+          <td class="text-xs-right">{{ props.item.correo }}</td>
+          <td class="text-xs-right">{{ props.item.sexo }}</td>
+          <td class="text-xs-right">{{ props.item.empresa }}</td>
+
         </template>
         <v-alert v-slot:no-results :value="true" color="error" icon="warning">
-          Your search for "{{ search }}" found no results.
+         Tu busqueda para "{{ search }}" no se encontro
         </v-alert>
       </v-data-table>
     </v-card>
@@ -123,43 +128,58 @@ export default {
           align: 'left',
           sortable: false
         },
-        { text: 'Codigo', value: 'codigo' },
-        { text: 'Nombre', value: 'nombre' },
-        { text: 'Marca', value: 'marca' },
-        { text: 'Descripcion', value: 'descripcion' },
-        { text: 'Cantidad', value: 'cantidad' }
+        { text: 'Documento', value: 'documento' },
+        { text: 'Nombres', value: 'nombres' },
+        { text: 'Apellidos', value: 'apellidos' },
+        { text: 'Telefono', value: 'telefono' },
+        { text: 'Direccion', value: 'direccion' },
+        { text: 'Correo Electronico', value: 'correo' },
+        { text: 'Sexo', value: 'sexo' },
+        { text: 'Empresa', value: 'empresa' }
       ],
       desserts: [
         {
-          codigo: 1001,
-          nombre: 'Megaplex',
-          marca: 'Megaplex',
-          descripcion: '10 lbs Vainilla',
-          cantidad: '42 unidades'
+          documento: '100245210',
+          nombres: 'jeffrey',
+          apellidos: 'muñoz',
+          telefono: '3121514214',
+          direccion: 'cra 3 #1-16',
+          correo: 'qwetyuior@gmail.com',
+          sexo: 'masculino',
+          empresa: 'BodyTech'
         },
         {
-          codigo: 1002,
-          nombre: 'Omega 3',
-          marca: 'Megaplex',
-          descripcion: '120 tabletas',
-          cantidad: '32 unidades'
+          documento: '100245210',
+          nombres: 'jeffrey',
+          apellidos: 'muñoz',
+          telefono: '3121514214',
+          direccion: 'cra 3 #1-16',
+          correo: 'qwetyuior@gmail.com',
+          sexo: 'masculino',
+          empresa: 'BodyTech'
         },
         {
-          codigo: 1003,
-          nombre: 'Testo Ultra',
-          marca: 'Megaplex',
-          descripcion: '1.5 lbs ',
-          cantidad: '12 unidades'
+          documento: '100245210',
+          nombres: 'jeffrey',
+          apellidos: 'muñoz',
+          telefono: '3121514214',
+          direccion: 'cra 3 #1-16',
+          correo: 'qwetyuior@gmail.com',
+          sexo: 'masculino',
+          empresa: 'BodyTech'
         },
         {
-          codigo: 1004,
-          nombre: 'Megaplex',
-          marca: 'Megaplex',
-          descripcion: '10 lbs Vainilla',
-          cantidad: '23 unidades'
+          documento: '100245210',
+          nombres: 'jeffrey',
+          apellidos: 'muñoz',
+          telefono: '3121514214',
+          direccion: 'cra 3 #1-16',
+          correo: 'qwetyuior@gmail.com',
+          sexo: 'masculino',
+          empresa: 'BodyTech'
         }
       ],
-      select: 'Sexo',
+      select: 'Sexo*',
       items: [
         'Masculino',
         'Femenino'
@@ -181,7 +201,7 @@ export default {
     background rgba(0,0,0,0.8)
   }
   .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
-    color black
+    color white
     font-size 20px
   }
   .v-input{
@@ -191,8 +211,11 @@ export default {
     background: rgba(0,0,0,0.8);
     height: 56px;
     margin: 8px 0px 0px 0px;
-}
-  .theme--dark.v-input:not(.v-input--is-disabled) input,{
+  }
+  .theme--dark.v-label {
     color white
+  }
+  div.v-card__title{
+    background-color: darkred;
   }
 </style>

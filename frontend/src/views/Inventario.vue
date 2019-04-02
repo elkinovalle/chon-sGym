@@ -74,6 +74,7 @@
         :search="search"
       >
         <template v-slot:items="props">
+          <td></td>
           <td class="text-xs-right">{{ props.item.codigo }}</td>
           <td class="text-xs-right">{{ props.item.nombre }}</td>
           <td class="text-xs-right">{{ props.item.marca }}</td>
@@ -147,16 +148,13 @@ export default {
     display 1
   }
   .v-text-field.v-text-field--enclosed {
-    --v-primary-base #6D0404
+    --v-primary-base white !important
   }
   .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
     background rgba(0,0,0,0.8)
   }
   .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
-    color black
+    color white !important
     font-size 20px
-  }
-  .v-input{
-    --v-primary-base black
   }
 </style>
