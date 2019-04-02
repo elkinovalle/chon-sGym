@@ -53,6 +53,8 @@ img.symbol {
 }
 div.found{
       background-image: url('../assets/gym.jpg');
+      margin-top: 1px
+      margin-bottom: 1px
 }
 
 </style>

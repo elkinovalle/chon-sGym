@@ -71,7 +71,7 @@
             </v-container>
     </v-form>
     <v-toolbar flat color="red">
-      <v-toolbar-title>My CRUD</v-toolbar-title>
+      <v-toolbar-title>Registro Compras</v-toolbar-title>
       <v-divider
         class="mx-2"
         inset
@@ -91,19 +91,19 @@
             <v-container grid-list-md>
               <v-layout wrap>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.name" label="Dessert name"></v-text-field>
+                  <v-text-field v-model="editedItem.name" label="codigo"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.calories" label="Calories"></v-text-field>
+                  <v-text-field v-model="editedItem.producto" label="producto"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.fat" label="Fat (g)"></v-text-field>
+                  <v-text-field v-model="editedItem.marca" label="marca"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.carbs" label="Carbs (g)"></v-text-field>
+                  <v-text-field v-model="editedItem.descripcion" label="descripcion"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.protein" label="Protein (g)"></v-text-field>
+                  <v-text-field v-model="editedItem.cantidad" label="cantidad"></v-text-field>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -124,10 +124,10 @@
     >
       <template v-slot:items="props">
         <td>{{ props.item.name }}</td>
-        <td class="text-xs-right">{{ props.item.calories }}</td>
-        <td class="text-xs-right">{{ props.item.fat }}</td>
-        <td class="text-xs-right">{{ props.item.carbs }}</td>
-        <td class="text-xs-right">{{ props.item.protein }}</td>
+        <td class="text-xs-right">{{ props.item.producto}}</td>
+        <td class="text-xs-right">{{ props.item.marca }}</td>
+        <td class="text-xs-right">{{ props.item.descripcion }}</td>
+        <td class="text-xs-right">{{ props.item.cantidad }}</td>
         <td class="justify-center layout px-0">
           <v-icon
             small
@@ -159,32 +159,36 @@ export default {
     dialog: false,
     headers: [
       {
-        text: 'Dessert (100g serving)',
+        text: 'codigo ',
         align: 'left',
         sortable: false,
         value: 'name'
       },
-      { text: 'Calories', value: 'calories' },
-      { text: 'Fat (g)', value: 'fat' },
-      { text: 'Carbs (g)', value: 'carbs' },
-      { text: 'Protein (g)', value: 'protein' },
-      { text: 'Actions', value: 'name', sortable: false }
+      { text: 'producto', value: 'producto' },
+      { text: 'marca', value: 'marca' },
+      { text: 'descripcion', value: 'descripcion' },
+      { text: 'cantidad', value: 'cantidad' },
+      { text: 'valor_unitario', value: 'valor_unitario' },
+      { text: 'valor_total', value: 'valor_total', sortable: false }
     ],
-    desserts: [],
+    codigo: [],
     editedIndex: -1,
     editedItem: {
       name: '',
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
+      producto: 0,
+      marca: 0,
+      descripcion: 0,
+      cantidad: 0,
+      valor_unitario: 0,
+      valor_total:0
     },
     defaultItem: {
       name: '',
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
+      producto: 0,
+      marca: 0,
+      descripcion: 0,
+      cantidad: 0,
+      valor_unitario: 0
     }
   }),
 
@@ -193,89 +197,95 @@ export default {
       return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
     }
   },
-
   watch: {
     dialog (val) {
       val || this.close()
     }
   },
 
-  created () {
-    this.$store.commit('SET_LAYOUT', 'admin-layout')
-  },
-
   methods: {
     initialize () {
       this.desserts = [
         {
-          name: 'Frozen Yogurt',
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0
+          name: 52,
+          producto:"proteina",
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0,
+          valor_total:0
         },
         {
-          name: 'Ice cream sandwich',
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3
+          name: 52,
+          producto: 0,
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0
         },
         {
-          name: 'Eclair',
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0
+          name: 52,
+          producto: 0,
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0
         },
         {
-          name: 'Cupcake',
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3
+          name: 52,
+          producto: 0,
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0
         },
         {
-          name: 'Gingerbread',
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9
+          name: 52,
+          producto: 0,
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0
         },
         {
-          name: 'Jelly bean',
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0
+          name: 52,
+          producto: 0,
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0
         },
         {
-          name: 'Lollipop',
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0
+          name: 52,
+          producto: 0,
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0
         },
         {
-          name: 'Honeycomb',
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5
+          name: 52,
+          producto: 0,
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0
         },
         {
-          name: 'Donut',
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9
+          name: 52,
+          producto: 0,
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0
         },
         {
-          name: 'KitKat',
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7
+          name: 52,
+          producto: 0,
+          marca: 0,
+          descripcion: 0,
+          cantidad: 0,
+          valor_unitario: 0
         }
       ]
     },
@@ -311,22 +321,5 @@ export default {
 
 }
 </script>
-// <style lang="stylus">
-//   .subheader{
-//     text-align center !important
-//     display 1
-//   }
-//   .theme--dark.v-label {
-//     color black
-//   }
-//   .v-text-field.v-text-field--enclosed {
-//     --v-primary-base #6D0404
-//   }
-//   .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
-//     background rgba(0,0,0,0.3)
-//   }
-//   .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
-//     color black
-//     font-size 20px
-// }
-// </style>
+<style lang="stylus">
+ </style>
