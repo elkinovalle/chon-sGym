@@ -5,13 +5,13 @@
     <v-toolbar-title class="font-weight-black font-italic white--text display-1">Chon's Gym</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat class="white--text">Planes</v-btn>
-      <v-btn flat class="white--text">Clases</v-btn>
-      <v-btn flat class="white--text">Lo Nuevo</v-btn>
-      <v-btn flat class="white--text">Noticias</v-btn>
+      <v-btn flat class="white--text" to="/planes-cliente">Planes</v-btn>
+      <v-btn flat class="white--text" to="/clases-grupales-cliente">Clases</v-btn>
+      <v-btn flat class="white--text" to="/lo-nuevo-cliente">Lo Nuevo</v-btn>
+      <v-btn flat class="white--text" to="/noticias-cliente">Noticias</v-btn>
       <v-btn flat class="white--text">Tips</v-btn>
       <v-btn flat class="white--text">Contacto</v-btn>
-      <v-btn flat class="white--text">Iniciar Sesion</v-btn>
+      <v-btn flat class="white--text">Mi perfil</v-btn>
     </v-toolbar-items>
   </v-toolbar>
   <v-content>

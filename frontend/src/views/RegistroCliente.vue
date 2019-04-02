@@ -138,8 +138,8 @@ export default {
     const defaultForm = Object.freeze({
       first: '',
       last: '',
-      gender: '',
-      adress: '',
+      bio: '',
+      favoriteAnimal: '',
       age: null,
       terms: false
     })
@@ -148,14 +148,14 @@ export default {
       form: Object.assign({}, defaultForm),
       rules: {
         age: [
-          val => val >= 15 || `No puedes ingresar!`
+          val => val < 10 || `I don't believe you!`
         ],
-        gender: [val => (val || '').length > 0 || 'Este campo es requerido'],
-        name: [val => (val || '').length > 0 || 'Este campo es requerido']
+        animal: [val => (val || '').length > 0 || 'This field is required'],
+        name: [val => (val || '').length > 0 || 'This field is required']
       },
-      gender: ['Masculino', 'Femenino'],
+
       conditions: false,
-      content: `chon es gay`,
+      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.`,
       snackbar: false,
       terms: false,
       defaultForm

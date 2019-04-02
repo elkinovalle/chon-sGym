@@ -141,22 +141,22 @@ export default {
 }
 
 </script>
-<style lang="stylus">
+<style lang="stylus" >
   .subheader{
     text-align center !important
     display 1
-  }
-  .theme--dark.v-label {
-    color black
   }
   .v-text-field.v-text-field--enclosed {
     --v-primary-base #6D0404
   }
   .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
-    background rgba(0,0,0,0.3)
+    background rgba(0,0,0,0.8)
   }
   .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
     color black
     font-size 20px
-}
+  }
+  .v-input{
+    --v-primary-base black
+  }
 </style>

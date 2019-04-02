@@ -35,7 +35,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">$40.000</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block>Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-un-mes-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -53,7 +53,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">$70.000</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block>Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -71,7 +71,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">$100.000</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block>Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-tres-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -89,7 +89,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">$180.000</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block>Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-seis-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -137,7 +137,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">$320.000</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block>Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-doce-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -155,7 +155,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">$400.000</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block>Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-quince-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -173,7 +173,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">$80.000</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block>Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/hard-vital-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -192,7 +192,7 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">$100.000</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block>Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/neurofitness-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>

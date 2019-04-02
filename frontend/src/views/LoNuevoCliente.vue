@@ -7,9 +7,9 @@
           <v-flex xs12 sm6 md3>
     </v-flex>
          <v-flex d-flex xs12 sm6 md6 class="campo">
-       <v-btn class="botones" flat><h1 class="letras">HARD BODY</h1></v-btn>
-       <v-btn class="botones" flat><h1 class="letras">NEUROFITNESS</h1></v-btn>
-       <v-btn class="botones" flat><h1 class="letras">PERSONALIZADOS</h1></v-btn>
+       <v-btn class="botones" flat to="/hard-vital-cliente"><h1 class="letras">HARD VITAL</h1></v-btn>
+       <v-btn class="botones" flat to="/neurofitness-cliente"><h1 class="letras">NEUROFITNESS</h1></v-btn>
+       <v-btn class="botones" flat to="/personalizados-cliente"><h1 class="letras">PERSONALIZADOS</h1></v-btn>
         </v-flex>
          <v-flex xs12 sm6 md3>
     </v-flex>
@@ -53,7 +53,7 @@
          <v-flex d-flex xs12 sm6 md6 class="campo">
         </v-flex>
          <v-flex xs12 sm6 md3>
-            <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Ver planes</v-btn>
+            <v-btn color="blue darken-4" class="font-weight-black white--text display-1" to="/planes-cliente" >Ver planes</v-btn>
     </v-flex>
       </v-layout>
     </v-container>
@@ -65,19 +65,19 @@
          <v-flex xs12 sm6 md3>
         <v-img :src="hardvital" class="imagenes">
           <p class="escrito"><strong>Servicio de Hard Vital</strong></p>
-          <v-btn color="blue darken-4" class="detalle" ><h1 class="letras">Ver más</h1></v-btn>
+          <v-btn color="blue darken-4" class="detalle" to="/hard-vital-cliente" ><h1 class="letras">Ver más</h1></v-btn>
         </v-img>
         </v-flex>
         <v-flex xs12 sm6 md3>
         <v-img :src="fitness" class="imagenes">
           <p class="escrito"><strong>Servicio de Neurofitness</strong></p>
-          <v-btn color="blue darken-4" class="detalle" ><h1 class="letras">Ver más</h1></v-btn>
+          <v-btn color="blue darken-4" class="detalle" to="/neurofitness-cliente"><h1 class="letras">Ver más</h1></v-btn>
         </v-img>
         </v-flex>
         <v-flex xs12 sm6 md3>
         <v-img :src="personalizados" class="imagenes">
           <p class="escrito"><strong>Servicio Personalizados</strong></p>
-          <v-btn color="blue darken-4" class="detalle" ><h1 class="letras">Ver más</h1></v-btn>
+          <v-btn color="blue darken-4" class="detalle" to="/personalizados-cliente"><h1 class="letras">Ver más</h1></v-btn>
         </v-img>
         </v-flex>
         <v-flex xs12 sm6 md1>
