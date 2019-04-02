@@ -49,7 +49,6 @@ import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
-import Iniciar from '@/views/Iniciar.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
 
 Vue.use(Router)
@@ -298,11 +297,6 @@ export default new Router({
       name: 'valoracion-empleado',
       component: ValoracionEmpleado
 
-    },
-    {
-      path: '/Iniciar',
-      name: 'Iniciar',
-      component: Iniciar
     },
     {
       path: '/recibo-membresia',
