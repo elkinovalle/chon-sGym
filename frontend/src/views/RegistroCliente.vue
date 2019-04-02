@@ -169,7 +169,6 @@ export default {
         this.form.first &&
           this.form.last &&
           this.form.gender &&
-          this.form.age &&
           this.form.email &&
           this.form.adress &&
           this.form.terms
