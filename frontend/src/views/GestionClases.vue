@@ -1,9 +1,5 @@
 <template>
   <div>
-    <div>
-      <v-date-picker v-model="picker"></v-date-picker>
-    </div>
-
     <v-flex>
       <v-sheet height="500">
         <v-calendar
@@ -139,11 +135,6 @@ export default {
       alert(event.title)
     }
   }
-  // data () {
-  //   return {
-  //     picker: new Date().toISOString().substr(0, 10)
-  //   }
-  // }
 
 }
 </script>

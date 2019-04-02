@@ -44,11 +44,11 @@ import MenteEquilibrioCliente from '@/views/MenteEquilibrioCliente.vue'
 import VidaSaludableCliente from '@/views/VidaSaludableCliente.vue'
 import PilatesCliente from '@/views/PilatesCliente.vue'
 import MotivarteCliente from '@/views/MotivarteCliente.vue'
+import BienestarCliente from '@/views/BienestarCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
-import Iniciar from '@/views/Iniciar.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
 
 Vue.use(Router)
@@ -58,8 +58,8 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/login',
-      name: 'login',
+      path: '/Login',
+      name: 'Login',
       component: Login
     },
     {
@@ -273,6 +273,11 @@ export default new Router({
       component: PilatesCliente
     },
     {
+      path: '/bienestar-cliente',
+      name: 'bienestar-cliente',
+      component: BienestarCliente
+    },
+    {
       path: '/membresias-empleado',
       name: 'membresias-empleado',
       component: MembresiasEmpleado
@@ -291,11 +296,7 @@ export default new Router({
       path: '/valoracion-empleado',
       name: 'valoracion-empleado',
       component: ValoracionEmpleado
-    },
-    {
-      path: '/Iniciar',
-      name: 'Iniciar',
-      component: Iniciar
+
     },
     {
       path: '/recibo-membresia',

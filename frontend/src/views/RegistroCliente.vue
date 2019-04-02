@@ -64,6 +64,7 @@
           </v-flex>
           <v-flex xs4>
         <v-text-field
+        v-model="form.email"
         color="blue darken-4"
         :rules="rules.name"
           label="Correo electrónico"
@@ -138,8 +139,8 @@ export default {
     const defaultForm = Object.freeze({
       first: '',
       last: '',
-      bio: '',
-      favoriteAnimal: '',
+      email: '',
+      gender: '',
       age: null,
       terms: false
     })
@@ -148,14 +149,14 @@ export default {
       form: Object.assign({}, defaultForm),
       rules: {
         age: [
-          val => val < 10 || `I don't believe you!`
+          val => val >= 15 || `No puedes ingresar!`
         ],
-        animal: [val => (val || '').length > 0 || 'This field is required'],
-        name: [val => (val || '').length > 0 || 'This field is required']
+        gender: [val => (val || '').length > 0 || 'Este campo es requerido'],
+        name: [val => (val || '').length > 0 || 'Este campo es requerido']
       },
-
+      gender: ['Masculino', 'Femenino'],
       conditions: false,
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.`,
+      content: 'chon',
       snackbar: false,
       terms: false,
       defaultForm
@@ -168,6 +169,9 @@ export default {
         this.form.first &&
           this.form.last &&
           this.form.gender &&
+          this.form.age &&
+          this.form.email &&
+          this.form.adress &&
           this.form.terms
       )
     }
