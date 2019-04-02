@@ -40,6 +40,10 @@ import NoticiasBellezaCliente from '@/views/NoticiasBellezaCliente.vue'
 import ClaveCliente from '@/views/ClaveCliente.vue'
 import PerderGrasaCliente from '@/views/PerderGrasaCliente.vue'
 import MissUniversoCliente from '@/views/MissUniversoCliente.vue'
+import MenteEquilibrioCliente from '@/views/MenteEquilibrioCliente.vue'
+import VidaSaludableCliente from '@/views/VidaSaludableCliente.vue'
+import PilatesCliente from '@/views/PilatesCliente.vue'
+import MotivarteCliente from '@/views/MotivarteCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -244,9 +248,29 @@ export default new Router({
       component: PerderGrasaCliente
     },
     {
+      path: '/mente-equilibrio-cliente',
+      name: 'mente-equilibrio-cliente',
+      component: MenteEquilibrioCliente
+    },
+    {
       path: '/miss-universo-cliente',
       name: 'miss-universo-cliente',
       component: MissUniversoCliente
+    },
+    {
+      path: '/motivarte-cliente',
+      name: 'motivarte-cliente',
+      component: MotivarteCliente
+    },
+    {
+      path: '/vida-saludable-cliente',
+      name: 'vida-saludable-cliente',
+      component: VidaSaludableCliente
+    },
+    {
+      path: '/pilates-cliente',
+      name: 'pilates-cliente',
+      component: PilatesCliente
     },
     {
       path: '/membresias-empleado',
