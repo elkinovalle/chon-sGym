@@ -48,11 +48,8 @@ import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
-<<<<<<< HEAD
-=======
 import Iniciar from '@/views/Iniciar.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
->>>>>>> e8386dbe856db0531fb2a9ddad7fb796c9ffa8d9
 
 Vue.use(Router)
 
@@ -294,8 +291,7 @@ export default new Router({
       path: '/valoracion-empleado',
       name: 'valoracion-empleado',
       component: ValoracionEmpleado
-<<<<<<< HEAD
-=======
+
     },
     {
       path: '/Iniciar',
@@ -306,7 +302,6 @@ export default new Router({
       path: '/recibo-membresia',
       name: 'recibo-membresia',
       component: ReciboMembresia
->>>>>>> e8386dbe856db0531fb2a9ddad7fb796c9ffa8d9
     }
   ]
 })
