@@ -44,6 +44,7 @@ import MenteEquilibrioCliente from '@/views/MenteEquilibrioCliente.vue'
 import VidaSaludableCliente from '@/views/VidaSaludableCliente.vue'
 import PilatesCliente from '@/views/PilatesCliente.vue'
 import MotivarteCliente from '@/views/MotivarteCliente.vue'
+import BienestarCliente from '@/views/BienestarCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -271,6 +272,11 @@ export default new Router({
       path: '/pilates-cliente',
       name: 'pilates-cliente',
       component: PilatesCliente
+    },
+    {
+      path: '/bienestar-cliente',
+      name: 'bienestar-cliente',
+      component: BienestarCliente
     },
     {
       path: '/membresias-empleado',

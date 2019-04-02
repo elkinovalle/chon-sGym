@@ -29,8 +29,8 @@
         <p></p><br>
         <h2 class="text-xs black--text headline justify"><strong>¿Cómo podrás controlar todo tu plan de entrenamiento físico?</strong></h2>
         <p></p><br>
-         <span class="text-xs black--text title justify">Una de las principales razones para asistir a nuestros gimnasios en Bogotá es: la motivación. Realizando ejercicio en tu casa tienes mayor tendencia a abandonar tu meta de este nuevo año. Sin embargo, con la compañía de nuestros entrenadores, profesionales y demás personas que conocerás en Hard Body contarás con la motivación diaria que necesitas.</span><br>
-        <span class="text-xs black--text title justify">Además de la motivación que necesitarás diariamente para cumplir con tener un estilo de vida más saludable, otros de los beneficios de ser parte de la familia Hard Body es contar con una rutina de ejercicios totalmente personalizada según tu estado de salud actual. De esta manera podrás ser una persona mucho más saludable.</span>
+         <span class="text-xs black--text title justify">Una de las principales razones para asistir a nuestros gimnasios en San Gil es: la motivación. Realizando ejercicio en tu casa tienes mayor tendencia a abandonar tu meta de este nuevo año. Sin embargo, con la compañía de nuestros entrenadores, profesionales y demás personas que conocerás en Hard Body contarás con la motivación diaria que necesitas.</span><br>
+        <span class="text-xs black--text title justify">Además de la motivación que necesitarás diariamente para cumplir con tener un estilo de vida más saludable, otros de los beneficios de ser parte de la familia Chon's Gym es contar con una rutina de ejercicios totalmente personalizada según tu estado de salud actual. De esta manera podrás ser una persona mucho más saludable.</span>
         <p></p><br>
         <h2 class="text-xs black--text headline justify"><strong>La dieta si es un esfuerzo necesario que deberás cumplir</strong></h2>
         <p></p><br>

@@ -17,7 +17,7 @@
         <h1 class="text-xs black--text title font-italic"><strong>PUNTOS CLAVES PARA MOTIVARTE A ENTRENAR</strong></h1><br>
         <span class="text-xs black--text subheading">Comenzar a ir al gimnasio y dejar a un lado esos meses de sedentarismo es duro al principio, pero con motivación y con ganas se creara un hábito de ir. Muchas personas lo logran y después no ir un día al gimnasio es sentirse incompleto. La música es un gran motivador a entrenar y tener una rutina de ejercicios. Conoce algunas canciones y tendencias en música para motivarte en la siguiente nota.</span><br>
         <p></p>
-<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/clave-cliente" >Ver más</v-btn>
+<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/motivarte-cliente" >Ver más</v-btn>
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 >
@@ -50,7 +50,7 @@
         <h1 class="text-xs black--text title font-italic"><strong>ALCANZA UNA VIDA SALUDABLE CON LA AYUDA DE UN ENTRENADOR PERSONAL</strong></h1><br>
         <span class="text-xs black--text subheading">El entrenamiento personalizado es un servicio que la mayoría de gimnasios ofrecen, el acompañamiento que te ofrece un experto en entrenamiento físico, rutinas y alimentación serán pieza clave para que alcances tus objetivos y tengas una vida saludable. Conoce el paso a paso para tener una vida más saludable con esta ayuda extra en la siguiente nota.</span><br>
         <p></p>
-<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/perder-grasa-cliente" >Ver nota</v-btn>
+<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/vida-saludable-cliente" >Ver nota</v-btn>
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 class="cajon7">
@@ -58,7 +58,7 @@
         <h1 class="text-xs black--text headline font-italic"><strong>CLASES DE PILATES EN CHON'S GYM</strong></h1><br>
         <span class="text-xs black--text subheading">Desde principios del siglo XX, la rutina o mteodo Pilates han sido el sistema de entrenamiento personalizado para mente y cuerpo de mayor popularidad entre mujeres y hombres. Con este método se busca la mejora de la flexibilidad y la fuerza de todos los músculos, sin incrementar drásticamente su volumen, como si ocurre en el alzamiento de pesas.</span><br>
         <p></p>
-<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/miss-universo-cliente" >Ver nota</v-btn>
+<v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/pilates-cliente" >Ver nota</v-btn>
           </v-card>
         </v-flex>
     <v-flex xs12 sm6 md2>
