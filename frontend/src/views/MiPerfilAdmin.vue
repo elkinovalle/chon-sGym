@@ -153,7 +153,6 @@
     </v-expansion-panel>
   </v-layout>
 </div>
-
 </template>
 <script>
 export default {

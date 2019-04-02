@@ -38,7 +38,7 @@
         <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
         <span class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</span><br>
         <p></p><br>
- <v-btn color="white" class="right font-weight-black blue--text title" to="/planes-cliente" >Ver más</v-btn>
+ <v-btn color="white" class="right font-weight-black blue--text title" to="/mente-equilibrio-cliente">Ver más</v-btn>
           </v-card>
         </v-flex>
     <v-flex xs12 sm6 md1>

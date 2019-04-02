@@ -14,7 +14,7 @@
                <v-layout>
           <v-flex d-flex xs12 sm6 md12>
           <v-card color="white" dark flat>
-        <span class="text-xs black--text title justify">Tonificar el abdomen es algo muy difícil, ya que primero se debe eliminar la grasa extra, Hard Body te contará como reducir la grasa abdominal y tener el cuerpo que deseas.</span>
+        <span class="text-xs black--text title justify">Tonificar el abdomen es algo muy difícil, ya que primero se debe eliminar la grasa extra, Chon's Gym te contará como reducir la grasa abdominal y tener el cuerpo que deseas.</span>
         <p></p><br>
           </v-card>
         </v-flex>
