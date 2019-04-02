@@ -45,15 +45,13 @@ import VidaSaludableCliente from '@/views/VidaSaludableCliente.vue'
 import PilatesCliente from '@/views/PilatesCliente.vue'
 import MotivarteCliente from '@/views/MotivarteCliente.vue'
 import BienestarCliente from '@/views/BienestarCliente.vue'
+import CorrerCliente from '@/views/CorrerCliente.vue'
+import FisicoCliente from '@/views/FisicoCliente.vue'
+import NutricionistaCliente from '@/views/NutricionistaCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
-<<<<<<< HEAD
-=======
-import Iniciar from '@/views/Iniciar.vue'
-import ReciboMembresia from '@/views/ReciboMembresia.vue'
->>>>>>> e8386dbe856db0531fb2a9ddad7fb796c9ffa8d9
 
 Vue.use(Router)
 
@@ -282,6 +280,21 @@ export default new Router({
       component: BienestarCliente
     },
     {
+      path: '/correr-cliente',
+      name: 'correr-cliente',
+      component: CorrerCliente
+    },
+    {
+      path: '/fisico-cliente',
+      name: 'fisico-cliente',
+      component: FisicoCliente
+    },
+    {
+      path: '/nutricionista-cliente',
+      name: 'nutricionista-cliente',
+      component: NutricionistaCliente
+    },
+    {
       path: '/membresias-empleado',
       name: 'membresias-empleado',
       component: MembresiasEmpleado
@@ -300,19 +313,6 @@ export default new Router({
       path: '/valoracion-empleado',
       name: 'valoracion-empleado',
       component: ValoracionEmpleado
-<<<<<<< HEAD
-=======
-    },
-    {
-      path: '/Iniciar',
-      name: 'Iniciar',
-      component: Iniciar
-    },
-    {
-      path: '/recibo-membresia',
-      name: 'recibo-membresia',
-      component: ReciboMembresia
->>>>>>> e8386dbe856db0531fb2a9ddad7fb796c9ffa8d9
     }
   ]
 })

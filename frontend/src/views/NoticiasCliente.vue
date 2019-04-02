@@ -55,7 +55,7 @@
         <h1 class="text-xs black--text display-1 font-italic">BIENESTAR Y <br><strong>SALUD</strong></h1><br>
         <span class="text-xs black--text title">Para estar saludable debes estar al tanto de todo lo que pasa a tu alrededor, enterate de los diferentes métodos alimenticios y rutinas de ejercicio físico.</span><br>
         <p></p>
-<v-btn color="black" class="right font-weight-black white--text title" to="/planes-cliente" >Ver más</v-btn>
+<v-btn color="black" class="right font-weight-black white--text title" to="/bienestar-cliente" >Ver más</v-btn>
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md6 >
