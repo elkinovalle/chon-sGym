@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>instalaciones</h1>
+        <v-subheader class="subheader black--text display-1 font-weight-bold" >Instalaciones</v-subheader>
     </div>
 </template>
 <script>

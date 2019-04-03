@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-subheader class="subheader black--text display-1 font-weight-bold">Gestión de Clases</v-subheader>
     <v-flex>
       <v-sheet height="500">
         <v-calendar

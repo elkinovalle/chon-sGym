@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-subheader class="subheader black--text" >Inventario</v-subheader>
+      <v-subheader class="subheader black--text display-1 font-weight-bold" >Inventario</v-subheader>
     <v-form>
       <v-container>
         <v-layout row wrap>
@@ -145,7 +145,7 @@ export default {
 <style lang="stylus" >
   .subheader{
     text-align center !important
-    display 1
+    display 4
   }
   .v-text-field.v-text-field--enclosed {
     --v-primary-base white !important
