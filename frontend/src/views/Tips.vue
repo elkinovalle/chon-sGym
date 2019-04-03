@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-subheader class="subheader black--text display-1 font-weight-bold" >Tips</v-subheader>
     <v-layout row wrap>
       <v-flex xs12 sm6>
         <v-text-field

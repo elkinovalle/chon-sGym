@@ -1,6 +1,6 @@
 <template>
   <div>
-   <v-subheader class="subheader black--text  " >Registro Compras</v-subheader>
+   <v-subheader class="subheader black--text display-1 font-weight-bold " >Registro Compras</v-subheader>
     <v-form>
       <v-container>
         <v-layout row wrap>
