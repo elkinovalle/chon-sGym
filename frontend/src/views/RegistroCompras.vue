@@ -180,7 +180,7 @@ export default {
       descripcion: 0,
       cantidad: 0,
       valor_unitario: 0,
-      valor_total:0
+      valor_total: 0
     },
     defaultItem: {
       name: '',
@@ -208,12 +208,12 @@ export default {
       this.desserts = [
         {
           name: 52,
-          producto:"proteina",
+          producto: 'proteina',
           marca: 0,
           descripcion: 0,
           cantidad: 0,
           valor_unitario: 0,
-          valor_total:0
+          valor_total: 0
         },
         {
           name: 52,

@@ -52,7 +52,6 @@
                </v-layout>
     </v-container>
 
-
            <v-container>
              <v-flex d-flex xs12 sm6 md3>
                </v-flex>
