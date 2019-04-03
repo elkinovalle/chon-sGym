@@ -77,7 +77,7 @@
         <p></p><br>
         <span class="text-xs black--text headline">Conoce los beneficios que traen las rutinas de ejercicios para recuperar no solo la figura, sino la salud de tu cuerpo. </span><br>
         <p></p><br>
-<v-btn color="black" class="right font-weight-black white--text title" to="/planes-cliente" >Ver más</v-btn>
+<v-btn color="black" class="right font-weight-black white--text title" to="/nuevas-rutinas-cliente" >Ver más</v-btn>
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 >

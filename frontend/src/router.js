@@ -48,6 +48,10 @@ import BienestarCliente from '@/views/BienestarCliente.vue'
 import CorrerCliente from '@/views/CorrerCliente.vue'
 import FisicoCliente from '@/views/FisicoCliente.vue'
 import NutricionistaCliente from '@/views/NutricionistaCliente.vue'
+import ActividadFisicaCliente from '@/views/ActividadFisicaCliente.vue'
+import MasaMuscularCliente from '@/views/MasaMuscularCliente.vue'
+import HiitCliente from '@/views/HiitCliente.vue'
+import NuevasRutinasCliente from '@/views/NuevasRutinasCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -293,6 +297,26 @@ export default new Router({
       path: '/nutricionista-cliente',
       name: 'nutricionista-cliente',
       component: NutricionistaCliente
+    },
+    {
+      path: '/nuevas-rutinas-cliente',
+      name: 'nuevas-rutinas-cliente',
+      component: NuevasRutinasCliente
+    },
+    {
+      path: '/actividad-fisica-cliente',
+      name: 'actividad-fisica-cliente',
+      component: ActividadFisicaCliente
+    },
+    {
+      path: '/masa-muscular-cliente',
+      name: 'masa-muscular-cliente',
+      component: MasaMuscularCliente
+    },
+    {
+      path: '/hiit-cliente',
+      name: 'hiit-cliente',
+      component: HiitCliente
     },
     {
       path: '/membresias-empleado',
