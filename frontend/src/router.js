@@ -52,6 +52,7 @@ import ActividadFisicaCliente from '@/views/ActividadFisicaCliente.vue'
 import MasaMuscularCliente from '@/views/MasaMuscularCliente.vue'
 import HiitCliente from '@/views/HiitCliente.vue'
 import NuevasRutinasCliente from '@/views/NuevasRutinasCliente.vue'
+import TipsCliente from '@/views/TipsCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -319,6 +320,11 @@ export default new Router({
       path: '/hiit-cliente',
       name: 'hiit-cliente',
       component: HiitCliente
+    },
+    {
+      path: '/tips-cliente',
+      name: 'tips-cliente',
+      component: TipsCliente
     },
     {
       path: '/membresias-empleado',

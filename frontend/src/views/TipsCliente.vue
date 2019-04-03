@@ -1,5 +1,5 @@
 <template>
-<div class="fondo">
+<div class="noticia">
     <p></p><br>
 <v-container fluid>
       <v-layout row wrap>
@@ -12,71 +12,66 @@
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
         <p></p>
-        <h1 class="text-xs white--text display-2 font-weight-black">CLASES</h1><br>
-        <h1 class="text-xs white--text display-4 font-weight-black">GRUPALES</h1>
+        <h1 class="text-xs white--text display-2 font-weight-black">CONSEJOS</h1><br>
+        <h1 class="text-xs white--text display-4 font-weight-black">SALUDABLES</h1>
     </v-flex>
   </v-layout>
           </v-card>
         </v-flex>
-                <v-flex d-flex xs12 sm3 md1 offset-xs1>
+                <v-flex d-flex xs12 sm3 md3 offset-xs1>
               <v-card color="transparent" dark flat>
-                  <img class="imagen_icon" src="../assets/transport.png" alt=""><br>
-                  <p></p>
-                  <img class="imagen_icon" src="../assets/sports (2).png" alt=""><br>
-                  <p></p>
-                  <img class="imagen_icon" src="../assets/sports (3).png" alt="">
-          </v-card>
-        </v-flex>
-         <v-flex d-flex xs12 sm3 md1>
-              <v-card color="transparent" dark flat>
-                  <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Spinning</v-btn><br>
-                  <p></p><br>
-                  <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Jaula</v-btn><br>
-                  <p></p><br>
-                  <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Aérobicos</v-btn>
+        <h2 class="text-xs white--text display-1 justify"><strong>En Chon's Gym te damos opciones para motivarte</strong></h2>
+        <p></p>
+        <span class="text-xs white--text title justify">Es recurrente y una de las mejores opciones que puedes tomar para iniciar el compromiso y la disciplina de asistir al gimnasio; nosotros contamos con planes mensuales para que puedas hacer un pago adelantado del disfrute de nuestras instalaciones, clases grupales, zonas húmedas y máquinas de entrenamiento.</span>
+        <p></p>
           </v-card>
         </v-flex>
       </v-layout>
     </v-container>
-       <p></p>
-        <h1 class="text-xs-center white--text display-2">DESCUBRE NUESTRAS <strong>CLASES GRUPALES</strong></h1><br>
+
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">
         <v-img  :src="spinning" class="spinning" @click="clickSpinning">
-        <h1 class="escrito" >SPINNING</h1>
         </v-img>
           <v-img :src="aerobicos" class="spinning" @click="clickAerobicos">
-        <h1 class="escrito" >AEROBICOS</h1>
         </v-img>
        <v-img :src="crossfit" class="spinning" @click="clickCrossfit">
-        <h1 class="escrito" >CROSSFIT</h1>
         </v-img>
     </v-flex>
    </v-layout>
       <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
         <v-img :src="cardio" class="spinning" @click="clickCardio">
-        <h1 class="escrito" >CARDIO BOX</h1>
         </v-img>
           <v-img :src="hard" class="spinning" @click="clickHard">
-        <h1 class="escrito" >HARD CYCLING</h1>
         </v-img>
        <v-img :src="rumba" class="spinning" @click="clickRumba">
-        <h1 class="escrito" >RUMBA</h1>
         </v-img>
     </v-flex>
-   </v-layout>
+       </v-layout>
+       <v-layout>
+           <v-flex xs12 sm6 md1>
+    </v-flex>
+    <v-flex xs12 sm6 md3>
+      <h1 class="text-xs-center white--text subheading justify font-weight-thin">CONSUME CARBOHIDRATOS</h1>
+    </v-flex>
+         <v-flex xs12 sm6 md4>
+       <h1 class="text-xs-center white--text subheading justify">CONSUME CARBOHIDRATOS</h1>
+       </v-flex>
+          <v-flex xs12 sm6 md3>
+       <h1 class="text-xs-center white--text subheading justify">CONSUME CARBOHIDRATOS</h1>
+    </v-flex>
+            <v-flex xs12 sm6 md1>
+    </v-flex>
+       </v-layout>
      <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
         <v-img :src="multiterreno" class="spinning" @click="clickMulti">
-        <h1 class="escrito" >MULTITERRENO</h1>
         </v-img>
           <v-img :src="entrenamiento" class="spinning" @click="clickEntrenamiento">
-        <h1 class="escrito" >CIRCUITOS DE ENTRENAMIENTO</h1>
         </v-img>
        <v-img :src="shiatsu" class="spinning" @click="clickShiatsu">
-        <h1 class="escrito" >SHIATSU</h1>
         </v-img>
     </v-flex>
    </v-layout>
@@ -165,10 +160,18 @@ export default {
     text-align center
     font-size 30px
     color white
-    margin -150px 0px 0px 0px!important
+    margin -200px 0px 0px 0px
     padding 10px
     font-family sans-serif
   }
+  h1.centro{
+    text-align center
+    font-size 15px
+    color white
+    font-family sans-serif
+    margin-top -20px
+  }
+
   li{
     margin 0px 0px 0px 60px
   }
@@ -193,3 +196,10 @@ export default {
     text-align center
   }
 </style>
+
+// <Grid rows="*.auto"
+            <Div row=0>
+
+            </Div>
+
+        </Grid>>
