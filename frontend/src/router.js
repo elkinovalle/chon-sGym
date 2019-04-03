@@ -56,6 +56,8 @@ import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
+import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
+import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
 
 Vue.use(Router)
 
@@ -337,6 +339,16 @@ export default new Router({
       path: '/valoracion-empleado',
       name: 'valoracion-empleado',
       component: ValoracionEmpleado
+    },
+    {
+      path: '/Editar-Perfil-Cliente',
+      name: 'Editar-Perfil-Cliente',
+      component: EditarPerfilCliente
+    },
+    {
+      path: '/mi-perfil-empleado',
+      name: 'mi-perfil-empleado',
+      component: MiPerfilEmpleado
     }
   ]
 })
