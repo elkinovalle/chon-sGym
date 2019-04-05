@@ -32,11 +32,11 @@
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img  :src="ejercicio" class="spinning" @click="clickSpinning">
+        <v-img  :src="ejercicio" class="spinning" @click="clickEjercicio">
         </v-img>
-          <v-img :src="hidratacion" class="spinning" @click="clickAerobicos">
+          <v-img :src="hidratacion" class="spinning" @click="clickHidratacion">
         </v-img>
-       <v-img :src="minutos" class="spinning" @click="clickCrossfit">
+       <v-img :src="minutos" class="spinning" @click="clickMinutos">
         </v-img>
     </v-flex>
    </v-layout>
@@ -57,11 +57,11 @@
        </v-layout>
       <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img :src="consume" class="spinning" @click="clickCardio">
+        <v-img :src="consume" class="spinning" @click="clickConsume">
         </v-img>
-          <v-img :src="duerme" class="spinning" @click="clickHard">
+          <v-img :src="duerme" class="spinning" @click="clickDuerme">
         </v-img>
-       <v-img :src="calentamiento" class="spinning" @click="clickRumba">
+       <v-img :src="calentamiento" class="spinning" @click="clickCalentamiento">
         </v-img>
     </v-flex>
        </v-layout>
@@ -82,11 +82,11 @@
        </v-layout>
      <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img :src="estiramiento" class="spinning" @click="clickMulti">
+        <v-img :src="estiramiento" class="spinning" @click="clickEstiramiento">
         </v-img>
-          <v-img :src="practicar" class="spinning" @click="clickEntrenamiento">
+          <v-img :src="practicar" class="spinning" @click="clickPracticar">
         </v-img>
-       <v-img :src="consejos" class="spinning" @click="clickShiatsu">
+       <v-img :src="consejos" class="spinning" @click="clickConsejos">
         </v-img>
     </v-flex>
    </v-layout>
@@ -123,32 +123,32 @@ export default {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
   methods: {
-    clickSpinning (value) {
-      this.$router.push('/spinning-cliente')
+    clickEjercicio (value) {
+      this.$router.push('/ejercicio-fisico-cliente')
     },
-    clickAerobicos (value) {
-      this.$router.push('/aerobicos-cliente')
+    clickHidratacion (value) {
+      this.$router.push('/hidratacion-cliente')
     },
-    clickCrossfit (value) {
-      this.$router.push('/crossfit-cliente')
+    clickMinutos (value) {
+      this.$router.push('/minutos-cliente')
     },
-    clickCardio (value) {
-      this.$router.push('/cardio-cliente')
+    clickConsume (value) {
+      this.$router.push('/carbohidratos-cliente')
     },
-    clickHard (value) {
-      this.$router.push('/hard-cliente')
+    clickDuerme (value) {
+      this.$router.push('/duerme-bien-cliente')
     },
-    clickRumba (value) {
-      this.$router.push('/rumba-cliente')
+    clickCalentamiento (value) {
+      this.$router.push('/calentamiento-cliente')
     },
-    clickMulti (value) {
-      this.$router.push('/multiterreno-cliente')
+    clickEstiramiento (value) {
+      this.$router.push('/estiramiento-cliente')
     },
-    clickEntrenamiento (value) {
-      this.$router.push('/entrenamiento-cliente')
+    clickPracticar (value) {
+      this.$router.push('/practicar-cliente')
     },
-    clickShiatsu (value) {
-      this.$router.push('/shiatsu-cliente')
+    clickConsejos (value) {
+      this.$router.push('/consejos-cliente')
     }
   },
   data () {

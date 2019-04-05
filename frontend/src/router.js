@@ -53,6 +53,15 @@ import MasaMuscularCliente from '@/views/MasaMuscularCliente.vue'
 import HiitCliente from '@/views/HiitCliente.vue'
 import NuevasRutinasCliente from '@/views/NuevasRutinasCliente.vue'
 import TipsCliente from '@/views/TipsCliente.vue'
+import EjercicioFisicoCliente from '@/views/EjercicioFisicoCliente.vue'
+import HidratacionCliente from '@/views/HidratacionCliente.vue'
+import CarbohidratosCliente from '@/views/CarbohidratosCliente.vue'
+import MinutosCliente from '@/views/MinutosCliente.vue'
+import DuermeBienCliente from '@/views/DuermeBienCliente.vue'
+import CalentamientoCliente from '@/views/CalentamientoCliente.vue'
+import EstiramientoCliente from '@/views/EstiramientoCliente.vue'
+import PracticarCliente from '@/views/PracticarCliente.vue'
+import ConsejosCliente from '@/views/ConsejosCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -325,6 +334,51 @@ export default new Router({
       path: '/tips-cliente',
       name: 'tips-cliente',
       component: TipsCliente
+    },
+    {
+      path: '/ejercicio-fisico-cliente',
+      name: 'ejercicio-fisico-cliente',
+      component: EjercicioFisicoCliente
+    },
+    {
+      path: '/hidratacion-cliente',
+      name: 'hidratacion-cliente',
+      component: HidratacionCliente
+    },
+    {
+      path: '/minutos-cliente',
+      name: 'minutos-cliente',
+      component: MinutosCliente
+    },
+    {
+      path: '/carbohidratos-cliente',
+      name: 'carbohidratos-cliente',
+      component: CarbohidratosCliente
+    },
+    {
+      path: '/duerme-bien-cliente',
+      name: 'duerme-bien-cliente',
+      component: DuermeBienCliente
+    },
+    {
+      path: '/calentamiento-cliente',
+      name: 'calentamiento-cliente',
+      component: CalentamientoCliente
+    },
+    {
+      path: '/estiramiento-cliente',
+      name: 'estiramiento-cliente',
+      component: EstiramientoCliente
+    },
+    {
+      path: '/practicar-cliente',
+      name: 'practicar-cliente',
+      component: PracticarCliente
+    },
+    {
+      path: '/consejos-cliente',
+      name: 'consejos-cliente',
+      component: ConsejosCliente
     },
     {
       path: '/membresias-empleado',
