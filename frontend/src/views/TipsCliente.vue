@@ -28,7 +28,6 @@
         </v-flex>
       </v-layout>
     </v-container>
-
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">

@@ -204,10 +204,6 @@ export default {
     }
   },
 
-  created () {
-    this.$store.commit('SET_LAYOUT', 'admin-layout')
-  },
-
   methods: {
     initialize () {
       this.desserts = [
@@ -326,5 +322,5 @@ export default {
 
 }
 </script>
-<style lang="stylus">
+<style lang="style">
  </style>
