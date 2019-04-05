@@ -62,6 +62,7 @@ import CalentamientoCliente from '@/views/CalentamientoCliente.vue'
 import EstiramientoCliente from '@/views/EstiramientoCliente.vue'
 import PracticarCliente from '@/views/PracticarCliente.vue'
 import ConsejosCliente from '@/views/ConsejosCliente.vue'
+import MiPerfilCliente from '@/views/MiPerfilCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -379,6 +380,11 @@ export default new Router({
       path: '/consejos-cliente',
       name: 'consejos-cliente',
       component: ConsejosCliente
+    },
+    {
+      path: '/mi-perfil-cliente',
+      name: 'mi-perfil-cliente',
+      component: MiPerfilCliente
     },
     {
       path: '/membresias-empleado',

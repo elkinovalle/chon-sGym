@@ -11,7 +11,7 @@
       <v-btn flat class="white--text" to="/noticias-cliente">Noticias</v-btn>
       <v-btn flat class="white--text" to="/tips-cliente">Tips</v-btn>
       <v-btn flat class="white--text">Contacto</v-btn>
-      <v-btn flat class="white--text">Mi perfil</v-btn>
+      <v-btn flat class="white--text" to="/mi-perfil-cliente">Mi perfil</v-btn>
     </v-toolbar-items>
   </v-toolbar>
   <v-content>
