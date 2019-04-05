@@ -70,7 +70,7 @@
       </v-flex>
       <div class="chon">
       <img sm11 class="edit" src="../assets/perfilGym.jpg" alt="">
-      <h1>
+      <h1 class="centro">
       <v-flex sm6 class="py-2">
             <v-btn-toggle v-model="text">
               <v-btn flat value="left" color="white" class="blue darken-4">
@@ -174,7 +174,7 @@ img.edit{
     height 250px
     width 500px !important
   }
-  h1{
+  h1.centro{
     margin 50px 140px
   }
 
