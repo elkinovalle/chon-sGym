@@ -69,6 +69,7 @@ import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
 import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
 import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
+import ReciboMembresia from '@/views/ReciboMembresia.vue'
 
 Vue.use(Router)
 
@@ -415,6 +416,11 @@ export default new Router({
       path: '/mi-perfil-empleado',
       name: 'mi-perfil-empleado',
       component: MiPerfilEmpleado
+    },
+    {
+      path: '/recibo-membresia',
+      name: 'recibo-membresia',
+      component: ReciboMembresia
     }
   ]
 })

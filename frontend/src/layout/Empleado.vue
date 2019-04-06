@@ -67,7 +67,7 @@ export default {
     drawer: null,
 
     items: [
-      { icon: 'person', text: 'Mi Perfil', link: '' },
+      { icon: 'person', text: 'Mi Perfil', link: 'mi-perfil-empleado' },
       { icon: 'shopping_cart', text: 'Membresia', link: 'membresias-empleado' },
       { icon: 'history', text: 'Rutina', link: 'rutina-empleado' },
       { icon: 'poll', text: 'Valoracion', link: 'valoracion-empleado' },
