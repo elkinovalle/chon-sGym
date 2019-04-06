@@ -43,7 +43,7 @@
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img  :src="spinning" class="spinning" @click="clickSpinning">
+        <v-img  :src="spinning" class="spinning" @click="clickPush('/spinning-cliente')">
         <h1 class="escrito" >SPINNING</h1>
         </v-img>
           <v-img :src="aerobicos" class="spinning" @click="clickAerobicos">
@@ -98,8 +98,8 @@ export default {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
   methods: {
-    clickSpinning (value) {
-      this.$router.push('/spinning-cliente')
+    clickPush (value) {
+      this.$router.push(value)
     },
     clickAerobicos (value) {
       this.$router.push('/aerobicos-cliente')

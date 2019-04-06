@@ -30,7 +30,8 @@ un mayor avance hacia tus objetivos.
         <v-toolbar-title class="text display-1">UN MES</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-        <img class="imagen_plan" src="../assets/un_mes.jpg">
+         <v-img src="./../assets/dos_meses.jpg">
+        </v-img>
       <v-toolbar color="black" class="text-xs-center" dark dense>
         <v-toolbar-title class="text display-1">$40.000</v-toolbar-title>
         <v-spacer></v-spacer>

@@ -30,30 +30,24 @@
     </v-container>
 <v-container fluid >
    <v-layout row wrap>
-    <v-flex xs12 sm6 md12 class="contenedor">
+    <v-flex xs12 sm6 md4 class="contenedor">
         <v-img  :src="ejercicio" class="spinning" @click="clickEjercicio">
         </v-img>
-          <v-img :src="hidratacion" class="spinning" @click="clickHidratacion">
+        <h1 class="text-xs-center white--text subheading justify font-weight-black">EJERCICIO FÍSICO</h1>
+    </v-flex>
+
+<v-flex xs12 sm4 md4 class="contenedor">
+        <v-img  :src="hidratacion" class="spinning" @click="clickHidratacion">
         </v-img>
+        <h1 class="text-xs-center white--text subheading justify font-weight-black">HIDRATACIÓN</h1>
+    </v-flex>
+
+    <v-flex xs12 sm4 md4 class="contenedor">
        <v-img :src="minutos" class="spinning" @click="clickMinutos">
         </v-img>
+        <h1 class="text-xs-center white--text subheading justify font-weight-black">20 MINUTOS DE CARDIO</h1>
     </v-flex>
    </v-layout>
-   <v-layout>
-           <v-flex xs12 sm6 md1>
-    </v-flex>
-    <v-flex xs12 sm6 md3>
-      <h1 class="text-xs-center white--text subheading justify font-weight-black">EJERCICIO FÍSICO</h1>
-    </v-flex>
-         <v-flex xs12 sm6 md4>
-       <h1 class="text-xs-center white--text subheading justify font-weight-black">HIDRATACIÓN</h1>
-       </v-flex>
-          <v-flex xs12 sm6 md3>
-       <h1 class="text-xs-center white--text subheading justify font-weight-black">20 MINUTOS DE CARDIO</h1>
-    </v-flex>
-            <v-flex xs12 sm6 md1>
-    </v-flex>
-       </v-layout>
       <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
         <v-img :src="consume" class="spinning" @click="clickConsume">
