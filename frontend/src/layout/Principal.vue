@@ -146,10 +146,10 @@ export default {
     ],
     items: [
       { title: 'Editar Perfil', icon: 'edit', link: '/Editar-Perfil-Cliente' },
-      { title: 'Mi Rutina', icon: 'close', link: '' },
-      { title: 'Progreso', icon: 'sort', link: '' },
-      { title: 'Entrenador', icon: 'person', link: '' },
-      { title: 'Horarios', icon: 'history', link: '' },
+      { title: 'Mi Rutina', icon: 'close', link: '/mi-rutina-cliente' },
+      { title: 'Progreso', icon: 'sort', link: '/mi-progreso-cliente' },
+      { title: 'Entrenador', icon: 'person', link: '/entrenadores-cliente' },
+      { title: 'Horarios', icon: 'history', link: '/mi-horario-cliente' },
       { title: 'Cerrar Sesión', icon: 'close', link: '' }
     ]
   })
