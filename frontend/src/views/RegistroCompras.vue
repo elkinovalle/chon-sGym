@@ -70,7 +70,7 @@
            </v-layout>
             </v-container>
     </v-form>
-    <v-toolbar flat color="red">
+    <v-toolbar flat color="red darken-4">
       <v-toolbar-title>Registro Compras</v-toolbar-title>
       <v-divider
         class="mx-2"
