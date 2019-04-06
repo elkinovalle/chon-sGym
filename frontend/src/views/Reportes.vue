@@ -1,6 +1,7 @@
 <template>
     <div>
-      <h1>reportes</h1>
+      <v-subheader class="subheader black--text display-1 font-weight-bold" >Reportes</v-subheader>
+      <v-row></v-row>
     </div>
 </template>
 <script>

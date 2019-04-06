@@ -2,6 +2,7 @@
 <div class="found">
     <v-content>
       <v-container>
+        <h1 class="font-weight-bold white--text display-3">Inicio de sesión</h1>
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md5>
               <v-card class="elevation-12">
@@ -53,8 +54,11 @@ img.symbol {
 }
 div.found{
       background-image: url('../assets/gym.jpg');
-      margin-top: 1px
       margin-bottom: 1px
+      margin-top: 1px
+      margin-left: -250px
 }
-
+h1 {
+  margin-left: -10px
+}
 </style>

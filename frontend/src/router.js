@@ -48,10 +48,27 @@ import BienestarCliente from '@/views/BienestarCliente.vue'
 import CorrerCliente from '@/views/CorrerCliente.vue'
 import FisicoCliente from '@/views/FisicoCliente.vue'
 import NutricionistaCliente from '@/views/NutricionistaCliente.vue'
+import ActividadFisicaCliente from '@/views/ActividadFisicaCliente.vue'
+import MasaMuscularCliente from '@/views/MasaMuscularCliente.vue'
+import HiitCliente from '@/views/HiitCliente.vue'
+import NuevasRutinasCliente from '@/views/NuevasRutinasCliente.vue'
+import TipsCliente from '@/views/TipsCliente.vue'
+import EjercicioFisicoCliente from '@/views/EjercicioFisicoCliente.vue'
+import HidratacionCliente from '@/views/HidratacionCliente.vue'
+import CarbohidratosCliente from '@/views/CarbohidratosCliente.vue'
+import MinutosCliente from '@/views/MinutosCliente.vue'
+import DuermeBienCliente from '@/views/DuermeBienCliente.vue'
+import CalentamientoCliente from '@/views/CalentamientoCliente.vue'
+import EstiramientoCliente from '@/views/EstiramientoCliente.vue'
+import PracticarCliente from '@/views/PracticarCliente.vue'
+import ConsejosCliente from '@/views/ConsejosCliente.vue'
+import MiPerfilCliente from '@/views/MiPerfilCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
+import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
+import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
 
 Vue.use(Router)
 
@@ -295,6 +312,81 @@ export default new Router({
       component: NutricionistaCliente
     },
     {
+      path: '/nuevas-rutinas-cliente',
+      name: 'nuevas-rutinas-cliente',
+      component: NuevasRutinasCliente
+    },
+    {
+      path: '/actividad-fisica-cliente',
+      name: 'actividad-fisica-cliente',
+      component: ActividadFisicaCliente
+    },
+    {
+      path: '/masa-muscular-cliente',
+      name: 'masa-muscular-cliente',
+      component: MasaMuscularCliente
+    },
+    {
+      path: '/hiit-cliente',
+      name: 'hiit-cliente',
+      component: HiitCliente
+    },
+    {
+      path: '/tips-cliente',
+      name: 'tips-cliente',
+      component: TipsCliente
+    },
+    {
+      path: '/ejercicio-fisico-cliente',
+      name: 'ejercicio-fisico-cliente',
+      component: EjercicioFisicoCliente
+    },
+    {
+      path: '/hidratacion-cliente',
+      name: 'hidratacion-cliente',
+      component: HidratacionCliente
+    },
+    {
+      path: '/minutos-cliente',
+      name: 'minutos-cliente',
+      component: MinutosCliente
+    },
+    {
+      path: '/carbohidratos-cliente',
+      name: 'carbohidratos-cliente',
+      component: CarbohidratosCliente
+    },
+    {
+      path: '/duerme-bien-cliente',
+      name: 'duerme-bien-cliente',
+      component: DuermeBienCliente
+    },
+    {
+      path: '/calentamiento-cliente',
+      name: 'calentamiento-cliente',
+      component: CalentamientoCliente
+    },
+    {
+      path: '/estiramiento-cliente',
+      name: 'estiramiento-cliente',
+      component: EstiramientoCliente
+    },
+    {
+      path: '/practicar-cliente',
+      name: 'practicar-cliente',
+      component: PracticarCliente
+    },
+    {
+      path: '/consejos-cliente',
+      name: 'consejos-cliente',
+      component: ConsejosCliente
+    },
+    {
+      path: '/mi-perfil-cliente',
+      name: 'mi-perfil-cliente',
+      component: MiPerfilCliente
+    },
+    {
       path: '/membresias-empleado',
       name: 'membresias-empleado',
       component: MembresiasEmpleado
@@ -313,6 +405,16 @@ export default new Router({
       path: '/valoracion-empleado',
       name: 'valoracion-empleado',
       component: ValoracionEmpleado
+    },
+    {
+      path: '/Editar-Perfil-Cliente',
+      name: 'Editar-Perfil-Cliente',
+      component: EditarPerfilCliente
+    },
+    {
+      path: '/mi-perfil-empleado',
+      name: 'mi-perfil-empleado',
+      component: MiPerfilEmpleado
     }
   ]
 })

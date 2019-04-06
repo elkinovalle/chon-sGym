@@ -1,6 +1,6 @@
 <template>
     <div>
-         <v-subheader class="subheader black--text  " >Registro Ventas</v-subheader>
+         <v-subheader class="subheader black--text display-1 font-weight-bold " >Registro Ventas</v-subheader>
     <v-form>
       <v-container>
         <v-layout row wrap>
@@ -181,7 +181,7 @@ export default {
       descripcion: 0,
       cantidad: 0,
       valor_unitario: 0,
-      valor_total:0
+      valor_total: 0
     },
     defaultItem: {
       name: '',
@@ -204,21 +204,17 @@ export default {
     }
   },
 
-  created () {
-    this.$store.commit('SET_LAYOUT', 'admin-layout')
-  },
-
   methods: {
     initialize () {
       this.desserts = [
         {
           name: 52,
-          producto:"proteina",
+          producto: 'proteina',
           marca: 0,
           descripcion: 0,
           cantidad: 0,
           valor_unitario: 0,
-          valor_total:0
+          valor_total: 0
         },
         {
           name: 52,
@@ -326,5 +322,5 @@ export default {
 
 }
 </script>
-<style lang="stylus">
+<style lang="style">
  </style>

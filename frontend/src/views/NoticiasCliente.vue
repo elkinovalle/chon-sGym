@@ -8,10 +8,10 @@
              </v-flex>
            <v-flex d-flex xs12 sm6 md1 >
         </v-flex>
-          <v-flex d-flex xs12 sm6 md6>
+          <v-flex d-flex xs12 sm6 md5>
              <img class="belleza" src="../assets/categoria-belleza.jpg" alt="">
         </v-flex>
-         <v-flex d-flex xs12 sm6 md4 class="letrero">
+         <v-flex d-flex xs12 sm6 md3 class="letrero">
                      <v-card class="caja" dark flat>
                       <p></p>
         <h1 class="text-xs white--text display-1 font-italic">NOTICIAS DE <br><strong>BELLEZA</strong></h1><br>
@@ -20,19 +20,19 @@
  <v-btn color="white" class="right font-weight-black black--text title" to="/noticias-belleza-cliente">Ver más</v-btn>
           </v-card>
         </v-flex>
-    <v-flex xs12 sm6 md1>
+    <v-flex xs12 sm6 md4>
     </v-flex>
   </v-layout>
 </v-container>
 
 <v-container fluid>
       <v-layout row wrap>
-           <v-flex d-flex xs12 sm6 md1 >
+           <v-flex d-flex xs12 sm6 md4 >
         </v-flex>
-          <v-flex d-flex xs12 sm6 md4>
+          <v-flex d-flex xs12 sm6 md3>
              <img class="belleza2" src="../assets/Equilibrio.jpg" alt="">
         </v-flex>
-         <v-flex d-flex xs12 sm6 md6 class="cajon">
+         <v-flex d-flex xs12 sm6 md4 class="cajon">
                      <v-card class="caja" dark flat>
                       <p></p>
         <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
@@ -58,29 +58,29 @@
 <v-btn color="black" class="right font-weight-black white--text title" to="/bienestar-cliente" >Ver más</v-btn>
           </v-card>
         </v-flex>
-         <v-flex d-flex xs12 sm6 md6 >
+         <v-flex d-flex xs12 sm6 md4 >
       <img class="belleza2" src="../assets/salud.jpg" alt="">
         </v-flex>
-    <v-flex xs12 sm6 md1>
+    <v-flex xs12 sm6 md3>
     </v-flex>
   </v-layout>
 </v-container>
 
 <v-container fluid>
       <v-layout row wrap>
-           <v-flex d-flex xs12 sm6 md1 >
+           <v-flex d-flex xs12 sm6 md4 >
         </v-flex>
-          <v-flex d-flex xs12 sm6 md6 class="cajon3">
+          <v-flex d-flex xs12 sm6 md4 class="cajon3">
                              <v-card class="caja" dark flat>
                                <p></p><br>
         <h1 class="text-xs black--text display-2 font-italic">NUEVAS <strong>RUTINAS</strong></h1>
         <p></p><br>
         <span class="text-xs black--text headline">Conoce los beneficios que traen las rutinas de ejercicios para recuperar no solo la figura, sino la salud de tu cuerpo. </span><br>
         <p></p><br>
-<v-btn color="black" class="right font-weight-black white--text title" to="/planes-cliente" >Ver más</v-btn>
+<v-btn color="black" class="right font-weight-black white--text title" to="/nuevas-rutinas-cliente" >Ver más</v-btn>
           </v-card>
         </v-flex>
-         <v-flex d-flex xs12 sm6 md4 >
+         <v-flex d-flex xs12 sm6 md3 >
       <img class="belleza2" src="../assets/Rutinas.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md1>

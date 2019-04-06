@@ -8,12 +8,13 @@
       right
       color="blue darken-4"
     >
-      <span>Registro exitoso!</span>
+      <span>Cambios guardados!</span>
     </v-snackbar>
     <v-form ref="form" @submit.prevent="submit">
       <v-container grid-list-xl fluid>
         <v-layout wrap>
-          <v-flex xs4 sm4>
+          <v-flex sm5>
+          <v-flex sm11>
             <v-text-field
               v-model="form.first"
               :rules="rules.name"
@@ -22,7 +23,7 @@
               required
             ></v-text-field>
           </v-flex>
-          <v-flex xs4 sm4>
+          <v-flex xs4 sm11>
             <v-text-field
               v-model="form.last"
               :rules="rules.name"
@@ -31,29 +32,25 @@
               required
             ></v-text-field>
           </v-flex>
-          <v-flex xs4 sm4>
-            <v-slider
-              v-model="form.age"
-              :rules="rules.age"
+          <v-flex sm11>
+            <v-text-field
+              v-model="form.cc"
+              :rules="rules.name"
               color="blue darken-4"
-              label="Edad"
-              hint="ser honesto"
-              min="1"
-              max="100"
-              thumb-label
-            ></v-slider>
+              label="CC/TI"
+              required
+            ></v-text-field>
           </v-flex>
-          <v-flex xs4 sm4>
-            <v-select
+          <v-flex sm11>
+            <v-text-field
               v-model="form.gender"
-              :items="gender"
               :rules="rules.gender"
               color="blue darken-4"
-              label="Género"
+              label="Teléfono"
               required
-            ></v-select>
+            ></v-text-field>
           </v-flex>
-          <v-flex xs4 sm4>
+          <v-flex sm11>
             <v-text-field
               v-model="form.adress"
               :rules="rules.name"
@@ -62,7 +59,7 @@
               required
             ></v-text-field>
           </v-flex>
-          <v-flex xs4>
+          <v-flex sm11>
         <v-text-field
         v-model="form.email"
         color="blue darken-4"
@@ -70,67 +67,45 @@
           label="Correo electrónico"
         ></v-text-field>
       </v-flex>
-          <v-flex xs12>
-            <v-checkbox
-              v-model="form.terms"
-              color="blue darken-4"
-            >
-              <template v-slot:label>
-                <div @click.stop="">
-                  Aceptas los
-                  <a href="javascript:;" @click.stop="terms = true">términos</a>
-                  y
-                  <a href="javascript:;" @click.stop="conditions = true">condiciones?</a>
-                </div>
-              </template>
-            </v-checkbox>
+      </v-flex>
+      <div class="chon">
+      <img sm11 class="edit" src="../assets/perfilGym.jpg" alt="">
+      <h1 class="centro">
+      <v-flex sm6 class="py-2">
+            <v-btn-toggle v-model="text">
+              <v-btn flat value="left" color="white" class="blue darken-4">
+                Fotos
+              </v-btn>
+              <v-btn flat value="center" color="white" class="blue darken-4">
+                Dieta
+              </v-btn>
+              <v-btn flat value="right" color="white" class="blue darken-4">
+                Más
+              </v-btn>
+            </v-btn-toggle>
           </v-flex>
+          </h1>
+      </div>
         </v-layout>
       </v-container>
       <v-card-actions>
-        <v-btn flat @click="resetForm">Cancelar</v-btn>
+        <v-btn @click="resetForm">Cancelar</v-btn>
         <v-spacer></v-spacer>
         <v-btn
-          :disabled="!formIsValid"
-          flat
+        class="white--text"
+          :enabled="!formIsValid"
           color="blue darken-4"
           type="submit"
-        >Registrarse</v-btn>
+        >Guardar cambios</v-btn>
       </v-card-actions>
     </v-form>
-    <v-dialog v-model="terms" width="70%">
-      <v-card>
-        <v-card-title class="title">Términos</v-card-title>
-        <v-card-text v-for="n in 5" :key="n">
-          {{ content }}
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            flat
-            color="blue darken-4"
-            @click="terms = false"
-          >Ok</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    <v-dialog v-model="conditions" width="70%">
-      <v-card>
-        <v-card-title class="title">Conditions</v-card-title>
-        <v-card-text v-for="n in 5" :key="n">
-          {{ content }}
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            flat
-            color="blue darken-4"
-            @click="conditions = false"
-          >Ok</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
     </v-card>
+    <p></p><br><hr>
+       <p></p><br>
+    <h2>Terminamos este mes con un super regalo.
+PLAN TRIMESTRE pagas 1 entran 2, debes cumplir tus propositos ahora, no lo dejes pasar</h2>
+<v-spacer></v-spacer>
+<v-btn flat color="blue darken-4" class="right">Ver planes</v-btn>
 </div>
 </template>
 <script>
@@ -139,26 +114,20 @@ export default {
     const defaultForm = Object.freeze({
       first: '',
       last: '',
+      id: '',
       email: '',
       gender: '',
-      age: null,
-      terms: false
+      age: null
+
     })
 
     return {
       form: Object.assign({}, defaultForm),
       rules: {
-        age: [
-          val => val >= 15 || `No puedes ingresar!`
-        ],
         gender: [val => (val || '').length > 0 || 'Este campo es requerido'],
         name: [val => (val || '').length > 0 || 'Este campo es requerido']
       },
-      gender: ['Masculino', 'Femenino'],
-      conditions: false,
-      content: 'chon',
       snackbar: false,
-      terms: false,
       defaultForm
     }
   },
@@ -168,6 +137,7 @@ export default {
       return (
         this.form.first &&
           this.form.last &&
+          this.form.id &&
           this.form.gender &&
           this.form.email &&
           this.form.adress &&
@@ -187,4 +157,25 @@ export default {
     }
   }
 }
+
 </script>
+
+<style lang="stylus">
+
+img.edit{
+  width 200px !important
+  height 200px
+  margin 10px 20px
+  border solid 1px white
+  }
+  div.chon{
+    background-image: url('../assets/fotoportada.jpg')
+    margin 30px 70px
+    height 250px
+    width 500px !important
+  }
+  h1.centro{
+    margin 50px 140px
+  }
+
+</style>

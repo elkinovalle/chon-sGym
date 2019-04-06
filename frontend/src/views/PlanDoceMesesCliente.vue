@@ -7,9 +7,9 @@
           <v-card color="white" dark flat>
           </v-card>
         </v-flex>
-          <v-flex d-flex xs12 sm6 md2 child-flex>
+          <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
-        <h1 class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></h1><br>
+        <span class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></span><br>
         <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p>
         <span class="text-xs black--text body-1"><strong>En CHON'S GYM te ayudaremos a cumplir tu
 meta, realizando planes y rutinas
@@ -160,8 +160,9 @@ export default {
     width 285px !important
   }
   img.imagen_logo{
-    height 160px
-    width 160px !important
+    height 50px
+    width 50px
+    margin-left -5px!important
   }
   p.texto{
     background-color silver !important

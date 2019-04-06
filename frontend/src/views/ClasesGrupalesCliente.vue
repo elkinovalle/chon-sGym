@@ -165,7 +165,7 @@ export default {
     text-align center
     font-size 30px
     color white
-    margin -200px 0px 0px 0px
+    margin -150px 0px 0px 0px!important
     padding 10px
     font-family sans-serif
   }

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-subheader class="subheader black--text display-1 font-weight-bold"  >Novedades</v-subheader>
     <v-layout row wrap>
       <v-flex xs12 sm6>
         <v-text-field
@@ -118,26 +119,26 @@ export default {
         {
           titulo: 'bienestar',
           contenido: 'para estar saludable',
-          imagen: 'C:\User\Aprendiz\Picture1',
-          video: 'C:\User\Aprendiz\Video1'
+          imagen: 'C:UserAprendizPicture1',
+          video: 'C:UserAprendizVideo1'
         },
         {
           titulo: 'bienestar',
           contenido: 'para estar saludable',
-          imagen: 'C:\User\Aprendiz\Picture2',
-          video: 'C:\User\Aprendiz\Video2'
+          imagen: 'C:UserAprendizPicture2',
+          video: 'C:UserAprendizVideo2'
         },
         {
           titulo: 'bienestar',
           contenido: 'para estar saludable',
-          imagen: 'C:\User\Aprendiz\Picture3',
-          video: 'C:\User\Aprendiz\Video3'
+          imagen: 'C:UserAprendizPicture3',
+          video: 'C:UserAprendizVideo3'
         },
         {
           titulo: 'bienestar',
           contenido: 'para estar saludable',
-          imagen: 'C:\User\Aprendiz\Picture4',
-          video: 'C:\User\Aprendiz\Video4'
+          imagen: 'C:UserAprendizPicture4',
+          video: 'C:UserAprendizVideo4'
         }
       ]
     }
