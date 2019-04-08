@@ -4,10 +4,10 @@ const pkg = require('../package.json')
 
 const config = {
   db: {
-    database: process.env.DB_NAME || 'q3mtjbe5dxcdv0fp',
-    username: process.env.DB_USER || 'gnxbjsanlyhhuqzl',
-    password: process.env.DB_PASS || 'yu76rd7fqqqshmf5',
-    host: process.env.DB_HOST || 'q3vtafztappqbpzn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    database: process.env.DB_NAME || 'chons-gym',
+    username: process.env.DB_USER || 'chons-gym-user',
+    password: process.env.DB_PASS || 'chonsgym12345',
+    host: process.env.DB_HOST || '10.98.12.80',
     dialect: 'mysql'
   }
 }
