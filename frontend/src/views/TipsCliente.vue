@@ -28,8 +28,6 @@
         </v-flex>
       </v-layout>
     </v-container>
-
-    </v-container>
        <p></p>
         <h1 class="text-xs-center white--text display-2">DESCUBRE NUESTRAS <strong>CLASES GRUPALES</strong></h1><br>
 <v-container fluid >
