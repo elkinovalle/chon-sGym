@@ -41,7 +41,6 @@
             ></v-text-field>
           </v-flex>
 
-
           <v-btn color="green darken-4" class=" white--text display-1" >Agregar Producto</v-btn>
           <v-btn color="red darken-4" class=" white--text display-1" >Cancelar</v-btn>
 

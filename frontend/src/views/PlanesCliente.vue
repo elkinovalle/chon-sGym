@@ -26,16 +26,23 @@ un mayor avance hacia tus objetivos.
           <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
-      <v-toolbar color="blue darken-4" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text display-1">UN MES</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
-         <v-img src="./../assets/dos_meses.jpg">
-        </v-img>
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text display-1">$40.000</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+      <v-card>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="headline white--text">UN MES</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://www.ecestaticos.com/imagestatic/clipping/a31/835/a31835e1af964657c2b853bd8361b264/como-el-gimnasio-esta-arruinando-tu-vida-sexual-sin-que-te-des-cuenta.jpg?mtime=1487867033"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+              <h3 class="headline white--text">$40.000</h3>
+            </div>
+          </v-card-title>
+        </v-card>
       <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-un-mes-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
@@ -45,15 +52,23 @@ un mayor avance hacia tus objetivos.
               <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
-      <v-toolbar color="blue darken-4" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">DOS MESES</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
-        <img class="imagen_plan" src="../assets/dos_meses.jpg" alt="">
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text display-1">$70.000</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+      <v-card>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="headline white--text">DOS MESES</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://www.ecestaticos.com/imagestatic/clipping/fcd/f44/fcdf4473a8fe9b5ba0ade682b7b33a6b/los-10-errores-que-cometes-despues-de-hacer-ejercicio.jpg?mtime=1482151811"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+              <h3 class="headline white--text">$70.000</h3>
+            </div>
+          </v-card-title>
+        </v-card>
       <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
@@ -63,15 +78,23 @@ un mayor avance hacia tus objetivos.
               <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
-      <v-toolbar color="blue darken-4" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">TRES MESES</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
-        <img class="imagen_plan" src="../assets/3meses.jpg" alt="">
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text display-1">$100.000</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+      <v-card>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="headline white--text">TRES MESES</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://www.cohensfitnessclub.com/wp-content/uploads/2018/09/Mitos-del-ejercicio-1024x576.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+              <h3 class="headline white--text">$100.000</h3>
+            </div>
+          </v-card-title>
+        </v-card>
       <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-tres-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
@@ -81,15 +104,23 @@ un mayor avance hacia tus objetivos.
               <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
-      <v-toolbar color="blue darken-4" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">SEIS MESES</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
-        <img class="imagen_plan" src="../assets/6_meses.jpg" alt="">
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text display-1">$180.000</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+      <v-card>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="headline white--text">SEIS MESES</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://guiafitness.com/wp-content/uploads/que-hacer-antes-ir-gimnasio.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+              <h3 class="headline white--text">$180.000</h3>
+            </div>
+          </v-card-title>
+        </v-card>
       <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-seis-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
@@ -129,15 +160,23 @@ un mayor avance hacia tus objetivos.
           <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
-      <v-toolbar color="blue darken-4" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text title">DOCE MESES</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
-        <img class="imagen_plan" src="../assets/12_meses.jpg" alt="">
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text display-1">$320.000</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+      <v-card>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="headline white--text">DOCE MESES</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://e.rpp-noticias.io/normal/2017/09/25/262226_488669.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+              <h3 class="headline white--text">$300.000</h3>
+            </div>
+          </v-card-title>
+        </v-card>
       <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-doce-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
@@ -213,6 +252,7 @@ export default {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
   data: () => ({
+
     links: [
       'GIMNASIO',
       'HARD VITAL',
@@ -227,4 +267,12 @@ export default {
     height 170px
     width 190px !important
   }
+.black{
+  background-color black
+  text-align center!important
+}
+.blue{
+  background-color #0d47a1!important
+}
+
 </style>
