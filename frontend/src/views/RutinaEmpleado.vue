@@ -8,11 +8,10 @@
             <v-text-field
               v-model="message2"
               box
-              label="Nombre del Producto"
+              label="Nombre"
               clearable
             ></v-text-field>
-          </v-flex>
-
+            </v-flex>
             <v-flex xs6>
             <v-combobox
                 v-model="select"
