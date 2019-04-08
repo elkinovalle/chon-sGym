@@ -52,10 +52,10 @@ img.symbol {
   width 100px !important
 }
 div.found{
-      background-image: url('../assets/gym.jpg');
-      margin-bottom: 1px
-      margin-top: 1px
-      margin-left: -250px
+      background-image url('../assets/gym.jpg');
+      margin-bottom 1px
+      margin-top 1px
+      margin-left -150px
 }
 h1 {
   margin-left: -10px
