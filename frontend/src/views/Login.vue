@@ -18,8 +18,7 @@
               </v-card-text>
               <v-card-actions class="white">
                 <v-spacer></v-spacer>
-                <v-btn round color="black">
-                    <v-icon color="white" class="font-weight-black white--text">Iniciar sesión</v-icon>
+                <v-btn round color="white--text" class="font-weight-black black">Iniciar sesión
                     </v-btn>
                     <v-spacer></v-spacer>
                 </v-card-actions>
