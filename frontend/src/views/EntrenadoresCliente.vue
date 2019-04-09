@@ -25,7 +25,7 @@
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver perfil profesional</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/entrenador-uno-cliente">Ver perfil profesional</v-btn>
     </v-flex>
 
   </v-layout>
@@ -53,7 +53,7 @@
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver perfil profesional</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/entrenador-dos-cliente">Ver perfil profesional</v-btn>
     </v-flex>
 
   </v-layout>
@@ -80,7 +80,7 @@
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver perfil profesional</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/entrenador-tres-cliente">Ver perfil profesional</v-btn>
     </v-flex>
 
   </v-layout>
@@ -107,7 +107,7 @@
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver perfil profesional</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/entrenador-cuatro-cliente">Ver perfil profesional</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -138,7 +138,7 @@
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver perfil profesional</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/entrenador-cinco-cliente">Ver perfil profesional</v-btn>
     </v-flex>
 
   </v-layout>
@@ -166,7 +166,7 @@
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver perfil profesional</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/entrenador-seis-cliente">Ver perfil profesional</v-btn>
     </v-flex>
 
   </v-layout>
@@ -193,7 +193,7 @@
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver perfil profesional</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/entrenador-siete-cliente">Ver perfil profesional</v-btn>
     </v-flex>
 
   </v-layout>
@@ -220,7 +220,7 @@
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver perfil profesional</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/entrenador-ocho-cliente">Ver perfil profesional</v-btn>
     </v-flex>
 
   </v-layout>
