@@ -59,7 +59,7 @@
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 >
-      <img class="belleza2" src="../assets/salud.jpg" alt="">
+      <img class="belleza" src="../assets/salud.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md3>
     </v-flex>
@@ -106,7 +106,7 @@ export default {
     margin-top 20px
   }
   img.belleza2{
-    height 460px
+    height 540px
     width 363px !important
   }
  img.imagen_layout{
@@ -154,13 +154,13 @@ export default {
       border-bottom-right-radius  10%
   }
   .cajon2 {
-      padding 70px
+      padding 40px
       background-color white
-      margin -1px
+      margin-top 20px
       border-bottom-left-radius  10%
   }
   .cajon3  {
-      padding 70px
+      padding 60px
       background-color rgb(5, 159, 197)
       margin -1px
       border-top-left-radius  10%

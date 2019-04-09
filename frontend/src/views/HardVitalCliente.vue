@@ -26,12 +26,23 @@ un mayor avance hacia tus objetivos.
           <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10 offset-xs2>
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">Descripción del plan</v-toolbar-title>
-      </v-toolbar>
-        <img class="imagen_layout" src="../assets/hard-vital.png" alt="">
-       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 100.000<br> Total a pagar 100.000
-</strong></p>
+     <v-card flat>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="headline white--text">Descripción del plan</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://s28461.pcdn.co/wp-content/uploads/iStock_demaerre-_512051072.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+               <p class="headline white--text"><strong>Cero Estrés <br> Plan Mensual Subtotal 70.000</strong></p>
+            </div>
+          </v-card-title>
+        </v-card>
     </v-flex>
   </v-layout>
           </v-card>
