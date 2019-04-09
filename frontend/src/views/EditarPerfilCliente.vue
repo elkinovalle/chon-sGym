@@ -103,7 +103,7 @@
     </v-card>
     <p></p><br><hr>
        <p></p><br>
-    <h2>Terminamos este mes con un super regalo.
+       <h2 class="Text">Terminamos este mes con un super regalo.
 PLAN TRIMESTRE pagas 1 entran 2, debes cumplir tus propositos ahora, no lo dejes pasar</h2>
 <v-spacer></v-spacer>
 <v-btn flat color="blue darken-4" class="right">Ver planes</v-btn>
@@ -182,6 +182,9 @@ img.edit{
   }
   h1.centro{
     margin 50px 140px
+  }
+  h2.Text{
+    margin-left 20px
   }
 
 </style>
