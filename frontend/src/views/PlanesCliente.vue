@@ -142,16 +142,42 @@ un mayor avance hacia tus objetivos.
           <v-flex d-flex xs12 sm6 md2 child-flex>
           <v-card color="white" dark flat>
 
-<v-btn color="blue darken-4" class="font-weight-black white--text caption">TODOS</v-btn>
+<v-btn color="blue darken-4" class="font-weight-black white--text caption">TODOS</v-btn><br>
           <v-btn
-        v-for="link in links"
-        :key="link"
         color="blue darken-4"
         flat
         round
-        class="black--text title"
+        class="black--text headline"
+        to=""
       >
-        {{ link }}
+      GIMNASIO
+      </v-btn>
+         <v-btn
+        color="blue darken-4"
+        flat
+        round
+        class="black--text headline"
+        to="/hard-vital-cliente"
+      >
+      HARD VITAL
+      </v-btn>
+         <v-btn
+        color="blue darken-4"
+        flat
+        round
+        class="black--text headline"
+        to="/neurofitness-cliente"
+      >
+      NEUROFITNESS
+      </v-btn>
+         <v-btn
+        color="blue darken-4"
+        flat
+        round
+        class="black--text headline"
+        to="/personalizados-cliente"
+      >
+      PERSONALIZADOS
       </v-btn>
           </v-card>
         </v-flex>
@@ -163,7 +189,7 @@ un mayor avance hacia tus objetivos.
       <v-card>
           <v-card-title class="blue">
             <div>
-              <h3 class="headline white--text">DOCE MESES</h3>
+              <h3 class="title white--text">DOCE MESES</h3>
             </div>
           </v-card-title>
           <v-img
@@ -186,15 +212,23 @@ un mayor avance hacia tus objetivos.
               <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
-      <v-toolbar color="blue darken-4" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text title">Quince Meses</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
-        <img class="imagen_plan" src="../assets/15_meses.jpg" alt="">
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text display-1">$400.000</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+      <v-card>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="title white--text">QUINCE MESES</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://frasesdelavida.com/wp-content/uploads/2018/03/Frases-de-gimnasio.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+              <h3 class="headline white--text">$380.000</h3>
+            </div>
+          </v-card-title>
+        </v-card>
       <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-quince-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
@@ -204,15 +238,23 @@ un mayor avance hacia tus objetivos.
               <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
-      <v-toolbar color="blue darken-4" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">HARD VITAL</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
-        <img class="imagen_plan" src="../assets/hard-vital.png" alt="">
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text display-1">$80.000</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+      <v-card>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="title white--text">HARD VITAL</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://s28461.pcdn.co/wp-content/uploads/iStock_demaerre-_512051072.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+              <h3 class="headline white--text">$80.000</h3>
+            </div>
+          </v-card-title>
+        </v-card>
       <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/hard-vital-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
@@ -223,15 +265,23 @@ un mayor avance hacia tus objetivos.
               <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
-      <v-toolbar color="blue darken-4" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">NeuroFitness</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
-        <img class="imagen_plan" src="../assets/neurofitness.jpg" alt="">
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text display-1">$100.000</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+      <v-card>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="title white--text">NEUROFITNESS</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://4.bp.blogspot.com/-7w68yEVQy_s/WusOceyfnqI/AAAAAAAAaxA/f5McWeGe_a4dPMZNuA4iDiLjbEfgCCH-QCLcBGAs/s1600/entra-tambien-tu-mente-con-neuro-fitness-1.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+              <h3 class="headline white--text">$100.000</h3>
+            </div>
+          </v-card-title>
+        </v-card>
       <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/neurofitness-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
@@ -253,12 +303,6 @@ export default {
   },
   data: () => ({
 
-    links: [
-      'GIMNASIO',
-      'HARD VITAL',
-      'NEUROFITNESS',
-      'PERSONALIZADOS'
-    ]
   })
 }
 </script>
@@ -274,5 +318,4 @@ export default {
 .blue{
   background-color #0d47a1!important
 }
-
 </style>
