@@ -43,39 +43,39 @@
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img  :src="spinning" class="spinning" @click="clickSpinning">
+        <v-img  :src="spinning" class="spinning" @click="clickPush('/spinning-cliente')">
         <h1 class="escrito" >SPINNING</h1>
         </v-img>
-          <v-img :src="aerobicos" class="spinning" @click="clickAerobicos">
+          <v-img :src="aerobicos" class="spinning" @click="clickPush('/aerobicos-cliente')">
         <h1 class="escrito" >AEROBICOS</h1>
         </v-img>
-       <v-img :src="crossfit" class="spinning" @click="clickCrossfit">
+       <v-img :src="crossfit" class="spinning" @click="clickPush('/crossfit-cliente')">
         <h1 class="escrito" >CROSSFIT</h1>
         </v-img>
     </v-flex>
    </v-layout>
       <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img :src="cardio" class="spinning" @click="clickCardio">
+        <v-img :src="cardio" class="spinning" @click="clickPush('/cardio-cliente')">
         <h1 class="escrito" >CARDIO BOX</h1>
         </v-img>
-          <v-img :src="hard" class="spinning" @click="clickHard">
+          <v-img :src="hard" class="spinning" @click="clickPush('/hard-cliente')">
         <h1 class="escrito" >HARD CYCLING</h1>
         </v-img>
-       <v-img :src="rumba" class="spinning" @click="clickRumba">
+       <v-img :src="rumba" class="spinning" @click="clickPush('/rumba-cliente')">
         <h1 class="escrito" >RUMBA</h1>
         </v-img>
     </v-flex>
    </v-layout>
      <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img :src="multiterreno" class="spinning" @click="clickMulti">
+        <v-img :src="multiterreno" class="spinning" @click="clickPush('/multiterreno-cliente')">
         <h1 class="escrito" >MULTITERRENO</h1>
         </v-img>
-          <v-img :src="entrenamiento" class="spinning" @click="clickEntrenamiento">
+          <v-img :src="entrenamiento" class="spinning" @click="clickPush('/entrenamiento-cliente')">
         <h1 class="escrito" >CIRCUITOS DE ENTRENAMIENTO</h1>
         </v-img>
-       <v-img :src="shiatsu" class="spinning" @click="clickShiatsu">
+       <v-img :src="shiatsu" class="spinning" @click="clickPush('/shiatsu-cliente')">
         <h1 class="escrito" >SHIATSU</h1>
         </v-img>
     </v-flex>
@@ -98,32 +98,8 @@ export default {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
   methods: {
-    clickSpinning (value) {
-      this.$router.push('/spinning-cliente')
-    },
-    clickAerobicos (value) {
-      this.$router.push('/aerobicos-cliente')
-    },
-    clickCrossfit (value) {
-      this.$router.push('/crossfit-cliente')
-    },
-    clickCardio (value) {
-      this.$router.push('/cardio-cliente')
-    },
-    clickHard (value) {
-      this.$router.push('/hard-cliente')
-    },
-    clickRumba (value) {
-      this.$router.push('/rumba-cliente')
-    },
-    clickMulti (value) {
-      this.$router.push('/multiterreno-cliente')
-    },
-    clickEntrenamiento (value) {
-      this.$router.push('/entrenamiento-cliente')
-    },
-    clickShiatsu (value) {
-      this.$router.push('/shiatsu-cliente')
+    clickPush (value) {
+      this.$router.push(value)
     }
   },
   data () {

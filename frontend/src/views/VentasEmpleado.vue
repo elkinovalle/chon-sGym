@@ -41,24 +41,6 @@
             ></v-text-field>
           </v-flex>
 
-          <v-flex xs12 sm6>
-            <v-text-field
-              v-model="message5"
-              box
-              label="Valor Unitario"
-              clearable
-            ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm6>
-            <v-text-field
-              v-model="message5"
-              box
-              label="Valor Unitario"
-              clearable
-            ></v-text-field>
-          </v-flex>
-
           <v-btn color="green darken-4" class=" white--text display-1" >Agregar Producto</v-btn>
           <v-btn color="red darken-4" class=" white--text display-1" >Cancelar</v-btn>
 
@@ -155,14 +137,14 @@ export default {
     dialog: false,
     headers: [
       {
-        text: 'Dessert (100g serving)',
+        text: 'Codigo',
         align: 'left',
         sortable: false,
         value: 'name'
       },
-      { text: 'Calories', value: 'calories' },
-      { text: 'Fat (g)', value: 'fat' },
-      { text: 'Carbs (g)', value: 'carbs' },
+      { text: 'Nombre', value: 'calories' },
+      { text: 'Descripcion ', value: 'fat' },
+      { text: 'Valor unitario', value: 'carbs' },
       { text: 'Protein (g)', value: 'protein' },
       { text: 'Actions', value: 'name', sortable: false }
     ],

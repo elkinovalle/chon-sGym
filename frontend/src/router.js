@@ -63,6 +63,10 @@ import EstiramientoCliente from '@/views/EstiramientoCliente.vue'
 import PracticarCliente from '@/views/PracticarCliente.vue'
 import ConsejosCliente from '@/views/ConsejosCliente.vue'
 import MiPerfilCliente from '@/views/MiPerfilCliente.vue'
+import EntrenadoresCliente from '@/views/EntrenadoresCliente.vue'
+import MiRutinaCliente from '@/views/MiRutinaCliente.vue'
+import MiProgresoCliente from '@/views/MiProgresoCliente.vue'
+import MiHorarioCliente from '@/views/MiHorarioCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -386,6 +390,26 @@ export default new Router({
       path: '/mi-perfil-cliente',
       name: 'mi-perfil-cliente',
       component: MiPerfilCliente
+    },
+    {
+      path: '/mi-progreso-cliente',
+      name: 'mi-progreso-cliente',
+      component: MiProgresoCliente
+    },
+    {
+      path: '/mi-rutina-cliente',
+      name: 'mi-rutina-cliente',
+      component: MiRutinaCliente
+    },
+    {
+      path: '/mi-horario-cliente',
+      name: 'mi-horario-cliente',
+      component: MiHorarioCliente
+    },
+    {
+      path: '/entrenadores-cliente',
+      name: 'entrenadores-cliente',
+      component: EntrenadoresCliente
     },
     {
       path: '/membresias-empleado',

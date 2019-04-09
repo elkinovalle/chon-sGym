@@ -28,127 +28,70 @@
         </v-flex>
       </v-layout>
     </v-container>
+       <p></p>
+        <h1 class="text-xs-center white--text display-2">DESCUBRE NUESTRAS <strong>CLASES GRUPALES</strong></h1><br>
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img  :src="ejercicio" class="spinning" @click="clickEjercicio">
+        <v-img  :src="ejercicio" class="spinning" @click="clickPush('/ejercicio-fisico-cliente')">
+        <h1 class="escrito1" >Ejercicio físico</h1>
         </v-img>
-          <v-img :src="hidratacion" class="spinning" @click="clickHidratacion">
+          <v-img :src="hidratacion" class="spinning" @click="clickPush('/hidratacion-cliente')">
+        <h1 class="escrito1" >hidratación</h1>
         </v-img>
-       <v-img :src="minutos" class="spinning" @click="clickMinutos">
+       <v-img :src="minutos" class="spinning" @click="clickPush('/minutos-cliente')">
+        <h1 class="escrito1" >20 minutos de cardio</h1>
         </v-img>
     </v-flex>
    </v-layout>
-   <v-layout>
-           <v-flex xs12 sm6 md1>
-    </v-flex>
-    <v-flex xs12 sm6 md3>
-      <h1 class="text-xs-center white--text subheading justify font-weight-black">EJERCICIO FÍSICO</h1>
-    </v-flex>
-         <v-flex xs12 sm6 md4>
-       <h1 class="text-xs-center white--text subheading justify font-weight-black">HIDRATACIÓN</h1>
-       </v-flex>
-          <v-flex xs12 sm6 md3>
-       <h1 class="text-xs-center white--text subheading justify font-weight-black">20 MINUTOS DE CARDIO</h1>
-    </v-flex>
-            <v-flex xs12 sm6 md1>
-    </v-flex>
-       </v-layout>
       <v-layout row wrap>
  <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img :src="consume" class="spinning" @click="clickConsume">
+        <v-img :src="consume" class="spinning" @click="clickPush('/carbohidratos-cliente')">
+        <h1 class="escrito1" >Consume carbohidratos</h1>
         </v-img>
-          <v-img :src="duerme" class="spinning" @click="clickDuerme">
+          <v-img :src="duerme" class="spinning" @click="clickPush('/duerme-bien-cliente')">
+        <h1 class="escrito1" >Duerme bien</h1>
         </v-img>
-       <v-img :src="calentamiento" class="spinning" @click="clickCalentamiento">
-        </v-img>
-    </v-flex>
-       </v-layout>
-       <v-layout>
-           <v-flex xs12 sm6 md1>
-    </v-flex>
-    <v-flex xs12 sm6 md3>
-      <h1 class="text-xs-center white--text subheading justify font-weight-black">CONSUME CARBOHIDRATOS</h1>
-    </v-flex>
-         <v-flex xs12 sm6 md4>
-       <h1 class="text-xs-center white--text subheading justify font-weight-black">DUERME BIEN</h1>
-       </v-flex>
-          <v-flex xs12 sm6 md3>
-       <h1 class="text-xs-center white--text subheading justify font-weight-black">EJERCICIOS DE CALENTAMIENTO</h1>
-    </v-flex>
-            <v-flex xs12 sm6 md1>
-    </v-flex>
-       </v-layout>
-     <v-layout row wrap>
- <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img :src="estiramiento" class="spinning" @click="clickEstiramiento">
-        </v-img>
-          <v-img :src="practicar" class="spinning" @click="clickPracticar">
-        </v-img>
-       <v-img :src="consejos" class="spinning" @click="clickConsejos">
+       <v-img :src="calentamiento" class="spinning" @click="clickPush('/calentamiento-cliente')">
+        <h1 class="escrito1" >Ejercicios de calentamiento</h1>
         </v-img>
     </v-flex>
    </v-layout>
-   <v-layout>
-           <v-flex xs12 sm6 md1>
+     <v-layout row wrap>
+ <v-flex xs12 sm6 md12 class="contenedor">
+        <v-img :src="estiramiento" class="spinning" @click="clickPush('/estiramiento-cliente')">
+        <h1 class="escrito1" >Importancia del estiramiento</h1>
+        </v-img>
+          <v-img :src="practicar" class="spinning" @click="clickPush('/practicar-cliente')">
+        <h1 class="escrito1" >¿Quién puede practicar crossfit?</h1>
+        </v-img>
+       <v-img :src="consejos" class="spinning" @click="clickPush('/consejos-cliente')">
+        <h1 class="escrito1" >Consejos para bajar de peso</h1>
+        </v-img>
     </v-flex>
-    <v-flex xs12 sm6 md3>
-      <h1 class="text-xs-center white--text subheading justify font-weight-black">IMPORTANCIA DEL ESTIRAMIENTO</h1>
-    </v-flex>
-         <v-flex xs12 sm6 md4>
-       <h1 class="text-xs-center white--text subheading justify font-weight-black">¿QUIÉN PUEDE PRACTICAR CROSSFIT?</h1>
-       </v-flex>
-          <v-flex xs12 sm6 md3>
-       <h1 class="text-xs-center white--text subheading justify font-weight-black">CONSEJOS PARA BAJAR DE PESO</h1>
-    </v-flex>
-            <v-flex xs12 sm6 md1>
-    </v-flex>
-       </v-layout>
+   </v-layout>
     </v-container>
 </div>
 </template>
 <script>
-import EJERCICIO from '@/assets/ejercicio-fisico.jpg'
-import HIDRATACION from '@/assets/hidratacion.jpg'
-import MINUTOS from '@/assets/cardio.jpg'
-import CONSUME from '@/assets/carbohidratos.jpg'
-import DUERME from '@/assets/dormir-bien.jpg'
-import CALENTAMIENTO from '@/assets/calentar.jpg'
-import ESTIRAMIENTO from '@/assets/estiramiento.jpg'
-import PRACTICAR from '@/assets/practicar_crossfit.jpg'
-import CONSEJOS from '@/assets/bajar_peso.jpg'
+import EJERCICIO from '@/assets/ejercicio_c.jpg'
+import HIDRATACION from '@/assets/hidratacion_c.jpg'
+import MINUTOS from '@/assets/cardio_c.jpg'
+import CONSUME from '@/assets/carbohidratos_c.jpg'
+import DUERME from '@/assets/dormir-bien_c.jpg'
+import CALENTAMIENTO from '@/assets/calentar_c.jpg'
+import ESTIRAMIENTO from '@/assets/estiramiento_c.jpg'
+import PRACTICAR from '@/assets/practicar_crossfi_c.jpg'
+import CONSEJOS from '@/assets/bajar_peso_c.jpg'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
   methods: {
-    clickEjercicio (value) {
-      this.$router.push('/ejercicio-fisico-cliente')
-    },
-    clickHidratacion (value) {
-      this.$router.push('/hidratacion-cliente')
-    },
-    clickMinutos (value) {
-      this.$router.push('/minutos-cliente')
-    },
-    clickConsume (value) {
-      this.$router.push('/carbohidratos-cliente')
-    },
-    clickDuerme (value) {
-      this.$router.push('/duerme-bien-cliente')
-    },
-    clickCalentamiento (value) {
-      this.$router.push('/calentamiento-cliente')
-    },
-    clickEstiramiento (value) {
-      this.$router.push('/estiramiento-cliente')
-    },
-    clickPracticar (value) {
-      this.$router.push('/practicar-cliente')
-    },
-    clickConsejos (value) {
-      this.$router.push('/consejos-cliente')
+    clickPush (value) {
+      this.$router.push(value)
     }
+
   },
   data () {
     return {
@@ -200,7 +143,6 @@ export default {
     font-family sans-serif
     margin-top -20px
   }
-
   li{
     margin 0px 0px 0px 60px
   }
@@ -224,11 +166,12 @@ export default {
     padding 20px
     text-align center
   }
+  h1.escrito1{
+    text-align center
+    font-size 30px
+    color white
+    margin -100px 0px 0px 0px!important
+    padding 10px
+    font-family sans-serif
+  }
 </style>
-
-// <Grid rows="*.auto"
-            <Div row=0>
-
-            </Div>
-
-        </Grid>>

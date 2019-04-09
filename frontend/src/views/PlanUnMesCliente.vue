@@ -22,19 +22,24 @@ un mayor avance hacia tus objetivos.
 <p></p><hr>
           </v-card>
         </v-flex>
-         <v-flex d-flex xs12 sm6 md3>
-          <v-card color="white" dark flat>
-              <v-layout justify-center>
-    <v-flex xs12 sm6 md10 offset-xs2>
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">Descripción del plan</v-toolbar-title>
-      </v-toolbar>
-        <img class="imagen_layout" src="../assets/un_mes.jpg" alt="">
-       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 40.000<br> Total a pagar 40.000
-</strong></p>
-    </v-flex>
-  </v-layout>
-          </v-card>
+         <v-flex d-flex xs12 sm6 md2 offset-sm1>
+          <v-card flat>
+          <v-card-title class="blue">
+            <div>
+            <h3 class="headline white--text">Descripción del plan</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://www.ecestaticos.com/imagestatic/clipping/a31/835/a31835e1af964657c2b853bd8361b264/como-el-gimnasio-esta-arruinando-tu-vida-sexual-sin-que-te-des-cuenta.jpg?mtime=1487867033"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+              <p class="headline white--text"><strong>Cero Estrés <br> Plan Mensual Subtotal 100.000</strong></p>
+            </div>
+          </v-card-title>
+        </v-card>
         </v-flex>
                 <v-flex d-flex xs12 sm3 md5>
               <v-card color="white" dark flat>

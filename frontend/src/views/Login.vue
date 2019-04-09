@@ -18,8 +18,7 @@
               </v-card-text>
               <v-card-actions class="white">
                 <v-spacer></v-spacer>
-                <v-btn round color="black">
-                    <v-icon color="white" class="font-weight-black white--text">Iniciar sesión</v-icon>
+                <v-btn round color="white--text" class="font-weight-black black">Iniciar sesión
                     </v-btn>
                     <v-spacer></v-spacer>
                 </v-card-actions>
@@ -53,10 +52,10 @@ img.symbol {
   width 100px !important
 }
 div.found{
-      background-image: url('../assets/gym.jpg');
-      margin-bottom: 1px
-      margin-top: 1px
-      margin-left: -250px
+      background-image url('../assets/gym.jpg');
+      margin-bottom 1px
+      margin-top 1px
+      margin-left -150px
 }
 h1 {
   margin-left: -10px

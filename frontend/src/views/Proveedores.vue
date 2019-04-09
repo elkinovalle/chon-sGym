@@ -140,7 +140,7 @@ export default {
       desserts: [
         {
           documento: '100245210',
-          nombres: 'jeffrey',
+          nombres: 'jeffreyM',
           apellidos: 'muñoz',
           telefono: '3121514214',
           direccion: 'cra 3 #1-16',

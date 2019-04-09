@@ -68,8 +68,9 @@
         ></v-text-field>
       </v-flex>
       </v-flex>
-      <div class="chon">
-      <img sm11 class="edit" src="../assets/perfilGym.jpg" alt="">
+      <div class="portada">
+      <img class="edit" src="../assets/perfilGym.jpg" alt="">
+      <img class="logo" src="../assets/iconocam.jpg" alt="">
       <h1 class="centro">
       <v-flex sm6 class="py-2">
             <v-btn-toggle v-model="text">
@@ -168,7 +169,12 @@ img.edit{
   margin 10px 20px
   border solid 1px white
   }
-  div.chon{
+  img.logo{
+  width 45px !important
+  height 50px
+  margin 5px -70px
+  }
+  div.portada{
     background-image: url('../assets/fotoportada.jpg')
     margin 30px 70px
     height 250px

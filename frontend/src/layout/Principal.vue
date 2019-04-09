@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-toolbar class="blue darken-4">
+  <v-toolbar class="desplegable" color="blue darken-4">
     <img src="../assets/lofo-fondo-blanco.png" alt="">
     <v-toolbar-title class="font-weight-black font-italic white--text display-1">Chon's Gym</v-toolbar-title>
     <v-spacer></v-spacer>
@@ -11,7 +11,29 @@
       <v-btn flat class="white--text" to="/noticias-cliente">Noticias</v-btn>
       <v-btn flat class="white--text" to="/tips-cliente">Tips</v-btn>
       <v-btn flat class="white--text">Contacto</v-btn>
-      <v-btn flat class="white--text" to="/mi-perfil-cliente">Mi perfil</v-btn>
+       <v-menu offset-y>
+      <template v-slot:activator="{ on }">
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+        <v-btn
+          class="blue darken-4"
+          dark
+          v-on="on"
+          flat
+        >
+          MI PERFIL
+        </v-btn>
+      </template>
+      <v-list>
+        <v-list-tile
+          v-for="(item, index) in items"
+          :key="index"
+          @click="clickMenu(item)"
+        >
+        <v-icon class="conexion_icon" color="black">{{ item.icon }}</v-icon>
+          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-menu>
     </v-toolbar-items>
   </v-toolbar>
   <v-content>
@@ -93,6 +115,11 @@
 </template>
 <script>
 export default {
+  methods: {
+    clickMenu (value) {
+      this.$router.push(value.link)
+    }
+  },
   data: () => ({
     icons: [
       'fab fa-facebook',
@@ -116,9 +143,16 @@ export default {
       'Trabaja con nosotros',
       'Contacto',
       'Reglamento de usuario'
+    ],
+    items: [
+      { title: 'Editar Perfil', icon: 'edit', link: '/Editar-Perfil-Cliente' },
+      { title: 'Mi Rutina', icon: 'close', link: '/mi-rutina-cliente' },
+      { title: 'Progreso', icon: 'sort', link: '/mi-progreso-cliente' },
+      { title: 'Entrenador', icon: 'person', link: '/entrenadores-cliente' },
+      { title: 'Horarios', icon: 'history', link: '/mi-horario-cliente' },
+      { title: 'Cerrar Sesión', icon: 'close', link: '' }
     ]
   })
-
 }
 </script>
 <style lang="stylus">
@@ -131,5 +165,8 @@ export default {
     width 80px !important
     margin  0px 180px
     height 60px
+  }
+  .desplegable{
+    z-index 900000
   }
 </style>
