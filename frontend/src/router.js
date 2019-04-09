@@ -63,6 +63,14 @@ import PracticarCliente from '@/views/PracticarCliente.vue'
 import ConsejosCliente from '@/views/ConsejosCliente.vue'
 import MiPerfilCliente from '@/views/MiPerfilCliente.vue'
 import EntrenadoresCliente from '@/views/EntrenadoresCliente.vue'
+import EntrenadorUnoCliente from '@/views/EntrenadorUnoCliente.vue'
+import EntrenadorDosCliente from '@/views/EntrenadorDosCliente.vue'
+import EntrenadorTresCliente from '@/views/EntrenadorTresCliente.vue'
+import EntrenadorCuatroCliente from '@/views/EntrenadorCuatroCliente.vue'
+import EntrenadorCincoCliente from '@/views/EntrenadorCincoCliente.vue'
+import EntrenadorSeisCliente from '@/views/EntrenadorSeisCliente.vue'
+import EntrenadorSieteCliente from '@/views/EntrenadorSieteCliente.vue'
+import EntrenadorOchoCliente from '@/views/EntrenadorOchoCliente.vue'
 import MiRutinaCliente from '@/views/MiRutinaCliente.vue'
 import MiProgresoCliente from '@/views/MiProgresoCliente.vue'
 import MiHorarioCliente from '@/views/MiHorarioCliente.vue'
@@ -410,6 +418,46 @@ export default new Router({
       path: '/entrenadores-cliente',
       name: 'entrenadores-cliente',
       component: EntrenadoresCliente
+    },
+    {
+      path: '/entrenador-uno-cliente',
+      name: 'entrenador-uno-cliente',
+      component: EntrenadorUnoCliente
+    },
+    {
+      path: '/entrenador-dos-cliente',
+      name: 'entrenador-dos-cliente',
+      component: EntrenadorDosCliente
+    },
+    {
+      path: '/entrenador-tres-cliente',
+      name: 'entrenador-tres-cliente',
+      component: EntrenadorTresCliente
+    },
+    {
+      path: '/entrenador-cuatro-cliente',
+      name: 'entrenador-cuatro-cliente',
+      component: EntrenadorCuatroCliente
+    },
+    {
+      path: '/entrenador-cinco-cliente',
+      name: 'entrenador-cinco-cliente',
+      component: EntrenadorCincoCliente
+    },
+    {
+      path: '/entrenador-seis-cliente',
+      name: 'entrenador-seis-cliente',
+      component: EntrenadorSeisCliente
+    },
+    {
+      path: '/entrenador-siete-cliente',
+      name: 'entrenador-siete-cliente',
+      component: EntrenadorSieteCliente
+    },
+    {
+      path: '/entrenador-ocho-cliente',
+      name: 'entrenador-ocho-cliente',
+      component: EntrenadorOchoCliente
     },
     {
       path: '/membresias-empleado',
