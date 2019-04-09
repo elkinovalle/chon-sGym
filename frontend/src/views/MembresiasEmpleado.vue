@@ -74,7 +74,6 @@ export default {
           sortable: false,
           value: 'name'
         },
-
         { text: 'Membresia', value: 'membresia' },
         { text: 'Pago Total', value: 'pagototal' },
         { text: 'Fecha', value: 'fecha' }
@@ -86,7 +85,6 @@ export default {
           pagototal: 6.0,
           fecha: 2018
         }
-
       ],
       select: 'Masaje',
       items: [
@@ -99,7 +97,6 @@ export default {
 
     }
   }
-
 }
 </script>
 <style lang="stylus">
