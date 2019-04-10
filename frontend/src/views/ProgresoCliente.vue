@@ -3,7 +3,7 @@
     <h1 class="Tittle">Lo más importante para nosotros, eres tú</h1>
           <v-card>
             <v-divider></v-divider>
-              <v-list-tile>
+              <v-list-tile row>
                 <v-list-tile-content>Calories:</v-list-tile-content>
                 <v-list-tile-content class="align-end">{{ props.item.calories }}</v-list-tile-content>
               </v-list-tile>
@@ -59,7 +59,7 @@ export default {
         protein: 4.3,
         sodium: 129,
         calcium: '8%',
-        iron: '1%',
+        iron: '1%'
       }
     ]
   })
@@ -68,7 +68,7 @@ export default {
 
 <style lang="stylus">
 .Tittle{
-  margin-left 300px  
+  margin-left 300px
 }
 
 </style>
