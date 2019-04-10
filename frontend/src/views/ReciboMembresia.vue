@@ -1,5 +1,4 @@
 <template>
-
 <v-layout row wrap>
     <form>
       <v-flex xs4 sm6>
