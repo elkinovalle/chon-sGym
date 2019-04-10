@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 import Login from '@/views/Login.vue'
 import MiPerfilAdmin from '@/views/MiPerfilAdmin.vue'
 import Inventario from '@/views/Inventario.vue'
@@ -82,6 +81,7 @@ import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
 import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
 import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
+import ProgresoCliente from '@/views/ProgresoCliente.vue'
 
 Vue.use(Router)
 
@@ -493,6 +493,11 @@ export default new Router({
       path: '/recibo-membresia',
       name: 'recibo-membresia',
       component: ReciboMembresia
+    },
+    {
+      path: '/progreso-cliente',
+      name: 'progreso-cliente',
+      component: ProgresoCliente
     }
   ]
 })
