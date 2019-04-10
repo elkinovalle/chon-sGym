@@ -307,24 +307,5 @@ export default {
 
 }
 </script>
-<<<<<<< HEAD
 <style lang="stylus">
  </style>
-=======
-<style lang="stylus" >
-  .subheader{
-    text-align center !important
-    display 4
-  }
-  .v-text-field.v-text-field--enclosed {
-    --v-primary-base white !important
-  }
-  .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
-    background rgba(0,0,0,0.8)
-  }
-  .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
-    color white !important
-    font-size 20px
-  }
-</style>
->>>>>>> 945e91c1405840887870842abff9067a36321d0f

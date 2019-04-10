@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
 <v-layout row wrap>
     <form>
       <v-flex xs4 sm6>
@@ -43,11 +42,6 @@
     <v-btn @click="clear">clear</v-btn>
   </form>
   </v-layout>
-=======
-    <div>
-
-    </div>
->>>>>>> 37236b8f592f8e828a6c49f09a71da8e64c69c34
 </template>
 <script>
 
