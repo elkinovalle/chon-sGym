@@ -7,6 +7,7 @@
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat class="white--text" to="/planes-cliente">Planes</v-btn>
       <v-btn flat class="white--text" to="/clases-grupales-cliente">Clases</v-btn>
+      <v-btn flat class="white--text" to="/horarios-cliente">Reservar</v-btn>
       <v-btn flat class="white--text" to="/lo-nuevo-cliente">Lo Nuevo</v-btn>
       <v-btn flat class="white--text" to="/noticias-cliente">Noticias</v-btn>
       <v-btn flat class="white--text" to="/tips-cliente">Tips</v-btn>
@@ -147,7 +148,7 @@ export default {
     items: [
       { title: 'Editar Perfil', icon: 'edit', link: '/Editar-Perfil-Cliente' },
       { title: 'Mi Rutina', icon: 'close', link: '/mi-rutina-cliente' },
-      { title: 'Progreso', icon: 'sort', link: '/mi-progreso-cliente' },
+      { title: 'Progreso', icon: 'sort', link: '/progreso-cliente' },
       { title: 'Entrenador', icon: 'person', link: '/entrenadores-cliente' },
       { title: 'Horarios', icon: 'history', link: '/mi-horario-cliente' },
       { title: 'Cerrar Sesión', icon: 'close', link: '' }
