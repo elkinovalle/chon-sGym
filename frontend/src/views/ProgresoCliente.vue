@@ -59,7 +59,7 @@ export default {
         protein: 4.3,
         sodium: 129,
         calcium: '8%',
-        iron: '1%',
+        iron: '1%'
       }
     ]
   })
@@ -68,7 +68,7 @@ export default {
 
 <style lang="stylus">
 .Tittle{
-  margin-left 300px  
+  margin-left 300px
 }
 
 </style>

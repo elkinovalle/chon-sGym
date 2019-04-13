@@ -1,66 +1,86 @@
 <template>
   <div>
-    <v-layout
-      align-center
-      justify-space-around
-      wrap
-    >
-      <v-avatar color="dark blue">
-        <v-icon dark>account_circle</v-icon>
-      </v-avatar>
-      <v-avatar>
-        <img
-          src="../assets/perfil-admin.jpg"
-        >
-      </v-avatar>
-      <v-badge color="black" overlap>
-        <template v-slot:badge>
-          <span>5</span>
-        </template>
-        <v-avatar
-          color="dark red blue--after"
-        >
-          <v-icon dark>notifications</v-icon>
-        </v-avatar>
-      </v-badge>
-      <v-avatar color="teal">
-        <span class="white--text headline">C</span>
-      </v-avatar>
+    <v-card height="100px" flat color="rgba(0,0,0,0.8)">
+      <div class="card">
+        <img class="imagenAdmin" src="../assets/perfil-admin.jpg" alt="">
+         <p class="parrafo">Administrador</p>
+      </div>
+      <v-card>
+      <v-tabs
+        v-model="tab"
+        background-color="red"
+        centered
+        dark
+        icons-and-text
+      >
+        <v-tabs-slider></v-tabs-slider>
+  
+        <v-tab href="#tab-1">
+          General
+          <v-icon>people</v-icon>
+        </v-tab>
+  
+        <v-tab href="#tab-2">
+          Drive
+          <v-icon>email</v-icon>
+        </v-tab>
+  
+        <v-tab href="#tab-3">
+          Tareas
+          <v-icon>fas fa-file</v-icon>
+        </v-tab>
 
-      <v-avatar color="red">
-        <span class="white--text headline">J</span>
-      </v-avatar>
-    </v-layout>
-    <div class="fotoAdmin">
-      <img  class="imagenPerfil" src="../assets/perfil-admin.jpg">
-    </div>
-    </div>
+        <v-tab href="#tab-4">
+          Calendario
+          <v-icon>event</v-icon>
+        </v-tab>
+
+        <v-tab href="#tab-5">
+          Fotos
+          <v-icon>image</v-icon>
+        </v-tab>
+      </v-tabs>
+  
+      <v-tabs-items v-model="tab">
+        <v-tab-item
+          v-for="i in 5"
+          :key="i"
+          :value="'tab-' + i"
+        >
+          <v-card flat>
+            <v-card-text>{{ text }}</v-card-text>
+          </v-card>
+        </v-tab-item>
+      </v-tabs-items>
+    </v-card>
+    </v-card>
+  </div>
 </template>
 
 <script>
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
+  },
+    data () {
+    return {
+      tab: null,
+    }
   }
 }
 </script>
 <style lang="stylus" >
-  .fotoAdmin{
-    background-image: url('../assets/fotoportada.jpg')
-    margin-top 20px
-    text-align center
-    height 200px
+  .imagenAdmin{
+    border-radius 50%
+    margin-left 10px
+    margin-top 5px
+    margin-right 0px
+    margin-bottom 0px
+    height 40px
+    width 40px !important
   }
-  .imagenPerfil{
-    height 200px
-    width 200px !important
-    margin-top 100px
-    border solid black 5px
-  }
-  div.fotoAdmin{
-    background-image: url('../assets/fotoportada.jpg')
-    margin 30px 70px
-    height 250px
-    width 500px !important
+  .parrafo{
+    margin-top -48px
+    margin-left 80px
   }
 </style>
