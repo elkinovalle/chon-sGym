@@ -1,14 +1,9 @@
 <template>
   <v-layout wrap>
-    <v-flex d-flex xs12 sm6 md12>
-      <v-card class="carta">
-        <h1 class="horarios">NUESTROS<strong> HORARIOS</strong></h1>
-      </v-card>
-    </v-flex>
     <v-flex
       sm12
       lg3
-      class="pa-3 mb-3 feature-pane">
+      class="pa-5 mb-3 feature-pane">
       <v-btn
         fab
         outline
@@ -198,7 +193,7 @@
       lg9
       class="pl-3">
       <v-sheet height="500">
-        <v-calendar
+        <v-calendar locale="es"
           ref="calendar"
           v-model="start"
           :type="type"
@@ -244,6 +239,11 @@
         </v-calendar>
       </v-sheet>
     </v-flex>
+       <v-flex d-flex xs12 sm6 md12>
+          <v-card color="transparent" dark flat>
+            <br><br><br>
+          </v-card>
+        </v-flex>
   </v-layout>
 </template>
 
@@ -406,4 +406,5 @@ export default {
   .carta {
       text-align: center
   }
+
 </style>
