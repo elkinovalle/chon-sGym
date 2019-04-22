@@ -74,6 +74,8 @@ import EntrenadorOchoCliente from '@/views/EntrenadorOchoCliente.vue'
 import MiRutinaCliente from '@/views/MiRutinaCliente.vue'
 import MiProgresoCliente from '@/views/MiProgresoCliente.vue'
 import MiHorarioCliente from '@/views/MiHorarioCliente.vue'
+import MiDietaCliente from '@/views/MiDietaCliente.vue'
+import HorariosCliente from '@/views/HorariosCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -413,6 +415,16 @@ export default new Router({
       path: '/mi-horario-cliente',
       name: 'mi-horario-cliente',
       component: MiHorarioCliente
+    },
+    {
+      path: '/mi-dieta-cliente',
+      name: 'mi-dieta-cliente',
+      component: MiDietaCliente
+    },
+    {
+      path: '/horarios-cliente',
+      name: 'horarios-cliente',
+      component: HorariosCliente
     },
     {
       path: '/entrenadores-cliente',

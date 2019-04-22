@@ -1,74 +1,84 @@
 <template>
-<div>
-    <h1 class="Tittle">Lo más importante para nosotros, eres tú</h1>
-          <v-card>
-            <v-divider></v-divider>
-              <v-list-tile row>
-                <v-list-tile-content>Calories:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{ props.item.calories }}</v-list-tile-content>
+<div class=found>
+  <v-container grid-list-xl>
+    <p class="parrafo font-weight-black white--text display-2">Lo más importante para nosotros eres tú</p>
+    <v-flex class="centro">
+    <v-layout>
+    <v-flex sm4>
+      <v-card-title class="font-weight-black black--text blue darken-4" >La condición actual es de sobrepeso de 5 kilogramos, el programa de entrenamientoestará enfocado en ejercicios de cardio para lograr mejores resultados.</v-card-title>
+    </v-flex>
+    <v-flex sm4 >
+    <v-card class="carta">
+            <v-toolbar-title class="font-weight-black black--text headline">Primer mes</v-toolbar-title>
+      <v-list-tile>
+                <v-list-tile-content>Peso:</v-list-tile-content>
+                <v-list-tile-content class="align-end">71</v-list-tile-content>
               </v-list-tile>
               <v-list-tile>
-                <v-list-tile-content>Fat:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{ props.item.fat }}</v-list-tile-content>
+                <v-list-tile-content>Altura:</v-list-tile-content>
+                <v-list-tile-content class="align-end">1.60</v-list-tile-content>
               </v-list-tile>
               <v-list-tile>
-                <v-list-tile-content>Carbs:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{ props.item.carbs }}</v-list-tile-content>
+                <v-list-tile-content>I.M.C:</v-list-tile-content>
+                <v-list-tile-content class="align-end">27.73</v-list-tile-content>
               </v-list-tile>
               <v-list-tile>
-                <v-list-tile-content>Protein:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{ props.item.protein }}</v-list-tile-content>
+                <v-list-tile-content>Estado:</v-list-tile-content>
+                <v-list-tile-content class="align-end">Sobrepeso</v-list-tile-content>
+              </v-list-tile>
+    </v-card>
+    </v-flex>
+    </v-layout>
+    <v-layout>
+    <v-flex sm4>
+      <v-card-title class="font-weight-black black--text blue darken-4 " >El progreso que ha tenido con respecto al mes anterior es totalmente impresionante. Los resultados son notoriamente visibles. ¡BIEN HECHO!</v-card-title>
+    </v-flex>
+    <v-flex sm4>
+    <v-card class="carta">
+            <v-toolbar-tittle class="font-weight-black black--text headline">Segundo mes</v-toolbar-tittle>
+      <v-list-tile>
+                <v-list-tile-content>Peso:</v-list-tile-content>
+                <v-list-tile-content class="align-end">66</v-list-tile-content>
               </v-list-tile>
               <v-list-tile>
-                <v-list-tile-content>Sodium:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{ props.item.sodium }}</v-list-tile-content>
+                <v-list-tile-content>Altura:</v-list-tile-content>
+                <v-list-tile-content class="align-end">1.60</v-list-tile-content>
               </v-list-tile>
               <v-list-tile>
-                <v-list-tile-content>Calcium:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{ props.item.calcium }}</v-list-tile-content>
+                <v-list-tile-content>I.M.C:</v-list-tile-content>
+                <v-list-tile-content class="align-end">23.13</v-list-tile-content>
               </v-list-tile>
               <v-list-tile>
-                <v-list-tile-content>Iron:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{ props.item.iron }}</v-list-tile-content>
+                <v-list-tile-content>Estado:</v-list-tile-content>
+                <v-list-tile-content class="align-end">Normal</v-list-tile-content>
               </v-list-tile>
-          </v-card>
-</div>
+    </v-card>
+    </v-flex>
+    </v-layout>
+    </v-flex>
+  </v-container>
+  </div>
 </template>
+
 <script>
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
-  },
-  data: () => ({
-    items: [
-      {
-        name: 'Frozen Yogurt',
-        calories: 159,
-        fat: 6.0,
-        carbs: 24,
-        protein: 4.0,
-        sodium: 87,
-        calcium: '14%',
-        iron: '1%'
-      },
-      {
-        name: 'Ice cream sandwich',
-        calories: 237,
-        fat: 9.0,
-        carbs: 37,
-        protein: 4.3,
-        sodium: 129,
-        calcium: '8%',
-        iron: '1%'
-      }
-    ]
-  })
+  }
 }
+
 </script>
 
 <style lang="stylus">
-.Tittle{
-  margin-left 300px
+.carta{
+  margin-left -25px
+  border-radius 0%
+}
+.centro{
+  margin-left 200px
+}
+.parrafo{
+  margin-left 25px
 }
 
 </style>
