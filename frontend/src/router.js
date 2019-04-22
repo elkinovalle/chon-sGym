@@ -76,6 +76,7 @@ import MiProgresoCliente from '@/views/MiProgresoCliente.vue'
 import MiHorarioCliente from '@/views/MiHorarioCliente.vue'
 import MiDietaCliente from '@/views/MiDietaCliente.vue'
 import HorariosCliente from '@/views/HorariosCliente.vue'
+import ContactoCliente from '@/views/ContactoCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -395,6 +396,11 @@ export default new Router({
       path: '/consejos-cliente',
       name: 'consejos-cliente',
       component: ConsejosCliente
+    },
+    {
+      path: '/contacto-cliente',
+      name: 'contacto-cliente',
+      component: ContactoCliente
     },
     {
       path: '/mi-perfil-cliente',
