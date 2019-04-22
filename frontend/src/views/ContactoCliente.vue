@@ -1,26 +1,34 @@
 <template>
 <div>
-  <v-subheader class="subheader black--text display-1 font-weight-bold" >Registro de Empleados</v-subheader>
+
     <v-form>
       <v-container>
         <v-layout row wrap>
-
+          <v-flex xs12 sm1>
+          </v-flex>
+          <v-flex xs12 sm2>
+          </v-flex>
           <v-flex xs12 sm6>
+            <v-card class="carta">
+              <v-flex xs12 sm12>
             <v-text-field
               v-model="message1"
               box
               label="Nombres*"
               clearable
             ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm6>
             <v-text-field
               v-model="message2"
               box
               label="Apellidos*"
               clearable
             ></v-text-field>
+              </v-flex>
+            </v-card>
+          </v-flex>
+
+          <v-flex xs12 sm6>
+
           </v-flex>
 
           <v-flex xs12 sm6>
@@ -119,3 +127,9 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.carta{
+  padding 40px!important
+}
+</style>
