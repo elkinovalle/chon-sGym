@@ -1,4 +1,4 @@
-<template>
+<template >
   <v-layout wrap>
     <v-flex
       sm12
