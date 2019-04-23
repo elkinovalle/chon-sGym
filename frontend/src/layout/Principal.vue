@@ -11,7 +11,7 @@
       <v-btn flat class="white--text" to="/lo-nuevo-cliente">Lo Nuevo</v-btn>
       <v-btn flat class="white--text" to="/noticias-cliente">Noticias</v-btn>
       <v-btn flat class="white--text" to="/tips-cliente">Tips</v-btn>
-      <v-btn flat class="white--text">Contacto</v-btn>
+      <v-btn flat class="white--text" to="/contacto-cliente">Contacto</v-btn>
        <v-menu offset-y>
       <template v-slot:activator="{ on }">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
