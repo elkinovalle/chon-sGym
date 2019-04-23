@@ -5,7 +5,7 @@
       <v-container>
         <v-layout row wrap>
 
-          <v-flex xs12 sm6>
+          <v-flex xs12 sm4>
             <v-text-field
               v-model="message1"
               box
@@ -14,7 +14,7 @@
             ></v-text-field>
           </v-flex>
 
-          <v-flex xs12 sm6>
+          <v-flex xs12 sm4>
             <v-text-field
               v-model="message2"
               box
@@ -23,7 +23,7 @@
             ></v-text-field>
           </v-flex>
 
-          <v-flex xs12 sm6>
+          <v-flex xs12 sm4>
             <v-text-field
               v-model="message3"
               box
@@ -37,6 +37,15 @@
               v-model="message4"
               box
               label="Cedula Cliente"
+              clearable
+            ></v-text-field>
+          </v-flex>
+
+           <v-flex xs12 sm6>
+            <v-text-field
+              v-model="message4"
+              box
+              label="Empleado"
               clearable
             ></v-text-field>
           </v-flex>
@@ -143,9 +152,9 @@ export default {
         value: 'name'
       },
       { text: 'Nombre', value: 'calories' },
-      { text: 'Descripcion ', value: 'fat' },
+      { text: 'Marca ', value: 'fat' },
       { text: 'Valor unitario', value: 'carbs' },
-      { text: 'Protein (g)', value: 'protein' },
+      { text: 'Valor total', value: 'protein' },
       { text: 'Actions', value: 'name', sortable: false }
     ],
     desserts: [],
@@ -218,41 +227,6 @@ export default {
           fat: 16.0,
           carbs: 49,
           protein: 3.9
-        },
-        {
-          name: 'Jelly bean',
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0
-        },
-        {
-          name: 'Lollipop',
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0
-        },
-        {
-          name: 'Honeycomb',
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5
-        },
-        {
-          name: 'Donut',
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9
-        },
-        {
-          name: 'KitKat',
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7
         }
       ]
     },
@@ -288,6 +262,9 @@ export default {
 
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
+.container.fill-height {
+    background-color: white;
+}
 
 </style>
