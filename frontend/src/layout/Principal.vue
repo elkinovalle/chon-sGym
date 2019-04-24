@@ -151,7 +151,7 @@ export default {
       { title: 'Mi Dieta', icon: 'kitchen', link: '/mi-dieta-cliente' },
       { title: 'Progreso', icon: 'signal_cellular_alt', link: '/progreso-cliente' },
       { title: 'Entrenador', icon: 'person', link: '/entrenadores-cliente' },
-      { title: 'Horarios', icon: 'history', link: '/mi-horario-cliente' },
+      { title: 'Mis reservas', icon: 'history', link: '/mis-reservas-cliente' },
       { title: 'Cerrar Sesión', icon: 'close', link: '' }
     ]
   })

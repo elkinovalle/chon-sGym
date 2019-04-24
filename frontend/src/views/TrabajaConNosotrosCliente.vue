@@ -3,8 +3,6 @@
   <v-container fluid>
       <v-layout row wrap>
           <v-flex d-flex xs12 sm6 md2>
-          <v-card color="transparent" dark flat>
-          </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md6>
           <v-card color="transparent" dark flat>
