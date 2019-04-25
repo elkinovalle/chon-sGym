@@ -73,10 +73,11 @@ import EntrenadorSieteCliente from '@/views/EntrenadorSieteCliente.vue'
 import EntrenadorOchoCliente from '@/views/EntrenadorOchoCliente.vue'
 import MiRutinaCliente from '@/views/MiRutinaCliente.vue'
 import MiProgresoCliente from '@/views/MiProgresoCliente.vue'
-import MiHorarioCliente from '@/views/MiHorarioCliente.vue'
+import MisReservasCliente from '@/views/MisReservasCliente.vue'
 import MiDietaCliente from '@/views/MiDietaCliente.vue'
 import HorariosCliente from '@/views/HorariosCliente.vue'
 import ContactoCliente from '@/views/ContactoCliente.vue'
+import TrabajaConNosotrosCliente from '@/views/TrabajaConNosotrosCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -418,9 +419,9 @@ export default new Router({
       component: MiRutinaCliente
     },
     {
-      path: '/mi-horario-cliente',
-      name: 'mi-horario-cliente',
-      component: MiHorarioCliente
+      path: '/mis-reservas-cliente',
+      name: 'mis-reservas-cliente',
+      component: MisReservasCliente
     },
     {
       path: '/mi-dieta-cliente',
@@ -476,6 +477,11 @@ export default new Router({
       path: '/entrenador-ocho-cliente',
       name: 'entrenador-ocho-cliente',
       component: EntrenadorOchoCliente
+    },
+    {
+      path: '/trabaja-con-nosotros-cliente',
+      name: 'trabaja-con-nosotros-cliente',
+      component: TrabajaConNosotrosCliente
     },
     {
       path: '/membresias-empleado',
