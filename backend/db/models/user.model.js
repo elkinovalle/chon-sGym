@@ -22,6 +22,10 @@ module.exports = function setupMetricModel (config) {
       type: Sequelize.TEXT,
       allowNull: false
     },
+    rol: {
+      type: Sequelize.ENUM('Usuarios','Administrador','Empleado'),
+      allowNull: false
+    },
     telefono: {
       type: Sequelize.TEXT,
     },
@@ -35,6 +39,13 @@ module.exports = function setupMetricModel (config) {
     genero: {
       type: Sequelize.ENUM('F', 'M') ,
       alloNull: false
+    },
+    peso: {
+      type: Sequelize.DECIMAL(4,1),
+    },
+    altura: {
+      type: Sequelize.DECIMAL(3,2),
     }
+
   })
 }
