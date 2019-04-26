@@ -22,39 +22,35 @@
                         <div>
                           <div class="headline mb-4">Tipo de clase: Spinning</div>
                           <div  class="mb-4">fecha de la reserva: 25/05/2019 </div>
-                          <div  class=" mb-4">Hora: 10:00 a.m. </div>
+                          <div  class=" mb-4">Hora de inicio: 10:00 a.m. </div>
                         </div>
                       </v-card-title>
                     </v-flex>
                     <v-flex xs4>
                       <v-card-title primary-title>
                         <div>
-                          <div class="headline mb-4">precio de la habitacion </div>
-                          <div  class="title mb-4 ">650000$ </div>
-                          <div>numero de niños: 0</div>
+                          <div  class="headline mb-4">Lugar: Chon's Gym</div>
+                          <div  class="mb-4">Entrenador: <br>Octavio Carvajal </div>
+                          <div  class=" mb-4">Hora de finalizaciín: 11:00 a.m. </div>
                         </div>
                       </v-card-title>
                     </v-flex>
                     <v-flex xs4>
-                      <v-img :src="habitacion2" contain></v-img>
+                      <v-img :src="reservas" contain></v-img>
                     </v-flex>
                   </v-layout>
                   <v-divider light></v-divider>
                   <v-expansion-panel>
                         <v-expansion-panel-content >
                           <template v-slot:header>
-                            <div>detalles</div>
+                            <div>Recomendaciones</div>
                           </template>
                           <v-card>
                             <v-card-text>
-                              *Aire acondicionado <br>
-                              *Baño con ducha, secador de pelo y servicio de *amenidades diarias<br>
-                              *Caja de seguridad electrónica<br>
-                              * Voltaje (corriente): 220 V/60 Hz (los baños cuentan con tomas de 110 V para equipos hasta 50 W)<br>
-                              *Minibar con agua, refrescos, cervezas y más ($)<br>
-                              *Teléfono directo en dormitorio y baño<br>
-                              *1 cama extra o una cuna (a solicitud)<br>
-                              *2 Baños
+                              *Llegar puntual <br>
+                              *Vestir ropa cómoda y adecuada<br>
+                              *Llevar hidratación<br>
+                              *En caso de no poder asistir informar con anticipación<br>
                             </v-card-text>
                           </v-card>
                         </v-expansion-panel-content>
@@ -76,41 +72,37 @@
                     <v-flex xs4>
                       <v-card-title primary-title>
                         <div>
-                          <div class="headline mb-4">tipo de habitacion: doble</div>
-                          <div  class="mb-4">fecha de la reserva  : 25/05/2017 </div>
-                          <div  class=" mb-4">numero de adultos : 2</div>
+                           <div class="headline mb-4">Tipo de clase: Spinning</div>
+                          <div  class="mb-4">fecha de la reserva: 25/05/2019 </div>
+                          <div  class=" mb-4">Hora de inicio: 10:00 a.m. </div>
                         </div>
                       </v-card-title>
                     </v-flex>
                     <v-flex xs4>
                       <v-card-title primary-title>
                         <div>
-                          <div class="headline mb-4">precio de la habitacion </div>
-                          <div  class="title mb-4 ">650000$ </div>
-                          <div>numero de niños: 0</div>
+                          <div  class="headline mb-4">Lugar: Chon's Gym</div>
+                          <div  class="mb-4">Entrenador: <br>Octavio Carvajal </div>
+                          <div  class=" mb-4">Hora de finalizaciín: 11:00 a.m. </div>
                         </div>
                       </v-card-title>
                     </v-flex>
                     <v-flex xs4>
-                      <v-img :src="habitacion2" contain></v-img>
+                      <v-img :src="reservas" contain></v-img>
                     </v-flex>
                   </v-layout>
                   <v-divider light></v-divider>
                   <v-expansion-panel>
                         <v-expansion-panel-content >
                           <template v-slot:header>
-                            <div>detalles</div>
+                            <div>Recomendaciones</div>
                           </template>
                           <v-card>
                             <v-card-text>
-                              *Aire acondicionado <br>
-                              *Baño con ducha, secador de pelo y servicio de *amenidades diarias<br>
-                              *Caja de seguridad electrónica<br>
-                              * Voltaje (corriente): 220 V/60 Hz (los baños cuentan con tomas de 110 V para equipos hasta 50 W)<br>
-                              *Minibar con agua, refrescos, cervezas y más ($)<br>
-                              *Teléfono directo en dormitorio y baño<br>
-                              *1 cama extra o una cuna (a solicitud)<br>
-                              *2 Baños
+                              *Llegar puntual <br>
+                              *Vestir ropa cómoda y adecuada<br>
+                              *Llevar hidratación<br>
+                              *En caso de no poder asistir informar con anticipación<br>
                             </v-card-text>
                           </v-card>
                         </v-expansion-panel-content>
@@ -131,41 +123,37 @@
                     <v-flex xs4>
                       <v-card-title primary-title>
                         <div>
-                          <div class="headline mb-4">tipo de clase: Spinning</div>
+                          <div class="headline mb-4">Tipo de clase: Spinning</div>
                           <div  class="mb-4">fecha de la reserva: 25/05/2019 </div>
-                          <div  class=" mb-4">Hora: 10:00 a.m. </div>
+                          <div  class=" mb-4">Hora de inicio: 10:00 a.m. </div>
                         </div>
                       </v-card-title>
                     </v-flex>
                     <v-flex xs4>
                       <v-card-title primary-title>
                         <div>
-                          <div class="headline mb-4">precio de la habitacion </div>
-                          <div  class="title mb-4 ">650000$ </div>
-                          <div>numero de niños: 0</div>
+                          <div  class="headline mb-4">Lugar: Chon's Gym</div>
+                          <div  class="mb-4">Entrenador: <br>Octavio Carvajal </div>
+                          <div  class=" mb-4">Hora de finalizaciín: 11:00 a.m. </div>
                         </div>
                       </v-card-title>
                     </v-flex>
                     <v-flex xs4>
-                      <v-img :src="habitacion2" contain></v-img>
+                      <v-img :src="reservas" contain></v-img>
                     </v-flex>
                   </v-layout>
                   <v-divider light></v-divider>
                   <v-expansion-panel>
                         <v-expansion-panel-content >
                           <template v-slot:header>
-                            <div>detalles</div>
+                               <div>Recomendaciones</div>
                           </template>
                           <v-card>
                             <v-card-text>
-                              *Aire acondicionado <br>
-                              *Baño con ducha, secador de pelo y servicio de *amenidades diarias<br>
-                              *Caja de seguridad electrónica<br>
-                              * Voltaje (corriente): 220 V/60 Hz (los baños cuentan con tomas de 110 V para equipos hasta 50 W)<br>
-                              *Minibar con agua, refrescos, cervezas y más ($)<br>
-                              *Teléfono directo en dormitorio y baño<br>
-                              *1 cama extra o una cuna (a solicitud)<br>
-                              *2 Baños
+                              *Llegar puntual <br>
+                              *Vestir ropa cómoda y adecuada<br>
+                              *Llevar hidratación<br>
+                              *En caso de no poder asistir informar con anticipación<br>
                             </v-card-text>
                           </v-card>
                         </v-expansion-panel-content>
@@ -186,13 +174,13 @@
 </div>
 </template>
 
-<script>
-import HABITACION2 from '@/assets/3meses.jpg'
+<script lang="stylus" scoped>
+import RESERVAS from '@/assets/3meses.jpg'
 export default {
   name: 'inicio',
   data () {
     return {
-      habitacion2: HABITACION2,
+      reservas: RESERVAS,
       active: null
     }
   },

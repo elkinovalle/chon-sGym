@@ -340,7 +340,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .trabaje{
   background-color black!important
 }

@@ -3,34 +3,9 @@
     <v-flex
       sm12
       lg3
-      class="pa-5 mb-3 feature-pane">
-      <v-btn
-        fab
-        outline
-        small
-        absolute
-        left
-        color="primary"
-        @click="$refs.calendar.prev()">
-        <v-icon dark>
-          keyboard_arrow_left
-        </v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        outline
-        small
-        absolute
-        right
-        color="primary"
-        @click="$refs.calendar.next()">
-        <v-icon
-          dark
-        >
-          keyboard_arrow_right
-        </v-icon>
-      </v-btn>
-      <br><br><br>
+      class="flex pa-5 mb-3 feature-pane"
+      offset-xs1>
+      <br><br><br><br><br>
       <v-select
         v-model="type"
         :items="typeOptions"
@@ -38,8 +13,20 @@
       ></v-select>
       <v-checkbox
         v-model="dark"
-        label="Fondo oscuro"
+        label="Fondo Oscuro"
       ></v-checkbox>
+      <v-text-field
+        v-if="type === 'custom-weekly'"
+        v-model="minWeeks"
+        label="Minimum Weeks"
+        type="number"
+      ></v-text-field>
+      <v-select
+        v-if="type === 'custom-daily'"
+        v-model="maxDays"
+        :items="maxDaysOptions"
+        label="# of Days"
+      ></v-select>
       <v-menu
         ref="startMenu"
         v-model="startMenu"
@@ -170,28 +157,38 @@
           </v-btn>
         </v-date-picker>
       </v-menu>
-      <v-select
-        v-model="weekdays"
-        :items="weekdaysOptions"
-        label="Fines de semana"
-      ></v-select>
-      <v-text-field
-        v-if="type === 'custom-weekly'"
-        v-model="minWeeks"
-        label="Minimum Weeks"
-        type="number"
-      ></v-text-field>
-      <v-select
-        v-if="type === 'custom-daily'"
-        v-model="maxDays"
-        :items="maxDaysOptions"
-        label="# of Days"
-      ></v-select>
+
+      <v-btn
+        fab
+        outline
+        small
+        absolute
+        left
+        color="primary"
+        @click="$refs.calendar.prev()">
+        <v-icon dark>
+          keyboard_arrow_left
+        </v-icon>
+      </v-btn>
+      <v-btn
+        fab
+        outline
+        small
+        absolute
+        right
+        color="primary"
+        @click="$refs.calendar.next()">
+        <v-icon
+          dark
+        >
+          keyboard_arrow_right
+        </v-icon>
+      </v-btn>
     </v-flex>
     <v-flex
       sm12
-      lg9
-      class="pl-3">
+      lg7
+      class="calendario pl-3">
       <v-sheet height="500">
         <v-calendar locale="es"
           ref="calendar"
@@ -210,31 +207,59 @@
           :interval-height="intervals.height"
           :interval-style="intervalStyle"
           :show-interval-label="showIntervalLabel"
-          :color="color"
         >
-          <template v-slot:day="day">
-            <div
-              v-if="day.day % 3 === 0"
-              class="day"
-            >
-              day slot {{ day.date }}
-            </div>
-          </template>
-          <template v-slot:header="day">
-            <div
-              v-if="day.weekday % 2"
-              class="day-header"
-            >
-              day-header slot {{ day.date }}
-            </div>
-          </template>
-          <template v-slot:day-body="day">
-            <div
-              v-if="day.weekday % 3 === 2"
-              class="day-body"
-            >
-              day-body slot {{ day.date }}
-            </div>
+          <template v-slot:day="{ date }">
+            <template v-for="event in eventsMap[date]">
+              <v-menu
+                :key="event.title"
+                v-model="event.open"
+                full-width
+                offset-x
+              >
+                <template v-slot:activator="{ on }">
+                  <div
+                    v-if="!event.time"
+                    v-ripple
+                    class="my-event"
+                    v-on="on"
+                    v-html="event.title"
+                  ></div>
+                </template>
+                <v-card
+                  color="grey lighten-4"
+                  min-width="350px"
+                  flat
+                >
+                  <v-toolbar
+                    color="primary"
+                    dark
+                  >
+                    <v-btn icon>
+                      <v-icon>edit</v-icon>
+                    </v-btn>
+                    <v-toolbar-title v-html="event.title"></v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                      <v-icon>favorite</v-icon>
+                    </v-btn>
+                    <v-btn icon>
+                      <v-icon>more_vert</v-icon>
+                    </v-btn>
+                  </v-toolbar>
+                  <v-card-title primary-title>
+                    <span v-html="event.details"></span>
+                  </v-card-title>
+                  <v-card-actions>
+                    <v-btn
+                      flat
+                      color="secondary"
+                    >
+                      Cancel
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-menu>
+            </template>
           </template>
         </v-calendar>
       </v-sheet>
@@ -284,6 +309,56 @@ const stylings = {
 
 export default {
   data: () => ({
+    events: [
+      {
+        title: 'Vacation',
+        details: 'Going to the beach!',
+        date: '2018-12-30',
+        open: true
+      },
+      {
+        title: 'Vacation',
+        details: 'Going to the beach!',
+        date: '2018-12-31',
+        open: false
+      },
+      {
+        title: 'Vacation',
+        details: 'Going to the beach!',
+        date: '2019-01-01',
+        open: false
+      },
+      {
+        title: 'Meeting',
+        details: 'Spending time on how we do not have enough time',
+        date: '2019-01-07',
+        open: false
+      },
+      {
+        title: '30th Birthday',
+        details: 'Celebrate responsibly',
+        date: '2019-01-03',
+        open: false
+      },
+      {
+        title: 'New Year',
+        details: 'Eat chocolate until you pass out',
+        date: '2019-01-01',
+        open: false
+      },
+      {
+        title: 'Conference',
+        details: 'Mute myself the whole time and wonder why I am on this call',
+        date: '2019-01-21',
+        open: false
+      },
+      {
+        title: 'Hackathon',
+        details: 'Code like there is no tommorrow',
+        date: '2019-02-01',
+        open: false
+      }
+    ],
     dark: false,
     startMenu: false,
     start: '2019-01-12',
@@ -338,11 +413,19 @@ export default {
       return this.type in {
         'custom-weekly': 1, 'custom-daily': 1
       }
+    },
+    eventsMap () {
+      const map = {}
+      this.events.forEach(e => (map[e.date] = map[e.date] || []).push(e))
+      return map
     }
   },
   methods: {
     showIntervalLabel (interval) {
       return interval.minute === 0
+    },
+    open (event) {
+      alert(event.title)
     }
   }
 }
@@ -406,5 +489,24 @@ export default {
   .carta {
       text-align: center
   }
-
+.flex{
+  margin-top: -150px
+}
+.calendario{
+  margin-top: 20px
+}
+.my-event {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 2px;
+    background-color: #1867c0;
+    color: #ffffff;
+    border: 1px solid #1867c0;
+    width: 100%;
+    font-size: 12px;
+    padding: 3px;
+    cursor: pointer;
+    margin-bottom: 1px;
+  }
 </style>

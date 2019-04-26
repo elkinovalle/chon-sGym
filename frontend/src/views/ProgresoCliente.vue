@@ -69,7 +69,7 @@ export default {
 
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .carta{
   margin-left -25px
   border-radius 0%

@@ -99,7 +99,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.belleza{
     height 460px
     width 385px !important

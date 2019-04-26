@@ -147,7 +147,7 @@ export default {
 
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
   .flexx{
     background-color rgba(0,0,0,0.7)
     padding 20px

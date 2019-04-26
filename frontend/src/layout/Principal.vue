@@ -152,23 +152,23 @@ export default {
       { title: 'Progreso', icon: 'signal_cellular_alt', link: '/progreso-cliente' },
       { title: 'Entrenador', icon: 'person', link: '/entrenadores-cliente' },
       { title: 'Mis reservas', icon: 'history', link: '/mis-reservas-cliente' },
-      { title: 'Cerrar Sesión', icon: 'close', link: '' }
+      { title: 'Cerrar Sesión', icon: 'close', link: '/login' }
     ]
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  .v-btn{
-    font-size 16px !important
-    font-family Helvetica
-    font-style italic
+    font-size: 16px !important
+    font-family: Helvetica
+    font-style: italic
   }
   img.footer_imagen{
-    width 80px !important
-    margin  0px 180px
-    height 60px
+    width: 80px !important
+    margin:  0px 180px
+    height: 60px
   }
   .desplegable{
-    z-index 900000
+    z-index: 900000
   }
 </style>

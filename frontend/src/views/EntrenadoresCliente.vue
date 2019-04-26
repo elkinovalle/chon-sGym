@@ -242,7 +242,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_plan{
     height 170px
     width 190px !important

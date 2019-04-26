@@ -124,7 +124,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="stylus" scoped>
 .elevation-1{
     border: solid 2px gray
 }

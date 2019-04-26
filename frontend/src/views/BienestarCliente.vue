@@ -73,52 +73,52 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_clases{
-    height 500px
-    width 700px !important
+    height: 500px
+    width: 700px !important
   }
    img.retrato{
-    height 350px
-    width 400px !important
-    border-top-right-radius 10%
-    border-bottom-left-radius 10%
+    height: 350px
+    width: 400px !important
+    border-top-right-radius: 10%
+    border-bottom-left-radius: 10%
   }
   img.retrato2{
-    height 400px
-    width 400px !important
-    border-top-right-radius 10%
-    border-bottom-left-radius 10%
+    height: 400px
+    width: 400px !important
+    border-top-right-radius: 10%
+    border-bottom-left-radius: 10%
   }
   li{
-    margin 0px 0px 0px 0px
+    margin: 0px 0px 0px 0px
   }
   article{
-    margin 0px 0px 0px 60px
+    margin: 0px 0px 0px 60px
   }
   p.mensaje {
-    font-size 13px
-    margin 0px 0px 0px 440px
-    font-family sans-serif
-    color rgba(86, 86, 88, 0.877);
+    font-size: 13px
+    margin: 0px 0px 0px 440px
+    font-family: sans-serif
+    color: rgba(86, 86, 88, 0.877);
   }
    .cajon5   {
-      padding 50px 40px 50px 0px
-      margin 10px
+      padding: 50px 40px 50px 0px
+      margin: 10px
   }
    .cajon6    {
-      margin 0px 10px 0px 0px
+      margin: 0px 10px 0px 0px
   }
      .cajon7     {
-      margin 0px 0px 0px 10px
-      margin-top 100px !important
+      margin: 0px 0px 0px 10px
+      margin-top: 100px !important
   }
      .cajon8     {
-      margin 0px 0px 0px 10px
-      margin-top 150px !important
+      margin: 0px 0px 0px 10px
+      margin-top: 150px !important
   }
   .informacion1{
-        background-color transparent !important
-        margin-top -180px
+        background-color: transparent !important
+        margin-top: -180px
   }
 </style>

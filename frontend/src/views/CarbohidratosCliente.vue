@@ -61,32 +61,32 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_layout{
-    height 500px
-    width 700px !important
+    height: 500px
+    width: 700px !important
   }
   img.imagen_tips{
-    height 300px
-    width 400px !important
+    height: 300px
+    width: 400px !important
   }
   li{
-    margin 0px 0px 0px 0px
+    margin: 0px 0px 0px 0px
   }
   article{
-    margin 0px 0px 0px 60px
+    margin: 0px 0px 0px 60px
   }
   p.mensaje {
-    font-size 13px
-    margin 0px 0px 0px 440px
-    font-family sans-serif
-    color rgba(86, 86, 88, 0.877);
+    font-size: 13px
+    margin: 0px 0px 0px 440px
+    font-family: sans-serif
+    color: rgba(86, 86, 88, 0.877);
   }
   .tips{
-      padding 0px 40px 0px 0px
-      background-color white!important
+      padding: 0px 40px 0px 0px
+      background-color: white!important
   }
   .frases{
-    margin-top -30px
+    margin-top: -30px
   }
 </style>
