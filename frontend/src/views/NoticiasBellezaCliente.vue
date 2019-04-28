@@ -109,4 +109,10 @@ export default {
       margin 0px 0px 0px 10px
       margin-top 100px !important
   }
+  .caja{
+    background-color transparent !important
+  }
+  .informacion{
+     background-color transparent !important
+  }
 </style>

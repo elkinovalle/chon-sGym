@@ -54,8 +54,8 @@
             <span class="text-xs black--text caption justify">Una cosa es tener un plan de ejercicio fisico de forma regular, con una dieta asignada, frecuencia de la actividad física, rutinas, etc., y otra es hacerlo de manera espontánea, sin indicación alguna. Lo anterior significa que es necesaria la orientación de un especialista para alcanzar los logros propuestos .</span><br>
             <p></p><br><hr>
             <p></p><br>
-        <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
-        <v-btn color="blue darken-4" class="left font-weight-black white--text display-1">Ver Horarios</v-btn>
+        <v-btn color="black" class="font-weight-black white--text title" to="planes-cliente">Ver Planes</v-btn>
+        <v-btn color="blue darken-4" class="font-weight-black white--text title" to="/horarios-cliente">Ver Horarios</v-btn>
                    </v-card>
         </v-flex>
         </v-layout>

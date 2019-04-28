@@ -47,8 +47,8 @@
         </v-flex>
                <v-flex d-flex xs12 sm6 md10>
                 <v-card class="frases" flat>
-        <v-btn color="black" class="right font-weight-black white--text display-1">Ver Planes</v-btn>
-        <v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
+        <v-btn color="black" class="font-weight-black white--text title" to="planes-cliente">Ver Planes</v-btn>
+        <v-btn color="blue darken-4" class="font-weight-black white--text title" to="/horarios-cliente">Ver Horarios</v-btn>
                    </v-card>
         </v-flex>
         </v-layout>

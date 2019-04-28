@@ -26,8 +26,8 @@
               <p></p>
                  <span class="text-xs black--text body-1 justify">Para recuperarse de una jornada extenuante por el trabajo o las rutinas de gimnasio, es importante dormir entre 7 a 9 horas, así el cuerpo se recuperará; trayendo ventajas como la capacidad y agilidad mental, la reparación de tejidos o el crecimiento de nuevas células, además aumenta las probabilidades de bajar de peso, mejorando nuestra calidad de vida.</span><br>
               <p></p><br>
-                      <v-btn color="black" class="right font-weight-black white--text display-1">Ver Planes</v-btn>
-        <v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
+        <v-btn color="black" class="font-weight-black white--text title" to="planes-cliente">Ver Planes</v-btn>
+        <v-btn color="blue darken-4" class="font-weight-black white--text title" to="/horarios-cliente">Ver Horarios</v-btn>
               <p></p>
              </v-card>
         </v-flex>

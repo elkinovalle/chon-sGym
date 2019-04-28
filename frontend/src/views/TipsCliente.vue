@@ -119,6 +119,7 @@ export default {
     display inline-block
     height 215px
     width 350px
+    margin-right 40px
     &:hover{
       cursor pointer
     }

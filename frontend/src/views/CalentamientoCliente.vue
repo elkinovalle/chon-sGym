@@ -26,8 +26,8 @@
               <p></p>
                  <span class="text-xs black--text body-1 justify">Antes de iniciar cualquier entrenamiento físico, debes hacer un calentamiento para estimular los músculos, especialmente realiza una rutina de estiramientos, así incentivarás el flujo de sangre y oxígeno de tu cuerpo. Recuerda que estos ejercicios se deben realizar con menor esfuerzo.</span><br>
               <p></p><br>
-                      <v-btn color="black" class="right font-weight-black white--text display-1">Ver Planes</v-btn>
-        <v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
+        <v-btn color="black" class="font-weight-black white--text title" to="planes-cliente">Ver Planes</v-btn>
+        <v-btn color="blue darken-4" class="font-weight-black white--text title" to="/horarios-cliente">Ver Horarios</v-btn>
               <p></p>
              </v-card>
         </v-flex>

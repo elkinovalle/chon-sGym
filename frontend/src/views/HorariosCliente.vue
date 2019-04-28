@@ -5,16 +5,12 @@
       lg3
       class="flex pa-5 mb-3 feature-pane"
       offset-xs1>
-      <br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br>
       <v-select
         v-model="type"
         :items="typeOptions"
         label="Tipo"
       ></v-select>
-      <v-checkbox
-        v-model="dark"
-        label="Fondo Oscuro"
-      ></v-checkbox>
       <v-text-field
         v-if="type === 'custom-weekly'"
         v-model="minWeeks"
@@ -157,7 +153,10 @@
           </v-btn>
         </v-date-picker>
       </v-menu>
-
+<v-checkbox
+        v-model="dark"
+        label="Fondo Oscuro"
+      ></v-checkbox>
       <v-btn
         fab
         outline
@@ -490,10 +489,10 @@ export default {
       text-align: center
   }
 .flex{
-  margin-top: -150px
+  margin: -150px -200px 50px 100px
 }
 .calendario{
-  margin-top: 20px
+  margin: 20px 0px 0px 200px
 }
 .my-event {
     overflow: hidden;

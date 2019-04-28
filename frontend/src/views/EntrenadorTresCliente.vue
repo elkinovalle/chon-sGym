@@ -71,8 +71,8 @@
           <li class="text-xs black--text subheading justify">2007. Título Técnico de  Entrenador Personal en el Servicio Nacional de Aprendizaje (SENA)</li><br>
           <li class="text-xs black--text subheading justify">2008. Título de Entrenador Personal en el Instituto de Ciencias de la Salud y la Actividad Física.</li><br>
           <li class="text-xs black--text subheading justify">20011. Máster en Dirección Técnica en Actividades Deportivas.</li><br>
-           <v-btn color="black" class="right font-weight-black white--text display-1">Ver Planes</v-btn>
-           <v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
+       <v-btn color="black" class="font-weight-black white--text title" to="planes-cliente">Ver Planes</v-btn>
+        <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/horarios-cliente">Ver Horarios</v-btn>
           </v-card>
         </v-flex>
        <v-flex d-flex xs12 sm6 md2>

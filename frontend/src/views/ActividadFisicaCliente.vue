@@ -124,4 +124,8 @@ export default {
   .cuadro{
       margin-top: -50px
   }
+   img.imagen_universo{
+    height 400px
+    width 600px !important
+  }
 </style>

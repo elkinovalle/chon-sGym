@@ -20,7 +20,7 @@
 <li class="text-xs black--text body-1">Aumenta la autoestima y la sensación de control.<br></li>
 <li class="text-xs black--text body-1">Tonifica prácticamente la totalidad del cuerpo, fortaleciendo multitud de grupos musculares.<br></li>
 <p></p>
-<v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
+<v-btn color="blue darken-4" class="font-weight-black white--text title" to="/horarios-cliente">Ver Horarios</v-btn>
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md6>
@@ -31,7 +31,7 @@
       <p></p>
         <img class="imagen_clases" src="../assets/cardio-box.jpg" alt="">
         <p></p><br>
-        <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
+        <v-btn color="black" class="font-weight-black white--text title" to="planes-cliente">Ver Planes</v-btn>
         <p></p><br>
         <p class="mensaje">*Horarios sujetos a cambios sin previo aviso</p>
         <p></p>
@@ -55,29 +55,20 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
- img.imagen_layout{
-    height: 500px
-    width: 700px !important
+  img.imagen_clases{
+    height 500px
+    width 700px !important
   }
   li{
-    margin: 0px 0px 0px 0px
-  }
-  p.texto{
-    background-color: silver !important
-    text-align: center
-    border: solid 2px
-    font-size: 16px
-    margin: -5px 0px 0px -1px
-    padding: 10px
-    font-family: sans-serif
+    margin 0px 0px 0px 0px
   }
   article{
-    margin: 0px 0px 0px 60px
+    margin 0px 0px 0px 60px
   }
   p.mensaje {
-    font-size: 13px
-    margin: 0px 0px 0px 440px
-    font-family: sans-serif
-    color: rgba(86, 86, 88, 0.877);
+    font-size 13px
+    margin -60px 0px 0px 440px
+    font-family sans-serif
+    color rgba(86, 86, 88, 0.877);
   }
 </style>

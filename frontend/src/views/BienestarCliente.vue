@@ -121,4 +121,10 @@ export default {
         background-color: transparent !important
         margin-top: -180px
   }
+  .caja{
+    background-color transparent !important
+  }
+  .informacion{
+     background-color transparent !important
+  }
 </style>

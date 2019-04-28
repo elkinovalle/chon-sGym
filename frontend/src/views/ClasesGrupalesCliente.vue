@@ -29,11 +29,11 @@
         </v-flex>
          <v-flex d-flex xs12 sm3 md1>
               <v-card color="transparent" dark flat>
-                  <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Spinning</v-btn><br>
+                  <v-btn color="blue darken-4" class="font-weight-black white--text title" >Spinning</v-btn><br>
                   <p></p><br>
-                  <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Jaula</v-btn><br>
+                  <v-btn color="blue darken-4" class="font-weight-black white--text title" >Jaula</v-btn><br>
                   <p></p><br>
-                  <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Aérobicos</v-btn>
+                  <v-btn color="blue darken-4" class="font-weight-black white--text title" >Aérobicos</v-btn>
           </v-card>
         </v-flex>
       </v-layout>
@@ -119,17 +119,18 @@ export default {
 </script>
 <style lang="stylus" scoped>
  img.imagen_gym{
-    height: 270px
-    width: 370px !important
-    margin: 0px 20px 0px 20px
+    height 270px
+    width 370px !important
+    margin 0px 20px 0px 20px
   }
   .spinning{
-    padding: 40px 30px 0px 50px
-    display: inline-block
-    height: 215px
-    width: 350px
-    &:hover{
-      cursor: pointer
+    padding 40px 30px 0px 50px
+    display inline-block
+    height 215px
+    width 350px
+    margin-right 40px
+    &hover{
+      cursor pointer
     }
   }
   img.imagen_icon{

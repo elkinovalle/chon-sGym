@@ -43,7 +43,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-un-mes-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/plan-un-mes-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -69,7 +69,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-dos-meses-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/plan-dos-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -95,7 +95,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-tres-meses-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/plan-tres-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -121,7 +121,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-seis-meses-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/plan-seis-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -142,12 +142,12 @@ un mayor avance hacia tus objetivos.
           <v-flex d-flex xs12 sm6 md2 child-flex>
           <v-card color="white" dark flat>
 
-<v-btn color="blue darken-4" class="font-weight-black white--text caption">TODOS</v-btn><br>
+<v-btn color="blue darken-4" class="font-weight-black white--text title">TODOS</v-btn><br>
           <v-btn
         color="blue darken-4"
         flat
         round
-        class="black--text headline"
+        class="black--text subheading font-italic font-weight-black "
         to=""
       >
       GIMNASIO
@@ -156,7 +156,7 @@ un mayor avance hacia tus objetivos.
         color="blue darken-4"
         flat
         round
-        class="black--text headline"
+        class="black--text subheading font-italic font-weight-black"
         to="/hard-vital-cliente"
       >
       HARD VITAL
@@ -165,7 +165,7 @@ un mayor avance hacia tus objetivos.
         color="blue darken-4"
         flat
         round
-        class="black--text headline"
+        class="black--text subheading font-italic font-weight-black"
         to="/neurofitness-cliente"
       >
       NEUROFITNESS
@@ -174,7 +174,7 @@ un mayor avance hacia tus objetivos.
         color="blue darken-4"
         flat
         round
-        class="black--text headline"
+        class="black--text subheading font-italic font-weight-black"
         to="/personalizados-cliente"
       >
       PERSONALIZADOS
@@ -203,7 +203,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-doce-meses-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/plan-doce-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -229,7 +229,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/plan-quince-meses-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/plan-quince-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -255,7 +255,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/hard-vital-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/hard-vital-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -282,7 +282,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text display-1" block to="/neurofitness-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/neurofitness-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>

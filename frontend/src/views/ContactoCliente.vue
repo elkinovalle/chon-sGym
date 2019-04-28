@@ -12,7 +12,7 @@
         <h1 class="text-xs black--text display-1 font-italic font-weight-black"><strong>CONTACTO</strong></h1><br>
         <span class="text-xs black--text caption justify">En Chon's Gym brindamos a nuestros clientes una asesoría personalizada sobre nuestros servicios, rutinas de ejercicio físico y entrenamiento físico, por eso hemos habilitado esta sección para resolver inquietudes y recibir comentarios sobre nuestro gimnasio.</span><br>
 <p></p><br>
-<v-btn color="blue darken-4" class="right font-weight-black white--text headline"  to="/trabaja-con-nosotros-cliente">Trabaje con nosostros</v-btn>
+<v-btn color="blue darken-4" class="right font-weight-black white--text title"  to="/trabaja-con-nosotros-cliente">Trabaje con nosostros</v-btn>
           </v-card>
 
        </v-flex>
