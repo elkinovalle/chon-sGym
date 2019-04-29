@@ -300,7 +300,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .theme--dark.v-label{
   color white
 }

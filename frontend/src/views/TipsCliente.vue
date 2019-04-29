@@ -108,7 +108,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_gym{
     height 270px
     width 370px !important
@@ -119,6 +119,7 @@ export default {
     display inline-block
     height 215px
     width 350px
+    margin-right 40px
     &:hover{
       cursor pointer
     }

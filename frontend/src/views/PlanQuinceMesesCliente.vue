@@ -3,11 +3,11 @@
     <p></p>
 <v-container fluid>
       <v-layout row wrap>
-           <v-flex d-flex xs12 sm6 md1 child-flex>
+           <v-flex d-flex xs12 sm6 md1>
           <v-card color="white" dark flat>
           </v-card>
         </v-flex>
-          <v-flex d-flex xs12 sm6 md2 child-flex>
+          <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
         <h1 class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></h1><br>
         <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p>
@@ -165,7 +165,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_layout{
     height 260px
     width 285px !important

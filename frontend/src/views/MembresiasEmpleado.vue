@@ -97,7 +97,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
    .container.fill-height{
      background-color dark
   }

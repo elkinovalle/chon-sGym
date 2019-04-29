@@ -71,7 +71,7 @@ export default {
           nada: 'Comida',
           lunes: 'Arroz integral y pechugas de pollo o salmón a la plancha',
           martes: 'Lentejas cocidas sin grasa y solomillo de ternera a la plancha',
-          miercoles: 'Ensalada de pasta integral, lanogstinos o pulpo a la plancha',
+          miercoles: 'Ensalada de pasta integral, langostinos o pulpo a la plancha',
           jueves: 'Arroz integral y pechugas de pollo o pavo a la plancha',
           viernes: 'Verduras a la plancha, filete de ternera grande',
           sabado: 'Arroz integral y pechugas de pollo o pavo a la plancha'
@@ -99,7 +99,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="stylus" scoped>
 .elevation-1{
     border: solid 2px gray
 }

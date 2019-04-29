@@ -1,45 +1,29 @@
 <template >
+ <div id="app">
+  <v-app id="inspire" >
   <v-layout wrap>
     <v-flex
       sm12
       lg3
-      class="pa-5 mb-3 feature-pane">
-      <v-btn
-        fab
-        outline
-        small
-        absolute
-        left
-        color="primary"
-        @click="$refs.calendar.prev()">
-        <v-icon dark>
-          keyboard_arrow_left
-        </v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        outline
-        small
-        absolute
-        right
-        color="primary"
-        @click="$refs.calendar.next()">
-        <v-icon
-          dark
-        >
-          keyboard_arrow_right
-        </v-icon>
-      </v-btn>
-      <br><br><br>
+      class="flex pa-5 mb-3 feature-pane"
+      offset-xs1>
       <v-select
         v-model="type"
         :items="typeOptions"
         label="Tipo"
       ></v-select>
-      <v-checkbox
-        v-model="dark"
-        label="Fondo oscuro"
-      ></v-checkbox>
+      <v-text-field
+        v-if="type === 'custom-weekly'"
+        v-model="minWeeks"
+        label="Minimum Weeks"
+        type="number"
+      ></v-text-field>
+      <v-select
+        v-if="type === 'custom-daily'"
+        v-model="maxDays"
+        :items="maxDaysOptions"
+        label="# of Days"
+      ></v-select>
       <v-menu
         ref="startMenu"
         v-model="startMenu"
@@ -170,29 +154,42 @@
           </v-btn>
         </v-date-picker>
       </v-menu>
-      <v-select
-        v-model="weekdays"
-        :items="weekdaysOptions"
-        label="Fines de semana"
-      ></v-select>
-      <v-text-field
-        v-if="type === 'custom-weekly'"
-        v-model="minWeeks"
-        label="Minimum Weeks"
-        type="number"
-      ></v-text-field>
-      <v-select
-        v-if="type === 'custom-daily'"
-        v-model="maxDays"
-        :items="maxDaysOptions"
-        label="# of Days"
-      ></v-select>
+<v-checkbox
+        v-model="dark"
+        label="Fondo Oscuro"
+      ></v-checkbox>
+      <v-btn
+        fab
+        outline
+        small
+        absolute
+        left
+        color="primary"
+        @click="$refs.calendar.prev()">
+        <v-icon dark>
+          keyboard_arrow_left
+        </v-icon>
+      </v-btn>
+      <v-btn
+        fab
+        outline
+        small
+        absolute
+        right
+        color="primary"
+        @click="$refs.calendar.next()">
+        <v-icon
+          dark
+        >
+          keyboard_arrow_right
+        </v-icon>
+      </v-btn>
     </v-flex>
     <v-flex
       sm12
-      lg9
-      class="pl-3">
-      <v-sheet height="500">
+      lg7
+      class="calendario pl-3">
+      <v-sheet height="650">
         <v-calendar locale="es"
           ref="calendar"
           v-model="start"
@@ -210,31 +207,78 @@
           :interval-height="intervals.height"
           :interval-style="intervalStyle"
           :show-interval-label="showIntervalLabel"
-          :color="color"
         >
-          <template v-slot:day="day">
-            <div
-              v-if="day.day % 3 === 0"
-              class="day"
-            >
-              day slot {{ day.date }}
-            </div>
-          </template>
-          <template v-slot:header="day">
-            <div
-              v-if="day.weekday % 2"
-              class="day-header"
-            >
-              day-header slot {{ day.date }}
-            </div>
-          </template>
-          <template v-slot:day-body="day">
-            <div
-              v-if="day.weekday % 3 === 2"
-              class="day-body"
-            >
-              day-body slot {{ day.date }}
-            </div>
+          <template v-slot:day="{ date }">
+            <template v-for="event in eventsMap[date]">
+              <v-menu
+                :key="event.title"
+                v-model="event.open"
+                full-width
+                offset-x
+              >
+                <template v-slot:activator="{ on }">
+                  <div
+                    v-if="!event.time"
+                    v-ripple
+                    class="my-event"
+                    v-on="on"
+                    v-html="event.title"
+                  ></div>
+                </template>
+                <v-card
+                  color="grey lighten-4"
+                  min-width="350px"
+                  flat
+                >
+                  <v-toolbar
+                    color="blue darken-4"
+                    dark
+                  >
+                    <v-spacer></v-spacer>
+                    <v-toolbar-title v-html="event.title"></v-toolbar-title>
+                    <v-spacer></v-spacer>
+                  </v-toolbar>
+                   <v-layout row wrap>
+           <v-flex d-flex xs12 sm7>
+               <v-card color="grey lighten-3" class="alert1" flat>
+                    <span><strong>Descripción: <br></strong></span>
+                    <span v-html="event.descripcion"></span><br><br>
+                     <span><strong>Hora de inicio: <br></strong></span>
+                    <span v-html="event.inicio"></span><br><br>
+                     <span><strong>Finaliza: <br></strong></span>
+                    <span v-html="event.final"></span><br><br>
+                     <span><strong>Lugar: <br></strong></span>
+                    <span v-html="event.lugar"></span><br><br>
+                    <span><strong>Entrenador: <br></strong></span>
+                    <span v-html="event.entrenador"></span><br>
+                  </v-card>
+        </v-flex>
+           <v-flex d-flex xs12 sm6>
+               <v-card color="grey lighten-3" class="alert2" flat>
+                  <v-flex d-flex xs12 sm1>
+                     <img class="imagen_alert" src="../assets/spinning-1.jpg" alt="">
+                  </v-flex>
+                  </v-card>
+        </v-flex>
+                   </v-layout>
+                  <v-card-actions>
+                      <v-btn
+            flat
+            @click="agreement = false, dialog = false"
+          >
+            Cancelar
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn
+            flat
+            @click="agreement = true, dialog = false"
+          >
+            Reservar
+          </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-menu>
+            </template>
           </template>
         </v-calendar>
       </v-sheet>
@@ -245,6 +289,8 @@
           </v-card>
         </v-flex>
   </v-layout>
+   </v-app>
+</div>
 </template>
 
 <script>
@@ -281,9 +327,93 @@ const stylings = {
     }
   }
 }
-
 export default {
-  data: () => ({
+   data: () => ({
+    agreement: false,
+    today: '2019-01-08',
+    events: [
+      {
+        title: 'Spinning',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2018-12-30',
+        open: false
+      },
+      {
+        title: 'Crossfit',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-04',
+        open: false
+      },
+      {
+        title: 'Zumba',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-13',
+        open: false
+      },
+      {
+        title: 'Cardio Box',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2018-12-30',
+        open: false
+      },
+      {
+        title: 'Spinning',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-06',
+        open: false
+      },
+      {
+        title: 'Crossfit',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-10',
+        open: false
+      },
+      {
+        title: 'Zumba',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-23',
+        open: false
+      },
+      {
+        title: 'Cardio Box',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-20',
+        open: false
+      },
+     
+    ],
     dark: false,
     startMenu: false,
     start: '2019-01-12',
@@ -338,10 +468,18 @@ export default {
       return this.type in {
         'custom-weekly': 1, 'custom-daily': 1
       }
+    },
+    eventsMap () {
+      const map = {}
+      this.events.forEach(e => (map[e.date] = map[e.date] || []).push(e))
+      return map
     }
   },
   methods: {
-    showIntervalLabel (interval) {
+    open (event) {
+      alert(event.title)
+    },
+     showIntervalLabel (interval) {
       return interval.minute === 0
     }
   }
@@ -349,7 +487,6 @@ export default {
 </script>
 
 <style scoped>
-
   .feature-pane {
     position: relative;
     padding-top: 30px;
@@ -406,5 +543,37 @@ export default {
   .carta {
       text-align: center
   }
+.flex{
+  margin: 0px -200px 0px 100px
+}
+.calendario{
+  margin: 60px 0px 0px 200px
+}
+.my-event {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 2px;
+  background-color: #1867c0;
+  color: #ffffff;
+  border: 1px solid #1867c0;
+  width: 100%;
+  font-size: 12px;
+  padding: 3px;
+  cursor: pointer;
+  margin-bottom: 1px;
+}
+.alert1 {
+  padding: 10px;
+  margin-left: -80px;
+}
+.alert2 {
+  padding: 80px 0px;
 
+}
+.imagen_alert{
+   width: 60px;
+  height: 140px;
+  margin-left: -130px
+}
 </style>

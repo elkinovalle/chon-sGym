@@ -189,7 +189,7 @@ export default {
 
 }
 </script>
-<style lang="stylus" >
+<style lang="stylus" scoped>
   .subheader{
     text-align center !important
     display 1

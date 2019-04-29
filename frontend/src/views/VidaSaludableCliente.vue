@@ -87,7 +87,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_clases{
     height 500px
     width 700px !important
@@ -118,5 +118,9 @@ export default {
   }
   .cuadro{
       margin-top -50px
+  }
+   img.imagen_universo{
+    height 400px
+    width 600px !important
   }
 </style>

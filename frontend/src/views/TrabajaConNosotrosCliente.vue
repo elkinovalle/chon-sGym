@@ -87,7 +87,7 @@
       scroll-off-screen
       scroll-target="#scrolling-techniques"
     >
-      <v-toolbar-title class="titulo subheading black--text font-weight-black">Entrenador de croosfit</v-toolbar-title>
+      <v-toolbar-title class="titulo headline black--text font-weight-black">Entrenador croosfit</v-toolbar-title>
     </v-toolbar>
     <div
       id="scrolling-techniques"
@@ -163,7 +163,7 @@
         <p></p>
         <h1 class="text-xs white--text body-1"><strong>Experiencia: </strong>Mínima de 2 año </h1>
         <p></p><br>
-        <v-btn color="blue darken-4" class="right font-weight-black white--text display-1">Aplicar</v-btn>
+        <v-btn color="blue darken-4" class="right font-weight-black white--text title">Aplicar</v-btn>
           </v-card>
         </v-flex>
           </v-card>
@@ -179,7 +179,7 @@
         <p></p>
         <h1 class="text-xs white--text body-1"><strong>Experiencia: </strong>Mínima de 2 año </h1>
         <p></p><br>
-        <v-btn color="white" class="right font-weight-black black--text display-1">Aplicar</v-btn>
+        <v-btn color="white" class="right font-weight-black black--text title">Aplicar</v-btn>
           </v-card>
         </v-flex>
           </v-card>
@@ -195,7 +195,7 @@
         <p></p>
         <h1 class="text-xs white--text body-1"><strong>Experiencia: </strong>Mínima de 1 año </h1>
         <p></p><br>
-        <v-btn color="blue darken-4" class="right font-weight-black white--text display-1">Aplicar</v-btn>
+        <v-btn color="blue darken-4" class="right font-weight-black white--text title">Aplicar</v-btn>
           </v-card>
         </v-flex>
           </v-card>
@@ -242,7 +242,7 @@
         label="Teléfono"
         mask="phone"
       ></v-text-field>
-      <v-btn color="grey lighten-2" class="adjuntar right font-weight-black black--text display-1" block>Adjuntar hoja de vida</v-btn>
+      <v-btn color="grey lighten-2" class="adjuntar right black--text title" block>Adjuntar hoja de vida</v-btn>
       <br><br><br>
       <v-checkbox
         v-model="agreement"
@@ -340,7 +340,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .trabaje{
   background-color black!important
 }

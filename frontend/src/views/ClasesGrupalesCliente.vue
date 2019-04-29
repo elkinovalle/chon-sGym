@@ -29,11 +29,11 @@
         </v-flex>
          <v-flex d-flex xs12 sm3 md1>
               <v-card color="transparent" dark flat>
-                  <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Spinning</v-btn><br>
+                  <v-btn color="blue darken-4" class="font-weight-black white--text title" >Spinning</v-btn><br>
                   <p></p><br>
-                  <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Jaula</v-btn><br>
+                  <v-btn color="blue darken-4" class="font-weight-black white--text title" >Jaula</v-btn><br>
                   <p></p><br>
-                  <v-btn color="blue darken-4" class="font-weight-black white--text display-1" >Aérobicos</v-btn>
+                  <v-btn color="blue darken-4" class="font-weight-black white--text title" >Aérobicos</v-btn>
           </v-card>
         </v-flex>
       </v-layout>
@@ -117,7 +117,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_gym{
     height 270px
     width 370px !important
@@ -128,44 +128,45 @@ export default {
     display inline-block
     height 215px
     width 350px
-    &:hover{
+    margin-right 40px
+    &hover{
       cursor pointer
     }
   }
   img.imagen_icon{
-    height 60px
-    width 60px !important
-    margin 0px 0px 0px 40px
+    height: 60px
+    width: 60px !important
+    margin: 0px 0px 0px 40px
   }
   h1.escrito{
-    text-align center
-    font-size 30px
-    color white
-    margin -150px 0px 0px 0px!important
-    padding 10px
-    font-family sans-serif
+    text-align: center
+    font-size: 30px
+    color: white
+    margin: -150px 0px 0px 0px!important
+    padding: 10px
+    font-family: sans-serif
   }
   li{
-    margin 0px 0px 0px 60px
+    margin: 0px 0px 0px 60px
   }
   p.texto{
-    background-color silver !important
-    text-align center
-    border solid 2px
-    font-size 16px
-    margin -5px 0px 0px -1px
-    padding 10px
-    font-family sans-serif
+    background-color: silver !important
+    text-align: center
+    border: solid 2px
+    font-size: 16px
+    margin: -5px 0px 0px -1px
+    padding: 10px
+    font-family: sans-serif
   }
   article{
-    margin 0px 0px 0px 60px
+    margin: 0px 0px 0px 60px
   }
   div.fondo{
-      background-image url('../assets/gym.jpg') !important
-      margin-top -14px
+      background-image: url('../assets/gym.jpg') !important
+      margin-top: -14px
   }
   .contenedor{
-    padding 20px
-    text-align center
+    padding: 20px
+    text-align: center
   }
 </style>
