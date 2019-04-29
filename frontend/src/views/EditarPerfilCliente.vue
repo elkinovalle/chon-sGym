@@ -10,12 +10,17 @@
     >
       <span>Cambios guardados!</span>
     </v-snackbar>
-    <v-form ref="form" @submit.prevent="submit">
+    <v-form ref="form" @submit.prevent="submit"
+      v-model="form"
+      >
+
       <v-container grid-list-xl fluid>
         <v-layout wrap>
           <v-flex sm5>
           <v-flex sm11>
+
             <v-text-field
+              box
               v-model="form.first"
               :rules="rules.name"
               color="blue darken-4"
@@ -28,6 +33,7 @@
               v-model="form.last"
               :rules="rules.name"
               color="blue darken-4"
+              box
               label="Apellidos"
               required
             ></v-text-field>
@@ -35,6 +41,7 @@
           <v-flex sm11>
             <v-text-field
               v-model="form.cc"
+              box
               :rules="rules.name"
               color="blue darken-4"
               label="CC/TI"
@@ -45,13 +52,16 @@
             <v-text-field
               v-model="form.gender"
               :rules="rules.gender"
+              box
               color="blue darken-4"
               label="Teléfono"
+              mask="phone"
               required
             ></v-text-field>
           </v-flex>
           <v-flex sm11>
             <v-text-field
+              box
               v-model="form.adress"
               :rules="rules.name"
               color="blue darken-4"
@@ -61,10 +71,12 @@
           </v-flex>
           <v-flex sm11>
         <v-text-field
+        box
         v-model="form.email"
         color="blue darken-4"
         :rules="rules.name"
           label="Correo electrónico"
+          type="email"
         ></v-text-field>
       </v-flex>
       </v-flex>
@@ -103,7 +115,7 @@
     </v-card>
     <p></p><br><hr>
        <p></p><br>
-    <h2>Terminamos este mes con un super regalo.
+       <h2 class="Text">Terminamos este mes con un super regalo.
 PLAN TRIMESTRE pagas 1 entran 2, debes cumplir tus propositos ahora, no lo dejes pasar</h2>
 <v-spacer></v-spacer>
 <v-btn flat color="blue darken-4" class="right">Ver planes</v-btn>
@@ -125,6 +137,7 @@ export default {
     return {
       form: Object.assign({}, defaultForm),
       rules: {
+        email: v => (v || '').match(/@/) || 'Por favor ingrese su e-mail',
         gender: [val => (val || '').length > 0 || 'Este campo es requerido'],
         name: [val => (val || '').length > 0 || 'Este campo es requerido']
       },
@@ -182,6 +195,9 @@ img.edit{
   }
   h1.centro{
     margin 50px 140px
+  }
+  h2.Text{
+    margin-left 20px
   }
 
 </style>

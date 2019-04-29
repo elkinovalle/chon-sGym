@@ -96,32 +96,36 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_clases{
-    height 500px
-    width 700px !important
+    height: 500px
+    width: 700px !important
   }
   img.imagen_clave{
-    height 300px
-    width 400px !important
+    height: 300px
+    width: 400px !important
   }
   li{
-    margin 0px 0px 0px 0px
+    margin: 0px 0px 0px 0px
   }
   article{
-    margin 0px 0px 0px 60px
+    margin: 0px 0px 0px 60px
   }
   p.mensaje {
-    font-size 13px
-    margin 0px 0px 0px 440px
-    font-family sans-serif
-    color rgba(86, 86, 88, 0.877);
+    font-size: 13px
+    margin: 0px 0px 0px 440px
+    font-family: sans-serif
+    color: rgba(86, 86, 88, 0.877);
   }
   .vista{
-      background-color white!important
-      padding 0px 20px
+      background-color: white!important
+      padding: 0px 20px
   }
   .cuadro{
-      margin-top -50px
+      margin-top: -50px
+  }
+   img.imagen_universo{
+    height 400px
+    width 600px !important
   }
 </style>

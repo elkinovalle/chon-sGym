@@ -13,6 +13,10 @@ module.exports = function setupMetricModel (config) {
     estado: {
       type: Sequelize.ENUM('disponible', 'ocupado') ,
       alloNull: false
+    },
+    fecha_reserva: {
+      type: Sequelize.DATE,
+      alloNull: false
     }
   })
 }

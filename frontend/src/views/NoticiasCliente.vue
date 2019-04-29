@@ -13,7 +13,7 @@
         </v-flex>
          <v-flex d-flex xs12 sm6 md3 class="letrero">
                      <v-card class="caja" dark flat>
-                      <p></p>
+                     <br> <br> <br>
         <h1 class="text-xs white--text display-1 font-italic">NOTICIAS DE <br><strong>BELLEZA</strong></h1><br>
         <span class="text-xs white--text title">Resalta tu belleza natural conociendo todos los beneficios que traen las rutinas de ejercicios para tu cuerpo, no hay excusas para dar inicio a este nuevo estilo de vida</span><br>
         <p></p><br>
@@ -34,7 +34,7 @@
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 class="cajon">
                      <v-card class="caja" dark flat>
-                      <p></p>
+                     <br> <br> <br>
         <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
         <span class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</span><br>
         <p></p><br>
@@ -52,6 +52,7 @@
         </v-flex>
           <v-flex d-flex xs12 sm6 md4 class="cajon2">
                              <v-card class="caja" dark flat>
+                                    <br> <br> <br>
         <h1 class="text-xs black--text display-1 font-italic">BIENESTAR Y <br><strong>SALUD</strong></h1><br>
         <span class="text-xs black--text title">Para estar saludable debes estar al tanto de todo lo que pasa a tu alrededor, enterate de los diferentes métodos alimenticios y rutinas de ejercicio físico.</span><br>
         <p></p>
@@ -59,7 +60,7 @@
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 >
-      <img class="belleza2" src="../assets/salud.jpg" alt="">
+      <img class="belleza" src="../assets/salud.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md3>
     </v-flex>
@@ -72,7 +73,7 @@
         </v-flex>
           <v-flex d-flex xs12 sm6 md4 class="cajon3">
                              <v-card class="caja" dark flat>
-                               <p></p><br>
+                               <br> <br><br><br> <br>
         <h1 class="text-xs black--text display-2 font-italic">NUEVAS <strong>RUTINAS</strong></h1>
         <p></p><br>
         <span class="text-xs black--text headline">Conoce los beneficios que traen las rutinas de ejercicios para recuperar no solo la figura, sino la salud de tu cuerpo. </span><br>
@@ -99,14 +100,14 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.belleza{
     height 460px
     width 385px !important
     margin-top 20px
   }
   img.belleza2{
-    height 460px
+    height 540px
     width 363px !important
   }
  img.imagen_layout{
@@ -154,13 +155,13 @@ export default {
       border-bottom-right-radius  10%
   }
   .cajon2 {
-      padding 70px
+      padding 40px
       background-color white
-      margin -1px
+      margin-top 20px
       border-bottom-left-radius  10%
   }
   .cajon3  {
-      padding 70px
+      padding 60px
       background-color rgb(5, 159, 197)
       margin -1px
       border-top-left-radius  10%

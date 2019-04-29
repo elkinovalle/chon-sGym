@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 import Login from '@/views/Login.vue'
 import MiPerfilAdmin from '@/views/MiPerfilAdmin.vue'
 import Inventario from '@/views/Inventario.vue'
@@ -64,9 +63,21 @@ import PracticarCliente from '@/views/PracticarCliente.vue'
 import ConsejosCliente from '@/views/ConsejosCliente.vue'
 import MiPerfilCliente from '@/views/MiPerfilCliente.vue'
 import EntrenadoresCliente from '@/views/EntrenadoresCliente.vue'
+import EntrenadorUnoCliente from '@/views/EntrenadorUnoCliente.vue'
+import EntrenadorDosCliente from '@/views/EntrenadorDosCliente.vue'
+import EntrenadorTresCliente from '@/views/EntrenadorTresCliente.vue'
+import EntrenadorCuatroCliente from '@/views/EntrenadorCuatroCliente.vue'
+import EntrenadorCincoCliente from '@/views/EntrenadorCincoCliente.vue'
+import EntrenadorSeisCliente from '@/views/EntrenadorSeisCliente.vue'
+import EntrenadorSieteCliente from '@/views/EntrenadorSieteCliente.vue'
+import EntrenadorOchoCliente from '@/views/EntrenadorOchoCliente.vue'
 import MiRutinaCliente from '@/views/MiRutinaCliente.vue'
 import MiProgresoCliente from '@/views/MiProgresoCliente.vue'
-import MiHorarioCliente from '@/views/MiHorarioCliente.vue'
+import MisReservasCliente from '@/views/MisReservasCliente.vue'
+import MiDietaCliente from '@/views/MiDietaCliente.vue'
+import HorariosCliente from '@/views/HorariosCliente.vue'
+import ContactoCliente from '@/views/ContactoCliente.vue'
+import TrabajaConNosotrosCliente from '@/views/TrabajaConNosotrosCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
 import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
@@ -74,6 +85,7 @@ import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
 import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
 import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
+import ProgresoCliente from '@/views/ProgresoCliente.vue'
 
 Vue.use(Router)
 
@@ -387,6 +399,11 @@ export default new Router({
       component: ConsejosCliente
     },
     {
+      path: '/contacto-cliente',
+      name: 'contacto-cliente',
+      component: ContactoCliente
+    },
+    {
       path: '/mi-perfil-cliente',
       name: 'mi-perfil-cliente',
       component: MiPerfilCliente
@@ -402,14 +419,69 @@ export default new Router({
       component: MiRutinaCliente
     },
     {
-      path: '/mi-horario-cliente',
-      name: 'mi-horario-cliente',
-      component: MiHorarioCliente
+      path: '/mis-reservas-cliente',
+      name: 'mis-reservas-cliente',
+      component: MisReservasCliente
+    },
+    {
+      path: '/mi-dieta-cliente',
+      name: 'mi-dieta-cliente',
+      component: MiDietaCliente
+    },
+    {
+      path: '/horarios-cliente',
+      name: 'horarios-cliente',
+      component: HorariosCliente
     },
     {
       path: '/entrenadores-cliente',
       name: 'entrenadores-cliente',
       component: EntrenadoresCliente
+    },
+    {
+      path: '/entrenador-uno-cliente',
+      name: 'entrenador-uno-cliente',
+      component: EntrenadorUnoCliente
+    },
+    {
+      path: '/entrenador-dos-cliente',
+      name: 'entrenador-dos-cliente',
+      component: EntrenadorDosCliente
+    },
+    {
+      path: '/entrenador-tres-cliente',
+      name: 'entrenador-tres-cliente',
+      component: EntrenadorTresCliente
+    },
+    {
+      path: '/entrenador-cuatro-cliente',
+      name: 'entrenador-cuatro-cliente',
+      component: EntrenadorCuatroCliente
+    },
+    {
+      path: '/entrenador-cinco-cliente',
+      name: 'entrenador-cinco-cliente',
+      component: EntrenadorCincoCliente
+    },
+    {
+      path: '/entrenador-seis-cliente',
+      name: 'entrenador-seis-cliente',
+      component: EntrenadorSeisCliente
+    },
+    {
+      path: '/entrenador-siete-cliente',
+      name: 'entrenador-siete-cliente',
+      component: EntrenadorSieteCliente
+    },
+    {
+      path: '/entrenador-ocho-cliente',
+      name: 'entrenador-ocho-cliente',
+      component: EntrenadorOchoCliente
+    },
+    {
+      path: '/trabaja-con-nosotros-cliente',
+      name: 'trabaja-con-nosotros-cliente',
+      component: TrabajaConNosotrosCliente
     },
     {
       path: '/membresias-empleado',
@@ -445,6 +517,11 @@ export default new Router({
       path: '/recibo-membresia',
       name: 'recibo-membresia',
       component: ReciboMembresia
+    },
+    {
+      path: '/progreso-cliente',
+      name: 'progreso-cliente',
+      component: ProgresoCliente
     }
   ]
 })

@@ -205,7 +205,7 @@ export default {
   })
 }
 </script>
-<style lang='stylus'>
+<style lang='stylus' scoped>
  .flex{
    color black
    font-size 20px

@@ -1,5 +1,7 @@
 <template>
-<div>
+<v-app
+    id="inspire"
+  >
   <v-toolbar class="desplegable" color="blue darken-4">
     <img src="../assets/lofo-fondo-blanco.png" alt="">
     <v-toolbar-title class="font-weight-black font-italic white--text display-1">Chon's Gym</v-toolbar-title>
@@ -7,10 +9,11 @@
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat class="white--text" to="/planes-cliente">Planes</v-btn>
       <v-btn flat class="white--text" to="/clases-grupales-cliente">Clases</v-btn>
+      <v-btn flat class="white--text" to="/horarios-cliente">Reservar</v-btn>
       <v-btn flat class="white--text" to="/lo-nuevo-cliente">Lo Nuevo</v-btn>
       <v-btn flat class="white--text" to="/noticias-cliente">Noticias</v-btn>
       <v-btn flat class="white--text" to="/tips-cliente">Tips</v-btn>
-      <v-btn flat class="white--text">Contacto</v-btn>
+      <v-btn flat class="white--text" to="/contacto-cliente">Contacto</v-btn>
        <v-menu offset-y>
       <template v-slot:activator="{ on }">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
@@ -100,7 +103,6 @@
         </v-flex>
             <v-flex class="font-weight-black white--text caption"
         primary
-        lighten-2
         py-3
         text-xs-center
         white--text
@@ -111,7 +113,7 @@
       </v-layout>
     </v-container>
   </v-footer>
-  </div>
+</v-app>
 </template>
 <script>
 export default {
@@ -146,27 +148,28 @@ export default {
     ],
     items: [
       { title: 'Editar Perfil', icon: 'edit', link: '/Editar-Perfil-Cliente' },
-      { title: 'Mi Rutina', icon: 'close', link: '/mi-rutina-cliente' },
-      { title: 'Progreso', icon: 'sort', link: '/mi-progreso-cliente' },
+      { title: 'Mi Rutina', icon: 'fitness_center', link: '/mi-rutina-cliente' },
+      { title: 'Mi Dieta', icon: 'kitchen', link: '/mi-dieta-cliente' },
+      { title: 'Progreso', icon: 'signal_cellular_alt', link: '/progreso-cliente' },
       { title: 'Entrenador', icon: 'person', link: '/entrenadores-cliente' },
-      { title: 'Horarios', icon: 'history', link: '/mi-horario-cliente' },
-      { title: 'Cerrar Sesión', icon: 'close', link: '' }
+      { title: 'Mis reservas', icon: 'history', link: '/mis-reservas-cliente' },
+      { title: 'Cerrar Sesión', icon: 'close', link: '/login' }
     ]
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  .v-btn{
-    font-size 16px !important
-    font-family Helvetica
-    font-style italic
+    font-size: 16px !important
+    font-family: Helvetica
+    font-style: italic
   }
   img.footer_imagen{
-    width 80px !important
-    margin  0px 180px
-    height 60px
+    width: 80px !important
+    margin:  0px 180px
+    height: 60px
   }
   .desplegable{
-    z-index 900000
+    z-index: 900000
   }
 </style>

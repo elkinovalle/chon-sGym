@@ -3,11 +3,11 @@
     <p></p>
 <v-container fluid>
       <v-layout row wrap>
-           <v-flex d-flex xs12 sm6 md1 child-flex>
+           <v-flex d-flex xs12 sm6 md1>
           <v-card color="white" dark flat>
           </v-card>
         </v-flex>
-          <v-flex d-flex xs12 sm6 md2 child-flex>
+          <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
         <h1 class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></h1><br>
         <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p>
@@ -26,12 +26,23 @@ un mayor avance hacia tus objetivos.
           <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10 offset-xs2>
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">Descripción del plan</v-toolbar-title>
-      </v-toolbar>
-        <img class="imagen_layout" src="../assets/15_meses.jpg" alt="">
-       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 400.000<br> Total a pagar 400.000
-</strong></p>
+      <v-card flat>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="headline white--text">Descripción del plan</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://guiafitness.com/wp-content/uploads/que-hacer-antes-ir-gimnasio.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+               <p class="headline white--text"><strong>Cero Estrés <br> Plan Mensual Subtotal 70.000</strong></p>
+            </div>
+          </v-card-title>
+        </v-card>
     </v-flex>
   </v-layout>
           </v-card>
@@ -154,7 +165,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_layout{
     height 260px
     width 285px !important

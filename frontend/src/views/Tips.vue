@@ -145,7 +145,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
   .boton{
     margin-left -10px
     height 31.8px

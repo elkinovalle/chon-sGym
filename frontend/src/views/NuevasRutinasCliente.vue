@@ -75,7 +75,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_clases{
     height 500px
     width 700px !important
@@ -108,5 +108,11 @@ export default {
      .cajon7     {
       margin 0px 0px 0px 10px
       margin-top 100px !important
+  }
+    .caja{
+    background-color transparent !important
+  }
+  .informacion{
+     background-color transparent !important
   }
 </style>

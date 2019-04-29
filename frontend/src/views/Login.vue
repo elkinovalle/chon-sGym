@@ -45,7 +45,7 @@ export default {
 
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 img.symbol {
   margin-right 5px
   height 100px

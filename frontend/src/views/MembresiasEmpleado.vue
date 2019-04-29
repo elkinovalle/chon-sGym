@@ -11,23 +11,21 @@
               box
             ></v-text-field>
           </v-flex>
-        </v-layout>
-      </v-container>
-    </v-form>
-      <v-btn color="green darken-4" class=" white--text display-1" >Registrar Membresia</v-btn>
-      <v-btn color="red darken-4" class=" white--text display-1" >Cancelar</v-btn>
 
-      <v-container fluid>
-      <v-layout wrap>
-        <v-flex xs6>
+           <v-flex xs6>
           <v-combobox
             v-model="select"
             :items="items"
             label="Seleccione el tipo de plan"
           ></v-combobox>
         </v-flex>
-      </v-layout>
+        </v-layout>
       </v-container>
+    </v-form>
+
+      <v-btn color="green darken-4" class=" white--text display-1" >Registrar Membresia</v-btn>
+      <v-btn color="red darken-4" class=" white--text display-1" >Cancelar</v-btn>
+
       <v-card color="blue">
       <v-card-title>
         Membresias
@@ -99,12 +97,11 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
    .container.fill-height{
      background-color dark
   }
   .theme--dark.v-sheet{
     background-color blue
   }
-
 </style>

@@ -16,7 +16,7 @@
         <p></p>
         <span class="text-xs black--text caption justify">Las canciones utilizadas marcan la intensidad en cada momento de la clase. Incluyendo en la clase el trabajo  de calentamiento y estiramientos.  De la cual también descienden otras modalidades como son la se step que se trabaja bajo una superficie elevada o banco llamado (step).</span><br>
 <p></p><br>
-<v-btn color="blue darken-4" class="font-weight-black white--text display-1">Ver Horarios</v-btn>
+<v-btn color="blue darken-4" class="font-weight-black white--text title" to="/horarios-cliente">Ver Horarios</v-btn>
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md6>
@@ -27,7 +27,7 @@
       <p></p>
         <img class="imagen_clases" src="../assets/aerobicos.jpg" alt="">
         <p></p><br>
-        <v-btn color="black" class="font-weight-black white--text display-1">Ver Planes</v-btn>
+        <v-btn color="black" class="font-weight-black white--text title" to="planes-cliente">Ver Planes</v-btn>
         <p class="mensaje">*Horarios sujetos a cambios sin previo aviso</p>
         <p></p>
     </v-flex>
@@ -49,19 +49,10 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
- img.imagen_layout{
+<style lang="stylus" scoped>
+  img.imagen_clases{
     height 500px
     width 700px !important
-  }
-  p.texto{
-    background-color silver !important
-    text-align center
-    border solid 2px
-    font-size 16px
-    margin -5px 0px 0px -1px
-    padding 10px
-    font-family sans-serif
   }
   li{
     margin 0px 0px 0px 0px
@@ -71,7 +62,7 @@ export default {
   }
   p.mensaje {
     font-size 13px
-    margin 0px 0px 0px 440px
+    margin -60px 0px 0px 440px
     font-family sans-serif
     color rgba(86, 86, 88, 0.877);
   }

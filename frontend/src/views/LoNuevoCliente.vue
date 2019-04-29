@@ -53,7 +53,7 @@
          <v-flex d-flex xs12 sm6 md6 class="campo">
         </v-flex>
          <v-flex xs12 sm6 md3>
-            <v-btn color="blue darken-4" class="font-weight-black white--text display-1" to="/planes-cliente" >Ver planes</v-btn>
+            <v-btn color="blue darken-4" class="font-weight-black white--text title" to="/planes-cliente" >Ver planes</v-btn>
     </v-flex>
       </v-layout>
     </v-container>
@@ -63,22 +63,34 @@
      <v-flex xs12 sm6 md1>
      </v-flex>
          <v-flex xs12 sm6 md3>
+           <v-card color="transparent">
+             <v-flex xs12 sm6 md10>
         <v-img :src="hardvital" class="imagenes">
           <p class="escrito"><strong>Servicio de Hard Vital</strong></p>
-          <v-btn color="blue darken-4" class="detalle" to="/hard-vital-cliente" ><h1 class="letras">Ver más</h1></v-btn>
+          <v-btn color="blue darken-4" class="detalle font-weight-black white--text title font-italic" to="/hard-vital-cliente" ><h1 class="letras">Ver más</h1></v-btn>
         </v-img>
+             </v-flex>
+           </v-card>
         </v-flex>
         <v-flex xs12 sm6 md3>
+            <v-card color="transparent">
+             <v-flex xs12 sm6 md10>
         <v-img :src="fitness" class="imagenes">
           <p class="escrito"><strong>Servicio de Neurofitness</strong></p>
-          <v-btn color="blue darken-4" class="detalle" to="/neurofitness-cliente"><h1 class="letras">Ver más</h1></v-btn>
+          <v-btn color="blue darken-4" class="detalle font-weight-black white--text title font-italic" to="/neurofitness-cliente"><h1 class="letras">Ver más</h1></v-btn>
         </v-img>
+         </v-flex>
+           </v-card>
         </v-flex>
         <v-flex xs12 sm6 md3>
+            <v-card color="transparent">
+             <v-flex xs12 sm6 md10>
         <v-img :src="personalizados" class="imagenes">
           <p class="escrito"><strong>Servicio Personalizados</strong></p>
-          <v-btn color="blue darken-4" class="detalle" to="/personalizados-cliente"><h1 class="letras">Ver más</h1></v-btn>
+          <v-btn color="blue darken-4" class="detalle font-weight-black white--text title font-italic" to="/personalizados-cliente"><h1 class="letras">Ver más</h1></v-btn>
         </v-img>
+         </v-flex>
+           </v-card>
         </v-flex>
         <v-flex xs12 sm6 md1>
      </v-flex>
@@ -88,17 +100,27 @@
      <v-flex xs12 sm6 md1>
      </v-flex>
          <v-flex xs12 sm6 md3>
+            <v-card color="transparent">
+             <v-flex xs12 sm6 md10>
            <p></p>
           <p class="text-xs-center white--text headline">Ejercita tu mente y maximiza tu actividad cerebral con Neurofitness. Saca el potencial que te hará sentirte como un super humano</p>
-        </v-flex>
+         </v-flex>
+           </v-card></v-flex>
         <v-flex xs12 sm6 md3>
+           <v-card color="transparent">
+             <v-flex xs12 sm6 md10>
           <p></p>
           <p class="text-xs-center white--text headline">Conoce tu estado de salud corporal con estudios médicos avanzados, realizados por especialistas en Biomedicina y nutricionistas. ¡Es hora de vivir intensamente saludables!</p>
         </v-flex>
+           </v-card> </v-flex>
         <v-flex xs12 sm6 md3>
+           <v-card color="transparent">
+             <v-flex xs12 sm6 md10>
           <p></p>
           <p class="text-xs-center white--text headline">Nuestro Plan personalizado es la oportunidad que tendrás para poder entrenar y realizar ejercicio de la manera correcta y con el apoyo que necesitas</p>
         </v-flex>
+           </v-card>
+            </v-flex>
         <v-flex xs12 sm6 md1>
      </v-flex>
    </v-layout>
@@ -122,7 +144,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_gym{
     height 270px
     width 370px !important
@@ -134,9 +156,9 @@ export default {
   }
   .imagenes{
     padding 300px 30px 0px 50px
-    margin 0px 20px 0px 20px
+    margin 0px 80px 0px 20px
     height 250px!important
-    width 400px
+    width 370px
   }
   img.imagen_logo{
     height 60px
@@ -168,7 +190,7 @@ export default {
       border solid 4px white
   }
    .v-btn.detalle{
-    margin -100px 0px 0px 220px !important
+    margin -100px 0px 0px 200px !important
   }
   h1.letras{
        font-size 18px

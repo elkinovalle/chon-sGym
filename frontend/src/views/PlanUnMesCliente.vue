@@ -159,7 +159,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_layout{
     height 260px
     width 285px !important

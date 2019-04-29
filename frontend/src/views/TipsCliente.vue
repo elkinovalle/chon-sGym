@@ -1,5 +1,5 @@
 <template>
-<div class="noticia">
+<div>
     <p></p><br>
 <v-container fluid>
       <v-layout row wrap>
@@ -10,8 +10,8 @@
               <v-layout justify-center>
     <v-flex xs12 sm6 md10>
         <p></p>
-        <h1 class="text-xs white--text display-2 font-weight-black">CONSEJOS</h1><br>
-        <h1 class="text-xs white--text display-4 font-weight-black">SALUDABLES</h1>
+        <h1 class="text-xs black--text display-2 font-weight-black">CONSEJOS</h1><br>
+        <h1 class="text-xs black--text display-4 font-weight-black">SALUDABLES</h1>
     </v-flex>
   </v-layout>
           </v-card>
@@ -20,16 +20,16 @@
         </v-flex>
                 <v-flex d-flex xs12 sm3 md3 offset-xs1>
               <v-card color="transparent" dark flat>
-        <h2 class="text-xs white--text display-1 justify"><strong>En Chon's Gym te damos opciones para motivarte</strong></h2>
+        <h2 class="text-xs black--text display-1 justify"><strong>En Chon's Gym te damos opciones para motivarte</strong></h2>
         <p></p>
-        <span class="text-xs white--text title justify">Es recurrente y una de las mejores opciones que puedes tomar para iniciar el compromiso y la disciplina de asistir al gimnasio; nosotros contamos con planes mensuales para que puedas hacer un pago adelantado del disfrute de nuestras instalaciones, clases grupales, zonas húmedas y máquinas de entrenamiento.</span>
+        <span class="text-xs black--text title justify">Es recurrente y una de las mejores opciones que puedes tomar para iniciar el compromiso y la disciplina de asistir al gimnasio; nosotros contamos con planes mensuales para que puedas hacer un pago adelantado del disfrute de nuestras instalaciones, clases grupales, zonas húmedas y máquinas de entrenamiento.</span>
         <p></p>
           </v-card>
         </v-flex>
       </v-layout>
     </v-container>
        <p></p>
-        <h1 class="text-xs-center white--text display-2">DESCUBRE NUESTRAS <strong>CLASES GRUPALES</strong></h1><br>
+        <h1 class="text-xs-center black--text display-2">DESCUBRE NUESTRAS <strong>CLASES GRUPALES</strong></h1><br>
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">
@@ -108,7 +108,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_gym{
     height 270px
     width 370px !important
@@ -119,6 +119,7 @@ export default {
     display inline-block
     height 215px
     width 350px
+    margin-right 40px
     &:hover{
       cursor pointer
     }

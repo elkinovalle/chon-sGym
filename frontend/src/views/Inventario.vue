@@ -311,7 +311,8 @@ export default {
 <style lang="stylus">
  </style>
 =======
-<style lang="stylus" >
+
+<style lang="stylus">
   .subheader{
     text-align center !important
     display 4
@@ -327,4 +328,4 @@ export default {
     font-size 20px
   }
 </style>
->>>>>>> 945e91c1405840887870842abff9067a36321d0f
+>>>>>>> d1a73602e487f2d3827a43abd15831d6626c0ebb

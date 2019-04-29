@@ -26,11 +26,23 @@ un mayor avance hacia tus objetivos.
           <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10 offset-xs2>
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">Descripción del plan</v-toolbar-title>
-      </v-toolbar>
-        <img class="imagen_layout" src="../assets/12_meses.jpg" alt="">
-       <p class="texto"><strong>1 Mes + 4 Sesiones de Personalizado<br> Subtotal 169.000 <br> Total a pagar 169.000</strong></p>
+      <v-card flat>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="headline white--text">Descripción del plan</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://www.sportlife.com.mx/wp-content/uploads/2016/05/gymdesventajas-sl.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+               <p class="headline white--text"><strong>1 Mes + 4 Sesiones de Personalizado<br> Subtotal 169.000 <br> Total a pagar 169.000</strong></p>
+            </div>
+          </v-card-title>
+        </v-card>
     </v-flex>
   </v-layout>
           </v-card>
@@ -165,7 +177,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_layout{
     height 260px
     width 285px !important

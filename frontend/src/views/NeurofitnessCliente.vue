@@ -26,11 +26,23 @@ un mayor avance hacia tus objetivos.
           <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10 offset-xs2>
-      <v-toolbar color="black" class="text-xs-center" dark dense>
-        <v-toolbar-title class="text headline">Descripción del plan</v-toolbar-title>
-      </v-toolbar>
-        <img class="imagen_layout" src="../assets/neurofitness.jpg" alt="">
-       <p class="texto"><strong>Cero Estrés <br> Plan Mensual Subtotal 120.000 <br> Total a pagar 120.000</strong></p>
+ <v-card flat>
+          <v-card-title class="blue">
+            <div>
+              <h3 class="headline white--text">Descripción del plan</h3>
+            </div>
+          </v-card-title>
+          <v-img
+            src="https://4.bp.blogspot.com/-7w68yEVQy_s/WusOceyfnqI/AAAAAAAAaxA/f5McWeGe_a4dPMZNuA4iDiLjbEfgCCH-QCLcBGAs/s1600/entra-tambien-tu-mente-con-neuro-fitness-1.jpg"
+            aspect-ratio="1"
+            class="planes"
+          ></v-img>
+          <v-card-title class="black">
+            <div>
+               <p class="headline white--text"><strong>Cero Estrés <br> Plan Mensual Subtotal 100.000</strong></p>
+            </div>
+          </v-card-title>
+        </v-card>
     </v-flex>
   </v-layout>
           </v-card>
@@ -148,7 +160,7 @@ export default {
   })
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
  img.imagen_layout{
     height 260px
     width 285px !important
