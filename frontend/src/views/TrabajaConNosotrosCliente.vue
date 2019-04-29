@@ -195,7 +195,7 @@
         <p></p>
         <h1 class="text-xs white--text body-1"><strong>Experiencia: </strong>Mínima de 1 año </h1>
         <p></p><br>
-        <v-btn color="blue darken-4" class="right font-weight-black white--text title">Aplicar</v-btn>
+        <v-btn color="blue darken-4" ref="button" class="right font-weight-black white--text title" @click="$vuetify.goTo(mx-auto)">Aplicar</v-btn>
           </v-card>
         </v-flex>
           </v-card>
@@ -324,6 +324,11 @@
 <script>
 export default {
   data: () => ({
+    selector: '#mx-auto',
+    selected: 'Button',
+    duration: 500,
+    offset: 100,
+    easing: 'easeInOutCubic',
     agreement: false,
     bio: '',
     dialog: false,
@@ -336,6 +341,15 @@ export default {
       email: v => (v || '').match(/@/) || 'Por favor ingrese su e-mail',
       length: len => v => (v || '').length >= len || `Nombre invalido, requiere mínimo ${len} caracteres`
 
+    },
+    computed: {
+      options () {
+        return {
+          duration: this.duration,
+          offset: this.offset,
+          easing: this.easing
+        }
+      }
     }
   })
 }
