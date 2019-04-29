@@ -1,38 +1,54 @@
 <template>
+<<<<<<< HEAD
+<div class="imagen_recibo">
+  <img class="imagen_icon" src="../assets/Logo-gym.png" alt="">
+=======
+>>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
 <v-layout row wrap>
     <form>
-      <v-flex xs4 sm6>
-    <v-text-field
-      v-model="name"
-      :error-messages="nameErrors"
-      :counter="10"
-      label="Name"
-      required
-      @input="$v.name.$touch()"
-      @blur="$v.name.$touch()"
-    ></v-text-field>
-      </v-flex>
-    <v-text-field
-      v-model="email"
-      :error-messages="emailErrors"
-      label="E-mail"
-      required
-      @input="$v.email.$touch()"
-      @blur="$v.email.$touch()"
-    ></v-text-field>
-    <v-select
+      <v-flex xs14 sm14>
+        <v-select
       v-model="select"
       :items="items"
-      :error-messages="selectErrors"
-      label="Item"
+      :error-messages="Errors"
+      label="tipo de membresia"
       required
       @change="$v.select.$touch()"
       @blur="$v.select.$touch()"
     ></v-select>
-    <v-checkbox
+     <v-text-field
+      v-model="email"
+      :error-messages="emailErrors"
+      label="usuario"
+      required
+      @input="$v.email.$touch()"
+      @blur="$v.email.$touch()"
+    ></v-text-field>
+    <v-text-field
+      v-model="pago_efectuado"
+      :error-messages="emailErrors"
+      label="Pago efectuado"
+      required
+      @input="$v.email.$touch()"
+      @blur="$v.email.$touch()"
+    ></v-text-field>
+     <v-text-field
+      v-model="pago_efectuado"
+      :error-messages="Errors"
+      label="fecha"
+      required
+    ></v-text-field>
+    <v-text-field
+      v-model="name"
+      :error-messages="nameErrors"
+      :counter="10"
+      label="tipo de pago"
+      required
+    ></v-text-field>
+     <v-checkbox
       v-model="checkbox"
-      :error-messages="checkboxErrors"
-      label="Do you agree?"
+      :error-messages="Errors"
+      label="Registrar membresia?"
       required
       @change="$v.checkbox.$touch()"
       @blur="$v.checkbox.$touch()"
@@ -40,8 +56,13 @@
 
     <v-btn @click="submit">submit</v-btn>
     <v-btn @click="clear">clear</v-btn>
+      </v-flex>
   </form>
   </v-layout>
+<<<<<<< HEAD
+  </div>
+=======
+>>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
 </template>
 <script>
 
@@ -70,10 +91,18 @@ export default {
     email: '',
     select: null,
     items: [
+<<<<<<< HEAD
+      'Semanal',
+      'Quincenal',
+      'Mensual',
+      'Trimestral',
+      'Anual'
+=======
       'Item 1',
       'Item 2',
       'Item 3',
       'Item 4'
+>>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
     ],
     checkbox: false
   }),
@@ -95,14 +124,22 @@ export default {
       const errors = []
       if (!this.$v.name.$dirty) return errors
       !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
+<<<<<<< HEAD
+      !this.$v.name.required && errors.push('required.')
+=======
       !this.$v.name.required && errors.push('Name is required.')
+>>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
       return errors
     },
     emailErrors () {
       const errors = []
       if (!this.$v.email.$dirty) return errors
       !this.$v.email.email && errors.push('Must be valid e-mail')
+<<<<<<< HEAD
+      !this.$v.email.required && errors.push('required')
+=======
       !this.$v.email.required && errors.push('E-mail is required')
+>>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
       return errors
     }
   },
@@ -120,3 +157,22 @@ export default {
   }
 }
 </script>
+<style lang="stylus">
+form{
+  margin-left 380px
+}
+.v-content__wrap{
+  background-image url('')
+}
+.imagen_recibo{
+      background-image url('../assets/portadamembresia.jpg') !important
+      margin-top -14px
+}
+img.imagen_icon{
+  width 80px !important
+  height 80px !important
+}
+label{
+  background-color black      
+}
+</style>
