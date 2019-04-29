@@ -1,6 +1,5 @@
 <template >
  <div id="app">
-  <v-app id="inspire" >
   <v-layout wrap>
     <v-flex
       sm12
@@ -244,11 +243,11 @@
                     <span><strong>Descripción: <br></strong></span>
                     <span v-html="event.descripcion"></span><br><br>
                      <span><strong>Hora de inicio: <br></strong></span>
-                    <span v-html="event.inicio"></span><br><br>
+                    <span v-html="event.inicio"></span><br>
                      <span><strong>Finaliza: <br></strong></span>
-                    <span v-html="event.final"></span><br><br>
+                    <span v-html="event.final"></span><br>
                      <span><strong>Lugar: <br></strong></span>
-                    <span v-html="event.lugar"></span><br><br>
+                    <span v-html="event.lugar"></span><br>
                     <span><strong>Entrenador: <br></strong></span>
                     <span v-html="event.entrenador"></span><br>
                   </v-card>
@@ -289,7 +288,6 @@
           </v-card>
         </v-flex>
   </v-layout>
-   </v-app>
 </div>
 </template>
 
@@ -328,7 +326,7 @@ const stylings = {
   }
 }
 export default {
-   data: () => ({
+  data: () => ({
     agreement: false,
     today: '2019-01-08',
     events: [
@@ -412,7 +410,17 @@ export default {
         date: '2019-01-20',
         open: false
       },
-     
+      {
+        title: 'Kick Boxing',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-08',
+        open: false
+      }
+
     ],
     dark: false,
     startMenu: false,
@@ -479,7 +487,7 @@ export default {
     open (event) {
       alert(event.title)
     },
-     showIntervalLabel (interval) {
+    showIntervalLabel (interval) {
       return interval.minute === 0
     }
   }
@@ -568,7 +576,7 @@ export default {
   margin-left: -80px;
 }
 .alert2 {
-  padding: 80px 0px;
+  padding: 80px 0px 0px 0px;
 
 }
 .imagen_alert{

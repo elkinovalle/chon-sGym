@@ -1,5 +1,7 @@
 <template>
-<div>
+<v-app
+    id="inspire"
+  >
   <v-toolbar class="desplegable" color="blue darken-4">
     <img src="../assets/lofo-fondo-blanco.png" alt="">
     <v-toolbar-title class="font-weight-black font-italic white--text display-1">Chon's Gym</v-toolbar-title>
@@ -101,7 +103,6 @@
         </v-flex>
             <v-flex class="font-weight-black white--text caption"
         primary
-        lighten-2
         py-3
         text-xs-center
         white--text
@@ -112,7 +113,7 @@
       </v-layout>
     </v-container>
   </v-footer>
-  </div>
+</v-app>
 </template>
 <script>
 export default {
