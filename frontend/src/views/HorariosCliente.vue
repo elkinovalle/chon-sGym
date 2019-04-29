@@ -1,11 +1,12 @@
 <template >
+ <div id="app">
+  <v-app id="inspire" >
   <v-layout wrap>
     <v-flex
       sm12
       lg3
       class="flex pa-5 mb-3 feature-pane"
       offset-xs1>
-      <br><br><br><br><br><br><br><br><br>
       <v-select
         v-model="type"
         :items="typeOptions"
@@ -188,7 +189,7 @@
       sm12
       lg7
       class="calendario pl-3">
-      <v-sheet height="500">
+      <v-sheet height="650">
         <v-calendar locale="es"
           ref="calendar"
           v-model="start"
@@ -230,31 +231,50 @@
                   flat
                 >
                   <v-toolbar
-                    color="primary"
+                    color="blue darken-4"
                     dark
                   >
-                    <v-btn icon>
-                      <v-icon>edit</v-icon>
-                    </v-btn>
+                    <v-spacer></v-spacer>
                     <v-toolbar-title v-html="event.title"></v-toolbar-title>
                     <v-spacer></v-spacer>
-                    <v-btn icon>
-                      <v-icon>favorite</v-icon>
-                    </v-btn>
-                    <v-btn icon>
-                      <v-icon>more_vert</v-icon>
-                    </v-btn>
                   </v-toolbar>
-                  <v-card-title primary-title>
-                    <span v-html="event.details"></span>
-                  </v-card-title>
+                   <v-layout row wrap>
+           <v-flex d-flex xs12 sm7>
+               <v-card color="grey lighten-3" class="alert1" flat>
+                    <span><strong>Descripción: <br></strong></span>
+                    <span v-html="event.descripcion"></span><br><br>
+                     <span><strong>Hora de inicio: <br></strong></span>
+                    <span v-html="event.inicio"></span><br><br>
+                     <span><strong>Finaliza: <br></strong></span>
+                    <span v-html="event.final"></span><br><br>
+                     <span><strong>Lugar: <br></strong></span>
+                    <span v-html="event.lugar"></span><br><br>
+                    <span><strong>Entrenador: <br></strong></span>
+                    <span v-html="event.entrenador"></span><br>
+                  </v-card>
+        </v-flex>
+           <v-flex d-flex xs12 sm6>
+               <v-card color="grey lighten-3" class="alert2" flat>
+                  <v-flex d-flex xs12 sm1>
+                     <img class="imagen_alert" src="../assets/spinning-1.jpg" alt="">
+                  </v-flex>
+                  </v-card>
+        </v-flex>
+                   </v-layout>
                   <v-card-actions>
-                    <v-btn
-                      flat
-                      color="secondary"
-                    >
-                      Cancel
-                    </v-btn>
+                      <v-btn
+            flat
+            @click="agreement = false, dialog = false"
+          >
+            Cancelar
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn
+            flat
+            @click="agreement = true, dialog = false"
+          >
+            Reservar
+          </v-btn>
                   </v-card-actions>
                 </v-card>
               </v-menu>
@@ -269,6 +289,8 @@
           </v-card>
         </v-flex>
   </v-layout>
+   </v-app>
+</div>
 </template>
 
 <script>
@@ -305,58 +327,92 @@ const stylings = {
     }
   }
 }
-
 export default {
-  data: () => ({
+   data: () => ({
+    agreement: false,
+    today: '2019-01-08',
     events: [
       {
-        title: 'Vacation',
-        details: 'Going to the beach!',
+        title: 'Spinning',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
         date: '2018-12-30',
-        open: true
-      },
-      {
-        title: 'Vacation',
-        details: 'Going to the beach!',
-        date: '2018-12-31',
         open: false
       },
       {
-        title: 'Vacation',
-        details: 'Going to the beach!',
-        date: '2019-01-01',
+        title: 'Crossfit',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-04',
         open: false
       },
       {
-        title: 'Meeting',
-        details: 'Spending time on how we do not have enough time',
-        date: '2019-01-07',
+        title: 'Zumba',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-13',
         open: false
       },
       {
-        title: '30th Birthday',
-        details: 'Celebrate responsibly',
-        date: '2019-01-03',
+        title: 'Cardio Box',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2018-12-30',
         open: false
       },
       {
-        title: 'New Year',
-        details: 'Eat chocolate until you pass out',
-        date: '2019-01-01',
+        title: 'Spinning',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-06',
         open: false
       },
       {
-        title: 'Conference',
-        details: 'Mute myself the whole time and wonder why I am on this call',
-        date: '2019-01-21',
+        title: 'Crossfit',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-10',
         open: false
       },
       {
-        title: 'Hackathon',
-        details: 'Code like there is no tommorrow',
-        date: '2019-02-01',
+        title: 'Zumba',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-23',
         open: false
-      }
+      },
+      {
+        title: 'Cardio Box',
+        descripcion: 'Clase de cardio intensivo',
+        inicio: '10:00 a.m.',
+        final: '11:00 a.m.',
+        lugar: 'Chons Gym piso 2',
+        entrenador: 'Octavio Carvajal',
+        date: '2019-01-20',
+        open: false
+      },
+     
     ],
     dark: false,
     startMenu: false,
@@ -420,18 +476,17 @@ export default {
     }
   },
   methods: {
-    showIntervalLabel (interval) {
-      return interval.minute === 0
-    },
     open (event) {
       alert(event.title)
+    },
+     showIntervalLabel (interval) {
+      return interval.minute === 0
     }
   }
 }
 </script>
 
 <style scoped>
-
   .feature-pane {
     position: relative;
     padding-top: 30px;
@@ -489,23 +544,36 @@ export default {
       text-align: center
   }
 .flex{
-  margin: -150px -200px 50px 100px
+  margin: 0px -200px 0px 100px
 }
 .calendario{
-  margin: 20px 0px 0px 200px
+  margin: 60px 0px 0px 200px
 }
 .my-event {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border-radius: 2px;
-    background-color: #1867c0;
-    color: #ffffff;
-    border: 1px solid #1867c0;
-    width: 100%;
-    font-size: 12px;
-    padding: 3px;
-    cursor: pointer;
-    margin-bottom: 1px;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 2px;
+  background-color: #1867c0;
+  color: #ffffff;
+  border: 1px solid #1867c0;
+  width: 100%;
+  font-size: 12px;
+  padding: 3px;
+  cursor: pointer;
+  margin-bottom: 1px;
+}
+.alert1 {
+  padding: 10px;
+  margin-left: -80px;
+}
+.alert2 {
+  padding: 80px 0px;
+
+}
+.imagen_alert{
+   width: 60px;
+  height: 140px;
+  margin-left: -130px
+}
 </style>
