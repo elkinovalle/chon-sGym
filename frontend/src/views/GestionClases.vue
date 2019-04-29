@@ -26,12 +26,12 @@
           ></div>
           </template>
           <v-card
-            color="grey lighten-4"
+            color="black"
             min-width="350px"
             flat
           >
             <v-toolbar
-              color="primary"
+              color="blue"
               dark
             >
               <v-btn icon>
