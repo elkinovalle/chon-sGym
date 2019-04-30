@@ -25,39 +25,25 @@
             v-html="event.title"
           ></div>
           </template>
-          <v-card
-            color="black"
-            min-width="350px"
-            flat
-          >
-            <v-toolbar
-              color="blue"
-              dark
-            >
-              <v-btn icon>
-                <v-icon>edit</v-icon>
-              </v-btn>
-              <v-toolbar-title v-html="event.title"></v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-btn icon>
-                <v-icon>favorite</v-icon>
-              </v-btn>
-              <v-btn icon>
-                <v-icon>more_vert</v-icon>
-              </v-btn>
-            </v-toolbar>
-            <v-card-title primary-title>
-              <span v-html="event.details"></span>
-            </v-card-title>
-            <v-card-actions>
-              <v-btn
-                flat
-                color="secondary"
-              >
-              cancel
-                </v-btn>
+          <v-flex xs12 sm8 md9>
+            <v-card >
+              <v-card-text color="black">
+                <v-form>
+                  <v-select
+                    :items="items"
+                    label="Seleccionar Clase"
+                  ></v-select>
+                  <v-label>Selecciona la Hora</v-label>
+                  <v-time-picker :landscape="true"></v-time-picker>
+                </v-form>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn >Cancelar</v-btn>
+                <v-btn >Listo</v-btn>
               </v-card-actions>
             </v-card>
+          </v-flex>
           </v-menu>
           </template>
         </template>
@@ -66,19 +52,16 @@
         </v-flex>
   </div>
 </template>
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
-=======
->>>>>>> 6e6b8a625c0b6051844c39f4c59e4dca3cc9b765
->>>>>>> 261fde5202ad2c1413df52ab7cd02a4c1ba4f4fa
 <script>
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
   },
-  data: () => ({
+  data: () => (
+    
+    {items: ['Cardio','Zumba','Crossfit']},
+   {
     today: '2019-01-08',
     events: [
       {
