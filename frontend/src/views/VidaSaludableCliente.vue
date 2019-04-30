@@ -32,7 +32,7 @@
                 </v-card>
           </v-flex>
           <v-flex d-flex xs12 sm6 md3>
-          </v-flex>
+          </v-flex>v
                </v-layout>
     </v-container>
 

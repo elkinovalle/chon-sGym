@@ -307,7 +307,6 @@ export default {
 
 }
 </script>
-
 <style lang="stylus">
   .subheader{
     text-align center !important

@@ -43,7 +43,7 @@
 <v-container fluid >
    <v-layout row wrap>
     <v-flex xs12 sm6 md12 class="contenedor">
-        <v-img  :src="spinning" class="spinning" @click="clickPush('/spinning-cliente')">
+        <v-img :src="spinning" class="spinning" @click="clickPush('/spinning-cliente')">
         <h1 class="escrito" >SPINNING</h1>
         </v-img>
           <v-img :src="aerobicos" class="spinning" @click="clickPush('/aerobicos-cliente')">

@@ -63,7 +63,7 @@ export default {
     margin 0px 0px 0px 0px
   }
   article{
-    margin 0px 0px 0px 60px
+    margin 0px 0px 0px 60pxv
   }
   p.mensaje {
     font-size 13px

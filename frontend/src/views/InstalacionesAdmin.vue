@@ -1,182 +1,48 @@
-
-LUIS GERARDO MANCILLA GAMBOA
-8:30 (hace 3 horas)
-para mí
-
 <template>
   <v-flex xs12>
     <div>
-      <v-tabs v-model="active" color="indigo darken-4" dark slider-color="yellow" >
-        <v-tab ripple> reservas canceladas</v-tab>
-        <v-tab-item>
-          <v-card flat>
-            <v-card-text>
-              <template v-for="n in 8">
-              <v-flex xs12 :key="n" mb-3>
-                <v-card color="red" class="white--text">
-                  <v-layout row >
-                    <v-flex xs4>
-                      <v-card-title primary-title>
-                        <div>
-                          <div class="headline mb-4">tipo de habitacion: doble</div>
-                          <div  class="mb-4">fecha de la reserva  : 25/05/2017 </div>
-                          <div  class=" mb-4">numero de adultos : 2</div>
-                        </div>
-                      </v-card-title>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-card-title primary-title>
-                        <div>
-                          <div class="headline mb-4">precio de la habitacion </div>
-                          <div  class="title mb-4 ">650000$ </div>
-                          <div>numero de niños: 0</div>
-                        </div>
-                      </v-card-title>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-img :src="habitacion2" contain></v-img>
-                    </v-flex>
-                  </v-layout>
-                  <v-divider light></v-divider>
-                  <v-expansion-panel>
-                        <v-expansion-panel-content >
-                          <template v-slot:header>
-                            <div>detalles</div>
-                          </template>
-                          <v-card>
-                            <v-card-text>
-                              *Aire acondicionado <br>
-                              *Baño con ducha, secador de pelo y servicio de *amenidades diarias<br>
-                              *Caja de seguridad electrónica<br>
-                              * Voltaje (corriente): 220 V/60 Hz (los baños cuentan con tomas de 110 V para equipos hasta 50 W)<br>
-                              *Minibar con agua, refrescos, cervezas y más ($)<br>
-                              *Teléfono directo en dormitorio y baño<br>
-                              *1 cama extra o una cuna (a solicitud)<br>
-                              *2 Baños
-                            </v-card-text>
-                          </v-card>
-                        </v-expansion-panel-content>
-                      </v-expansion-panel>
-                </v-card>
-              </v-flex>
-              </template >
-            </v-card-text>
-          </v-card>
-        </v-tab-item>
-        <v-tab ripple> historial de reservas</v-tab>
-        <v-tab-item>
-          <v-card flat>
-            <v-card-text>
-              <template v-for="n in 8">
-              <v-flex xs12 :key="n" mb-3>
-                <v-card color="blue" class="white--text">
-                  <v-layout row >
-                    <v-flex xs4>
-                      <v-card-title primary-title>
-                        <div>
-                          <div class="headline mb-4">tipo de habitacion: doble</div>
-                          <div  class="mb-4">fecha de la reserva  : 25/05/2017 </div>
-                          <div  class=" mb-4">numero de adultos : 2</div>
-                        </div>
-                      </v-card-title>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-card-title primary-title>
-                        <div>
-                          <div class="headline mb-4">precio de la habitacion </div>
-                          <div  class="title mb-4 ">650000$ </div>
-                          <div>numero de niños: 0</div>
-                        </div>
-                      </v-card-title>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-img :src="habitacion2" contain></v-img>
-                    </v-flex>
-                  </v-layout>
-                  <v-divider light></v-divider>
-                  <v-expansion-panel>
-                        <v-expansion-panel-content >
-                          <template v-slot:header>
-                            <div>detalles</div>
-                          </template>
-                          <v-card>
-                            <v-card-text>
-                              *Aire acondicionado <br>
-                              *Baño con ducha, secador de pelo y servicio de *amenidades diarias<br>
-                              *Caja de seguridad electrónica<br>
-                              * Voltaje (corriente): 220 V/60 Hz (los baños cuentan con tomas de 110 V para equipos hasta 50 W)<br>
-                              *Minibar con agua, refrescos, cervezas y más ($)<br>
-                              *Teléfono directo en dormitorio y baño<br>
-                              *1 cama extra o una cuna (a solicitud)<br>
-                              *2 Baños
-                            </v-card-text>
-                          </v-card>
-                        </v-expansion-panel-content>
-                      </v-expansion-panel>
-                </v-card>
-              </v-flex>
-              </template >
-            </v-card-text>
-          </v-card>
-        </v-tab-item>
-        <v-tab ripple> reservas activas</v-tab>
-        <v-tab-item>
-          <v-card flat>
-            <v-card-text> <template v-for="n in 8">
-              <v-flex xs12 :key="n" mb-3>
-                <v-card color="orange darken-4" class="white--text">
-                  <v-layout row >
-                    <v-flex xs4>
-                      <v-card-title primary-title>
-                        <div>
-                          <div class="headline mb-4">tipo de habitacion: doble</div>
-                          <div  class="mb-4">fecha de la reserva  : 25/05/2017 </div>
-                          <div  class=" mb-4">numero de adultos : 2</div>
-                        </div>
-                      </v-card-title>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-card-title primary-title>
-                        <div>
-                          <div class="headline mb-4">precio de la habitacion </div>
-                          <div  class="title mb-4 ">650000$ </div>
-                          <div>numero de niños: 0</div>
-                        </div>
-                      </v-card-title>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-img :src="habitacion2" contain></v-img>
-                    </v-flex>
-                  </v-layout>
-                  <v-divider light></v-divider>
-                  <v-expansion-panel>
-                        <v-expansion-panel-content >
-                          <template v-slot:header>
-                            <div>detalles</div>
-                          </template>
-                          <v-card>
-                            <v-card-text>
-                              *Aire acondicionado <br>
-                              *Baño con ducha, secador de pelo y servicio de *amenidades diarias<br>
-                              *Caja de seguridad electrónica<br>
-                              * Voltaje (corriente): 220 V/60 Hz (los baños cuentan con tomas de 110 V para equipos hasta 50 W)<br>
-                              *Minibar con agua, refrescos, cervezas y más ($)<br>
-                              *Teléfono directo en dormitorio y baño<br>
-                              *1 cama extra o una cuna (a solicitud)<br>
-                              *2 Baños
-                            </v-card-text>
-                          </v-card>
-                        </v-expansion-panel-content>
-                      </v-expansion-panel>
-                </v-card>
-              </v-flex>
-              </template >
-            </v-card-text>
-          </v-card>
-        </v-tab-item>
-      </v-tabs>
+       <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-toolbar flat>
+          <v-btn icon>
+            <v-icon>arrow_back</v-icon>
+          </v-btn>
+          <v-toolbar-title>Albumes</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>search</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <v-subheader></v-subheader>
+        <v-container fluid grid-list-sm>
+          <v-layout row wrap>
+            <v-flex v-for="i in 8" :key="i" xs3>
+              <img :src="`https://randomuser.me/api/portraits/men/${i + 50}.jpg`" class="image" alt="lorem" width="500%" height="200%">
+            </v-flex>
+          </v-layout>
+        </v-container>
+        <v-subheader></v-subheader>
+        <v-container fluid grid-list-sm>
+          <v-layout row wrap>
+            <v-flex v-for="i in 8" :key="i" xs3>
+              <img :src="`https://randomuser.me/api/portraits/women/${i + 45}.jpg`" class="image" alt="lorem" width="200%" height="200%">
+            </v-flex>
+          </v-layout>
+        </v-container>
+        <v-footer class="mt-9"></v-footer>
+      </v-card>
+    </v-flex>
+  </v-layout>
     </div>
   </v-flex>
 </template>
 <script>
+export default {
+  created () {
+    this.$store.commit('SET_LAYOUT', 'admin-layout')
+  }
+  }
 </script>
+<style lang="stylus">
+</style>
