@@ -1,5 +1,4 @@
 <template>
-  <v-flex xs12>
     <div>
        <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
@@ -34,8 +33,14 @@
       </v-card>
     </v-flex>
   </v-layout>
+  <material-card class="v-card-profile">
+                <v-card-text class="text-xs-center">
+                    <v-form name="formulario" method="post" enctype="form-data">
+                        <input type="file" name="adjunto" accept=".png, .jpg" multiple>
+                    </v-form>
+                </v-card-text>
+            </material-card>
     </div>
-  </v-flex>
 </template>
 <script>
 export default {
