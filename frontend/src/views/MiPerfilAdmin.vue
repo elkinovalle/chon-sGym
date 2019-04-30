@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="grande">
     <v-layout class="layout1" row >
       <v-flex xs2 sm2 md2 >
         <v-card flat color="black" >
@@ -16,7 +16,7 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 sm6 md10>
-                  <v-tabs grow color="black">
+                  <v-tabs  grow color="black">
                     <v-tab class="upper">Principal</v-tab>
                     <v-tab class="upper" >Drive</v-tab>
                     <v-tab class="upper">Tareas</v-tab>
@@ -50,6 +50,20 @@
                   <v-card-text  class="administrador">Correo Electronico:</v-card-text>
                   <label class="administrador">INFORMACION GENERAL</label>
                   <v-card class="administrador" color="black" >
+                    <v-layout row wrap>
+
+                        <v-flex xs12 lg12 mb9>
+
+                          <material-card class="v-card-profile">
+                              <v-card-text class="text-xs-center">
+                                  Seleccionar foto de Perfil
+                                  <v-form name="formulario" method="post" enctype="form-data">
+                                      <input type="file" name="adjunto" accept=".jpg,.jpeg,.png,.gif" multiple>
+                                  </v-form>
+                              </v-card-text>
+                          </material-card>
+                        </v-flex>
+                      </v-layout>
                       <v-layout row wrap>
                         <v-flex xs12 lg12 mb12>
                           <v-expansion-panel popout>
@@ -81,57 +95,29 @@
                           <v-expansion-panel popout>
                             <v-expansion-panel-content>
                               <template v-slot:header>
-                                <div >Cambiar Foto</div>
+                                <div >Genero</div>
                               </template>
                               <v-flex xs12 sm8 md12>
                                 <v-card >
-                                  <v-container grid-list-sm fluid>
-                                    <v-layout row wrap>
-                                      <v-flex
-                                        v-for="n in 9"
-                                        :key="n"
-                                        xs4
-                                        d-flex
-                                      >
-                                        <v-card flat tile class="d-flex">
-                                          <v-img
-                                            :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                                            :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-                                            aspect-ratio="1"
-                                            class="grey lighten-2"
-                                          >
-                                            <template v-slot:placeholder>
-                                              <v-layout
-                                                fill-height
-                                                align-center
-                                                justify-center
-                                                ma-0
-                                              >
-                                                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                                              </v-layout>
-                                            </template>
-                                          </v-img>
-                                        </v-card>
-                                      </v-flex>
-                                    </v-layout>
-                                  </v-container>
-                                <v-card-actions>
-                                  <v-spacer></v-spacer>
-                                  <v-btn >Cancelar</v-btn>
-                                  <v-btn >Listo</v-btn>
-                                </v-card-actions>
+                                  <v-card-text color="black">
+                                    <v-form>
+                                      <v-container fluid>
+                                        <v-radio-group v-model="radios" :mandatory="false">
+                                          <v-radio label="Femenino" value="genero-1"></v-radio>
+                                          <v-radio label="Masculino" value="genero-2"></v-radio>
+                                        </v-radio-group>
+                                      </v-container>
+                                    </v-form>
+                                  </v-card-text>
+                                  <v-card-actions>
+                                    <v-spacer></v-spacer>
+                                    <v-btn >Cancelar</v-btn>
+                                    <v-btn >Listo</v-btn>
+                                  </v-card-actions>
                                 </v-card>
                               </v-flex>
                             </v-expansion-panel-content>
                           </v-expansion-panel>
-                        </v-flex>
-                      </v-layout>
-                      <v-layout row wrap>
-                        <v-flex class="Select" xs12 lg11 mb12>
-                          <v-select
-                            :items="items"
-                            label="Genero"
-                          ></v-select>
                         </v-flex>
                       </v-layout>
                   </v-card>
@@ -152,11 +138,17 @@ export default {
   methods: {
     clickMenu (value) {
       this.$router.push(value.link)
+    },
+    next () {
+      const active = parseInt(this.active)
+      this.active = (active < 2 ? active + 1 : 0)
     }
   },
-  data: () => ({
-    items: ['Masculino', 'Femenino']
-  })
+  data () {
+    return {
+      genero: 'genero-1'
+    }
+  }
 }
 </script>
 <style lang="stylus" >
@@ -194,5 +186,8 @@ export default {
   }
   .colorletra{
     color white !important
+  }
+  .grande{
+    width 1000px
   }
 </style>

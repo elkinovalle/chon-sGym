@@ -77,8 +77,8 @@
 
         </v-layout>
       </v-container>
-       <v-btn color="green darken-4" class=" white--text display-1" >Registrar Empleado</v-btn>
-          <v-btn color="red darken-4" class=" white--text display-1" >Cancelar</v-btn>
+       <v-btn color="green darken-4" class=" white--text " >Registrar Empleado</v-btn>
+          <v-btn color="red darken-4" class=" white--text " >Cancelar</v-btn>
     </v-form>
     <v-card>
       <v-card-title>

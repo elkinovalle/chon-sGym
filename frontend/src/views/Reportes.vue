@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="grande">
       <v-subheader class="subheader black--text display-1 font-weight-bold" xs8>Reportes</v-subheader>
 
       <v-container fluid>
