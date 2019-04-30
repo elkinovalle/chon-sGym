@@ -3,7 +3,7 @@ const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
 const setupReservationModel = require('./models/reservation.model')
 const setupProductModel = require('./models/product.model')
-const setupDetail_SaleModel = require('./models/detail_sale')
+const setupDetail_SaleModel = require('./models/detail_sale.model')
 
 
 // const setupAgent = require('./lib/agent')
