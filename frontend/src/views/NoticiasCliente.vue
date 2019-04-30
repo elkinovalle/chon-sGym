@@ -140,8 +140,9 @@ export default {
   .letrero {
       padding 40px
       background-color rgb(49, 53, 49)
-      margin-top 20px
       border-top-right-radius 10%
+      height 460px
+      margin-top 20px
   }
   .letrero2 {
       padding 40px
@@ -168,6 +169,7 @@ export default {
   }
   .caja{
         background-color transparent !important
+        margin-top -40px
   }
   .informacion{
         background-color transparent !important

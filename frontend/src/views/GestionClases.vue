@@ -66,6 +66,10 @@
         </v-flex>
   </div>
 </template>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6e6b8a625c0b6051844c39f4c59e4dca3cc9b765
 <script>
 export default {
   created () {
