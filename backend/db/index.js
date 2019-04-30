@@ -30,10 +30,14 @@ module.exports = async function (config) {
   //relaciones de usuario a revervas
   UserModel.hasMany(ReservationModel,{ foreignKey: 'usuarios' })
   ReservationModel.belongsTo(UserModel, { foreignKey: 'empleado' })
-  
+  //relaciones de producto a detalle_ventas
   ProductModel.hasMany(Detail_SaleModel,{ foreignKey: 'productos'})
   Detail_SaleModel.belongsTo(ProductModel,{ foreignKey: 'id'})
-  
+  //relaciones de detalle_ventas a ventas 
+  SaleModel.hasMany(Detail_SaleModel,{ foreignKey: 'venta'})
+  Detail_SaleModel.belongsTo(SaleModel,{foreignKey: 'id'})
+
+
 
   //fin de las relaciones
 
