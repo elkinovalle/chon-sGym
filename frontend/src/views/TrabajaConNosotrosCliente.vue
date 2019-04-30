@@ -380,6 +380,6 @@ div.v-card__title {
     background-color: transparent;
 }
 .adjuntar {
-    margin-left 130px
+    margin-left 110px
 }
 </style>
