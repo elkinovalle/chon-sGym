@@ -159,12 +159,12 @@ export default new Router({
       component: PlanesCliente
     },
     {
-      path: '/plan-un-mes-cliente',
+      path: '/plvan-un-mes-cliente',
       name: 'plan-un-mes-cliente',
       component: PlanUnMesCliente
     },
     {
-      path: '/plan-dos-meses-cliente',
+      path: '/plan-dos-mveses-cliente',
       name: 'plan-dos-meses-cliente',
       component: PlanDosMesesCliente
     },

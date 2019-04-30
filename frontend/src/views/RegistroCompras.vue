@@ -7,11 +7,13 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message1"
+              v-model="message1v"
               box
               label="Número de serial o codigo"
               clearable
-            ></v-text-field>
+            ></v-text-field><div v-for="item in items" :key="item.id">
+              {{ item }}
+            </div>
           </v-flex>
 
            <v-flex xs12 sm6>

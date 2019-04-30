@@ -13,7 +13,6 @@
     <v-form ref="form" @submit.prevent="submit"
       v-model="form"
       >
-
       <v-container grid-list-xl fluid>
         <v-layout wrap>
           <v-flex sm5>
@@ -89,7 +88,7 @@
               <v-btn flat value="left" color="white" class="blue darken-4">
                 Fotos
               </v-btn>
-              <v-btn flat value="center" color="white" class="blue darken-4">
+              <v-btn flat value="center" color="white" class="blue darken-4" to="/mi-dieta-cliente">
                 Dieta
               </v-btn>
               <v-btn flat value="right" color="white" class="blue darken-4">
