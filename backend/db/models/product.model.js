@@ -21,10 +21,6 @@ module.exports = function setupMetricModel (config) {
     descripcion: {
         type: Sequelize.TEXT,
         allowNull: false
-    },
-    venta: {
-        type: Sequelize.INTEGER,
-        allowNull: false
     }
   })
 }
