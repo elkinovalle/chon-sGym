@@ -69,7 +69,10 @@
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
+=======
 >>>>>>> 6e6b8a625c0b6051844c39f4c59e4dca3cc9b765
+>>>>>>> 261fde5202ad2c1413df52ab7cd02a4c1ba4f4fa
 <script>
 export default {
   created () {
