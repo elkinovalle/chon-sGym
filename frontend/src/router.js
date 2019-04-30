@@ -86,7 +86,6 @@ import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
 import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
 import ProgresoCliente from '@/views/ProgresoCliente.vue'
-import EditarImagen from '@/views/EditarImagen.vue'
 
 Vue.use(Router)
 
@@ -523,11 +522,6 @@ export default new Router({
       path: '/progreso-cliente',
       name: 'progreso-cliente',
       component: ProgresoCliente
-    },
-    {
-      path: '/editar-imagen',
-      name: 'editar-imagen',
-      component: EditarImagen
     }
   ]
 })
