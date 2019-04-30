@@ -8,7 +8,13 @@ const config = {
     username: process.env.DB_USER || 'chons-gym-user',
     password: process.env.DB_PASS || 'chonsgym12345',
     host: process.env.DB_HOST || '10.98.12.80',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
   }
 }
 

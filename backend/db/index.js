@@ -1,4 +1,10 @@
 'use strict'
+
+const { db:config } = require('@chons-gym/config')
+
+//contraladores
+const setupUser = require('./lib/users')
+
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
 const setupReservationModel = require('./models/reservation.model')
@@ -9,7 +15,7 @@ const setupCityModel = require('./models/city.model')
 
 // const setupAgent = require('./lib/agent')
 
-module.exports = async function (config) {
+module.exports = async function () {
   const sequelize = setupDatabase(config)
   const UserModel = setupUserModel(config)
   const ReservationModel = setupReservationModel(config)
@@ -48,11 +54,12 @@ module.exports = async function (config) {
     await sequelize.sync({ force: true })
   }
 
-  const Agent = {}
-  const Metric = {}
+ const User = setupUser(UserModel)
 
   return {
-    Agent,
-    Metric
+    async setup() {
+      await sequelize.sync({ force: true })
+    },
+    User
   }
 }

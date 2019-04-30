@@ -1,7 +1,7 @@
 'use strict'
 
 const { getLogger } = require('@chons-gym/utils')
-// const image = require('./image')
+const user = require('./user')
 // const media = require('./media')
 
 const log = getLogger(__dirname, __filename)
@@ -9,12 +9,10 @@ const log = getLogger(__dirname, __filename)
 module.exports = {
   home (req, res) {
     res.send({
-      image: '/image',
-      media: '/media'
+      user: '/user',
     })
   },
-  // image,
-  // media,
+  user,
   errorHandler (err, req, res, next) {
     if (err) {
       let code = err.code || 500
