@@ -85,7 +85,6 @@ export default {
     email: '',
     select: null,
     items: [
-
       'Semanal',
       'Quincenal',
       'Mensual',
@@ -95,7 +94,6 @@ export default {
       'Item 2',
       'Item 3',
       'Item 4'
-
     ],
     checkbox: false
   }),
@@ -122,9 +120,6 @@ export default {
       !this.$v.name.required && errors.push('Name is required.')
 
       return errors
-    },
-    emailErrors () {
-      const errors = []
       if (!this.$v.email.$dirty) return errors
       !this.$v.email.email && errors.push('Must be valid e-mail')
 

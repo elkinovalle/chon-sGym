@@ -242,8 +242,15 @@
         label="Teléfono"
         mask="phone"
       ></v-text-field>
-      <v-btn color="grey lighten-2" class="adjuntar right black--text title" block>Adjuntar hoja de vida</v-btn>
-      <br><br><br>
+      <label class="adjuntar center black--text title">ADJUNTAR HOJA DE VIDA</label>
+    <br>
+      <material-card class="v-card-profile">
+                <v-card-text class="text-xs-center">
+                    <v-form name="formulario" method="post" enctype="form-data">
+                        <input type="file" name="adjunto" accept=".pdf, .doc" multiple>
+                    </v-form>
+                </v-card-text>
+            </material-card>
       <v-checkbox
         v-model="agreement"
         :rules="[rules.required]"
@@ -373,6 +380,6 @@ div.v-card__title {
     background-color: transparent;
 }
 .adjuntar {
-    height 50px
+    margin-left 130px
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="grande">
     <v-subheader class="subheader black--text display-1 font-weight-bold">Gestión de Clases</v-subheader>
     <v-flex>
       <v-sheet height="500">
@@ -54,7 +54,7 @@
                 flat
                 color="secondary"
               >
-                Cancel
+              cancel
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -66,7 +66,13 @@
         </v-flex>
   </div>
 </template>
+<<<<<<< HEAD
+=======
 
+<<<<<<< HEAD
+=======
+>>>>>>> 6e6b8a625c0b6051844c39f4c59e4dca3cc9b765
+>>>>>>> 261fde5202ad2c1413df52ab7cd02a4c1ba4f4fa
 <script>
 export default {
   created () {
@@ -140,7 +146,7 @@ export default {
 
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
   .my-event {
     width 700px
     white-space nowrap

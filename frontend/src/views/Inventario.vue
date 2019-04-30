@@ -50,8 +50,8 @@
             ></v-text-field>
           </v-flex>
 
-          <v-btn color="green darken-4" class=" white--text display-1" >Agregar Producto</v-btn>
-          <v-btn color="red darken-4" class=" white--text display-1" >Cancelar</v-btn>
+          <v-btn color="green darken-4" class=" white--text " >Agregar Producto</v-btn>
+          <v-btn color="red darken-4" class=" white--text " >Cancelar</v-btn>
 
         </v-layout>
       </v-container>
@@ -323,4 +323,3 @@ export default {
     font-size 20px
   }
 </style>
->>>>>>> d1a73602e487f2d3827a43abd15831d6626c0ebb

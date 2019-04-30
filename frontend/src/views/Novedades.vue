@@ -56,12 +56,12 @@
       <v-btn
         color="#000B3E"
         @click="loader = 'loading3'"
-        class=" white--text display-1"
+        class=" white--text "
       >Publicar Noticia</v-btn>
       <v-btn
         color="red darken-4"
         @click="loader = 'loading3'"
-        class=" white--text display-1"
+        class=" white--text "
       >Cancelar</v-btn>
     </v-layout>
     <v-card>

@@ -77,6 +77,7 @@ import MisReservasCliente from '@/views/MisReservasCliente.vue'
 import MiDietaCliente from '@/views/MiDietaCliente.vue'
 import HorariosCliente from '@/views/HorariosCliente.vue'
 import ContactoCliente from '@/views/ContactoCliente.vue'
+import InstalacionesCliente from '@/views/InstalacionesCliente.vue'
 import TrabajaConNosotrosCliente from '@/views/TrabajaConNosotrosCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
 import VentasEmpleado from '@/views/VentasEmpleado.vue'
@@ -482,6 +483,11 @@ export default new Router({
       path: '/trabaja-con-nosotros-cliente',
       name: 'trabaja-con-nosotros-cliente',
       component: TrabajaConNosotrosCliente
+    },
+    {
+      path: '/instalaciones-cliente',
+      name: 'instalaciones-cliente',
+      component: InstalacionesCliente
     },
     {
       path: '/membresias-empleado',
