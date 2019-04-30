@@ -56,6 +56,7 @@
       </v-flex>
   </form>
   </v-layout>
+</div>
 </template>
 <script>
 
@@ -134,7 +135,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 form{
   margin-left 380px
 }
