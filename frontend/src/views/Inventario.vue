@@ -307,10 +307,6 @@ export default {
 
 }
 </script>
-<<<<<<< HEAD
-<style lang="stylus">
- </style>
-=======
 
 <style lang="stylus">
   .subheader{
@@ -328,4 +324,3 @@ export default {
     font-size 20px
   }
 </style>
->>>>>>> d1a73602e487f2d3827a43abd15831d6626c0ebb

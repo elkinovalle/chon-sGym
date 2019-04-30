@@ -140,7 +140,7 @@ export default {
 
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
   .my-event {
     width 700px
     white-space nowrap
