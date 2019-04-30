@@ -54,7 +54,7 @@
                 flat
                 color="secondary"
               >
-                Cancel
+              cancel
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -66,9 +66,6 @@
         </v-flex>
   </div>
 </template>
-
-  
-
 <script>
 export default {
   created () {

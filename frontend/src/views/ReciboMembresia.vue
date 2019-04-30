@@ -1,9 +1,6 @@
 <template>
-<<<<<<< HEAD
 <div class="imagen_recibo">
   <img class="imagen_icon" src="../assets/Logo-gym.png" alt="">
-=======
->>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
 <v-layout row wrap>
     <form>
       <v-flex xs14 sm14>
@@ -59,10 +56,6 @@
       </v-flex>
   </form>
   </v-layout>
-<<<<<<< HEAD
-  </div>
-=======
->>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
 </template>
 <script>
 
@@ -91,18 +84,10 @@ export default {
     email: '',
     select: null,
     items: [
-<<<<<<< HEAD
-      'Semanal',
-      'Quincenal',
-      'Mensual',
-      'Trimestral',
-      'Anual'
-=======
       'Item 1',
       'Item 2',
       'Item 3',
       'Item 4'
->>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
     ],
     checkbox: false
   }),
@@ -124,22 +109,14 @@ export default {
       const errors = []
       if (!this.$v.name.$dirty) return errors
       !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
-<<<<<<< HEAD
-      !this.$v.name.required && errors.push('required.')
-=======
       !this.$v.name.required && errors.push('Name is required.')
->>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
       return errors
     },
     emailErrors () {
       const errors = []
       if (!this.$v.email.$dirty) return errors
       !this.$v.email.email && errors.push('Must be valid e-mail')
-<<<<<<< HEAD
-      !this.$v.email.required && errors.push('required')
-=======
       !this.$v.email.required && errors.push('E-mail is required')
->>>>>>> 9233482c3558f63415901e05389d3caccaf80f3a
       return errors
     }
   },
