@@ -39,7 +39,7 @@ un mayor avance hacia tus objetivos.
           ></v-img>
           <v-card-title class="black">
             <div>
-               <p class="headline white--text"><strong>Cero Estrés <br> Plan Mensual Subtotal 70.000</strong></p>
+               <p class="headline white--text"><strong>Cero Estrés <br> Plan Mensual Subtotal 180.000</strong></p>
             </div>
           </v-card-title>
         </v-card>
@@ -86,7 +86,9 @@ un mayor avance hacia tus objetivos.
       </v-card>
     </v-flex>
   </v-layout>
-  <h2 class="text-xs-center blue--text title">Ver más</h2>
+  <v-card color="transparent text-xs-center" flat>
+  <a href="#" class="blue--text title" @click="clickPush('/instalaciones-cliente')">Ver más</a>
+  </v-card>
           </v-card>
         </v-flex>
        <v-flex d-flex xs12 sm6 md1>
@@ -152,6 +154,11 @@ grupales, clases de spinning, jaula, zonas húmedas si está disponible</article
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
+  },
+  methods: {
+    clickPush (value) {
+      this.$router.push(value)
+    }
   },
   data: () => ({
     imagenes: [

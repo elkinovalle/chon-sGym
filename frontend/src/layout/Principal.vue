@@ -46,7 +46,7 @@
  <v-footer dark height="auto" color="blue darken-4">
    <v-container fluid>
       <v-layout row wrap>
-         <v-flex d-flex xs12 sm6 md2 child-flex>
+         <v-flex d-flex xs12 sm6 md2>
           <v-card color="blue darken-4" dark flat>
           </v-card>
         </v-flex>
@@ -67,36 +67,88 @@
             </v-card-text>
           </v-card>
         </v-flex>
-        <v-flex d-flex xs12 sm6 md2 child-flex>
-          <v-card color="blue darken-4" dark flat>
-              <v-btn
-        v-for="link in links"
-        :key="link"
-        color="white"
-        flat
-        round
-        class="white--text title"
-      >
-        {{ link }}
-      </v-btn>
-          </v-card>
-        </v-flex>
-        <v-flex d-flex xs12 sm6 md3>
-          <v-card color="blue darken-4" dark flat>
+        <v-flex d-flex xs12 sm6 md2 >
+          <v-card color="carta blue darken-4" dark flat>
                  <v-btn
-        v-for="link2 in links2"
-        :key="link2"
         color="white"
         flat
         round
-        class="white--text title"
+        class="title font-italic font-weight-black"
+        to="/login"
       >
-        {{ link2 }}
+     HOME
+      </v-btn>
+         <v-btn
+        color="white"
+        flat
+        round
+        class="title font-italic font-weight-black"
+        to="/planes-cliente"
+      >
+      PLANES Y TARIFAS
+      </v-btn>
+         <v-btn
+        color="white"
+        flat
+        round
+        class="title font-italic font-weight-black"
+        to="/clases-grupales-cliente"
+      >
+     CLASES GRUPALES
+      </v-btn>
+         <v-btn
+        color="white"
+        flat
+        round
+        class="title font-italic font-weight-black"
+        to="/horarios-cliente"
+      >
+      HORARIOS
+      </v-btn>
+          </v-card>
+        </v-flex>
+        <v-flex d-flex xs12 sm6 md2>
+                  <v-card color="carta blue darken-4" dark flat>
+                 <v-btn
+        color="white"
+        flat
+        round
+        class="title font-italic font-weight-black"
+        to="/tips-cliente"
+      >
+     TIPS
+      </v-btn>
+         <v-btn
+        color="white"
+        flat
+        round
+        class="title font-italic font-weight-black"
+        to="/instalaciones-cliente"
+      >
+      NUESTRAS INSTALACIONES
+      </v-btn>
+         <v-btn
+        color="white"
+        flat
+        round
+        class="title font-italic font-weight-black"
+        to="/trabaja-con-nosotros-cliente"
+      >
+     TRABAJA CON NOSOTROS
+      </v-btn>
+         <v-btn
+        color="white"
+        flat
+        round
+        class="title font-italic font-weight-black"
+        to="/lo-nuevo-cliente"
+      >
+      LO NUEVO
       </v-btn>
           </v-card>
         </v-flex>
         <v-flex d-flex xs12 sm6 md2 child-flex>
-          <v-card  dark flat>
+          <v-card color="transparent" dark flat >
           </v-card>
         </v-flex>
         <v-flex d-flex xs12 sm12 md12 child-flex >
@@ -134,10 +186,10 @@ export default {
     links: [
       'Home',
       'Planes y Tarifas',
+      'Dietas',
       'Clases Grupales',
       'Horarios',
-      'Lo Nuevo',
-      'Dietas'
+      'Lo Nuevo'
     ],
     links2: [
       'Tips',
@@ -172,5 +224,8 @@ export default {
   }
   .desplegable{
     z-index: 900000
+  }
+  .carta{
+    padding 30px
   }
 </style>

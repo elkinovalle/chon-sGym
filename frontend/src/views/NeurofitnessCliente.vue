@@ -86,7 +86,9 @@ un mayor avance hacia tus objetivos.
       </v-card>
     </v-flex>
   </v-layout>
-  <h2 class="text-xs-center blue--text title">Ver más</h2>
+  <v-card color="transparent text-xs-center" flat>
+  <a href="#" class="blue--text title" @click="clickPush('/instalaciones-cliente')">Ver más</a>
+  </v-card>
           </v-card>
         </v-flex>
        <v-flex d-flex xs12 sm6 md1>
@@ -147,6 +149,11 @@ para relajar el sistema nervio</article>
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
+  },
+  methods: {
+    clickPush (value) {
+      this.$router.push(value)
+    }
   },
   data: () => ({
     imagenes: [

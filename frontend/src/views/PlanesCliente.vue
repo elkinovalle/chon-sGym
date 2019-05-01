@@ -148,7 +148,7 @@ un mayor avance hacia tus objetivos.
         flat
         round
         class="black--text subheading font-italic font-weight-black "
-        to=""
+        to="/instalaciones-cliente"
       >
       GIMNASIO
       </v-btn>

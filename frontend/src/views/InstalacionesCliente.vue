@@ -19,7 +19,7 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
           </v-card>
         </v-flex >
          <v-flex  d-flex xs6 sm6 md6>
-          <v-carousel height="400px">
+          <v-carousel height="500px">
             <v-carousel-item v-for="(item1,i) in items1" :key="i" :src="item1.src">
             </v-carousel-item>
           </v-carousel>
@@ -28,7 +28,7 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
 
        <v-layout row wrap>
        <v-flex  d-flex xs6 sm6 md6>
-          <v-carousel height="400px">
+          <v-carousel height="500px">
       <v-carousel-item v-for="(item2,i) in items2" :key="i" :src="item2.src">
       </v-carousel-item>
     </v-carousel>
@@ -69,7 +69,7 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
           </v-card>
         </v-flex >
          <v-flex  d-flex xs6 sm6 md6>
-          <v-carousel height="400px">
+          <v-carousel height="500px">
              <v-carousel-item v-for="(item3,i) in items3" :key="i" :src="item3.src">
              </v-carousel-item>
           </v-carousel>
@@ -78,7 +78,7 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
 
        <v-layout row wrap>
          <v-flex  d-flex xs6 sm6 md6>
-          <v-carousel height="400px">
+          <v-carousel height="500px">
              <v-carousel-item v-for="(item4,i) in items4" :key="i" :src="item4.src">
                </v-carousel-item>
             </v-carousel>
@@ -119,7 +119,7 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
           </v-card>
         </v-flex >
         <v-flex  d-flex xs6 sm6 md6>
-          <v-carousel  height="400px">
+          <v-carousel  height="500px">
             <v-carousel-item v-for="(item5,i) in items5" :key="i" :src="item5.src">
              </v-carousel-item>
             </v-carousel>

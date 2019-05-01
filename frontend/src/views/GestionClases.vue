@@ -59,61 +59,61 @@ export default {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
   },
   data: () => (
-    
-    {items: ['Cardio','Zumba','Crossfit']},
-   {
-    today: '2019-01-08',
-    events: [
-      {
-        title: 'Vacation',
-        details: 'Going to the beach!',
-        date: '2018-12-30',
-        open: false
-      },
-      {
-        title: 'Vacation',
-        details: 'Going to the beach!',
-        date: '2018-12-31',
-        open: false
-      },
-      {
-        title: 'Vacation',
-        details: 'Going to the beach!',
-        date: '2019-01-01',
-        open: false
-      },
-      {
-        title: 'Meeting',
-        details: 'Spending time on how we do not have enough time',
-        date: '2019-01-07',
-        open: false
-      },
-      {
-        title: '30th Birthday',
-        details: 'Celebrate responsibly',
-        date: '2019-01-03',
-        open: false
-      },
-      {
-        title: 'New Year',
-        details: 'Eat chocolate until you pass out',
-        date: '2019-01-01',
-        open: false
-      },
-      {
-        title: 'Conference',
-        details: 'Mute myself the whole time and wonder why I am on this call',
-        date: '2019-01-21',
-        open: false
-      },
-      {
-        title: 'Hackathon',
-        details: 'Code like there is no tommorrow',
-        date: '2019-02-01',
-        open: false
-      }
-    ]
-  }),
+
+    { items: ['Cardio', 'Zumba', 'Crossfit'] },
+    {
+      today: '2019-01-08',
+      events: [
+        {
+          title: 'Vacation',
+          details: 'Going to the beach!',
+          date: '2018-12-30',
+          open: false
+        },
+        {
+          title: 'Vacation',
+          details: 'Going to the beach!',
+          date: '2018-12-31',
+          open: false
+        },
+        {
+          title: 'Vacation',
+          details: 'Going to the beach!',
+          date: '2019-01-01',
+          open: false
+        },
+        {
+          title: 'Meeting',
+          details: 'Spending time on how we do not have enough time',
+          date: '2019-01-07',
+          open: false
+        },
+        {
+          title: '30th Birthday',
+          details: 'Celebrate responsibly',
+          date: '2019-01-03',
+          open: false
+        },
+        {
+          title: 'New Year',
+          details: 'Eat chocolate until you pass out',
+          date: '2019-01-01',
+          open: false
+        },
+        {
+          title: 'Conference',
+          details: 'Mute myself the whole time and wonder why I am on this call',
+          date: '2019-01-21',
+          open: false
+        },
+        {
+          title: 'Hackathon',
+          details: 'Code like there is no tommorrow',
+          date: '2019-02-01',
+          open: false
+        }
+      ]
+    }),
   computed: {
     eventsMap () {
       const map = {}
