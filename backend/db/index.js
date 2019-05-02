@@ -67,11 +67,13 @@ module.exports = async function () {
 
   const User = setupUser(UserModel)
   const Product = setupProduct(ProductModel)
+  const Reservation = setupReservation(ReservationModel)
   return {
     async setup() {
       await sequelize.sync({ force: true })
     },
     User,
-    Product
+    Product,
+    Reservation
   }
 }
