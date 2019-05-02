@@ -4,12 +4,10 @@
 <v-container fluid>
       <v-layout row wrap>
            <v-flex d-flex xs12 sm6 md1 child-flex>
-          <v-card color="white" dark flat>
-          </v-card>
         </v-flex>
-          <v-flex d-flex xs12 sm6 md2 child-flex>
+          <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
-        <h1 class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></h1><br>
+        <span class="text-xs blue--text headline">PLANES Y <br><strong>TARIFAS</strong></span><br>
         <p class="text-xs blue--text title"><strong>¡Cumple tus metas!</strong></p>
         <span class="text-xs black--text body-1"><strong>En CHON'S GYM te ayudaremos a cumplir tu
 meta, realizando planes y rutinas
@@ -26,20 +24,20 @@ un mayor avance hacia tus objetivos.
           <v-card color="white" dark flat>
               <v-layout justify-center>
     <v-flex xs12 sm6 md10 offset-xs2>
-        <v-card flat>
+      <v-card flat>
           <v-card-title class="blue">
             <div>
               <h3 class="headline white--text">Descripción del plan</h3>
             </div>
           </v-card-title>
           <v-img
-            src="https://guiafitness.com/wp-content/uploads/que-hacer-antes-ir-gimnasio.jpg"
+            src="https://e.rpp-noticias.io/normal/2017/09/25/262226_488669.jpg"
             aspect-ratio="1"
             class="planes"
           ></v-img>
           <v-card-title class="black">
             <div>
-               <p class="headline white--text"><strong>Cero Estrés <br> Plan Mensual Subtotal 180.000</strong></p>
+               <p class="headline white--text"><strong>Cero Estrés <br> Plan Mensual Subtotal 300.000</strong></p>
             </div>
           </v-card-title>
         </v-card>
@@ -178,8 +176,9 @@ export default {
     width 285px !important
   }
   img.imagen_logo{
-    height 160px
-    width 160px !important
+    height 50px
+    width 50px
+    margin-left -5px!important
   }
   p.texto{
     background-color silver !important
@@ -195,5 +194,8 @@ export default {
   }
   article{
     margin 0px 0px 0px 60px
+  }
+  .link{
+    margin-left 50px
   }
 </style>

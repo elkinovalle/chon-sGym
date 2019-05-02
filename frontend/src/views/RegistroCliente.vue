@@ -179,13 +179,12 @@ export default {
       )
     }
   },
-  created() {
+  created () {
     this.getUsers()
   },
   methods: {
-    async getUsers() {
+    async getUsers () {
       const res = await api.get('/user')
-      
     },
     resetForm () {
       this.form = Object.assign({}, this.defaultForm)

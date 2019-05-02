@@ -43,7 +43,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/plan-un-mes-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/un-mes-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
@@ -69,7 +69,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
         </v-card>
-      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/plan-dos-meses-cliente">Ver detalles</v-btn>
+      <v-btn color="blue darken-4" class="font-weight-black white--text title" block to="/dos-meses-cliente">Ver detalles</v-btn>
     </v-flex>
   </v-layout>
           </v-card>
