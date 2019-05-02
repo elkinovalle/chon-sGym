@@ -12,6 +12,15 @@ const setupProductModel = require('./models/product.model')
 const setupDetail_SaleModel = require('./models/detail_sale.model')
 const setupSaleModel = require('./models/sale.model')
 const setupCityModel = require('./models/city.model')
+const setupClassModel = require('./models/class.model')
+const setupCountryModel = require('./models/country.model')
+const setupDepartmentModel = require('./models/department.model')
+const setupDetail_MembershipModel = require('./models/detail_membership.model')
+const setupMembershipModel = require('./models/membership.model')
+const setupScheduleModel = require('./models/schedule.model')
+const setupType_ClassModel = require('./models/type_class.model')
+const setupType_MembershipModel = require('./models/type_merbership.model')
+const setupDayModel = require('./models/day.model')
 
 // const setupAgent = require('./lib/agent')
 
@@ -22,7 +31,7 @@ module.exports = async function () {
   const ProductModel = setupProductModel(config)
   const Detail_SaleModel = setupDetail_SaleModel(config)
   const CityModel = setupCityModel(config)
-  // const ClassModel = setupClass(config)
+  // const ClassModel = setupClassModel(config)
   // const CountryModel = setupCountryModel(config)
   // const DepartmentModel = setupDepartmentModel(config)
   // const Detail_MembershipModel = setupDetail_MembershipModel(config)
@@ -37,7 +46,7 @@ module.exports = async function () {
   //relaciones de usuario a revervas
   UserModel.hasMany(ReservationModel,{ foreignKey: 'usuarios' })
   ReservationModel.belongsTo(UserModel, { foreignKey: 'empleado' })
-  //relaciones de producto a detalle_ventas
+  //relaciones de detalle_ventas a productos
   ProductModel.hasMany(Detail_SaleModel,{ foreignKey: 'productos'})
   Detail_SaleModel.belongsTo(ProductModel,{ foreignKey: 'id'})
   //relaciones de detalle_ventas a ventas 
