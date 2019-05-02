@@ -11,7 +11,7 @@ router.post('/', async function(req, res, next) {
   try {
     const { reservationNew } = req.body
     const { Reservation } = await db()
-    const result = await Product.createProduct(reservationNew)
+    const result = await Reservation.createReservation(reservationNew)
     res.send(result)
   } catch (err) {
     next(err)
@@ -23,7 +23,7 @@ router.put('/:uuid', async function(req, res, next){
     const { uuid } = req.params
     const { reservationUpdate } = req.body
     const { Reservation } = await db()
-    const result = await Product.updateProduct(uuid, reservationUpdate)
+    const result = await Reservation.updateReservation(uuid, reservationUpdate)
     res.send(result)
   } catch (err) {
     next(err)
@@ -33,7 +33,7 @@ router.delete('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
     const { Reservation } = await db()
-    const result = await Product.deleteReservation(uuid)
+    const result = await Reservation.deleteReservation(uuid)
     res.send(result)
   } catch (err) {
     next(err)
@@ -42,7 +42,7 @@ router.delete('/:uuid', async function(req, res, next){
 router.get('/', async function(req, res, next){
   try {
     const { Reservation } = await db()
-    const result = await Product.findReservation()
+    const result = await Reservation.findReservation()
     res.send(result)
   } catch (err) {
     next(err)
@@ -52,7 +52,7 @@ router.get('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
     const { Reservation } = await db()
-    const result = await Product.findReservationUuid(uuid)
+    const result = await Reservation.findReservationUuid(uuid)
     res.send(result)
   } catch (err) {
     next(err)

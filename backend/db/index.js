@@ -5,7 +5,7 @@ const { db:config } = require('@chons-gym/config')
 //contraladores
 const setupUser = require('./lib/users')
 const setupProduct = require('./lib/products')
-const setupReservation = require ('./lib/reservation')
+const setupReservation = require ('./lib/reservations')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')

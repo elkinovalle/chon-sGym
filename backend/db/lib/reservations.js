@@ -5,10 +5,10 @@ function setupReservation(reservationModel) {
     const result = await reservationModel.create(reservation)
     return result.toJSON()
   }
-  async function updateReservation(uuid, reservation) {
+  async function updateReservation(uuid,reservation) {
     const cond = { where : { uuid } }
-    const result = await reservationModel.update(product, cond)
-    return result ? reservationModel.findOne(cond) : new Error('No se actualizo ningun registro')
+    const result = await reservationModel.update(reservation, cond)
+    return result ? reservationModel.findOne(cond) : new Error('No se actualizo ninguna reservacion')
   }
   async function deleteReservation(uuid) {
     const cond = { where : { uuid } }
@@ -26,7 +26,8 @@ function setupReservation(reservationModel) {
     createReservation,
     updateReservation,
     deleteReservation,
-    find
+    findReservation,
+    findReservationUuid
   }
 }
  module.exports = setupReservation
