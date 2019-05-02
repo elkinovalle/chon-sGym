@@ -4,6 +4,7 @@ const { db:config } = require('@chons-gym/config')
 
 //contraladores
 const setupUser = require('./lib/users')
+const setupProduct = require('./lib/products')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
@@ -63,12 +64,13 @@ module.exports = async function () {
     await sequelize.sync({ force: true })
   }
 
- const User = setupUser(UserModel)
-
+  const User = setupUser(UserModel)
+  const Product = setupProduct(ProductModel)
   return {
     async setup() {
       await sequelize.sync({ force: true })
     },
-    User
+    User,
+    Product
   }
 }

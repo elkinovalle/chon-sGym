@@ -97,6 +97,7 @@
           type="submit"
         >Registrarse</v-btn>
       </v-card-actions>
+      <v-img :src="img1"/>
     </v-form>
     <v-dialog v-model="terms" width="70%">
       <v-card>
@@ -134,6 +135,8 @@
 </div>
 </template>
 <script>
+import api from '@/plugins/service'
+import img1 from '@/assets/3meses.jpg'
 export default {
   data () {
     const defaultForm = Object.freeze({
@@ -147,6 +150,7 @@ export default {
 
     return {
       form: Object.assign({}, defaultForm),
+      img1: img1,
       rules: {
         age: [
           val => val >= 15 || `No puedes ingresar!`
@@ -175,13 +179,31 @@ export default {
       )
     }
   },
-
+  created() {
+    this.getUsers()
+  },
   methods: {
+    async getUsers() {
+      const res = await api.get('/user')
+      
+    },
     resetForm () {
       this.form = Object.assign({}, this.defaultForm)
       this.$refs.form.reset()
     },
-    submit () {
+    async submit () {
+      console.log()
+      const res = await api.post('/user', {
+        userNew: {
+          cedula: '1100960489',
+          nombre: this.form.first,
+          apellido: this.form.last,
+          rol: 'Usuarios',
+          email: this.form.email,
+          genero: 'm',
+          contraseña: '1234'
+        }
+      })
       this.snackbar = true
       this.resetForm()
     }

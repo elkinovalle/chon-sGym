@@ -17,5 +17,47 @@ router.post('/', async function(req, res, next){
     next(err)
   }
 })
+router.put('/:uuid', async function (req, res, next){
+  try {
+    const { uuid } = req.params
+    const { userUpdate } = req.body
+    const { User } = await db()
+    const result = await User.updateUser(uuid, userUpdate)
+    res.send(result)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.delete('/:uuid', async function (req, res, next) {
+  try {
+    const { uuid } = req.params
+    const { User } = await db()
+    const result = await User.deleteUser(uuid)
+    res.send(result)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.get('/', async function (req, res, next) {
+  try {
+    const { User } = await db()
+    const result = await User.findUsers()
+    res.send(result)
+  } catch (err) {
+    next(err)
+  }
+})
+router.get('/:uuid', async function (req, res, next) {
+  try {
+    const { uuid } = req.params
+    const { User } = await db()
+    const result = await User.findUserUuid(uuid)
+    res.send(result)
+  } catch (err) {
+    next(err)
+  }
+})
 
 module.exports = router
