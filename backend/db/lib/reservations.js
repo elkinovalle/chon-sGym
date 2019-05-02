@@ -25,5 +25,8 @@ function setupReservation(reservationModel) {
   return{
     createReservation,
     updateReservation,
+    deleteReservation,
+    find
   }
-  module.exports = setupReservation
+}
+ module.exports = setupReservation
