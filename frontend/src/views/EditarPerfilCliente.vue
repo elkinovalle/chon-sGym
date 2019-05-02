@@ -180,8 +180,8 @@ export default {
     imageName: '',
     dialogEmail: false,
     dialogPassword: false,
-    name: undefined,
-    phone: undefined,
+    name: '',
+    phone: '',
     form: false
   }),
   methods: {
