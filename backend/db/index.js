@@ -5,6 +5,7 @@ const { db:config } = require('@chons-gym/config')
 //contraladores
 const setupUser = require('./lib/users')
 const setupProduct = require('./lib/products')
+const setupReservation = require ('./lib/reservation')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
@@ -47,12 +48,12 @@ module.exports = async function () {
   //relaciones de usuario a revervas
   UserModel.hasMany(ReservationModel,{ foreignKey: 'usuarios' })
   ReservationModel.belongsTo(UserModel, { foreignKey: 'empleado' })
-  //relaciones de detalle_ventas a productos
-  ProductModel.hasMany(Detail_SaleModel,{ foreignKey: 'productos'})
-  Detail_SaleModel.belongsTo(ProductModel,{ foreignKey: 'id'})
-  //relaciones de detalle_ventas a ventas 
-  SaleModel.hasMany(Detail_SaleModel,{ foreignKey: 'venta'})
-  Detail_SaleModel.belongsTo(SaleModel,{foreignKey: 'id'})
+  // //relaciones de detalle_ventas a productos
+  // ProductModel.hasMany(Detail_SaleModel,{ foreignKey: 'productos'})
+  // Detail_SaleModel.belongsTo(ProductModel,{ foreignKey: 'id'})
+  // //relaciones de detalle_ventas a ventas 
+  // SaleModel.hasMany(Detail_SaleModel,{ foreignKey: 'venta'})
+  // Detail_SaleModel.belongsTo(SaleModel,{foreignKey: 'id'})
 
 
 
