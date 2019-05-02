@@ -169,7 +169,6 @@ export default {
     rules: {
       email: v => (v || '').match(/@/) || 'Por favor ingrese su e-mail',
       length: len => v => (v || '').length >= len || `Nombre invalido, requiere mínimo ${len} caracteres`
-
     }
   })
 }

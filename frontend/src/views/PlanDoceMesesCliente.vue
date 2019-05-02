@@ -4,8 +4,6 @@
 <v-container fluid>
       <v-layout row wrap>
            <v-flex d-flex xs12 sm6 md1 child-flex>
-          <v-card color="white" dark flat>
-          </v-card>
         </v-flex>
           <v-flex d-flex xs12 sm6 md2>
           <v-card color="white" dark flat>
