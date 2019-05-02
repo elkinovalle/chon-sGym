@@ -87,6 +87,7 @@ import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
 import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
 import ProgresoCliente from '@/views/ProgresoCliente.vue'
+import EditarPerfilAdmin from '@/views/EditarPerfilAdmin.vue'
 
 Vue.use(Router)
 
@@ -528,6 +529,11 @@ export default new Router({
       path: '/progreso-cliente',
       name: 'progreso-cliente',
       component: ProgresoCliente
+    },
+    {
+      path: '/editar-perfil-admin',
+      name: 'editar-perfil-admin',
+      component: EditarPerfilAdmin
     }
   ]
 })
