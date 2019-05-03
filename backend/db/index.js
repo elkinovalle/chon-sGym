@@ -72,6 +72,8 @@ module.exports = async function () {
   //relacion de clase a usuarios
   UserModel.hasMany(ClassModel)
   ClassModel.belongsTo(UserModel)
+  //relacion de clase a dia
+  ClassModel.belongsTo(DayModel)
 
   //fin de las relaciones
 
