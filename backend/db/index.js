@@ -32,30 +32,46 @@ module.exports = async function () {
   const ReservationModel = setupReservationModel(config)
   const ProductModel = setupProductModel(config)
   const Detail_SaleModel = setupDetail_SaleModel(config)
-  // const CityModel = setupCityModel(config)
-  // const ClassModel = setupClassModel(config)
-  // const CountryModel = setupCountryModel(config)
-  // const DepartmentModel = setupDepartmentModel(config)
-  // const Detail_MembershipModel = setupDetail_MembershipModel(config)
-  // const MembershipModel = setupMembershipModel(config)
+  const CityModel = setupCityModel(config)
+  const ClassModel = setupClassModel(config)
+  const CountryModel = setupCountryModel(config)
+  const DepartmentModel = setupDepartmentModel(config)
+  const Detail_MembershipModel = setupDetail_MembershipModel(config)
+  const MembershipModel = setupMembershipModel(config)
   const SaleModel = setupSaleModel(config)
-  // const ScheduleModel = setupScheduleModel(config)
-  // const Type_ClassModel = setupType_ClassModel(config)
-  // const Type_MembershipModel = setupType_MembershipModel(config)
-  // const DayModel = setupDayModel(config)
+  const ScheduleModel = setupScheduleModel(config)
+  const Type_ClassModel = setupType_ClassModel(config)
+  const Type_MembershipModel = setupType_MembershipModel(config)
+  const DayModel = setupDayModel(config)
 
 
-  // relaciones de usuario a revervas
-  UserModel.hasMany(ReservationModel,{ foreignKey: 'usuarios' })
-  ReservationModel.belongsTo(UserModel, { foreignKey: 'empleado' })
+  // relaciones de resevas a usuario
+  UserModel.hasMany(ReservationModel)
+  ReservationModel.belongsTo(UserModel)
+  // relaciones de resevas a clase
+  ClassModel.hasMany(ReservationModel)
+  ReservationModel.belongsTo(ClassModel)
   //relaciones de detalle_ventas a productos
-  ProductModel.hasMany(Detail_SaleModel,{ foreignKey: 'productos'})
-  Detail_SaleModel.belongsTo(ProductModel,{ foreignKey: 'id'})
+  ProductModel.hasMany(Detail_SaleModel)
+  Detail_SaleModel.belongsTo(ProductModel)
   //relaciones de detalle_ventas a ventas 
-  SaleModel.hasMany(Detail_SaleModel,{ foreignKey: 'venta'})
-  Detail_SaleModel.belongsTo(SaleModel,{foreignKey: 'id'})
-
-
+  SaleModel.hasMany(Detail_SaleModel)
+  Detail_SaleModel.belongsTo(SaleModel)
+  // relacion de venta a usuarios
+  UserModel.hasMany(SaleModel, {foreignKey: 'clienteId'})
+  SaleModel.belongsTo(UserModel, {foreignKey: 'empleadoId'})
+  //relacion de detalle_membresia a tipo membresia
+  Type_MembershipModel.hasMany(Detail_MembershipModel)
+  Detail_MembershipModel.belongsTo(Type_MembershipModel)
+  //relacion de detalle_membresia a membresia
+  MembershipModel.hasMany(Detail_MembershipModel)
+  Detail_MembershipModel.belongsTo(MembershipModel)
+  //relacion de membresia a usuarios
+  UserModel.hasMany(SaleModel, {foreignKey: 'clienteId'})
+  SaleModel.belongsTo(UserModel, {foreignKey: 'empleadoId'})
+  //relacion de clase a usuarios
+  UserModel.hasMany(ClassModel)
+  ClassModel.belongsTo(UserModel)
 
   //fin de las relaciones
 
