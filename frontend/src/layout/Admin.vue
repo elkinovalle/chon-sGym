@@ -38,6 +38,28 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-layout row align-center style="max-width: 650px"></v-layout>
+          <v-menu offset-y>
+            <template v-slot:activator="{ on }">
+              <v-btn
+              class="Buton #9A0101"
+                  dark
+                  v-on="on"
+                  flat
+              ><v-icon >person</v-icon> Mi Perfil</v-btn>
+            </template>
+            <v-list>
+              <v-list-tile v-for="item in items1" :key="item.text" @click="clickButon(item)">
+                <v-list-tile-action>
+                  <v-icon medium>{{ item.icon }}</v-icon>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title>
+                    {{ item.text }}
+                  </v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list>
+          </v-menu>
     </v-toolbar>
     <v-content>
       <v-container fill-height>
@@ -56,7 +78,9 @@ export default {
   name: 'admin',
   methods: {
     clickMenu (value) {
-      console.log(value.link)
+      this.$router.push(value.link)
+    },
+    clickButon (value) {
       this.$router.push(value.link)
     }
   },
@@ -75,11 +99,17 @@ export default {
       { icon: 'place', text: 'Instalaciones', link: 'instalaciones' },
       { icon: 'event', text: 'Reportes', link: 'reportes' },
       { icon: 'close', text: 'Salir' }
-    ]
-  }),
-  props: {
-    source: String
-  }
+    ],
+    items1: [
+      { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },
+      { icon: 'email', text: 'Notificaciones' },
+      { icon: 'image', text: 'Fotos' },
+      { icon: 'list', text: 'Tareas' }
+    ],
+    props: {
+      source: String
+    }
+  })
 }
 </script>
 <style lang="stylus" scoped>

@@ -5,6 +5,7 @@ const { db:config } = require('@chons-gym/config')
 //contraladores
 const setupUser = require('./lib/users')
 const setupProduct = require('./lib/products')
+const setupReservation = require ('./lib/reservations')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
@@ -30,14 +31,14 @@ module.exports = async function () {
   const UserModel = setupUserModel(config)
   const ReservationModel = setupReservationModel(config)
   const ProductModel = setupProductModel(config)
-  const Detail_SaleModel = setupDetail_SaleModel(config)
-  const CityModel = setupCityModel(config)
+  // const Detail_SaleModel = setupDetail_SaleModel(config)
+  // const CityModel = setupCityModel(config)
   // const ClassModel = setupClassModel(config)
   // const CountryModel = setupCountryModel(config)
   // const DepartmentModel = setupDepartmentModel(config)
   // const Detail_MembershipModel = setupDetail_MembershipModel(config)
   // const MembershipModel = setupMembershipModel(config)
-  const SaleModel = setupSaleModel(config)
+  // const SaleModel = setupSaleModel(config)
   // const ScheduleModel = setupScheduleModel(config)
   // const Type_ClassModel = setupType_ClassModel(config)
   // const Type_MembershipModel = setupType_MembershipModel(config)
@@ -47,12 +48,12 @@ module.exports = async function () {
   //relaciones de usuario a revervas
   UserModel.hasMany(ReservationModel,{ foreignKey: 'usuarios' })
   ReservationModel.belongsTo(UserModel, { foreignKey: 'empleado' })
-  //relaciones de detalle_ventas a productos
-  ProductModel.hasMany(Detail_SaleModel,{ foreignKey: 'productos'})
-  Detail_SaleModel.belongsTo(ProductModel,{ foreignKey: 'id'})
-  //relaciones de detalle_ventas a ventas 
-  SaleModel.hasMany(Detail_SaleModel,{ foreignKey: 'venta'})
-  Detail_SaleModel.belongsTo(SaleModel,{foreignKey: 'id'})
+  // //relaciones de detalle_ventas a productos
+  // ProductModel.hasMany(Detail_SaleModel,{ foreignKey: 'productos'})
+  // Detail_SaleModel.belongsTo(ProductModel,{ foreignKey: 'id'})
+  // //relaciones de detalle_ventas a ventas 
+  // SaleModel.hasMany(Detail_SaleModel,{ foreignKey: 'venta'})
+  // Detail_SaleModel.belongsTo(SaleModel,{foreignKey: 'id'})
 
 
 
@@ -66,11 +67,13 @@ module.exports = async function () {
 
   const User = setupUser(UserModel)
   const Product = setupProduct(ProductModel)
+  const Reservation = setupReservation(ReservationModel)
   return {
     async setup() {
       await sequelize.sync({ force: true })
     },
     User,
-    Product
+    Product,
+    Reservation
   }
 }

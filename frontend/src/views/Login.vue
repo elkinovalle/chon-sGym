@@ -2,7 +2,7 @@
 <div class="found">
     <v-content>
       <v-container>
-        <h1 class="font-weight-bold white--text display-3">Inicio de sesión</h1>
+        <h1 class="text-xs-center font-weight-bold white--text display-3">Iniciar sesión</h1>
         <v-layout align-left justify-left>
           <v-flex xs12 sm8 md5>
               <v-card class="elevation-12">

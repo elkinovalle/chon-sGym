@@ -77,6 +77,8 @@ import MisReservasCliente from '@/views/MisReservasCliente.vue'
 import MiDietaCliente from '@/views/MiDietaCliente.vue'
 import HorariosCliente from '@/views/HorariosCliente.vue'
 import ContactoCliente from '@/views/ContactoCliente.vue'
+import UnMesCliente from '@/views/UnMesCliente.vue'
+import DosMesesCliente from '@/views/DosMesesCliente.vue'
 import InstalacionesCliente from '@/views/InstalacionesCliente.vue'
 import TrabajaConNosotrosCliente from '@/views/TrabajaConNosotrosCliente.vue'
 import MembresiasEmpleado from '@/views/MembresiasEmpleado.vue'
@@ -87,6 +89,8 @@ import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
 import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
 import ProgresoCliente from '@/views/ProgresoCliente.vue'
+import EnsayoCliente from '@/views/EnsayoCliente.vue'
+import EditarPerfilAdmin from '@/views/EditarPerfilAdmin.vue'
 
 Vue.use(Router)
 
@@ -183,6 +187,21 @@ export default new Router({
       path: '/plan-doce-meses-cliente',
       name: 'plan-doce-meses-cliente',
       component: PlanDoceMesesCliente
+    },
+    {
+      path: '/un-mes-cliente',
+      name: 'un-mes-cliente',
+      component: UnMesCliente
+    },
+    {
+      path: '/ensayo-cliente',
+      name: 'ensayo-cliente',
+      component: EnsayoCliente
+    },
+    {
+      path: '/dos-meses-cliente',
+      name: 'dos-meses-cliente',
+      component: DosMesesCliente
     },
     {
       path: '/plan-quince-meses-cliente',
@@ -528,6 +547,11 @@ export default new Router({
       path: '/progreso-cliente',
       name: 'progreso-cliente',
       component: ProgresoCliente
+    },
+    {
+      path: '/editar-perfil-admin',
+      name: 'editar-perfil-admin',
+      component: EditarPerfilAdmin
     }
   ]
 })

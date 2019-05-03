@@ -11,8 +11,7 @@ module.exports = function setupMetricModel (config) {
       defaultValue: Sequelize.UUIDV4
     },
     cedula: {
-      type: Sequelize.TEXT,
-      allowNull: false
+      type: Sequelize.TEXT
     },
     nombre: {
       type: Sequelize.TEXT,
