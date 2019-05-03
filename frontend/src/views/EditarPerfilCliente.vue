@@ -31,14 +31,14 @@
              <v-card-text><strong>Nombres :</strong></v-card-text>
         </v-flex>
         <v-flex xs3 order-lg2>
-            <v-text-field small label="" v-model="name"></v-text-field>
+            <v-text-field small label="" v-model="nombre"></v-text-field>
         </v-flex>
           <v-flex   xs2 order-lg2 class="transparent text-xs-center">
             <br>
              <v-card-text><strong>Teléfono :</strong></v-card-text>
         </v-flex>
          <v-flex xs3 order-lg2>
-            <v-text-field small label="" v-model="phone"></v-text-field>
+            <v-text-field small label="" v-model="telefono"></v-text-field>
         </v-flex>
       </v-layout>
        <v-layout  row>
@@ -47,14 +47,14 @@
             <v-card-text><strong>Apellidos :</strong></v-card-text>
         </v-flex>
         <v-flex xs3 order-lg2>
-            <v-text-field small label=""></v-text-field>
+            <v-text-field small label="" v-model="apellido"></v-text-field>
         </v-flex>
           <v-flex   xs2 order-lg2 class="transparent text-xs-center">
             <br>
              <v-card-text><strong>Dirección :</strong></v-card-text>
         </v-flex>
         <v-flex xs3 order-lg2>
-            <v-text-field small label=""></v-text-field>
+            <v-text-field small label="" v-model="direccion"></v-text-field>
         </v-flex>
       </v-layout>
        <v-layout  row>
@@ -64,14 +64,14 @@
              <br>
         </v-flex>
         <v-flex xs3 order-lg2>
-            <v-text-field small label=""></v-text-field>
+            <v-text-field small label="" v-model="cedula"></v-text-field>
         </v-flex>
           <v-flex   xs2 order-lg2 class="transparent text-xs-center">
             <br>
              <v-card-text><strong>Ciudad :</strong></v-card-text>
         </v-flex>
         <v-flex xs3 order-lg2>
-            <v-text-field small label=""></v-text-field>
+            <v-text-field small label="" v-model="ciudad"></v-text-field>
         </v-flex>
       </v-layout>
       <v-layout  row>
@@ -180,8 +180,12 @@ export default {
     imageName: '',
     dialogEmail: false,
     dialogPassword: false,
-    name: '',
-    phone: '',
+    nombre: '',
+    telefono: '',
+    apellido: '',
+    direccion: '',
+    ciudad: '',
+    cedula: '',
     form: false
   }),
   methods: {

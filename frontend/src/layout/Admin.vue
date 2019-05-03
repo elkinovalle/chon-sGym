@@ -30,7 +30,6 @@
       clipped-left
       app
     >
-         
 
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <img src="../assets/lofo-fondo-blanco.png" alt="">
@@ -101,15 +100,15 @@ export default {
       { icon: 'event', text: 'Reportes', link: 'reportes' },
       { icon: 'close', text: 'Salir' }
     ],
-    items1:[
-      {icon : 'edit' , text: 'Editar Perfil', link: 'editar-perfil-admin'},
-      {icon : 'email' , text: 'Notificaciones'},
-      {icon : 'image' , text: 'Fotos'}, 
-      {icon : 'list' , text: 'Tareas'},
+    items1: [
+      { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },
+      { icon: 'email', text: 'Notificaciones' },
+      { icon: 'image', text: 'Fotos' },
+      { icon: 'list', text: 'Tareas' }
     ],
-  props: {
-    source: String
-  }
+    props: {
+      source: String
+    }
   })
 }
 </script>
