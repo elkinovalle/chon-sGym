@@ -22,7 +22,7 @@ module.exports = function setupMetricModel (config) {
       allowNull: false
     },
     rol: {
-      type: Sequelize.ENUM('Usuarios','Administrador','Empleado'),
+      type: Sequelize.ENUM('cliente','administrador','empleado'),
       allowNull: false
     },
     telefono: {
