@@ -31,29 +31,29 @@ module.exports = async function () {
   const UserModel = setupUserModel(config)
   const ReservationModel = setupReservationModel(config)
   const ProductModel = setupProductModel(config)
-  // const Detail_SaleModel = setupDetail_SaleModel(config)
+  const Detail_SaleModel = setupDetail_SaleModel(config)
   // const CityModel = setupCityModel(config)
   // const ClassModel = setupClassModel(config)
   // const CountryModel = setupCountryModel(config)
   // const DepartmentModel = setupDepartmentModel(config)
   // const Detail_MembershipModel = setupDetail_MembershipModel(config)
   // const MembershipModel = setupMembershipModel(config)
-  // const SaleModel = setupSaleModel(config)
+  const SaleModel = setupSaleModel(config)
   // const ScheduleModel = setupScheduleModel(config)
   // const Type_ClassModel = setupType_ClassModel(config)
   // const Type_MembershipModel = setupType_MembershipModel(config)
   // const DayModel = setupDayModel(config)
 
 
-  //relaciones de usuario a revervas
+  // relaciones de usuario a revervas
   UserModel.hasMany(ReservationModel,{ foreignKey: 'usuarios' })
   ReservationModel.belongsTo(UserModel, { foreignKey: 'empleado' })
-  // //relaciones de detalle_ventas a productos
-  // ProductModel.hasMany(Detail_SaleModel,{ foreignKey: 'productos'})
-  // Detail_SaleModel.belongsTo(ProductModel,{ foreignKey: 'id'})
-  // //relaciones de detalle_ventas a ventas 
-  // SaleModel.hasMany(Detail_SaleModel,{ foreignKey: 'venta'})
-  // Detail_SaleModel.belongsTo(SaleModel,{foreignKey: 'id'})
+  //relaciones de detalle_ventas a productos
+  ProductModel.hasMany(Detail_SaleModel,{ foreignKey: 'productos'})
+  Detail_SaleModel.belongsTo(ProductModel,{ foreignKey: 'id'})
+  //relaciones de detalle_ventas a ventas 
+  SaleModel.hasMany(Detail_SaleModel,{ foreignKey: 'venta'})
+  Detail_SaleModel.belongsTo(SaleModel,{foreignKey: 'id'})
 
 
 
