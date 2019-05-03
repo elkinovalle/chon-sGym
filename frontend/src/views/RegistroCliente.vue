@@ -97,7 +97,6 @@
           type="submit"
         >Registrarse</v-btn>
       </v-card-actions>
-      <v-img :src="img1"/>
     </v-form>
     <v-dialog v-model="terms" width="70%">
       <v-card>
@@ -160,7 +159,7 @@ export default {
       },
       gender: ['Masculino', 'Femenino'],
       conditions: false,
-      content: 'chon',
+      content: 'Bienvenido a chon´s-Gym',
       snackbar: false,
       terms: false,
       defaultForm
@@ -179,13 +178,12 @@ export default {
       )
     }
   },
-  created() {
+  created () {
     this.getUsers()
   },
   methods: {
-    async getUsers() {
+    async getUsers () {
       const res = await api.get('/user')
-      
     },
     resetForm () {
       this.form = Object.assign({}, this.defaultForm)
@@ -200,7 +198,7 @@ export default {
           apellido: this.form.last,
           rol: 'Usuarios',
           email: this.form.email,
-          genero: 'm',
+          genero: 'm, f',
           contraseña: '1234'
         }
       })
