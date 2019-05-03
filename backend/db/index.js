@@ -73,7 +73,17 @@ module.exports = async function () {
   UserModel.hasMany(ClassModel)
   ClassModel.belongsTo(UserModel)
   //relacion de clase a dia
+  DayModel.hasMany(ClassModel)
   ClassModel.belongsTo(DayModel)
+  // relacion de clase a horarios
+  ScheduleModel.hasMany(ClassModel)
+  ClassModel.belongsTo(ScheduleModel)
+  // relacion de clase tipo_clase 
+  Type_ClassModel.hasMany(ClassModel)
+  ClassModel.belongsTo(Type_ClassModel)
+  // relacion de usuarios a paises
+  CountryModel.hasMany(UserModel)
+  UserModel.belongsTo(CountryModel)
 
   //fin de las relaciones
 
