@@ -3,6 +3,7 @@
 const { getLogger } = require('@chons-gym/utils')
 const user = require('./user')
 const product = require('./product')
+const reservation = require ('./reservation')
 
 const log = getLogger(__dirname, __filename)
 // prueba
@@ -14,6 +15,7 @@ module.exports = {
   },
   user,
   product,
+  reservation,
   errorHandler (err, req, res, next) {
     if (err) {
       let code = err.code || 500
