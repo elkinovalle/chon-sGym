@@ -32,7 +32,35 @@
               </v-card>
               <br>
               <v-card class="carta" flat>
-              <a class="black--text body-1" @click="clickPush('/instalaciones-cliente')">¿Olvidó su contraseña?</a>
+                 <v-flex xs3 order-lg2>
+                  <v-dialog v-model="dialogPassword" persistent max-width="600px">
+        <template v-slot:activator="{ on }">
+          <v-card flat class="carta1">
+        <v-btn dark v-on="on" color="black body-1" flat>¿Olvidó su contraseña?</v-btn>
+          </v-card>
+        </template>
+        <v-card class="contenido">
+          <v-card-title>
+            <span class="headline">Recuperar contraseña</span>
+          </v-card-title>
+          <v-card-text>
+            <v-container grid-list-md>
+              <v-layout wrap>
+                <v-flex xs12>
+                  <v-text-field label="Escribe tu e-mail*" :rules="rules.email" required></v-text-field>
+                </v-flex>
+              </v-layout>
+            </v-container>
+           <small>Verifique que tidos los datos esten escritos correctamente</small>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="blue darken-4" flat @click="dialogPassword = false">Cancelar</v-btn>
+            <v-btn color="blue darken-4" flat @click="dialogPassword = false">Recuperar contraseña</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+        </v-flex>
               </v-card>
               <br>
                <v-divider></v-divider>
@@ -53,6 +81,15 @@
 </template>
 <script>
 export default {
+  data: () => ({
+    dialogEmail: false,
+    dialogPassword: false,
+    form: false,
+    email: ' ',
+    rules: {
+      email: [v => (v || '').match(/@/) || 'Por favor ingrese el e-mail de cuenta']
+    }
+  }),
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
@@ -62,7 +99,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="stylus" scoped>
@@ -91,5 +127,11 @@ h1 {
 }
 .izquierda{
   margin-right 5px
+}
+.contenido{
+  padding 30px
+}
+.carta1{
+  padding-left 270px
 }
 </style>
