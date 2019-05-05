@@ -4,7 +4,7 @@
       <v-layout row>
             <v-flex d-flex xs12 sm6 md1>
         </v-flex>
-        <v-flex xs3 order-lg2>
+        <v-flex xs4 order-lg2>
             <v-card-text  class="transparent text-xs-center">
              <h1 class="text-xs black--text headline"><strong>FOTO DE PERFIL</strong></h1><br>
              </v-card-text>
@@ -72,6 +72,23 @@
         </v-flex>
         <v-flex xs3 order-lg2>
             <v-text-field small label="" v-model="ciudad"></v-text-field>
+        </v-flex>
+      </v-layout>
+      <v-layout  row>
+        <v-flex   xs2 order-lg2 class="transparent text-xs-center">
+          <br>
+             <v-card-text><strong>Género:</strong></v-card-text>
+             <br>
+        </v-flex>
+        <v-flex xs3 order-lg2>
+            <v-text-field small label="" v-model="genero"></v-text-field>
+        </v-flex>
+          <v-flex   xs2 order-lg2 class="transparent text-xs-center">
+            <br>
+             <v-card-text><strong>Edad :</strong></v-card-text>
+        </v-flex>
+        <v-flex xs3 order-lg2>
+            <v-text-field small label="" v-model="edad"></v-text-field>
         </v-flex>
       </v-layout>
       <v-layout  row>
@@ -186,6 +203,8 @@ export default {
     direccion: '',
     ciudad: '',
     cedula: '',
+    genero: '',
+    edad: '',
     form: false
   }),
   methods: {

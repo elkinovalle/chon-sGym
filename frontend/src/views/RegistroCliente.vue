@@ -17,143 +17,45 @@
     <v-form ref="form" @submit.prevent="submit">
       <v-container grid-list-xl fluid>
         <v-layout wrap>
-           <v-flex d-flex xs12 sm12 md1>
+           <v-flex d-flex xs12 sm12 md2>
            </v-flex>
           <v-flex d-flex xs12 sm12 md10>
             <h1 class="text-xs-left black--text headline font-italic">CREA TU <strong>CUENTA</strong></h1><br>
           </v-flex>
-          <v-flex d-flex xs12 sm12 md1>
+           <v-flex d-flex xs12 sm12 md2>
            </v-flex>
-           <v-flex d-flex xs12 sm12 md1>
-           </v-flex>
-          <v-flex xs4 sm4>
-            <v-text-field
-              v-model="form.first"
-              :rules="rules.name"
-              color="blue darken-4"
-              label="Nombres"
-              required
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs4 sm4 offset-xs1>
-            <v-text-field
-              v-model="form.last"
-              :rules="rules.name"
-              color="blue darken-4"
-              label="Apellidos"
-              required
-            ></v-text-field>
-          </v-flex>
-          <v-flex d-flex xs12 sm12 md2>
-           </v-flex>
-           <v-flex d-flex xs12 sm12 md1>
-           </v-flex>
-          <v-flex xs4 sm4>
-            <v-text-field
-              v-model="form.cedula"
-              color="blue darken-4"
-              label="Cédula"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs4 sm4 offset-xs1>
-        <v-text-field
-           v-model="form.nickname"
-           color="blue darken-4"
-           :rules="rules.name"
-           label="Nombre de usuario"
-        ></v-text-field>
-      </v-flex>
-<v-flex d-flex xs12 sm12 md2>
-           </v-flex>
-           <v-flex d-flex xs12 sm12 md1>
-           </v-flex>
-          <v-flex xs4 sm4>
-            <v-text-field
-              v-model="form.password"
-              :rules="rules.name"
-              color="blue darken-4"
-              label="Contraseña"
-              required
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs4 sm4 offset-xs1>
-        <v-text-field
-           v-model="form.password"
-           color="blue darken-4"
-           :rules="rules.name"
-           label="Confirmar contraseña"
-        ></v-text-field>
-      </v-flex>
-          <v-flex d-flex xs12 sm12 md2>
-           </v-flex>
-           <v-flex d-flex xs12 sm12 md1>
-           </v-flex>
-          <v-flex xs4 sm4>
-            <v-text-field
+          <v-flex d-flex xs12 sm12 md8>
+            <v-card class="elevation-12">
+               <v-toolbar color="blue darken-4" height="150">
+                    <img src="../assets/lofo-fondo-blanco.png" alt="" class="symbol">
+                <v-toolbar-title class="font-weight-medium white--text display-1">Chon's Gym</v-toolbar-title>
+                </v-toolbar>
+                  <v-card-text class="contenedor white">
+                <v-form class="black--text">
+         <v-text-field
            v-model="form.email"
            color="blue darken-4"
            :rules="rules.email"
            label="Correo electrónico"
         ></v-text-field>
-          </v-flex>
-          <v-flex xs4 sm4 offset-xs1>
-            <v-select
-              v-model="form.gender"
-              :items="gender"
-              :rules="rules.gender"
-              color="blue darken-4"
-              label="Género"
-              required
-            ></v-select>
-          </v-flex>
-          <v-flex d-flex xs12 sm12 md2>
-           </v-flex>
-           <v-flex d-flex xs12 sm12 md1>
-           </v-flex>
-          <v-flex xs4 sm4>
-            <v-text-field
-              v-model="form.direccion"
-              color="blue darken-4"
-              label="Dirección"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs4 sm4 offset-xs1>
-      <v-slider
-              v-model="form.age"
-              :rules="rules.age"
-              color="blue darken-4"
-              label="Edad"
-              hint="Sé honesto"
-              min="1"
-              max="100"
-              thumb-label
-            ></v-slider>
-      </v-flex>
-      <v-flex d-flex xs12 sm12 md2>
-           </v-flex>
-           <v-flex d-flex xs12 sm12 md1>
-           </v-flex>
-          <v-flex xs4 sm4>
-            <v-text-field
-              v-model="form.telefono"
+<v-text-field
+              v-model="form.password"
               :rules="rules.name"
               color="blue darken-4"
-              label="Teléfono"
-              mask="phone"
+              label="Contraseña"
+              type="password"
               required
             ></v-text-field>
-          </v-flex>
-          <v-flex xs4 sm4 offset-xs1>
-        <v-text-field
-           v-model="form.ciudad"
+              <v-text-field
+           v-model="form.password"
            color="blue darken-4"
-           label="Ciudad"
+           :rules="rules.name"
+           label="Confirmar contraseña"
+           type="password"
         ></v-text-field>
-      </v-flex>
-      <v-flex d-flex xs12 sm12 md5>
-           </v-flex>
-          <v-flex xs4>
-               <v-checkbox
+                       </v-form>
+              </v-card-text>
+                 <v-checkbox
           v-model="agreement"
           :rules="[rules.required]"
           color="blue darken-3"
@@ -165,15 +67,6 @@
           <a href="#" @click.stop.prevent="dialog = true">Condiciones</a>*
         </template>
       </v-checkbox>
-          </v-flex>
-          <v-flex d-flex xs12 sm12 md3>
-           </v-flex>
-        </v-layout>
-      </v-container>
-      <v-layout>
-      <v-flex d-flex xs12 sm12 md3>
-           </v-flex>
-           <v-flex d-flex xs12 sm12 md6>
       <v-card-actions>
         <v-btn class="font-weight-black title font-italic" flat @click="resetForm">Cancelar</v-btn>
         <v-spacer></v-spacer>
@@ -185,10 +78,10 @@
           class="font-weight-black title font-italic"
         >Registrarse</v-btn>
       </v-card-actions>
-       </v-flex>
-       <v-flex d-flex xs12 sm12 md3>
-           </v-flex>
-           </v-layout>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-form>
     <v-dialog
       v-model="dialog"
@@ -242,33 +135,17 @@ import api from '@/plugins/service'
 export default {
   data () {
     const defaultForm = Object.freeze({
-      first: '',
-      last: '',
       email: '',
-      gender: '',
-      nickname: '',
       password: '',
-      cedula: '',
-      direccion: '',
-      telefono: '',
-      ciudad: '',
       isLoading: false,
-      gender: '',
-      age: null,
       dialog: false
     })
 
     return {
       form: Object.assign({}, defaultForm),
       rules: {
-        age: [
-          val => val >= 15 || `No puedes ingresar!`
-        ],
-        gender: [val => (val || '').length > 0 || 'Este campo es requerido'],
-        name: [val => (val || '').length > 0 || 'Este campo es requerido'],
         email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
       },
-      gender: ['Masculino', 'Femenino'],
       snackbar: false,
       agreement: false,
       dialog: false,
