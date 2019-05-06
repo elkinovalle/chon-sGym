@@ -144,13 +144,13 @@
             <v-container grid-list-md>
               <v-layout wrap>
                 <v-flex xs12>
-                  <v-text-field label="Escribe tu contraseña actual*" type="password" required></v-text-field>
+                  <v-text-field label="Escribe tu contraseña actual*" required  :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'visibility' : 'visibility_off'" @click:append="show1 = !show1"></v-text-field>
                 </v-flex>
                 <v-flex xs12>
-                  <v-text-field label="Escribe tu contraseña nueva*" type="password" required></v-text-field>
+                  <v-text-field label="Escribe tu contraseña nueva*" required  :type="show2 ? 'text' : 'password'" :append-icon="show2? 'visibility' : 'visibility_off'" @click:append="show2 = !show2"></v-text-field>
                 </v-flex>
                 <v-flex xs12>
-                  <v-text-field label="Confirma tu contraseña nueva*" type="password" required></v-text-field>
+                  <v-text-field label="Confirma tu contraseña nueva*" required  :type="show3 ? 'text' : 'password'" :append-icon="show3 ? 'visibility' : 'visibility_off'" @click:append="show3 = !show3"></v-text-field>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -205,7 +205,10 @@ export default {
     cedula: '',
     genero: '',
     edad: '',
-    form: false
+    form: false,
+    show1: false,
+    show2: false,
+    show3: false
   }),
   methods: {
     pickFile () {

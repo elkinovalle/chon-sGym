@@ -17,14 +17,16 @@
     <v-form ref="form" @submit.prevent="submit">
       <v-container grid-list-xl fluid>
         <v-layout wrap>
-           <v-flex d-flex xs12 sm12 md2>
+           <v-flex d-flex xs12 sm12 md3>
            </v-flex>
-          <v-flex d-flex xs12 sm12 md10>
+          <v-flex d-flex xs12 sm12 md6>
             <h1 class="text-xs-left black--text headline font-italic">CREA TU <strong>CUENTA</strong></h1><br>
           </v-flex>
-           <v-flex d-flex xs12 sm12 md2>
+          <v-flex d-flex xs12 sm12 md3>
            </v-flex>
-          <v-flex d-flex xs12 sm12 md8>
+           <v-flex d-flex xs12 sm12 md3>
+           </v-flex>
+          <v-flex d-flex xs12 sm12 md6>
             <v-card class="elevation-12">
                <v-toolbar color="blue darken-4" height="150">
                     <img src="../assets/lofo-fondo-blanco.png" alt="" class="symbol">
@@ -43,7 +45,9 @@
               :rules="rules.name"
               color="blue darken-4"
               label="Contraseña"
-              type="password"
+             :type="show1 ? 'text' : 'password'"
+             :append-icon="show1 ? 'visibility' : 'visibility_off'"
+             @click:append="show1 = !show1"
               required
             ></v-text-field>
               <v-text-field
@@ -51,7 +55,9 @@
            color="blue darken-4"
            :rules="rules.name"
            label="Confirmar contraseña"
-           type="password"
+           :type="show2 ? 'text' : 'password'"
+           :append-icon="show2 ? 'visibility' : 'visibility_off'"
+           @click:append="show2 = !show2"
         ></v-text-field>
                        </v-form>
               </v-card-text>
@@ -59,6 +65,7 @@
           v-model="agreement"
           :rules="[rules.required]"
           color="blue darken-3"
+          class="caja"
       >
         <template v-slot:label>
           Acepto los&nbsp;
@@ -67,7 +74,7 @@
           <a href="#" @click.stop.prevent="dialog = true">Condiciones</a>*
         </template>
       </v-checkbox>
-      <v-card-actions>
+      <v-card-actions class="botones">
         <v-btn class="font-weight-black title font-italic" flat @click="resetForm">Cancelar</v-btn>
         <v-spacer></v-spacer>
         <v-btn
@@ -128,6 +135,7 @@
       </v-card>
     </v-dialog>
     </v-card>
+    <br><br> <br>
 </div>
 </template>
 <script>
@@ -143,6 +151,8 @@ export default {
 
     return {
       form: Object.assign({}, defaultForm),
+      show1: false,
+      show2: false,
       rules: {
         email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
       },
@@ -178,10 +188,9 @@ export default {
       const res = await api.post('/user', {
         userNew: {
           cedula: '1100960489',
-          nombre: this.form.first,
-          apellido: this.form.last,
-          rol: 'Usuarios',
           email: this.form.email,
+          password: this.form.password,
+          rol: 'Usuarios',
           genero: 'm',
           contraseña: '1234'
         }
@@ -194,5 +203,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+.contenedor{
+  padding 30px 50px 0px 50px
+}
+.caja{
+  margin-left 240px
+}
+.botones{
+  padding 0px 30px 30px 30px
+}
 </style>

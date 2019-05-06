@@ -15,7 +15,8 @@
               <v-card-text class="contenedor white">
                 <v-form class="black--text">
                   <v-text-field name="user" label="Usuario" type="text" ></v-text-field>
-                  <v-text-field id="password" name="password" label="Contraseña" type="password"></v-text-field>
+                  <v-text-field id="password" name="password" label="Contraseña"  :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'visibility' : 'visibility_off'"
+             @click:append="show1 = !show1"></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions class="white">
@@ -86,6 +87,7 @@ export default {
     dialogPassword: false,
     form: false,
     email: ' ',
+    show1: false,
     rules: {
       email: [v => (v || '').match(/@/) || 'Por favor ingrese el e-mail de cuenta']
     }
