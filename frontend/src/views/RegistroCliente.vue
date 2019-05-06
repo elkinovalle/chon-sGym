@@ -157,7 +157,7 @@ export default {
         gender: [val => (val || '').length > 0 || 'Este campo es requerido'],
         name: [val => (val || '').length > 0 || 'Este campo es requerido']
       },
-      gender: ['Masculino', 'Femenino'],
+      gender: ['M', 'F'],
       conditions: false,
       content: 'Bienvenido a chon´s-Gym',
       snackbar: false,
@@ -198,7 +198,7 @@ export default {
           apellido: this.form.last,
           rol: 'Usuarios',
           email: this.form.email,
-          genero: 'm, f',
+          genero: 'M, F',
           contraseña: '1234'
         }
       })
