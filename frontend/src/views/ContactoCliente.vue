@@ -107,7 +107,7 @@
     <v-dialog
       v-model="dialog"
       absolute
-      max-width="400"
+      max-width="800"
       persistent
     >
       <v-card>

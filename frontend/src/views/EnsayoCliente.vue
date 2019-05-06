@@ -14,25 +14,26 @@
           <v-flex xs12 sm md10>
             <v-card class="elevation-12">
               <v-toolbar dark color="indigo darken-4">
-                <v-toolbar-title>INICIAR SESION</v-toolbar-title>
+                <v-toolbar-title>RESTAURAR CONTRASEÑA</v-toolbar-title>
                 <v-spacer></v-spacer>
 
               </v-toolbar>
               <v-card-text>
                 <v-form>
-                  <v-text-field prepend-icon="person" name="login" label="Login" type="text"></v-text-field>
-                  <v-text-field prepend-icon="lock" name="password" label="Password" id="password" type="password"></v-text-field>
+                  <v-text-field prepend-icon="person" name="login" label="Escribe correo de restauracion" type="text"></v-text-field>
+
                 </v-form>
               </v-card-text>
+              <v-card-text class="text-xs-center">
+                   <v-btn color="indigo darken-4"   to="/login" >Enviar correo</v-btn>
+                 </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="indigo darken-4" to="/">Iniciar sesion</v-btn>
-                 <v-btn color="indigo darken-4" to="/registro">crear cuenta</v-btn>
+                <v-btn to="/login">Iniciar sesion</v-btn>
+                 <v-btn to="/registro">crear cuenta</v-btn>
                  <v-spacer></v-spacer>
               </v-card-actions>
-               <v-card-text class="text-xs-center">
-                   <v-btn flat to="/restaurar_contraseña">olvide mi contraseña</v-btn>
-                 </v-card-text>
+
             </v-card>
           </v-flex>
         </v-layout>
@@ -55,4 +56,5 @@ export default {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   }
 }
+
 </script>

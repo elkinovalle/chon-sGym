@@ -1,5 +1,9 @@
 <template>
   <div>
+    <v-card flat>
+      <br><br>
+    <h1 class="text-xs-center black--text display-1">REGÍSTRATE CON <strong>NOSOTROS</strong></h1><br>
+    </v-card>
      <v-card flat>
     <v-snackbar
       v-model="snackbar"
@@ -13,155 +17,147 @@
     <v-form ref="form" @submit.prevent="submit">
       <v-container grid-list-xl fluid>
         <v-layout wrap>
-          <v-flex xs4 sm4>
-            <v-text-field
-              v-model="form.first"
-              :rules="rules.name"
-              color="blue darken-4"
-              label="Nombres"
-              required
-            ></v-text-field>
+           <v-flex d-flex xs12 sm12 md3>
+           </v-flex>
+          <v-flex d-flex xs12 sm12 md6>
+            <h1 class="text-xs-left black--text headline font-italic">CREA TU <strong>CUENTA</strong></h1><br>
           </v-flex>
-          <v-flex xs4 sm4>
-            <v-text-field
-              v-model="form.last"
-              :rules="rules.name"
-              color="blue darken-4"
-              label="Apellidos"
-              required
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs4 sm4>
-            <v-slider
-              v-model="form.age"
-              :rules="rules.age"
-              color="blue darken-4"
-              label="Edad"
-              hint="ser honesto"
-              min="1"
-              max="100"
-              thumb-label
-            ></v-slider>
-          </v-flex>
-          <v-flex xs4 sm4>
-            <v-select
-              v-model="form.gender"
-              :items="gender"
-              :rules="rules.gender"
-              color="blue darken-4"
-              label="Género"
-              required
-            ></v-select>
-          </v-flex>
-          <v-flex xs4 sm4>
-            <v-text-field
-              v-model="form.adress"
-              :rules="rules.name"
-              color="blue darken-4"
-              label="Dirección"
-              required
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs4>
-        <v-text-field
-        v-model="form.email"
-        color="blue darken-4"
-        :rules="rules.name"
-          label="Correo electrónico"
+          <v-flex d-flex xs12 sm12 md3>
+           </v-flex>
+           <v-flex d-flex xs12 sm12 md3>
+           </v-flex>
+          <v-flex d-flex xs12 sm12 md6>
+            <v-card class="elevation-12">
+               <v-toolbar color="blue darken-4" height="150">
+                    <img src="../assets/lofo-fondo-blanco.png" alt="" class="symbol">
+                <v-toolbar-title class="font-weight-medium white--text display-1">Chon's Gym</v-toolbar-title>
+                </v-toolbar>
+                  <v-card-text class="contenedor white">
+                <v-form class="black--text">
+         <v-text-field
+           v-model="form.email"
+           color="blue darken-4"
+           :rules="rules.email"
+           label="Correo electrónico"
         ></v-text-field>
-      </v-flex>
-          <v-flex xs12>
-            <v-checkbox
-              v-model="form.terms"
+<v-text-field
+              v-model="form.password"
+              :rules="rules.name"
               color="blue darken-4"
-            >
-              <template v-slot:label>
-                <div @click.stop="">
-                  Aceptas los
-                  <a href="javascript:;" @click.stop="terms = true">términos</a>
-                  y
-                  <a href="javascript:;" @click.stop="conditions = true">condiciones?</a>
-                </div>
-              </template>
-            </v-checkbox>
-          </v-flex>
-        </v-layout>
-      </v-container>
-      <v-card-actions>
-        <v-btn flat @click="resetForm">Cancelar</v-btn>
+              label="Contraseña"
+             :type="show1 ? 'text' : 'password'"
+             :append-icon="show1 ? 'visibility' : 'visibility_off'"
+             @click:append="show1 = !show1"
+              required
+            ></v-text-field>
+              <v-text-field
+           v-model="form.password"
+           color="blue darken-4"
+           :rules="rules.name"
+           label="Confirmar contraseña"
+           :type="show2 ? 'text' : 'password'"
+           :append-icon="show2 ? 'visibility' : 'visibility_off'"
+           @click:append="show2 = !show2"
+        ></v-text-field>
+                       </v-form>
+              </v-card-text>
+                 <v-checkbox
+          v-model="agreement"
+          :rules="[rules.required]"
+          color="blue darken-3"
+          class="caja"
+      >
+        <template v-slot:label>
+          Acepto los&nbsp;
+          <a href="#" @click.stop.prevent="dialog = true">Términos</a>
+          &nbsp;y&nbsp;
+          <a href="#" @click.stop.prevent="dialog = true">Condiciones</a>*
+        </template>
+      </v-checkbox>
+      <v-card-actions class="botones">
+        <v-btn class="font-weight-black title font-italic" flat @click="resetForm">Cancelar</v-btn>
         <v-spacer></v-spacer>
         <v-btn
           :disabled="!formIsValid"
           flat
           color="blue darken-4"
           type="submit"
+          class="font-weight-black title font-italic"
         >Registrarse</v-btn>
       </v-card-actions>
     </v-form>
-    <v-dialog v-model="terms" width="70%">
-      <v-card>
-        <v-card-title class="title">Términos</v-card-title>
-        <v-card-text v-for="n in 5" :key="n">
-          {{ content }}
+    <v-dialog
+      v-model="dialog"
+      absolute
+      max-width="800"
+      persistent>
+       <v-card>
+        <v-card-title class="headline grey lighten-3">Políticas de privacidad</v-card-title>
+        <v-card-text>
+          <span class="text-xs black--text subheading justify">La protección y el buen manejo de la información personal de sus afiliados son muy importantes para el Gimnasio Chon's Gym, por cuanto las mismas le permiten atender de mejor manera las necesidades que ellos tienen, así como cumplir con las obligaciones a su cargo. Es por ello que el Gimnasio Chon's Gym ha diseñado políticas y procedimientos que en conjunto con la presente autorización permiten hacer uso de sus datos personales conforme a la ley. Así, lo invitamos a leer cuidadosamente el siguiente texto, mediante el cual autoriza el tratamiento de su información personal.</span>
+        <p></p>
+        <span class="text-xs black--text subheading justify">1. En relación con mis Datos Personales: Mediante este documento, en mi calidad de titular de la información o representante legal del mismo, autorizo al Gimnasio Chon's Gym a dar tratamiento a mis datos personales para: </span>
+        <p></p>
+        <span class="text-xs black--text subheading justify">a) El desarrollo de su objeto social y de la relación contractual que nos vincula, lo que supone el ejercicio de sus derechos y deberes dentro de los que están, sin limitarse a ellos, la atención de mis solicitudes, la generación de estados de cuenta, la realización de actividades de cobranza, entre otros. </span>
+        <p></p>
+        <span class="text-xs black--text subheading justify">b) La administración de los productos o servicios comercializados a través del Gimnasio Chon's Gym de los que soy titular </span>
+        <p></p>
+        <span class="text-xs black--text subheading justify">c) La estructuración de ofertas comerciales y la remisión de información comercial sobre productos y/o servicios a través de los canales o medios que el Gimnasio Chon's Gym establezca para tal fin.  </span>
+        <p></p>
+        <span class="text-xs black--text subheading justify">d) La adopción de medidas tendientes a la prevención de actividades ilícitas. </span>
+        <p></p>
+        <span class="text-xs black--text subheading justify">La presente autorización se hace extensiva a quien represente los derechos del Gimnasio Chon's Gym, a quien éste contrate para el ejercicio de los mismos o a quien éste ceda sus derechos, sus obligaciones o su posición contractual a cualquier título, en relación con los productos o servicios de los que soy titular. Así mismo, a las Entidades que forman parte de la Organización y a los terceros con quien el Gimnasio Chon's Gym o esas Entidades establezcan alianzas comerciales, a partir de las cuales se ofrezcan productos o servicios que puedan ser de su interés. </span>
+        <p></p>
+        <span class="text-xs black--text subheading justify">Esta autorización permanecerá vigente, hasta tanto sea revocada y podrá ser revocada en los eventos previstos en la ley, y siempre y cuando no exista ningún tipo de relación con el Gimnasio Chon's Gym o no se encuentre vigente algún producto o servicio derivado de esta autorización.</span>
+        <p></p>
         </v-card-text>
+        <v-divider></v-divider>
         <v-card-actions>
-          <v-spacer></v-spacer>
           <v-btn
             flat
-            color="blue darken-4"
-            @click="terms = false"
-          >Ok</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    <v-dialog v-model="conditions" width="70%">
-      <v-card>
-        <v-card-title class="title">Conditions</v-card-title>
-        <v-card-text v-for="n in 5" :key="n">
-          {{ content }}
-        </v-card-text>
-        <v-card-actions>
+            @click="agreement = false, dialog = false"
+          >
+            No
+          </v-btn>
           <v-spacer></v-spacer>
           <v-btn
-            flat
-            color="blue darken-4"
-            @click="conditions = false"
-          >Ok</v-btn>
+            class="white--text"
+            color="blue darken-3"
+            @click="agreement = true, dialog = false"
+          >
+            Acepto
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
     </v-card>
+    <br><br> <br>
 </div>
 </template>
 <script>
 import api from '@/plugins/service'
-import img1 from '@/assets/3meses.jpg'
 export default {
   data () {
     const defaultForm = Object.freeze({
-      first: '',
-      last: '',
       email: '',
-      gender: '',
-      age: null,
-      terms: false
+      password: '',
+      isLoading: false,
+      dialog: false
     })
 
     return {
       form: Object.assign({}, defaultForm),
-      img1: img1,
+      show1: false,
+      show2: false,
       rules: {
-        age: [
-          val => val >= 15 || `No puedes ingresar!`
-        ],
-        gender: [val => (val || '').length > 0 || 'Este campo es requerido'],
-        name: [val => (val || '').length > 0 || 'Este campo es requerido']
+        email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
       },
       gender: ['M', 'F'],
       conditions: false,
       content: 'Bienvenido a chon´s-Gym',
       snackbar: false,
-      terms: false,
+      agreement: false,
+      dialog: false,
       defaultForm
     }
   },
@@ -169,12 +165,9 @@ export default {
   computed: {
     formIsValid () {
       return (
-        this.form.first &&
-          this.form.last &&
-          this.form.gender &&
-          this.form.email &&
-          this.form.adress &&
-          this.form.terms
+        this.form.email &&
+          this.form.password &&
+          this.form.dialog
       )
     }
   },
@@ -194,9 +187,6 @@ export default {
       const res = await api.post('/user', {
         userNew: {
           cedula: '1100960489',
-          nombre: this.form.first,
-          apellido: this.form.last,
-          rol: 'Usuarios',
           email: this.form.email,
           genero: 'M, F',
           contraseña: '1234'
@@ -208,3 +198,15 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.contenedor{
+  padding 30px 50px 0px 50px
+}
+.caja{
+  margin-left 240px
+}
+.botones{
+  padding 0px 30px 30px 30px
+}
+</style>

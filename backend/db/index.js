@@ -6,6 +6,10 @@ const { db:config } = require('@chons-gym/config')
 const setupUser = require('./lib/users')
 const setupProduct = require('./lib/products')
 const setupReservation = require ('./lib/reservations')
+const setupSchedule = require ('./lib/schedules')
+const setupSale = require ('./lib/sales')
+const setupSale = require ('./lib/memberships')
+const setupClasss = requere ('./lib/classs.js')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
@@ -73,7 +77,17 @@ module.exports = async function () {
   UserModel.hasMany(ClassModel)
   ClassModel.belongsTo(UserModel)
   //relacion de clase a dia
+  DayModel.hasMany(ClassModel)
   ClassModel.belongsTo(DayModel)
+  // relacion de clase a horarios
+  ScheduleModel.hasMany(ClassModel)
+  ClassModel.belongsTo(ScheduleModel)
+  // relacion de clase tipo_clase 
+  Type_ClassModel.hasMany(ClassModel)
+  ClassModel.belongsTo(Type_ClassModel)
+  // relacion de usuarios a paises
+  CountryModel.hasMany(UserModel)
+  UserModel.belongsTo(CountryModel)
 
   //fin de las relaciones
 
@@ -82,16 +96,24 @@ module.exports = async function () {
   if (config.setup) {
     await sequelize.sync({ force: true })
   }
-
+ 
   const User = setupUser(UserModel)
   const Product = setupProduct(ProductModel)
   const Reservation = setupReservation(ReservationModel)
+  const Schedule = setupSchedule(ScheduleModel)
+  const Sale = setupSale(SaleModel)
+  const Membership =setupMembership(Membership)
+  const Classs = setupClasss(Classs)
   return {
     async setup() {
       await sequelize.sync({ force: true })
     },
     User,
     Product,
-    Reservation
+    Reservation,
+    Schedule,
+    Sale,
+    Membership,
+    classs
   }
 }
