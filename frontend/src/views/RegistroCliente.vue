@@ -85,10 +85,6 @@
           class="font-weight-black title font-italic"
         >Registrarse</v-btn>
       </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
     </v-form>
     <v-dialog
       v-model="dialog"
@@ -156,6 +152,9 @@ export default {
       rules: {
         email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
       },
+      gender: ['M', 'F'],
+      conditions: false,
+      content: 'Bienvenido a chon´s-Gym',
       snackbar: false,
       agreement: false,
       dialog: false,
@@ -189,9 +188,7 @@ export default {
         userNew: {
           cedula: '1100960489',
           email: this.form.email,
-          password: this.form.password,
-          rol: 'Usuarios',
-          genero: 'm',
+          genero: 'M, F',
           contraseña: '1234'
         }
       })

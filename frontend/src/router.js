@@ -149,8 +149,8 @@ export default new Router({
       component: Tips
     },
     {
-      path: '/instalaciones',
-      name: 'instalaciones',
+      path: '/instalacionesAdmin',
+      name: 'instalacionesAdmin',
       component: InstalacionesAdmin
     },
     {
