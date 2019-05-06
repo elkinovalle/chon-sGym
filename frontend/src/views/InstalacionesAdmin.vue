@@ -1,53 +1,166 @@
 <template>
-    <div>
-       <v-layout row>
-    <v-flex xs12 sm6 offset-sm3>
-      <v-card>
-        <v-toolbar flat>
-          <v-btn icon>
-            <v-icon>arrow_back</v-icon>
-          </v-btn>
-          <v-toolbar-title>Albumes</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-btn icon>
-            <v-icon>search</v-icon>
-          </v-btn>
-        </v-toolbar>
-        <v-subheader></v-subheader>
-        <v-container fluid grid-list-sm>
-          <v-layout row wrap>
-            <v-flex v-for="i in 8" :key="i" xs3>
-              <img :src="`https://randomuser.me/api/portraits/men/${i + 50}.jpg`" class="image" alt="lorem" width="500%" height="200%">
-            </v-flex>
-          </v-layout>
-        </v-container>
-        <v-subheader></v-subheader>
-        <v-container fluid grid-list-sm>
-          <v-layout row wrap>
-            <v-flex v-for="i in 8" :key="i" xs3>
-              <img :src="`https://randomuser.me/api/portraits/women/${i + 45}.jpg`" class="image" alt="lorem" width="200%" height="200%">
-            </v-flex>
-          </v-layout>
-        </v-container>
-        <v-footer class="mt-9"></v-footer>
-      </v-card>
-    </v-flex>
-  </v-layout>
-  <material-card class="v-card-profile">
-                <v-card-text class="text-xs-center">
-                    <v-form name="formulario" method="post" enctype="form-data">
-                        <input type="file" name="adjunto" accept=".png, .jpg" multiple>
-                    </v-form>
-                </v-card-text>
-            </material-card>
-    </div>
+  <div>
+    <v-subheader class="subheader black--text display-1 font-weight-bold" >Instalaciones</v-subheader>
+    <v-layout row wrap>
+      <v-flex xs12 sm6>
+        <v-text-field
+          v-model="message1"
+          box
+          label="Titulo del Tip"
+          clearable
+        ></v-text-field>
+      </v-flex>
+      <v-flex xs12 sm12>
+        <v-textarea
+          box
+          label="Contenido"
+          value=""
+        ></v-textarea>
+      </v-flex>
+      <v-flex xs4>
+        <v-chip class="label"
+        label
+        >Seleccione Una Imagen
+        </v-chip>
+        <v-btn
+              color="#000B3E"
+              class="boton"
+              @click="loader = 'loading3'"
+            ><v-icon center dark>cloud_upload</v-icon>
+        </v-btn>
+      </v-flex>
+      <v-flex xs4 >
+        <v-chip class="label"
+        label
+        >Seleccione Un Video
+        </v-chip>
+        <v-btn
+              color="#000B3E"
+              class="boton"
+              @click="loader = 'loading3'"
+            ><v-icon center dark>cloud_upload</v-icon>
+        </v-btn>
+      </v-flex>
+      <v-flex xs4 >
+        <v-chip class="label"
+        label
+        >Seleccione Un Link
+        </v-chip>
+        <v-btn
+              color="#000B3E"
+              class="boton"
+              @click="loader = 'loading3'"
+            ><v-icon center dark>cloud_upload</v-icon>
+        </v-btn>
+      </v-flex>
+      <v-btn
+        color="#000B3E"
+        @click="loader = 'loading3'"
+        class=" white--text"
+      >Subir instalaciones</v-btn>
+      <v-btn
+        color="red darken-4"
+        @click="loader = 'loading3'"
+        class=" white--text "
+      >Cancelar</v-btn>
+    </v-layout>
+    <v-card>
+      <v-card-title>
+       Tips
+        <v-spacer></v-spacer>
+        <v-text-field
+          v-model="search"
+          append-icon="search"
+          label="Buscar"
+          single-line
+          hide-details
+        ></v-text-field>
+      </v-card-title>
+      <v-data-table
+        :headers="headers"
+        :items="desserts"
+        :search="search"
+      >
+        <template v-slot:items="props">
+          <td></td>
+          <td class="text-xs-right">{{ props.item.titulo }}</td>
+          <td class="text-xs-right">{{ props.item.contenido }}</td>
+          <td class="text-xs-right">{{ props.item.imagen }}</td>
+          <td class="text-xs-right">{{ props.item.video }}</td>
+          <td class="text-xs-right">{{ props.item.link }}</td>
+        </template>
+        <v-alert v-slot:no-results :value="true" color="error" icon="warning">
+          Tu busqueda para "{{ search }}" no encontró resultados.
+        </v-alert>
+      </v-data-table>
+    </v-card>
+  </div>
 </template>
 <script>
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
+  },
+  data () {
+    return {
+      search: '',
+      headers: [
+        {
+          align: 'left',
+          sortable: false
+        },
+        { text: 'Titulo', value: 'titulo' },
+        { text: 'Contenido', value: 'contenido' },
+        { text: 'Imagen', value: 'imagen' },
+        { text: 'Video', value: 'video' },
+        { text: 'Link', value: 'link' }
+      ],
+      desserts: [
+        {
+          titulo: 'bienestar',
+          contenido: 'para estar saludable',
+          imagen: 'C:UserAprendizPicture1',
+          video: 'C:UserAprendizVideo1'
+        },
+        {
+          titulo: 'bienestar',
+          contenido: 'para estar saludable',
+          imagen: 'C:UserAprendizPicture2',
+          video: 'C:UserAprendizVideo2'
+        },
+        {
+          titulo: 'bienestar',
+          contenido: 'para estar saludable',
+          imagen: 'C:UserAprendizPicture3',
+          video: 'C:UserAprendizVideo3'
+        },
+        {
+          titulo: 'bienestar',
+          contenido: 'para estar saludable',
+          imagen: 'C:UserAprendizPicture4',
+          video: 'C:UserAprendizVideo4'
+        }
+      ]
+    }
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
+  .boton{
+    margin-left -10px
+    height 31.8px
+  }
+  .label{
+    font-size 15px
+  }
+  .v-text-field.v-text-field--enclosed {
+    --v-primary-base white !important
+  }
+  .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
+    background rgba(0,0,0,0.8)
+  }
+  .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
+    color white !important
+    font-size 20px
+  }
 </style>

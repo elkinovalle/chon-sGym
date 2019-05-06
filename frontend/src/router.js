@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Login.vue'
-import MiPerfilAdmin from '@/views/MiPerfilAdmin.vue'
+import EmailAdmin from '@/views/EmailAdmin.vue'
 import Inventario from '@/views/Inventario.vue'
 import RegistroCompras from '@/views/RegistroCompras.vue'
 import RegistroEmpleados from '@/views/RegistroEmpleados.vue'
@@ -104,9 +104,9 @@ export default new Router({
       component: Login
     },
     {
-      path: '/mi-perfil-admin',
-      name: 'mi-perfil-admin',
-      component: MiPerfilAdmin
+      path: '/email-admin',
+      name: 'email-admin',
+      component: EmailAdmin
     },
     {
       path: '/inventario',
@@ -155,8 +155,8 @@ export default new Router({
       component: Tips
     },
     {
-      path: '/instalaciones',
-      name: 'instalaciones',
+      path: '/instalacionesAdmin',
+      name: 'instalacionesAdmin',
       component: InstalacionesAdmin
     },
     {

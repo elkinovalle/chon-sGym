@@ -87,7 +87,6 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { icon: 'fas fa-edit', text: 'Mi Perfil', link: 'mi-perfil-admin' },
       { icon: 'fas fa-box', text: 'Inventario', link: 'inventario' },
       { icon: 'history', text: 'Registro de compras', link: 'registro-compras' },
       { icon: 'update', text: 'Registro de Empleados', link: 'registro-empleados' },
@@ -97,14 +96,14 @@ export default {
       { icon: 'present_to_all', text: 'Novedades', link: 'novedades' },
       { icon: 'info', text: 'Tips', link: 'tips' },
       { icon: 'place', text: 'Instalaciones', link: 'instalaciones' },
-      { icon: 'event', text: 'Reportes', link: 'reportes' },
-      { icon: 'close', text: 'Salir' }
+      { icon: 'event', text: 'Reportes', link: 'reportes' }
     ],
     items1: [
       { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },
-      { icon: 'email', text: 'Notificaciones' },
+      { icon: 'email', text: 'Notificaciones', link: 'email-admin' },
       { icon: 'image', text: 'Fotos' },
-      { icon: 'list', text: 'Tareas' }
+      { icon: 'list', text: 'Tareas' },
+      { icon: 'close', text: 'Salir' }
     ],
     props: {
       source: String
