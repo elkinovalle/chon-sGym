@@ -128,64 +128,77 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
     </v-container>
 </template>
 <script>
-
+import img1 from '@/assets/1mes.jpg'
+import img2 from '@/assets/2meses.jpg'
+import img3 from '@/assets/3meses.jpg'
+import img4 from '@/assets/6_meses.jpg'
+import img5 from '@/assets/12_meses.jpg'
+import img6 from '@/assets/15_meses.jpg'
+import img7 from '@/assets/hard_vital.jpg'
+import img8 from '@/assets/neurofitness.jpg'
+import img9 from '@/assets/1mes.jpg'
+import img10 from '@/assets/2meses.jpg'
+import img11 from '@/assets/3meses.jpg'
+import img12 from '@/assets/6_meses.jpg'
+import img13 from '@/assets/12_meses.jpg'
+import img14 from '@/assets/15_meses.jpg'
+import img15 from '@/assets/hard_vital.jpg'
 export default {
-
   data () {
     return {
       items1: [
         {
-          src: 'http://www.fitmexico.mx/wp-content/uploads/bfi_thumb/JM76452-2xjhx8dyd1p3eb87pq3lze.jpg'
+          src: img1
         },
         {
-          src: 'http://www.fitmexico.mx/wp-content/uploads/bfi_thumb/JM76460-2xjhx8dyd1p3eb87pq3lze.jpg'
+          src: img2
         },
         {
-          src: 'http://www.fitmexico.mx/wp-content/uploads/bfi_thumb/JM76465-2xjhx8dyd1p3eb87pq3lze.jpg'
+          src: img3
         }
       ],
       items2: [
         {
-          src: 'http://www.fitmexico.mx/wp-content/uploads/bfi_thumb/JM76427-2xjhx8dyd1p3eb87pq3lze.jpg'
+          src: img4
         },
         {
-          src: 'http://www.fitmexico.mx/wp-content/uploads/bfi_thumb/JM76426-2xjhx8dyd1p3eb87pq3lze.jpg'
+          src: img5
         },
         {
-          src: 'http://www.fitmexico.mx/wp-content/uploads/bfi_thumb/JM76409-2xjhx8dyd1p3eb87pq3lze.jpg'
+          src: img6
         }
       ],
       items3: [
         {
-          src: 'https://nutricioni.com/wp-content/uploads/2018/09/Grupo-de-jovenes-realizando-ejercicios-en-baile.jpg'
+          src: img7
         },
         {
-          src: 'https://nutricioni.com/wp-content/uploads/2018/08/Grupo-de-hombres-y-mujeres-jovenes-realizando-ejercicios-en-un-sal%C3%B3n.jpg'
+          src: img8
         },
         {
-          src: 'https://www.cimformacion.com/blog/wp-content/uploads/bailar-zumba-en-el-gimnasio.jpg'
+          src: img9
         }
       ],
       items4: [
         {
-          src: 'https://es.habcdn.com/photos/project/gallery/reforma-vestuario-1306422.jpg'
+          src: img10
         },
         {
-          src: 'https://es.habcdn.com/photos/project/gallery/reforma-vestuario-1306419.jpg'
+          src: img11
         },
         {
-          src: 'https://http2.mlstatic.com/pichincha-zona-bares-oficina-vestuarios-gimnasio-bares-D_NQ_NP_754993-MLA29874866127_042019-F.jpg'
+          src: img12
         }
       ],
       items5: [
         {
-          src: 'http://aquathermspa.com/wp-content/uploads/2017/03/fitbox.jpg'
+          src: img13
         },
         {
-          src: 'https://www.cmdsport.com/app/uploads/2015/04/crossfitmadrid.jpg'
+          src: img14
         },
         {
-          src: 'http://media.diarioveloz.com/adjuntos/120/imagenes/001/491/0001491293.jpg'
+          src: img15
         }
       ]
     }

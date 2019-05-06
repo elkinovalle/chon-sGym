@@ -33,7 +33,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
           <v-img
-            src="https://www.ecestaticos.com/imagestatic/clipping/a31/835/a31835e1af964657c2b853bd8361b264/como-el-gimnasio-esta-arruinando-tu-vida-sexual-sin-que-te-des-cuenta.jpg?mtime=1487867033"
+           :src="img1"
             aspect-ratio="1"
             class="planes"
           ></v-img>
@@ -59,7 +59,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
           <v-img
-            src="https://www.ecestaticos.com/imagestatic/clipping/fcd/f44/fcdf4473a8fe9b5ba0ade682b7b33a6b/los-10-errores-que-cometes-despues-de-hacer-ejercicio.jpg?mtime=1482151811"
+            :src="img2"
             aspect-ratio="1"
             class="planes"
           ></v-img>
@@ -85,7 +85,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
           <v-img
-            src="https://www.cohensfitnessclub.com/wp-content/uploads/2018/09/Mitos-del-ejercicio-1024x576.jpg"
+            :src="img3"
             aspect-ratio="1"
             class="planes"
           ></v-img>
@@ -111,8 +111,8 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
           <v-img
-            src="https://guiafitness.com/wp-content/uploads/que-hacer-antes-ir-gimnasio.jpg"
-            aspect-ratio="1"
+           :src="img4"
+           aspect-ratio="1"
             class="planes"
           ></v-img>
           <v-card-title class="black">
@@ -193,7 +193,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
           <v-img
-            src="https://e.rpp-noticias.io/normal/2017/09/25/262226_488669.jpg"
+            :src="img5"
             aspect-ratio="1"
             class="planes"
           ></v-img>
@@ -219,7 +219,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
           <v-img
-            src="https://frasesdelavida.com/wp-content/uploads/2018/03/Frases-de-gimnasio.jpg"
+            :src="img6"
             aspect-ratio="1"
             class="planes"
           ></v-img>
@@ -245,7 +245,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
           <v-img
-            src="https://s28461.pcdn.co/wp-content/uploads/iStock_demaerre-_512051072.jpg"
+            :src="img7"
             aspect-ratio="1"
             class="planes"
           ></v-img>
@@ -272,7 +272,7 @@ un mayor avance hacia tus objetivos.
             </div>
           </v-card-title>
           <v-img
-            src="https://4.bp.blogspot.com/-7w68yEVQy_s/WusOceyfnqI/AAAAAAAAaxA/f5McWeGe_a4dPMZNuA4iDiLjbEfgCCH-QCLcBGAs/s1600/entra-tambien-tu-mente-con-neuro-fitness-1.jpg"
+            :src="img8"
             aspect-ratio="1"
             class="planes"
           ></v-img>
@@ -297,13 +297,31 @@ un mayor avance hacia tus objetivos.
 
 </template>
 <script>
+import img1 from '@/assets/1mes.jpg'
+import img2 from '@/assets/2meses.jpg'
+import img3 from '@/assets/3meses.jpg'
+import img4 from '@/assets/6_meses.jpg'
+import img5 from '@/assets/12_meses.jpg'
+import img6 from '@/assets/15_meses.jpg'
+import img7 from '@/assets/hard_vital.jpg'
+import img8 from '@/assets/neurofitness.jpg'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
   },
-  data: () => ({
+  data () {
+    return {
+      img1: img1,
+      img2: img2,
+      img3: img3,
+      img4: img4,
+      img5: img5,
+      img6: img6,
+      img7: img7,
+      img8: img8
+    }
+  }
 
-  })
 }
 </script>
 <style lang="stylus" scoped>

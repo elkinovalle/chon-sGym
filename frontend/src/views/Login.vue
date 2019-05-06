@@ -67,7 +67,7 @@
                <v-divider></v-divider>
                <br>
               <v-card class="carta" flat>
-              <a class="izquierda black--text subheading" @click="clickPush('/instalaciones-cliente')">¿No tienes cuenta? </a>
+              <a class="izquierda black--text subheading">¿No tienes cuenta?</a>
               <a href="#" class="derecha blue--text title" @click="clickPush('/registro-cliente')"> Regístrate</a>
               </v-card>
               <br><br>

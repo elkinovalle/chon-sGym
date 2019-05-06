@@ -144,7 +144,13 @@ export default new Router({
       component: Novedades
     },
     {
-      path: '/tips',
+      _path: '/tips',
+      get path () {
+        return this._path
+      },
+      set path (value) {
+        this._path = value
+      },
       name: 'tips',
       component: Tips
     },
