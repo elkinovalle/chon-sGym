@@ -85,6 +85,10 @@
           class="font-weight-black title font-italic"
         >Registrarse</v-btn>
       </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-form>
     <v-dialog
       v-model="dialog"
@@ -198,7 +202,6 @@ export default {
   }
 }
 </script>
-
 <style lang="stylus" scoped>
 .contenedor{
   padding 30px 50px 0px 50px
