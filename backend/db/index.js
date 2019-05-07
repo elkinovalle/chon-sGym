@@ -71,8 +71,8 @@ module.exports = async function () {
   MembershipModel.hasMany(Detail_MembershipModel)
   Detail_MembershipModel.belongsTo(MembershipModel)
   //relacion de membresia a usuarios
-  UserModel.hasMany(SaleModel, {foreignKey: 'clienteId'})
-  SaleModel.belongsTo(UserModel, {foreignKey: 'empleadoId'})
+  UserModel.hasMany(MembershipModel, {foreignKey: 'clienteId'})
+  MembershipModel.belongsTo(UserModel, {foreignKey: 'empleadoId'})
   //relacion de clase a usuarios
   UserModel.hasMany(ClassModel)
   ClassModel.belongsTo(UserModel)
@@ -89,7 +89,16 @@ module.exports = async function () {
   CountryModel.hasMany(UserModel)
   UserModel.belongsTo(CountryModel)
   // relacion de departamentos a paises
+  CountryModel.hasMany(DepartmentModel)
   DepartmentModel.belongsTo(CountryModel)
+  // relacion de ciudadad a departamentos
+  DepartmentModel.hasMany(CityModel)
+  CityModel.belongsTo(DepartmentModel)
+  // relacion de ciudadad a pais
+  CountryModel.hasMany(CityModel)
+  CityModel.belongsTo(CountryModel)
+
+
   //fin de las relaciones
 
   await sequelize.authenticate()
