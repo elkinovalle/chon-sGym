@@ -2,32 +2,47 @@
   <div>
     <v-subheader class="subheader black--text display-1 font-weight-bold" >Instalaciones</v-subheader>
     <v-layout row wrap>
-      <v-flex xs12 sm6>
-        <v-text-field
-          v-model="message1"
-          box
-          label="Titulo del Tip"
-          clearable
-        ></v-text-field>
-      </v-flex>
-      <v-flex xs12 sm12>
-        <v-textarea
-          box
-          label="Contenido"
-          value=""
-        ></v-textarea>
-      </v-flex>
       <v-flex xs4>
-        <v-chip class="label"
-        label
-        >Seleccione Una Imagen
-        </v-chip>
-        <v-btn
-              color="#000B3E"
-              class="boton"
-              @click="loader = 'loading3'"
-            ><v-icon center dark>cloud_upload</v-icon>
-        </v-btn>
+     <v-layout row wrap>
+
+                        <v-flex xs12 lg12 mb9>
+                          <material-card class="v-card-profile black--text">
+                              <v-card-text class="text-xs-center">
+                                  <v-form name="formulario" method="post" enctype="form-data">
+                                      <input type="file" name="adjunto" accept=".jpg,.jpeg,.png,.gif" multiple>
+                                  </v-form>
+                              </v-card-text>
+                          </material-card>
+                        </v-flex>
+                      </v-layout>
+      </v-flex>
+        <v-flex xs4>
+     <v-layout row wrap>
+
+                        <v-flex xs12 lg12 mb9>
+                          <material-card class="v-card-profile black--text">
+                              <v-card-text class="text-xs-center">
+                                  <v-form name="formulario" method="post" enctype="form-data">
+                                      <input type="file" name="adjunto" accept=".jpg,.jpeg,.png,.gif" multiple>
+                                  </v-form>
+                              </v-card-text>
+                          </material-card>
+                        </v-flex>
+                      </v-layout>
+      </v-flex>
+        <v-flex xs4>
+     <v-layout row wrap>
+
+                        <v-flex xs12 lg12 mb9>
+                          <material-card class="v-card-profile black--text">
+                              <v-card-text class="text-xs-center">
+                                  <v-form name="formulario" method="post" enctype="form-data">
+                                      <input type="file" name="adjunto" accept=".jpg,.jpeg,.png,.gif" multiple>
+                                  </v-form>
+                              </v-card-text>
+                          </material-card>
+                        </v-flex>
+                      </v-layout>
       </v-flex>
       <v-flex xs4 >
         <v-chip class="label"
@@ -66,7 +81,7 @@
     </v-layout>
     <v-card>
       <v-card-title>
-       Tips
+       Instalaciones
         <v-spacer></v-spacer>
         <v-text-field
           v-model="search"
