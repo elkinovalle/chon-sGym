@@ -103,8 +103,8 @@ module.exports = async function () {
   const Reservation = setupReservation(ReservationModel)
   const Schedule = setupSchedule(ScheduleModel)
   const Sale = setupSale(SaleModel)
-  const Membership = setupMembership(Membership)
-  const Classs = setupClasss(Classs)
+  const Membership = setupMembership(MembershipModel)
+  const Classs = setupClasss(ClassModel)
   return {
     async setup() {
       await sequelize.sync({ force: true })

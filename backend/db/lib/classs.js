@@ -4,7 +4,7 @@ function setupClasss(classsModel) {
   async function createClasss(classs) {
     const result = await classModel.create(classs)
     return result.toJSON()
-  }s
+  }
   async function updateClasss(uuid,classs) {
     const cond = { where : { uuid } }
     const result = await classModel.update(classs, cond)
