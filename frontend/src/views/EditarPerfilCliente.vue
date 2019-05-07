@@ -10,10 +10,10 @@
              </v-card-text>
              <br>
              <material-card class="ancho v-card-profile">
-                 <v-avatar class=" text-xs-center mx-auto d-block" slot="offset" size="120">
-                     <img  :src="imgUrl" >
+                 <v-avatar class=" text-xs-center mx-auto d-block" slot="offset">
+                     <img  :src="imgUrl" class="imagen" >
                  </v-avatar>
-                <v-card-text class="text-xs-center">
+                <v-card-text class="margen text-xs-center">
                     <v-form name="formulario" method="post" enctype="form-data">
                       <v-text-field label="Selecciona tu foto de perfil" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
                         <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked">
@@ -254,5 +254,13 @@ export default {
 }
 .ancho{
   width 120px!important
+}
+.imagen{
+  width 130px !important
+  height 150px !important
+  margin -20px 0px 0px -40px
+}
+.margen{
+  margin 80px 0px
 }
 </style>

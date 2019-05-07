@@ -239,21 +239,23 @@
                   </v-toolbar>
                    <v-layout row wrap>
            <v-flex d-flex xs12 sm7>
-               <v-card color="grey lighten-3" class="alert1" flat>
+               <v-card color="transparent" class="alert1" flat>
                     <span><strong>Descripción: <br></strong></span>
                     <span v-html="event.descripcion"></span><br><br>
                      <span><strong>Hora de inicio: <br></strong></span>
                     <span v-html="event.inicio"></span><br>
                      <span><strong>Finaliza: <br></strong></span>
                     <span v-html="event.final"></span><br>
-                     <span><strong>Lugar: <br></strong></span>
-                    <span v-html="event.lugar"></span><br>
+                     <span><strong>Capacidad: <br></strong></span>
+                    <span v-html="event.capacidad"></span><br>
+                    <span><strong>Estado: <br></strong></span>
+                    <span v-html="event.estado"></span><br>
                     <span><strong>Entrenador: <br></strong></span>
                     <span v-html="event.entrenador"></span><br>
                   </v-card>
         </v-flex>
            <v-flex d-flex xs12 sm6>
-               <v-card color="grey lighten-3" class="alert2" flat>
+               <v-card color="transparent" class="alert2" flat>
                   <v-flex d-flex xs12 sm1>
                      <img class="imagen_alert" src="../assets/spinning-1.jpg" alt="">
                   </v-flex>
@@ -335,7 +337,8 @@ export default {
         descripcion: 'Clase de cardio intensivo',
         inicio: '10:00 a.m.',
         final: '11:00 a.m.',
-        lugar: 'Chons Gym piso 2',
+        capacidad: '25 personas',
+        estado: 'Disponible',
         entrenador: 'Octavio Carvajal',
         date: '2018-12-30',
         open: false
@@ -345,7 +348,8 @@ export default {
         descripcion: 'Clase de cardio intensivo',
         inicio: '10:00 a.m.',
         final: '11:00 a.m.',
-        lugar: 'Chons Gym piso 2',
+        capacidad: '25 personas',
+        estado: 'Disponible',
         entrenador: 'Octavio Carvajal',
         date: '2019-01-04',
         open: false
@@ -355,7 +359,8 @@ export default {
         descripcion: 'Clase de cardio intensivo',
         inicio: '10:00 a.m.',
         final: '11:00 a.m.',
-        lugar: 'Chons Gym piso 2',
+        capacidad: '25 personas',
+        estado: 'Disponible',
         entrenador: 'Octavio Carvajal',
         date: '2019-01-13',
         open: false
@@ -365,7 +370,8 @@ export default {
         descripcion: 'Clase de cardio intensivo',
         inicio: '10:00 a.m.',
         final: '11:00 a.m.',
-        lugar: 'Chons Gym piso 2',
+        capacidad: '25 personas',
+        estado: 'Disponible',
         entrenador: 'Octavio Carvajal',
         date: '2018-12-30',
         open: false
@@ -375,7 +381,8 @@ export default {
         descripcion: 'Clase de cardio intensivo',
         inicio: '10:00 a.m.',
         final: '11:00 a.m.',
-        lugar: 'Chons Gym piso 2',
+        capacidad: '25 personas',
+        estado: 'Disponible',
         entrenador: 'Octavio Carvajal',
         date: '2019-01-06',
         open: false
@@ -385,7 +392,8 @@ export default {
         descripcion: 'Clase de cardio intensivo',
         inicio: '10:00 a.m.',
         final: '11:00 a.m.',
-        lugar: 'Chons Gym piso 2',
+        capacidad: '25 personas',
+        estado: 'Disponible',
         entrenador: 'Octavio Carvajal',
         date: '2019-01-10',
         open: false
@@ -395,7 +403,8 @@ export default {
         descripcion: 'Clase de cardio intensivo',
         inicio: '10:00 a.m.',
         final: '11:00 a.m.',
-        lugar: 'Chons Gym piso 2',
+        capacidad: '25 personas',
+        estado: 'Disponible',
         entrenador: 'Octavio Carvajal',
         date: '2019-01-23',
         open: false
@@ -405,7 +414,8 @@ export default {
         descripcion: 'Clase de cardio intensivo',
         inicio: '10:00 a.m.',
         final: '11:00 a.m.',
-        lugar: 'Chons Gym piso 2',
+        capacidad: '25 personas',
+        estado: 'Disponible',
         entrenador: 'Octavio Carvajal',
         date: '2019-01-20',
         open: false
@@ -415,7 +425,8 @@ export default {
         descripcion: 'Clase de cardio intensivo',
         inicio: '10:00 a.m.',
         final: '11:00 a.m.',
-        lugar: 'Chons Gym piso 2',
+        capacidad: '25 personas',
+        estado: 'Disponible',
         entrenador: 'Octavio Carvajal',
         date: '2019-01-08',
         open: false
@@ -481,7 +492,10 @@ export default {
       const map = {}
       this.events.forEach(e => (map[e.date] = map[e.date] || []).push(e))
       return map
-    }
+    },
+    created () {
+    this.getReservation()
+  }
   },
   methods: {
     open (event) {
@@ -489,6 +503,20 @@ export default {
     },
     showIntervalLabel (interval) {
       return interval.minute === 0
+    },
+    async getReservation () {
+      const res = await api.get('/reservation')
+    },
+      async submit () {
+      console.log()
+      const res = await api.post('/reservation', {
+        reservationNew: {
+          estado: this.form.estado,
+          fecha_reserva: this.form.fecha_reserva,
+          genero: 'M, F',
+          contraseña: '1234'
+        }
+      })
     }
   }
 }
@@ -576,11 +604,11 @@ export default {
   margin-left: -80px;
 }
 .alert2 {
-  padding: 80px 0px 0px 0px;
+  padding: 100px 0px 0px 0px;
 
 }
 .imagen_alert{
-   width: 60px;
+  width: 60px;
   height: 140px;
   margin-left: -130px
 }
