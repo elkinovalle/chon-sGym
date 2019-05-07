@@ -128,21 +128,21 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
     </v-container>
 </template>
 <script>
-import img1 from '@/assets/1mes.jpg'
-import img2 from '@/assets/2meses.jpg'
-import img3 from '@/assets/3meses.jpg'
-import img4 from '@/assets/6_meses.jpg'
-import img5 from '@/assets/12_meses.jpg'
-import img6 from '@/assets/15_meses.jpg'
-import img7 from '@/assets/hard_vital.jpg'
-import img8 from '@/assets/neurofitness.jpg'
-import img9 from '@/assets/1mes.jpg'
-import img10 from '@/assets/2meses.jpg'
-import img11 from '@/assets/3meses.jpg'
-import img12 from '@/assets/6_meses.jpg'
-import img13 from '@/assets/12_meses.jpg'
-import img14 from '@/assets/15_meses.jpg'
-import img15 from '@/assets/hard_vital.jpg'
+import img1 from '@/assets/cardio1.jpg'
+import img2 from '@/assets/cardio2.jpg'
+import img3 from '@/assets/cardio3.jpg'
+import img4 from '@/assets/pesas1.jpg'
+import img5 from '@/assets/pesas2.jpg'
+import img6 from '@/assets/pesas3.jpg'
+import img7 from '@/assets/zumba1.jpg'
+import img8 from '@/assets/zumba2.jpg'
+import img9 from '@/assets/zumba3.jpg'
+import img10 from '@/assets/vestuario1.jpg'
+import img11 from '@/assets/vestuario2.jpg'
+import img12 from '@/assets/vestuario3.jpg'
+import img13 from '@/assets/crossfit1.jpg'
+import img14 from '@/assets/crossfit2.jpg'
+import img15 from '@/assets/crossfit3.jpg'
 export default {
   data () {
     return {
