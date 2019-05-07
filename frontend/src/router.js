@@ -13,8 +13,6 @@ import Tips from '@/views/Tips.vue'
 import InstalacionesAdmin from '@/views/InstalacionesAdmin.vue'
 import Reportes from '@/views/Reportes.vue'
 import PlanesCliente from '@/views/PlanesCliente.vue'
-import PlanUnMesCliente from '@/views/PlanUnMesCliente.vue'
-import PlanDosMesesCliente from '@/views/PlanDosMesesCliente.vue'
 import PlanTresMesesCliente from '@/views/PlanTresMesesCliente.vue'
 import PlanSeisMesesCliente from '@/views/PlanSeisMesesCliente.vue'
 import PlanDoceMesesCliente from '@/views/PlanDoceMesesCliente.vue'
@@ -144,13 +142,7 @@ export default new Router({
       component: Novedades
     },
     {
-      _path: '/tips',
-      get path () {
-        return this._path
-      },
-      set path (value) {
-        this._path = value
-      },
+      path: '/tips',
       name: 'tips',
       component: Tips
     },
@@ -168,16 +160,6 @@ export default new Router({
       path: '/planes-cliente',
       name: 'planes-cliente',
       component: PlanesCliente
-    },
-    {
-      path: '/plvan-un-mes-cliente',
-      name: 'plan-un-mes-cliente',
-      component: PlanUnMesCliente
-    },
-    {
-      path: '/plan-dos-mveses-cliente',
-      name: 'plan-dos-meses-cliente',
-      component: PlanDosMesesCliente
     },
     {
       path: '/plan-tres-meses-cliente',
