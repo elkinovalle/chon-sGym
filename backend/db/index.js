@@ -8,8 +8,8 @@ const setupProduct = require('./lib/products')
 const setupReservation = require ('./lib/reservations')
 const setupSchedule = require ('./lib/schedules')
 const setupSale = require ('./lib/sales')
-const setupSale = require ('./lib/memberships')
-const setupClasss = requere ('./lib/classs.js')
+const setupMembership = require ('./lib/memberships')
+const setupClasss = require ('./lib/classs.js')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
@@ -88,7 +88,8 @@ module.exports = async function () {
   // relacion de usuarios a paises
   CountryModel.hasMany(UserModel)
   UserModel.belongsTo(CountryModel)
-
+  // relacion de departamentos a paises
+  DepartmentModel.belongsTo(CountryModel)
   //fin de las relaciones
 
   await sequelize.authenticate()
@@ -102,7 +103,7 @@ module.exports = async function () {
   const Reservation = setupReservation(ReservationModel)
   const Schedule = setupSchedule(ScheduleModel)
   const Sale = setupSale(SaleModel)
-  const Membership =setupMembership(Membership)
+  const Membership = setupMembership(Membership)
   const Classs = setupClasss(Classs)
   return {
     async setup() {
@@ -114,6 +115,6 @@ module.exports = async function () {
     Schedule,
     Sale,
     Membership,
-    classs
+    Classs
   }
 }
