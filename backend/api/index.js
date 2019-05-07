@@ -7,8 +7,8 @@ const reservation = require ('./reservation')
 const schedule = require ('./schedule')
 const sale = require ('./sale')
 const membership = require ('./membership')
-const classs = require ('./classs')
-
+const classs = require ('./class')
+const detail_membership = require ('./detail_membership')
 const log = getLogger(__dirname, __filename)
 // prueba
 module.exports = {
@@ -24,6 +24,7 @@ module.exports = {
   sale,
   membership,
   classs,
+  detail_membership,
   errorHandler (err, req, res, next) {
     if (err) {
       let code = err.code || 500
