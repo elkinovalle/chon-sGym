@@ -10,7 +10,8 @@ const setupSchedule = require ('./lib/schedules')
 const setupSale = require ('./lib/sales')
 const setupMembership = require ('./lib/memberships')
 const setupClasss = require ('./lib/classs')
-const setupDetail_Membership = require ('./lib/detail_membership')
+const setupDetail_Membership = require ('./lib/detail_memberships')
+const setupDetail_Sale = require ('./lib/detail_sales')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
@@ -116,6 +117,7 @@ module.exports = async function () {
   const Membership = setupMembership(MembershipModel)
   const Classs = setupClasss(ClassModel)
   const Detail_Membership = setupDetail_Membership(Detail_MembershipModel)
+  const Detail_Sale = setupDetail_Sale(Detail_Sale)
   return {
     async setup() {
       await sequelize.sync({ force: true })
@@ -127,6 +129,7 @@ module.exports = async function () {
     Sale,
     Membership,
     Classs,
-    Detail_Membership
+    Detail_Membership,
+    Detail_Sale
   }
 }
