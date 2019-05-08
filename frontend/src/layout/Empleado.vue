@@ -70,6 +70,7 @@ export default {
       { icon: 'person', text: 'Mi Perfil', link: 'mi-perfil-empleado' },
       { icon: 'shopping_cart', text: 'Membresia', link: 'membresias-empleado' },
       { icon: 'history', text: 'Rutina', link: 'rutina-empleado' },
+      { icon: 'history', text: 'Dieta', link: 'dieta-empleado' },
       { icon: 'poll', text: 'Valoracion', link: 'valoracion-empleado' },
       { icon: 'money', text: 'Ventas', link: 'ventas-empleado' },
       { icon: 'close', text: 'Salir' }

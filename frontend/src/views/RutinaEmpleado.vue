@@ -9,6 +9,20 @@
             v-model="valid"
             lazy-validation
           >
+          <v-select
+              v-model="dias"
+              :items="Dias"
+              :rules="[v => !!v || 'El campo dias es requerido']"
+              label="Dia"
+              required
+            ></v-select>
+          <v-select
+              v-model="musculo"
+              :items="Area"
+              :rules="[v => !!v || 'El campo área a ejercitar es requerido']"
+              label="Área a ejercitar"
+              required
+            ></v-select>
             <v-select
               v-model="select"
               :items="Ejercicios"
@@ -22,6 +36,7 @@
               :rules="series"
               label="Series"
               required
+              type="number"
             ></v-text-field>
 
             <v-text-field
@@ -29,42 +44,33 @@
               :rules="repeticiones"
               label="Repeticiones"
               required
+              type="number"
             ></v-text-field>
-
-            <v-select
-              v-model="dias"
-              :items="Dias"
-              :rules="[v => !!v || 'El campo dias es requerido']"
-              label="Dia"
-              required
-            ></v-select>
             <v-btn
+              color="error"
+              @click="resetValidation"
+            >
+              Cancelar
+            </v-btn>
+            <v-btn
+              color="warning"
+              @click="reset"
+            >
+              Borrar
+            </v-btn>
+             <v-btn
               :disabled="!valid"
               color="success"
               @click="guardar"
             >
               Guardar
             </v-btn>
-
-            <v-btn
-              color="error"
-              @click="reset"
-            >
-              Eliminar
-            </v-btn>
-
-            <v-btn
-              color="warning"
-              @click="resetValidation"
-            >
-              Cancelar
-            </v-btn>
           </v-form>
         </v-flex>
       </v-layout>
       <div class="botones">
-        <v-btn color="green darken-4" class=" white--text display-1" >Registrar rutina</v-btn>
-        <v-btn color="red darken-4" class=" white--text display-1" >Cancelar</v-btn>
+         <v-btn color="red darken-4" class=" white--text title" >Cancelar</v-btn>
+        <v-btn color="green darken-4" class=" white--text title" >Registrar rutina</v-btn>
       </div>
     <v-container>
       <v-layout row wrap>
@@ -119,6 +125,16 @@ export default {
       'Press Militar',
       'Flexiones',
       'Peso Muerto'
+    ],
+    musculo: null,
+    Area: [
+      'Abdomen',
+      'Biceps',
+      'Espalda',
+      'Hombro',
+      'Pecho',
+      'Pierna',
+      'Triceps'
     ],
     dias: null,
     Dias: [

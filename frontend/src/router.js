@@ -85,6 +85,7 @@ import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
 import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
 import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
+import DietaEmpleado from '@/views/DietaEmpleado.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
 import ProgresoCliente from '@/views/ProgresoCliente.vue'
 import EnsayoCliente from '@/views/EnsayoCliente.vue'
@@ -500,6 +501,11 @@ export default new Router({
       path: '/membresias-empleado',
       name: 'membresias-empleado',
       component: MembresiasEmpleado
+    },
+    {
+      path: '/dieta-empleado',
+      name: 'dieta-empleado',
+      component: DietaEmpleado
     },
     {
       path: '/ventas-empleado',
