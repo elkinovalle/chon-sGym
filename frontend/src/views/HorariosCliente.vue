@@ -294,6 +294,7 @@
 </template>
 
 <script>
+import api from '@/plugins/service'
 const weekdaysDefault = [0, 1, 2, 3, 4, 5, 6]
 
 const intervalsDefault = {
@@ -492,10 +493,17 @@ export default {
       const map = {}
       this.events.forEach(e => (map[e.date] = map[e.date] || []).push(e))
       return map
+<<<<<<< HEAD
     },
     created () {
       this.getReservation()
     }
+=======
+    }
+  },
+  created () {
+    this.getReservation()
+>>>>>>> 26d07bad150132b6b6e3beee38e54281977dcbd1
   },
   methods: {
     open (event) {
@@ -505,14 +513,19 @@ export default {
       return interval.minute === 0
     },
     async getReservation () {
-      const res = await api.get('/reservation')
+      try {
+        const res = await api.get('/reservation')
+        console.log(res.data)
+      } catch (error) {
+        console.error(error)
+      }
     },
     async submit () {
       console.log()
       const res = await api.post('/reservation', {
         reservationNew: {
           estado: this.form.estado,
-          fecha_reserva: this.form.fecha_reserva,
+          fecha_reserva: this.form.date,
           genero: 'M, F',
           contraseña: '1234'
         }
