@@ -494,8 +494,8 @@ export default {
       return map
     },
     created () {
-    this.getReservation()
-  }
+      this.getReservation()
+    }
   },
   methods: {
     open (event) {
@@ -507,7 +507,7 @@ export default {
     async getReservation () {
       const res = await api.get('/reservation')
     },
-      async submit () {
+    async submit () {
       console.log()
       const res = await api.post('/reservation', {
         reservationNew: {
