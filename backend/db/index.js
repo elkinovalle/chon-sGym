@@ -10,7 +10,7 @@ const setupSchedule = require ('./lib/schedules')
 const setupSale = require ('./lib/sales')
 const setupMembership = require ('./lib/memberships')
 const setupClasss = require ('./lib/classs')
-const setupDetail_Membership = require ('/lib/Detail_Membership')
+const setupDetail_Membership = require ('/lib/detail_membership')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
