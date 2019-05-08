@@ -24,7 +24,7 @@ app.use('/schedule' , schedule)
 app.use('/sale' , sale)
 app.use('/membership' , membership)
 app.use('/classs', classs)
-app.use('/detail_membership')
+app.use('/detail_membership',detail_membership)
 app.get('/', home)
 app.use(errorHandler)
 
