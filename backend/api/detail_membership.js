@@ -22,7 +22,7 @@ router.put('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
     const { detail_membershipUpdate } = req.body
-    const { detail_Membership } = await db()
+    const { Detail_Membership } = await db()
     const result = await Detail_Membership.updateDetail_Membership(uuid, detail_membershipUpdate)
     res.send(result)
   } catch (err) {
@@ -33,7 +33,7 @@ router.delete('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
     const { Detail_Membership } = await db()
-    const result = await Detail_Membership.deleteProduct(uuid)
+    const result = await Detail_Membership.deleteDetail_Membership(uuid)
     res.send(result)
   } catch (err) {
     next(err)
