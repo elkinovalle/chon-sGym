@@ -11,7 +11,7 @@
     >
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
       <v-list>
-        <v-list-tile v-for="item in items" :key="item.text" @click="clickMenu(item)">
+        <v-list-tile v-for="item in items" :key="item.text" :to="item.link" active-class="activo--text ">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -47,8 +47,8 @@
                   flat
               ><v-icon >person</v-icon> Mi Perfil</v-btn>
             </template>
-            <v-list>
-              <v-list-tile v-for="item in items1" :key="item.text" @click="clickButon(item)">
+            <v-list >
+              <v-list-tile v-for="item in items1" :key="item.text" :to="item.link" active-class=" activo--text">
                 <v-list-tile-action>
                   <v-icon medium>{{ item.icon }}</v-icon>
                 </v-list-tile-action>
@@ -77,9 +77,6 @@
 export default {
   name: 'admin',
   methods: {
-    clickMenu (value) {
-      this.$router.push(value.link)
-    },
     clickButon (value) {
       this.$router.push(value.link)
     }
@@ -101,7 +98,7 @@ export default {
     items1: [
       { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },
       { icon: 'email', text: 'Notificaciones', link: 'email-admin' },
-      { icon: 'image', text: 'Fotos' },
+      { icon: 'image', text: 'Fotos', link: 'fotos-admin' },
       { icon: 'list', text: 'Tareas' },
       { icon: 'close', text: 'Salir' }
     ],
@@ -132,5 +129,8 @@ export default {
   }
   .container.fill-height {
    background-color white
+  }
+  .act{
+    background-color white !important
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="grande">
+  <div class="ancho">
     <v-subheader class="subheader black--text display-1 font-weight-bold">Gestión de Clases</v-subheader>
     <v-flex>
       <v-sheet height="500">
@@ -143,5 +143,8 @@ export default {
   }
   .flex{
     width 100%
+  }
+  .ancho{
+    width 1000px
   }
 </style>

@@ -90,6 +90,7 @@ import ReciboMembresia from '@/views/ReciboMembresia.vue'
 import ProgresoCliente from '@/views/ProgresoCliente.vue'
 import EnsayoCliente from '@/views/EnsayoCliente.vue'
 import EditarPerfilAdmin from '@/views/EditarPerfilAdmin.vue'
+import FotosAdmin from '@/views/FotosAdmin.vue'
 
 Vue.use(Router)
 
@@ -546,6 +547,11 @@ export default new Router({
       path: '/editar-perfil-admin',
       name: 'editar-perfil-admin',
       component: EditarPerfilAdmin
+    },
+    {
+      path: '/fotos-admin',
+      name: 'fotos-admin',
+      component: FotosAdmin
     }
   ]
 })
