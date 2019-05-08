@@ -10,6 +10,7 @@ const membership = require ('./membership')
 const classs = require ('./class')
 const detail_membership = require ('./detail_membership')
 const detail_sale = require ('./detail_sale')
+const type_class = require ('./type_class')
 const log = getLogger(__dirname, __filename)
 // prueba
 module.exports = {
@@ -27,6 +28,7 @@ module.exports = {
   classs,
   detail_membership,
   detail_sale,
+  type_class,
   errorHandler (err, req, res, next) {
     if (err) {
       let code = err.code || 500
