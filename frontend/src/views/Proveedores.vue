@@ -52,9 +52,10 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message6"
+              v-model="form.email"
+              :rules="rules.email"
+              label="Correo electrónico"
               box
-              label="Correo Electronico*"
               clearable
             ></v-text-field>
           </v-flex>
@@ -116,12 +117,16 @@
   </div>
 </template>
 <script>
+import api from '@/plugins/service'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
   },
   data () {
     return {
+      rules: {
+     email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
+      },
       search: '',
       headers: [
         {
@@ -185,7 +190,7 @@ export default {
         'Femenino'
       ]
     }
-  }
+  } 
 
 }
 </script>
