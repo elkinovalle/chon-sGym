@@ -15,14 +15,14 @@ module.exports = function setupMetricModel (config) {
     },
     nombre: {
       type: Sequelize.TEXT,
-      allowNull: false
+      
     },
     apellido: {
       type: Sequelize.TEXT,
-      allowNull: false
+     
     },
     rol: {
-      type: Sequelize.ENUM('cliente','administrador','empleado'),
+      type: Sequelize.ENUM('cliente','administrador','empleado','proveedor'),
       allowNull: false
     },
     telefono: {
