@@ -1,6 +1,6 @@
 <template>
-  <v-form 
-    ref="form" 
+  <v-form
+    ref="form"
     v-model="form"
     >
     <v-container class="color" fluid>
@@ -163,7 +163,7 @@
         </v-flex>
 
       </v-layout>
-        </v-flex> 
+        </v-flex>
       </v-layout>
       <br>
         <v-divider> </v-divider>
@@ -189,7 +189,7 @@
 </template>
 <script>
 export default {
-  created() {
+  created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
   },
   data: () => ({

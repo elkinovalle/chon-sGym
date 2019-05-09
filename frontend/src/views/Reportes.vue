@@ -2,7 +2,7 @@
     <div class="grande">
       <v-subheader class="subheader black--text display-1 font-weight-bold" xs8>Reportes</v-subheader>
 
-      <v-container fluid>v
+      <v-container class="ancho" fluid>
         <p class="titulo white--text display-1" >Generar Reportes</p>
         <v-layout row>
           <v-flex xs4 >
@@ -10,8 +10,8 @@
               <v-checkbox v-model="selected" label="Clientes" value="Clientes"></v-checkbox>
               <v-checkbox v-model="selected" label="Horarios" value="Horarios"></v-checkbox>
               <v-checkbox v-model="selected" label="Membresias" value="Membresias"></v-checkbox>
-            </v-radio-group>vv
-          </v-flex>v
+            </v-radio-group>
+          </v-flex>
           <v-flex xs4>
             <v-radio-group class="Layout" v-model="radios" :mandatory="false">
               <v-checkbox v-model="selected" label="Entrenadores" value="Entrenadores"></v-checkbox>
@@ -29,7 +29,7 @@
         </v-layout>
       </v-container>
       <v-container fluid>
-        <p class="tivtulo1 white--text" >Generar Reporte(s) en:</p>
+        <p class="titulo1 white--text" >Generar Reporte(s) en:</p>
         <v-layout row>
           <v-flex xs4 >
               <v-radio-group class="Layout" v-model="radios" :mandatory="false">
@@ -89,5 +89,8 @@ export default {
   .botton{
     height 40px
     margin -8px
+  }
+  .ancho{
+    width 1000px
   }
 </style>

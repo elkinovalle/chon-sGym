@@ -81,9 +81,12 @@
              <br>
         </v-flex>
         <v-flex xs3 order-lg2>
-            <v-text-field small label="" v-model="genero"></v-text-field>
+          <v-combobox
+          v-model="genero"
+          :items="items"
+        ></v-combobox>
         </v-flex>
-          <v-flex   xs2 order-lg2 class="transparent text-xs-center">
+          <v-flex xs2 order-lg2 class="transparent text-xs-center">
             <br>
              <v-card-text><strong>Edad :</strong></v-card-text>
         </v-flex>
@@ -91,8 +94,8 @@
             <v-text-field small label="" v-model="edad"></v-text-field>
         </v-flex>
       </v-layout>
-      <v-layout  row>
-        <v-flex   xs2 order-lg2 class="transparent text-xs-center">
+      <v-layout row>
+        <v-flex xs2 order-lg2 class="transparent text-xs-center">
              <v-card-text><strong>Editar E-mail :</strong></v-card-text>
         </v-flex>
         <v-flex xs3 order-lg2>
@@ -204,6 +207,10 @@ export default {
     ciudad: '',
     cedula: '',
     genero: '',
+    items: [
+      'Femenino',
+      'Masculino'
+    ],
     edad: '',
     form: false,
     show1: false,

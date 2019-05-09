@@ -85,10 +85,12 @@ import RutinaEmpleado from '@/views/RutinaEmpleado.vue'
 import ValoracionEmpleado from '@/views/ValoracionEmpleado.vue'
 import EditarPerfilCliente from '@/views/EditarPerfilCliente.vue'
 import MiPerfilEmpleado from '@/views/MiPerfilEmpleado.vue'
+import DietaEmpleado from '@/views/DietaEmpleado.vue'
 import ReciboMembresia from '@/views/ReciboMembresia.vue'
 import ProgresoCliente from '@/views/ProgresoCliente.vue'
 import EnsayoCliente from '@/views/EnsayoCliente.vue'
 import EditarPerfilAdmin from '@/views/EditarPerfilAdmin.vue'
+import FotosAdmin from '@/views/FotosAdmin.vue'
 
 Vue.use(Router)
 
@@ -502,6 +504,11 @@ export default new Router({
       component: MembresiasEmpleado
     },
     {
+      path: '/dieta-empleado',
+      name: 'dieta-empleado',
+      component: DietaEmpleado
+    },
+    {
       path: '/ventas-empleado',
       name: 'ventas-empleado',
       component: VentasEmpleado
@@ -540,6 +547,11 @@ export default new Router({
       path: '/editar-perfil-admin',
       name: 'editar-perfil-admin',
       component: EditarPerfilAdmin
+    },
+    {
+      path: '/fotos-admin',
+      name: 'fotos-admin',
+      component: FotosAdmin
     }
   ]
 })
