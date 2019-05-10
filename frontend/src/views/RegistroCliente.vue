@@ -38,7 +38,7 @@
            v-model="form.email"
            color="blue darken-4"
            :rules="rules.email"
-           label="Correo electrónico"
+           label="Correo electrónico" 
         ></v-text-field>
 <v-text-field
               v-model="form.password"
@@ -78,7 +78,6 @@
         <v-btn class="font-weight-black title font-italic" flat @click="resetForm">Cancelar</v-btn>
         <v-spacer></v-spacer>
         <v-btn
-          :disabled="!formIsValid"
           flat
           color="blue darken-4"
           type="submit"
@@ -188,12 +187,11 @@ export default {
     },
     async submit () {
       console.log()
-      const res = await api.post('/user', {
+      const res = await api.post('/user',
+       {
         userNew: {
-          cedula: '1100960489',
           email: this.form.email,
-          genero: 'M, F',
-          contraseña: '1234'
+          contraseña: this.form.contraseña
         }
       })
       this.snackbar = true
