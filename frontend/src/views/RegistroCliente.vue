@@ -35,35 +35,35 @@
                   <v-card-text class="contenedor white">
                 <v-form class="black--text">
          <v-text-field
-           v-model="form.email"
+           v-model="email"
            color="blue darken-4"
-           :rules="rules.email"
-           label="Correo electrónico" 
+           :rules="rules1.email"
+           label="Correo electrónico"
         ></v-text-field>
-<v-text-field
-              v-model="form.password"
-              :rules="rules.name"
+        <v-text-field
+              v-model="password"
               color="blue darken-4"
               label="Contraseña"
              :type="show1 ? 'text' : 'password'"
              :append-icon="show1 ? 'visibility' : 'visibility_off'"
              @click:append="show1 = !show1"
+             :rules="rules"
               required
             ></v-text-field>
               <v-text-field
-           v-model="form.password"
+           v-model="passwordConfirmado"
            color="blue darken-4"
-           :rules="rules.name"
            label="Confirmar contraseña"
            :type="show2 ? 'text' : 'password'"
            :append-icon="show2 ? 'visibility' : 'visibility_off'"
            @click:append="show2 = !show2"
+           required
         ></v-text-field>
                        </v-form>
               </v-card-text>
                  <v-checkbox
           v-model="agreement"
-          :rules="[rules.required]"
+
           color="blue darken-3"
           class="caja"
       >
@@ -141,43 +141,62 @@
 import api from '@/plugins/service'
 export default {
   data () {
-    const defaultForm = Object.freeze({
+    return {
       email: '',
       password: '',
+      passwordConfirmado: '',
       isLoading: false,
-      dialog: false
-    })
-
-    return {
-      form: Object.assign({}, defaultForm),
+      allowSpaces: false,
+      dialog: false,
       show1: false,
       show2: false,
-      rules: {
+      rules1: {
         email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
       },
       gender: ['M', 'F'],
       conditions: false,
       content: 'Bienvenido a chon´s-Gym',
       snackbar: false,
-      agreement: false,
-      dialog: false,
-      defaultForm
+      agreement: false
     }
   },
 
   computed: {
     formIsValid () {
       return (
-        this.form.email &&
-          this.form.password &&
-          this.form.dialog
+        this.email &&
+          this.password &&
+          this.passwordConfirmado &&
+          this.dialog
       )
+    },
+    rules () {
+      const rules = []
+      if (!this.allowSpaces) {
+        const rule = v => (v || '').indexOf(' ') < 0 || 'No spaces are allowed'
+        rules.push(rule)
+      }
+      if (this.passwordConfirmado) {
+        const rule = v => (!!v && v) === this.passwordConfirmado || 'Values do not match'
+        console.log(this.passwordConfirmado)
+        rules.push(rule)
+      }
+      return rules
     }
+  },
+  watch: {
+    passwordConfirmado () {
+      this.$refs.form.validate()
+    },
+    password: 'validateField'
   },
   created () {
     this.getUsers()
   },
   methods: {
+    validateField () {
+      this.$refs.form.validate()
+    },
     async getUsers () {
       const res = await api.get('/user')
     },
@@ -188,12 +207,12 @@ export default {
     async submit () {
       console.log()
       const res = await api.post('/user',
-       {
-        userNew: {
-          email: this.form.email,
-          contraseña: this.form.contraseña
-        }
-      })
+        {
+          userNew: {
+            email: this.form.email,
+            contrasena: this.form.password
+          }
+        })
       this.snackbar = true
       this.resetForm()
     }

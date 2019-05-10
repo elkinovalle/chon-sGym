@@ -125,7 +125,7 @@ export default {
   data () {
     return {
       rules: {
-     email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
+        email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
       },
       search: '',
       headers: [
@@ -190,7 +190,7 @@ export default {
         'Femenino'
       ]
     }
-  } 
+  }
 
 }
 </script>
