@@ -31,10 +31,10 @@ const setupScheduleModel = require('./models/schedule.model')
 const setupType_ClassModel = require('./models/type_class.model')
 const setupType_MembershipModel = require('./models/type_merbership.model')
 const setupDayModel = require('./models/day.model')
-// const setupInventoryModel = require('./models/inventory.model')
-// const setupRoutineModel = require('./models/routine.model')
-// const setupDietModel = require('./models/diet.model')
-// const setupFacilities = require('./models/facilities.model')
+const setupInventoryModel = require('./models/inventory.model')
+const setupRoutineModel = require('./models/routine.model')
+const setupDietModel = require('./models/diet.model')
+const setupFacilitiesModel = require('./models/facilities.model')
 
 
 
@@ -57,10 +57,10 @@ module.exports = async function () {
   const Type_ClassModel = setupType_ClassModel(config)
   const Type_MembershipModel = setupType_MembershipModel(config)
   const DayModel = setupDayModel(config)
-  // const Inventory = setupInventory(config)
-  // const Routine = setupRoutine(config)
-  // const Diet = setupDiet(config)
-  // const Facilities = setupFacilities(config)
+  const InventoryModel = setupInventoryModel(config)
+  const RoutineModel = setupRoutineModel(config)
+  const DietModel = setupDietModel(config)
+  const FacilitiesModel = setupFacilitiesModel(config)
 
 
   // relaciones de resevas a usuario

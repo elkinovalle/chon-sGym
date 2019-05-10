@@ -49,6 +49,12 @@
               clearable
             ></v-text-field>
           </v-flex>
+          <v-flex class="gris" xs12 sm6>
+            <v-combobox
+              v-model="select"
+              :items="items"
+            ></v-combobox>
+          </v-flex>
 
           <v-btn color="green darken-4" class=" white--text " >Agregar Producto</v-btn>
           <v-btn color="red darken-4" class=" white--text " >Cancelar</v-btn>
@@ -118,6 +124,11 @@ export default {
   data: () => ({
     dialog: false,
     search: '',
+    select: 'Tipo',
+    items: [
+      'Producto',
+      'Maquinaria'
+    ],
     headers: [
       {
         text: 'codigo ',
@@ -296,5 +307,10 @@ export default {
   .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
     color white !important
     font-size 20px
+  }
+  .gris {
+    background: rgba(0,0,0,0.8);
+    height: 56px;
+    margin: 8px 0px 0px 0px;
   }
 </style>

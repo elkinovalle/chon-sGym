@@ -5,9 +5,9 @@
     >
     <v-container class="color" fluid>
       <v-layout row>
-        <v-flex xs4 order-lg2>
+        <v-flex xs5 order-lg2>
             <v-card-text  class="transparent text-xs-center">
-              <h1 class="text-xs  headline"><strong>FOTO DE PERFIL</strong></h1><br>
+              <h1 class="text-xs headline"><strong>FOTO DE PERFIL</strong></h1><br>
             </v-card-text>
              <br>
             <material-card class="v-card-profile">
@@ -16,7 +16,7 @@
               </v-avatar>
               <v-card-text class="margen text-xs-center">
                   <v-form name="formulario" method="post" enctype="form-data">
-                    <v-text-field label="Selecciona tu foto de perfil" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
+                    <v-btn  @click='pickFile' v-model='imageName' prepend-icon='attach_file'>Selecciona tu foto de perfil</v-btn>
                       <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked">
                   </v-form>
               </v-card-text>
@@ -233,14 +233,6 @@ export default {
         this.imageUrl = ''
       }
     }
-  },
-  resetForm () {
-    this.form = Object.assign({}, this.defaultForm)
-    this.$refs.form.reset()
-  },
-  submit () {
-    this.snackbar = true
-    this.resetForm()
   }
 }
 </script>
