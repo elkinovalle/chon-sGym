@@ -210,10 +210,10 @@ export default {
     ciudad: '',
     cedula: '',
     genero: '',
-      items: [
-        'Masculino',
-        'Femenino'
-      ],
+    items: [
+      'Masculino',
+      'Femenino'
+    ],
     edad: '',
     form: false,
     show1: false,
