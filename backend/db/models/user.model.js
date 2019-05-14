@@ -33,7 +33,12 @@ module.exports = function setupMetricModel (config) {
       allowNull: false
     },
     genero: {
+<<<<<<< HEAD
+      type: Sequelize.ENUM('F', 'M'),
+      alloNull: false
+=======
       type: Sequelize.ENUM('F', 'M') 
+>>>>>>> 92306e7169bf199873266bacad81fdba73466f96
     },
     peso: {
       type: Sequelize.DECIMAL(4,1),
