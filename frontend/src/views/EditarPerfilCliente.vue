@@ -96,28 +96,44 @@
       </v-layout>
       <v-layout row>
         <v-flex xs2 order-lg2 class="transparent text-xs-center">
-             <v-card-text><strong>Editar E-mail :</strong></v-card-text>
         </v-flex>
         <v-flex xs3 order-lg2>
              <v-dialog v-model="dialogEmail" persistent max-width="600px">
           <template v-slot:activator="{ on }">
-            <v-btn block dark v-on="on" class="boton" flat></v-btn>
+            <v-btn block dark v-on="on" class="boton black--text subheading" flat>Editar Correo</v-btn>
           </template>
           <v-card class="contenido">
             <v-card-title>
-              <span class="headline">Editar e-mail</span>
+              <span class="headline">Editar Correo</span>
             </v-card-title>
             <v-card-text>
               <v-container grid-list-md>
                 <v-layout wrap>
                 <v-flex xs12>
-                    <v-text-field label="Email actual*" required></v-text-field>
+                    <v-text-field 
+                    label="Email actual*" 
+                    required
+                    ></v-text-field>
                   </v-flex>
                   <v-flex xs12>
-                    <v-text-field label="Email nuevo*" required></v-text-field>
+                    <v-text-field 
+                    v-model="email"
+                    label="Email nuevo*" 
+                    required       
+                    :error-messages="emailError"
+                    @input="$v.email.$touch()"
+                    @blur="$v.email.$touch()"
+                    ></v-text-field>
                   </v-flex>
                   <v-flex xs12>
-                    <v-text-field label="confirma Email nuevo*" required></v-text-field>
+                    <v-text-field 
+                    label="confirma Email nuevo*" 
+                    required
+                    v-model="repeatEmail"
+                    :error-messages="matchEmail"
+                    @input="$v.repeatEmail.$touch()"
+                    @blur="$v.repeatEmail.$touch()"
+                    ></v-text-field>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -131,13 +147,13 @@
           </v-card>
         </v-dialog>
         </v-flex>
-          <v-flex   xs2 order-lg2 class="transparent text-xs-center">
-              <v-card-text><strong>Editar Contraseña :</strong></v-card-text>
+          <v-flex   xs1 order-lg2 class="transparent text-xs-center">
+              <v-card-text><strong></strong></v-card-text>
         </v-flex>
         <v-flex xs3 order-lg2>
                   <v-dialog v-model="dialogPassword" persistent max-width="600px">
         <template v-slot:activator="{ on }">
-        <v-btn block dark v-on="on" class="boton" flat></v-btn>
+        <v-btn block dark v-on="on" class="boton black--text subheading" flat>Editar Contraseña</v-btn>
         </template>
         <v-card class="contenido">
           <v-card-title>
@@ -147,13 +163,36 @@
             <v-container grid-list-md>
               <v-layout wrap>
                 <v-flex xs12>
-                  <v-text-field label="Escribe tu contraseña actual*" required  :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'visibility' : 'visibility_off'" @click:append="show1 = !show1"></v-text-field>
+                  <v-text-field 
+                  label="Escribe tu contraseña actual*" 
+                  required  
+                  :type="show1 ? 'text' : 'password'" 
+                  :append-icon="show1 ? 'visibility' : 'visibility_off'" 
+                  @click:append="show1 = !show1"
+                  ></v-text-field>
                 </v-flex>
                 <v-flex xs12>
-                  <v-text-field label="Escribe tu contraseña nueva*" required  :type="show2 ? 'text' : 'password'" :append-icon="show2? 'visibility' : 'visibility_off'" @click:append="show2 = !show2"></v-text-field>
+                  <v-text-field 
+                  v-model="password"
+                  label="Escribe tu contraseña nueva*" 
+                  required  :type="show2 ? 'text' : 'password'" 
+                  :append-icon="show2? 'visibility' : 'visibility_off'" 
+                  :error-messages="passErrors"
+                  @input="$v.password.$touch()"
+                  @blur="$v.password.$touch()"
+                   ></v-text-field>
                 </v-flex>
                 <v-flex xs12>
-                  <v-text-field label="Confirma tu contraseña nueva*" required  :type="show3 ? 'text' : 'password'" :append-icon="show3 ? 'visibility' : 'visibility_off'" @click:append="show3 = !show3"></v-text-field>
+                  <v-text-field label="Confirma tu contraseña nueva*" 
+                  required  
+                  :type="show3 ? 'text' : 'password'" 
+                  :append-icon="show3 ? 'visibility' : 'visibility_off'" 
+                  @click:append="show3 = !show3"
+                  v-model="repeatPassword"
+                  :error-messages="matchPass"
+                  @input="$v.repeatPassword.$touch()"
+                  @blur="$v.repeatPassword.$touch()"
+                    ></v-text-field>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -167,7 +206,6 @@
         </v-card>
       </v-dialog>
         </v-flex>
-
       </v-layout>
         </v-flex>
       </v-layout>
@@ -194,6 +232,8 @@
 </v-form>
 </template>
 <script>
+import { validationMixin } from 'vuelidate'
+import { required, sameAs, minLength, email, requiredIf } from 'vuelidate/lib/validators'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'principal-layout')
@@ -203,6 +243,10 @@ export default {
     imageName: '',
     dialogEmail: false,
     dialogPassword: false,
+    password: '',
+    repeatPassword: '',
+    email: '',
+    repeatEmail: '',
     nombre: '',
     telefono: '',
     apellido: '',
@@ -220,6 +264,57 @@ export default {
     show2: false,
     show3: false
   }),
+  mixins: [validationMixin],
+  validations: {
+    password: {
+      required,
+      minLength: minLength(8)
+    },
+    repeatPassword: {
+      sameAsPassword: sameAs('password')
+    },
+    email: {
+      required,
+      email
+    },
+     repeatEmail: {
+      sameAsEmail: sameAs('email')
+    },
+  },
+  computed: {
+    passErrors () {
+      const errors = []
+      if (!this.$v.password.$dirty) return errors
+      if (!this.$v.password.minLength) {
+        errors.push('Contraseña debe tener mínimo 8 caracteres')
+        return errors
+      }
+      if (!this.$v.password.required) {
+        errors.push('Contraseña requerida')
+        return errors
+      }
+      return errors
+    },
+    matchPass () {
+      const errors = []
+      if (!this.$v.repeatPassword.$dirty) return errors
+      !this.$v.repeatPassword.sameAsPassword && errors.push('Contraseñas no coinciden')
+      return errors
+    },
+    emailError () {
+        const errors = []
+      if (!this.$v.email.$dirty) return errors
+        !this.$v.email.email && errors.push('E-mail invalido')
+        !this.$v.email.required && errors.push('E-mail es requerido')
+        return errors
+      },
+    matchEmail () {
+      const errors = []
+      if (!this.$v.repeatEmail.$dirty) return errors
+      !this.$v.repeatEmail.sameAsEmail && errors.push('Correos no coinciden')
+      return errors
+    },
+  },
   methods: {
     pickFile () {
       this.$refs.image.click()
@@ -252,7 +347,7 @@ export default {
   padding 30px
 }
 .boton{
-  border-bottom solid 1px grey
+  text-transform capitalize !important
 }
 .ancho{
   width 120px!important
