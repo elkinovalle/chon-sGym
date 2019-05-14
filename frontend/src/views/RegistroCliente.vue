@@ -185,8 +185,8 @@ export default {
     },
     terminos: {
       checked (val) {
-          return val
-        }
+        return val
+      }
     }
   },
   created () {
@@ -194,11 +194,11 @@ export default {
   },
   computed: {
     checkboxErrors () {
-        const errors = []
-        if (!this.$v.terminos.$dirty) return errors
-        !this.$v.terminos.checked && errors.push('debes aceptar terminos y condiciones')
-        return errors
-      },
+      const errors = []
+      if (!this.$v.terminos.$dirty) return errors
+      !this.$v.terminos.checked && errors.push('debes aceptar terminos y condiciones')
+      return errors
+    },
     passErrors () {
       const errors = []
       if (!this.$v.password.$dirty) return errors
@@ -219,12 +219,12 @@ export default {
       return errors
     },
     emailError () {
-        const errors = []
-        if (!this.$v.email.$dirty) return errors
-        !this.$v.email.email && errors.push('E-mail invalido')
-        !this.$v.email.required && errors.push('E-mail es requerido')
-        return errors
-      }
+      const errors = []
+      if (!this.$v.email.$dirty) return errors
+      !this.$v.email.email && errors.push('E-mail invalido')
+      !this.$v.email.required && errors.push('E-mail es requerido')
+      return errors
+    }
   },
   methods: {
     async getUsers () {
