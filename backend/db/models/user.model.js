@@ -41,7 +41,7 @@ module.exports = function setupMetricModel (config) {
     altura: {
       type: Sequelize.DECIMAL(3,2),
     },
-    contraseña: {
+    password: {
       type: Sequelize.TEXT,
       alloNull: false
     },

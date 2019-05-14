@@ -231,16 +231,14 @@ export default {
       const res = await api.get('/user')
     },
     resetForm () {
-      this.form = Object.assign({}, this.defaultForm)
       this.$refs.form.reset()
     },
     async submit () {
-      console.log()
       const res = await api.post('/user',
         {
           userNew: {
-            email: this.form.email,
-            contrasena: this.form.password
+            email: this.email,
+            password: this.password
           }
         })
       this.snackbar = true
@@ -249,7 +247,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus" scoped> 
 .contenedor{
   padding 30px 50px 0px 50px
 }
