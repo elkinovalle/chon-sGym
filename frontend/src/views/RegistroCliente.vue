@@ -37,43 +37,52 @@
          <v-text-field
            v-model="email"
            color="blue darken-4"
-           :rules="rules1.email"
            label="Correo electrónico"
+           :error-messages="emailError"
+            @input="$v.email.$touch()"
+            @blur="$v.email.$touch()"
         ></v-text-field>
         <v-text-field
               v-model="password"
               color="blue darken-4"
               label="Contraseña"
+              :error-messages="passErrors"
+              @input="$v.password.$touch()"
+              @blur="$v.password.$touch()"
              :type="show1 ? 'text' : 'password'"
              :append-icon="show1 ? 'visibility' : 'visibility_off'"
              @click:append="show1 = !show1"
-             :rules="rules"
               required
             ></v-text-field>
               <v-text-field
-           v-model="passwordConfirmado"
-           color="blue darken-4"
-           label="Confirmar contraseña"
-           :type="show2 ? 'text' : 'password'"
-           :append-icon="show2 ? 'visibility' : 'visibility_off'"
-           @click:append="show2 = !show2"
-           required
-        ></v-text-field>
-                       </v-form>
+                v-model="repeatPassword"
+                :error-messages="matchPass"
+                @input="$v.repeatPassword.$touch()"
+                @blur="$v.repeatPassword.$touch()"
+                color="blue darken-4"
+                label="Confirmar contraseña"
+                :type="show2 ? 'text' : 'password'"
+                :append-icon="show2 ? 'visibility' : 'visibility_off'"
+                @click:append="show2 = !show2"
+                required
+              ></v-text-field>
+            </v-form>
               </v-card-text>
-                 <v-checkbox
-          v-model="agreement"
-
-          color="blue darken-3"
-          class="caja"
-      >
-        <template v-slot:label>
-          Acepto los&nbsp;
-          <a href="#" @click.stop.prevent="dialog = true">Términos</a>
-          &nbsp;y&nbsp;
-          <a href="#" @click.stop.prevent="dialog = true">Condiciones</a>*
-        </template>
-      </v-checkbox>
+              <v-checkbox
+                  v-model="terminos"
+                  :error-messages="checkboxErrors"
+                  color="blue darken-3"
+                  class="caja"
+                  @change="$v.terminos.$touch()"
+                  @blur="$v.terminos.$touch()"
+              >
+                <template v-slot:label>
+                  Acepto los&nbsp;
+                  <a href="#" @click.stop.prevent="dialog = true">Términos</a>
+                  &nbsp;y&nbsp;
+                  <a href="#" @click.stop.prevent="dialog = true">Condiciones</a>*
+                </template>
+              </v-checkbox>
       <v-card-actions class="botones">
         <v-btn class="font-weight-black title font-italic" flat @click="resetForm">Cancelar</v-btn>
         <v-spacer></v-spacer>
@@ -82,6 +91,7 @@
           color="blue darken-4"
           type="submit"
           class="font-weight-black title font-italic"
+          :disabled="$v.$invalid"
         >Registrarse</v-btn>
       </v-card-actions>
             </v-card>
@@ -138,70 +148,89 @@
 </div>
 </template>
 <script>
+import { validationMixin } from 'vuelidate'
+import { required, sameAs, minLength, email, requiredIf } from 'vuelidate/lib/validators'
+
 import api from '@/plugins/service'
 export default {
   data () {
     return {
       email: '',
       password: '',
-      passwordConfirmado: '',
+      repeatPassword: '',
       isLoading: false,
       allowSpaces: false,
       dialog: false,
       show1: false,
       show2: false,
-      rules1: {
-        email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
-      },
       gender: ['M', 'F'],
       conditions: false,
       content: 'Bienvenido a chon´s-Gym',
       snackbar: false,
-      agreement: false
+      terminos: false
     }
   },
-
-  computed: {
-    formIsValid () {
-      return (
-        this.email &&
-          this.password &&
-          this.passwordConfirmado &&
-          this.dialog
-      )
+  mixins: [validationMixin],
+  validations: {
+    password: {
+      required,
+      minLength: minLength(8)
     },
-    rules () {
-      const rules = []
-      if (!this.allowSpaces) {
-        const rule = v => (v || '').indexOf(' ') < 0 || 'No spaces are allowed'
-        rules.push(rule)
-      }
-      if (this.passwordConfirmado) {
-        const rule = v => (!!v && v) === this.passwordConfirmado || 'Values do not match'
-        console.log(this.passwordConfirmado)
-        rules.push(rule)
-      }
-
-      return rules
+    repeatPassword: {
+      sameAsPassword: sameAs('password')
+    },
+    email: {
+      required,
+      email
+    },
+    terminos: {
+      checked (val) {
+          return val
+        }
     }
-  },
-  watch: {
-    password: 'validateField',
-    passwordConfirmado: 'validateField'
   },
   created () {
     this.getUsers()
   },
- methods: {
-    validateField () {
-      this.$refs.form.validate()
-    }
+  computed: {
+    checkboxErrors () {
+        const errors = []
+        if (!this.$v.terminos.$dirty) return errors
+        !this.$v.terminos.checked && errors.push('debes aceptar terminos y condiciones')
+        return errors
+      },
+    passErrors () {
+      const errors = []
+      if (!this.$v.password.$dirty) return errors
+      if (!this.$v.password.minLength) {
+        errors.push('Contraseña debe tener mínimo 8 caracteres')
+        return errors
+      }
+      if (!this.$v.password.required) {
+        errors.push('Contraseña requerida')
+        return errors
+      }
+      return errors
+    },
+    matchPass () {
+      const errors = []
+      if (!this.$v.repeatPassword.$dirty) return errors
+      !this.$v.repeatPassword.sameAsPassword && errors.push('Contraseñas no coinciden')
+      return errors
+    },
+    emailError () {
+        const errors = []
+        if (!this.$v.email.$dirty) return errors
+        !this.$v.email.email && errors.push('E-mail invalido')
+        !this.$v.email.required && errors.push('E-mail es requerido')
+        return errors
+      }
   },
+  methods: {
     async getUsers () {
       const res = await api.get('/user')
     },
     resetForm () {
-      this.form = Object.assign({}, this.defaultForm)
       this.$refs.form.reset()
     },
     async submit () {
@@ -217,6 +246,7 @@ export default {
       this.resetForm()
     }
   }
+}
 </script>
 <style lang="stylus" scoped>
 .contenedor{
