@@ -15,8 +15,8 @@
                  </v-avatar>
                 <v-card-text class="margen text-xs-center">
                     <v-form name="formulario" method="post" enctype="form-data">
-                      <v-text-field label="Selecciona tu foto de perfil" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
-                        <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked">
+                      <v-btn  @click='pickFile' v-model='imageName' prepend-icon='attach_file'>Selecciona tu foto de perfil</v-btn>
+                      <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked">
                     </v-form>
                 </v-card-text>
             </material-card>
@@ -110,24 +110,24 @@
               <v-container grid-list-md>
                 <v-layout wrap>
                 <v-flex xs12>
-                    <v-text-field 
-                    label="Email actual*" 
+                    <v-text-field
+                    label="Email actual*"
                     required
                     ></v-text-field>
                   </v-flex>
                   <v-flex xs12>
-                    <v-text-field 
+                    <v-text-field
                     v-model="email"
-                    label="Email nuevo*" 
-                    required       
+                    label="Email nuevo*"
+                    required
                     :error-messages="emailError"
                     @input="$v.email.$touch()"
                     @blur="$v.email.$touch()"
                     ></v-text-field>
                   </v-flex>
                   <v-flex xs12>
-                    <v-text-field 
-                    label="confirma Email nuevo*" 
+                    <v-text-field
+                    label="confirma Email nuevo*"
                     required
                     v-model="repeatEmail"
                     :error-messages="matchEmail"
@@ -163,30 +163,30 @@
             <v-container grid-list-md>
               <v-layout wrap>
                 <v-flex xs12>
-                  <v-text-field 
-                  label="Escribe tu contraseña actual*" 
-                  required  
-                  :type="show1 ? 'text' : 'password'" 
-                  :append-icon="show1 ? 'visibility' : 'visibility_off'" 
+                  <v-text-field
+                  label="Escribe tu contraseña actual*"
+                  required
+                  :type="show1 ? 'text' : 'password'"
+                  :append-icon="show1 ? 'visibility' : 'visibility_off'"
                   @click:append="show1 = !show1"
                   ></v-text-field>
                 </v-flex>
                 <v-flex xs12>
-                  <v-text-field 
+                  <v-text-field
                   v-model="password"
-                  label="Escribe tu contraseña nueva*" 
-                  required  :type="show2 ? 'text' : 'password'" 
-                  :append-icon="show2? 'visibility' : 'visibility_off'" 
+                  label="Escribe tu contraseña nueva*"
+                  required  :type="show2 ? 'text' : 'password'"
+                  :append-icon="show2? 'visibility' : 'visibility_off'"
                   :error-messages="passErrors"
                   @input="$v.password.$touch()"
                   @blur="$v.password.$touch()"
                    ></v-text-field>
                 </v-flex>
                 <v-flex xs12>
-                  <v-text-field label="Confirma tu contraseña nueva*" 
-                  required  
-                  :type="show3 ? 'text' : 'password'" 
-                  :append-icon="show3 ? 'visibility' : 'visibility_off'" 
+                  <v-text-field label="Confirma tu contraseña nueva*"
+                  required
+                  :type="show3 ? 'text' : 'password'"
+                  :append-icon="show3 ? 'visibility' : 'visibility_off'"
                   @click:append="show3 = !show3"
                   v-model="repeatPassword"
                   :error-messages="matchPass"
@@ -277,9 +277,9 @@ export default {
       required,
       email
     },
-     repeatEmail: {
+    repeatEmail: {
       sameAsEmail: sameAs('email')
-    },
+    }
   },
   computed: {
     passErrors () {
@@ -302,18 +302,18 @@ export default {
       return errors
     },
     emailError () {
-        const errors = []
+      const errors = []
       if (!this.$v.email.$dirty) return errors
-        !this.$v.email.email && errors.push('E-mail invalido')
-        !this.$v.email.required && errors.push('E-mail es requerido')
-        return errors
-      },
+      !this.$v.email.email && errors.push('E-mail invalido')
+      !this.$v.email.required && errors.push('E-mail es requerido')
+      return errors
+    },
     matchEmail () {
       const errors = []
       if (!this.$v.repeatEmail.$dirty) return errors
       !this.$v.repeatEmail.sameAsEmail && errors.push('Correos no coinciden')
       return errors
-    },
+    }
   },
   methods: {
     pickFile () {

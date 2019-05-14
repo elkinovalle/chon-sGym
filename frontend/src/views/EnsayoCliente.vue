@@ -42,7 +42,7 @@
         ></v-text-field>
           <v-text-field
             v-model="password"
-            
+
             color="blue darken-4"
             label="Contraseña"
             :type="show1 ? 'text' : 'password'"
@@ -175,16 +175,16 @@ export default {
     email: '',
     isLoading: false,
     dialog: false,
-      show1: false,
-      show2: false,
-      rules1: {
-        email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
-      },
-      gender: ['M', 'F'],
-      conditions: false,
-      content: 'Bienvenido a chon´s-Gym',
-      snackbar: false,
-      agreement: false
+    show1: false,
+    show2: false,
+    rules1: {
+      email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
+    },
+    gender: ['M', 'F'],
+    conditions: false,
+    content: 'Bienvenido a chon´s-Gym',
+    snackbar: false,
+    agreement: false
   }),
 
   computed: {
@@ -210,7 +210,7 @@ export default {
           this.passwordConfirmado &&
           this.dialog
       )
-    },
+    }
   },
   watch: {
     passwordConfirmado: 'validateField',
