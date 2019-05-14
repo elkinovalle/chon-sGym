@@ -181,22 +181,22 @@ export default {
         console.log(this.passwordConfirmado)
         rules.push(rule)
       }
+
       return rules
     }
   },
   watch: {
-    passwordConfirmado () {
-      this.$refs.form.validate()
-    },
-    password: 'validateField'
+    password: 'validateField',
+    passwordConfirmado: 'validateField'
   },
   created () {
     this.getUsers()
   },
-  methods: {
+ methods: {
     validateField () {
       this.$refs.form.validate()
-    },
+    }
+  },
     async getUsers () {
       const res = await api.get('/user')
     },
@@ -217,7 +217,6 @@ export default {
       this.resetForm()
     }
   }
-}
 </script>
 <style lang="stylus" scoped>
 .contenedor{
