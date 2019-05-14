@@ -58,13 +58,13 @@
       style="max-height: 300px;"
     >
       <v-container style="height: 150px;"></v-container>
-        <span class="text-xs white--text title justify">Atención al cliente presencial, manejo de computador y otras funciones administrativas.</span>
+        <span class="text-xs white--text subheading justify">Atención al cliente presencial, manejo de computador y otras funciones administrativas.</span>
         <p></p>
-        <span class="text-xs white--text title justify"><strong>Formación académica:</strong> Técnico y/o Técnologo en áreas administrativas y de servicio de cliente.</span>
+        <span class="text-xs white--text subheading justify"><strong>Formación académica:</strong> Técnico y/o Técnologo en áreas administrativas y de servicio de cliente.</span>
         <p></p>
-        <span class="text-xs white--text title justify"><strong>Salario: $</strong> 828.116</span>
+        <span class="text-xs white--text subheading justify"><strong>Salario: $</strong> 828.116</span>
         <p></p>
-        <span class="text-xs white--text title justify">Experiencia mínima en el cargo de 2 años como recepcionista</span>
+        <span class="text-xs white--text subheading justify">Experiencia mínima en el cargo de 2 años como recepcionista</span>
         <p></p>
     </div>
   </div>
@@ -95,13 +95,13 @@
       style="max-height: 300px;"
     >
       <v-container style="height: 150px;"></v-container>
-        <span class="text-xs white--text title justify">Preparador físico, Monitor de gimnasio y Planificador de rutinas.</span>
+        <span class="text-xs white--text subheading justify">Preparador físico, Monitor de gimnasio y Planificador de rutinas.</span>
         <p></p>
-        <span class="text-xs white--text title justify"><strong>Formación académica:</strong> Técnico y/o Técnologo en áreas educación física y salud.</span>
+        <span class="text-xs white--text subheading justify"><strong>Formación académica:</strong> Técnico y/o Técnologo en áreas educación física y salud.</span>
         <p></p>
-        <span class="text-xs white--text title justify"><strong>Salario: $</strong> 1.500.000</span>
+        <span class="text-xs white--text subheading justify"><strong>Salario: $</strong> 1.500.000</span>
         <p></p>
-        <span class="text-xs white--text title justify">Experiencia mínima en el cargo de 2 años como entrenador</span>
+        <span class="text-xs white--text subheading justify">Experiencia mínima en el cargo de 2 años como entrenador</span>
         <p></p>
     </div>
   </div>
@@ -132,13 +132,13 @@
       style="max-height: 300px;"
     >
       <v-container style="height: 150px;"></v-container>
-        <span class="text-xs white--text title justify">Manejo de inventarios, bodega y mercancía. Buen Manejo de Excel</span>
+        <span class="text-xs white--text subheading justify">Manejo de inventarios, bodega y mercancía. Buen Manejo de Excel</span>
         <p></p>
-        <span class="text-xs white--text title justify"><strong>Formación académica:</strong> Bachiller - Técnico.</span>
+        <span class="text-xs white--text subheading justify"><strong>Formación académica:</strong> Bachiller - Técnico.</span>
         <p></p>
-        <span class="text-xs white--text title justify"><strong>Salario: $</strong> 828.116</span>
+        <span class="text-xs white--text subheading justify"><strong>Salario: $</strong> 828.116</span>
         <p></p>
-        <span class="text-xs white--text title justify">Experiencia mínima en el cargo de 1 año de manejo de bodegas</span>
+        <span class="text-xs white--text subheading justify">Experiencia mínima en el cargo de 1 año de manejo de bodegas</span>
         <p></p>
     </div>
   </div>

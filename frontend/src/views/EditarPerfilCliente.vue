@@ -15,8 +15,8 @@
                  </v-avatar>
                 <v-card-text class="margen text-xs-center">
                     <v-form name="formulario" method="post" enctype="form-data">
-                      <v-text-field label="Selecciona tu foto de perfil" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
-                        <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked">
+                      <v-btn  @click='pickFile' v-model='imageName' prepend-icon='attach_file'>Selecciona tu foto de perfil</v-btn>
+                      <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked">
                     </v-form>
                 </v-card-text>
             </material-card>
