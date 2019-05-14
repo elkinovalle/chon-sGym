@@ -34,7 +34,7 @@ const setupDayModel = require('./models/day.model')
 const setupInventoryModel = require('./models/inventory.model')
 const setupRoutineModel = require('./models/routine.model')
 const setupDietModel = require('./models/diet.model')
-const setupFacilitiesModel = require('./models/facilities.model')
+const setupInstallationModel = require('./models/installation.model')
 
 
 
@@ -60,7 +60,7 @@ module.exports = async function () {
   const InventoryModel = setupInventoryModel(config)
   const RoutineModel = setupRoutineModel(config)
   const DietModel = setupDietModel(config)
-  const FacilitiesModel = setupFacilitiesModel(config)
+  const InstallationModel = setupInstallationModel(config)
 
 
   // relaciones de resevas a usuario
@@ -111,6 +111,12 @@ module.exports = async function () {
   // relacion de ciudadad a pais
   CountryModel.hasMany(CityModel)
   CityModel.belongsTo(CountryModel)
+  // relacion de rutina a user
+  UserModel.hasMany(RoutineModel)
+  RoutineModel.belongsTo(UserModel)
+  // relacion de dieta a user
+  UserModel.hasMany(DietModel)
+  DietModel.belongsTo(UserModel)
 
 
   //fin de las relaciones

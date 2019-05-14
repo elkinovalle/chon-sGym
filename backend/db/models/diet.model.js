@@ -18,15 +18,15 @@ module.exports = function setupMetricModel (config) {
         type: Sequelize.TEXT,
         
     },
-    descripcion: {
+    descripcion_desayuno: {
         type: Sequelize.TEXT,
        
     },
-    merienda: {
+    onces: {
         type: Sequelize.TEXT,
         
     },
-    descripcion: {
+    descripcion_onces: {
         type: Sequelize.TEXT,
         
     },
@@ -34,7 +34,7 @@ module.exports = function setupMetricModel (config) {
         type: Sequelize.TEXT,
         
     },
-    descripcion: {
+    descripcion_almuerzo: {
         type: Sequelize.TEXT,
         
     },
@@ -42,14 +42,14 @@ module.exports = function setupMetricModel (config) {
         type: Sequelize.TEXT,
         
     },
-    descripcion: {
+    descripcion_merienda: {
         type: Sequelize.TEXT,
         
     },cena: {
         type: Sequelize.TEXT,
         
     },
-    descripcion: {
+    descripcion_cena: {
         type: Sequelize.TEXT,
         
     },

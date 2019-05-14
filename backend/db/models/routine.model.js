@@ -22,7 +22,7 @@ module.exports = function setupMetricModel (config) {
         type: Sequelize.TEXT,
        
     },
-    serie: {
+    series: {
         type: Sequelize.TEXT,
         
     },
