@@ -120,7 +120,7 @@ export default {
   }
   .v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile {
     font-family Times New Roman, Times, serif
-    font-size 22px !important 
+    font-size 22px !important
     height 57.7px
     color white
   }
