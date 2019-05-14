@@ -493,10 +493,10 @@ export default {
       const map = {}
       this.events.forEach(e => (map[e.date] = map[e.date] || []).push(e))
       return map
+    },
+    created () {
+      this.getReservation()
     }
-  },
-  created () {
-    this.getReservation()
   },
   methods: {
     open (event) {

@@ -15,15 +15,12 @@ module.exports = function setupMetricModel (config) {
     },
     nombre: {
       type: Sequelize.TEXT,
-      allowNull: false
     },
     apellido: {
-      type: Sequelize.TEXT,
-      allowNull: false
+      type: Sequelize.TEXT
     },
     rol: {
-      type: Sequelize.ENUM('cliente','administrador','empleado'),
-      allowNull: false
+      type: Sequelize.ENUM('cliente','administrador','empleado','proveedor')
     },
     telefono: {
       type: Sequelize.TEXT,
@@ -36,8 +33,12 @@ module.exports = function setupMetricModel (config) {
       allowNull: false
     },
     genero: {
+<<<<<<< HEAD
       type: Sequelize.ENUM('F', 'M'),
       alloNull: false
+=======
+      type: Sequelize.ENUM('F', 'M') 
+>>>>>>> 92306e7169bf199873266bacad81fdba73466f96
     },
     peso: {
       type: Sequelize.DECIMAL(4,1),
@@ -48,7 +49,9 @@ module.exports = function setupMetricModel (config) {
     contraseña: {
       type: Sequelize.TEXT,
       alloNull: false
+    },
+    empresa:{
+      type : Sequelize.TEXT
     }
-
   })
 }
