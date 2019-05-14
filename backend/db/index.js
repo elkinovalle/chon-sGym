@@ -35,7 +35,7 @@ const setupInventoryModel = require('./models/inventory.model')
 const setupRoutineModel = require('./models/routine.model')
 const setupDietModel = require('./models/diet.model')
 const setupInstallationModel = require('./models/installation.model')
-
+const setupMarchineryModel = require('./models/marchinery.model')
 
 
 // const setupAgent = require('./lib/agent')
@@ -61,6 +61,7 @@ module.exports = async function () {
   const RoutineModel = setupRoutineModel(config)
   const DietModel = setupDietModel(config)
   const InstallationModel = setupInstallationModel(config)
+  const MarchineryModel = setupMarchineryModel(config)
 
 
   // relaciones de resevas a usuario
@@ -117,7 +118,9 @@ module.exports = async function () {
   // relacion de dieta a user
   UserModel.hasMany(DietModel)
   DietModel.belongsTo(UserModel)
-
+  // relaciones de inventario a maquinaria y productos
+  MarchineryModel.hasMany(InventoryModel, {foreignKey: 'machineryId'})
+  InventoryModel.belongsTo(ProductModel, {foreignKey: 'productId'})
 
   //fin de las relaciones
 
