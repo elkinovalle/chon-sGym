@@ -237,8 +237,8 @@ export default {
       const res = await api.post('/user',
         {
           userNew: {
-            email: this.form.email,
-            password: this.form.password
+            email: this.email,
+            password: this.password
           }
         })
       this.snackbar = true
@@ -247,7 +247,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus" scoped> 
 .contenedor{
   padding 30px 50px 0px 50px
 }
