@@ -9,9 +9,9 @@ const router = new Router()
 
 router.post('/', async function(req, res, next) {
   try {
-    const { membershipNew } = req.body
-    const { Membership } = await db()
-    const result = await Membership.createMembership(membershipNew)
+    const { installationNew } = req.body
+    const { Installation } = await db()
+    const result = await Installation.createInstallation(installationNew)
     res.send(result)
   } catch (err) {
     next(err)
@@ -21,9 +21,9 @@ router.post('/', async function(req, res, next) {
 router.put('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
-    const { membershipUpdate } = req.body
-    const { Membership } = await db()
-    const result = await Membership.updateMembership(uuid, membershipUpdate)
+    const { installationUpdate } = req.body
+    const { Installation } = await db()
+    const result = await Installation.updateInstallation(uuid, installationUpdate)
     res.send(result)
   } catch (err) {
     next(err)
@@ -32,8 +32,8 @@ router.put('/:uuid', async function(req, res, next){
 router.delete('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
-    const { Membership } = await db()
-    const result = await Membership.deleteMembership(uuid)
+    const { Installation } = await db()
+    const result = await Installation.deleteInstallation(uuid)
     res.send(result)
   } catch (err) {
     next(err)
@@ -41,8 +41,8 @@ router.delete('/:uuid', async function(req, res, next){
 })
 router.get('/', async function(req, res, next){
   try {
-    const { Membership } = await db()
-    const result = await Membership.findMembership()
+    const { Installation } = await db()
+    const result = await Installation.findInstallation()
     res.send(result)
   } catch (err) {
     next(err)
@@ -51,8 +51,8 @@ router.get('/', async function(req, res, next){
 router.get('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
-    const { Membership } = await db()
-    const result = await Membership.findMembershipUuid(uuid)
+    const { Installation } = await db()
+    const result = await Installation.findInstallationUuid(uuid)
     res.send(result)
   } catch (err) {
     next(err)

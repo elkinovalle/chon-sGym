@@ -14,6 +14,8 @@ const setupDetail_Membership = require ('./lib/detail_memberships')
 const setupDetail_Sale = require ('./lib/detail_sales')
 const setupType_Class = require ('./lib/type_classs')
 const setupType_Membership = require ('./lib/type_memberships')
+const setupMarchinery = require ('./lib/marchinerys')
+const setupInstallation = require ('./lib/installations')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
@@ -36,6 +38,8 @@ const setupRoutineModel = require('./models/routine.model')
 const setupDietModel = require('./models/diet.model')
 const setupInstallationModel = require('./models/installation.model')
 const setupMarchineryModel = require('./models/marchinery.model')
+
+
 
 
 // const setupAgent = require('./lib/agent')
@@ -141,6 +145,8 @@ module.exports = async function () {
   const Detail_Sale = setupDetail_Sale(Detail_SaleModel)
   const Type_Class = setupType_Class(Type_ClassModel)
   const Type_Membership = setupType_Membership(Type_MembershipModel)
+  const Marchinery = setupMarchinery(MarchineryModel)
+  const Installation = setupInstallation(InstallationModel)
   return {
     async setup() {
       await sequelize.sync({ force: true })
@@ -155,6 +161,8 @@ module.exports = async function () {
     Detail_Membership,
     Detail_Sale,
     Type_Class,
-    Type_Membership
+    Type_Membership,
+    Marchinery,
+    Installation
   }
 }
