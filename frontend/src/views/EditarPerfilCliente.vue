@@ -332,7 +332,14 @@ export default {
             nombre: this.nombre,
             apellido: this.apellido,
             email: this.email,
-            password: this.password
+            password: this.password,
+            telefono: this.telefono,
+            direccion: this.direccion,
+            cedula: this.cedula,
+            ciudad: this.ciudad,
+            edad: this.edad,
+            genero: this.genero,
+            foto: this.imgUrl
           }
         })
       this.snackbar = true
