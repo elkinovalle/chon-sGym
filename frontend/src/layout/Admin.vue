@@ -1,7 +1,6 @@
 <template>
   <v-app
     id="inspire"
-    dark
   >
     <v-navigation-drawer
       v-model="drawer"
@@ -11,7 +10,7 @@
     >
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
       <v-list>
-        <v-list-tile v-for="item in items" :key="item.text" :to="item.link" active-class="activo--text ">
+        <v-list-tile v-for="item in items" :key="item.text" :to="item.link" active-class="activo--text">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -108,12 +107,12 @@ export default {
   })
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus">
   img{
   width 60px
   height 45px
   }
-  aside.v-navigation-drawer{
+   aside.v-navigation-drawer{
     background-color #9A0101 !important
   }
   span.title{
@@ -121,8 +120,9 @@ export default {
   }
   .v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile {
     font-family Times New Roman, Times, serif
-    font-size 20px
+    font-size 22px !important 
     height 57.7px
+    color white
   }
   div.v-content{
     background-color white !important
