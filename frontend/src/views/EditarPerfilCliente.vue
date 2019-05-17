@@ -16,7 +16,7 @@
                 <v-card-text class="margen text-xs-center">
                     <v-form name="formulario" method="post" enctype="form-data">
                       <v-btn  @click='pickFile' v-model='imageName' prepend-icon='attach_file'>Selecciona tu foto de perfil</v-btn>
-                      <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked">
+                      <input type="file" style="display: none" ref="image" accept="image/*" multiple @change="onFilePicked">
                     </v-form>
                 </v-card-text>
             </material-card>
@@ -327,6 +327,14 @@ export default {
           return
         }
         const fr = new FileReader()
+        // for( let f = 0; f < files.length; f++ ) {
+        //   const fr = new FileReader()
+        //   fr.readAsDataURL(files[f])
+        //   fr.addEventListener('load', () => {
+        //     console.log(fr.result)
+        //   // this.imageFile = files[0] // this is an image file that can be sent to server...
+        //   })
+        // }
         fr.readAsDataURL(files[0])
         fr.addEventListener('load', () => {
           this.imgUrl = fr.result
