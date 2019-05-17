@@ -329,10 +329,10 @@ export default {
       const res = await api.put('/user/e53b575c-2fd3-4324-8596-c8daaf9e5726',
         {
           userUpdate: {
-            nombre: this.form.nombre,
-            apellido: this.form.apellido,
-            email: this.form.email,
-            password: this.form.password
+            nombre: this.nombre,
+            apellido: this.apellido,
+            email: this.email,
+            password: this.password
           }
         })
       this.snackbar = true
