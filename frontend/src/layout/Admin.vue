@@ -98,7 +98,7 @@ export default {
       { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },
       { icon: 'email', text: 'Notificaciones', link: 'email-admin' },
       { icon: 'image', text: 'Fotos', link: 'fotos-admin' },
-      { icon: 'list', text: 'Tareas' },
+      { icon: 'list', text: 'Tareas', link: 'tareas-admin' },
       { icon: 'close', text: 'Salir' }
     ],
     props: {
@@ -120,7 +120,7 @@ export default {
   }
   .v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile {
     font-family Times New Roman, Times, serif
-    font-size 22px !important 
+    font-size 22px !important
     height 57.7px
     color white
   }
