@@ -99,7 +99,7 @@ export default {
       { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },
       { icon: 'email', text: 'Notificaciones', link: 'email-admin' },
       { icon: 'image', text: 'Fotos', link: 'fotos-admin' },
-      { icon: 'list', text: 'Tareas' },
+      { icon: 'list', text: 'Tareas', link: 'tareas-admin' },
       { icon: 'close', text: 'Salir' }
     ],
     props: {

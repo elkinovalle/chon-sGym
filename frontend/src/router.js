@@ -91,6 +91,7 @@ import ProgresoCliente from '@/views/ProgresoCliente.vue'
 import EnsayoCliente from '@/views/EnsayoCliente.vue'
 import EditarPerfilAdmin from '@/views/EditarPerfilAdmin.vue'
 import FotosAdmin from '@/views/FotosAdmin.vue'
+import TareasAdmin from '@/views/TareasAdmin.vue'
 
 Vue.use(Router)
 
@@ -552,6 +553,11 @@ export default new Router({
       path: '/fotos-admin',
       name: 'fotos-admin',
       component: FotosAdmin
+    },
+    {
+      path: '/tareas-admin',
+      name: 'tareas-admin',
+      component: TareasAdmin
     }
   ]
 })
