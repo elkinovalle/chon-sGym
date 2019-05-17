@@ -223,7 +223,7 @@
         class="white--text"
           :enabled="!formIsValid"
           color="blue darken-4"
-          type="submit"
+          @click="submit"
         >Guardar cambios</v-btn>
       </v-card-actions>
         </v-flex>
@@ -257,8 +257,8 @@ export default {
     cedula: '',
     genero: '',
     items: [
-      'Masculino',
-      'Femenino'
+      'M',
+      'F'
     ],
     edad: '',
     form: false,
@@ -319,27 +319,25 @@ export default {
   },
   methods: {
     async getUsers () {
-      const res = await api.get('/user')
+      const { data: users } = await api.get('/user')
     },
     resetForm () {
       this.$refs.form.reset()
     },
     async submit () {
-      console.log()
-      const res = await api.put('/user/e53b575c-2fd3-4324-8596-c8daaf9e5726',
+      console.log('dsfsddv')
+      const res = await api.put('/user/a725a7b4-842d-4976-a64c-c062924118e5',
         {
           userUpdate: {
             nombre: this.nombre,
             apellido: this.apellido,
-            email: this.email,
-            password: this.password,
             telefono: this.telefono,
             direccion: this.direccion,
             cedula: this.cedula,
             ciudad: this.ciudad,
             edad: this.edad,
             genero: this.genero,
-            foto: this.imgUrl
+            // foto: this.imgUrl
           }
         })
       this.snackbar = true
