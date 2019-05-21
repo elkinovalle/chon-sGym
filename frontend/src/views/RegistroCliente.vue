@@ -29,7 +29,7 @@
           <v-flex d-flex xs12 sm12 md6>
             <v-card class="elevation-12">
                <v-toolbar color="blue darken-4" height="150">
-                    <img src="../assets/lofo-fondo-blanco.png" alt="" class="symbol">
+                    <img src="../assets/lofo-fondo-blanco.png" alt="" >
                 <v-toolbar-title class="font-weight-medium white--text display-1">Chon's Gym</v-toolbar-title>
                 </v-toolbar>
                   <v-card-text class="contenedor white">
@@ -86,13 +86,28 @@
       <v-card-actions class="botones">
         <v-btn class="font-weight-black title font-italic" flat @click="resetForm">Cancelar</v-btn>
         <v-spacer></v-spacer>
-        <v-btn
+        <v-dialog v-model="dialogEmail" persistent max-width="600px">
+          <template v-slot:activator="{ on }">
+         <v-btn
+          v-on="on"
           flat
           color="blue darken-4"
           type="submit"
           class="font-weight-black title font-italic"
           :disabled="$v.$invalid"
         >Registrarse</v-btn>
+        </template>
+          <v-card class="contenido">
+            <v-card-title>
+              <span class="headline">¿Desea completar el registro?</span>
+            </v-card-title>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="blue darken-4" flat @click="dialogEmail = false" class="title" to="/planes-cliente">Omitir</v-btn>
+              <v-btn color="blue darken-4" flat @click="dialogEmail = false" class="title" to="/editar-perfil-cliente"> Si</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
       </v-card-actions>
             </v-card>
           </v-flex>
@@ -161,6 +176,7 @@ export default {
       isLoading: false,
       allowSpaces: false,
       dialog: false,
+      dialogEmail: false,
       show1: false,
       show2: false,
       gender: ['M', 'F'],
@@ -196,7 +212,7 @@ export default {
     checkboxErrors () {
       const errors = []
       if (!this.$v.terminos.$dirty) return errors
-      !this.$v.terminos.checked && errors.push('Debes aceptar terminos y condiciones')
+      !this.$v.terminos.checked && errors.push('debes aceptar terminos y condiciones')
       return errors
     },
     passErrors () {
@@ -256,5 +272,19 @@ export default {
 }
 .botones{
   padding 0px 30px 30px 30px
+}
+.contenido{
+  padding 30px
+}
+.ancho{
+  width 120px!important
+}
+.imagen{
+  width 130px !important
+  height 150px !important
+  margin -20px 0px 0px -40px
+}
+.margen{
+  margin 80px 0px
 }
 </style>

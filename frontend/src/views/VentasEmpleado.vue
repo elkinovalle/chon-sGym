@@ -7,7 +7,7 @@
 
           <v-flex xs12 sm4>
             <v-text-field
-              v-model="message1"
+              v-model="s"
               box
               label="Número de serial o codigo"
               clearable
@@ -16,7 +16,7 @@
 
           <v-flex xs12 sm4>
             <v-text-field
-              v-model="message2"
+              v-model="editedItem.name"
               box
               label="Nombre del Producto"
               clearable
@@ -25,7 +25,7 @@
 
           <v-flex xs12 sm4>
             <v-text-field
-              v-model="message3"
+              v-model="cantidad"
               box
               label= "Cantiad"
               clearable
@@ -34,7 +34,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message4"
+              v-model="cedula"
               box
               label="Cedula Cliente"
               clearable
@@ -43,14 +43,14 @@
 
            <v-flex xs12 sm6>
             <v-text-field
-              v-model="message4"
+              v-model="empleado"
               box
               label="Empleado"
               clearable
             ></v-text-field>
           </v-flex>
 
-          <v-btn color="green darken-4" class=" white--text display-1" >Agregar Producto</v-btn>
+          <v-btn color="green darken-4" class=" white--text display-1" @click="save" >Agregar Producto</v-btn>
           <v-btn color="red darken-4" class=" white--text display-1" >Cancelar</v-btn>
 
         </v-layout>
@@ -173,6 +173,7 @@ export default {
       carbs: 0,
       protein: 0
     }
+
   }),
 
   computed: {

@@ -12,7 +12,7 @@
               </v-layout>
             </v-container>
           <v-card-title class="contenido">
-              <span class="title center font-weight-regular black--text">Para lograr incrementar la quema de calorías diarias y mantener tu corazón en una excelente condición, podrás disfrutar de todos los aparatos de cardio que dispone Chon's Gym ubicados de manera estratégica para que puedas disfrutar plenamente de tu rutina.
+              <span class="letras center font-weight-regular black--text">Para lograr incrementar la quema de calorías diarias y mantener tu corazón en una excelente condición, podrás disfrutar de todos los aparatos de cardio que dispone Chon's Gym ubicados de manera estratégica para que puedas disfrutar plenamente de tu rutina.
 La calidad de cada uno de nuestros aparatos de cardio.</span>
           </v-card-title>
             </v-card-text>
@@ -44,7 +44,7 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
               </v-layout>
             </v-container>
           <v-card-title class="contenido">
-              <span class="title center font-weight-regular black--text">Podrás ejercitar tus músculos con el equipo más moderno de la región instalado en 500mts cuadrados de espacio con aparatos para todos los grupos musculares, peso integrado y pesos libres con discos de todos los pesos que te ayudaran a tonificar, reafirmar o aumentar tu volumen, logrando la imagen que siempre has deseado, para FIT lo más importante es tu salud y que logres tus objetivos. Aumenta el tono muscular, previene osteoporosis, aumenta tu fuerza y energía y aumento de tu taza metabólica para mayor quema de grasa.</span>
+              <span class="letras center font-weight-regular black--text">Podrás ejercitar tus músculos con el equipo más moderno de la región instalado en 500mts cuadrados de espacio con aparatos para todos los grupos musculares, peso integrado y pesos libres con discos de todos los pesos que te ayudaran a tonificar, reafirmar o aumentar tu volumen, logrando la imagen que siempre has deseado, para FIT lo más importante es tu salud y que logres tus objetivos. Aumenta el tono muscular, previene osteoporosis, aumenta tu fuerza y energía y aumento de tu taza metabólica para mayor quema de grasa.</span>
           </v-card-title>
             </v-card-text>
           </v-card>
@@ -63,7 +63,7 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
               </v-layout>
             </v-container>
           <v-card-title class="contenido">
-              <span class="title center font-weight-regular black--text">Para todos los ejercicios de baile en grupo que están disponibles en diversos horarios de nuestro gimnasio</span>
+              <span class="letras center font-weight-regular black--text">Para todos los ejercicios de baile en grupo que están disponibles en diversos horarios de nuestro gimnasio</span>
           </v-card-title>
             </v-card-text>
           </v-card>
@@ -94,7 +94,7 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
               </v-layout>
             </v-container>
           <v-card-title class="contenido">
-              <span class="title center font-weight-regular black--text">Para facilitar el cambio de vestuario de todos nuestros ususarios y tener un área de privacidad en todo momento</span>
+              <span class="letras center font-weight-regular black--text">Para facilitar el cambio de vestuario de todos nuestros ususarios y tener un área de privacidad en todo momento</span>
           </v-card-title>
             </v-card-text>
           </v-card>
@@ -113,7 +113,7 @@ La calidad de cada uno de nuestros aparatos de cardio.</span>
               </v-layout>
             </v-container>
           <v-card-title class="contenido">
-              <span class="title center font-weight-regular black--text">Destinada a todos los ejercicios multifuncionales disponibles en nuestro gimnasio</span>
+              <span class="letras center font-weight-regular black--text">Destinada a todos los ejercicios multifuncionales disponibles en nuestro gimnasio</span>
           </v-card-title>
             </v-card-text>
           </v-card>
@@ -210,5 +210,8 @@ export default {
 <style lang="stylus" scoped>
 .contenido{
   padding 10px 30px!important
+}
+.letras{
+  font-size 25px
 }
 </style>

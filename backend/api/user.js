@@ -17,10 +17,21 @@ router.post('/', async function(req, res, next){
     next(err)
   }
 })
+router.post('/singin', async function(req, res, next){
+  try {
+    const credentials = req.body
+    const { User } = await db()
+    const result = await User.singin(credentials)
+    res.send(result)
+  } catch (err) {
+    next(err)
+  }
+})
 router.put('/:uuid', async function (req, res, next){
   try {
     const { uuid } = req.params
     const { userUpdate } = req.body
+    console.log(uuid, userUpdate)
     const { User } = await db()
     const result = await User.updateUser(uuid, userUpdate)
     res.send(result)
