@@ -15,7 +15,7 @@
                      <v-card class="caja" dark flat>
                      <br> <br> <br>
         <h1 class="text-xs white--text display-1 font-italic">NOTICIAS DE <br><strong>BELLEZA</strong></h1><br>
-        <span class="text-xs white--text title">Resalta tu belleza natural conociendo todos los beneficios que traen las rutinas de ejercicios para tu cuerpo, no hay excusas para dar inicio a este nuevo estilo de vida</span><br>
+        <article class="text-xs white--text title">Resalta tu belleza natural conociendo todos los beneficios que traen las rutinas de ejercicios para tu cuerpo, no hay excusas para dar inicio a este nuevo estilo de vida</article><br>
         <p></p><br>
  <v-btn color="white" class="right font-weight-black black--text title" to="/noticias-belleza-cliente">Ver más</v-btn>
           </v-card>
@@ -36,7 +36,7 @@
                      <v-card class="caja" dark flat>
                      <br> <br> <br>
         <h1 class="text-xs white--text display-1 font-italic">MENTE Y <br><strong>EQUILIBRIO</strong></h1><br>
-        <span class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</span><br>
+        <article class="text-xs white--text title">Lograr un balance entre tu cuerpo y mente no es tan complicado como crees, encuentra información y todas las razones que necesitas para iniciar un entrenamiento físico.</article><br>
         <p></p><br>
  <v-btn color="white" class="right font-weight-black blue--text title" to="/mente-equilibrio-cliente">Ver más</v-btn>
           </v-card>
@@ -54,7 +54,7 @@
                              <v-card class="caja" dark flat>
                                     <br> <br> <br>
         <h1 class="text-xs black--text display-1 font-italic">BIENESTAR Y <br><strong>SALUD</strong></h1><br>
-        <span class="text-xs black--text title">Para estar saludable debes estar al tanto de todo lo que pasa a tu alrededor, enterate de los diferentes métodos alimenticios y rutinas de ejercicio físico.</span><br>
+        <article class="text-xs black--text title">Para estar saludable debes estar al tanto de todo lo que pasa a tu alrededor, enterate de los diferentes métodos alimenticios y rutinas de ejercicio físico.</article><br>
         <p></p>
 <v-btn color="black" class="right font-weight-black white--text title" to="/bienestar-cliente" >Ver más</v-btn>
           </v-card>
@@ -76,7 +76,7 @@
                                <br> <br><br><br> <br>
         <h1 class="text-xs black--text display-2 font-italic">NUEVAS <strong>RUTINAS</strong></h1>
         <p></p><br>
-        <span class="text-xs black--text headline">Conoce los beneficios que traen las rutinas de ejercicios para recuperar no solo la figura, sino la salud de tu cuerpo. </span><br>
+        <article class="text-xs black--text headline">Conoce los beneficios que traen las rutinas de ejercicios para recuperar no solo la figura, sino la salud de tu cuerpo. </article><br>
         <p></p><br>
 <v-btn color="black" class="right font-weight-black white--text title" to="/nuevas-rutinas-cliente" >Ver más</v-btn>
           </v-card>
