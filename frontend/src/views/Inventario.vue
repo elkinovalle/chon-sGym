@@ -7,7 +7,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message1"
+              v-model="message1v"
               box
               label="Número de serial o codigo"
               clearable
@@ -33,7 +33,7 @@
           </v-flex>
 
           <v-flex xs12 sm6>
-            <v-text-field class="gris"
+            <v-text-field
               v-model="message4"
               box
               label="Descripción"
@@ -42,11 +42,12 @@
           </v-flex>
 
           <v-flex xs12 sm6>
-            <v-text-field class="gris"
+            <v-text-field
               v-model="message5"
               box
               label="Cantidad"
               clearable
+              type="number"
             ></v-text-field>
           </v-flex>
           <v-flex class="gris" xs12 sm6>
@@ -298,18 +299,15 @@ export default {
     text-align center !important
     display 4
   }
-  .v-text-field.v-text-field--enclosed {
-    --v-primary-base white !important
-  }
   .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
     background rgba(0,0,0,0.8)
   }
   .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
-    color white !important
     font-size 20px
   }
   .gris {
-    background rgba(0,0,0,0.3)
+    margin 8px 0 0 0
+    background rgba(0,0,0,0.1)
     height 56px
   }
 

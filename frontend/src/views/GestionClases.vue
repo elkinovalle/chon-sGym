@@ -1,13 +1,12 @@
 <template>
-<div>
-    
+<div class="margin">
     <v-form
       ref="form"
       v-model="valid"
       lazy-validation
     >
-    <v-layout row wrap>
-      <v-flex xs6>
+    <v-layout>
+      <v-flex xs4>
         <v-select
         v-model="select"
         :items="items"
@@ -16,10 +15,19 @@
         required
         ></v-select>
         
-        <v-date-picker v-model="picker" :landscape="true"></v-date-picker>
+        <v-flex>
+          <v-textarea
+            name="input-7-1"
+            label="Descripción de la clase"
+            value=""
+              required  
+          ></v-textarea>
+        </v-flex>
+        <v-label>Seleccione la Fecha</v-label>
+         <v-date-picker locale="es" v-model="picker" :landscape="true"></v-date-picker>
       </v-flex>
-      <v-flex>
-        <v-flex xs5>
+      <v-flex xs1></v-flex>
+        <v-flex xs4>
         <v-dialog
           ref="dialog"
           v-model="modal2"
@@ -48,8 +56,6 @@
             <v-btn flat color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
           </v-time-picker>
         </v-dialog>
-      </v-flex>
-        <v-flex xs6>
         <v-dialog
           ref="dialog"
           v-model="modal2"
@@ -78,18 +84,10 @@
             <v-btn flat color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
           </v-time-picker>
         </v-dialog>
+       
       </v-flex>
-        <v-flex xs9>
-          <v-slider
-            label="Capacidad"
-            v-model="slider"
-            thumb-label="always"
-          ></v-slider>
-        </v-flex>
-        
-      </v-flex>
-      
-      <v-flex>
+            <v-flex xs1></v-flex>
+      <v-flex xs2>
         <v-btn
         color='red darken-4 white--text' 
         >Agregar nueva Clase 
@@ -97,28 +95,19 @@
           <v-icon medium>add</v-icon>
         </v-btn>
       </v-flex>
-      
       </v-layout>
       <v-btn
-        :disabled="!valid"
         color="success"
         @click="validate"
       >
-        Validate
+       Crear clase
       </v-btn>
   
       <v-btn
         color="error"
         @click="reset"
       >
-        Reset Form
-      </v-btn>
-  
-      <v-btn
-        color="warning"
-        @click="resetValidation"
-      >
-        Reset Validation
+        Borrar Datos
       </v-btn>
     </v-form>
     </div>
@@ -129,7 +118,7 @@ export default {
     this.$store.commit('SET_LAYOUT','admin-layout')
   },
   data: () => ({
-    
+    menu2: false,
     select: null,
     items: [
       'Item 1',
@@ -138,7 +127,7 @@ export default {
       'Item 4'
     ],
       time: null,
-      modal2: false,
+      modal2:false,
       picker: new Date().toISOString().substr(0, 10),
   }),
 
@@ -150,10 +139,12 @@ export default {
     },
     reset () {
       this.$refs.form.reset()
-    },
-    resetValidation () {
-      this.$refs.form.resetValidation()
     }
   }
 }
 </script>
+<style lang="stylus" scoped>
+  .margin{
+    margin 20px
+  }
+</style>

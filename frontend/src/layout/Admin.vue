@@ -35,7 +35,7 @@
       <span class="title ">Chon´s Gym</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-layout row align-center style="max-width: 650px"></v-layout>
+      <v-layout row style="max-width: 650px"></v-layout>
           <v-menu offset-y>
             <template v-slot:activator="{ on }">
               <v-btn
@@ -60,13 +60,7 @@
           </v-menu>
     </v-toolbar>
     <v-content>
-      <v-container fill-height>
-        <v-layout justify-center align-center>
-          <v-flex shrink>
             <router-view></router-view>
-          </v-flex>
-        </v-layout>
-      </v-container>
     </v-content>
   </v-app>
 </template>
@@ -129,7 +123,6 @@ export default {
   }
   .container.fill-height {
    background-color white
-   max-width: 100%; 
   }
   .act{
     background-color white !important
