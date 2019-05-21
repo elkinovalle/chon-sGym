@@ -90,7 +90,7 @@ export default {
       { icon: 'money', text: 'Registro de Ventas', link: 'registro-ventas' },
       { icon: 'present_to_all', text: 'Novedades', link: 'novedades' },
       { icon: 'info', text: 'Tips', link: 'tips' },
-      { icon: 'place', text: 'Instalaciones', link: 'instalaciones' },
+      { icon: 'place', text: 'Instalaciones', link: 'instalacionesAdmin' },
       { icon: 'event', text: 'Reportes', link: 'reportes' }
     ],
     items1: [
@@ -119,12 +119,7 @@ export default {
     color white
   }
   .v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile {
-<<<<<<< HEAD
-    font-size 20px !important
-=======
-    font-family Times New Roman, Times, serif
-    font-size 22px !important
->>>>>>> 61e1c9ae7e6ecb25cd22bdd9a4b450b9ea0bcb67
+    font-size 18px !important
     height 57.7px
     color white
   }
@@ -133,6 +128,7 @@ export default {
   }
   .container.fill-height {
    background-color white
+   max-width: 100%; 
   }
   .act{
     background-color white !important

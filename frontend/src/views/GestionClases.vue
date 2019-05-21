@@ -1,5 +1,6 @@
 <template>
-  <div>
+<div>
+    
     <v-form
       ref="form"
       v-model="valid"
@@ -18,7 +19,7 @@
         <v-date-picker v-model="picker" :landscape="true"></v-date-picker>
       </v-flex>
       <v-flex>
-        <v-flex xs6>
+        <v-flex xs5>
         <v-dialog
           ref="dialog"
           v-model="modal2"
@@ -120,7 +121,7 @@
         Reset Validation
       </v-btn>
     </v-form>
-  </div>
+    </div>
 </template>
 <script>
 export default {
