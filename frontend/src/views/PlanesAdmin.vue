@@ -1,6 +1,6 @@
 <template>
     <div>
-   <v-subheader class="subheader black--text display-1 font-weight-bold ">Ventas</v-subheader>
+   <v-subheader class="subheader black--text display-1 font-weight-bold ">Planes</v-subheader>
     <v-form>
       <v-container>
         <v-layout row wrap>
@@ -55,11 +55,6 @@
       </v-container>
     </v-form>
      <v-toolbar flat color="white">
-      <v-divider
-        class="mx-1"
-        inset
-        vertical
-      ></v-divider>
       <v-spacer></v-spacer>
       <v-dialog v-model="dialog" max-width="500px">
         <template v-slot:activator="{ on }">
@@ -132,7 +127,7 @@
 <script>
 export default {
   created () {
-    this.$store.commit('SET_LAYOUT', 'empleado-layout')
+    this.$store.commit('SET_LAYOUT', 'admin-layout')
   },
   data: () => ({
     dialog: false,

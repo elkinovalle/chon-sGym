@@ -84,6 +84,7 @@ export default {
     drawer: null,
     items: [
       { icon: 'fas fa-box', text: 'Inventario', link: 'inventario' },
+      { icon: 'fas fa-box', text: 'Planes', link: 'planes-admin' },
       { icon: 'history', text: 'Registro de compras', link: 'registro-compras' },
       { icon: 'update', text: 'Registro de Empleados', link: 'registro-empleados' },
       { icon: 'featured_play_list', text: 'Gestión de clases', link: 'gestion-clases' },
