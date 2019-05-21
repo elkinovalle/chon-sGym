@@ -6,18 +6,18 @@
         <v-layout row wrap>
           <v-flex xs12 sm4>
             <v-text-field
-              v-model="editedItem.codigo"
+              v-model="editedItem.titulo"
               box
-              label="Número de serial o codigo"
+              label="Plan"
               clearable
             ></v-text-field>
           </v-flex>
 
           <v-flex xs12 sm4>
             <v-text-field
-              v-model="editedItem.name"
+              v-model="editedItem.precio"
               box
-              label="Nombre del Producto"
+              label="Precio"
               clearable
             ></v-text-field>
           </v-flex>
@@ -33,12 +33,12 @@
           </v-flex>
 
           <v-flex xs12 sm6>
-            <v-text-field
-              v-model="editedItem.cedula"
+            <v-textarea
+              v-model="editedItem.descripcion"
               box
-              label="Cedula Cliente"
+              label="Descripción del plan"
               clearable
-            ></v-text-field>
+            ></v-textarea>
           </v-flex>
 
            <v-flex xs12 sm6>
@@ -67,16 +67,16 @@
             <v-container grid-list-md>
               <v-layout wrap>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.codigo" label="Serial"></v-text-field>
+                  <v-text-field v-model="editedItem.titulo" label="Plan"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.name" label="Nombre"></v-text-field>
+                  <v-text-field v-model="editedItem.precio" label="Precio"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
                   <v-text-field v-model="editedItem.calories" label="Cantidad"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.cedula" label="Cedula"></v-text-field>
+                  <v-text-field v-model="editedItem.descripcion" label="Cedula"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
                   <v-text-field v-model="editedItem.empleado" label="Empleado"></v-text-field>
@@ -99,10 +99,10 @@
       class="elevation-1"
     >
       <template v-slot:items="props">
-        <td class="text-xs-center">{{ props.item.codigo }}</td>
-        <td class="text-xs-left">{{ props.item.name }}</td>
+        <td class="text-xs-center">{{ props.item.titulo }}</td>
+        <td class="text-xs-left">{{ props.item.precio }}</td>
         <td class="text-xs-left">{{ props.item.cantidad }}</td>
-        <td class="text-xs-left">{{ props.item.cedula }}</td>
+        <td class="text-xs-left">{{ props.item.descripcion }}</td>
         <td class="text-xs-left">{{ props.item.empleado }}</td>
         <td class="justify-center layout px-0">
           <v-icon
@@ -133,12 +133,12 @@ export default {
     dialog: false,
     headers: [
       {
-        text: 'Codigo',
+        text: 'Titulo',
         align: 'center',
         sortable: false,
         value: 'name'
       },
-      { text: 'Nombre', value: 'name' },
+      { text: 'Precio', value: 'precio' },
       { text: 'Cantidad', value: 'cantidad' },
       { text: 'Cédula', value: 'cedula' },
       { text: 'Empleado', value: 'empleado' }
@@ -146,15 +146,15 @@ export default {
     desserts: [],
     editedIndex: -1,
     editedItem: {
-      name: '',
-      codigo: '',
+      precio: '',
+      titulo: '',
       cantidad: '',
       cedula: '',
       empleado: '',
     },
     defaultItem: {
-      name: '',
-      codigo: '',
+      precio: '',
+      titulo: '',
       cantidad: '',
       cedula: '',
       empleado: '',
@@ -178,8 +178,8 @@ export default {
     initialize () {
       this.desserts = [
         {
-          name: '',
-          codigo: '',
+          precio: '',
+          titulo: '',
           cantidad: '',
           cedula: '',
           empleado: '',

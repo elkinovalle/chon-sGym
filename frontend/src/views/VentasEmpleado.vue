@@ -26,7 +26,7 @@
             <v-text-field
               v-model="editedItem.cantidad"
               box
-              label= "Cantiad"
+              label= "Cantidad"
               clearable
               type="number"
             ></v-text-field>
