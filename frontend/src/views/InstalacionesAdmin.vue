@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h1 class="red">fghjklñ</h1>
+<div>
     <v-subheader class="subheader black--text display-1 font-weight-bold" >Instalaciones</v-subheader>
     <v-layout row wrap>
         <v-flex xs6>
@@ -67,7 +66,7 @@
         </v-alert>
       </v-data-table>
     </v-card>
-  </div>
+</div>
 </template>
 <script>
 export default {
@@ -123,6 +122,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+
   .boton{
     margin-left -10px
     height 31.8px
