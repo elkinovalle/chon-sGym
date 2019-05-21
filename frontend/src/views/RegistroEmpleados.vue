@@ -29,6 +29,7 @@
               box
               label= "No. Documento*"
               clearable
+              type="number"
             ></v-text-field>
           </v-flex>
 
@@ -38,6 +39,7 @@
               box
               label="Teléfono*"
               clearable
+              mask="phone"
             ></v-text-field>
           </v-flex>
 

@@ -92,6 +92,7 @@ import EnsayoCliente from '@/views/EnsayoCliente.vue'
 import EditarPerfilAdmin from '@/views/EditarPerfilAdmin.vue'
 import FotosAdmin from '@/views/FotosAdmin.vue'
 import TareasAdmin from '@/views/TareasAdmin.vue'
+import PlanesAdmin from '@/views/PlanesAdmin.vue'
 
 Vue.use(Router)
 
@@ -558,6 +559,11 @@ export default new Router({
       path: '/tareas-admin',
       name: 'tareas-admin',
       component: TareasAdmin
+    },
+    {
+      path: '/planes-admin',
+      name: 'planes-admin',
+      component: PlanesAdmin
     }
   ]
 })
