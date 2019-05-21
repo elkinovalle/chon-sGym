@@ -267,7 +267,7 @@ export default {
             ciudad: this.ciudad,
             edad: this.edad,
             genero: this.genero,
-            foto: this.imgUrl
+            //foto: this.imgUrl
           }
         })
       this.snackbar = true

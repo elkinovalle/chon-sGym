@@ -38,7 +38,7 @@ const setupRoutineModel = require('./models/routine.model')
 const setupDietModel = require('./models/diet.model')
 const setupInstallationModel = require('./models/installation.model')
 const setupMarchineryModel = require('./models/marchinery.model')
-
+const setupPlanModel = require('./models/plan.model')
 
 
 
@@ -66,6 +66,7 @@ module.exports = async function () {
   const DietModel = setupDietModel(config)
   const InstallationModel = setupInstallationModel(config)
   const MarchineryModel = setupMarchineryModel(config)
+  const PlanModel = setupPlanModel(config)
 
 
   // relaciones de resevas a usuario
