@@ -33,7 +33,7 @@ module.exports = function setupMetricModel (config) {
       allowNull: false
     },
     genero: {
-      type: Sequelize.ENUM('F', 'M') 
+      type: Sequelize.ENUM('Femenino', 'Masculino') 
     },
     peso: {
       type: Sequelize.DECIMAL(4,1),
@@ -41,12 +41,18 @@ module.exports = function setupMetricModel (config) {
     altura: {
       type: Sequelize.DECIMAL(3,2),
     },
+    edad: {
+      type: Sequelize.INTEGER,
+    },
     password: {
       type: Sequelize.TEXT,
       alloNull: false
     },
     empresa:{
       type : Sequelize.TEXT
+    },
+    foto:{
+      type: Sequelize.JSON
     }
   })
 }
