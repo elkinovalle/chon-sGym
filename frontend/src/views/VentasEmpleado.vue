@@ -172,8 +172,8 @@ export default {
       fat: 0,
       carbs: 0,
       protein: 0
-    },
-    
+    }
+
   }),
 
   computed: {

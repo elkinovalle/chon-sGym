@@ -263,7 +263,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped> 
+<style lang="stylus" scoped>
 .contenedor{
   padding 30px 50px 0px 50px
 }

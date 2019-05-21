@@ -95,59 +95,7 @@
         </v-flex>
       </v-layout>
       <v-layout row>
-        <v-flex xs2 order-lg2 class="transparent text-xs-center">
-        </v-flex>
-        <v-flex xs3 order-lg2>
-             <v-dialog v-model="dialogEmail" persistent max-width="600px">
-          <template v-slot:activator="{ on }">
-            <v-btn block dark v-on="on" class="boton black--text subheading" flat>Editar Correo</v-btn>
-          </template>
-          <v-card class="contenido">
-            <v-card-title>
-              <span class="headline">Editar Correo</span>
-            </v-card-title>
-            <v-card-text>
-              <v-container grid-list-md>
-                <v-layout wrap>
-                <v-flex xs12>
-                    <v-text-field
-                    label="Email actual*"
-                    required
-                    ></v-text-field>
-                  </v-flex>
-                  <v-flex xs12>
-                    <v-text-field
-                    v-model="email"
-                    label="Email nuevo*"
-                    required
-                    :error-messages="emailError"
-                    @input="$v.email.$touch()"
-                    @blur="$v.email.$touch()"
-                    ></v-text-field>
-                  </v-flex>
-                  <v-flex xs12>
-                    <v-text-field
-                    label="confirma Email nuevo*"
-                    required
-                    v-model="repeatEmail"
-                    :error-messages="matchEmail"
-                    @input="$v.repeatEmail.$touch()"
-                    @blur="$v.repeatEmail.$touch()"
-                    ></v-text-field>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-              <small>Verifique que tidos los datos esten escritos correctamente</small>
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="blue darken-4" flat @click="dialogEmail = false">Cancelar</v-btn>
-              <v-btn color="blue darken-4" flat @click="dialogEmail = false">Guardar cambios</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-        </v-flex>
-          <v-flex   xs1 order-lg2 class="transparent text-xs-center">
+          <v-flex   xs4 order-lg2 class="transparent text-xs-center">
               <v-card-text><strong></strong></v-card-text>
         </v-flex>
         <v-flex xs3 order-lg2>
@@ -209,13 +157,10 @@
       </v-layout>
         </v-flex>
       </v-layout>
-      <br>
-        <v-divider> </v-divider>
-        <br><br>
         <v-layout  row>
-              <v-flex d-flex xs12 sm6 md3>
+              <v-flex d-flex xs12 sm6 md8>
         </v-flex>
-        <v-flex d-flex xs12 sm6 md5  class="transparent text-xs-center">
+        <v-flex d-flex xs12 sm6 md8 class="transparent text-xs-center">
      <v-card-actions>
         <v-btn @click="resetForm">Cancelar</v-btn>
         <v-spacer></v-spacer>
@@ -227,7 +172,10 @@
         >Guardar cambios</v-btn>
       </v-card-actions>
         </v-flex>
+            <v-flex d-flex xs12 sm6 md2>
+        </v-flex>
       </v-layout>
+        <br>
     </v-container>
 </v-form>
 </template>
@@ -257,8 +205,8 @@ export default {
     cedula: '',
     genero: '',
     items: [
-      'M',
-      'F'
+      'Masculino',
+      'Femenino'
     ],
     edad: '',
     form: false,
@@ -274,13 +222,6 @@ export default {
     },
     repeatPassword: {
       sameAsPassword: sameAs('password')
-    },
-    email: {
-      required,
-      email
-    },
-    repeatEmail: {
-      sameAsEmail: sameAs('email')
     }
   },
   computed: {
@@ -302,42 +243,31 @@ export default {
       if (!this.$v.repeatPassword.$dirty) return errors
       !this.$v.repeatPassword.sameAsPassword && errors.push('Contraseñas no coinciden')
       return errors
-    },
-    emailError () {
-      const errors = []
-      if (!this.$v.email.$dirty) return errors
-      !this.$v.email.email && errors.push('E-mail invalido')
-      !this.$v.email.required && errors.push('E-mail es requerido')
-      return errors
-    },
-    matchEmail () {
-      const errors = []
-      if (!this.$v.repeatEmail.$dirty) return errors
-      !this.$v.repeatEmail.sameAsEmail && errors.push('Correos no coinciden')
-      return errors
     }
   },
   methods: {
     async getUsers () {
-      const { data: users } = await api.get('/user')
+      const res = await api.get('/user')
     },
     resetForm () {
       this.$refs.form.reset()
     },
     async submit () {
-      console.log('dsfsddv')
-      const res = await api.put('/user/a725a7b4-842d-4976-a64c-c062924118e5',
+      console.log()
+      const res = await api.put('/user/e53b575c-2fd3-4324-8596-c8daaf9e5726',
         {
           userUpdate: {
             nombre: this.nombre,
             apellido: this.apellido,
+            email: this.email,
+            password: this.password,
             telefono: this.telefono,
             direccion: this.direccion,
             cedula: this.cedula,
             ciudad: this.ciudad,
             edad: this.edad,
             genero: this.genero,
-            // foto: this.imgUrl
+            foto: this.imgUrl
           }
         })
       this.snackbar = true
