@@ -33,7 +33,7 @@
           </v-flex>
 
           <v-flex xs12 sm6>
-            <v-text-field
+            <v-text-field class="gris"
               v-model="message4"
               box
               label="Descripción"
@@ -42,7 +42,7 @@
           </v-flex>
 
           <v-flex xs12 sm6>
-            <v-text-field
+            <v-text-field class="gris"
               v-model="message5"
               box
               label="Cantidad"
@@ -293,7 +293,7 @@ export default {
 
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
   .subheader{
     text-align center !important
     display 4
@@ -309,8 +309,8 @@ export default {
     font-size 20px
   }
   .gris {
-    background: rgba(0,0,0,0.8);
-    height: 56px;
-    margin: 8px 0px 0px 0px;
+    background rgba(0,0,0,0.3)
+    height 56px
   }
+
 </style>

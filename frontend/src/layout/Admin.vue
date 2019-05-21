@@ -1,6 +1,5 @@
 <template>
   <v-app
-    id="inspire"
   >
     <v-navigation-drawer
       v-model="drawer"
@@ -46,7 +45,7 @@
                   flat
               ><v-icon >person</v-icon> Mi Perfil</v-btn>
             </template>
-            <v-list >
+            <v-list class="lista" >
               <v-list-tile v-for="item in items1" :key="item.text" :to="item.link" active-class=" activo--text">
                 <v-list-tile-action>
                   <v-icon medium>{{ item.icon }}</v-icon>
@@ -117,10 +116,10 @@ export default {
   }
   span.title{
     font-size 40px !important
+    color white
   }
   .v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile {
-    font-family Times New Roman, Times, serif
-    font-size 22px !important 
+    font-size 20px !important
     height 57.7px
     color white
   }
@@ -132,5 +131,17 @@ export default {
   }
   .act{
     background-color white !important
+  }
+  .v-icon{
+    color white
+  }
+  .theme--light.v-icon {
+    color: white;
+  }
+  .v-toolbar__content > *:first-child.v-btn--icon, .v-toolbar__extension > *:first-child.v-btn--icon {
+      color: white;
+  }
+  .lista{
+    background-color grey !important
   }
 </style>

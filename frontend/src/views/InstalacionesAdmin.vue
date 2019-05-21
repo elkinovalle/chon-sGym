@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="red">fghjklñ</h1>
     <v-subheader class="subheader black--text display-1 font-weight-bold" >Instalaciones</v-subheader>
     <v-layout row wrap>
       <v-flex xs12 sm6>

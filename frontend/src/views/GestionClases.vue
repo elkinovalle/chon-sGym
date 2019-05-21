@@ -1,150 +1,158 @@
 <template>
-  <div class="ancho">
-    <v-subheader class="subheader black--text display-1 font-weight-bold">Gestión de Clases</v-subheader>
-    <v-flex>
-      <v-sheet height="500">
-        <v-calendar
-          :now="today"
-          :value="today"
-          color="primary"
+  <div>
+    <v-form
+      ref="form"
+      v-model="valid"
+      lazy-validation
+    >
+    <v-layout row wrap>
+      <v-flex xs6>
+        <v-select
+        v-model="select"
+        :items="items"
+        :rules="[v => !!v || 'La clase es requerida']"
+        label="Seleccionar Clase"
+        required
+        ></v-select>
+        
+        <v-date-picker v-model="picker" :landscape="true"></v-date-picker>
+      </v-flex>
+      <v-flex>
+        <v-flex xs6>
+        <v-dialog
+          ref="dialog"
+          v-model="modal2"
+          :return-value.sync="time"
+          persistent
+          lazy
+          full-width
+          width="300px"
         >
-        <template v-slot:day="{ date }">
-          <template v-for="event in eventsMap[date]">
-            <v-menu
-              :key="event.title"
-              v-model="event.open"
-              full-width
-              offset-x
-            >
           <template v-slot:activator="{ on }">
-            <div
-            v-if="!event.time"
-            v-ripple
-            class="my-event"
-            v-on="on"
-            v-html="event.title"
-          ></div>
+            <v-text-field
+              v-model="time"
+              label="Hora de Inicio"
+              prepend-icon="access_time"
+              readonly
+              v-on="on"
+            ></v-text-field>
           </template>
-          <v-flex xs12 sm8 md9>
-            <v-card >
-              <v-card-text color="black">
-                <v-form>
-                  <v-select
-                    :items="items"
-                    label="Seleccionar Clase"
-                  ></v-select>
-                  <v-label>Selecciona la Hora</v-label>
-                  <v-time-picker :landscape="true"></v-time-picker>
-                </v-form>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn >Cancelar</v-btn>
-                <v-btn >Listo</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-          </v-menu>
+          <v-time-picker
+            v-if="modal2"
+            v-model="time"
+            full-width
+          >
+            <v-spacer></v-spacer>
+            <v-btn flat color="primary" @click="modal2 = false">Cancelar</v-btn>
+            <v-btn flat color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
+          </v-time-picker>
+        </v-dialog>
+      </v-flex>
+        <v-flex xs6>
+        <v-dialog
+          ref="dialog"
+          v-model="modal2"
+          :return-value.sync="time"
+          persistent
+          lazy
+          full-width
+          width="300px"
+        >
+          <template v-slot:activator="{ on }">
+            <v-text-field
+              v-model="time"
+              label="Hora de Fin"
+              prepend-icon="access_time"
+              readonly
+              v-on="on"
+            ></v-text-field>
           </template>
-        </template>
-            </v-calendar>
-          </v-sheet>
+          <v-time-picker
+            v-if="modal2"
+            v-model="time"
+            full-width
+          >
+            <v-spacer></v-spacer>
+            <v-btn flat color="primary" @click="modal2 = false">Cancelar</v-btn>
+            <v-btn flat color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
+          </v-time-picker>
+        </v-dialog>
+      </v-flex>
+        <v-flex xs9>
+          <v-slider
+            label="Capacidad"
+            v-model="slider"
+            thumb-label="always"
+          ></v-slider>
         </v-flex>
+        
+      </v-flex>
+      
+      <v-flex>
+        <v-btn
+        color='red darken-4 white--text' 
+        >Agregar nueva Clase 
+          <br>
+          <v-icon medium>add</v-icon>
+        </v-btn>
+      </v-flex>
+      
+      </v-layout>
+      <v-btn
+        :disabled="!valid"
+        color="success"
+        @click="validate"
+      >
+        Validate
+      </v-btn>
+  
+      <v-btn
+        color="error"
+        @click="reset"
+      >
+        Reset Form
+      </v-btn>
+  
+      <v-btn
+        color="warning"
+        @click="resetValidation"
+      >
+        Reset Validation
+      </v-btn>
+    </v-form>
   </div>
 </template>
-
 <script>
 export default {
-  created () {
-    this.$store.commit('SET_LAYOUT', 'admin-layout')
+  created() {
+    this.$store.commit('SET_LAYOUT','admin-layout')
   },
-  data: () => (
+  data: () => ({
+    
+    select: null,
+    items: [
+      'Item 1',
+      'Item 2',
+      'Item 3',
+      'Item 4'
+    ],
+      time: null,
+      modal2: false,
+      picker: new Date().toISOString().substr(0, 10),
+  }),
 
-    { items: ['Cardio', 'Zumba', 'Crossfit'] },
-    {
-      today: '2019-01-08',
-      events: [
-        {
-          title: 'Vacation',
-          details: 'Going to the beach!',
-          date: '2018-12-30',
-          open: false
-        },
-        {
-          title: 'Vacation',
-          details: 'Going to the beach!',
-          date: '2018-12-31',
-          open: false
-        },
-        {
-          title: 'Vacation',
-          details: 'Going to the beach!',
-          date: '2019-01-01',
-          open: false
-        },
-        {
-          title: 'Meeting',
-          details: 'Spending time on how we do not have enough time',
-          date: '2019-01-07',
-          open: false
-        },
-        {
-          title: '30th Birthday',
-          details: 'Celebrate responsibly',
-          date: '2019-01-03',
-          open: false
-        },
-        {
-          title: 'New Year',
-          details: 'Eat chocolate until you pass out',
-          date: '2019-01-01',
-          open: false
-        },
-        {
-          title: 'Conference',
-          details: 'Mute myself the whole time and wonder why I am on this call',
-          date: '2019-01-21',
-          open: false
-        },
-        {
-          title: 'Hackathon',
-          details: 'Code like there is no tommorrow',
-          date: '2019-02-01',
-          open: false
-        }
-      ]
-    }),
-  computed: {
-    eventsMap () {
-      const map = {}
-      this.events.forEach(e => (map[e.date] = map[e.date] || []).push(e))
-      return map
-    }
-  },
   methods: {
-    open (event) {
-      alert(event.title)
+    validate () {
+      if (this.$refs.form.validate()) {
+        this.snackbar = true
+      }
+    },
+    reset () {
+      this.$refs.form.reset()
+    },
+    resetValidation () {
+      this.$refs.form.resetValidation()
     }
   }
-
 }
 </script>
-<style lang="stylus" scoped>
-  .my-event {
-    width 700px
-    white-space nowrap
-    border-radius 2px
-    background-color darkblue
-    color white
-    border 1px solid white
-    font-size 12px
-    padding 3px
-    cursor pointer
-  }
-  .flex{
-    width 100%
-  }
-  .ancho{
-    width 1000px
-  }
-</style>
