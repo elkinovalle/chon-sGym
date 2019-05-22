@@ -9,7 +9,6 @@
              <v-layout>
     <v-flex>
       <v-sheet height="400">
-        <!-- now is normally calculated by itself, but to keep the calendar in this date range to view events -->
         <v-calendar
           ref="calendar"
           :now="today"
@@ -17,10 +16,8 @@
           color="primary"
           type="week"
         >
-          <!-- the events at the top (all-day) -->
           <template v-slot:dayHeader="{ date }">
             <template v-for="event in eventsMap[date]">
-              <!-- all day events don't have time -->
               <div
                 v-if="!event.time"
                 :key="event.title"
@@ -30,10 +27,8 @@
               ></div>
             </template>
           </template>
-          <!-- the events at the bottom (timed) -->
           <template v-slot:dayBody="{ date, timeToY, minutesToPixels }">
             <template v-for="event in eventsMap[date]">
-              <!-- timed events -->
               <div
                 v-if="event.time"
                 :key="event.title"
@@ -67,15 +62,6 @@
         <v-icon>music_note</v-icon>
       </v-btn>
 
-      <v-btn dark>
-        <span>Book</span>
-        <v-icon>book</v-icon>
-      </v-btn>
-
-      <v-btn dark>
-        <span>Image</span>
-        <v-icon>image</v-icon>
-      </v-btn>
     </v-bottom-nav>
   </v-card>
     </div>
@@ -91,20 +77,20 @@ export default {
     today: '2019-01-08',
     events: [
       {
-        title: 'Weekly Meeting',
+        title: 'clase de shiatsu',
         date: '2019-01-07',
         time: '09:00',
         duration: 45
       },
       {
-        title: 'Thomas\' Birthday',
+        title: 'rumba terapia',
         date: '2019-01-10'
       },
       {
-        title: 'Mash Potatoes',
+        title: 'clase de cardio',
         date: '2019-01-09',
         time: '12:30',
-        duration: 180
+        duration: 50
       }
     ]
 
