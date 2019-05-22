@@ -93,6 +93,8 @@ import EditarPerfilAdmin from '@/views/EditarPerfilAdmin.vue'
 import FotosAdmin from '@/views/FotosAdmin.vue'
 import TareasAdmin from '@/views/TareasAdmin.vue'
 import PlanesAdmin from '@/views/PlanesAdmin.vue'
+import CrearClaseNueva from '@/views/CrearClaseNueva.vue'
+import ClasesAdmin from '@/views/ClasesAdmin.vue'
 
 Vue.use(Router)
 
@@ -564,6 +566,16 @@ export default new Router({
       path: '/planes-admin',
       name: 'planes-admin',
       component: PlanesAdmin
+    },
+    {
+      path: '/crear-clase-nueva',
+      name: 'crear-clase-nueva',
+      component: CrearClaseNueva
+    },
+    {
+      path: '/clases-admin',
+      name: 'clases-admin',
+      component: ClasesAdmin
     }
   ]
 })
