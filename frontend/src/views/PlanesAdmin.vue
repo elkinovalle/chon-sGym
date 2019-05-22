@@ -1,5 +1,6 @@
 <template>
     <div>
+      <br><br>
    <v-subheader class="subheader black--text display-1 font-weight-bold ">Planes</v-subheader>
     <v-form>
       <v-container>
@@ -105,7 +106,7 @@
         <td class="text-xs-left">{{ props.item.precio }}</td>
         <td class="text-xs-left">{{ props.item.descripcion }}</td>
         <td class="text-xs-left">{{ props.item.beneficios }}</td>
-        <td class="text-xs-left">{{ props.item.empleado }}</td>
+        <td class="text-xs-left">{{ props.item.imgUrl }}</td>
         <td class="justify-center layout px-0">
           <v-icon
             small
@@ -127,9 +128,11 @@
     </div>
 </template>
 <script>
+import api from '@/plugins/service'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
+    this.getPlan()
   },
   data: () => ({
     dialog: false,
@@ -145,7 +148,7 @@ export default {
       { text: 'Precio', value: 'precio' },
       { text: 'Descripción', value: 'descripcion' },
       { text: 'Beneficios', value: 'beneficios' },
-      { text: 'Empleado', value: 'empleado' }
+      { text: 'Imagen', value: 'imgUrl' }
     ],
     desserts: [],
     editedIndex: -1,
@@ -154,14 +157,14 @@ export default {
       descripcion: '',
       beneficios: '',
       titulo: '',
-      empleado: '',
+      imgUrl: '',
     },
     defaultItem: {
       precio: '',
       descripcion: '',
       beneficios: '',
       titulo: '',
-      empleado: '',
+      imgUrl: '',
  
     }
 
@@ -178,7 +181,25 @@ export default {
       val || this.close()
     }
   },
-  methods: {
+  methods: {async getPlan () {
+      const res = await api.get('/plan')
+    },
+    resetForm () {
+      this.$refs.form.reset()
+    },
+    async submit () {
+      const res = await api.post('/plan',
+        {
+          planNew: {
+            nombre: this.editedItem.titulo,
+            descripcion: this.editedItem.descripcion,
+            precio: this.editedItem.precio,
+            beneficio: this.editedItem.beneficios,
+          }
+        })
+      this.snackbar = true
+      this.resetForm()
+    },
      pickFile () {
       this.$refs.image.click()
     },
@@ -208,7 +229,7 @@ export default {
           descripcion: '',
           titulo: '',
           beneficios: '',
-          empleado: '',
+          imgUrl: '',
         }
       ]
       

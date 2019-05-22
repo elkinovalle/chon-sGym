@@ -15,7 +15,7 @@
           <v-flex d-flex xs12 sm6 md4 class="cajon5">
                              <v-card class="caja" dark flat>
         <h1 class="text-xs black--text title font-italic"><strong>LA CLAVE PARA PODER PERDER EL PESO QUE GANASTE EN DICIEMBRE</strong></h1><br>
-        <span class="text-xs black--text subheading">Cada comienzo de año comenzamos con un peso y figura que no es para nada la ideal, estas son las secuelas que deja el último mes del año anterior. En Hardbody, con nuestros entrenadores, nutricionistas y nuestras instalaciones comenzaremos el año junto a ti de una manera saludable y con unos pasos que debes seguir para recuperar tu peso y hasta mejorarlo. Conoce más en la siguiente nota.</span><br>
+        <article class="text-xs black--text subheading">Cada comienzo de año comenzamos con un peso y figura que no es para nada la ideal, estas son las secuelas que deja el último mes del año anterior. En Hardbody, con nuestros entrenadores, nutricionistas y nuestras instalaciones comenzaremos el año junto a ti de una manera saludable y con unos pasos que debes seguir para recuperar tu peso y hasta mejorarlo. Conoce más en la siguiente nota.</article><br>
         <p></p>
 <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/clave-cliente" >Ver más</v-btn>
           </v-card>
@@ -48,7 +48,7 @@
           <v-flex d-flex xs12 sm6 md4 class="cajon6">
                <v-card class="informacion" dark flat>
         <h1 class="text-xs black--text headline font-italic"><strong>¿CÓMO PERDER GRASA ABDOMINAL? <br> NOSOTROS TE DECIMOS CÓMO LOGRARLO</strong></h1><br>
-        <span class="text-xs black--text title">Tonificar el abdomen es algo muy difícil, ya que primero se debe eliminar la grasa extra, Chon's Gym te contará como reducir la grasa abdominal y tener el cuerpo que deseas.</span><br>
+        <article class="text-xs black--text title">Tonificar el abdomen es algo muy difícil, ya que primero se debe eliminar la grasa extra, Chon's Gym te contará como reducir la grasa abdominal y tener el cuerpo que deseas.</article><br>
         <p></p>
 <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/perder-grasa-cliente" >Ver nota</v-btn>
           </v-card>
@@ -56,7 +56,7 @@
          <v-flex d-flex xs12 sm6 md4 class="cajon7">
                <v-card class="informacion" dark flat>
         <h1 class="text-xs black--text headline font-italic"><strong>RUTINAS Y HÁBITOS SALUDABLES DE UNA MISS UNIVERSO</strong></h1><br>
-        <span class="text-xs black--text subheading">Las rutinas de entrenamiento son solo una parte de los cuidados que una participante a Miss Universo debe tener para estar en forma, los hábitos saludables de alimentación y cuidados también son importantes. Conoce los secretos que 4 Miss Universo practican y atrévete a iniciar tu propia transformación con Hard Body, luego de leer la siguiente nota.</span><br>
+        <article class="text-xs black--text subheading">Las rutinas de entrenamiento son solo una parte de los cuidados que una participante a Miss Universo debe tener para estar en forma, los hábitos saludables de alimentación y cuidados también son importantes. Conoce los secretos que 4 Miss Universo practican y atrévete a iniciar tu propia transformación con Chon's Gym, luego de leer la siguiente nota.</article><br>
         <p></p>
 <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/miss-universo-cliente" >Ver nota</v-btn>
           </v-card>
