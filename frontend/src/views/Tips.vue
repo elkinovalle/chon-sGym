@@ -73,16 +73,16 @@
             <v-container grid-list-md>
               <v-layout wrap>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.titulo" label="Plan"></v-text-field>
+                  <v-text-field v-model="editedItem.titulo" label="Título"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.tema" label="Precio"></v-text-field>
+                  <v-text-field v-model="editedItem.tema" label="Tema"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
                   <v-text-field v-model="editedItem.descripcion" label="Descripción"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.contenido" label="Cedula"></v-text-field>
+                  <v-text-field v-model="editedItem.contenido" label="Contenido segundo tema"></v-text-field>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -90,8 +90,8 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="blue darken-1" flat @click="close">Cancel</v-btn>
-            <v-btn color="blue darken-1" flat @click="save">Save</v-btn>
+            <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
+            <v-btn color="blue darken-1" flat @click="save">Guardar cambios</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -170,7 +170,7 @@ export default {
 
   computed: {
     formTitle () {
-      return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+      return this.editedIndex === -1 ? 'New Item' : 'Editar Item'
     }
   },
 
@@ -223,7 +223,7 @@ export default {
 
     deleteItem (item) {
       const index = this.desserts.indexOf(item)
-      confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+      confirm('Estás seguro que deseas elimiar este item?') && this.desserts.splice(index, 1)
     },
 
     close () {

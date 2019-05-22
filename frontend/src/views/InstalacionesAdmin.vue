@@ -19,15 +19,14 @@
               clearable
             ></v-textarea>
           </v-flex>
-
-         <v-flex xs12 sm6>
+           <v-flex xs12 sm6>
             <material-card class="v-card-profile">
               <v-avatar class="text--center mx-auto d-block" >
                 <img class="imagenq" :src="imgUrl" >
               </v-avatar>
               <v-card-text class="margen text-xs-center">
                   <v-form name="formulario" method="post" enctype="form-data">
-                    <v-btn class="boton" @click='pickFile' v-model='imageName' prepend-icon='attach_file'>Selecciona las imágenes del tema</v-btn>
+                    <v-btn class="boton" @click='pickFile' v-model='imageName' prepend-icon='attach_file'>Selecciona las imágenes que desees</v-btn>
                       <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked" multiple>
                   </v-form>
               </v-card-text>
@@ -53,16 +52,10 @@
             <v-container grid-list-md>
               <v-layout wrap>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.titulo" label="Plan"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.tema" label="Precio"></v-text-field>
+                  <v-text-field v-model="editedItem.titulo" label="Título"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
                   <v-text-field v-model="editedItem.descripcion" label="Descripción"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.contenido" label="Cedula"></v-text-field>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -70,8 +63,8 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="blue darken-1" flat @click="close">Cancel</v-btn>
-            <v-btn color="blue darken-1" flat @click="save">Save</v-btn>
+            <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
+            <v-btn color="blue darken-1" flat @click="save">Guardar Cambios</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -83,9 +76,7 @@
     >
       <template v-slot:items="props">
         <td class="text-xs-center">{{ props.item.titulo }}</td>
-        <td class="text-xs-left">{{ props.item.tema }}</td>
         <td class="text-xs-left">{{ props.item.descripcion }}</td>
-        <td class="text-xs-left">{{ props.item.contenido }}</td>
         <td class="text-xs-left">{{ props.item.imgUrl }}</td>
         <td class="justify-center layout px-0">
           <v-icon
@@ -123,9 +114,7 @@ export default {
         sortable: false,
         value: 'name'
       },
-      { text: 'Segundo tema', value: 'tema' },
       { text: 'Descripción', value: 'descripcion' },
-      { text: 'Contenido', value: 'contenido' },
       { text: 'Imagen', value: 'imgUrl' }
     ],
     desserts: [],
@@ -150,7 +139,7 @@ export default {
 
   computed: {
     formTitle () {
-      return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+      return this.editedIndex === -1 ? 'New Item' : 'Editar Item'
     }
   },
 
@@ -163,7 +152,7 @@ export default {
      pickFile () {
       this.$refs.image.click()
     },
-    onFilePicked (e) {
+     onFilePicked (e) {
       const files = e.target.files
       if (files[0] !== undefined) {
         this.imageName = files[0].name
@@ -171,9 +160,18 @@ export default {
           return
         }
         const fr = new FileReader()
+          for( let f = 0; f < files.length; f++ ) {
+          const fr = new FileReader()
+          fr.readAsDataURL(files[f])
+          fr.addEventListener('load', () => {
+            this.imgUrl = fr.result
+          // this.imageFile = files[0] // this is an image file that can be sent to server...
+         })
+         }
         fr.readAsDataURL(files[0])
         fr.addEventListener('load', () => {
           this.imgUrl = fr.result
+          // this.imageFile = files[0] // this is an image file that can be sent to server...
         })
       } else {
         this.imageName = ''
@@ -202,7 +200,7 @@ export default {
 
     deleteItem (item) {
       const index = this.desserts.indexOf(item)
-      confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+      confirm('Estás seguro que deseas elimiar este item?') && this.desserts.splice(index, 1)
     },
 
     close () {

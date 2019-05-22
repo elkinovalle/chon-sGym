@@ -90,8 +90,8 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="blue darken-1" flat @click="close">Cancel</v-btn>
-            <v-btn color="blue darken-1" flat @click="save">Save</v-btn>
+            <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
+            <v-btn color="blue darken-1" flat @click="save">Guardar cambios</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -132,7 +132,7 @@ import api from '@/plugins/service'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
-    this.getUsers()
+    this.getPlans()
   },
   data: () => ({
     dialog: false,
@@ -172,7 +172,7 @@ export default {
 
   computed: {
     formTitle () {
-      return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+      return this.editedIndex === -1 ? 'New Item' : 'Editar Item'
     }
   },
 
@@ -181,7 +181,25 @@ export default {
       val || this.close()
     }
   },
-  methods: {
+  methods: {async getPlans () {
+      const res = await api.get('/plan')
+    },
+    resetForm () {
+      this.$refs.form.reset()
+    },
+    async submit () {
+      const res = await api.post('/plan',
+        {
+          planNew: {
+            nombre: this.editedItem.titulo,
+            descripcion: this.editedItem.descripcion,
+            precio: this.editedItem.precio,
+            beneficio: this.editedItem.beneficios,
+          }
+        })
+      this.snackbar = true
+      this.resetForm()
+    },
      pickFile () {
       this.$refs.image.click()
     },
@@ -225,7 +243,7 @@ export default {
 
     deleteItem (item) {
       const index = this.desserts.indexOf(item)
-      confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+      confirm('Estás seguro que deseas elimiar este item?') && this.desserts.splice(index, 1)
     },
 
     close () {

@@ -16,6 +16,7 @@ const setupType_Class = require ('./lib/type_classs')
 const setupType_Membership = require ('./lib/type_memberships')
 const setupMarchinery = require ('./lib/marchinerys')
 const setupInstallation = require ('./lib/installations')
+const setupPlan = require ('./lib/plans')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
@@ -148,6 +149,7 @@ module.exports = async function () {
   const Type_Membership = setupType_Membership(Type_MembershipModel)
   const Marchinery = setupMarchinery(MarchineryModel)
   const Installation = setupInstallation(InstallationModel)
+  const Plan = setupPlan(PlanModel)
   return {
     async setup() {
       await sequelize.sync({ force: true })
@@ -164,6 +166,7 @@ module.exports = async function () {
     Type_Class,
     Type_Membership,
     Marchinery,
-    Installation
+    Installation,
+    Plan
   }
 }

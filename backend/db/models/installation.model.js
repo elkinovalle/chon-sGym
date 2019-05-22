@@ -16,5 +16,8 @@ module.exports = function setupMetricModel (config) {
     descripcion: {
         type: Sequelize.TEXT,   
     },
+    foto: {
+      type: Sequelize.JSON,
+  }
   })
 }
