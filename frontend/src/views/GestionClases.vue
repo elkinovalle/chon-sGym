@@ -84,6 +84,7 @@
             <v-btn flat color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
           </v-time-picker>
         </v-dialog>
+<<<<<<< HEAD
 
       </v-flex>
             <v-flex xs1></v-flex>
@@ -97,6 +98,14 @@
       </v-flex>
       </v-layout>
       <v-btn
+=======
+        <v-slider
+            label="Capacidad"
+            v-model="slider"
+            thumb-label="always"
+          ></v-slider>
+          <v-btn
+>>>>>>> 5b8485b296bcd9759ade693a269e5a18bd057d5c
         color="success"
         @click="validate"
       >
@@ -109,6 +118,18 @@
       >
         Borrar Datos
       </v-btn>
+      </v-flex>
+      <v-flex xs2>
+        <v-btn
+        color='red darken-4 white--text' 
+        to="/crear-clase-nueva"
+        >Agregar nueva Clase 
+          <br>
+          <v-icon medium>add</v-icon>
+        </v-btn>
+      </v-flex>
+      </v-layout>
+      
     </v-form>
     </div>
 </template>
