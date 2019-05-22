@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <div>
       <br><br>
    <v-subheader class="subheader black--text display-1 font-weight-bold "> Instalaciones</v-subheader>
@@ -37,31 +36,6 @@
         <v-flex xs12 sm12>
           <v-btn color="red darken-4" class="botones white--text headline" >Cancelar</v-btn>
           <v-btn color="green darken-4" class="botones white--text headline" @click="save" >Agregar</v-btn>
-=======
-<div>
-    <v-subheader class="subheader black--text display-1 font-weight-bold" >Instalaciones</v-subheader>
-    <v-layout row wrap>
-        <v-flex xs6>
-     <v-layout row wrap>
-         <v-flex xs12 lg12 mb9>
-          <material-card class="ancho v-card-profile">
-        <v-avatar class=" text-xs-center mx-auto d-block" slot="offset">
-          <img  :src="imgUrl" class="imagen" >
-          </v-avatar>
-          <v-card-text class="margen text-xs-center">
-           <v-form name="formulario" method="post" enctype="form-data">
-          <v-text-field color="black" label="Subir instalaciones" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
-         <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked">
-        </v-form>
-       </v-card-text>
-      </material-card>
-      </v-flex>
-        </v-layout>
-      </v-flex>
-        <v-flex xs6>
-     <v-layout row wrap>
-      <v-flex xs12 lg12 mb9>
->>>>>>> e1a875932734c59f13c026b6146b5aaf525f6c63
         </v-flex>
         </v-layout>
       </v-container>
@@ -71,7 +45,6 @@
       <v-dialog v-model="dialog" max-width="500px">
         <template v-slot:activator="{ on }">
         </template>
-<<<<<<< HEAD
         <v-card>
           <v-card-title>
             <span class="headline">{{ formTitle }}</span>
@@ -133,14 +106,6 @@
     </v-data-table>
 
     </div>
-=======
-        <v-alert v-slot:no-results :value="true" color="error" icon="warning">
-          Tu busqueda para "{{ search }}" no encontró resultados.
-        </v-alert>
-      </v-data-table>
-    </v-card>
-</div>
->>>>>>> e1a875932734c59f13c026b6146b5aaf525f6c63
 </template>
 <script>
 export default {
@@ -261,34 +226,11 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-<<<<<<< HEAD
 .container.fill-height {
     background-color: white;
 }
 .imagenq{
   width 150px !important
-=======
-
-  .boton{
-    margin-left -10px
-    height 31.8px
-  }
-  .label{
-    font-size 15px
-  }
-  .v-text-field.v-text-field--enclosed {
-    --v-primary-base white !important
-  }
-  .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
-    background rgba(0,0,0,0.8)
-  }
-  .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
-    color white !important
-    font-size 20px
-  }
-  .imagen{
-  width 130px !important
->>>>>>> e1a875932734c59f13c026b6146b5aaf525f6c63
   height 150px !important
   margin 0px 0px 0px -100px
   border-radius 0%
