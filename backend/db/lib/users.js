@@ -26,6 +26,7 @@ function setupUser(userModel) {
     return userModel.findOne(cond)
   }
   async function singin(credentials){
+    
     let dataFail = 'datos incorrectos'
     const cond = { where : { email: credentials.email } }
     const user = await userModel.findOne(cond)
@@ -35,7 +36,7 @@ function setupUser(userModel) {
         login: false
       }
     }
-    if (!(password.compareHash(credentials.password, user.password))) {
+    if (!(password.compareHash(credentials.contraseña, user.contraseña))) {
       return {
         message: dataFail,
         login: false

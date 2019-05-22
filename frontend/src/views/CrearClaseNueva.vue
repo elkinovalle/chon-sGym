@@ -36,7 +36,7 @@
               clearable
             ></v-textarea>
           </v-flex>
-           
+
         <v-flex xs12 sm6>
           <v-btn color="green darken-4" class="botones white--text headline" @click="save" >Agregar Plan</v-btn>
           <v-btn color="red darken-4" class="botones white--text headline" >Cancelar</v-btn>
