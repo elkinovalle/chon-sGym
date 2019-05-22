@@ -139,7 +139,7 @@ export default {
 
   computed: {
     formTitle () {
-      return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+      return this.editedIndex === -1 ? 'New Item' : 'Editar Item'
     }
   },
 
@@ -152,7 +152,7 @@ export default {
      pickFile () {
       this.$refs.image.click()
     },
-    onFilePicked (e) {
+     onFilePicked (e) {
       const files = e.target.files
       if (files[0] !== undefined) {
         this.imageName = files[0].name
@@ -160,6 +160,14 @@ export default {
           return
         }
         const fr = new FileReader()
+          for( let f = 0; f < files.length; f++ ) {
+          const fr = new FileReader()
+          fr.readAsDataURL(files[f])
+          fr.addEventListener('load', () => {
+            this.imgUrl = fr.result
+          // this.imageFile = files[0] // this is an image file that can be sent to server...
+         })
+         }
         fr.readAsDataURL(files[0])
         fr.addEventListener('load', () => {
           this.imgUrl = fr.result
@@ -192,7 +200,7 @@ export default {
 
     deleteItem (item) {
       const index = this.desserts.indexOf(item)
-      confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+      confirm('Estás seguro que deseas elimiar este item?') && this.desserts.splice(index, 1)
     },
 
     close () {
