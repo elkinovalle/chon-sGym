@@ -6,7 +6,7 @@ import Inventario from '@/views/Inventario.vue'
 import RegistroCompras from '@/views/RegistroCompras.vue'
 import RegistroEmpleados from '@/views/RegistroEmpleados.vue'
 import GestionClases from '@/views/GestionClases.vue'
-import Proveedores from '@/views/Proveedores.vue'
+import ProveedoresAdmin from '@/views/ProveedoresAdmin.vue'
 import RegistroVentas from '@/views/RegistroVentas.vue'
 import Novedades from '@/views/Novedades.vue'
 import Tips from '@/views/Tips.vue'
@@ -133,9 +133,9 @@ export default new Router({
       component: GestionClases
     },
     {
-      path: '/proveedores',
-      name: 'proveedores',
-      component: Proveedores
+      path: '/proveedores-admin',
+      name: 'proveedores-admin',
+      component: ProveedoresAdmin
     },
     {
       path: '/registro-ventas',

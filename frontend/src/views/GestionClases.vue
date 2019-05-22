@@ -105,15 +105,15 @@
       </v-flex>
       <v-flex xs2>
         <v-btn
-        color='red darken-4 white--text' 
+        color='red darken-4 white--text'
         to="/crear-clase-nueva"
-        >Agregar nueva Clase 
+        >Agregar nueva Clase
           <br>
           <v-icon medium>add</v-icon>
         </v-btn>
       </v-flex>
       </v-layout>
-      
+
     </v-form>
     </div>
 </template>

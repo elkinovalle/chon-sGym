@@ -7,7 +7,6 @@
         <v-layout row wrap>
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="editedItem.titulo"
               box
               label="Plan"
               clearable
@@ -16,7 +15,6 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="editedItem.precio"
               box
               label="Precio"
               clearable
@@ -25,7 +23,6 @@
 
           <v-flex xs12 sm6>
             <v-textarea
-              v-model="editedItem.descripcion"
               box
               label="Descripción del plan"
               clearable
@@ -34,25 +31,12 @@
 
            <v-flex xs12 sm6>
           <v-textarea
-              v-model="editedItem.beneficios"
               box
               label="Beneficios"
               clearable
             ></v-textarea>
           </v-flex>
-           <v-flex xs12 sm6>
-            <material-card class="v-card-profile">
-              <v-avatar class="text--center mx-auto d-block" >
-                <img class="imagenq" :src="imgUrl" >
-              </v-avatar>
-              <v-card-text class="margen text-xs-center">
-                  <v-form name="formulario" method="post" enctype="form-data">
-                    <v-btn class="boton" @click='pickFile' v-model='imageName' prepend-icon='attach_file'>Selecciona imagen del plan</v-btn>
-                      <input type="file" style="display: none" ref="image" accept="image/*" @change="onFilePicked">
-                  </v-form>
-              </v-card-text>
-            </material-card>
-        </v-flex>
+           
         <v-flex xs12 sm6>
           <v-btn color="green darken-4" class="botones white--text headline" @click="save" >Agregar Plan</v-btn>
           <v-btn color="red darken-4" class="botones white--text headline" >Cancelar</v-btn>
@@ -111,7 +95,7 @@
           <v-icon
             small
             class="mr-2"
-            @click="editItem(props.item)"
+            @click="(props.item)"
           >
             edit
           </v-icon>
@@ -128,8 +112,8 @@
 </template>
 <script>
 export default {
-    created() {
-        this.$store.commit('SET_LAYOUT', 'admin-layout')
-    },
+  created () {
+    this.$store.commit('SET_LAYOUT', 'admin-layout')
+  }
 }
 </script>
