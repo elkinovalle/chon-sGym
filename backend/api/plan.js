@@ -10,8 +10,8 @@ const router = new Router()
 router.post('/', async function(req, res, next) {
   try {
     const { planNew } = req.body
-    const { Plans } = await db()
-    const result = await Plans.planClass(planNew)
+    const { Plan } = await db()
+    const result = await Plan.createPlan(planNew)
     res.send(result)
   } catch (err) {
     next(err)
