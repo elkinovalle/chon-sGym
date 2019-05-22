@@ -132,7 +132,7 @@ import api from '@/plugins/service'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
-    this.getUsers()
+    this.getPlan()
   },
   data: () => ({
     dialog: false,
@@ -181,7 +181,25 @@ export default {
       val || this.close()
     }
   },
-  methods: {
+  methods: {async getPlan () {
+      const res = await api.get('/plan')
+    },
+    resetForm () {
+      this.$refs.form.reset()
+    },
+    async submit () {
+      const res = await api.post('/plan',
+        {
+          planNew: {
+            nombre: this.editedItem.titulo,
+            descripcion: this.editedItem.descripcion,
+            precio: this.editedItem.precio,
+            beneficio: this.editedItem.beneficios,
+          }
+        })
+      this.snackbar = true
+      this.resetForm()
+    },
      pickFile () {
       this.$refs.image.click()
     },
