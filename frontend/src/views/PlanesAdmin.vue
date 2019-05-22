@@ -172,7 +172,7 @@ export default {
 
   computed: {
     formTitle () {
-      return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+      return this.editedIndex === -1 ? 'New Item' : 'Editar Item'
     }
   },
 
@@ -243,7 +243,7 @@ export default {
 
     deleteItem (item) {
       const index = this.desserts.indexOf(item)
-      confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+      confirm('Estás seguro que deseas elimiar este item?') && this.desserts.splice(index, 1)
     },
 
     close () {
