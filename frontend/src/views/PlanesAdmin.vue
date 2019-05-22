@@ -54,7 +54,7 @@
             </material-card>
         </v-flex>
         <v-flex xs12 sm6>
-          <v-btn color="green darken-4" class="botones white--text headline" @click="save" >Agregar Plan</v-btn>
+          <v-btn color="green darken-4" class="botones white--text headline" @click="save,submit" >Agregar Plan</v-btn>
           <v-btn color="red darken-4" class="botones white--text headline" >Cancelar</v-btn>
         </v-flex>
         </v-layout>
@@ -82,7 +82,7 @@
                   <v-text-field v-model="editedItem.descripcion" label="Descripción"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.beneficios" label="Cedula"></v-text-field>
+                  <v-text-field v-model="editedItem.beneficios" label="Beneficios"></v-text-field>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -91,7 +91,7 @@
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-            <v-btn color="blue darken-1" flat @click="save,submit" >Guardar cambios</v-btn>
+            <v-btn color="blue darken-1" flat @click="save" >Guardar cambios</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -183,7 +183,7 @@ export default {
   },
   methods: {
     async getPlans () {
-      const res = await api.get('/plan')
+      const res = await api.get('/plan')  
     },
     resetForm () {
       this.$refs.form.reset()
