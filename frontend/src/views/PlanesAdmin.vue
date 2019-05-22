@@ -181,60 +181,6 @@ export default {
       val || this.close()
     }
   },
-<<<<<<< HEAD
-  methods: { async getPlans () {
-    const res = await api.get('/plan')
-  },
-  resetForm () {
-    this.$refs.form.reset()
-  },
-  async submit () {
-    const res = await api.post('/plan',
-      {
-        planNew: {
-          nombre: this.editedItem.titulo,
-          descripcion: this.editedItem.descripcion,
-          precio: this.editedItem.precio,
-          beneficio: this.editedItem.beneficios
-        }
-      })
-    this.snackbar = true
-    this.resetForm()
-  },
-  pickFile () {
-    this.$refs.image.click()
-  },
-  onFilePicked (e) {
-    const files = e.target.files
-    if (files[0] !== undefined) {
-      this.imageName = files[0].name
-      if (this.imageName.lastIndexOf('.') <= 0) {
-        return
-      }
-      const fr = new FileReader()
-      fr.readAsDataURL(files[0])
-      fr.addEventListener('load', () => {
-        this.imgUrl = fr.result
-        // this.imageFile = files[0] // this is an image file that can be sent to server...
-      })
-    } else {
-      this.imageName = ''
-      // this.imageFile = ''
-      this.imageUrl = ''
-    }
-  },
-  initialize () {
-    this.desserts = [
-      {
-        precio: '',
-        descripcion: '',
-        titulo: '',
-        beneficios: '',
-        imgUrl: ''
-      }
-    ]
-  },
-=======
   methods: {
     async getPlans () {
       const res = await api.get('/plan')
@@ -288,7 +234,6 @@ export default {
         }
       ]
     },
->>>>>>> 8936878f8cff190688a64145132a55324ad2ef40
 
   editItem (item) {
     this.editedIndex = this.desserts.indexOf(item)
