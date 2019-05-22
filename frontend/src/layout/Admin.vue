@@ -81,7 +81,7 @@ export default {
       { icon: 'history', text: 'Registro de compras', link: 'registro-compras' },
       { icon: 'update', text: 'Registro de Empleados', link: 'registro-empleados' },
       { icon: 'featured_play_list', text: 'Gestión de clases', link: 'gestion-clases' },
-      { icon: 'add', text: 'Proveedores', link: 'proveedores' },
+      { icon: 'add', text: 'Proveedores', link: 'proveedores-admin' },
       { icon: 'money', text: 'Registro de Ventas', link: 'registro-ventas' },
       { icon: 'present_to_all', text: 'Novedades', link: 'novedades' },
       { icon: 'info', text: 'Tips', link: 'tips' },

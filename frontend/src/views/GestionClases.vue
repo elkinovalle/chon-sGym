@@ -14,13 +14,13 @@
         label="Seleccionar Clase"
         required
         ></v-select>
-        
+
         <v-flex>
           <v-textarea
             name="input-7-1"
             label="Descripción de la clase"
             value=""
-              required  
+              required
           ></v-textarea>
         </v-flex>
         <v-label>Seleccione la Fecha</v-label>
@@ -95,7 +95,7 @@
       >
        Crear clase
       </v-btn>
-  
+
       <v-btn
         color="error"
         @click="reset"
@@ -105,22 +105,22 @@
       </v-flex>
       <v-flex xs2>
         <v-btn
-        color='red darken-4 white--text' 
+        color='red darken-4 white--text'
         to="/crear-clase-nueva"
-        >Agregar nueva Clase 
+        >Agregar nueva Clase
           <br>
           <v-icon medium>add</v-icon>
         </v-btn>
       </v-flex>
       </v-layout>
-      
+
     </v-form>
     </div>
 </template>
 <script>
 export default {
-  created() {
-    this.$store.commit('SET_LAYOUT','admin-layout')
+  created () {
+    this.$store.commit('SET_LAYOUT', 'admin-layout')
   },
   data: () => ({
     menu2: false,
@@ -131,9 +131,9 @@ export default {
       'Item 3',
       'Item 4'
     ],
-      time: null,
-      modal2:false,
-      picker: new Date().toISOString().substr(0, 10),
+    time: null,
+    modal2: false,
+    picker: new Date().toISOString().substr(0, 10)
   }),
 
   methods: {
