@@ -155,15 +155,15 @@ export default {
       codigo: '',
       cantidad: '',
       cedula: '',
-      empleado: '',
+      empleado: ''
     },
     defaultItem: {
       name: '',
       codigo: '',
       cantidad: '',
       cedula: '',
-      empleado: '',
- 
+      empleado: ''
+
     }
 
   }),
@@ -187,7 +187,7 @@ export default {
           codigo: '',
           cantidad: '',
           cedula: '',
-          empleado: '',
+          empleado: ''
         }
       ]
     },

@@ -266,8 +266,8 @@ export default {
             cedula: this.cedula,
             ciudad: this.ciudad,
             edad: this.edad,
-            genero: this.genero,
-            //foto: this.imgUrl
+            genero: this.genero
+            // foto: this.imgUrl
           }
         })
       this.snackbar = true

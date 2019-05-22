@@ -91,7 +91,7 @@
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-            <v-btn color="blue darken-1" flat @click="save">Guardar cambios</v-btn>
+            <v-btn color="blue darken-1" flat @click="save,submit" >Guardar cambios</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -157,15 +157,15 @@ export default {
       descripcion: '',
       beneficios: '',
       titulo: '',
-      imgUrl: '',
+      imgUrl: ''
     },
     defaultItem: {
       precio: '',
       descripcion: '',
       beneficios: '',
       titulo: '',
-      imgUrl: '',
- 
+      imgUrl: ''
+
     }
 
   }),
@@ -181,7 +181,8 @@ export default {
       val || this.close()
     }
   },
-  methods: {async getPlans () {
+  methods: {
+    async getPlans () {
       const res = await api.get('/plan')
     },
     resetForm () {
@@ -194,13 +195,13 @@ export default {
             nombre: this.editedItem.titulo,
             descripcion: this.editedItem.descripcion,
             precio: this.editedItem.precio,
-            beneficio: this.editedItem.beneficios,
+            beneficio: this.editedItem.beneficios
           }
         })
       this.snackbar = true
       this.resetForm()
     },
-     pickFile () {
+    pickFile () {
       this.$refs.image.click()
     },
     onFilePicked (e) {
@@ -214,7 +215,7 @@ export default {
         fr.readAsDataURL(files[0])
         fr.addEventListener('load', () => {
           this.imgUrl = fr.result
-          // this.imageFile = files[0] // this is an image file that can be sent to server...
+        // this.imageFile = files[0] // this is an image file that can be sent to server...
         })
       } else {
         this.imageName = ''
@@ -229,10 +230,9 @@ export default {
           descripcion: '',
           titulo: '',
           beneficios: '',
-          imgUrl: '',
+          imgUrl: ''
         }
       ]
-      
     },
 
     editItem (item) {
