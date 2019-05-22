@@ -14,6 +14,7 @@ const type_class = require ('./type_class')
 const type_membership = require ('./type_membership')
 const marchinery = require ('./marchinery')
 const installation = require ('./installation')
+const plan = require ('./plan')
 const log = getLogger(__dirname, __filename)
 // prueba
 module.exports = {
@@ -35,6 +36,7 @@ module.exports = {
   type_membership,
   marchinery,
   installation,
+  plan,
   errorHandler (err, req, res, next) {
     if (err) {
       let code = err.code || 500

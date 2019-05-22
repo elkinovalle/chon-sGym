@@ -11,7 +11,7 @@ router.post('/', async function(req, res, next) {
   try {
     const { planNew } = req.body
     const { Plans } = await db()
-    const result = await Plans.createClass(planNew)
+    const result = await Plans.planClass(planNew)
     res.send(result)
   } catch (err) {
     next(err)
@@ -22,8 +22,8 @@ router.put('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
     const { planUpdate } = req.body
-    const { Classs } = await db()
-    const result = await Classs.updateClasss(uuid, planUpdate)
+    const { Plan } = await db()
+    const result = await Plan.updatePlan(uuid, planUpdate)
     res.send(result)
   } catch (err) {
     next(err)
@@ -32,8 +32,8 @@ router.put('/:uuid', async function(req, res, next){
 router.delete('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
-    const { Classs } = await db()
-    const result = await Classs.deleteClasss(uuid)
+    const { Plan } = await db()
+    const result = await Plan.deletePlan(uuid)
     res.send(result)
   } catch (err) {
     next(err)
@@ -41,8 +41,8 @@ router.delete('/:uuid', async function(req, res, next){
 })
 router.get('/', async function(req, res, next){
   try {
-    const { Classs } = await db()
-    const result = await Classs.findClasss()
+    const { Plan } = await db()
+    const result = await Plan.findPlan()
     res.send(result)
   } catch (err) {
     next(err)
@@ -51,8 +51,8 @@ router.get('/', async function(req, res, next){
 router.get('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
-    const { Classs } = await db()
-    const result = await Classs.findClasssUuid(uuid)
+    const { Plan } = await db()
+    const result = await Plan.findPlanUuid(uuid)
     res.send(result)
   } catch (err) {
     next(err)
