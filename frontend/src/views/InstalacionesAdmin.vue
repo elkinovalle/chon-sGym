@@ -124,15 +124,15 @@ export default {
       descripcion: '',
       contenido: '',
       titulo: '',
-      imgUrl: '',
+      imgUrl: ''
     },
     defaultItem: {
       tema: '',
       descripcion: '',
       contenido: '',
       titulo: '',
-      imgUrl: '',
- 
+      imgUrl: ''
+
     }
 
   }),
@@ -149,7 +149,7 @@ export default {
     }
   },
   methods: {
-     pickFile () {
+    pickFile () {
       this.$refs.image.click()
     },
      onFilePicked (e) {
@@ -186,10 +186,9 @@ export default {
           descripcion: '',
           titulo: '',
           contenido: '',
-          imgUrl: '',
+          imgUrl: ''
         }
       ]
-      
     },
 
     editItem (item) {
