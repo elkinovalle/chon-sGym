@@ -132,7 +132,7 @@ import api from '@/plugins/service'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
-    this.getPlan()
+    this.getPlans()
   },
   data: () => ({
     dialog: false,
@@ -181,7 +181,7 @@ export default {
       val || this.close()
     }
   },
-  methods: {async getPlan () {
+  methods: {async getPlans () {
       const res = await api.get('/plan')
     },
     resetForm () {
