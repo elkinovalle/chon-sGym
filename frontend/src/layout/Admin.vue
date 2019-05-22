@@ -81,11 +81,7 @@ export default {
       { icon: 'fas fa-box', text: 'Clases', link: 'clases-admin' },
       { icon: 'history', text: 'Registro de compras', link: 'registro-compras' },
       { icon: 'update', text: 'Registro de Empleados', link: 'registro-empleados' },
-<<<<<<< HEAD
-      { icon: 'featured_play_list', text: 'Gestión de clases', link: 'gestion-clases' },
-=======
       { icon: 'featured_play_list', text: 'Gestión de reservas', link: 'gestion-clases' },
->>>>>>> 8936878f8cff190688a64145132a55324ad2ef40
       { icon: 'add', text: 'Proveedores', link: 'proveedores-admin' },
       { icon: 'money', text: 'Registro de Ventas', link: 'registro-ventas' },
       { icon: 'present_to_all', text: 'Novedades', link: 'novedades' },
