@@ -167,6 +167,6 @@ module.exports = async function () {
     Type_Membership,
     Marchinery,
     Installation,
-    plan
+    Plan
   }
 }
