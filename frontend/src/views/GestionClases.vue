@@ -7,14 +7,10 @@
     >
     <v-layout>
       <v-flex xs4>
-        <v-select
-        v-model="select"
-        :items="items"
-        :rules="[v => !!v || 'La clase es requerida']"
-        label="Seleccionar Clase"
-        required
-        ></v-select>
-
+        <v-text-field
+          label="Nombre de la clase"
+          clearable
+        ></v-text-field>
         <v-flex>
           <v-textarea
             name="input-7-1"
@@ -103,16 +99,7 @@
         Borrar Datos
       </v-btn>
       </v-flex>
-      <v-flex xs2>
-        <v-btn
-        color='red darken-4 white--text'
-        to="/crear-clase-nueva"
-        >Agregar nueva Clase
-          <br>
-          <v-icon medium>add</v-icon>
-        </v-btn>
-      </v-flex>
-      </v-layout>
+    </v-layout>
 
     </v-form>
     </div>

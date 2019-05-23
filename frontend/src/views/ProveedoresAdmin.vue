@@ -64,6 +64,7 @@
 
             <v-flex xs6>
               <v-combobox
+                box
                 v-model="select"
                 :items="items"
               ></v-combobox>
@@ -76,6 +77,13 @@
     </v-form>
     <v-card>
       <v-card-title>
+      <v-toolbar-title class="titulo2">Proveedores</v-toolbar-title>
+      <v-divider
+        class="mx-2"
+        inset
+        vertical
+      ></v-divider>
+      <v-spacer></v-spacer>
         <v-spacer></v-spacer>
         <v-text-field
           v-model="search"
@@ -187,32 +195,11 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-  .subheader{
-    text-align center !important
-    display 1
-  }
-  .v-text-field.v-text-field--enclosed {
-    --v-primary-base white
-  }
-  .theme--dark.v-text-field--box > .v-input__control > .v-input__slot {
-    background rgba(0,0,0,0.8)
-  }
-  .theme--dark.v-input:not(.v-input--is-disabled) input, .theme--dark.v-input:not(.v-input--is-disabled) textarea {
-    color white
-    font-size 20px
-  }
-  .v-input{
-    --v-primary-base white
-  }
-  .flex.xs6 {
-    background: rgba(0,0,0,0.8);
-    height: 56px;
-    margin: 8px 0px 0px 0px;
-  }
-  .theme--dark.v-label {
-    color white
-  }
+  
   div.v-card__title{
-    background-color: darkred;
+    background-color darkred
+  }
+  .titulo2{
+    color white !important
   }
 </style>
