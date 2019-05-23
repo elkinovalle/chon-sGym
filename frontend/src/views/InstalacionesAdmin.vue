@@ -23,7 +23,7 @@
             <material-card class="v-card-profile">
               <v-avatar class="text--center mx-auto d-block" >
                 <template v-for="(img, i) in imgs">
-                  <img class="imagenq" :src="img.url" :key="i" v-show="img">
+                  <v-img class="imagenq" :src="img.url" :key="i" v-show="img"></v-img>
                 </template>
               </v-avatar>
               <v-card-text class="margen text-xs-center">
