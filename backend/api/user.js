@@ -20,6 +20,7 @@ router.post('/', async function(req, res, next){
 router.post('/singin', async function(req, res, next){
   try {
     const credentials = req.body
+    console.log(credentials)
     const { User } = await db()
     const result = await User.singin(credentials)
     res.send(result)
