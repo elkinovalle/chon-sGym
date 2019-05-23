@@ -5,7 +5,7 @@
     <v-form>
       <v-container>
         <v-layout row wrap>
-          <v-flex xs12 sm6>
+          <v-flex xs12 sm12>
             <v-text-field
               v-model="editedItem.titulo"
               box
@@ -19,7 +19,7 @@
               clearable
             ></v-textarea>
           </v-flex>
-           <v-flex xs12 sm6>
+           <v-flex xs12 sm12 offset-xs3>
             <material-card class="v-card-profile">
               <v-avatar class="text--center mx-auto d-block" >
                 <template v-for="(img, i) in imgs">
@@ -137,9 +137,7 @@ export default {
       contenido: '',
       titulo: '',
       imgUrl: ''
-
     }
-
   }),
 
   computed: {
@@ -235,11 +233,11 @@ export default {
 .imagenq{
   width 150px !important
   height 150px !important
-  margin 0px 0px 0px -100px
+  margin 0px 0px 0px -310px
   border-radius 0%
 }
 .boton{
-  margin 110px 110px 0px 0px
+  margin 110px 310px 0px 0px
 }
 .botones{
   height 70px
