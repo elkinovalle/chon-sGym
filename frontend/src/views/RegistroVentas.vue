@@ -76,9 +76,10 @@
         </v-layout>
       </v-container>
     </v-form>
-     <v-toolbar flat color="white">
+     <v-toolbar flat color="red darken-4">
+      <v-toolbar-title class="titulo2">Registro de Ventas</v-toolbar-title>
       <v-divider
-        class="mx-1"
+        class="mx-2"
         inset
         vertical
       ></v-divider>
@@ -262,5 +263,7 @@ export default {
 .container.fill-height {
     background-color: white;
 }
-
+.titulo2{
+  color white !important
+}
 </style>

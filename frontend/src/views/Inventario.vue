@@ -64,7 +64,7 @@
       </v-container>
     </v-form>
     <v-toolbar flat color="red darken-4">
-      <v-toolbar-title>Inventario</v-toolbar-title>
+      <v-toolbar-title class="titulo2">Inventario</v-toolbar-title>
       <v-divider
         class="mx-2"
         inset
@@ -309,6 +309,9 @@ export default {
     margin 8px 0 0 0
     background rgba(0,0,0,0.1)
     height 56px
+  }
+  .titulo2{
+    color white !important
   }
 
 </style>

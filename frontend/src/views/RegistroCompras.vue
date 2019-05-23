@@ -72,7 +72,7 @@
             </v-container>
     </v-form>
     <v-toolbar flat color="red darken-4">
-      <v-toolbar-title>Registro Compras</v-toolbar-title>
+      <v-toolbar-title class="titulo2">Registro de Compras</v-toolbar-title>
       <v-divider
         class="mx-2"
         inset
@@ -322,5 +322,8 @@ export default {
 
 }
 </script>
-<style lang="stylus">
- </style>
+<style lang="stylus" scoped>
+.titulo2{
+  color white !important
+}
+</style>

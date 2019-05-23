@@ -60,7 +60,7 @@
         </v-layout>
       </v-container>
     </v-form>
-     <v-toolbar flat color="white">
+     <v-toolbar flat color="red darken-4">
       <v-spacer></v-spacer>
       <v-dialog v-model="dialog" max-width="500px">
         <template v-slot:activator="{ on }">
