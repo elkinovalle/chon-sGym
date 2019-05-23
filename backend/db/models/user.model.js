@@ -46,7 +46,6 @@ module.exports = function setupMetricModel (config) {
     },
     password: {
       type: Sequelize.TEXT,
-      alloNull: false
     },
     empresa:{
       type : Sequelize.TEXT
