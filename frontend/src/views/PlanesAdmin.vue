@@ -54,7 +54,7 @@
             </material-card>
         </v-flex>
         <v-flex xs12 sm6>
-          <v-btn color="green darken-4" class="botones white--text headline" @click="save,submit" >Agregar Plan</v-btn>
+          <v-btn color="green darken-4" class="botones white--text headline" @click="save" >Agregar Plan</v-btn>
           <v-btn color="red darken-4" class="botones white--text headline" >Cancelar</v-btn>
         </v-flex>
         </v-layout>
@@ -128,6 +128,8 @@
     </div>
 </template>
 <script>
+import storage from '@/plugins/firebase'
+import uuid from 'uuid/v4'
 import api from '@/plugins/service'
 export default {
   created () {
@@ -183,12 +185,13 @@ export default {
   },
   methods: {
     async getPlans () {
-      const res = await api.get('/plan')  
+      const res = await api.get('/plan')
     },
     resetForm () {
       this.$refs.form.reset()
     },
-    async submit () {
+    async save () {
+      console.log('dvsd')
       const res = await api.post('/plan',
         {
           planNew: {
@@ -199,7 +202,13 @@ export default {
           }
         })
       this.snackbar = true
+      if (this.editedIndex > -1) {
+        Object.assign(this.desserts[this.editedIndex], this.editedItem)
+      } else {
+        this.desserts.push(this.editedItem)
+      }
       this.resetForm()
+      this.close()
     },
     pickFile () {
       this.$refs.image.click()
@@ -213,9 +222,12 @@ export default {
         }
         const fr = new FileReader()
         fr.readAsDataURL(files[0])
-        fr.addEventListener('load', () => {
+        fr.addEventListener('load', async () => {
           this.imgUrl = fr.result
-        // this.imageFile = files[0] // this is an image file that can be sent to server...
+          const nameImg = uuid()
+          const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
+          const imgUpload = await imageRef.putString(fr.result, 'data_url')
+          const imgUrl = await imageRef.getDownloadURL()
         })
       } else {
         this.imageName = ''
@@ -235,33 +247,24 @@ export default {
       ]
     },
 
-  editItem (item) {
-    this.editedIndex = this.desserts.indexOf(item)
-    this.editedItem = Object.assign({}, item)
-    this.dialog = true
-  },
+    editItem (item) {
+      this.editedIndex = this.desserts.indexOf(item)
+      this.editedItem = Object.assign({}, item)
+      this.dialog = true
+    },
 
-  deleteItem (item) {
-    const index = this.desserts.indexOf(item)
-    confirm('Estás seguro que deseas elimiar este item?') && this.desserts.splice(index, 1)
-  },
+    deleteItem (item) {
+      const index = this.desserts.indexOf(item)
+      confirm('Estás seguro que deseas elimiar este item?') && this.desserts.splice(index, 1)
+    },
 
-  close () {
-    this.dialog = false
-    setTimeout(() => {
-      this.editedItem = Object.assign({}, this.defaultItem)
-      this.editedIndex = -1
-    }, 300)
-  },
-
-  save () {
-    if (this.editedIndex > -1) {
-      Object.assign(this.desserts[this.editedIndex], this.editedItem)
-    } else {
-      this.desserts.push(this.editedItem)
+    close () {
+      this.dialog = false
+      setTimeout(() => {
+        this.editedItem = Object.assign({}, this.defaultItem)
+        this.editedIndex = -1
+      }, 300)
     }
-    this.close()
-  }
   }
 
 }
