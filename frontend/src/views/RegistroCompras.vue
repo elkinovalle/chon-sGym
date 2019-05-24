@@ -6,18 +6,16 @@
         <v-layout row wrap>
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message1v"
+              v-model="editedItem.codigo"
               box
               label="Número de serial o codigo"
               clearable
-            ></v-text-field><div v-for="item in items" :key="item.id">
-              {{ item }}
-            </div>
+            ></v-text-field>
           </v-flex>
 
            <v-flex xs12 sm6>
             <v-text-field
-              v-model="message2"
+              v-model="editedItem.nombre"
               box
               label="Nombre del Producto"
               clearable
@@ -26,7 +24,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message3"
+              v-model="editedItem.marca"
               box
               label= "Marca"
               clearable
@@ -35,7 +33,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message4"
+              v-model="editedItem.descripcion"
               box
               label="Descripción"
               clearable
@@ -43,29 +41,30 @@
           </v-flex>
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message5"
+              v-model="editedItem.cantidad"
               box
               label="Cantidad"
               clearable
+              type="number"
             ></v-text-field>
           </v-flex>
           <v-flex xs12 sm3>
             <v-text-field
-              v-model="message6"
+              v-model="editedItem.valor_unitario"
               box
               label="valor_unitario"
             ></v-text-field>
           </v-flex>
           <v-flex xs12 sm3>
             <v-text-field
-              v-model="message7"
+              v-model="editedItem.total"
               box
               label="Total"
               clearable
             ></v-text-field>
           </v-flex>
 
-          <v-btn color="green darken-4" class=" white--text " >Agregar Producto</v-btn>
+          <v-btn color="green darken-4" class=" white--text " @click="save" >Agregar Producto</v-btn>
           <v-btn color="red darken-4" class=" white--text " >Cancelar</v-btn>
 
            </v-layout>
@@ -92,7 +91,7 @@
             <v-container grid-list-md>
               <v-layout wrap>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.name" label="codigo"></v-text-field>
+                  <v-text-field v-model="editedItem.codigo" label="codigo"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
                   <v-text-field v-model="editedItem.producto" label="producto"></v-text-field>
@@ -124,11 +123,13 @@
       class="elevation-1"
     >
       <template v-slot:items="props">
-        <td>{{ props.item.name }}</td>
-        <td class="text-xs-right">{{ props.item.producto}}</td>
+        <td class="text-xs-right">{{ props.item.codigo}}</td>
+        <td class="text-xs-right">{{ props.item.nombre}}</td>
         <td class="text-xs-right">{{ props.item.marca }}</td>
         <td class="text-xs-right">{{ props.item.descripcion }}</td>
         <td class="text-xs-right">{{ props.item.cantidad }}</td>
+        <td class="text-xs-right">{{ props.item.valor_unitario}}</td>
+        <td class="text-xs-right">{{ props.item.total}}</td>
         <td class="justify-center layout px-0">
           <v-icon
             small
@@ -152,6 +153,7 @@
   </div>
 </template>
 <script>
+import api from '@/plugins/service'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
@@ -172,24 +174,25 @@ export default {
       { text: 'valor_unitario', value: 'valor_unitario' },
       { text: 'valor_total', value: 'valor_total', sortable: false }
     ],
-    codigo: [],
+    desserts: [],
     editedIndex: -1,
     editedItem: {
-      name: '',
-      producto: 0,
-      marca: 0,
-      descripcion: 0,
-      cantidad: 0,
-      valor_unitario: 0,
-      valor_total: 0
+      codigo: '',
+      producto: '',
+      marca: '',
+      descripcion: '',
+      cantidad: '',
+      valor_unitario: '',
+      valor_total: ''
     },
     defaultItem: {
-      name: '',
-      producto: 0,
-      marca: 0,
-      descripcion: 0,
-      cantidad: 0,
-      valor_unitario: 0
+      codigo: '',
+      producto: '',
+      marca: '',
+      descripcion: '',
+      cantidad: '',
+      valor_unitario: '',
+      valor_total: ''
     }
   }),
 
@@ -203,93 +206,27 @@ export default {
       val || this.close()
     }
   },
-
-  methods: {
-    initialize () {
-      this.desserts = [
-        {
-          name: 52,
-          producto: 'proteina',
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0,
-          valor_total: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
+   methods: { async getClasses () {
+    const res = await api.get('/class')
+  },
+  resetForm () {
+    this.$refs.form.reset()
+  },
+  async save () {
+    const res = await api.post('/class',
+      {
+        classNew: {
+          codigo:this.editedItem.codigo,
+          nombre: this.editedItem.titulo,
+          marca: this.editedItem.marca,
+          descripcion: this.editedItem.descripcion,
+          cantidad:this.editedItem.cantidad,
+          valor_unitario:this.editedItem.valor_unitario
         }
-      ]
-    },
+      })
+    this.snackbar = true
+    this.resetForm()
+  },
 
     editItem (item) {
       this.editedIndex = this.desserts.indexOf(item)

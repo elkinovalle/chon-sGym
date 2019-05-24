@@ -7,7 +7,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message1v"
+              v-model="editedItem.serial"
               box
               label="Número de serial o codigo"
               clearable
@@ -16,7 +16,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message2"
+              v-model="editedItem.nombre"
               box
               label="Nombre del Producto"
               clearable
@@ -25,7 +25,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message3"
+              v-model="editedItem.marca"
               box
               label= "Marca"
               clearable
@@ -34,7 +34,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message4"
+              v-model="editedItem.descripcion"
               box
               label="Descripción"
               clearable
@@ -43,7 +43,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="message5"
+              v-model="editedItem.cantidad"
               box
               label="Cantidad"
               clearable
@@ -68,7 +68,7 @@
       <v-divider
         class="mx-2"
         inset
-        vertical
+        vertical 
       ></v-divider>
       <v-spacer></v-spacer>
       <v-card-title>
@@ -91,7 +91,8 @@
     >
       <template v-slot:items="props">
         <td>{{ props.item.name }}</td>
-        <td class="text-xs-right">{{ props.item.producto}}</td>
+        <td class="text-xs-right">{{ props.item.codigo}}</td>
+        <td class="text-xs-right">{{ props.item.nombre}}</td>
         <td class="text-xs-right">{{ props.item.marca }}</td>
         <td class="text-xs-right">{{ props.item.descripcion }}</td>
         <td class="text-xs-right">{{ props.item.cantidad }}</td>
@@ -132,11 +133,8 @@ export default {
     ],
     headers: [
       {
-        text: 'codigo ',
-        align: 'left',
-        sortable: false,
-        value: 'name'
       },
+      { text: 'codigo', value: 'codigo'},
       { text: 'producto', value: 'producto' },
       { text: 'marca', value: 'marca' },
       { text: 'descripcion', value: 'descripcion' },
@@ -177,91 +175,6 @@ export default {
   },
 
   methods: {
-    initialize () {
-      this.desserts = [
-        {
-          name: 52,
-          producto: 'proteina',
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0,
-          valor_total: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        },
-        {
-          name: 52,
-          producto: 0,
-          marca: 0,
-          descripcion: 0,
-          cantidad: 0,
-          valor_unitario: 0
-        }
-      ]
-    },
 
     editItem (item) {
       this.editedIndex = this.desserts.indexOf(item)
