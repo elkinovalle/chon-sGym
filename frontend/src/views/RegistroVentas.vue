@@ -194,19 +194,22 @@ export default {
       name: '',
       codigo: '',
       cantidad: '',
+      marca: '',
+      descripcion: '',
+      total: '',
       cedula: '',
       empleado: ''
-
     },
     defaultItem: {
       name: '',
       codigo: '',
       cantidad: '',
+      marca: '',
+      descripcion: '',
+      total: '',
       cedula: '',
       empleado: ''
-
     }
-
   }),
 
   computed: {
@@ -224,11 +227,14 @@ export default {
     initialize () {
       this.desserts = [
         {
-          name: '',
-          codigo: '',
-          cantidad: '',
-          cedula: '',
-          empleado: ''
+        name: '',
+        codigo: '',
+        cantidad: '',
+        marca: '',
+        descripcion: '',
+        total: '',
+        cedula: '',
+        empleado: ''
         }
       ]
     },
