@@ -208,7 +208,7 @@ export default {
         this.desserts.push(this.editedItem)
       }
       this.resetForm()
-     
+
       this.close()
     },
     pickFile () {

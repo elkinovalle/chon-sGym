@@ -190,7 +190,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-  
+
   div.v-card__title{
     background-color darkred
   }

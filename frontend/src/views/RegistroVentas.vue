@@ -107,10 +107,10 @@
                   <v-text-field v-model="editedItem.marca" label="Marca"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.valor" label="Valor Unitario"></v-text-field>
+                  <v-text-field v-model="editedItem.valor" label="Valor Unitario" type="number"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.cantidad" label="Cantidad"></v-text-field>
+                  <v-text-field v-model="editedItem.cantidad" label="Cantidad" type="number"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
                   <v-text-field v-model="editedItem.cedula" label="Cedula"></v-text-field>
@@ -138,7 +138,11 @@
       <template v-slot:items="props">
         <td class="text-xs-center">{{ props.item.codigo }}</td>
         <td class="text-xs-left">{{ props.item.name }}</td>
+        <td class="text-xs-left">{{ props.item.descripcion }}</td>
+        <td class="text-xs-left">{{ props.item.marca }}</td>
+        <td class="text-xs-left">{{ props.item.valor }}</td>
         <td class="text-xs-left">{{ props.item.cantidad }}</td>
+        <td class="text-xs-left">{{ props.item.valor * props.item.cantidad }}</td>
         <td class="text-xs-left">{{ props.item.cedula }}</td>
         <td class="text-xs-left">{{ props.item.empleado }}</td>
         <td class="justify-center layout px-0">
@@ -192,6 +196,7 @@ export default {
       cantidad: '',
       cedula: '',
       empleado: ''
+
     },
     defaultItem: {
       name: '',
@@ -226,6 +231,9 @@ export default {
           empleado: ''
         }
       ]
+    },
+    multiplicar () {
+      var total = this.editedItem.valor * this.editedItem.cantidad
     },
 
     editItem (item) {
