@@ -94,7 +94,7 @@ export default {
       { icon: 'email', text: 'Notificaciones', link: 'email-admin' },
       { icon: 'image', text: 'Fotos', link: 'fotos-admin' },
       { icon: 'list', text: 'Tareas', link: 'tareas-admin' },
-      { icon: 'close', text: 'Salir' }
+      { icon: 'close', text: 'Salir', link: 'Login' }
     ],
     props: {
       source: String

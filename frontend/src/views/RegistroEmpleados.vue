@@ -72,6 +72,7 @@
 
             <v-flex xs6>
               <v-combobox
+                box
                 v-model="select"
                 :items="items"
               ></v-combobox>
@@ -83,7 +84,13 @@
           <v-btn color="red darken-4" class=" white--text " >Cancelar</v-btn>
     </v-form>
     <v-card>
-      <v-card-title>
+      <v-card-title class="carta">
+       <v-toolbar-title class="titulo2">Registro de Empleados</v-toolbar-title>
+      <v-divider
+        class="mx-2"
+        inset
+        vertical
+      ></v-divider>
         <v-spacer></v-spacer>
         <v-text-field
           v-model="search"
@@ -193,5 +200,11 @@ export default {
 <style lang="stylus">
  th.column.sortable.text-xs-left{
    font-size 15px !important
+ }
+ .carta{
+   background-color darkred
+ }
+ .titulo2{
+   color white !important
  }
 </style>

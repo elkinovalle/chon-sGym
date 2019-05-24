@@ -60,7 +60,7 @@
         </v-layout>
       </v-container>
     </v-form>
-     <v-toolbar flat color="white">
+     <v-toolbar flat color="red darken-4">
       <v-spacer></v-spacer>
       <v-dialog v-model="dialog" max-width="500px">
         <template v-slot:activator="{ on }">
@@ -76,7 +76,7 @@
                   <v-text-field v-model="editedItem.titulo" label="Plan"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.precio" label="Precio"></v-text-field>
+                  <v-text-field v-model="editedItem.precio" label="Precio" type='number'></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
                   <v-text-field v-model="editedItem.descripcion" label="Descripción"></v-text-field>
@@ -187,18 +187,18 @@ export default {
     async getPlans () {
       const res = await api.get('/plan')
     },
-    resetForm () {
-      this.$refs.form.reset()
+    async resetForm () {
+      this.$refs.form.resetForm()
     },
     async save () {
-      console.log('dvsd')
       const res = await api.post('/plan',
         {
           planNew: {
             nombre: this.editedItem.titulo,
             descripcion: this.editedItem.descripcion,
             precio: this.editedItem.precio,
-            beneficio: this.editedItem.beneficios
+            beneficio: this.editedItem.beneficios,
+            foto: this.imgUrl
           }
         })
       this.snackbar = true
@@ -208,6 +208,7 @@ export default {
         this.desserts.push(this.editedItem)
       }
       this.resetForm()
+     
       this.close()
     },
     pickFile () {
