@@ -1,28 +1,30 @@
 <template>
   <div>
     <v-subheader class="subheader black--text display-1 font-weight-bold" >Registro de Proveedores</v-subheader>
-    <v-form>
+    <v-form ref="form">
       <v-container>
         <v-layout row wrap>
-
           <v-flex xs12 sm6>
             <v-text-field
+              v-model="nombres"
               box
               label="Nombres*"
               clearable
             ></v-text-field>
-          </v-flex>
+          </v-flex>  
 
           <v-flex xs12 sm6>
             <v-text-field
+              v-model="apellidos"
               box
               label="Apellidos*"
-              clearable
+               clearable
             ></v-text-field>
           </v-flex>
 
           <v-flex xs12 sm6>
             <v-text-field
+              v-model="documento"
               box
               label= "No. Documento*"
               clearable
@@ -31,6 +33,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
+              v-model="telefono"
               box
               label="Teléfono*"
               clearable
@@ -39,6 +42,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
+              v-model="direccion"
               box
               label="Dirección*"
               clearable
@@ -47,6 +51,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
+              v-model="email"
               :rules="rules.email"
               label="Correo electrónico"
               box
@@ -56,6 +61,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
+              v-model="empresa"
               box
               label="Empresa*"
               clearable
@@ -72,8 +78,8 @@
 
         </v-layout>
       </v-container>
-       <v-btn color="green darken-4" class=" white--text" >Registrar Proveedor</v-btn>
-          <v-btn color="red darken-4" class=" white--text " >Cancelar</v-btn>
+       <v-btn color="green darken-4" class=" white--text" @click="save" >Registrar Proveedor</v-btn>
+          <v-btn color="red darken-4" class=" white--text " @click="resetForm" >Cancelar</v-btn>
     </v-form>
     <v-card>
       <v-card-title>
@@ -105,7 +111,7 @@
           <td class="text-xs-right">{{ props.item.apellidos }}</td>
           <td class="text-xs-right">{{ props.item.telefono }}</td>
           <td class="text-xs-right">{{ props.item.direccion }}</td>
-          <td class="text-xs-right">{{ props.item.correo }}</td>
+          <td class="text-xs-right">{{ props.item.email }}</td>
           <td class="text-xs-right">{{ props.item.sexo }}</td>
           <td class="text-xs-right">{{ props.item.empresa }}</td>
 
@@ -118,14 +124,17 @@
   </div>
 </template>
 <script>
+import api from '@/plugins/service'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
+    this.getUsers()
   },
   data () {
     return {
       rules: {
-        email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail']
+        email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail'],
+        
       },
       search: '',
       headers: [
@@ -138,64 +147,50 @@ export default {
         { text: 'Apellidos', value: 'apellidos' },
         { text: 'Telefono', value: 'telefono' },
         { text: 'Direccion', value: 'direccion' },
-        { text: 'Correo Electronico', value: 'correo' },
+        { text: 'Correo Electronico', value: 'email' },
         { text: 'Sexo', value: 'sexo' },
         { text: 'Empresa', value: 'empresa' }
-      ],
-      desserts: [
-        {
-          documento: '100245210',
-          nombres: 'jeffreyM',
-          apellidos: 'muñoz',
-          telefono: '3121514214',
-          direccion: 'cra 3 #1-16',
-          correo: 'qwetyuior@gmail.com',
-          sexo: 'masculino',
-          empresa: 'BodyTech'
-        },
-        {
-          documento: '100245210',
-          nombres: 'jeffrey',
-          apellidos: 'muñoz',
-          telefono: '3121514214',
-          direccion: 'cra 3 #1-16',
-          correo: 'qwetyuior@gmail.com',
-          sexo: 'masculino',
-          empresa: 'BodyTech'
-        },
-        {
-          documento: '100245210',
-          nombres: 'jeffrey',
-          apellidos: 'muñoz',
-          telefono: '3121514214',
-          direccion: 'cra 3 #1-16',
-          correo: 'qwetyuior@gmail.com',
-          sexo: 'masculino',
-          empresa: 'BodyTech'
-        },
-        {
-          documento: '100245210',
-          nombres: 'jeffrey',
-          apellidos: 'muñoz',
-          telefono: '3121514214',
-          direccion: 'cra 3 #1-16',
-          correo: 'qwetyuior@gmail.com',
-          sexo: 'masculino',
-          empresa: 'BodyTech'
-        }
       ],
       select: 'Sexo*',
       items: [
         'Masculino',
         'Femenino'
-      ]
+      ],
+    }
+  },
+  methods: {
+    async getUsers () {
+      const res = await api.get('/user')
+    },
+   async resetForm () {
+      this.$refs.form.reset()
+    },
+    async save () {
+      const res = await api.post('/user',
+        {
+        userNew:{
+          nombre:this.nombres,
+          apellido:this.apellidos,
+          email:this.email,
+          cedula:this.documento,
+          telefono:this.telefono,
+          empresa:this.empresa,
+          direccion:this.direccion,
+          password:"" 
+        }
+      })
+      this.snackbar = true
+      this.resetForm()
+      console.log("asdasd");
+      
+      this.close()
     }
   }
 
 }
 </script>
 <style lang="stylus" scoped>
-  
+
   div.v-card__title{
     background-color darkred
   }
