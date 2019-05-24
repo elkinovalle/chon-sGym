@@ -19,13 +19,19 @@
               clearable
             ></v-textarea>
           </v-flex>
-           <v-flex xs12 sm12 offset-xs3>
+           <v-flex xs12 sm12 class="contenido">
             <material-card class="v-card-profile">
-              <v-avatar class="text--center mx-auto d-block" >
-                <template v-for="(img, i) in imgs">
-                  <v-img class="imagenq" :src="img.url" :key="i" v-show="img"></v-img>
-                </template>
-              </v-avatar>
+                <v-carousel  >
+                <v-carousel-item
+                  v-for="(item,i) in imgs"
+                  :key="i"
+                  :src="item.url"
+                >
+                <v-btn color="right red darken-4" fab small dark @click="deleteImg(i)">
+                  <v-icon class="icono">close</v-icon>
+                </v-btn>
+                </v-carousel-item>
+                </v-carousel>
               <v-card-text class="margen text-xs-center">
                   <v-form name="formulario" method="post" enctype="form-data">
                     <v-btn class="boton" @click='pickFile' v-model='imageName' prepend-icon='attach_file'>Selecciona las imágenes que desees</v-btn>
@@ -43,7 +49,7 @@
     </v-form>
      <v-toolbar flat color="red darken-4">
       <v-spacer></v-spacer>
-      <v-dialog v-model="dialog" max-width="500px">
+      <v-dialog v-model="dialog" max-width="300px">
         <template v-slot:activator="{ on }">
         </template>
         <v-card>
@@ -152,6 +158,11 @@ export default {
     }
   },
   methods: {
+    async deleteImg(i){
+      const imageRef = storage.ref().child(this.imgs[0].imgRef)
+      const dele = await imageRef.delete()
+      this.imgs.splice(i,1)
+          },
     pickFile () {
       this.$refs.image.click()
     },
@@ -237,11 +248,14 @@ export default {
   border-radius 0%
 }
 .boton{
-  margin 110px 310px 0px 0px
+  margin 20px 0px 0px 0px
 }
 .botones{
   height 70px
   width 300px
   margin 10px 0px 30px 150px
+}
+.contenido{
+  padding 0px 250px!important
 }
 </style>

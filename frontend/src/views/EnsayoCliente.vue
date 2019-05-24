@@ -1,80 +1,97 @@
 <template>
-  <div id="my-strictly-unique-vue-upload-multiple-image" style="display: flex; justify-content: center;">
-    <vue-upload-multiple-image
-      @upload-success="uploadImageSuccess"
-      @before-remove="beforeRemove"
-      @edit-image="editImage"
-      @data-change="dataChange"
-      :data-images="images"
-      ></vue-upload-multiple-image>
-  </div>
+    <div>
+        <upload-image url="" name="" :max_files="5"></upload-image>
+    </div>
 </template>
-
 <script>
-import VueUploadMultipleImage from 'vue-upload-multiple-image'
-import axios from 'axios'
 export default {
-  name: 'app',
+  props: [
+    'settings'
+  ],
   data () {
     return {
-      images: []
+      // You can store all your files here
+      attachments: [],
+      // Each file will need to be sent as FormData element
+      data: new FormData(),
+      errors: {
+      },
+      percentCompleted: 0 // You can store upload progress 0-100 in value, and show it on the screen
     }
   },
-  components: {
-    VueUploadMultipleImage
+  watch: {
+  },
+  computed: {
   },
   methods: {
-    uploadImageSuccess(formData, index, fileList) {
-      console.log('data', formData, index, fileList)
-      // Upload image api
-      // axios.post('http://your-url-upload', { data: formData }).then(response => {
-      //   console.log(response)
-      // })
+    getAttachmentSize () {
+      this.upload_size = 0 // Reset to beginningƒ
+      this.attachments.map((item) => { this.upload_size += parseInt(item.size) })
+
+      this.upload_size = Number((this.upload_size).toFixed(1))
+      this.$forceUpdate()
     },
-    beforeRemove (index, done, fileList) {
-      console.log('index', index, fileList)
-      var r = confirm("remove image")
-      if (r == true) {
-        done()
-      } else {
+    prepareFields () {
+      if (this.attachments.length > 0) {
+        for (var i = 0; i < this.attachments.length; i++) {
+          let attachment = this.attachments[i]
+          this.data.append('attachments[]', attachment)
+        }
       }
     },
-    editImage (formData, index, fileList) {
-      console.log('edit data', formData, index, fileList)
+    removeAttachment (attachment) {
+      this.attachments.splice(this.attachments.indexOf(attachment), 1)
+
+      this.getAttachmentSize()
     },
-    dataChange (data) {
-      console.log(data)
+    // This function will be called every time you add a file
+    uploadFieldChange (e) {
+      var files = e.target.files || e.dataTransfer.files
+      if (!files.length) { return }
+      for (var i = files.length - 1; i >= 0; i--) {
+        this.attachments.push(files[i])
+      }
+      // Reset the form to avoid copying these files multiple times into this.attachments
+      document.getElementById('attachments').value = []
+    },
+    submit () {
+      this.prepareFields()
+      var config = {
+        headers: { 'Content-Type': 'multipart/form-data' },
+        onUploadProgress: function (progressEvent) {
+          this.percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
+          this.$forceUpdate()
+        }.bind(this)
+      }
+      // Make HTTP request to store announcement
+      axios.post(this.settings.file_management.upload_files, this.data, config)
+        .then(function (response) {
+          console.log(response)
+          if (response.data.success) {
+            console.log('Successfull Upload')
+            toastr.success('Files Uploaded!', 'Success')
+            this.resetData()
+          } else {
+            console.log('Unsuccessful Upload')
+            this.errors = response.data.errors
+          }
+        }.bind(this)) // Make sure we bind Vue Component object to this funtion so we get a handle of it in order to call its other methods
+        .catch(function (error) {
+          console.log(error)
+        })
+    },
+    // We want to clear the FormData object on every upload so we can re-calculate new files again.
+    // Keep in mind that we can delete files as well so in the future we will need to keep track of that as well
+    resetData () {
+      this.data = new FormData() // Reset it completely
+      this.attachments = []
+    },
+    start () {
+      console.log('Starting File Management Component')
     }
+  },
+  created () {
+    this.start()
   }
 }
 </script>
-
-<style>
-#my-strictly-unique-vue-upload-multiple-image {
-  /* font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 40px;
-  height: 200px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
