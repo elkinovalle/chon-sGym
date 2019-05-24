@@ -17,10 +17,20 @@ module.exports = function setupMetricModel (config) {
         type: Sequelize.TEXT
     },
     marca: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT      
     },
     descripcion: {
         type: Sequelize.TEXT
+    },
+    cantiad: {
+      type: Sequelize.INTEGER
+    },
+    valorUnitario: {
+      type: Sequelize.DECIMAL
+    },
+    valorTotal: {
+      type: Sequelize.DECIMAL
     }
+
   })
 }
