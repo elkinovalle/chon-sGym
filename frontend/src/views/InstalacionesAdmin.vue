@@ -6,7 +6,7 @@
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 sm12>
-            <v-text-field
+            <v-text-field   
               v-model="editedItem.titulo"
               box
               label="Título"
