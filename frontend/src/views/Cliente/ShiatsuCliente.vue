@@ -29,7 +29,7 @@
     <v-flex xs12 sm6 md12 offset-xs1>
       <h1 class="text-xs-center black--text display-1">CLASE<strong> GRUPAL</strong></h1>
       <p></p>
-        <img class="imagen_clases" src="../assets/shiatsu.jpg" alt="">
+        <img class="imagen_clases" src="../../assets/shiatsu.jpg" alt="">
         <p></p><br>
         <v-btn color="black" class="font-weight-black white--text title" to="planes-cliente">Ver Planes</v-btn>
         <p></p><br>

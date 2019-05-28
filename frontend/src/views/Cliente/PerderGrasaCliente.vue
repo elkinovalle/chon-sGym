@@ -27,7 +27,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_clave" src="../assets/abdomen.jpg" alt="">
+               <img class="imagen_clave" src="../../assets/abdomen.jpg" alt="">
                <p></p>
                 </v-card>
           </v-flex>
@@ -56,7 +56,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_habitos" src="../assets/habitos.jpg" alt="">
+               <img class="imagen_habitos" src="../../assets/habitos.jpg" alt="">
                <p></p>
                <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/planes-cliente" >Ver planes</v-btn>
                <p></p><br>

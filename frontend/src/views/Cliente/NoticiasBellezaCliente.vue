@@ -21,7 +21,7 @@
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 >
-      <img class="retrato" src="../assets/pasos.jpg" alt="">
+      <img class="retrato" src="../../assets/pasos.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md2>
     </v-flex>
@@ -33,11 +33,11 @@
          <v-flex d-flex xs12 sm6 md2>
         </v-flex>
           <v-flex d-flex xs12 sm6 md4 class="cajon6">
-      <img class="retrato" src="../assets/abdomen.jpg" alt="">
+      <img class="retrato" src="../../assets/abdomen.jpg" alt="">
 
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 class="cajon7">
-      <img class="retrato" src="../assets/miss-universo.jpg" alt="">
+      <img class="retrato" src="../../assets/miss-universo.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md2>
     </v-flex>

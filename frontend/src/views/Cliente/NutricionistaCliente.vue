@@ -17,7 +17,7 @@
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
                   <p></p><br>
-               <img class="imagen_nutricionista" src="../assets/nutricionista.jpg" alt="">
+               <img class="imagen_nutricionista" src="../../assets/nutricionista.jpg" alt="">
                <p></p>
                <v-btn color="blue darken-4" class="font-weight-black white--text title" to="/planes-cliente" >Ver planes</v-btn>
                <p></p><br>

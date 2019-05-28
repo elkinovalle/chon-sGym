@@ -27,7 +27,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_universo" src="../assets/motivarte-2.jpg" alt="">
+               <img class="imagen_universo" src="../../assets/motivarte-2.jpg" alt="">
                <p></p>
                 </v-card>
           </v-flex>

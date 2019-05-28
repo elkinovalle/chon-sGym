@@ -27,7 +27,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_universo" src="../assets/motivarte-3.jpg" alt="">
+               <img class="imagen_universo" src="../../assets/motivarte-3.jpg" alt="">
                <p></p>
                 </v-card>
           </v-flex>
@@ -68,7 +68,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_habitos" src="../assets/pilates.gif" alt="">
+               <img class="imagen_habitos" src="../../assets/pilates.gif" alt="">
                <p></p><br>
                <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/planes-cliente" >Ver Planes</v-btn>
                <p></p><br>

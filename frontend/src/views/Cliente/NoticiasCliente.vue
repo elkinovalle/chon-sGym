@@ -9,7 +9,7 @@
            <v-flex d-flex xs12 sm6 md1 >
         </v-flex>
           <v-flex d-flex xs12 sm6 md5>
-             <img class="belleza" src="../assets/categoria-belleza.jpg" alt="">
+             <img class="belleza" src="../../assets/categoria-belleza.jpg" alt="">
         </v-flex>
          <v-flex d-flex xs12 sm6 md3 class="letrero">
                      <v-card class="caja" dark flat>
@@ -30,7 +30,7 @@
            <v-flex d-flex xs12 sm6 md4 >
         </v-flex>
           <v-flex d-flex xs12 sm6 md3>
-             <img class="belleza2" src="../assets/Equilibrio.jpg" alt="">
+             <img class="belleza2" src="../../assets/Equilibrio.jpg" alt="">
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 class="cajon">
                      <v-card class="caja" dark flat>
@@ -60,7 +60,7 @@
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 >
-      <img class="belleza" src="../assets/salud.jpg" alt="">
+      <img class="belleza" src="../../assets/salud.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md3>
     </v-flex>
@@ -82,7 +82,7 @@
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md3 >
-      <img class="belleza2" src="../assets/Rutinas.jpg" alt="">
+      <img class="belleza2" src="../../assets/Rutinas.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md1>
     </v-flex>
