@@ -1,6 +1,6 @@
 <template>
 <div class="imagen_recibo">
-  <img class="imagen_icon" src="../assets/Logo-gym.png" alt="">
+  <img class="imagen_icon" src="../../assets/Logo-gym.png" alt="">
 <v-layout row wrap>
     <form>
       <v-flex xs14 sm14>
@@ -152,7 +152,7 @@ form{
   background-image url('')
 }
 .imagen_recibo{
-      background-image url('../assets/portadamembresia.jpg') !important
+      background-image url('../../assets/portadamembresia.jpg') !important
       margin-top -14px
 }
 img.imagen_icon{

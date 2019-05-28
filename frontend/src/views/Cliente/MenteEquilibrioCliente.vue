@@ -33,11 +33,11 @@
          <v-flex d-flex xs12 sm6 md2>
         </v-flex>
           <v-flex d-flex xs12 sm6 md4 class="cajon6">
-      <img class="retrato" src="../assets/motivarte-2.jpg" alt="">
+      <img class="retrato" src="../../assets/motivarte-2.jpg" alt="">
 
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 class="cajon7">
-      <img class="retrato" src="../assets/motivarte-3.jpg" alt="">
+      <img class="retrato" src="../../assets/motivarte-3.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md2>
     </v-flex>
