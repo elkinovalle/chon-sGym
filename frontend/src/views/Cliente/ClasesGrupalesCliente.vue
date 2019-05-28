@@ -20,11 +20,11 @@
         </v-flex>
                 <v-flex d-flex xs12 sm3 md1 offset-xs1>
               <v-card color="transparent" dark flat>
-                  <img class="imagen_icon" src="../assets/transport.png" alt=""><br>
+                  <img class="imagen_icon" src="../../assets/transport.png" alt=""><br>
                   <p></p>
-                  <img class="imagen_icon" src="../assets/sports (2).png" alt=""><br>
+                  <img class="imagen_icon" src="../../assets/sports (2).png" alt=""><br>
                   <p></p>
-                  <img class="imagen_icon" src="../assets/sports (3).png" alt="">
+                  <img class="imagen_icon" src="../../assets/sports (3).png" alt="">
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm3 md1>

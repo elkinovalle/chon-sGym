@@ -44,7 +44,7 @@
            <v-container>
                <v-layout>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
-               <img class="imagen_clave" src="../assets/pasos.jpg" alt="">
+               <img class="imagen_clave" src="../../assets/pasos.jpg" alt="">
           </v-flex>
            <v-flex d-flex xs12 sm6 md6 class="cuadro">
                <v-card class="vista" dark flat>

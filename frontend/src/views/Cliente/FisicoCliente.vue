@@ -43,7 +43,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_universo" src="../assets/entrenador.jpg" alt="">
+               <img class="imagen_universo" src="../../assets/entrenador.jpg" alt="">
                <p></p>
                 </v-card>
           </v-flex>
@@ -80,7 +80,7 @@
            <v-container>
                <v-layout>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
-               <img class="imagen_clave" src="../assets/bienestar-2.jpg" alt="">
+               <img class="imagen_clave" src="../../assets/bienestar-2.jpg" alt="">
           </v-flex>
            <v-flex d-flex xs12 sm6 md6 class="cuadro">
                <v-card class="vista" dark flat>

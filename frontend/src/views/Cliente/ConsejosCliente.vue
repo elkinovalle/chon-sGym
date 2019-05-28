@@ -34,7 +34,7 @@
          <v-flex d-flex xs12 sm6 md4>
           <v-card color="white" dark flat>
               <p></p><br>
-        <img class="imagen_tips" src="../assets/bajar_peso.jpg" alt="">
+        <img class="imagen_tips" src="../../assets/bajar_peso.jpg" alt="">
           </v-card>
         </v-flex>
        <v-flex d-flex xs12 sm6 md2>

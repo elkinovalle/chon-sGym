@@ -27,7 +27,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_universo" src="../assets/rutina-2.jpg" alt="">
+               <img class="imagen_universo" src="../../assets/rutina-2.jpg" alt="">
                <p></p>
                 </v-card>
           </v-flex>
@@ -60,7 +60,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_habitos" src="../assets/hiit.jpg" alt="">
+               <img class="imagen_habitos" src="../../assets/hiit.jpg" alt="">
                <p></p><br>
                 </v-card>
           </v-flex>
@@ -91,7 +91,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_habitos" src="../assets/hiit-2.jpg" alt="">
+               <img class="imagen_habitos" src="../../assets/hiit-2.jpg" alt="">
                <p></p><br>
                 </v-card>
           </v-flex>

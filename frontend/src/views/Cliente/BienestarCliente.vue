@@ -21,7 +21,7 @@
           </v-card>
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 >
-      <img class="retrato" src="../assets/bienestar.jpg" alt="">
+      <img class="retrato" src="../../assets/bienestar.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md2>
     </v-flex>

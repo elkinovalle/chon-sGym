@@ -32,7 +32,7 @@
         </v-flex>
          <v-flex d-flex xs12 sm6 md4>
           <v-card color="white" dark flat>
-        <img class="imagen_tips" src="../assets/hidratacion.jpg" alt="">
+        <img class="imagen_tips" src="../../assets/hidratacion.jpg" alt="">
           </v-card>
         </v-flex>
        <v-flex d-flex xs12 sm6 md2>

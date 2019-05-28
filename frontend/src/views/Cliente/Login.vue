@@ -9,7 +9,7 @@
           <v-flex xs12 sm8 md8>
               <v-card class="elevation-12">
                 <v-toolbar color="blue darken-4" height="150">
-                    <img src="../assets/lofo-fondo-blanco.png" alt="" class="symbol">
+                    <img src="../../assets/lofo-fondo-blanco.png" alt="" class="symbol">
                 <v-toolbar-title class="font-weight-medium white--text display-1">Chon's Gym</v-toolbar-title>
                 </v-toolbar>
               <v-card-text class="contenedor white">
@@ -110,7 +110,7 @@ img.symbol {
   width 100px !important
 }
 div.found{
-      background-image url('../assets/gym.jpg');
+      background-image url('../../assets/gym.jpg');
       margin-bottom 1px
       margin-top 1px
       margin-left -150px

@@ -181,7 +181,7 @@ export default {
     margin 0px 0px 0px 60px
   }
   div.lonuevo{
-      background-image url('../assets/pesas.jpg') !important
+      background-image url('../../assets/pesas.jpg') !important
       margin-top -14px
   }
   .v-btn.botones{

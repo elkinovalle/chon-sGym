@@ -27,7 +27,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_universo" src="../assets/miss-universo.jpg" alt="">
+               <img class="imagen_universo" src="../../assets/miss-universo.jpg" alt="">
                <p></p>
                 </v-card>
           </v-flex>
@@ -68,7 +68,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_habitos" src="../assets/snack.gif" alt="">
+               <img class="imagen_habitos" src="../../assets/snack.gif" alt="">
                <p></p><br>
                 </v-card>
           </v-flex>
@@ -118,7 +118,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_valle" src="../assets/valle.jpg" alt="">
+               <img class="imagen_valle" src="../../assets/valle.jpg" alt="">
                <p></p><br>
                 </v-card>
           </v-flex>
@@ -146,7 +146,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_valle" src="../assets/bogota.jpg" alt="">
+               <img class="imagen_valle" src="../../assets/bogota.jpg" alt="">
                <p></p><br>
                 </v-card>
           </v-flex>
@@ -176,7 +176,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_valle" src="../assets/brasil.jpg" alt="">
+               <img class="imagen_valle" src="../../assets/brasil.jpg" alt="">
                <p></p><br>
                 </v-card>
           </v-flex>
@@ -204,7 +204,7 @@
           </v-flex>
           <v-flex d-flex xs12 sm6 md6 class="cuadro">
               <v-card flat>
-               <img class="imagen_valle" src="../assets/miss.jpg" alt="">
+               <img class="imagen_valle" src="../../assets/miss.jpg" alt="">
                <p></p><br>
                <v-btn color="blue darken-4" class="right font-weight-black white--text title" to="/planes-cliente" >Ver planes</v-btn>
                <p></p><br>

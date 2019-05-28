@@ -257,7 +257,7 @@
            <v-flex d-flex xs12 sm6>
                <v-card color="transparent" class="alert2" flat>
                   <v-flex d-flex xs12 sm1>
-                     <img class="imagen_alert" src="../assets/spinning-1.jpg" alt="">
+                     <img class="imagen_alert" src="../../assets/spinning-1.jpg" alt="">
                   </v-flex>
                   </v-card>
         </v-flex>
