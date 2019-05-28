@@ -33,10 +33,10 @@
          <v-flex d-flex xs12 sm6 md2>
         </v-flex>
           <v-flex d-flex xs12 sm6 md4 class="cajon6">
-      <img class="retrato" src="../assets/bienestar-2.jpg" alt="">
+      <img class="retrato" src="../../assets/bienestar-2.jpg" alt="">
         </v-flex>
          <v-flex d-flex xs12 sm6 md4 class="cajon8">
-      <img class="retrato2" src="../assets/bienestar-3.jpg" alt="">
+      <img class="retrato2" src="../../assets/bienestar-3.jpg" alt="">
         </v-flex>
     <v-flex xs12 sm6 md2>
     </v-flex>

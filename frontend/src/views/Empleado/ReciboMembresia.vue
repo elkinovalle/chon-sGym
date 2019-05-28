@@ -1,6 +1,6 @@
 <template>
 <div class="imagen_recibo">
-  <img class="imagen_icon" src="../assets/Logo-gym.png" alt="">
+  <img class="imagen_icon" src="../../assets/Logo-gym.png" alt="">
 <v-layout row wrap>
     <form>
       <v-flex xs14 sm14>
