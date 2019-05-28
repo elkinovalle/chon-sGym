@@ -1,7 +1,7 @@
 <template>
     <div>
    <v-subheader class="subheader black--text display-1 font-weight-bold ">Compras</v-subheader>
-    <v-form>
+     <v-form ref="form">
       <v-container>
         <v-layout row wrap>
            <v-flex xs12 sm6>
@@ -166,9 +166,12 @@
     </div>
 </template>
 <script>
+import api from '@/plugins/service'
 export default {
+
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
+    this.getProducts()
   },
   data: () => ({
     dialog: false,
@@ -223,23 +226,41 @@ export default {
       val || this.close()
     }
   },
-  methods: {
+ methods: {
     initialize () {
       this.desserts = [
-        {
-          name: '',
-          codigo: '',
-          cantidad: '',
-          marca: '',
-          descripcion: '',
-          total: '',
-          nit: '',
-          empresa: ''
-        }
+        
       ]
     },
-    multiplicar () {
-      var total = this.editedItem.valor * this.editedItem.cantidad
+    async getProducts () {
+      const res = await api.get('/product')
+    },
+    async resetForm () {
+      this.$refs.form.resetForm()
+    },
+    async save () {
+      const res = await api.post('/product',
+        {
+          productNew: {
+            nit: this.editedItem.nit,
+            empresa: this.editedItem.empresa,
+            serial: this.editedItem.codigo,
+            nombre: this.editedItem.name,
+            cantidad: this.editedItem.cantidad,
+            descripcion: this.editedItem.descripcion,
+            marca:  this.editedItem.marca,
+            valorUnitario: this.editedItem.valor,
+          }
+        })
+      this.snackbar = true
+      if (this.editedIndex > -1) {
+        Object.assign(this.desserts[this.editedIndex], this.editedItem)
+      } else {
+        this.desserts.push(this.editedItem)
+      }
+      this.resetForm()
+
+      this.close()
     },
 
     editItem (item) {
@@ -260,15 +281,6 @@ export default {
         this.editedIndex = -1
       }, 300)
     },
-
-    save () {
-      if (this.editedIndex > -1) {
-        Object.assign(this.desserts[this.editedIndex], this.editedItem)
-      } else {
-        this.desserts.push(this.editedItem)
-      }
-      this.close()
-    }
   }
 
 }

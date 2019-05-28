@@ -10,6 +10,12 @@ module.exports = function setupMetricModel (config) {
       type: Sequelize.CHAR(36),
       defaultValue: Sequelize.UUIDV4
     },
+    nit: {
+      type: Sequelize.TEXT
+    },
+    empresa: {
+      type: Sequelize.TEXT
+    },
     serial: {
       type: Sequelize.TEXT
     },
@@ -22,7 +28,7 @@ module.exports = function setupMetricModel (config) {
     descripcion: {
         type: Sequelize.TEXT
     },
-    cantiad: {
+    cantidad: {
       type: Sequelize.INTEGER
     },
     valorUnitario: {
