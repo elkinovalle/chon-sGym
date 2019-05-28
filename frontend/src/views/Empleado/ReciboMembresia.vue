@@ -152,7 +152,7 @@ form{
   background-image url('')
 }
 .imagen_recibo{
-      background-image url('../assets/portadamembresia.jpg') !important
+      background-image url('../../assets/portadamembresia.jpg') !important
       margin-top -14px
 }
 img.imagen_icon{

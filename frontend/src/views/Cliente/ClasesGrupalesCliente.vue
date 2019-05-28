@@ -162,7 +162,7 @@ export default {
     margin: 0px 0px 0px 60px
   }
   div.fondo{
-      background-image: url('../assets/gym.jpg') !important
+      background-image: url('../../assets/gym.jpg') !important
       margin-top: -14px
   }
   .contenedor{
