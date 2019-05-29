@@ -24,23 +24,108 @@
             ></v-combobox>
           </v-flex>
 
-          <v-flex xs12 sm6>
+          <v-flex xs12 sm4>
             <v-textarea
               v-model="editedItem.descripcion"
               box
               label="Descripción de la clase"
               clearable
+              height="200px"
             ></v-textarea>
           </v-flex>
 
-           <v-flex xs12 sm6>
+           <v-flex xs12 sm4>
           <v-textarea
               v-model="editedItem.beneficios"
               box
               label="Beneficios"
               clearable
+              height="200px"
             ></v-textarea>
           </v-flex>
+
+             <v-flex xs12 sm4>
+         <v-card
+      class="mx-auto"
+      max-width="600"
+    >
+      <v-toolbar
+        card
+        dense
+      >
+        <v-toolbar-title>
+          <span class="subheading">CAPACIDAD</span>
+        </v-toolbar-title>
+      </v-toolbar>
+  
+      <v-card-text>
+        <v-layout
+          justify-space-between
+          mb-3
+        >
+          <v-flex text-xs-left>
+            <span
+              class="display-2 font-weight-light"
+              v-text="bpm"
+            ></span>
+            <span class="subheading font-weight-light mr-1"> Personas</span>
+            <v-fade-transition>
+              <v-avatar
+                v-if="isPlaying"
+                :color="color"
+                :style="{
+                  animationDuration: animationDuration
+                }"
+                class="mb-1 v-avatar--metronome"
+                size="12"
+              ></v-avatar>
+            </v-fade-transition>
+          </v-flex>
+          <v-flex text-xs-right>
+            <v-btn
+              :color="color"
+              dark
+              depressed
+              fab
+              @click="toggle"
+              class="esfera"
+            >
+              <v-icon>
+                {{ isPlaying ? 'mdi-pause' : 'mdi-play' }}
+              </v-icon>
+            </v-btn>
+          </v-flex>
+        </v-layout>
+  
+        <v-slider
+          v-model="bpm"
+          :color="color"
+          always-dirty
+          min="1"
+          max="35"
+        >
+          <template v-slot:prepend>
+            <v-icon
+              :color="color"
+              @click="decrement"
+            >
+              mdi-minus
+            </v-icon>
+          </template>
+  
+          <template v-slot:append>
+            <v-icon
+              :color="color"
+              @click="increment"
+            >
+              mdi-plus
+            </v-icon>
+          </template>
+        </v-slider>
+      </v-card-text>
+    </v-card>
+          </v-flex>
+
            <v-flex xs12 sm6>
             <material-card class="v-card-profile">
               <v-avatar class="text--center mx-auto d-block" >
@@ -85,6 +170,9 @@
                 <v-flex xs12 sm6 md4>
                   <v-text-field v-model="editedItem.beneficios" label="Beneficios"></v-text-field>
                 </v-flex>
+                <v-flex xs12 sm6 md4>
+                  <v-text-field v-model="bpm" label="Capacidad"></v-text-field>
+                </v-flex>
               </v-layout>
             </v-container>
           </v-card-text>
@@ -107,6 +195,7 @@
         <td class="text-xs-left">{{ props.item.tipo }}</td>
         <td class="text-xs-left">{{ props.item.descripcion }}</td>
         <td class="text-xs-left">{{ props.item.beneficios }}</td>
+        <td class="text-xs-left">{{ props.item.bpm }}</td>
         <td class="text-xs-left">{{ props.item.imgUrl }}</td>
         <td class="justify-center layout px-0">
           <v-icon
@@ -154,6 +243,7 @@ export default {
       { text: 'Tipo de ejercicio', value: 'tipo' },
       { text: 'Descripción', value: 'descripcion' },
       { text: 'Beneficios', value: 'beneficios' },
+      { text: 'Capacidad', value: 'bpm' },
       { text: 'Imagen', value: 'imgUrl' }
     ],
     desserts: [],
@@ -163,6 +253,7 @@ export default {
       descripcion: '',
       beneficios: '',
       titulo: '',
+      bpm:'',
       imgUrl: ''
     },
     defaultItem: {
@@ -170,15 +261,30 @@ export default {
       descripcion: '',
       beneficios: '',
       titulo: '',
+      bpm:'',
       imgUrl: ''
 
-    }
+    },
+    bpm: 0,
+    interval: null,
+    isPlaying: false
 
   }),
 
   computed: {
     formTitle () {
       return this.editedIndex === -1 ? 'New Item' : 'Editar Item'
+    },
+      color () {
+      if (this.bpm < 6) return 'blue'
+      if (this.bpm < 12) return 'teal'
+      if (this.bpm < 18) return 'green'
+      if (this.bpm < 24) return 'amber'
+      if (this.bpm < 30) return 'orange'
+      return 'red'
+    },
+    animationDuration () {
+      return `${60 / this.bpm}s`
     }
   },
 
@@ -235,6 +341,7 @@ export default {
         descripcion: '',
         titulo: '',
         beneficios: '',
+        bpm: '',
         imgUrl: ''
       }
     ]
@@ -258,7 +365,15 @@ export default {
       this.editedIndex = -1
     }, 300)
   },
-
+    decrement () {
+      this.bpm--
+    },
+    increment () {
+      this.bpm++
+    },
+    toggle () {
+      this.isPlaying = !this.isPlaying
+    },
   save () {
     if (this.editedIndex > -1) {
       Object.assign(this.desserts[this.editedIndex], this.editedItem)
@@ -272,6 +387,21 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+@keyframes metronome-example {
+  from {
+    transform: scale(.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.v-avatar--metronome {
+  animation-name: metronome-example;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 .container.fill-height {
     background-color: white;
 }
@@ -288,5 +418,10 @@ export default {
   height 70px
   width 300px
   margin 10px 0px 30px 150px
+}
+.esfera{
+  margin-top -5px
+  height 50px
+  width 50px
 }
 </style>
