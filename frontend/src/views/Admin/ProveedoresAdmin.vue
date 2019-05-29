@@ -1,15 +1,17 @@
 <template>
   <div>
     <v-subheader class="subheader black--text display-1 font-weight-bold" >Registro de Proveedores</v-subheader>
-    <v-form ref="form">
+    <v-form ref="form" v-model="valid"  lazy-validation>
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 sm6>
             <v-text-field
               v-model="nombres"
               box
+              :rules="rules.nombres"
               label="Nombres*"
               clearable
+              type="text"
             ></v-text-field>
           </v-flex>  
 
@@ -17,8 +19,9 @@
             <v-text-field
               v-model="apellidos"
               box
+              :rules="rules.apellidos"
               label="Apellidos*"
-               clearable
+              type="text"
             ></v-text-field>
           </v-flex>
 
@@ -26,8 +29,10 @@
             <v-text-field
               v-model="documento"
               box
+              :rules="rules.documento"
               label= "No. Documento*"
               clearable
+              
             ></v-text-field>
           </v-flex>
 
@@ -35,8 +40,10 @@
             <v-text-field
               v-model="telefono"
               box
+              :rules="rules.telefono"
               label="Teléfono*"
               clearable
+              mask="phone"
             ></v-text-field>
           </v-flex>
 
@@ -44,6 +51,7 @@
             <v-text-field
               v-model="direccion"
               box
+              :rules="rules.direccion"
               label="Dirección*"
               clearable
             ></v-text-field>
@@ -53,7 +61,7 @@
             <v-text-field
               v-model="email"
               :rules="rules.email"
-              label="Correo electrónico"
+              label="Correo electrónico*"
               box
               clearable
             ></v-text-field>
@@ -63,6 +71,7 @@
             <v-text-field
               v-model="empresa"
               box
+              :rules="rules.empresa"
               label="Empresa*"
               clearable
             ></v-text-field>
@@ -71,14 +80,41 @@
             <v-flex xs6>
               <v-combobox
                 box
-                v-model="select"
+                label="Sexo*"
                 :items="items"
               ></v-combobox>
             </v-flex>
 
         </v-layout>
       </v-container>
-       <v-btn color="green darken-4" class=" white--text" @click="save" >Registrar Proveedor</v-btn>
+    <v-dialog
+      v-model="dialog"
+      max-width="450"
+    >
+      <v-card>
+        <v-card-title class="headline">¿Desea Agregar un Nuevo Proveedor?</v-card-title>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="black"
+            flat="flat"
+            @click="dialog = false"
+          >
+            Cancelar
+          </v-btn>
+
+          <v-btn
+            color="black"
+            flat="flat"
+            @click="save" type="submit"  
+            :disabled="!valid" 
+          >Si
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+       <v-btn color="green darken-4" class=" white--text"  @click.stop="dialog = true">Registrar Proveedor</v-btn>
           <v-btn color="red darken-4" class=" white--text " @click="resetForm" >Cancelar</v-btn>
     </v-form>
     <v-card>
@@ -126,15 +162,23 @@
 <script>
 import api from '@/plugins/service'
 export default {
+  
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
     this.getUsers()
   },
   data () {
     return {
+      dialog: false,
       rules: {
         email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail'],
-        
+        nombres: [v => !!v || 'El nombre es requerido'],
+        apellidos: [v => !!v || 'Los apellidos son requeridos'],
+        telefono: [v => !!v || 'EL telefono es requerido'],
+        direccion: [v => !!v || 'La dirección es requerida'],
+        empresa: [v => !!v || 'La empresa es requerida'],
+        documento: [v => !!v || 'El documento es requerido'],
+
       },
       search: '',
       headers: [
@@ -181,8 +225,6 @@ export default {
       })
       this.snackbar = true
       this.resetForm()
-      console.log("asdasd");
-      
       this.close()
     }
   }
@@ -196,5 +238,8 @@ export default {
   }
   .titulo2{
     color white !important
+  }
+  .headline{
+    color white
   }
 </style>
