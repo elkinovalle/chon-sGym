@@ -108,13 +108,17 @@
             color="black"
             flat="flat"
             @click="save" type="submit"
+<<<<<<< HEAD
+            :disabled="!valid" 
+=======
             :disabled="!valid"
+>>>>>>> 2bb29bdab9b54ac0fe88a2bcf4ef3acea1cf7f72
           >Si
           </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
-       <v-btn color="green darken-4" class=" white--text"  @click.stop="dialog = true">Registrar Proveedor</v-btn>
+       <v-btn color="green darken-4" class=" white--text"  @click="save" >Registrar Proveedor</v-btn>
           <v-btn color="red darken-4" class=" white--text " @click="resetForm" >Cancelar</v-btn>
     </v-form>
     <v-card>
@@ -160,6 +164,7 @@
   </div>
 </template>
 <script>
+import Swal from 'sweetalert2'
 import api from '@/plugins/service'
 export default {
 
@@ -212,17 +217,33 @@ export default {
     async save () {
       const res = await api.post('/user',
         {
-          userNew: {
-            nombre: this.nombres,
-            apellido: this.apellidos,
-            email: this.email,
-            cedula: this.documento,
-            telefono: this.telefono,
-            empresa: this.empresa,
-            direccion: this.direccion,
-            password: ''
-          }
-        })
+        userNew:{
+          nombre:this.nombres,
+          apellido:this.apellidos,
+          email:this.email,
+          cedula:this.documento,
+          telefono:this.telefono,
+          empresa:this.empresa,
+          direccion:this.direccion,
+          password:"" 
+        }
+      })
+     const alert =await Swal.fire({
+        title: 'Desea Agregar un Nuevo Proveedor?',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Agregarlo'
+      }).then((result) => {
+        if (result.value) {
+          Swal.fire(
+            'EL proveedor se ha registrado',
+            '',
+            'success'
+          )
+        }
+      })
       this.snackbar = true
       this.resetForm()
       this.close()
