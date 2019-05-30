@@ -87,38 +87,7 @@
 
         </v-layout>
       </v-container>
-    <v-dialog
-      v-model="dialog"
-      max-width="450"
-    >
-      <v-card>
-        <v-card-title class="headline">¿Desea Agregar un Nuevo Proveedor?</v-card-title>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn
-            color="black"
-            flat="flat"
-            @click="dialog = false"
-          >
-            Cancelar
-          </v-btn>
-
-          <v-btn
-            color="black"
-            flat="flat"
-            @click="save" type="submit"
-<<<<<<< HEAD
-            :disabled="!valid" 
-=======
-            :disabled="!valid"
->>>>>>> 2bb29bdab9b54ac0fe88a2bcf4ef3acea1cf7f72
-          >Si
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-       <v-btn color="green darken-4" class=" white--text"  @click="save" >Registrar Proveedor</v-btn>
+          <v-btn color="green darken-4" class=" white--text"  @click="save" >Registrar Proveedor</v-btn>
           <v-btn color="red darken-4" class=" white--text " @click="resetForm" >Cancelar</v-btn>
     </v-form>
     <v-card>

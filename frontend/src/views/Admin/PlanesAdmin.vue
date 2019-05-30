@@ -2,7 +2,7 @@
     <div>
       <br><br>
    <v-subheader class="subheader black--text display-1 font-weight-bold ">Planes</v-subheader>
-    <v-form>
+    <v-form ref="form">
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 sm6>
@@ -56,7 +56,7 @@
         </v-flex>
         <v-flex xs12 sm6>
           <v-btn color="green darken-4" class="botones white--text headline" @click="save" >{{ btnText }}</v-btn>
-          <v-btn color="red darken-4" class="botones white--text headline" >Cancelar</v-btn>
+          <v-btn color="red darken-4" class="botones white--text headline" @click="resetForm">Cancelar</v-btn>
         </v-flex>
         </v-layout>
       </v-container>
@@ -157,11 +157,17 @@ export default {
       const { data: plans } = await api.get('/plan')
       this.$store.commit('SET_PLANS', plans)
     },
-    async resetForm () {
+    resetForm () {
       this.$refs.form.resetForm()
     },
     async save () {
-      const { data: plan } = await api.post('/plan',
+      if(this.btnText==='Agregar Plan'){
+        const nameImg = uuid()
+        const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
+        const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
+        const imageUrl = await imageRef.getDownloadURL()
+        this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+        const { data: plan } = await api.post('/plan',
         {
           planNew: {
             nombre: this.editedItem.nombre,
@@ -171,14 +177,33 @@ export default {
             foto: this.image
           }
         })
-      console.log(plan)
-      let clonPLans = [...this.plans]
-      console.log(clonPLans)
-      clonPLans.push(plan)
-      this.$store.commit('SET_PLANS', clonPLans)
-      this.snackbar = true
-      this.resetForm()
-      this.close()
+       let clonPLans = [...this.plans]
+       clonPLans.push(plan)
+       this.$store.commit('SET_PLANS', clonPLans)
+       this.snackbar = true
+       this.resetForm()
+       this.close()
+      }else{
+      console.log(this.image)
+        // const nameImg = uuid()
+        // const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
+        // const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
+        // const imageUrl = await imageRef.getDownloadURL()
+        const { data: plan } = await api.put(`/plan/${this.editedItem.uuid}`,
+        {
+          planUpdate: {
+            nombre: this.editedItem.nombre,
+            descripcion: this.editedItem.descripcion,
+            precio: this.editedItem.precio,
+            beneficio: this.editedItem.beneficio,
+            foto: this.image
+          }
+        })
+        let clonPLans = [...this.plans]
+       clonPLans[this.editedIndex] = plan
+       this.$store.commit('SET_PLANS', clonPLans)
+        this.btnText='Agregar Plan'
+      }
     },
     pickFile () {
       this.$refs.image.click()
@@ -194,11 +219,7 @@ export default {
         fr.readAsDataURL(files[0])
         fr.addEventListener('load', async () => {
           this.imgCode = fr.result
-          const nameImg = uuid()
-          const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
-          const imgUpload = await imageRef.putString(fr.result, 'data_url')
-          const imageUrl = await imageRef.getDownloadURL()
-          this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+          
         })
       } else {
         this.imageName = ''
@@ -222,6 +243,7 @@ export default {
       this.btnText = 'Actualizar'
       this.editedIndex = this.plans.indexOf(item)
       this.editedItem = Object.assign({}, item)
+      this.imgCode = JSON.parse(this.editedItem.foto).url      
       this.dialog = true
     },
 
