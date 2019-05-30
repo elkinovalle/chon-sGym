@@ -2,7 +2,7 @@
     <div>
       <br><br>
    <v-subheader class="subheader black--text display-1 font-weight-bold "> Novedades</v-subheader>
-    <v-form>
+    <v-form ref="form">
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 sm6>
@@ -128,9 +128,11 @@
     </div>
 </template>
 <script>
+import api from '@/plugins/service'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
+
   },
   data: () => ({
     dialog: false,
@@ -182,6 +184,9 @@ export default {
   methods: {
     pickFile () {
       this.$refs.image.click()
+    },
+    async getProduct () {
+      const res = await api.get('/novelty')
     },
     onFilePicked (e) {
       const files = e.target.files

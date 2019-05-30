@@ -17,6 +17,8 @@ const setupType_Membership = require ('./lib/type_memberships')
 const setupMarchinery = require ('./lib/marchinerys')
 const setupInstallation = require ('./lib/installations')
 const setupPlan = require ('./lib/plans')
+const setupNovelty = require ('./lib/noveltys')
+const setupTip = require ('./lib/tips')
 
 const setupDatabase = require('./lib/db')
 const setupUserModel = require('./models/user.model')
@@ -40,6 +42,8 @@ const setupDietModel = require('./models/diet.model')
 const setupInstallationModel = require('./models/installation.model')
 const setupMarchineryModel = require('./models/marchinery.model')
 const setupPlanModel = require('./models/plan.model')
+const setupNoveltyModel = require('./models/novelty.model')
+const setupTipModel = require('./models/tip.model')
 
 
 
@@ -68,6 +72,8 @@ module.exports = async function () {
   const InstallationModel = setupInstallationModel(config)
   const MarchineryModel = setupMarchineryModel(config)
   const PlanModel = setupPlanModel(config)
+  const NoveltyModel = setupNoveltyModel(config)
+  const TipModel = setupTipModel(config)
 
 
   // relaciones de resevas a usuario
@@ -150,6 +156,8 @@ module.exports = async function () {
   const Marchinery = setupMarchinery(MarchineryModel)
   const Installation = setupInstallation(InstallationModel)
   const Plan = setupPlan(PlanModel)
+  const Novelty = setupNovelty(NoveltyModel)
+  const Tip = setupTip(TipModel)
   return {
     async setup() {
       await sequelize.sync({ force: true })
@@ -167,6 +175,8 @@ module.exports = async function () {
     Type_Membership,
     Marchinery,
     Installation,
-    Plan
+    Plan,
+    Novelty,
+    Tip
   }
 }

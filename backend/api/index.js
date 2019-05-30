@@ -15,6 +15,8 @@ const type_membership = require ('./type_membership')
 const marchinery = require ('./marchinery')
 const installation = require ('./installation')
 const plan = require ('./plan')
+const novelty = require ('./novelty')
+const tip = require ('./tip')
 const log = getLogger(__dirname, __filename)
 // prueba
 module.exports = {
@@ -37,6 +39,8 @@ module.exports = {
   marchinery,
   installation,
   plan,
+  novelty,
+  tip,
   errorHandler (err, req, res, next) {
     if (err) {
       let code = err.code || 500
