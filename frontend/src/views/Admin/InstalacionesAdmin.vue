@@ -6,7 +6,7 @@
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 sm12>
-            <v-text-field   
+            <v-text-field
               v-model="editedItem.titulo"
               box
               label="Título"
@@ -28,7 +28,7 @@
                   :src="item.url"
                 >
                 <v-btn color="right red darken-4" fab small dark @click="deleteImg(i)">
-                  <v-icon class="icono">close</v-icon>
+                  <v-icon class="icono">delete</v-icon>
                 </v-btn>
                 </v-carousel-item>
                 </v-carousel>
@@ -158,11 +158,11 @@ export default {
     }
   },
   methods: {
-    async deleteImg(i){
+    async deleteImg (i) {
       const imageRef = storage.ref().child(this.imgs[0].imgRef)
       const dele = await imageRef.delete()
-      this.imgs.splice(i,1)
-          },
+      this.imgs.splice(i, 1)
+    },
     pickFile () {
       this.$refs.image.click()
     },

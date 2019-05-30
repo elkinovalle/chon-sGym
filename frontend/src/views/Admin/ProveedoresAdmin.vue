@@ -13,7 +13,7 @@
               clearable
               type="text"
             ></v-text-field>
-          </v-flex>  
+          </v-flex>
 
           <v-flex xs12 sm6>
             <v-text-field
@@ -32,7 +32,7 @@
               :rules="rules.documento"
               label= "No. Documento*"
               clearable
-              
+
             ></v-text-field>
           </v-flex>
 
@@ -107,8 +107,8 @@
           <v-btn
             color="black"
             flat="flat"
-            @click="save" type="submit"  
-            :disabled="!valid" 
+            @click="save" type="submit"
+            :disabled="!valid"
           >Si
           </v-btn>
         </v-card-actions>
@@ -162,7 +162,7 @@
 <script>
 import api from '@/plugins/service'
 export default {
-  
+
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
     this.getUsers()
@@ -177,7 +177,7 @@ export default {
         telefono: [v => !!v || 'EL telefono es requerido'],
         direccion: [v => !!v || 'La dirección es requerida'],
         empresa: [v => !!v || 'La empresa es requerida'],
-        documento: [v => !!v || 'El documento es requerido'],
+        documento: [v => !!v || 'El documento es requerido']
 
       },
       search: '',
@@ -199,30 +199,30 @@ export default {
       items: [
         'Masculino',
         'Femenino'
-      ],
+      ]
     }
   },
   methods: {
     async getUsers () {
       const res = await api.get('/user')
     },
-   async resetForm () {
+    async resetForm () {
       this.$refs.form.reset()
     },
     async save () {
       const res = await api.post('/user',
         {
-        userNew:{
-          nombre:this.nombres,
-          apellido:this.apellidos,
-          email:this.email,
-          cedula:this.documento,
-          telefono:this.telefono,
-          empresa:this.empresa,
-          direccion:this.direccion,
-          password:"" 
-        }
-      })
+          userNew: {
+            nombre: this.nombres,
+            apellido: this.apellidos,
+            email: this.email,
+            cedula: this.documento,
+            telefono: this.telefono,
+            empresa: this.empresa,
+            direccion: this.direccion,
+            password: ''
+          }
+        })
       this.snackbar = true
       this.resetForm()
       this.close()

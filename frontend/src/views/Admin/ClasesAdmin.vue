@@ -57,7 +57,7 @@
           <span class="subheading">CAPACIDAD</span>
         </v-toolbar-title>
       </v-toolbar>
-  
+
       <v-card-text>
         <v-layout
           justify-space-between
@@ -96,7 +96,7 @@
             </v-btn>
           </v-flex>
         </v-layout>
-  
+
         <v-slider
           v-model="bpm"
           :color="color"
@@ -112,7 +112,7 @@
               mdi-minus
             </v-icon>
           </template>
-  
+
           <template v-slot:append>
             <v-icon
               :color="color"
@@ -253,7 +253,7 @@ export default {
       descripcion: '',
       beneficios: '',
       titulo: '',
-      bpm:'',
+      bpm: '',
       imgUrl: ''
     },
     defaultItem: {
@@ -261,7 +261,7 @@ export default {
       descripcion: '',
       beneficios: '',
       titulo: '',
-      bpm:'',
+      bpm: '',
       imgUrl: ''
 
     },
@@ -275,7 +275,7 @@ export default {
     formTitle () {
       return this.editedIndex === -1 ? 'New Item' : 'Editar Item'
     },
-      color () {
+    color () {
       if (this.bpm < 6) return 'blue'
       if (this.bpm < 12) return 'teal'
       if (this.bpm < 18) return 'green'
@@ -365,15 +365,15 @@ export default {
       this.editedIndex = -1
     }, 300)
   },
-    decrement () {
-      this.bpm--
-    },
-    increment () {
-      this.bpm++
-    },
-    toggle () {
-      this.isPlaying = !this.isPlaying
-    },
+  decrement () {
+    this.bpm--
+  },
+  increment () {
+    this.bpm++
+  },
+  toggle () {
+    this.isPlaying = !this.isPlaying
+  },
   save () {
     if (this.editedIndex > -1) {
       Object.assign(this.desserts[this.editedIndex], this.editedItem)

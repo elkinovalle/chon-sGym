@@ -68,7 +68,7 @@
       <v-divider
         class="mx-2"
         inset
-        vertical 
+        vertical
       ></v-divider>
       <v-spacer></v-spacer>
       <v-card-title>
@@ -134,7 +134,7 @@ export default {
     headers: [
       {
       },
-      { text: 'codigo', value: 'codigo'},
+      { text: 'codigo', value: 'codigo' },
       { text: 'producto', value: 'producto' },
       { text: 'marca', value: 'marca' },
       { text: 'descripcion', value: 'descripcion' },

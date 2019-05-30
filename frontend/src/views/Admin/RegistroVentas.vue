@@ -227,14 +227,14 @@ export default {
     initialize () {
       this.desserts = [
         {
-        name: '',
-        codigo: '',
-        cantidad: '',
-        marca: '',
-        descripcion: '',
-        total: '',
-        cedula: '',
-        empleado: ''
+          name: '',
+          codigo: '',
+          cantidad: '',
+          marca: '',
+          descripcion: '',
+          total: '',
+          cedula: '',
+          empleado: ''
         }
       ]
     },

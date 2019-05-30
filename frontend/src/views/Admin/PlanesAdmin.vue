@@ -7,7 +7,7 @@
         <v-layout row wrap>
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="editedItem.titulo"
+              v-model="editedItem.nombre"
               box
               label="Plan"
               clearable
@@ -34,7 +34,7 @@
 
            <v-flex xs12 sm6>
           <v-textarea
-              v-model="editedItem.beneficios"
+              v-model="editedItem.beneficio"
               box
               label="Beneficios"
               clearable
@@ -60,42 +60,6 @@
         </v-layout>
       </v-container>
     </v-form>
-     <v-toolbar flat color="red darken-4">
-      <v-spacer></v-spacer>
-      <v-dialog v-model="dialog" max-width="500px">
-        <template v-slot:activator="{ on }">
-        </template>
-        <v-card>
-          <v-card-title>
-            <span class="headline">{{ formTitle }}</span>
-          </v-card-title>
-          <v-card-text>
-            <v-container grid-list-md>
-              <v-layout wrap>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.titulo" label="Plan"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.precio" label="Precio" type='number'></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.descripcion" label="Descripción"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.beneficios" label="Beneficios"></v-text-field>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-card-text>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-            <v-btn color="blue darken-1" flat @click="save" >Guardar cambios</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </v-toolbar>
     <v-data-table
       :headers="headers"
       :items="plans"
@@ -106,20 +70,22 @@
         <td class="text-xs-left">{{ props.item.precio }}</td>
         <td class="text-xs-left">{{ props.item.descripcion }}</td>
         <td class="text-xs-left">{{ props.item.beneficio }}</td>
+        <td class="text-xs-left">{{ props.item.image }}</td>
         <td class="justify-center layout px-0">
-          <v-icon
-            small
-            class="mr-2"
+          <v-btn
+            class="font-weight-black white--text body-2"
+            color="blue darken-1"
             @click="editItem(props.item)"
           >
-            edit
-          </v-icon>
-          <v-icon
-            small
+            Editar
+          </v-btn>
+          <v-btn
+            class="font-weight-black white--text body-2"
+            color="red darken-4"
             @click="deleteItem(props.item)"
           >
-            delete
-          </v-icon>
+            Eliminar
+          </v-btn>
         </td>
       </template>
     </v-data-table>
@@ -146,26 +112,27 @@ export default {
         text: 'Titulo',
         align: 'center',
         sortable: false,
-        value: 'name'
+        value: 'nombre'
       },
       { text: 'Precio', value: 'precio' },
       { text: 'Descripción', value: 'descripcion' },
-      { text: 'Beneficios', value: 'beneficios' }
+      { text: 'Beneficios', value: 'beneficio' },
+      { text: 'Imagen', value: 'image' }
     ],
     editedIndex: -1,
     editedItem: {
       precio: '',
       descripcion: '',
-      beneficios: '',
-      titulo: '',
-      imgUrl: ''
+      beneficio: '',
+      nombre: '',
+      image: ''
     },
     defaultItem: {
       precio: '',
       descripcion: '',
-      beneficios: '',
-      titulo: '',
-      imgUrl: ''
+      beneficio: '',
+      nombre: '',
+      image: ''
 
     }
 
@@ -192,21 +159,21 @@ export default {
       this.$refs.form.resetForm()
     },
     async save () {
-      const { data:plan } = await api.post('/plan',
+      const { data: plan } = await api.post('/plan',
         {
           planNew: {
-            nombre: this.editedItem.titulo,
+            nombre: this.editedItem.nombre,
             descripcion: this.editedItem.descripcion,
             precio: this.editedItem.precio,
-            beneficio: this.editedItem.beneficios,
+            beneficio: this.editedItem.beneficio,
             foto: this.image
           }
         })
-        console.log(plan)        
-        let clonPLans = [...this.plans]
-        console.log(clonPLans)
-        clonPLans.push(plan)
-        this.$store.commit('SET_PLANS', clonPLans)
+      console.log(plan)
+      let clonPLans = [...this.plans]
+      console.log(clonPLans)
+      clonPLans.push(plan)
+      this.$store.commit('SET_PLANS', clonPLans)
       this.snackbar = true
       this.resetForm()
 
@@ -230,8 +197,7 @@ export default {
           const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
           const imgUpload = await imageRef.putString(fr.result, 'data_url')
           const imageUrl = await imageRef.getDownloadURL()
-          this.image = {path: imgUpload.metadata.fullPath, url: imageUrl}
-
+          this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
         })
       } else {
         this.imageName = ''
@@ -240,26 +206,26 @@ export default {
       }
     },
     initialize () {
-      this.desserts = [
+      this.plans = [
         {
           precio: '',
           descripcion: '',
-          titulo: '',
-          beneficios: '',
-          imgUrl: ''
+          nombre: '',
+          beneficio: '',
+          image: ''
         }
       ]
     },
 
     editItem (item) {
-      this.editedIndex = this.desserts.indexOf(item)
+      this.editedIndex = this.plans.indexOf(item)
       this.editedItem = Object.assign({}, item)
       this.dialog = true
     },
 
     deleteItem (item) {
-      const index = this.desserts.indexOf(item)
-      confirm('Estás seguro que deseas elimiar este item?') && this.desserts.splice(index, 1)
+      const index = this.plans.indexOf(item)
+      confirm('¿Estás seguro que deseas elimiar este plan?') && this.plans.splice(index, 1)
     },
 
     close () {
