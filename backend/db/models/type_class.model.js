@@ -19,6 +19,12 @@ module.exports = function setupMetricModel (config) {
     },
     capacidad:{
       type: Sequelize.INTEGER
+    },
+    tipoEjercicio:{
+      type: Sequelize.INTEGER
+    },
+    beneficio:{
+      type: Sequelize.INTEGER
     }
   })
 }
