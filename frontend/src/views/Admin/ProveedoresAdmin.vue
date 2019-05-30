@@ -13,7 +13,7 @@
               clearable
               type="text"
             ></v-text-field>
-          </v-flex>  
+          </v-flex>
 
           <v-flex xs12 sm6>
             <v-text-field
@@ -32,7 +32,7 @@
               :rules="rules.documento"
               label= "No. Documento*"
               clearable
-              
+
             ></v-text-field>
           </v-flex>
 
@@ -108,7 +108,11 @@
             color="black"
             flat="flat"
             @click="save" type="submit"
+<<<<<<< HEAD
             :disabled="!valid" 
+=======
+            :disabled="!valid"
+>>>>>>> 2bb29bdab9b54ac0fe88a2bcf4ef3acea1cf7f72
           >Si
           </v-btn>
         </v-card-actions>
@@ -163,7 +167,7 @@
 import Swal from 'sweetalert2'
 import api from '@/plugins/service'
 export default {
-  
+
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
     this.getUsers()
@@ -178,7 +182,7 @@ export default {
         telefono: [v => !!v || 'EL telefono es requerido'],
         direccion: [v => !!v || 'La dirección es requerida'],
         empresa: [v => !!v || 'La empresa es requerida'],
-        documento: [v => !!v || 'El documento es requerido'],
+        documento: [v => !!v || 'El documento es requerido']
 
       },
       search: '',
@@ -200,14 +204,14 @@ export default {
       items: [
         'Masculino',
         'Femenino'
-      ],
+      ]
     }
   },
   methods: {
     async getUsers () {
       const res = await api.get('/user')
     },
-   async resetForm () {
+    async resetForm () {
       this.$refs.form.reset()
     },
     async save () {

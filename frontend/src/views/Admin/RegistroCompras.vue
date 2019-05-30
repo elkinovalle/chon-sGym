@@ -226,10 +226,10 @@ export default {
       val || this.close()
     }
   },
- methods: {
+  methods: {
     initialize () {
       this.desserts = [
-        
+
       ]
     },
     async getProducts () {
@@ -248,8 +248,8 @@ export default {
             nombre: this.editedItem.name,
             cantidad: this.editedItem.cantidad,
             descripcion: this.editedItem.descripcion,
-            marca:  this.editedItem.marca,
-            valorUnitario: this.editedItem.valor,
+            marca: this.editedItem.marca,
+            valorUnitario: this.editedItem.valor
           }
         })
       this.snackbar = true
@@ -280,7 +280,7 @@ export default {
         this.editedItem = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
       }, 300)
-    },
+    }
   }
 
 }

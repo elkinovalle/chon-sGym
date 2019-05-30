@@ -161,27 +161,27 @@ export default {
     async getUsers () {
       const res = await api.get('/user')
     },
-      async resetForm () {
-        this.$refs.form.reset()
-      },
-      async save(){
-        const res =await api.post('/user',
-      {
-        userNew:{
-          nombre:this.nombres,
-          apellido:this.apellidos,
-          email:this.email,
-          cedula:this.documento,
-          telefono:this.telefono,
-          cargo:this.cargo,
-          password:"" 
-        }
-      })
+    async resetForm () {
+      this.$refs.form.reset()
+    },
+    async save () {
+      const res = await api.post('/user',
+        {
+          userNew: {
+            nombre: this.nombres,
+            apellido: this.apellidos,
+            email: this.email,
+            cedula: this.documento,
+            telefono: this.telefono,
+            cargo: this.cargo,
+            password: ''
+          }
+        })
       this.snackbar = true
       this.resetForm()
       this.close()
     }
-  }  
+  }
 }
 </script>
 <style lang="stylus">
@@ -195,4 +195,3 @@ export default {
    color white !important
  }
 </style>
- 
