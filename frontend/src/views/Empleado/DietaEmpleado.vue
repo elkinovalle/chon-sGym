@@ -192,7 +192,7 @@ export default {
       this.$refs.form.resetForm()
     },
     async save () {
-      const { data:diet } = await api.post('/diet',
+      const { data: diet } = await api.post('/diet',
         {
           planNew: {
             nombre: this.editedItem.titulo,
@@ -202,11 +202,11 @@ export default {
             foto: this.image
           }
         })
-        console.log(diet)        
-        let clonDietA = [...this.diets]
-        console.log(clonDietA)
-        clonDietA.push(Diet)
-        this.$store.commit('SET_DIET', clonDietA)
+      console.log(diet)
+      let clonDietA = [...this.diets]
+      console.log(clonDietA)
+      clonDietA.push(Diet)
+      this.$store.commit('SET_DIET', clonDietA)
       this.snackbar = true
       this.resetForm()
 
@@ -230,8 +230,7 @@ export default {
           const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
           const imgUpload = await imageRef.putString(fr.result, 'data_url')
           const imageUrl = await imageRef.getDownloadURL()
-          this.image = {path: imgUpload.metadata.fullPath, url: imageUrl}
-
+          this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
         })
       } else {
         this.imageName = ''

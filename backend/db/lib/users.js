@@ -36,7 +36,7 @@ function setupUser(userModel) {
         login: false
       }
     }
-    if (!(password.compareHash(credentials.contraseña, user.contraseña))) {
+    if (!(password.compareHash(credentials.password, user.password))) {
       return {
         message: dataFail,
         login: false

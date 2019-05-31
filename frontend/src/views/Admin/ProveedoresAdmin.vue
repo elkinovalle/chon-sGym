@@ -175,32 +175,32 @@ export default {
         'Masculino',
         'Femenino'
       ],
-    editedIndex: -1,
-    editedItem: {
-      documento: '',
-      nombres: '',
-      apellidos: '',
-      telefono: '',
-      direccion: '',
-      email: '',
-      sexo: '',
-      empresa: ''
-    },
-    defaultItem: {
-      documento: '',
-      nombres: '',
-      apellidos: '',
-      telefono: '',
-      direccion: '',
-      email: '',
-      sexo: '',
-      empresa: ''
+      editedIndex: -1,
+      editedItem: {
+        documento: '',
+        nombres: '',
+        apellidos: '',
+        telefono: '',
+        direccion: '',
+        email: '',
+        sexo: '',
+        empresa: ''
+      },
+      defaultItem: {
+        documento: '',
+        nombres: '',
+        apellidos: '',
+        telefono: '',
+        direccion: '',
+        email: '',
+        sexo: '',
+        empresa: ''
 
-    }
+      }
     }
   },
   methods: {
-    async tarjeta(){
+    async tarjeta () {
 
     },
     async getUsers () {
@@ -212,22 +212,22 @@ export default {
     async save () {
       const res = await api.post('/user',
         {
-        userNew:{
-          nombre:this.editedItem.nombres,
-          apellido:this.editedItem.apellidos,
-          email:this.editedItem.email,
-          cedula:this.editedItem.documento,
-          telefono:this.editedItem.telefono,
-          empresa:this.editedItem.empresa,
-          direccion:this.editedItem.direccion,
-          password:"" 
-        }
+          userNew: {
+            nombre: this.editedItem.nombres,
+            apellido: this.editedItem.apellidos,
+            email: this.editedItem.email,
+            cedula: this.editedItem.documento,
+            telefono: this.editedItem.telefono,
+            empresa: this.editedItem.empresa,
+            direccion: this.editedItem.direccion,
+            password: ''
+          }
+        })
+      const alert = await Swal.fire({
+        title: 'El proveedor se ha registrado',
+        timer: 3000
       })
-     const alert = await Swal.fire({
-       title: 'El proveedor se ha registrado',
-       timer: 3000, 
-      })
-      
+
       this.snackbar = true
       this.resetForm()
       this.close()
