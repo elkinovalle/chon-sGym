@@ -6,7 +6,7 @@
         <v-layout row wrap>
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="nombres"
+              v-model="editedItem.nombres"
               box
               :rules="rules.nombres"
               label="Nombres*"
@@ -17,7 +17,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="apellidos"
+              v-model="editedItem.apellidos"
               box
               :rules="rules.apellidos"
               label="Apellidos*"
@@ -27,7 +27,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="documento"
+              v-model="editedItem.documento"
               box
               :rules="rules.documento"
               label= "No. Documento*"
@@ -38,7 +38,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="telefono"
+              v-model="editedItem.telefono"
               box
               :rules="rules.telefono"
               label="Teléfono*"
@@ -49,7 +49,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="direccion"
+              v-model="editedItem.direccion"
               box
               :rules="rules.direccion"
               label="Dirección*"
@@ -59,7 +59,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="email"
+              v-model="editedItem.email"
               :rules="rules.email"
               label="Correo electrónico*"
               box
@@ -69,7 +69,7 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="empresa"
+              v-model="editedItem.empresa"
               box
               :rules="rules.empresa"
               label="Empresa*"
@@ -79,8 +79,9 @@
 
             <v-flex xs6>
               <v-combobox
+              v-model="editedItem.sexo"
                 box
-                label="Sexo*"
+                label="Genero*"
                 :items="items"
               ></v-combobox>
             </v-flex>
@@ -173,10 +174,35 @@ export default {
       items: [
         'Masculino',
         'Femenino'
-      ]
+      ],
+    editedIndex: -1,
+    editedItem: {
+      documento: '',
+      nombres: '',
+      apellidos: '',
+      telefono: '',
+      direccion: '',
+      email: '',
+      sexo: '',
+      empresa: ''
+    },
+    defaultItem: {
+      documento: '',
+      nombres: '',
+      apellidos: '',
+      telefono: '',
+      direccion: '',
+      email: '',
+      sexo: '',
+      empresa: ''
+
+    }
     }
   },
   methods: {
+    async tarjeta(){
+
+    },
     async getUsers () {
       const res = await api.get('/user')
     },
@@ -187,32 +213,21 @@ export default {
       const res = await api.post('/user',
         {
         userNew:{
-          nombre:this.nombres,
-          apellido:this.apellidos,
-          email:this.email,
-          cedula:this.documento,
-          telefono:this.telefono,
-          empresa:this.empresa,
-          direccion:this.direccion,
+          nombre:this.editedItem.nombres,
+          apellido:this.editedItem.apellidos,
+          email:this.editedItem.email,
+          cedula:this.editedItem.documento,
+          telefono:this.editedItem.telefono,
+          empresa:this.editedItem.empresa,
+          direccion:this.editedItem.direccion,
           password:"" 
         }
       })
-     const alert =await Swal.fire({
-        title: 'Desea Agregar un Nuevo Proveedor?',
-        showCancelButton: true,
-        cancelButtonText: 'Cancelar',
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, Agregarlo'
-      }).then((result) => {
-        if (result.value) {
-          Swal.fire(
-            'EL proveedor se ha registrado',
-            '',
-            'success'
-          )
-        }
+     const alert = await Swal.fire({
+       title: 'El proveedor se ha registrado',
+       timer: 3000, 
       })
+      
       this.snackbar = true
       this.resetForm()
       this.close()
