@@ -132,7 +132,6 @@ import api from '@/plugins/service'
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
-
   },
   data: () => ({
     dialog: false,
