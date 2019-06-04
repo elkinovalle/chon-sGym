@@ -24,6 +24,9 @@ module.exports = function setupMetricModel (config) {
     },
     beneficio:{
       type: Sequelize.TEXT
+    },
+    foto:{
+      type: Sequelize.JSON
     }
   })
 }
