@@ -80,7 +80,7 @@
           <v-btn color="red darken-4" class=" buton  white--text " @click="resetForm" >Cancelar</v-btn>
         </v-layout>
       </v-container>
-          
+
     </v-form>
     <v-card>
       <v-card-title>
@@ -126,7 +126,7 @@
               @click="deleteItem(props.item)"
             >Eliminar</v-btn>
           </td>
-        </template> 
+        </template>
         <v-alert v-slot:no-results :value="true" color="error" icon="warning">
          Tu busqueda para "{{ search }}" no se encontro
         </v-alert>
@@ -135,7 +135,7 @@
   </div>
 </template>
 <script>
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 import Swal from 'sweetalert2'
 import api from '@/plugins/service'
 export default {
@@ -196,14 +196,14 @@ export default {
     }
   },
   computed: {
-    ...mapState(['users']),
+    ...mapState(['users'])
   },
   methods: {
     async getUsers () {
-      const { data: users } = await api.get('/user');
-      this.$store.commit("SET_USERS", users);
+      const { data: users } = await api.get('/user')
+      this.$store.commit('SET_USERS', users)
     },
-    resetForm() {
+    resetForm () {
       this.editedItem = {}
     },
     async save () {
@@ -211,48 +211,47 @@ export default {
         title: 'El proveedor se ha registrado',
         timer: 3000
       })
-      if (this.buttonText === "Registrar Proveedor") {
-        const { data: user } = await api.post("/user", 
-        {
-          userNew: {
-            nombre: this.editedItem.nombre,
-            apellido: this.editedItem.apellido,
-            email: this.editedItem.email,
-            cedula: this.editedItem.cedula,
-            telefono: this.editedItem.telefono,
-            empresa: this.editedItem.empresa,
-            direccion: this.editedItem.direccion,
-            password: ''
-        }
-      });
-      let clonUsers = [...this.users];
-      clonUsers.push(user);
-      this.$store.commit("SET_USERS", clonUsers);
-      this.snackbar = true;
-      this.resetForm();
-      }
-      else{
-        const { data : user } = await api.put(`/user/${this.editedItem.uuid}`,
-        {
-          userNew: {
-            nombre: this.editedItem.nombre,
-            apellido: this.editedItem.apellido,
-            email: this.editedItem.email,
-            cedula: this.editedItem.ceedula,
-            telefono: this.editedItem.telefono,
-            empresa: this.editedItem.empresa,
-            direccion: this.editedItem.direccion,
-            password: ''
-          }
-        });
-        let clonUsers = [...this.users];
-        clonUsers[this.editedIndex] = user;
-        this.$store.commit("SET_USERS", clonUsers);
-        this.buttonText = 'Registrar Proveedor';
-        this.resetForm();
+      if (this.buttonText === 'Registrar Proveedor') {
+        const { data: user } = await api.post('/user',
+          {
+            userNew: {
+              nombre: this.editedItem.nombre,
+              apellido: this.editedItem.apellido,
+              email: this.editedItem.email,
+              cedula: this.editedItem.cedula,
+              telefono: this.editedItem.telefono,
+              empresa: this.editedItem.empresa,
+              direccion: this.editedItem.direccion,
+              password: ''
+            }
+          })
+        let clonUsers = [...this.users]
+        clonUsers.push(user)
+        this.$store.commit('SET_USERS', clonUsers)
+        this.snackbar = true
+        this.resetForm()
+      } else {
+        const { data: user } = await api.put(`/user/${this.editedItem.uuid}`,
+          {
+            userNew: {
+              nombre: this.editedItem.nombre,
+              apellido: this.editedItem.apellido,
+              email: this.editedItem.email,
+              cedula: this.editedItem.ceedula,
+              telefono: this.editedItem.telefono,
+              empresa: this.editedItem.empresa,
+              direccion: this.editedItem.direccion,
+              password: ''
+            }
+          })
+        let clonUsers = [...this.users]
+        clonUsers[this.editedIndex] = user
+        this.$store.commit('SET_USERS', clonUsers)
+        this.buttonText = 'Registrar Proveedor'
+        this.resetForm()
       }
     },
-    initialize() {
+    initialize () {
       this.users = [
         {
           documento: '',
@@ -264,25 +263,25 @@ export default {
           sexo: '',
           empresa: ''
         }
-      ];
+      ]
     },
-    editItem(item) {
-      this.buttonTexr = "Actualizar";
-      this.editedIndex = this.users.indexOf(item);
-      this.editeditem = Object.assign({}, item);
-      this.dialog = true;
+    editItem (item) {
+      this.buttonTexr = 'Actualizar'
+      this.editedIndex = this.users.indexOf(item)
+      this.editeditem = Object.assign({}, item)
+      this.dialog = true
     },
 
-    async deleteItem(item) {
-        const sw = await Swal.fire({
-        title: "Estas seguro?",
+    async deleteItem (item) {
+      const sw = await Swal.fire({
+        title: 'Estas seguro?',
         text: `Eliminaras el Proveedor ${item.nombres}`,
-        type: "question",
+        type: 'question',
         showCancelButton: true,
-        cancelButtonColor: "#d33",
-        confirmButtonColor: "#3085d6",
-        confirmButtonText: "Si, eliminar",
-        cancelButtonText: "Cancelar"
+        cancelButtonColor: '#d33',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'Cancelar'
       })
       if (sw.value) {
         try {
@@ -292,23 +291,23 @@ export default {
             'El proveedor se elimino exitosamente',
             'success'
           )
-          let clonPLans = [...this.plans];
+          let clonPLans = [...this.plans]
           const index = this.plans.indexOf(item)
           clonPLans.splice(index, 1)
-          this.$store.commit("SET_PLANS", clonPLans);
+          this.$store.commit('SET_PLANS', clonPLans)
         } catch (error) {
           console.error(error)
         }
       }
     },
-    close() {
-      this.dialog = false;
+    close () {
+      this.dialog = false
       setTimeout(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
-      }, 300);
+        this.editedItem = Object.assign({}, this.defaultItem)
+        this.editedIndex = -1
+      }, 300)
+    }
   }
-}
 }
 </script>
 <style lang="stylus" scoped>
