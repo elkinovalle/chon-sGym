@@ -174,7 +174,7 @@ export default {
       items: [
         'Masculino',
         'Femenino'
-      ],  
+      ],
       editedIndex: -1,
       editedItem: {
         documento: '',
@@ -200,11 +200,11 @@ export default {
     }
   },
   methods: {
-   
+
     async getUsers () {
       const res = await api.get('/user')
     },
-    resetForm() {
+    resetForm () {
       this.editedItem = {}
     },
     async save () {
