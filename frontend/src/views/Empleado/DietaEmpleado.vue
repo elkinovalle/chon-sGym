@@ -9,7 +9,7 @@
             <v-text-field
               v-model="editedItem.Horario"
               box
-              label="Horario"
+              label="Horario de comida"
               clearable
             ></v-text-field>
           </v-flex>
@@ -18,7 +18,7 @@
             <v-text-field
               v-model="editedItem.dia"
               box
-              label="Día"
+              label="Día de la semana"
               clearable
             ></v-text-field>
           </v-flex>
