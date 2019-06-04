@@ -7,7 +7,7 @@ const reservation = require ('./reservation')
 const schedule = require ('./schedule')
 const sale = require ('./sale')
 const membership = require ('./membership')
-const classs = require ('./class')
+const classes = require ('./class')
 const detail_membership = require ('./detail_membership')
 const detail_sale = require ('./detail_sale')
 const type_class = require ('./type_class')
@@ -31,7 +31,7 @@ module.exports = {
   schedule,
   sale,
   membership,
-  classs,
+  classes,
   detail_membership,
   detail_sale,
   type_class,

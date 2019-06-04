@@ -12,7 +12,6 @@ module.exports = function setupMetricModel (config) {
     },
     nombre: {
         type: Sequelize.TEXT,
-        allowNull: false
     },
     descripcion: {
         type: Sequelize.TEXT
@@ -21,10 +20,13 @@ module.exports = function setupMetricModel (config) {
       type: Sequelize.INTEGER
     },
     tipoEjercicio:{
-      type: Sequelize.INTEGER
+      type: Sequelize.TEXT
     },
     beneficio:{
-      type: Sequelize.INTEGER
+      type: Sequelize.TEXT
+    },
+    foto:{
+      type: Sequelize.JSON
     }
   })
 }

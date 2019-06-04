@@ -100,13 +100,11 @@ export default {
     clickPush (value) {
       this.$router.push(value)
     },
-    async singin() {
+    async singin () {
       const { data } = await api.post('/user/singin', { email: this.email, password: this.password })
-      if(data.login) {
+      if (data.login) {
         this.$router.push('/planes-cliente')
-        return
       }
-
     }
   }
 }

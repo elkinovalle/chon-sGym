@@ -10,7 +10,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     layout: 'principal-layout',
-    plans: []
+    plans: [],
+    type_class: [],
+    users: []
   },
   mutations: {
     SET_LAYOUT (state, newLayout) {
@@ -18,6 +20,12 @@ export default new Vuex.Store({
     },
     SET_PLANS (state, newPlan) {
       state.plans = newPlan
+    },
+    SET_TYPE_CLASS (state, newType_class) {
+      state.type_class = newType_class
+    },
+    SET_USERS (state, newUser) {
+      state.users = newUser
     }
   },
   actions: {

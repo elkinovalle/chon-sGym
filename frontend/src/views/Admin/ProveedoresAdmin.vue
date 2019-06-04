@@ -6,9 +6,9 @@
         <v-layout row wrap>
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="editedItem.nombres"
+              v-model="editedItem.nombre"
               box
-              :rules="rules.nombres"
+              :rules="rules.nombre"
               label="Nombres*"
               clearable
               type="text"
@@ -17,9 +17,9 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="editedItem.apellidos"
+              v-model="editedItem.apellido"
               box
-              :rules="rules.apellidos"
+              :rules="rules.apellido"
               label="Apellidos*"
               type="text"
             ></v-text-field>
@@ -27,9 +27,9 @@
 
           <v-flex xs12 sm6>
             <v-text-field
-              v-model="editedItem.documento"
+              v-model="editedItem.cedula"
               box
-              :rules="rules.documento"
+              :rules="rules.cedula"
               label= "No. Documento*"
               clearable
 
@@ -76,20 +76,11 @@
               clearable
             ></v-text-field>
           </v-flex>
-
-            <v-flex xs6>
-              <v-combobox
-              v-model="editedItem.sexo"
-                box
-                label="Genero*"
-                :items="items"
-              ></v-combobox>
-            </v-flex>
-
+          <v-btn color="green darken-4" class=" buton white--text "  @click="save" >{{ buttonText }}</v-btn>
+          <v-btn color="red darken-4" class=" buton  white--text " @click="resetForm" >Cancelar</v-btn>
         </v-layout>
       </v-container>
-          <v-btn color="green darken-4" class=" white--text"  @click="save" >Registrar Proveedor</v-btn>
-          <v-btn color="red darken-4" class=" white--text " @click="resetForm" >Cancelar</v-btn>
+          
     </v-form>
     <v-card>
       <v-card-title>
@@ -111,21 +102,31 @@
       </v-card-title>
       <v-data-table
         :headers="headers"
-        :items="desserts"
+        :items="users"
         :search="search"
       >
         <template v-slot:items="props">
           <td></td>
-          <td class="text-xs-right">{{ props.item.documento }}</td>
-          <td class="text-xs-right">{{ props.item.nombres }}</td>
-          <td class="text-xs-right">{{ props.item.apellidos }}</td>
+          <td class="text-xs-right">{{ props.item.cedula }}</td>
+          <td class="text-xs-right">{{ props.item.nombre }}</td>
+          <td class="text-xs-right">{{ props.item.apellido }}</td>
           <td class="text-xs-right">{{ props.item.telefono }}</td>
           <td class="text-xs-right">{{ props.item.direccion }}</td>
           <td class="text-xs-right">{{ props.item.email }}</td>
-          <td class="text-xs-right">{{ props.item.sexo }}</td>
           <td class="text-xs-right">{{ props.item.empresa }}</td>
-
-        </template>
+          <td class="justify-center layout px-0">
+            <v-btn
+              class="font-weight-black white--text body-2"
+              color="blue darken-1"
+              @click="editItem(props.item)"
+            >Editar</v-btn>
+            <v-btn
+              class="font-weight-black white--text body-2"
+              color="red darken-1"
+              @click="deleteItem(props.item)"
+            >Eliminar</v-btn>
+          </td>
+        </template> 
         <v-alert v-slot:no-results :value="true" color="error" icon="warning">
          Tu busqueda para "{{ search }}" no se encontro
         </v-alert>
@@ -134,6 +135,7 @@
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 import Swal from 'sweetalert2'
 import api from '@/plugins/service'
 export default {
@@ -145,14 +147,15 @@ export default {
   data () {
     return {
       dialog: false,
+      buttonText: 'Registrar Proveedor',
       rules: {
         email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail'],
-        nombres: [v => !!v || 'El nombre es requerido'],
-        apellidos: [v => !!v || 'Los apellidos son requeridos'],
+        nombre: [v => !!v || 'El nombre es requerido'],
+        apellido: [v => !!v || 'Los apellidos son requeridos'],
         telefono: [v => !!v || 'EL telefono es requerido'],
         direccion: [v => !!v || 'La dirección es requerida'],
         empresa: [v => !!v || 'La empresa es requerida'],
-        documento: [v => !!v || 'El documento es requerido']
+        cedula: [v => !!v || 'El documento es requerido']
 
       },
       search: '',
@@ -161,25 +164,19 @@ export default {
           align: 'left',
           sortable: false
         },
-        { text: 'Documento', value: 'documento' },
-        { text: 'Nombres', value: 'nombres' },
-        { text: 'Apellidos', value: 'apellidos' },
+        { text: 'Documento', value: 'cedula' },
+        { text: 'Nombres', value: 'nombre' },
+        { text: 'Apellidos', value: 'apellido' },
         { text: 'Telefono', value: 'telefono' },
         { text: 'Direccion', value: 'direccion' },
         { text: 'Correo Electronico', value: 'email' },
-        { text: 'Sexo', value: 'sexo' },
         { text: 'Empresa', value: 'empresa' }
       ],
-      select: 'Sexo*',
-      items: [
-        'Masculino',
-        'Femenino'
-      ],  
       editedIndex: -1,
       editedItem: {
-        documento: '',
-        nombres: '',
-        apellidos: '',
+        cedula: '',
+        nombre: '',
+        apellido: '',
         telefono: '',
         direccion: '',
         email: '',
@@ -187,51 +184,131 @@ export default {
         empresa: ''
       },
       defaultItem: {
-        documento: '',
-        nombres: '',
-        apellidos: '',
+        cedula: '',
+        nombre: '',
+        apellido: '',
         telefono: '',
         direccion: '',
         email: '',
         sexo: '',
         empresa: ''
-
       }
     }
   },
+  computed: {
+    ...mapState(['users']),
+  },
   methods: {
-   
     async getUsers () {
-      const res = await api.get('/user')
+      const { data: users } = await api.get('/user');
+      this.$store.commit("SET_USERS", users);
     },
     resetForm() {
       this.editedItem = {}
     },
     async save () {
-      const res = await api.post('/user',
+      const alert = await Swal.fire({
+        title: 'El proveedor se ha registrado',
+        timer: 3000
+      })
+      if (this.buttonText === "Registrar Proveedor") {
+        const { data: user } = await api.post("/user", 
         {
           userNew: {
-            nombre: this.editedItem.nombres,
-            apellido: this.editedItem.apellidos,
+            nombre: this.editedItem.nombre,
+            apellido: this.editedItem.apellido,
             email: this.editedItem.email,
-            cedula: this.editedItem.documento,
+            cedula: this.editedItem.cedula,
+            telefono: this.editedItem.telefono,
+            empresa: this.editedItem.empresa,
+            direccion: this.editedItem.direccion,
+            password: ''
+        }
+      });
+      let clonUsers = [...this.users];
+      clonUsers.push(user);
+      this.$store.commit("SET_USERS", clonUsers);
+      this.snackbar = true;
+      this.resetForm();
+      }
+      else{
+        const { data : user } = await api.put(`/user/${this.editedItem.uuid}`,
+        {
+          userNew: {
+            nombre: this.editedItem.nombre,
+            apellido: this.editedItem.apellido,
+            email: this.editedItem.email,
+            cedula: this.editedItem.ceedula,
             telefono: this.editedItem.telefono,
             empresa: this.editedItem.empresa,
             direccion: this.editedItem.direccion,
             password: ''
           }
-        })
-      const alert = await Swal.fire({
-        title: 'El proveedor se ha registrado',
-        timer: 3000
+        });
+        let clonUsers = [...this.users];
+        clonUsers[this.editedIndex] = user;
+        this.$store.commit("SET_USERS", clonUsers);
+        this.buttonText = 'Registrar Proveedor';
+        this.resetForm();
+      }
+    },
+    initialize() {
+      this.users = [
+        {
+          documento: '',
+          nombres: '',
+          apellidos: '',
+          telefono: '',
+          direccion: '',
+          email: '',
+          sexo: '',
+          empresa: ''
+        }
+      ];
+    },
+    editItem(item) {
+      this.buttonTexr = "Actualizar";
+      this.editedIndex = this.users.indexOf(item);
+      this.editeditem = Object.assign({}, item);
+      this.dialog = true;
+    },
+
+    async deleteItem(item) {
+        const sw = await Swal.fire({
+        title: "Estas seguro?",
+        text: `Eliminaras el Proveedor ${item.nombres}`,
+        type: "question",
+        showCancelButton: true,
+        cancelButtonColor: "#d33",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Si, eliminar",
+        cancelButtonText: "Cancelar"
       })
-
-      this.snackbar = true
-      this.resetForm()
-      this.close()
-    }
+      if (sw.value) {
+        try {
+          const { data: user } = await api.delete(`/user/${item.uuid}`)
+          Swal.fire(
+            'Eliminado!',
+            'El proveedor se elimino exitosamente',
+            'success'
+          )
+          let clonPLans = [...this.plans];
+          const index = this.plans.indexOf(item)
+          clonPLans.splice(index, 1)
+          this.$store.commit("SET_PLANS", clonPLans);
+        } catch (error) {
+          console.error(error)
+        }
+      }
+    },
+    close() {
+      this.dialog = false;
+      setTimeout(() => {
+        this.editedItem = Object.assign({}, this.defaultItem);
+        this.editedIndex = -1;
+      }, 300);
   }
-
+}
 }
 </script>
 <style lang="stylus" scoped>
@@ -244,5 +321,9 @@ export default {
   }
   .headline{
     color white
+  }
+  .buton{
+    height 55px
+    font-size 20px
   }
 </style>

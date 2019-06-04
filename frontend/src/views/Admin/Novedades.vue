@@ -142,7 +142,7 @@ export default {
         text: 'Titulo',
         align: 'center',
         sortable: false,
-        value: 'name',
+        value: 'name'
       },
       { text: 'Segundo tema', value: 'tema' },
       { text: 'Descripción', value: 'descripcion' },
@@ -187,20 +187,20 @@ export default {
     async getNovelty () {
       const res = await api.get('/novelty')
     },
-    async resetform (){
+    async resetform () {
       this.$refs.form.resetform()
     },
-    async save (){
-      const res = await api.post('/novelty' ,
-       {
-        noveltyNew: {
-        titulo: this.editItem.titulo,
-        tema: this.editItem.segundo_tema,
-        descripcion: this.editItem.descripcion_titulo,
-        contenido: this.editItem.descripcion_tema,
-        imgUrl: this.editItem.img,
-        }
-      })
+    async save () {
+      const res = await api.post('/novelty',
+        {
+          noveltyNew: {
+            titulo: this.editItem.titulo,
+            tema: this.editItem.segundo_tema,
+            descripcion: this.editItem.descripcion_titulo,
+            contenido: this.editItem.descripcion_tema,
+            imgUrl: this.editItem.img
+          }
+        })
     },
     onFilePicked (e) {
       const files = e.target.files
