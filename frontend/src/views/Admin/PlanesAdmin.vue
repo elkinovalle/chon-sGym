@@ -151,6 +151,7 @@ export default {
     resetForm() {
       this.editedItem = {};
       this.imgCode = base64Img;
+      
     },
     async save() {
       if (this.btnText === "Agregar Plan") {
