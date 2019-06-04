@@ -216,6 +216,7 @@ export default {
           nombre: '',
           beneficio: '',
           image: ''
+          
         }
       ]
     },
