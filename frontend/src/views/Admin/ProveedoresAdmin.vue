@@ -174,7 +174,7 @@ export default {
       items: [
         'Masculino',
         'Femenino'
-      ],
+      ],  
       editedIndex: -1,
       editedItem: {
         documento: '',
@@ -200,14 +200,12 @@ export default {
     }
   },
   methods: {
-    async tarjeta () {
-
-    },
+   
     async getUsers () {
       const res = await api.get('/user')
     },
-    async resetForm () {
-      this.$refs.form.reset()
+    resetForm() {
+      this.editedItem = {}
     },
     async save () {
       const res = await api.post('/user',
