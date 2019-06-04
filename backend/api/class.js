@@ -9,9 +9,9 @@ const router = new Router()
 
 router.post('/', async function(req, res, next) {
   try {
-    const { classsNew } = req.body
-    const { Classs } = await db()
-    const result = await Classs.createClass(classsNew)
+    const { classNew } = req.body
+    const { Class } = await db()
+    const result = await Class.createClass(classNew)
     res.send(result)
   } catch (err) {
     next(err)
@@ -21,9 +21,9 @@ router.post('/', async function(req, res, next) {
 router.put('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
-    const { classsUpdate } = req.body
-    const { Classs } = await db()
-    const result = await Classs.updateClasss(uuid, classsUpdate)
+    const { classUpdate } = req.body
+    const { Class } = await db()
+    const result = await Class.updateClass(uuid, classUpdate)
     res.send(result)
   } catch (err) {
     next(err)
@@ -32,8 +32,8 @@ router.put('/:uuid', async function(req, res, next){
 router.delete('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
-    const { Classs } = await db()
-    const result = await Classs.deleteClasss(uuid)
+    const { Class } = await db()
+    const result = await Class.deleteClass(uuid)
     res.send(result)
   } catch (err) {
     next(err)
@@ -41,8 +41,8 @@ router.delete('/:uuid', async function(req, res, next){
 })
 router.get('/', async function(req, res, next){
   try {
-    const { Classs } = await db()
-    const result = await Classs.findClasss()
+    const { Class } = await db()
+    const result = await Class.findClasss()
     res.send(result)
   } catch (err) {
     next(err)
@@ -51,8 +51,8 @@ router.get('/', async function(req, res, next){
 router.get('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params
-    const { Classs } = await db()
-    const result = await Classs.findClasssUuid(uuid)
+    const { Class } = await db()
+    const result = await Class.findClassUuid(uuid)
     res.send(result)
   } catch (err) {
     next(err)
