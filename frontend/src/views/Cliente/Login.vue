@@ -14,8 +14,8 @@
                 </v-toolbar>
               <v-card-text class="contenedor white">
                 <v-form class="black--text">
-                  <v-text-field name="user" label="Usuario" type="text" ></v-text-field>
-                  <v-text-field id="password" name="password" label="Contraseña"  :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'visibility' : 'visibility_off'"
+                  <v-text-field name="user" label="Usuario" type="text" v-model="email"></v-text-field>
+                  <v-text-field id="password" name="password" v-model="password" label="Contraseña"  :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'visibility' : 'visibility_off'"
              @click:append="show1 = !show1"></v-text-field>
                 </v-form>
               </v-card-text>
@@ -28,8 +28,7 @@
              </v-checkbox>
                 </v-card-actions>
               <v-card class="carta" flat>
-                <v-btn round color="blue darken-4" class="font-weight-black white--text black" to="/planes-cliente">Iniciar sesión
-                    </v-btn>
+                <v-btn round color="blue darken-4" class="font-weight-black white--text black" @click="singin">Iniciar sesión</v-btn>
               </v-card>
               <br>
               <v-card class="carta" flat>
@@ -81,12 +80,14 @@
   </div>
 </template>
 <script>
+import api from '@/plugins/service'
 export default {
   data: () => ({
     dialogEmail: false,
     dialogPassword: false,
     form: false,
-    email: ' ',
+    email: '',
+    password: '',
     show1: false,
     rules: {
       email: [v => (v || '').match(/@/) || 'Por favor ingrese el e-mail de cuenta']
@@ -98,6 +99,14 @@ export default {
   methods: {
     clickPush (value) {
       this.$router.push(value)
+    },
+    async singin() {
+      const { data } = await api.post('/user/singin', { email: this.email, password: this.password })
+      if(data.login) {
+        this.$router.push('/planes-cliente')
+        return
+      }
+
     }
   }
 }

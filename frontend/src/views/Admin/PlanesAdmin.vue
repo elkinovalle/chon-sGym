@@ -157,8 +157,10 @@ export default {
       const { data: plans } = await api.get('/plan')
       this.$store.commit('SET_PLANS', plans)
     },
-    async resetForm () {
-      this.$refs.form.resetForm()
+    resetForm() {
+      this.editedItem = {};
+      this.imgCode = base64Img;
+      
     },
     async save () {
       const { data: plan } = await api.post('/plan',
@@ -214,6 +216,7 @@ export default {
           nombre: '',
           beneficio: '',
           image: ''
+          
         }
       ]
     },
