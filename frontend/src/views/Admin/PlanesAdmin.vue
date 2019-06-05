@@ -127,7 +127,8 @@ export default {
       beneficio: '',
       nombre: '',
       image: ''
-    }
+    },
+     changeImg: false,
   }),
 
   computed: {
@@ -149,15 +150,18 @@ export default {
     },
     resetForm () {
       this.editedItem = {}
-      this.imgCode = base64Img
+      this.imgCode = base64Img,
+      this.changeImg= false
     },
     async save () {
       if (this.btnText === 'Agregar Plan') {
-        const nameImg = uuid()
-        const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
-        const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
-        const imageUrl = await imageRef.getDownloadURL()
-        this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+        if (this.changeImg) { 
+          const nameImg = uuid()
+          const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
+          const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
+          const imageUrl = await imageRef.getDownloadURL()
+          this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+        }
         const { data: plan } = await api.post('/plan', {
           planNew: {
             nombre: this.editedItem.nombre,
@@ -173,12 +177,12 @@ export default {
         this.snackbar = true
         this.resetForm()
       } else {
-        const imageRef = storage
-          .ref()
-          .child(JSON.parse(this.editedItem.foto).path)
-        const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
-        const imageUrl = await imageRef.getDownloadURL()
-        this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+        if(this.changeImg){
+          const imageRef = storage.ref().child(JSON.parse(this.editedItem.foto).path)
+          const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
+          const imageUrl = await imageRef.getDownloadURL()
+          this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+        }
         const { data: plan } = await api.put(`/plan/${this.editedItem.uuid}`, {
           planUpdate: {
             nombre: this.editedItem.nombre,
@@ -199,6 +203,7 @@ export default {
       this.$refs.image.click()
     },
     onFilePicked (e) {
+      this.changeImg= true
       const files = e.target.files
       if (files[0] !== undefined) {
         this.imageName = files[0].name
