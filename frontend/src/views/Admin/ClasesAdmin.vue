@@ -376,8 +376,8 @@ export default {
 
     async deleteItem (item) {
       const sw = await Swal.fire({
-        title: 'Estas seguro?',
-        text: `Eliminaras el plan ${item.nombre}`,
+        title: 'Estás seguro?',
+        text: `Eliminarás la clase ${item.nombre}`,
         type: 'question',
         showCancelButton: true,
         cancelButtonColor: '#d33',
@@ -390,7 +390,7 @@ export default {
           const { data: type_class } = await api.delete(`/type_class/${item.uuid}`)
           Swal.fire(
             'Eliminado!',
-            'El plan se elimino exitosamente',
+            'La clase se elimino exitosamente',
             'success'
           )
           let clonTypeCLass = [...this.type_class]
