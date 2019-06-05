@@ -148,19 +148,12 @@
             </material-card>
         </v-flex>
         <v-flex xs12 sm6>
-          <v-btn color="green darken-4" class="botones white--text headline" @click="save" >Agregar Clase</v-btn>
+          <v-btn color="green darken-4" class="botones white--text headline" @click="save" >{{btnText}}</v-btn>
           <v-btn color="red darken-4" class="botones white--text headline" @click="resetForm">Cancelar</v-btn>
         </v-flex>
         </v-layout>
       </v-container>
     </v-form>
-     <v-toolbar flat color="red darken-4">
-      <v-spacer></v-spacer>
-      <v-dialog v-model="dialog" max-width="500px">
-        <template v-slot:activator="{ on }">
-        </template>
-      </v-dialog>
-    </v-toolbar>
     <v-data-table
       :headers="headers"
       :items="type_class"
@@ -209,13 +202,17 @@ export default {
     dialog: false,
     imgCode: base64Img,
     imageName: '',
-    image: '',
+    image: {
+      path: '',
+      url: ''
+    },
     btnText: 'Agregar Clase',
     items2: [
       'Spinning',
       'Aérobicos',
       'Jaula'
     ],
+    changeImg: false,
     headers: [
       {
         text: 'Titulo',
@@ -226,7 +223,7 @@ export default {
       { text: 'Tipo de ejercicio', value: 'tipo' },
       { text: 'Descripción', value: 'descripcion' },
       { text: 'Beneficios', value: 'beneficio' },
-      { text: 'Capacidad', value: 'bpm' },
+      { text: 'Capacidad', value: 'bpm' }
     ],
     editedIndex: -1,
     editedItem: {
@@ -283,16 +280,17 @@ export default {
     resetForm () {
       this.editedItem = {}
       this.imgCode = base64Img
+      this.changeImg = false
     },
     async save () {
-      console.log(this.btnText)
-
       if (this.btnText === 'Agregar Clase') {
-        const nameImg = uuid()
-        const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
-        const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
-        const imageUrl = await imageRef.getDownloadURL()
-        this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+        if (this.changeImg) {
+          const nameImg = uuid()
+          const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
+          const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
+          const imageUrl = await imageRef.getDownloadURL()
+          this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+        }
         const { data: type_class } = await api.post('/type_class', {
           type_classNew: {
             nombre: this.editedItem.nombre,
@@ -309,12 +307,12 @@ export default {
         this.snackbar = true
         this.resetForm()
       } else {
-        const imageRef = storage
-          .ref()
-          .child(JSON.parse(this.editedItem.foto).path)
-        const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
-        const imageUrl = await imageRef.getDownloadURL()
-        this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+        if (this.changeImg) {
+          const imageRef = storage.ref().child(JSON.parse(this.editedItem.foto).path)
+          const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
+          const imageUrl = await imageRef.getDownloadURL()
+          this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
+        }
         const { data: type_class } = await api.put(`/type_class/${this.editedItem.uuid}`, {
           type_classUpdate: {
             nombre: this.editedItem.nombre,
@@ -326,7 +324,7 @@ export default {
           }
         })
         let clonTypeCLass = [...this.type_class]
-        clonTypeCLass.push(type_class)
+        clonTypeCLass[this.editedIndex] = type_class
         this.$store.commit('SET_TYPE_CLASS', clonTypeCLass)
         this.btnText = 'Agregar Clase'
         this.resetForm()
@@ -336,6 +334,7 @@ export default {
       this.$refs.image.click()
     },
     onFilePicked (e) {
+      this.changeImg = true
       const files = e.target.files
       if (files[0] !== undefined) {
         this.imageName = files[0].name
@@ -369,7 +368,6 @@ export default {
 
     editItem (item) {
       this.btnText = 'Actualizar'
-      console.log(this.btnText)
       this.editedIndex = this.type_class.indexOf(item)
       this.editedItem = Object.assign({}, item)
       this.imgCode = JSON.parse(this.editedItem.foto).url
