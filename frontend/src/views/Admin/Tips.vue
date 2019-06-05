@@ -11,7 +11,7 @@
           </v-flex>
 
           <v-flex xs12 sm6>
-            <v-text-field v-model="editedItem.tema" box label="Segundo tema" clearable></v-text-field>
+            <v-text-field v-model="editedItem.segundo_tema" box label="Segundo tema" clearable></v-text-field>
           </v-flex>
 
           <v-flex xs12 sm6>
@@ -108,21 +108,21 @@ export default {
         sortable: false,
         value: 'nombre'
       },
-      { text: 'Tema', value: 'tema' },
+      { text: 'Tema', value: 'segundo_tema' },
       { text: 'Descripción del título', value: 'descripcion_titulo' },
       { text: 'Descripción del tema', value: 'descripcion_tema' },
       { text: 'Imagen', value: 'image' }
     ],
     editedIndex: -1,
     editedItem: {
-      tema: '',
+      segundo_tema: '',
       descripcion_titulo: '',
       descripcion_tema: '',
       titulo: '',
       image: ''
     },
     defaultItem: {
-      tema: '',
+      segundo_tema: '',
       descripcion_titulo: '',
       descripcion_tema: '',
       titulo: '',
@@ -165,7 +165,7 @@ export default {
         const { data: tip } = await api.post('/tip', {
           tipNew: {
             titulo: this.editedItem.titulo,
-            segundo_tema: this.editedItem.tema,
+            segundo_tema: this.editedItem.segundo_tema,
             descripcion_titulo: this.editedItem.descripcion_titulo,
             descripcion_tema: this.editedItem.descripcion_tema,
             foto: this.image
@@ -186,7 +186,7 @@ export default {
         const { data: tip } = await api.put(`/tip/${this.editedItem.uuid}`, {
           tipUpdate: {
             titulo: this.editedItem.titulo,
-            segundo_tema: this.editedItem.tema,
+            segundo_tema: this.editedItem.segundo_tema,
             descripcion_titulo: this.editedItem.descripcion_titulo,
             descripcion_tema: this.editedItem.descripcion_tema,
             foto: this.image
@@ -224,7 +224,7 @@ export default {
     initialize () {
       this.tips = [
         {
-          tema: '',
+          segundo_tema: '',
           descripcion_titulo: '',
           descripcion_tema: '',
           titulo: '',
