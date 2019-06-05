@@ -254,7 +254,7 @@ export default {
       })
       if (sw.value) {
         try {
-          const { data: plan } = await api.delete(`/tip/${item.uuid}`)
+          const { data: tip } = await api.delete(`/tip/${item.uuid}`)
           Swal.fire(
             'Eliminado!',
             'El tip se elimino exitosamente',

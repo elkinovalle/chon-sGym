@@ -11,6 +11,7 @@ export default new Vuex.Store({
   state: {
     layout: 'principal-layout',
     plans: [],
+    novelties: [],
     tips: [],
     type_class: [],
     users: []
@@ -18,6 +19,9 @@ export default new Vuex.Store({
   mutations: {
     SET_LAYOUT (state, newLayout) {
       state.layout = newLayout
+    },
+    SET_NOVELTIES (state, newNovelty) {
+      state.novelties = newNovelty
     },
     SET_PLANS (state, newPlan) {
       state.plans = newPlan
