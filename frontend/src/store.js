@@ -11,6 +11,8 @@ export default new Vuex.Store({
   state: {
     layout: 'principal-layout',
     plans: [],
+    novelties: [],
+    tips: [],
     type_class: [],
     users: []
   },
@@ -18,8 +20,14 @@ export default new Vuex.Store({
     SET_LAYOUT (state, newLayout) {
       state.layout = newLayout
     },
+    SET_NOVELTIES (state, newNovelty) {
+      state.novelties = newNovelty
+    },
     SET_PLANS (state, newPlan) {
       state.plans = newPlan
+    },
+    SET_TIPS (state, newTip) {
+      state.tips = newTip
     },
     SET_TYPE_CLASS (state, newType_class) {
       state.type_class = newType_class

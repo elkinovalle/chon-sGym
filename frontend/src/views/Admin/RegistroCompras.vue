@@ -136,15 +136,14 @@
       class="elevation-1"
     >
       <template v-slot:items="props">
+        <td class="text-xs-center">{{ props.item.nit }}</td>
+        <td class="text-xs-center">{{ props.item.empresa }}</td>
         <td class="text-xs-center">{{ props.item.codigo }}</td>
-        <td class="text-xs-left">{{ props.item.name }}</td>
-        <td class="text-xs-left">{{ props.item.descripcion }}</td>
-        <td class="text-xs-left">{{ props.item.marca }}</td>
-        <td class="text-xs-left">{{ props.item.valor }}</td>
-        <td class="text-xs-left">{{ props.item.cantidad }}</td>
-        <td class="text-xs-left">{{ props.item.valor * props.item.cantidad }}</td>
-        <td class="text-xs-left">{{ props.item.nit }}</td>
-        <td class="text-xs-left">{{ props.item.empresa }}</td>
+        <td class="text-xs-center">{{ props.item.name }}</td>
+        <td class="text-xs-center">{{ props.item.cantidad }}</td> 
+        <td class="text-xs-center">{{ props.item.descripcion }}</td>
+        <td class="text-xs-center">{{ props.item.marca }}</td>
+        <td class="text-xs-center">{{ props.item.valor }}</td>
         <td class="justify-center layout px-0">
           <v-icon
             small
@@ -177,19 +176,18 @@ export default {
     dialog: false,
     headers: [
       {
-        text: 'Codigo',
+        text: 'nit',
         align: 'center',
         sortable: false,
-        value: 'name'
+        value: 'nit'
       },
+      { text: 'Empresa', value: 'empresa' },
+      { text: 'codigo', value: 'codigo' },
       { text: 'Nombre', value: 'name' },
+      { text: 'Cantidad', value: 'cantidad' },
       { text: 'Descripción', value: 'descripcion' },
       { text: 'Marca', value: 'marca' },
       { text: 'Valor unitario', value: 'valor' },
-      { text: 'Cantidad', value: 'cantidad' },
-      { text: 'Total', value: 'total' },
-      { text: 'NIT de la empresa', value: 'nit' },
-      { text: 'Empresa', value: 'empresa' }
     ],
     desserts: [],
     editedIndex: -1,

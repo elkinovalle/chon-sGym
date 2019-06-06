@@ -107,13 +107,13 @@
       >
         <template v-slot:items="props">
           <td></td>
-          <td class="text-xs-right">{{ props.item.cedula }}</td>
-          <td class="text-xs-right">{{ props.item.nombre }}</td>
-          <td class="text-xs-right">{{ props.item.apellido }}</td>
-          <td class="text-xs-right">{{ props.item.telefono }}</td>
-          <td class="text-xs-right">{{ props.item.direccion }}</td>
-          <td class="text-xs-right">{{ props.item.email }}</td>
-          <td class="text-xs-right">{{ props.item.empresa }}</td>
+          <td class="text-xs-center">{{ props.item.cedula }}</td>
+          <td class="text-xs-center">{{ props.item.nombre }}</td>
+          <td class="text-xs-center">{{ props.item.apellido }}</td>
+          <td class="text-xs-center">{{ props.item.telefono }}</td>
+          <td class="text-xs-center">{{ props.item.direccion }}</td>
+          <td class="text-xs-center">{{ props.item.email }}</td>
+          <td class="text-xs-center">{{ props.item.empresa }}</td>
           <td class="justify-center layout px-0">
             <v-btn
               class="font-weight-black white--text body-2"
