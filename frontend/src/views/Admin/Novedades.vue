@@ -60,7 +60,26 @@
         </v-layout>
       </v-container>
     </v-form>
-    <v-data-table :headers="headers" :items="novelties" class="elevation-1">
+    <v-card>
+       <v-card-title>
+      <v-toolbar-title class="titulo2">Noticias</v-toolbar-title>
+      <v-divider
+        class="mx-2"
+        inset
+        vertical
+      ></v-divider>
+      <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
+        <v-text-field
+          v-model="search"
+          append-icon="search"
+          label="Buscar"
+          hide-details
+          single-line
+          color="accent"
+        ></v-text-field>
+      </v-card-title>
+    <v-data-table :headers="headers" :items="novelties" :search="search" class="elevation-1">
       <template v-slot:items="props">
         <td class="text-xs-center">{{ props.item.titulo }}</td>
         <td class="text-xs-left">{{ props.item.segundo_tema }}</td>
@@ -80,7 +99,11 @@
           >Eliminar</v-btn>
         </td>
       </template>
+      <v-alert v-slot:no-results :value="true" color="error" icon="warning">
+         Tu busqueda para "{{ search }}" no se encontró
+        </v-alert>
     </v-data-table>
+    </v-card>
   </div>
 </template>
 <script>
@@ -100,6 +123,7 @@ export default {
     imgCode: base64Img,
     imageName: '',
     image: '',
+    search: '',
     btnText: 'Agregar Noticia',
     headers: [
       {
@@ -129,7 +153,7 @@ export default {
       titulo: '',
       image: ''
     },
-     changeImg: false,
+    changeImg: false
   }),
 
   computed: {
@@ -152,11 +176,11 @@ export default {
     resetForm () {
       this.editedItem = {}
       this.imgCode = base64Img,
-      this.changeImg= false
+      this.changeImg = false
     },
     async save () {
       if (this.btnText === 'Agregar Noticia') {
-        if (this.changeImg) { 
+        if (this.changeImg) {
           const nameImg = uuid()
           const imageRef = storage.ref().child(`images/${nameImg}.jpg`)
           const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
@@ -178,7 +202,7 @@ export default {
         this.snackbar = true
         this.resetForm()
       } else {
-        if(this.changeImg){
+        if (this.changeImg) {
           const imageRef = storage.ref().child(JSON.parse(this.editedItem.img).path)
           const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
           const imageUrl = await imageRef.getDownloadURL()
@@ -204,7 +228,7 @@ export default {
       this.$refs.image.click()
     },
     onFilePicked (e) {
-      this.changeImg= true
+      this.changeImg = true
       const files = e.target.files
       if (files[0] !== undefined) {
         this.imageName = files[0].name
@@ -282,6 +306,9 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+div.v-card__title{
+    background-color darkred
+  }
 .container.fill-height {
   background-color: white;
 }
@@ -302,4 +329,8 @@ export default {
   width: 300px;
   margin: 10px 0px 30px 150px;
 }
+
+.titulo2{
+    color white !important
+  }
 </style>
