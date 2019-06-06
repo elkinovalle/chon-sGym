@@ -112,7 +112,7 @@ export default new Router({
       component: EmailAdmin
     },
     {
-      path: '/Adminc/inventario',
+      path: '/Admin/inventario',
       name: 'inventario',
       component: Inventario
     },
