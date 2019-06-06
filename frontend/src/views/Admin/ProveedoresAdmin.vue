@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-subheader class="subheader black--text display-1 font-weight-bold" >Registro de Proveedores</v-subheader>
-    <v-form ref="form" v-model="valid"  lazy-validation>
+    <v-form ref="form">
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 sm6>
@@ -76,6 +76,19 @@
               clearable
             ></v-text-field>
           </v-flex>
+          <v-flex xs12 sm6>
+            <v-text-field
+              v-model="editedItem.password"
+              box
+              :rules="rules.password"
+              label="Password*"
+              :type="show ? 'text' : 'password'"
+              :append-icon="show ? 'visibility' : 'visibility_off'"
+              @click:append="show = !show"
+              clearable
+              v-show="a"
+            ></v-text-field>
+          </v-flex>
           <v-btn color="green darken-4" class=" buton white--text "  @click="save" >{{ buttonText }}</v-btn>
           <v-btn color="red darken-4" class=" buton  white--text " @click="resetForm" >Cancelar</v-btn>
         </v-layout>
@@ -96,6 +109,7 @@
           v-model="search"
           append-icon="search"
           label="Buscar"
+          class="white--text"
           single-line
           hide-details
         ></v-text-field>
@@ -136,6 +150,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
+import uuid from 'uuid/v4'
 import Swal from 'sweetalert2'
 import api from '@/plugins/service'
 export default {
@@ -146,7 +161,9 @@ export default {
   },
   data () {
     return {
+      a: true,
       dialog: false,
+      show: false,
       buttonText: 'Registrar Proveedor',
       rules: {
         email: [v => (v || '').match(/@/) || 'Por favor ingrese su e-mail'],
@@ -155,7 +172,8 @@ export default {
         telefono: [v => !!v || 'EL telefono es requerido'],
         direccion: [v => !!v || 'La dirección es requerida'],
         empresa: [v => !!v || 'La empresa es requerida'],
-        cedula: [v => !!v || 'El documento es requerido']
+        cedula: [v => !!v || 'El documento es requerido'],
+        password: [v => !!v || 'La contraseña requerida']
 
       },
       search: '',
@@ -180,8 +198,8 @@ export default {
         telefono: '',
         direccion: '',
         email: '',
-        sexo: '',
-        empresa: ''
+        empresa: '',
+        password: ''
       },
       defaultItem: {
         cedula: '',
@@ -190,14 +208,15 @@ export default {
         telefono: '',
         direccion: '',
         email: '',
-        sexo: '',
-        empresa: ''
+        empresa: '',
+        password: ''
       }
     }
   },
   computed: {
     ...mapState(['users'])
   },
+
   methods: {
     async getUsers () {
       const { data: users } = await api.get('/user')
@@ -222,7 +241,8 @@ export default {
               telefono: this.editedItem.telefono,
               empresa: this.editedItem.empresa,
               direccion: this.editedItem.direccion,
-              password: ''
+              password: this.editedItem.password,
+              rol: 'proveedor'
             }
           })
         let clonUsers = [...this.users]
@@ -233,7 +253,7 @@ export default {
       } else {
         const { data: user } = await api.put(`/user/${this.editedItem.uuid}`,
           {
-            userNew: {
+            userUpdate: {
               nombre: this.editedItem.nombre,
               apellido: this.editedItem.apellido,
               email: this.editedItem.email,
@@ -241,7 +261,7 @@ export default {
               telefono: this.editedItem.telefono,
               empresa: this.editedItem.empresa,
               direccion: this.editedItem.direccion,
-              password: ''
+              password: this.editedItem.password
             }
           })
         let clonUsers = [...this.users]
@@ -260,22 +280,23 @@ export default {
           telefono: '',
           direccion: '',
           email: '',
-          sexo: '',
+          password: '',
           empresa: ''
         }
       ]
     },
     editItem (item) {
-      this.buttonTexr = 'Actualizar'
+      this.buttonText = 'Actualizar'
+      this.a = false
       this.editedIndex = this.users.indexOf(item)
-      this.editeditem = Object.assign({}, item)
+      this.editedItem = Object.assign({}, item)
       this.dialog = true
     },
 
     async deleteItem (item) {
       const sw = await Swal.fire({
         title: 'Estas seguro?',
-        text: `Eliminaras el Proveedor ${item.nombres}`,
+        text: `Eliminaras el Proveedor ${item.nombre}`,
         type: 'question',
         showCancelButton: true,
         cancelButtonColor: '#d33',
@@ -288,13 +309,13 @@ export default {
           const { data: user } = await api.delete(`/user/${item.uuid}`)
           Swal.fire(
             'Eliminado!',
-            'El proveedor se elimino exitosamente',
+            'El proveedor se eliminó exitosamente',
             'success'
           )
-          let clonPLans = [...this.plans]
-          const index = this.plans.indexOf(item)
-          clonPLans.splice(index, 1)
-          this.$store.commit('SET_PLANS', clonPLans)
+          let clonUsers = [...this.users]
+          const index = this.users.indexOf(item)
+          clonUsers.splice(index, 1)
+          this.$store.commit('SET_USERS', clonUsers)
         } catch (error) {
           console.error(error)
         }

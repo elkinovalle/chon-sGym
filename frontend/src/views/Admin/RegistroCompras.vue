@@ -140,7 +140,7 @@
         <td class="text-xs-center">{{ props.item.empresa }}</td>
         <td class="text-xs-center">{{ props.item.codigo }}</td>
         <td class="text-xs-center">{{ props.item.name }}</td>
-        <td class="text-xs-center">{{ props.item.cantidad }}</td> 
+        <td class="text-xs-center">{{ props.item.cantidad }}</td>
         <td class="text-xs-center">{{ props.item.descripcion }}</td>
         <td class="text-xs-center">{{ props.item.marca }}</td>
         <td class="text-xs-center">{{ props.item.valor }}</td>
@@ -187,7 +187,7 @@ export default {
       { text: 'Cantidad', value: 'cantidad' },
       { text: 'Descripción', value: 'descripcion' },
       { text: 'Marca', value: 'marca' },
-      { text: 'Valor unitario', value: 'valor' },
+      { text: 'Valor unitario', value: 'valor' }
     ],
     desserts: [],
     editedIndex: -1,
