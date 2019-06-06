@@ -33,7 +33,7 @@
 
           <v-flex xs12 sm4>
             <v-text-field
-              v-model="editedItem.name"
+              v-model="editedItem.nombre"
               box
               label="Nombre del Producto"
               clearable
@@ -72,7 +72,7 @@
             ></v-text-field>
           </v-flex>
           <v-btn color="red darken-4" class=" white--text title" >Cancelar</v-btn>
-          <v-btn color="green darken-4" class=" white--text title" @click="save" >Agregar Producto</v-btn>
+          <v-btn color="green darken-4" class=" white--text title" @click="save" >{{buttonText}}</v-btn>
         </v-layout>
       </v-container>
     </v-form>
@@ -132,32 +132,29 @@
     </v-toolbar>
     <v-data-table
       :headers="headers"
-      :items="desserts"
+      :items="products"
       class="elevation-1"
     >
       <template v-slot:items="props">
         <td class="text-xs-center">{{ props.item.nit }}</td>
         <td class="text-xs-center">{{ props.item.empresa }}</td>
-        <td class="text-xs-center">{{ props.item.codigo }}</td>
-        <td class="text-xs-center">{{ props.item.name }}</td>
+        <td class="text-xs-center">{{ props.item.serial }}</td>
+        <td class="text-xs-center">{{ props.item.nombre }}</td>
         <td class="text-xs-center">{{ props.item.cantidad }}</td> 
         <td class="text-xs-center">{{ props.item.descripcion }}</td>
         <td class="text-xs-center">{{ props.item.marca }}</td>
-        <td class="text-xs-center">{{ props.item.valor }}</td>
+        <td class="text-xs-center">{{ props.item.valorUnitario }}</td>
         <td class="justify-center layout px-0">
-          <v-icon
-            small
-            class="mr-2"
+          <v-btn
+            class="font-weight-black white--text body-2"
+            color="blue darken-1"
             @click="editItem(props.item)"
-          >
-            edit
-          </v-icon>
-          <v-icon
-            small
+          >Editar</v-btn>
+          <v-btn
+            class="font-weight-black white--text body-2"
+            color="blue darken-1"
             @click="deleteItem(props.item)"
-          >
-            delete
-          </v-icon>
+          >Eliminar</v-btn>
         </td>
       </template>
     </v-data-table>
@@ -166,14 +163,18 @@
 </template>
 <script>
 import api from '@/plugins/service'
+import Swal from 'sweetalert2'
+import {mapState} from 'vuex'
 export default {
 
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
     this.getProducts()
   },
-  data: () => ({
+  data () {
+    return {
     dialog: false,
+    buttonText: 'Registrar producto',
     headers: [
       {
         text: 'nit',
@@ -189,56 +190,51 @@ export default {
       { text: 'Marca', value: 'marca' },
       { text: 'Valor unitario', value: 'valor' },
     ],
-    desserts: [],
     editedIndex: -1,
     editedItem: {
-      name: '',
-      codigo: '',
-      cantidad: '',
-      marca: '',
-      descripcion: '',
-      total: '',
       nit: '',
-      empresa: ''
+      empresa: '',
+      serial: '',
+      nombre: '',
+      cantidad: '',
+      descripcion: '',
+      marca: '',
+      valorUnitario: ''
     },
     defaultItem: {
-      name: '',
-      codigo: '',
+     nit: '',
+      empresa: '',
+      serial: '',
+      nombre: '',
       cantidad: '',
-      marca: '',
       descripcion: '',
-      total: '',
-      nit: '',
-      empresa: ''
+      marca: '',
+      valorUnitario: ''
     }
-  }),
+   }
+  },
 
   computed: {
-    formTitle () {
-      return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
-    }
-  },
-
-  watch: {
-    dialog (val) {
-      val || this.close()
-    }
+    ...mapState(['products'])
   },
   methods: {
-    initialize () {
-      this.desserts = [
-
-      ]
-    },
     async getProducts () {
-      const res = await api.get('/product')
+      const { data: products } = await api.get('/product')
+      this.$store.commit('SET_PRODUCTS', products)
+      console.log(products);
+      
     },
-    async resetForm () {
-      this.$refs.form.resetForm()
+     resetForm () {
+      this.editedItem = {}
     },
     async save () {
-      const res = await api.post('/product',
-        {
+      const alert = await Swal.fire({
+        title: 'se ha registrado el producto',
+        timer: 3000
+      })
+      if (this.buttonText === 'Registrar producto') {
+        const { data: product } = await api.post('/product',
+          {
           productNew: {
             nit: this.editedItem.nit,
             empresa: this.editedItem.empresa,
@@ -250,28 +246,79 @@ export default {
             valorUnitario: this.editedItem.valor
           }
         })
-      this.snackbar = true
-      if (this.editedIndex > -1) {
-        Object.assign(this.desserts[this.editedIndex], this.editedItem)
+      let clonProduct = [...this.products]
+        clonProduct.push(product)
+        this.$store.commit('SET_PRODUCTS', clonProduct)
+        this.snackbar = true
+        this.resetForm()
       } else {
-        this.desserts.push(this.editedItem)
+       const { data: product } = await api.put(`/product/${this.editedItem.uuid}`,{
+         productUpdate:{
+           nit: this.editedItem.nit,
+            empresa: this.editedItem.empresa,
+            serial: this.editedItem.codigo,
+            nombre: this.editedItem.name,
+            cantidad: this.editedItem.cantidad,
+            descripcion: this.editedItem.descripcion,
+            marca: this.editedItem.marca,
+            valorUnitario: this.editedItem.valor
+         }
+       })
+       let clonProduct = [...this.products]
+        clonProduct[this.editedIndex] = product
+        this.$store.commit('SET_PRODUCT', clonProduct)
+        this.buttonText = 'Registrar producto'
+        this.resetForm()
       }
-      this.resetForm()
-
-      this.close()
     },
-
+    initialize () {
+      this.products = [
+        {
+          nit: '',
+          empresa: '',
+          serial: '',
+          nombre: '',
+          cantidad: '',
+          descripcion: '',
+          marca: '',
+          valorUnitario: ''
+        }
+      ]
+    },
     editItem (item) {
-      this.editedIndex = this.desserts.indexOf(item)
-      this.editedItem = Object.assign({}, item)
+      this.buttonTexr = 'Actualizar'
+      this.editedIndex = this.products.indexOf(item)
+      this.editeditem = Object.assign({}, item)
       this.dialog = true
     },
-
-    deleteItem (item) {
-      const index = this.desserts.indexOf(item)
-      confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+     async deleteItem (item) {
+      const sw = await Swal.fire({
+        title: 'Estas seguro?',
+        text: `Eliminaras el registro del producto ${item.nombres}`,
+        type: 'question',
+        showCancelButton: true,
+        cancelButtonColor: '#d33',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'Cancelar'
+      })
+      if (sw.value) {
+        try {
+          const { data: product } = await api.delete(`/product/${item.uuid}`)
+          Swal.fire(
+            'Eliminado!',
+            'El registro se ha eliminado',
+            'success'
+          )
+          let clonProduct = [...this.products]
+          const index = this.product.indexOf(item)
+          clonProduct.splice(index, 1)
+          this.$store.commit('SET_PRODUCT', clonProduct)
+        } catch (error) {
+          console.error(error)
+        }
+      }
     },
-
     close () {
       this.dialog = false
       setTimeout(() => {
@@ -280,7 +327,6 @@ export default {
       }, 300)
     }
   }
-
 }
 </script>
 <style lang="stylus" scoped>
@@ -290,4 +336,5 @@ export default {
 .titulo2{
   color white !important
 }
+
 </style>
