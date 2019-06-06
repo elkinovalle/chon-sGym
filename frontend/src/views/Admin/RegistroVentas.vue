@@ -4,27 +4,9 @@
     <v-form>
       <v-container>
         <v-layout row wrap>
-           <v-flex xs12 sm6>
-            <v-text-field
-              v-model="editedItem.cedula"
-              box
-              label="Cedula Cliente"
-              clearable
-            ></v-text-field>
-          </v-flex>
-
-           <v-flex xs12 sm6>
-            <v-text-field
-              v-model="editedItem.empleado"
-              box
-              label="Empleado"
-              clearable
-            ></v-text-field>
-          </v-flex>
-
           <v-flex xs12 sm4>
             <v-text-field
-              v-model="editedItem.codigo"
+              v-model="editedItem.serial"
               box
               label="Número de serial o codigo"
               clearable
@@ -33,7 +15,7 @@
 
           <v-flex xs12 sm4>
             <v-text-field
-              v-model="editedItem.name"
+              v-model="editedItem.nombre"
               box
               label="Nombre del Producto"
               clearable
@@ -55,6 +37,7 @@
               box
               label="Descripción"
               clearable
+              height="140px"
             ></v-textarea>
           </v-flex>
             <v-flex xs12 sm6>
@@ -65,86 +48,31 @@
               clearable
             ></v-text-field>
             <v-text-field
-              v-model="editedItem.valor"
+              v-model="editedItem.valorUnitario"
               box
               label="Valor Unitario"
               clearable
+              type="number"
             ></v-text-field>
           </v-flex>
           <v-btn color="red darken-4" class=" white--text title" >Cancelar</v-btn>
-          <v-btn color="green darken-4" class=" white--text title" @click="save" >Agregar Producto</v-btn>
+          <v-btn color="green darken-4" class="white--text title" @click="save" >Agregar Producto</v-btn>
         </v-layout>
       </v-container>
     </v-form>
-     <v-toolbar flat color="red darken-4">
-      <v-toolbar-title class="titulo2">Registro de Ventas</v-toolbar-title>
-      <v-divider
-        class="mx-2"
-        inset
-        vertical
-      ></v-divider>
-      <v-spacer></v-spacer>
-      <v-dialog v-model="dialog" max-width="500px">
-        <template v-slot:activator="{ on }">
-        </template>
-        <v-card>
-          <v-card-title>
-            <span class="headline">{{ formTitle }}</span>
-          </v-card-title>
-          <v-card-text>
-            <v-container grid-list-md>
-              <v-layout wrap>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.codigo" label="Serial"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.name" label="Nombre"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.descripcion" label="Descripción"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.marca" label="Marca"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.valor" label="Valor Unitario" type="number"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.cantidad" label="Cantidad" type="number"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.cedula" label="Cedula"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.empleado" label="Empleado"></v-text-field>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-card-text>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-            <v-btn color="blue darken-1" flat @click="save">Guardas Cambios</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </v-toolbar>
     <v-data-table
       :headers="headers"
       :items="desserts"
       class="elevation-1"
     >
       <template v-slot:items="props">
-        <td class="text-xs-center">{{ props.item.codigo }}</td>
-        <td class="text-xs-left">{{ props.item.name }}</td>
+        <td class="text-xs-center">{{ props.item.serial }}</td>
+        <td class="text-xs-left">{{ props.item.nombre }}</td>
         <td class="text-xs-left">{{ props.item.descripcion }}</td>
         <td class="text-xs-left">{{ props.item.marca }}</td>
-        <td class="text-xs-left">{{ props.item.valor }}</td>
+        <td class="text-xs-left">{{ props.item.valorUnitario }}</td>
         <td class="text-xs-left">{{ props.item.cantidad }}</td>
-        <td class="text-xs-left">{{ props.item.valor * props.item.cantidad }}</td>
-        <td class="text-xs-left">{{ props.item.cedula }}</td>
-        <td class="text-xs-left">{{ props.item.empleado }}</td>
+        <td class="text-xs-left">{{ props.item.valorUnitario * props.item.cantidad }}</td>
         <td class="justify-center layout px-0">
           <v-icon
             small
@@ -174,41 +102,37 @@ export default {
     dialog: false,
     headers: [
       {
-        text: 'Codigo',
+        text: 'Serial',
         align: 'center',
         sortable: false,
-        value: 'name'
+        value: 'nombre'
       },
-      { text: 'Nombre', value: 'name' },
+      { text: 'Nombre', value: 'nombre' },
       { text: 'Descripción', value: 'descripcion' },
       { text: 'Marca', value: 'marca' },
-      { text: 'Valor unitario', value: 'valor' },
+      { text: 'Valor unitario', value: 'valorUnitario' },
       { text: 'Cantidad', value: 'cantidad' },
-      { text: 'Total', value: 'total' },
-      { text: 'Cédula', value: 'cedula' },
-      { text: 'Empleado', value: 'empleado' }
+      { text: 'Total', value: 'valorTotal' },
     ],
     desserts: [],
     editedIndex: -1,
     editedItem: {
-      name: '',
-      codigo: '',
+      nombre: '',
+      serial: '',
       cantidad: '',
       marca: '',
+      valorUnitario: '',
       descripcion: '',
-      total: '',
-      cedula: '',
-      empleado: ''
+      valorTotal: ''
     },
     defaultItem: {
-      name: '',
-      codigo: '',
+      nombre: '',
+      serial: '',
       cantidad: '',
       marca: '',
+      valorUnitario: '',
       descripcion: '',
-      total: '',
-      cedula: '',
-      empleado: ''
+      valorTotal: ''
     }
   }),
 
@@ -227,19 +151,18 @@ export default {
     initialize () {
       this.desserts = [
         {
-          name: '',
-          codigo: '',
+          nombre: '',
+          serial: '',
           cantidad: '',
           marca: '',
+          valorUnitario: '',
           descripcion: '',
-          total: '',
-          cedula: '',
-          empleado: ''
+          valorTotal: ''
         }
       ]
     },
     multiplicar () {
-      var total = this.editedItem.valor * this.editedItem.cantidad
+      var valorTotal = this.editedItem.valor * this.editedItem.cantidad
     },
 
     editItem (item) {
