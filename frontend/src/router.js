@@ -122,7 +122,7 @@ export default new Router({
       component: RegistroCompras
     },
     {
-      path: '/Empleado/registro-empleados',
+      path: '/Admin/registro-empleados',
       name: 'registro-empleados',
       component: RegistroEmpleados
     },
