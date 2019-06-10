@@ -76,7 +76,7 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { icon: 'fas fa-box', text: 'Inventario', link: 'inventario' },
+      { icon: 'fas fa-box', text: 'Inventario', link: '/Admin/inventario' },
       { icon: 'fas fa-box', text: 'Planes', link: 'planes-admin' },
       { icon: 'fas fa-box', text: 'Clases', link: 'clases-admin' },
       { icon: 'history', text: 'Registro de compras', link: 'registro-compras' },
