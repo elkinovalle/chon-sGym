@@ -77,17 +77,17 @@ export default {
     drawer: null,
     items: [
       { icon: 'fas fa-box', text: 'Inventario', link: '/Admin/inventario' },
-      { icon: 'fas fa-box', text: 'Planes', link: 'planes-admin' },
-      { icon: 'fas fa-box', text: 'Clases', link: 'clases-admin' },
-      { icon: 'history', text: 'Registro de compras', link: 'registro-compras' },
-      { icon: 'update', text: 'Registro de Empleados', link: 'registro-empleados' },
-      { icon: 'featured_play_list', text: 'Gestión de reservas', link: 'gestion-clases' },
-      { icon: 'add', text: 'Proveedores', link: 'proveedores-admin' },
-      { icon: 'money', text: 'Registro de Ventas', link: 'registro-ventas' },
-      { icon: 'present_to_all', text: 'Novedades', link: 'novedades' },
-      { icon: 'info', text: 'Tips', link: 'tips' },
-      { icon: 'place', text: 'Instalaciones', link: 'instalacionesAdmin' },
-      { icon: 'event', text: 'Reportes', link: 'reportes' }
+      { icon: 'fas fa-box', text: 'Planes', link: '/Admin/planes-admin' },
+      { icon: 'fas fa-box', text: 'Clases', link: '/Admin/clases-admin' },
+      { icon: 'history', text: 'Registro de compras', link: '/Admin/registro-compras' },
+      { icon: 'update', text: 'Registro de Empleados', link: '/Admin/registro-empleados' },
+      { icon: 'featured_play_list', text: 'Gestión de reservas', link: '/Admin/gestion-clases' },
+      { icon: 'add', text: 'Proveedores', link: '/Admin/proveedores-admin' },
+      { icon: 'money', text: 'Registro de Ventas', link: '/Admin/registro-ventas' },
+      { icon: 'present_to_all', text: 'Novedades', link: '/Admin/novedades' },
+      { icon: 'info', text: 'Tips', link: '/Admin/tips' },
+      { icon: 'place', text: 'Instalaciones', link: '/Admin/instalacionesAdmin' },
+      { icon: 'event', text: 'Reportes', link: '/Admin/reportes' }
     ],
     items1: [
       { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },

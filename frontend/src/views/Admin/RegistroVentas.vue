@@ -112,7 +112,7 @@ export default {
       { text: 'Marca', value: 'marca' },
       { text: 'Valor unitario', value: 'valorUnitario' },
       { text: 'Cantidad', value: 'cantidad' },
-      { text: 'Total', value: 'valorTotal' },
+      { text: 'Total', value: 'valorTotal' }
     ],
     desserts: [],
     editedIndex: -1,
