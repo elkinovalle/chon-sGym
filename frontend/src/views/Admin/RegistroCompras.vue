@@ -78,7 +78,7 @@
               color="green darken-4"
               class="botones white--text headline"
               @click="save"
-            >{{ btnText }}</v-btn>
+            >Registrar Producto</v-btn>
            <v-btn
               color="red darken-4"
               class="botones white--text headline"
@@ -90,7 +90,7 @@
     </v-form>
      <v-card>
        <v-card-title>
-      <v-toolbar-title class="titulo2">Registro de Ventas</v-toolbar-title>
+      <v-toolbar-title class="titulo2">Registro de Compras</v-toolbar-title>
       <v-divider
         class="mx-2"
         inset
@@ -124,11 +124,6 @@
         <td class="text-xs-center">{{ props.item.cantidad }}</td>
         <td class="text-xs-left">{{ props.item.valorUnitario * props.item.cantidad }}</td>
         <td class="justify-center layout px-0">
-           <v-btn
-            class="font-weight-black white--text body-2"
-            color="blue darken-1"
-            @click="editItem(props.item)"
-          >Editar</v-btn>
           <v-btn
             class="font-weight-black white--text body-2"
             color="red darken-4"
@@ -148,8 +143,6 @@ import { mapState } from 'vuex'
 import uuid from 'uuid/v4'
 import Swal from 'sweetalert2'
 import api from '@/plugins/service'
-import Swal from 'sweetalert2'
-import {mapState} from 'vuex'
 export default {
 
   created () {
@@ -159,10 +152,11 @@ export default {
   data () {
     return {
     dialog: false,
-    btnText: 'Agregar Compra',
+    show: false,
+    search: '',
     headers: [
       {
-        text: 'nit',
+        text: 'NIT',
         align: 'center',
         sortable: false,
         value: 'nit'
@@ -188,21 +182,16 @@ export default {
       valorUnitario: ''
     },
     defaultItem: {
-     nit: '',
+      nit: '',
       empresa: '',
       serial: '',
       nombre: '',
       cantidad: '',
       descripcion: '',
-      total: '',
-      nit: '',
-      empresa: ''
+      marca: '',
+      valorUnitario: ''
     }
     }
-  },
-
-  computed: {
-   
   },
 
   computed: {
@@ -212,29 +201,27 @@ export default {
     async getProducts () {
       const { data: products } = await api.get('/product')
       this.$store.commit('SET_PRODUCTS', products)
-      console.log(products);
-      
     },
-     resetForm () {
+ resetForm () {
       this.editedItem = {}
     },
     async save () {
       const alert = await Swal.fire({
-        title: 'se ha registrado el producto',
+        title: 'Se ha registrado el producto',
         timer: 3000
       })
-      if (this.buttonText === 'Registrar producto') {
         const { data: product } = await api.post('/product',
           {
           productNew: {
             nit: this.editedItem.nit,
             empresa: this.editedItem.empresa,
-            serial: this.editedItem.codigo,
-            nombre: this.editedItem.name,
+            serial: this.editedItem.serial,
+            nombre: this.editedItem.nombre,
             cantidad: this.editedItem.cantidad,
             descripcion: this.editedItem.descripcion,
             marca: this.editedItem.marca,
-            valorUnitario: this.editedItem.valor
+            valorUnitario: this.editedItem.valorUnitario,
+            valorTotal: this.editedItem.valorUnitario*this.editedItem.cantidad
           }
         })
       let clonProduct = [...this.products]
@@ -242,25 +229,6 @@ export default {
         this.$store.commit('SET_PRODUCTS', clonProduct)
         this.snackbar = true
         this.resetForm()
-      } else {
-       const { data: product } = await api.put(`/product/${this.editedItem.uuid}`,{
-         productUpdate:{
-           nit: this.editedItem.nit,
-            empresa: this.editedItem.empresa,
-            serial: this.editedItem.codigo,
-            nombre: this.editedItem.name,
-            cantidad: this.editedItem.cantidad,
-            descripcion: this.editedItem.descripcion,
-            marca: this.editedItem.marca,
-            valorUnitario: this.editedItem.valor
-         }
-       })
-       let clonProduct = [...this.products]
-        clonProduct[this.editedIndex] = product
-        this.$store.commit('SET_PRODUCT', clonProduct)
-        this.buttonText = 'Registrar producto'
-        this.resetForm()
-      }
     },
     initialize () {
       this.products = [
@@ -272,15 +240,10 @@ export default {
           cantidad: '',
           descripcion: '',
           marca: '',
-          valorUnitario: ''
+          valorUnitario: '',
+          valorTotal: ''
         }
       ]
-    },
-    editItem (item) {
-      this.buttonTexr = 'Actualizar'
-      this.editedIndex = this.products.indexOf(item)
-      this.editeditem = Object.assign({}, item)
-      this.dialog = true
     },
      async deleteItem (item) {
       const sw = await Swal.fire({
