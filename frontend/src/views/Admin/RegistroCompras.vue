@@ -55,6 +55,7 @@
               box
               label="Descripción"
               clearable
+              height="140px"
             ></v-textarea>
           </v-flex>
             <v-flex xs12 sm6>

@@ -7,14 +7,14 @@
     <v-toolbar-title class="font-weight-black font-italic white--text display-1">Chon's Gym</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat class="white--text" to="/planes-cliente">Planes</v-btn>
-      <v-btn flat class="white--text" to="/clases-grupales-cliente">Clases</v-btn>
-      <v-btn flat class="white--text" to="/horarios-cliente">Reservar</v-btn>
-      <v-btn flat class="white--text" to="/lo-nuevo-cliente">Lo Nuevo</v-btn>
-      <v-btn flat class="white--text" to="/noticias-cliente">Noticias</v-btn>
-      <v-btn flat class="white--text" to="/tips-cliente">Tips</v-btn>
-      <v-btn flat class="white--text" to="/contacto-cliente">Contacto</v-btn>
-      <v-btn flat class="white--text" to="/instalaciones-cliente">Instalaciones</v-btn>
+      <v-btn flat class="white--text" to="/Cliente/planes-cliente">Planes</v-btn>
+      <v-btn flat class="white--text" to="/Cliente/clases-grupales-cliente">Clases</v-btn>
+      <v-btn flat class="white--text" to="/Cliente/horarios-cliente">Reservar</v-btn>
+      <v-btn flat class="white--text" to="/Cliente/lo-nuevo-cliente">Lo Nuevo</v-btn>
+      <v-btn flat class="white--text" to="/Cliente/noticias-cliente">Noticias</v-btn>
+      <v-btn flat class="white--text" to="/Cliente/tips-cliente">Tips</v-btn>
+      <v-btn flat class="white--text" to="/Cliente/contacto-cliente">Contacto</v-btn>
+      <v-btn flat class="white--text" to="/Cliente/instalaciones-cliente">Instalaciones</v-btn>
        <v-menu offset-y>
       <template v-slot:activator="{ on }">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
@@ -83,7 +83,7 @@
         flat
         round
         class="title font-italic font-weight-black"
-        to="/planes-cliente"
+        to="/Cliente/planes-cliente"
       >
       PLANES Y TARIFAS
       </v-btn>
@@ -92,7 +92,7 @@
         flat
         round
         class="title font-italic font-weight-black"
-        to="/clases-grupales-cliente"
+        to="/Cliente/clases-grupales-cliente"
       >
      CLASES GRUPALES
       </v-btn>
@@ -101,7 +101,7 @@
         flat
         round
         class="title font-italic font-weight-black"
-        to="/horarios-cliente"
+        to="/Cliente/horarios-cliente"
       >
       HORARIOS
       </v-btn>
@@ -114,7 +114,7 @@
         flat
         round
         class="title font-italic font-weight-black"
-        to="/tips-cliente"
+        to="/Cliente/tips-cliente"
       >
      TIPS
       </v-btn>
@@ -123,7 +123,7 @@
         flat
         round
         class="title font-italic font-weight-black"
-        to="/instalaciones-cliente"
+        to="/Cliente/instalaciones-cliente"
       >
       NUESTRAS INSTALACIONES
       </v-btn>
@@ -132,7 +132,7 @@
         flat
         round
         class="title font-italic font-weight-black"
-        to="/trabaja-con-nosotros-cliente"
+        to="/Cliente/trabaja-con-nosotros-cliente"
       >
      TRABAJA CON NOSOTROS
       </v-btn>
@@ -141,7 +141,7 @@
         flat
         round
         class="title font-italic font-weight-black"
-        to="/lo-nuevo-cliente"
+        to="/Cliente/lo-nuevo-cliente"
       >
       LO NUEVO
       </v-btn>
@@ -200,12 +200,12 @@ export default {
       'Reglamento de usuario'
     ],
     items: [
-      { title: 'Editar Perfil', icon: 'edit', link: '/Editar-Perfil-Cliente' },
-      { title: 'Mi Rutina', icon: 'fitness_center', link: '/mi-rutina-cliente' },
-      { title: 'Mi Dieta', icon: 'kitchen', link: '/mi-dieta-cliente' },
-      { title: 'Progreso', icon: 'signal_cellular_alt', link: '/progreso-cliente' },
-      { title: 'Entrenador', icon: 'person', link: '/entrenadores-cliente' },
-      { title: 'Mis reservas', icon: 'history', link: '/mis-reservas-cliente' },
+      { title: 'Editar Perfil', icon: 'edit', link: '/Cliente/Editar-Perfil-Cliente' },
+      { title: 'Mi Rutina', icon: 'fitness_center', link: '/Cliente/mi-rutina-cliente' },
+      { title: 'Mi Dieta', icon: 'kitchen', link: '/Cliente/mi-dieta-cliente' },
+      { title: 'Progreso', icon: 'signal_cellular_alt', link: '/Cliente/progreso-cliente' },
+      { title: 'Entrenador', icon: 'person', link: '/Cliente/entrenadores-cliente' },
+      { title: 'Mis reservas', icon: 'history', link: '/Cliente/mis-reservas-cliente' },
       { title: 'Cerrar Sesión', icon: 'close', link: '/login' }
     ]
   })

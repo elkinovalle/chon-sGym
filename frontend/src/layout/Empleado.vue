@@ -67,12 +67,12 @@ export default {
     drawer: null,
 
     items: [
-      { icon: 'person', text: 'Mi Perfil', link: 'mi-perfil-empleado' },
-      { icon: 'shopping_cart', text: 'Membresia', link: 'membresias-empleado' },
-      { icon: 'history', text: 'Rutina', link: 'rutina-empleado' },
-      { icon: 'history', text: 'Dieta', link: 'dieta-empleado' },
-      { icon: 'poll', text: 'Valoracion', link: 'valoracion-empleado' },
-      { icon: 'money', text: 'Ventas', link: 'ventas-empleado' },
+      { icon: 'person', text: 'Mi Perfil', link: '/Empleado/mi-perfil-empleado' },
+      { icon: 'shopping_cart', text: 'Membresia', link: '/Empleado/membresias-empleado' },
+      { icon: 'history', text: 'Rutina', link: '/Empleado/rutina-empleado' },
+      { icon: 'history', text: 'Dieta', link: '/Empleado/dieta-empleado' },
+      { icon: 'poll', text: 'Valoracion', link: '/Empleado/valoracion-empleado' },
+      { icon: 'money', text: 'Ventas', link: '/Empleado/ventas-empleado' },
       { icon: 'close', text: 'Salir' }
     ]
   }),
