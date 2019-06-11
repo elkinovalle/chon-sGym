@@ -148,13 +148,16 @@ import { mapState } from 'vuex'
 import uuid from 'uuid/v4'
 import Swal from 'sweetalert2'
 import api from '@/plugins/service'
+import Swal from 'sweetalert2'
+import {mapState} from 'vuex'
 export default {
 
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
     this.getProducts()
   },
-  data: () => ({
+  data () {
+    return {
     dialog: false,
     btnText: 'Agregar Compra',
     headers: [
@@ -173,54 +176,56 @@ export default {
       { text: 'Cantidad', value: 'cantidad' },
       { text: 'Total', value: 'valorTotal' }
     ],
-    desserts: [],
     editedIndex: -1,
     editedItem: {
-      name: '',
-      codigo: '',
-      cantidad: '',
-      marca: '',
-      descripcion: '',
-      total: '',
       nit: '',
-      empresa: ''
+      empresa: '',
+      serial: '',
+      nombre: '',
+      cantidad: '',
+      descripcion: '',
+      marca: '',
+      valorUnitario: ''
     },
     defaultItem: {
-      name: '',
-      codigo: '',
+     nit: '',
+      empresa: '',
+      serial: '',
+      nombre: '',
       cantidad: '',
-      marca: '',
       descripcion: '',
       total: '',
       nit: '',
       empresa: ''
     }
-  }),
+    }
+  },
 
   computed: {
    
   },
 
-  watch: {
-    dialog (val) {
-      val || this.close()
-    }
+  computed: {
+    ...mapState(['products'])
   },
   methods: {
-    initialize () {
-      this.desserts = [
-
-      ]
-    },
     async getProducts () {
-      const res = await api.get('/product')
+      const { data: products } = await api.get('/product')
+      this.$store.commit('SET_PRODUCTS', products)
+      console.log(products);
+      
     },
-    async resetForm () {
-      this.$refs.form.resetForm()
+     resetForm () {
+      this.editedItem = {}
     },
     async save () {
-      const res = await api.post('/product',
-        {
+      const alert = await Swal.fire({
+        title: 'se ha registrado el producto',
+        timer: 3000
+      })
+      if (this.buttonText === 'Registrar producto') {
+        const { data: product } = await api.post('/product',
+          {
           productNew: {
             nit: this.editedItem.nit,
             empresa: this.editedItem.empresa,
@@ -232,28 +237,79 @@ export default {
             valorUnitario: this.editedItem.valor
           }
         })
-      this.snackbar = true
-      if (this.editedIndex > -1) {
-        Object.assign(this.desserts[this.editedIndex], this.editedItem)
+      let clonProduct = [...this.products]
+        clonProduct.push(product)
+        this.$store.commit('SET_PRODUCTS', clonProduct)
+        this.snackbar = true
+        this.resetForm()
       } else {
-        this.desserts.push(this.editedItem)
+       const { data: product } = await api.put(`/product/${this.editedItem.uuid}`,{
+         productUpdate:{
+           nit: this.editedItem.nit,
+            empresa: this.editedItem.empresa,
+            serial: this.editedItem.codigo,
+            nombre: this.editedItem.name,
+            cantidad: this.editedItem.cantidad,
+            descripcion: this.editedItem.descripcion,
+            marca: this.editedItem.marca,
+            valorUnitario: this.editedItem.valor
+         }
+       })
+       let clonProduct = [...this.products]
+        clonProduct[this.editedIndex] = product
+        this.$store.commit('SET_PRODUCT', clonProduct)
+        this.buttonText = 'Registrar producto'
+        this.resetForm()
       }
-      this.resetForm()
-
-      this.close()
     },
-
+    initialize () {
+      this.products = [
+        {
+          nit: '',
+          empresa: '',
+          serial: '',
+          nombre: '',
+          cantidad: '',
+          descripcion: '',
+          marca: '',
+          valorUnitario: ''
+        }
+      ]
+    },
     editItem (item) {
-      this.editedIndex = this.desserts.indexOf(item)
-      this.editedItem = Object.assign({}, item)
+      this.buttonTexr = 'Actualizar'
+      this.editedIndex = this.products.indexOf(item)
+      this.editeditem = Object.assign({}, item)
       this.dialog = true
     },
-
-    deleteItem (item) {
-      const index = this.desserts.indexOf(item)
-      confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+     async deleteItem (item) {
+      const sw = await Swal.fire({
+        title: 'Estas seguro?',
+        text: `Eliminaras el registro del producto ${item.nombres}`,
+        type: 'question',
+        showCancelButton: true,
+        cancelButtonColor: '#d33',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'Cancelar'
+      })
+      if (sw.value) {
+        try {
+          const { data: product } = await api.delete(`/product/${item.uuid}`)
+          Swal.fire(
+            'Eliminado!',
+            'El registro se ha eliminado',
+            'success'
+          )
+          let clonProduct = [...this.products]
+          const index = this.product.indexOf(item)
+          clonProduct.splice(index, 1)
+          this.$store.commit('SET_PRODUCT', clonProduct)
+        } catch (error) {
+          console.error(error)
+        }
+      }
     },
-
     close () {
       this.dialog = false
       setTimeout(() => {
@@ -262,7 +318,6 @@ export default {
       }, 300)
     }
   }
-
 }
 </script>
 <style lang="stylus" scoped>
