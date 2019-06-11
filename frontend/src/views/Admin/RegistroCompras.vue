@@ -138,9 +138,9 @@
       <template v-slot:items="props">
         <td class="text-xs-center">{{ props.item.nit }}</td>
         <td class="text-xs-center">{{ props.item.empresa }}</td>
-        <td class="text-xs-center">{{ props.item.serial }}</td>
-        <td class="text-xs-center">{{ props.item.nombre }}</td>
-        <td class="text-xs-center">{{ props.item.cantidad }}</td> 
+        <td class="text-xs-center">{{ props.item.codigo }}</td>
+        <td class="text-xs-center">{{ props.item.name }}</td>
+        <td class="text-xs-center">{{ props.item.cantidad }}</td>
         <td class="text-xs-center">{{ props.item.descripcion }}</td>
         <td class="text-xs-center">{{ props.item.marca }}</td>
         <td class="text-xs-center">{{ props.item.valorUnitario }}</td>
@@ -188,7 +188,7 @@ export default {
       { text: 'Cantidad', value: 'cantidad' },
       { text: 'Descripción', value: 'descripcion' },
       { text: 'Marca', value: 'marca' },
-      { text: 'Valor unitario', value: 'valor' },
+      { text: 'Valor unitario', value: 'valor' }
     ],
     editedIndex: -1,
     editedItem: {

@@ -154,9 +154,29 @@
         </v-layout>
       </v-container>
     </v-form>
+       <v-card>
+      <v-card-title>
+      <v-toolbar-title class="titulo2">Clases</v-toolbar-title>
+      <v-divider
+        class="mx-2"
+        inset
+        vertical
+      ></v-divider>
+      <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
+        <v-text-field
+          v-model="search"
+          append-icon="search"
+          label="Buscar"
+          class="white--text"
+          single-line
+          hide-details
+        ></v-text-field>
+      </v-card-title>
     <v-data-table
       :headers="headers"
       :items="type_class"
+      :search="search"
       class="elevation-1"
     >
       <template v-slot:items="props">
@@ -182,8 +202,11 @@
           </v-btn>
         </td>
       </template>
+      <v-alert v-slot:no-results :value="true" color="error" icon="warning">
+         Tu busqueda para "{{ search }}" no se encontró
+        </v-alert>
     </v-data-table>
-
+    </v-card>
     </div>
 </template>
 <script>
@@ -202,6 +225,7 @@ export default {
     dialog: false,
     imgCode: base64Img,
     imageName: '',
+    search: '',
     image: {
       path: '',
       url: ''
@@ -431,6 +455,14 @@ export default {
   to {
     transform: scale(1);
   }
+}
+
+div.v-card__title{
+    background-color darkred
+}
+
+.titulo2{
+    color white !important
 }
 
 .v-avatar--metronome {

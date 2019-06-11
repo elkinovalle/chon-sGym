@@ -102,472 +102,472 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/Login',
+      path: '/Cliente/Login',
       name: 'Login',
       component: Login
     },
     {
-      path: '/email-admin',
+      path: '/Admin/email-admin',
       name: 'email-admin',
       component: EmailAdmin
     },
     {
-      path: '/inventario',
+      path: '/Admin/inventario',
       name: 'inventario',
       component: Inventario
     },
     {
-      path: '/registro-compras',
+      path: '/Admin/registro-compras',
       name: 'registro-compras',
       component: RegistroCompras
     },
     {
-      path: '/registro-empleados',
+      path: '/Empleado/registro-empleados',
       name: 'registro-empleados',
       component: RegistroEmpleados
     },
     {
-      path: '/gestion-clases',
+      path: '/Admin/gestion-clases',
       name: 'gestion-clases',
       component: GestionClases
     },
     {
-      path: '/proveedores-admin',
+      path: '/Admin/proveedores-admin',
       name: 'proveedores-admin',
       component: ProveedoresAdmin
     },
     {
-      path: '/registro-ventas',
+      path: '/Admin/registro-ventas',
       name: 'registro-ventas',
       component: RegistroVentas
     },
     {
-      path: '/novedades',
+      path: '/Admin/novedades',
       name: 'novedades',
       component: Novedades
     },
     {
-      path: '/tips',
+      path: '/Admin/tips',
       name: 'tips',
       component: Tips
     },
     {
-      path: '/instalacionesAdmin',
+      path: '/Admin/instalacionesAdmin',
       name: 'instalacionesAdmin',
       component: InstalacionesAdmin
     },
     {
-      path: '/reportes',
+      path: '/Admin/reportes',
       name: 'reportes',
       component: Reportes
     },
     {
-      path: '/planes-cliente',
+      path: '/Cliente/planes-cliente',
       name: 'planes-cliente',
       component: PlanesCliente
     },
     {
-      path: '/plan-tres-meses-cliente',
+      path: '/Cliente/plan-tres-meses-cliente',
       name: 'plan-tres-meses-cliente',
       component: PlanTresMesesCliente
     },
     {
-      path: '/plan-seis-meses-cliente',
+      path: '/Cliente/plan-seis-meses-cliente',
       name: 'plan-seis-meses-cliente',
       component: PlanSeisMesesCliente
     },
     {
-      path: '/plan-doce-meses-cliente',
+      path: '/Cliente/plan-doce-meses-cliente',
       name: 'plan-doce-meses-cliente',
       component: PlanDoceMesesCliente
     },
     {
-      path: '/un-mes-cliente',
+      path: 'Cliente/un-mes-cliente',
       name: 'un-mes-cliente',
       component: UnMesCliente
     },
     {
-      path: '/ensayo-cliente',
+      path: '/Cliente/ensayo-cliente',
       name: 'ensayo-cliente',
       component: EnsayoCliente
     },
     {
-      path: '/dos-meses-cliente',
+      path: '/Cliente/dos-meses-cliente',
       name: 'dos-meses-cliente',
       component: DosMesesCliente
     },
     {
-      path: '/plan-quince-meses-cliente',
+      path: '/Cliente/plan-quince-meses-cliente',
       name: 'plan-quince-meses-cliente',
       component: PlanQuinceMesesCliente
     },
     {
-      path: '/hard-vital-cliente',
+      path: '/Cliente/hard-vital-cliente',
       name: 'hard-vital-cliente',
       component: HardVitalCliente
     },
     {
-      path: '/neurofitness-cliente',
+      path: '/Cliente/neurofitness-cliente',
       name: 'neurofitness-cliente',
       component: NeurofitnessCliente
     },
     {
-      path: '/personalizados-cliente',
+      path: '/Cliente/personalizados-cliente',
       name: 'personalizados-cliente',
       component: PersonalizadosCliente
     },
     {
-      path: '/clases-grupales-cliente',
+      path: '/Cliente/clases-grupales-cliente',
       name: 'clases-grupales-cliente',
       component: ClasesGrupalesCliente
     },
     {
-      path: '/shiatsu-cliente',
+      path: '/Cliente/shiatsu-cliente',
       name: 'shiatsu-cliente',
       component: ShiatsuCliente
     },
     {
-      path: '/spinning-cliente',
+      path: '/Cliente/spinning-cliente',
       name: 'spinning-cliente',
       component: SpinningCliente
     },
     {
-      path: '/aerobicos-cliente',
+      path: '/Cliente/aerobicos-cliente',
       name: 'aerobicos-cliente',
       component: AerobicosCliente
     },
     {
-      path: '/crossfit-cliente',
+      path: '/Cliente/crossfit-cliente',
       name: 'crossfit-cliente',
       component: CrossfitCliente
     },
     {
-      path: '/entrenamiento-cliente',
+      path: '/Cliente/entrenamiento-cliente',
       name: 'entrenamiento-cliente',
       component: EntrenamientoCliente
     },
     {
-      path: '/cardio-cliente',
+      path: '/Cliente/cardio-cliente',
       name: 'cardio-cliente',
       component: CardioCliente
     },
     {
-      path: '/hard-cliente',
+      path: '/Cliente/hard-cliente',
       name: 'hard-cliente',
       component: HardCliente
     },
     {
-      path: '/rumba-cliente',
+      path: '/Cliente/rumba-cliente',
       name: 'rumba-cliente',
       component: RumbaCliente
     },
     {
-      path: '/multiterreno-cliente',
+      path: '/Cliente/multiterreno-cliente',
       name: 'multiterreno-cliente',
       component: MultiterrenoCliente
     },
     {
-      path: '/registro-cliente',
+      path: '/Cliente/registro-cliente',
       name: 'registro-cliente',
       component: RegistroCliente
     },
     {
-      path: '/lo-nuevo-cliente',
+      path: '/Cliente/lo-nuevo-cliente',
       name: 'lo-nuevo-cliente',
       component: LoNuevoCliente
     },
     {
-      path: '/noticias-cliente',
+      path: '/Cliente/noticias-cliente',
       name: 'noticias-cliente',
       component: NoticiasCliente
     },
     {
-      path: '/noticias-belleza-cliente',
+      path: '/Cliente/noticias-belleza-cliente',
       name: 'noticias-belleza-cliente',
       component: NoticiasBellezaCliente
     },
     {
-      path: '/clave-cliente',
+      path: '/Cliente/clave-cliente',
       name: 'clave-cliente',
       component: ClaveCliente
     },
     {
-      path: '/perder-grasa-cliente',
+      path: '/Cliente/perder-grasa-cliente',
       name: 'perder-grasa-cliente',
       component: PerderGrasaCliente
     },
     {
-      path: '/mente-equilibrio-cliente',
+      path: '/Cliente/mente-equilibrio-cliente',
       name: 'mente-equilibrio-cliente',
       component: MenteEquilibrioCliente
     },
     {
-      path: '/miss-universo-cliente',
+      path: '/Cliente/miss-universo-cliente',
       name: 'miss-universo-cliente',
       component: MissUniversoCliente
     },
     {
-      path: '/motivarte-cliente',
+      path: '/Cliente/motivarte-cliente',
       name: 'motivarte-cliente',
       component: MotivarteCliente
     },
     {
-      path: '/vida-saludable-cliente',
+      path: '/Cliente/vida-saludable-cliente',
       name: 'vida-saludable-cliente',
       component: VidaSaludableCliente
     },
     {
-      path: '/pilates-cliente',
+      path: '/Cliente/pilates-cliente',
       name: 'pilates-cliente',
       component: PilatesCliente
     },
     {
-      path: '/bienestar-cliente',
+      path: '/Cliente/bienestar-cliente',
       name: 'bienestar-cliente',
       component: BienestarCliente
     },
     {
-      path: '/correr-cliente',
+      path: '/Cliente/correr-cliente',
       name: 'correr-cliente',
       component: CorrerCliente
     },
     {
-      path: '/fisico-cliente',
+      path: '/Cliente/fisico-cliente',
       name: 'fisico-cliente',
       component: FisicoCliente
     },
     {
-      path: '/nutricionista-cliente',
+      path: '/Cliente/nutricionista-cliente',
       name: 'nutricionista-cliente',
       component: NutricionistaCliente
     },
     {
-      path: '/nuevas-rutinas-cliente',
+      path: '/Cliente/nuevas-rutinas-cliente',
       name: 'nuevas-rutinas-cliente',
       component: NuevasRutinasCliente
     },
     {
-      path: '/actividad-fisica-cliente',
+      path: '/Cliente/actividad-fisica-cliente',
       name: 'actividad-fisica-cliente',
       component: ActividadFisicaCliente
     },
     {
-      path: '/masa-muscular-cliente',
+      path: '/Cliente/masa-muscular-cliente',
       name: 'masa-muscular-cliente',
       component: MasaMuscularCliente
     },
     {
-      path: '/hiit-cliente',
+      path: '/Cliente/hiit-cliente',
       name: 'hiit-cliente',
       component: HiitCliente
     },
     {
-      path: '/tips-cliente',
+      path: '/Cliente/tips-cliente',
       name: 'tips-cliente',
       component: TipsCliente
     },
     {
-      path: '/ejercicio-fisico-cliente',
+      path: '/Cliente/ejercicio-fisico-cliente',
       name: 'ejercicio-fisico-cliente',
       component: EjercicioFisicoCliente
     },
     {
-      path: '/hidratacion-cliente',
+      path: '/Cliente/hidratacion-cliente',
       name: 'hidratacion-cliente',
       component: HidratacionCliente
     },
     {
-      path: '/minutos-cliente',
+      path: '/Cliente/minutos-cliente',
       name: 'minutos-cliente',
       component: MinutosCliente
     },
     {
-      path: '/carbohidratos-cliente',
+      path: '/Cliente/carbohidratos-cliente',
       name: 'carbohidratos-cliente',
       component: CarbohidratosCliente
     },
     {
-      path: '/duerme-bien-cliente',
+      path: '/Cliente/duerme-bien-cliente',
       name: 'duerme-bien-cliente',
       component: DuermeBienCliente
     },
     {
-      path: '/calentamiento-cliente',
+      path: '/Cliente/calentamiento-cliente',
       name: 'calentamiento-cliente',
       component: CalentamientoCliente
     },
     {
-      path: '/estiramiento-cliente',
+      path: '/Cliente/estiramiento-cliente',
       name: 'estiramiento-cliente',
       component: EstiramientoCliente
     },
     {
-      path: '/practicar-cliente',
+      path: '/Cliente/practicar-cliente',
       name: 'practicar-cliente',
       component: PracticarCliente
     },
     {
-      path: '/consejos-cliente',
+      path: '/Cliente/consejos-cliente',
       name: 'consejos-cliente',
       component: ConsejosCliente
     },
     {
-      path: '/contacto-cliente',
+      path: '/Cliente/contacto-cliente',
       name: 'contacto-cliente',
       component: ContactoCliente
     },
     {
-      path: '/mi-perfil-cliente',
+      path: '/Cliente/mi-perfil-cliente',
       name: 'mi-perfil-cliente',
       component: MiPerfilCliente
     },
     {
-      path: '/mi-progreso-cliente',
+      path: '/Cliente/mi-progreso-cliente',
       name: 'mi-progreso-cliente',
       component: MiProgresoCliente
     },
     {
-      path: '/mi-rutina-cliente',
+      path: '/Cliente/mi-rutina-cliente',
       name: 'mi-rutina-cliente',
       component: MiRutinaCliente
     },
     {
-      path: '/mis-reservas-cliente',
+      path: '/Cliente/mis-reservas-cliente',
       name: 'mis-reservas-cliente',
       component: MisReservasCliente
     },
     {
-      path: '/mi-dieta-cliente',
+      path: '/Cliente/mi-dieta-cliente',
       name: 'mi-dieta-cliente',
       component: MiDietaCliente
     },
     {
-      path: '/horarios-cliente',
+      path: '/Cliente/horarios-cliente',
       name: 'horarios-cliente',
       component: HorariosCliente
     },
     {
-      path: '/entrenadores-cliente',
+      path: '/Cliente/entrenadores-cliente',
       name: 'entrenadores-cliente',
       component: EntrenadoresCliente
     },
     {
-      path: '/entrenador-uno-cliente',
+      path: '/Cliente/entrenador-uno-cliente',
       name: 'entrenador-uno-cliente',
       component: EntrenadorUnoCliente
     },
     {
-      path: '/entrenador-dos-cliente',
+      path: '/Cliente/entrenador-dos-cliente',
       name: 'entrenador-dos-cliente',
       component: EntrenadorDosCliente
     },
     {
-      path: '/entrenador-tres-cliente',
+      path: '/Cliente/entrenador-tres-cliente',
       name: 'entrenador-tres-cliente',
       component: EntrenadorTresCliente
     },
     {
-      path: '/entrenador-cuatro-cliente',
+      path: '/Cliente/entrenador-cuatro-cliente',
       name: 'entrenador-cuatro-cliente',
       component: EntrenadorCuatroCliente
     },
     {
-      path: '/entrenador-cinco-cliente',
+      path: '/Cliente/entrenador-cinco-cliente',
       name: 'entrenador-cinco-cliente',
       component: EntrenadorCincoCliente
     },
     {
-      path: '/entrenador-seis-cliente',
+      path: '/Cliente/entrenador-seis-cliente',
       name: 'entrenador-seis-cliente',
       component: EntrenadorSeisCliente
     },
     {
-      path: '/entrenador-siete-cliente',
+      path: '/Cliente/entrenador-siete-cliente',
       name: 'entrenador-siete-cliente',
       component: EntrenadorSieteCliente
     },
     {
-      path: '/entrenador-ocho-cliente',
+      path: '/Cliente/entrenador-ocho-cliente',
       name: 'entrenador-ocho-cliente',
       component: EntrenadorOchoCliente
     },
     {
-      path: '/trabaja-con-nosotros-cliente',
+      path: '/Cliente/trabaja-con-nosotros-cliente',
       name: 'trabaja-con-nosotros-cliente',
       component: TrabajaConNosotrosCliente
     },
     {
-      path: '/instalaciones-cliente',
+      path: '/Cliente/instalaciones-cliente',
       name: 'instalaciones-cliente',
       component: InstalacionesCliente
     },
     {
-      path: '/membresias-empleado',
+      path: '/Empleado/membresias-empleado',
       name: 'membresias-empleado',
       component: MembresiasEmpleado
     },
     {
-      path: '/dieta-empleado',
+      path: '/Empleado/dieta-empleado',
       name: 'dieta-empleado',
       component: DietaEmpleado
     },
     {
-      path: '/ventas-empleado',
+      path: '/Empleado/ventas-empleado',
       name: 'ventas-empleado',
       component: VentasEmpleado
     },
     {
-      path: '/rutina-empleado',
+      path: '/Empleado/rutina-empleado',
       name: 'rutina-empleado',
       component: RutinaEmpleado
     },
     {
-      path: '/valoracion-empleado',
+      path: '/Empleado/valoracion-empleado',
       name: 'valoracion-empleado',
       component: ValoracionEmpleado
     },
     {
-      path: '/Editar-Perfil-Cliente',
+      path: '/Cliente/Editar-Perfil-Cliente',
       name: 'Editar-Perfil-Cliente',
       component: EditarPerfilCliente
     },
     {
-      path: '/mi-perfil-empleado',
+      path: '/Empleado/mi-perfil-empleado',
       name: 'mi-perfil-empleado',
       component: MiPerfilEmpleado
     },
     {
-      path: '/recibo-membresia',
+      path: '/Empleado/recibo-membresia',
       name: 'recibo-membresia',
       component: ReciboMembresia
     },
     {
-      path: '/progreso-cliente',
+      path: '/Cliente/progreso-cliente',
       name: 'progreso-cliente',
       component: ProgresoCliente
     },
     {
-      path: '/editar-perfil-admin',
+      path: '/Admin/editar-perfil-admin',
       name: 'editar-perfil-admin',
       component: EditarPerfilAdmin
     },
     {
-      path: '/fotos-admin',
+      path: '/Admin/fotos-admin',
       name: 'fotos-admin',
       component: FotosAdmin
     },
     {
-      path: '/tareas-admin',
+      path: '/Admin/tareas-admin',
       name: 'tareas-admin',
       component: TareasAdmin
     },
     {
-      path: '/planes-admin',
+      path: '/Admin/planes-admin',
       name: 'planes-admin',
       component: PlanesAdmin
     },
     {
-      path: '/clases-admin',
+      path: '/Admin/clases-admin',
       name: 'clases-admin',
       component: ClasesAdmin
     }
