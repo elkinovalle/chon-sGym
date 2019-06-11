@@ -105,7 +105,7 @@ const base64Img =
 export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
-    this.getDieta()
+    this.getDiets()
   },
   data: () => ({
     dialog: false,
@@ -146,7 +146,7 @@ export default {
   }),
 
   computed: {
-    ...mapState(['dieta']),
+    ...mapState(['diets']),
     formTitle () {
       return this.editedIndex === -1 ? 'New Item' : 'Editar Item'
     }
@@ -158,9 +158,9 @@ export default {
     }
   },
   methods: {
-    async getDieta () {
-      const { data: dieta } = await api.get('/diet')
-      this.$store.commit('SET_DIETA', dieta)
+    async getDiets () {
+      const { data: diets } = await api.get('/diet')
+      this.$store.commit('SET_DIETS', diet)
     },
     resetForm () {
       this.editedItem = {}
@@ -173,8 +173,8 @@ export default {
         const imgUpload = await imageRef.putString(this.imgCode, 'data_url')
         const imageUrl = await imageRef.getDownloadURL()
         this.image = { path: imgUpload.metadata.fullPath, url: imageUrl }
-        const { data: dietaa } = await api.post('/diet', {
-          dietaaNew: {
+        const { data: diets } = await api.post('/diet', {
+          dietsNew: {
             Rutina: this.editedItem.rutina,
             descripcion: this.editedItem.descripcion,
             hora: this.editedItem.hora,
@@ -183,9 +183,9 @@ export default {
             foto: this.image
           }
         })
-        let clonDieta = [...this.dieta]
+        let clonDieta = [...this.diets]
         clonDieta.push(diet)
-        this.$store.commit('SET_DIETA', clonDieta)
+        this.$store.commit('SET_DIETS', clonDieta)
         this.snackbar = true
         this.resetForm()
       } else {
@@ -205,11 +205,11 @@ export default {
             foto: this.image
           }
         })
-        let clonDieta = [...this.dieta]
+        let clonDieta = [...this.diets]
         clonDieta[this.editedIndex] = diet
-        this.$store.commit('SET_DIETA', clonDieta)
+        this.$store.commit('SET_DIETS', clonDieta)
         this.btnText = 'Agregar Dieta'
-        this.resetForm()
+        this.resetForm() 
       }
     },
     pickFile () {
