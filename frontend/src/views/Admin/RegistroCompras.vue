@@ -4,7 +4,7 @@
      <v-form ref="form">
       <v-container>
         <v-layout row wrap>
-           <v-flex xs12 sm6>
+           <v-flex xs12 sm4>
             <v-text-field
               v-model="editedItem.nit"
               box
@@ -13,7 +13,7 @@
             ></v-text-field>
           </v-flex>
 
-           <v-flex xs12 sm6>
+           <v-flex xs12 sm4>
             <v-text-field
               v-model="editedItem.empresa"
               box
@@ -23,8 +23,55 @@
           </v-flex>
 
           <v-flex xs12 sm4>
+            <v-menu
+        ref="nowMenu"
+        v-model="nowMenu"
+        :close-on-content-click="false"
+        :nudge-right="40"
+        :return-value.sync="now"
+        transition="scale-transition"
+        min-width="290px"
+        lazy
+        offset-y
+        full-width
+      >
+        <template v-slot:activator="{ on }">
+          <v-text-field
+            v-model="now"
+            label="Hoy"
+            prepend-icon="event"
+            readonly
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker
+          locale="es"
+          v-model="now"
+          no-title
+          scrollable
+        >
+          <v-spacer></v-spacer>
+          <v-btn
+            flat
+            color="primary"
+            @click="nowMenu = false"
+          >
+            Cancel
+          </v-btn>
+          <v-btn
+            flat
+            color="primary"
+            @click="$refs.nowMenu.save(now)"
+          >
+            OK
+          </v-btn>
+        </v-date-picker>
+      </v-menu>
+          </v-flex>
+
+          <v-flex xs12 sm4>
             <v-text-field
-              v-model="editedItem.codigo"
+              v-model="editedItem.serial"
               box
               label="Número de serial o codigo"
               clearable
@@ -66,106 +113,83 @@
               clearable
             ></v-text-field>
             <v-text-field
-              v-model="editedItem.valor"
+              v-model="editedItem.valorUnitario"
               box
               label="Valor Unitario"
               clearable
+              type="number"
             ></v-text-field>
           </v-flex>
-          <v-btn color="red darken-4" class=" white--text title" >Cancelar</v-btn>
-          <v-btn color="green darken-4" class=" white--text title" @click="save" >{{buttonText}}</v-btn>
+          <v-flex xs12 sm12>
+          <v-btn
+              color="green darken-4"
+              class="botones white--text headline"
+              @click="save"
+            >Registrar Producto</v-btn>
+           <v-btn
+              color="red darken-4"
+              class="botones white--text headline"
+              @click="resetForm"
+            >Cancelar</v-btn>
+          </v-flex>
         </v-layout>
       </v-container>
     </v-form>
-     <v-toolbar flat color="red darken-4">
-      <v-toolbar-title class="titulo2">Registro de Ventas</v-toolbar-title>
+     <v-card>
+       <v-card-title>
+      <v-toolbar-title class="titulo2">Registro de Compras</v-toolbar-title>
       <v-divider
         class="mx-2"
         inset
         vertical
       ></v-divider>
-      <v-spacer></v-spacer>
-      <v-dialog v-model="dialog" max-width="500px">
-        <template v-slot:activator="{ on }">
-        </template>
-        <v-card>
-          <v-card-title>
-            <span class="headline">{{ formTitle }}</span>
-          </v-card-title>
-          <v-card-text>
-            <v-container grid-list-md>
-              <v-layout wrap>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.codigo" label="Serial"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.name" label="Nombre"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.descripcion" label="Descripción"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.marca" label="Marca"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.valor" label="Valor Unitario" type="number"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.cantidad" label="Cantidad" type="number"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.nit" label="NIT de la empresa"></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.empresa" label="Empresa"></v-text-field>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-card-text>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-            <v-btn color="blue darken-1" flat @click="save">Guardas Cambios</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </v-toolbar>
+       <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
+        <v-text-field
+          v-model="search"
+          append-icon="search"
+          label="Buscar"
+          hide-details
+          single-line
+          color="accent"
+        ></v-text-field>
+    </v-card-title>
     <v-data-table
       :headers="headers"
       :items="products"
+      :search="search"
       class="elevation-1"
     >
       <template v-slot:items="props">
         <td class="text-xs-center">{{ props.item.nit }}</td>
         <td class="text-xs-center">{{ props.item.empresa }}</td>
-        <td class="text-xs-center">{{ props.item.codigo }}</td>
-        <td class="text-xs-center">{{ props.item.name }}</td>
-        <td class="text-xs-center">{{ props.item.cantidad }}</td>
-        <td class="text-xs-center">{{ props.item.descripcion }}</td>
+        <td class="text-xs-center">{{ props.item.serial }}</td>
+        <td class="text-xs-center">{{ props.item.nombre }}</td>
         <td class="text-xs-center">{{ props.item.marca }}</td>
+        <td class="text-xs-center">{{ props.item.descripcion }}</td>
         <td class="text-xs-center">{{ props.item.valorUnitario }}</td>
+        <td class="text-xs-center">{{ props.item.cantidad }}</td>
+        <td class="text-xs-left">{{ props.item.valorUnitario * props.item.cantidad }}</td>
         <td class="justify-center layout px-0">
           <v-btn
             class="font-weight-black white--text body-2"
-            color="blue darken-1"
-            @click="editItem(props.item)"
-          >Editar</v-btn>
-          <v-btn
-            class="font-weight-black white--text body-2"
-            color="blue darken-1"
+            color="red darken-4"
             @click="deleteItem(props.item)"
           >Eliminar</v-btn>
         </td>
       </template>
+      <v-alert v-slot:no-results :value="true" color="error" icon="warning">
+         Tu busqueda para "{{ search }}" no se encontró
+        </v-alert>
     </v-data-table>
-
+     </v-card>
     </div>
 </template>
 <script>
-import api from '@/plugins/service'
+import { mapState } from 'vuex'
+import uuid from 'uuid/v4'
 import Swal from 'sweetalert2'
-import {mapState} from 'vuex'
+import api from '@/plugins/service'
 export default {
 
   created () {
@@ -175,21 +199,26 @@ export default {
   data () {
     return {
     dialog: false,
-    buttonText: 'Registrar producto',
+    show: false,
+    today: '2019-01-08',
+    nowMenu: false,
+    now: null,
+    search: '',
     headers: [
       {
-        text: 'nit',
+        text: 'NIT',
         align: 'center',
         sortable: false,
         value: 'nit'
       },
       { text: 'Empresa', value: 'empresa' },
-      { text: 'codigo', value: 'codigo' },
-      { text: 'Nombre', value: 'name' },
-      { text: 'Cantidad', value: 'cantidad' },
-      { text: 'Descripción', value: 'descripcion' },
+      { text: 'codigo', value: 'serial' },
+      { text: 'Nombre', value: 'nombre' },
       { text: 'Marca', value: 'marca' },
-      { text: 'Valor unitario', value: 'valor' }
+      { text: 'Descripción', value: 'descripcion' },
+      { text: 'Valor unitario', value: 'valorUnitario' },
+      { text: 'Cantidad', value: 'cantidad' },
+      { text: 'Total', value: 'valorTotal' }
     ],
     editedIndex: -1,
     editedItem: {
@@ -203,7 +232,7 @@ export default {
       valorUnitario: ''
     },
     defaultItem: {
-     nit: '',
+      nit: '',
       empresa: '',
       serial: '',
       nombre: '',
@@ -212,7 +241,7 @@ export default {
       marca: '',
       valorUnitario: ''
     }
-   }
+    }
   },
 
   computed: {
@@ -222,29 +251,27 @@ export default {
     async getProducts () {
       const { data: products } = await api.get('/product')
       this.$store.commit('SET_PRODUCTS', products)
-      console.log(products);
-      
     },
-     resetForm () {
+ resetForm () {
       this.editedItem = {}
     },
     async save () {
       const alert = await Swal.fire({
-        title: 'se ha registrado el producto',
+        title: 'Se ha registrado el producto',
         timer: 3000
       })
-      if (this.buttonText === 'Registrar producto') {
         const { data: product } = await api.post('/product',
           {
           productNew: {
             nit: this.editedItem.nit,
             empresa: this.editedItem.empresa,
-            serial: this.editedItem.codigo,
-            nombre: this.editedItem.name,
+            serial: this.editedItem.serial,
+            nombre: this.editedItem.nombre,
             cantidad: this.editedItem.cantidad,
             descripcion: this.editedItem.descripcion,
             marca: this.editedItem.marca,
-            valorUnitario: this.editedItem.valor
+            valorUnitario: this.editedItem.valorUnitario,
+            valorTotal: this.editedItem.valorUnitario*this.editedItem.cantidad
           }
         })
       let clonProduct = [...this.products]
@@ -252,25 +279,6 @@ export default {
         this.$store.commit('SET_PRODUCTS', clonProduct)
         this.snackbar = true
         this.resetForm()
-      } else {
-       const { data: product } = await api.put(`/product/${this.editedItem.uuid}`,{
-         productUpdate:{
-           nit: this.editedItem.nit,
-            empresa: this.editedItem.empresa,
-            serial: this.editedItem.codigo,
-            nombre: this.editedItem.name,
-            cantidad: this.editedItem.cantidad,
-            descripcion: this.editedItem.descripcion,
-            marca: this.editedItem.marca,
-            valorUnitario: this.editedItem.valor
-         }
-       })
-       let clonProduct = [...this.products]
-        clonProduct[this.editedIndex] = product
-        this.$store.commit('SET_PRODUCT', clonProduct)
-        this.buttonText = 'Registrar producto'
-        this.resetForm()
-      }
     },
     initialize () {
       this.products = [
@@ -282,15 +290,10 @@ export default {
           cantidad: '',
           descripcion: '',
           marca: '',
-          valorUnitario: ''
+          valorUnitario: '',
+          valorTotal: ''
         }
       ]
-    },
-    editItem (item) {
-      this.buttonTexr = 'Actualizar'
-      this.editedIndex = this.products.indexOf(item)
-      this.editeditem = Object.assign({}, item)
-      this.dialog = true
     },
      async deleteItem (item) {
       const sw = await Swal.fire({
@@ -331,6 +334,9 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+div.v-card__title{
+    background-color darkred
+}
 .container.fill-height {
     background-color: white;
 }
@@ -338,4 +344,13 @@ export default {
   color white !important
 }
 
+.boton {
+  margin: 110px 110px 0px 0px;
+}
+
+.botones {
+  height: 70px;
+  width: 300px;
+  margin: 10px 0px 30px 150px;
+}
 </style>

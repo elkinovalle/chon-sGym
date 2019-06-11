@@ -35,29 +35,6 @@
       <span class="title ">Chon´s Gym</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-layout row style="max-width: 650px"></v-layout>
-          <v-menu offset-y>
-            <template v-slot:activator="{ on }">
-              <v-btn
-              class="Buton #9A0101"
-                  dark
-                  v-on="on"
-                  flat
-              ><v-icon >person</v-icon> Mi Perfil</v-btn>
-            </template>
-            <v-list class="lista" >
-              <v-list-tile v-for="item in items1" :key="item.text" :to="item.link" active-class=" activo--text">
-                <v-list-tile-action>
-                  <v-icon medium>{{ item.icon }}</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-content>
-                  <v-list-tile-title>
-                    {{ item.text }}
-                  </v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
     </v-toolbar>
     <v-content>
             <router-view></router-view>
@@ -76,8 +53,8 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { icon: 'fas fa-box', text: 'Inventario', link: '/Admin/inventario' },
-      { icon: 'fas fa-box', text: 'Planes', link: '/Admin/planes-admin' },
+      { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },
+      { icon: 'business', text: 'Planes', link: '/Admin/planes-admin' },
       { icon: 'fas fa-box', text: 'Clases', link: '/Admin/clases-admin' },
       { icon: 'history', text: 'Registro de compras', link: '/Admin/registro-compras' },
       { icon: 'update', text: 'Registro de Empleados', link: '/Admin/registro-empleados' },
@@ -87,14 +64,7 @@ export default {
       { icon: 'present_to_all', text: 'Novedades', link: '/Admin/novedades' },
       { icon: 'info', text: 'Tips', link: '/Admin/tips' },
       { icon: 'place', text: 'Instalaciones', link: '/Admin/instalacionesAdmin' },
-      { icon: 'event', text: 'Reportes', link: '/Admin/reportes' }
-    ],
-    items1: [
-      { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },
-      { icon: 'email', text: 'Notificaciones', link: 'email-admin' },
-      { icon: 'image', text: 'Fotos', link: 'fotos-admin' },
-      { icon: 'list', text: 'Tareas', link: 'tareas-admin' },
-      { icon: 'close', text: 'Salir', link: 'Login' }
+      { icon: 'close', text: 'Salir', link: '/Cliente/Login' }
     ],
     props: {
       source: String
