@@ -38,7 +38,7 @@
         <template v-slot:activator="{ on }">
           <v-text-field
             v-model="now"
-            label="Hoy"
+            label="Fecha"
             prepend-icon="event"
             readonly
             v-on="on"
@@ -56,7 +56,7 @@
             color="primary"
             @click="nowMenu = false"
           >
-            Cancel
+            Cancelar
           </v-btn>
           <v-btn
             flat
