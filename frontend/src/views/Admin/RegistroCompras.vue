@@ -4,7 +4,7 @@
      <v-form ref="form">
       <v-container>
         <v-layout row wrap>
-           <v-flex xs12 sm6>
+           <v-flex xs12 sm4>
             <v-text-field
               v-model="editedItem.nit"
               box
@@ -13,13 +13,60 @@
             ></v-text-field>
           </v-flex>
 
-           <v-flex xs12 sm6>
+           <v-flex xs12 sm4>
             <v-text-field
               v-model="editedItem.empresa"
               box
               label="Empresa"
               clearable
             ></v-text-field>
+          </v-flex>
+
+          <v-flex xs12 sm4>
+            <v-menu
+        ref="nowMenu"
+        v-model="nowMenu"
+        :close-on-content-click="false"
+        :nudge-right="40"
+        :return-value.sync="now"
+        transition="scale-transition"
+        min-width="290px"
+        lazy
+        offset-y
+        full-width
+      >
+        <template v-slot:activator="{ on }">
+          <v-text-field
+            v-model="now"
+            label="Hoy"
+            prepend-icon="event"
+            readonly
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker
+          locale="es"
+          v-model="now"
+          no-title
+          scrollable
+        >
+          <v-spacer></v-spacer>
+          <v-btn
+            flat
+            color="primary"
+            @click="nowMenu = false"
+          >
+            Cancel
+          </v-btn>
+          <v-btn
+            flat
+            color="primary"
+            @click="$refs.nowMenu.save(now)"
+          >
+            OK
+          </v-btn>
+        </v-date-picker>
+      </v-menu>
           </v-flex>
 
           <v-flex xs12 sm4>
@@ -153,6 +200,9 @@ export default {
     return {
     dialog: false,
     show: false,
+    today: '2019-01-08',
+    nowMenu: false,
+    now: null,
     search: '',
     headers: [
       {

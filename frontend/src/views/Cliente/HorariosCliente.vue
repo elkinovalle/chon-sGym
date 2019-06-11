@@ -45,6 +45,7 @@
           ></v-text-field>
         </template>
         <v-date-picker
+          locale="es"
           v-model="start"
           no-title
           scrollable
@@ -89,6 +90,7 @@
           ></v-text-field>
         </template>
         <v-date-picker
+          locale="es"
           v-model="end"
           no-title
           scrollable
@@ -132,6 +134,7 @@
           ></v-text-field>
         </template>
         <v-date-picker
+          locale="es"
           v-model="now"
           no-title
           scrollable
