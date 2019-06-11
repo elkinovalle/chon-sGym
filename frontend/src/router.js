@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Cliente/Login.vue'
 import EmailAdmin from '@/views/Admin/EmailAdmin.vue'
-import Inventario from '@/views/Admin/Inventario.vue'
 import RegistroCompras from '@/views/Admin/RegistroCompras.vue'
 import RegistroEmpleados from '@/views/Admin/RegistroEmpleados.vue'
 import GestionClases from '@/views/Admin/GestionClases.vue'
@@ -109,11 +108,6 @@ export default new Router({
       path: '/Admin/email-admin',
       name: 'email-admin',
       component: EmailAdmin
-    },
-    {
-      path: '/Admin/inventario',
-      name: 'inventario',
-      component: Inventario
     },
     {
       path: '/Admin/registro-compras',

@@ -54,8 +54,7 @@ export default {
     drawer: null,
     items: [
       { icon: 'edit', text: 'Editar Perfil', link: 'editar-perfil-admin' },
-      { icon: 'fas fa-box', text: 'Inventario', link: '/Admin/inventario' },
-      { icon: 'fas fa-box', text: 'Planes', link: '/Admin/planes-admin' },
+      { icon: 'business', text: 'Planes', link: '/Admin/planes-admin' },
       { icon: 'fas fa-box', text: 'Clases', link: '/Admin/clases-admin' },
       { icon: 'history', text: 'Registro de compras', link: '/Admin/registro-compras' },
       { icon: 'update', text: 'Registro de Empleados', link: '/Admin/registro-empleados' },
