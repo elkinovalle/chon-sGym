@@ -11,7 +11,6 @@ import RegistroVentas from '@/views/Admin/RegistroVentas.vue'
 import Novedades from '@/views/Admin/Novedades.vue'
 import Tips from '@/views/Admin/Tips.vue'
 import InstalacionesAdmin from '@/views/Admin/InstalacionesAdmin.vue'
-import Reportes from '@/views/Admin/Reportes.vue'
 import PlanesCliente from '@/views/Cliente/PlanesCliente.vue'
 import PlanTresMesesCliente from '@/views/Cliente/PlanTresMesesCliente.vue'
 import PlanSeisMesesCliente from '@/views/Cliente/PlanSeisMesesCliente.vue'
@@ -155,11 +154,6 @@ export default new Router({
       path: '/Admin/instalacionesAdmin',
       name: 'instalacionesAdmin',
       component: InstalacionesAdmin
-    },
-    {
-      path: '/Admin/reportes',
-      name: 'reportes',
-      component: Reportes
     },
     {
       path: '/Cliente/planes-cliente',
