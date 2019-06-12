@@ -141,10 +141,9 @@ export default {
     async getPlans() {
       const { data: plans } = await api.get("/plan")
       this.plans = Object.assign({}, plans)
-      console.log(plans);
-      
-}
-  }
+      console.log(plans);   
+      }
+   }
 }
 </script>
 <style lang="stylus" scoped>
