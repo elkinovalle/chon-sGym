@@ -110,14 +110,6 @@
   </div>
 </template>
 <script>
-import img1 from "@/assets/1mes.jpg";
-import img2 from "@/assets/2meses.jpg";
-import img3 from "@/assets/3meses.jpg";
-import img4 from "@/assets/6_meses.jpg";
-import img5 from "@/assets/12_meses.jpg";
-import img6 from "@/assets/15_meses.jpg";
-import img7 from "@/assets/hard_vital.jpg";
-import img8 from "@/assets/neurofitness.jpg";
 import api from "@/plugins/service";
 export default {
   created() {
@@ -126,25 +118,20 @@ export default {
   },
   data() {
     return {
-      img1: img1,
-      img2: img2,
-      img3: img3,
-      img4: img4,
-      img5: img5,
-      img6: img6,
-      img7: img7,
-      img8: img8,
+      img: '',
       plans: []
     }
   },
   methods: {
     async getPlans() {
       const { data: plans } = await api.get("/plan")
-      this.plans = Object.assign({}, plans)
-      console.log(plans);
-      
-}
-  }
+      this.plans = plans
+      this.plans = this.plans.map((plan) => {
+        plan.foto = JSON.parse(plan.foto)
+        return plan
+        })      
+      }
+   }
 }
 </script>
 <style lang="stylus" scoped>
