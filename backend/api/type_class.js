@@ -18,6 +18,19 @@ router.post('/', async function(req, res, next) {
   }
 })
 
+router.put('/:uuid', async function (req, res, next){
+  try {
+    const { uuid } = req.params
+    const { type_classUpdate } = req.body
+    const { Type_Class } = await db()
+    const result = await Type_Class.updateType_Class(uuid, type_classUpdate)
+    res.send(result)
+  } catch (err) {
+    next(err)
+  }
+})
+
+
 router.delete('/:uuid', async function(req, res, next){
   try {
     const { uuid } = req.params

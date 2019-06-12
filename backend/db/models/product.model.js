@@ -36,7 +36,9 @@ module.exports = function setupMetricModel (config) {
     },
     valorTotal: {
       type: Sequelize.DECIMAL
+    },
+    fecha: {
+      type: Sequelize.DATE
     }
-
   })
 }

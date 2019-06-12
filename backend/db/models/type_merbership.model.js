@@ -11,8 +11,8 @@ module.exports = function setupMetricModel (config) {
       defaultValue: Sequelize.UUIDV4
     },
     tipo:{
-        type: Sequelize.ENUM('1 mes','2 meses','3 meses'),
-        allowNull: false
+        type: Sequelize.TEXT,
+      
     }
   })
 }

@@ -5,6 +5,11 @@ function setupType_Class(type_classModel) {
     const result = await type_classModel.create(type_class)
     return result.toJSON()
   }
+  async function updateType_Class(uuid, type_class ) {
+    const cond = { where : { uuid } }
+    const result = await type_classModel.update(type_class , cond)
+    return result ? type_classModel.findOne(cond) : new Error('no se actualizo ningun tipo de clase')
+  }
   async function deleteType_Class(uuid) {
     const cond = { where : { uuid } }
     const result = await type_classModel.destroy( cond)
@@ -19,6 +24,7 @@ function setupType_Class(type_classModel) {
   }
   return {
     createType_Class,
+    updateType_Class,
     deleteType_Class,
     findType_Class,
     findType_ClassUuid,
