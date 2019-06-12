@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-free": "^5.2.0",
     "axios": "^0.18.0",
     "firebase": "^6.0.2",
+    "moment": "^2.24.0",
     "roboto-fontface": "*",
     "sweetalert2": "^8.11.6",
     "uuid": "^3.3.2",

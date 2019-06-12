@@ -39,9 +39,10 @@
           <v-text-field
             v-model="now"
             label="Fecha"
-            prepend-icon="event"
+            box
             readonly
             v-on="on"
+            color="red darken-4"
           ></v-text-field>
         </template>
         <v-date-picker
@@ -49,18 +50,19 @@
           v-model="now"
           no-title
           scrollable
+          color="red darken-4"
         >
           <v-spacer></v-spacer>
           <v-btn
             flat
-            color="primary"
+            color="red darken-4"
             @click="nowMenu = false"
           >
             Cancelar
           </v-btn>
           <v-btn
             flat
-            color="primary"
+            color="red darken-4"
             @click="$refs.nowMenu.save(now)"
           >
             OK
@@ -161,6 +163,7 @@
       class="elevation-1"
     >
       <template v-slot:items="props">
+        <td class="text-xs-center">{{ moment(props.item.fecha).format("MMM DD YYYY")  }}</td>
         <td class="text-xs-center">{{ props.item.nit }}</td>
         <td class="text-xs-center">{{ props.item.empresa }}</td>
         <td class="text-xs-center">{{ props.item.serial }}</td>
@@ -186,6 +189,7 @@
     </div>
 </template>
 <script>
+import moment from 'moment'
 import { mapState } from 'vuex'
 import uuid from 'uuid/v4'
 import Swal from 'sweetalert2'
@@ -195,9 +199,11 @@ export default {
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
     this.getProducts()
+    this.moment= moment
   },
   data () {
     return {
+    moment: null,  
     dialog: false,
     show: false,
     today: '2019-01-08',
@@ -206,11 +212,12 @@ export default {
     search: '',
     headers: [
       {
-        text: 'NIT',
+        text: 'Fecha',
         align: 'center',
         sortable: false,
-        value: 'nit'
+        value: 'now'
       },
+      { text: 'NIT', value: 'nit' },
       { text: 'Empresa', value: 'empresa' },
       { text: 'codigo', value: 'serial' },
       { text: 'Nombre', value: 'nombre' },
@@ -223,6 +230,7 @@ export default {
     editedIndex: -1,
     editedItem: {
       nit: '',
+      now: '',
       empresa: '',
       serial: '',
       nombre: '',
@@ -233,6 +241,7 @@ export default {
     },
     defaultItem: {
       nit: '',
+      now: '',
       empresa: '',
       serial: '',
       nombre: '',
@@ -250,6 +259,8 @@ export default {
   methods: {
     async getProducts () {
       const { data: products } = await api.get('/product')
+      console.log(moment(products[0].now).format("MMM Do YY") )
+      
       this.$store.commit('SET_PRODUCTS', products)
     },
  resetForm () {
@@ -263,6 +274,7 @@ export default {
         const { data: product } = await api.post('/product',
           {
           productNew: {
+            fecha: this.now,
             nit: this.editedItem.nit,
             empresa: this.editedItem.empresa,
             serial: this.editedItem.serial,
@@ -283,6 +295,7 @@ export default {
     initialize () {
       this.products = [
         {
+          fecha: '',
           nit: '',
           empresa: '',
           serial: '',
@@ -317,7 +330,7 @@ export default {
           let clonProduct = [...this.products]
           const index = this.product.indexOf(item)
           clonProduct.splice(index, 1)
-          this.$store.commit('SET_PRODUCT', clonProduct)
+          this.$store.commit('SET_PRODUCTS', clonProduct)
         } catch (error) {
           console.error(error)
         }

@@ -1,28 +1,10 @@
 <template>
     <div>
-   <v-subheader class="subheader black--text display-1 font-weight-bold ">Compras</v-subheader>
+   <v-subheader class="subheader black--text display-1 font-weight-bold ">Ventas</v-subheader>
      <v-form ref="form">
       <v-container>
         <v-layout row wrap>
-           <v-flex xs12 sm6>
-            <v-text-field
-              v-model="editedItem.nit"
-              box
-              label="NIT de la empresa"
-              clearable
-            ></v-text-field>
-          </v-flex>
-
-           <v-flex xs12 sm6>
-            <v-text-field
-              v-model="editedItem.empresa"
-              box
-              label="Empresa"
-              clearable
-            ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm4>
+             <v-flex xs12 sm6>
             <v-text-field
               v-model="editedItem.serial"
               box
@@ -30,8 +12,55 @@
               clearable
             ></v-text-field>
           </v-flex>
-
-          <v-flex xs12 sm4>
+          <v-flex xs12 sm6>
+            <v-menu
+        ref="nowMenu"
+        v-model="nowMenu"
+        :close-on-content-click="false"
+        :nudge-right="40"
+        :return-value.sync="now"
+        transition="scale-transition"
+        min-width="290px"
+        lazy
+        offset-y
+        full-width
+      >
+        <template v-slot:activator="{ on }">
+          <v-text-field
+            v-model="now"
+            label="Fecha"
+            readonly
+            box
+            v-on="on"
+            color="red darken-4"
+          ></v-text-field>
+        </template>
+        <v-date-picker
+          locale="es"
+          v-model="now"
+          no-title
+          scrollable
+          color="red darken-4"
+        >
+          <v-spacer></v-spacer>
+          <v-btn
+            flat
+            color="red darken-4"
+            @click="nowMenu = false"
+          >
+            Cancelar
+          </v-btn>
+          <v-btn
+            flat
+            color="red darken-4"
+            @click="$refs.nowMenu.save(now)"
+          >
+            OK
+          </v-btn>
+        </v-date-picker>
+      </v-menu>
+          </v-flex>
+          <v-flex xs12 sm6>
             <v-text-field
               v-model="editedItem.nombre"
               box
@@ -40,7 +69,7 @@
             ></v-text-field>
           </v-flex>
 
-          <v-flex xs12 sm4>
+          <v-flex xs12 sm6>
             <v-text-field
               v-model="editedItem.cantidad"
               box
@@ -78,7 +107,7 @@
               color="green darken-4"
               class="botones white--text headline"
               @click="save"
-            >Registrar Producto</v-btn>
+            >Vender</v-btn>
            <v-btn
               color="red darken-4"
               class="botones white--text headline"
@@ -90,7 +119,7 @@
     </v-form>
      <v-card>
        <v-card-title>
-      <v-toolbar-title class="titulo2">Registro de Compras</v-toolbar-title>
+      <v-toolbar-title class="titulo2">Registro de Ventas</v-toolbar-title>
       <v-divider
         class="mx-2"
         inset
@@ -109,13 +138,12 @@
     </v-card-title>
     <v-data-table
       :headers="headers"
-      :items="products"
+      :items="sales"
       :search="search"
       class="elevation-1"
     >
       <template v-slot:items="props">
-        <td class="text-xs-center">{{ props.item.nit }}</td>
-        <td class="text-xs-center">{{ props.item.empresa }}</td>
+        <td class="text-xs-center">{{ moment(props.item.fecha).format("MMM DD YYYY")  }}</td>
         <td class="text-xs-center">{{ props.item.serial }}</td>
         <td class="text-xs-center">{{ props.item.nombre }}</td>
         <td class="text-xs-center">{{ props.item.marca }}</td>
@@ -139,6 +167,7 @@
     </div>
 </template>
 <script>
+import moment from 'moment'
 import { mapState } from 'vuex'
 import uuid from 'uuid/v4'
 import Swal from 'sweetalert2'
@@ -147,21 +176,25 @@ export default {
 
   created () {
     this.$store.commit('SET_LAYOUT', 'admin-layout')
-    this.getProducts()
+    this.getSales()
+    this.moment= moment
   },
   data () {
     return {
+    moment: null,  
     dialog: false,
     show: false,
+    today: '2019-01-08',
+    nowMenu: false,
+    now: null,
     search: '',
     headers: [
       {
-        text: 'NIT',
+        text: 'Fecha',
         align: 'center',
         sortable: false,
-        value: 'nit'
+        value: 'now'
       },
-      { text: 'Empresa', value: 'empresa' },
       { text: 'codigo', value: 'serial' },
       { text: 'Nombre', value: 'nombre' },
       { text: 'Marca', value: 'marca' },
@@ -172,8 +205,7 @@ export default {
     ],
     editedIndex: -1,
     editedItem: {
-      nit: '',
-      empresa: '',
+      now: '',
       serial: '',
       nombre: '',
       cantidad: '',
@@ -182,8 +214,7 @@ export default {
       valorUnitario: ''
     },
     defaultItem: {
-      nit: '',
-      empresa: '',
+      now: '',
       serial: '',
       nombre: '',
       cantidad: '',
@@ -195,12 +226,14 @@ export default {
   },
 
   computed: {
-    ...mapState(['products'])
+    ...mapState(['sales'])
   },
   methods: {
-    async getProducts () {
-      const { data: products } = await api.get('/product')
-      this.$store.commit('SET_PRODUCTS', products)
+    async getSales () {
+      const { data: sales } = await api.get('/sale')
+      console.log(moment(sales[0].now).format("MMM Do YY") )
+      
+      this.$store.commit('SET_SALES', sales)
     },
  resetForm () {
       this.editedItem = {}
@@ -210,11 +243,10 @@ export default {
         title: 'Se ha vendido el producto',
         timer: 3000
       })
-        const { data: product } = await api.post('/product',
+        const { data: sale } = await api.post('/sale',
           {
-          productNew: {
-            nit: this.editedItem.nit,
-            empresa: this.editedItem.empresa,
+          saleNew: {
+            fecha: this.now,
             serial: this.editedItem.serial,
             nombre: this.editedItem.nombre,
             cantidad: this.editedItem.cantidad,
@@ -224,17 +256,16 @@ export default {
             valorTotal: this.editedItem.valorUnitario*this.editedItem.cantidad
           }
         })
-      let clonProduct = [...this.products]
-        clonProduct.push(product)
-        this.$store.commit('SET_PRODUCTS', clonProduct)
+      let clonSale = [...this.sales]
+        clonSale.push(sale)
+        this.$store.commit('SET_SALES', clonSale)
         this.snackbar = true
         this.resetForm()
     },
     initialize () {
-      this.products = [
+      this.sales = [
         {
-          nit: '',
-          empresa: '',
+          fecha: '',
           serial: '',
           nombre: '',
           cantidad: '',
@@ -248,7 +279,7 @@ export default {
      async deleteItem (item) {
       const sw = await Swal.fire({
         title: 'Estas seguro?',
-        text: `Eliminaras el registro de la venta ${item.nombres}`,
+        text: `Eliminaras la venta del producto ${item.nombres}`,
         type: 'question',
         showCancelButton: true,
         cancelButtonColor: '#d33',
@@ -258,16 +289,16 @@ export default {
       })
       if (sw.value) {
         try {
-          const { data: product } = await api.delete(`/product/${item.uuid}`)
+          const { data: sale } = await api.delete(`/sale/${item.uuid}`)
           Swal.fire(
             'Eliminado!',
-            'El registro se ha eliminado',
+            'La venta se ha eliminado',
             'success'
           )
-          let clonProduct = [...this.products]
-          const index = this.product.indexOf(item)
-          clonProduct.splice(index, 1)
-          this.$store.commit('SET_PRODUCT', clonProduct)
+          let clonSale = [...this.sales]
+          const index = this.sale.indexOf(item)
+          clonSale.splice(index, 1)
+          this.$store.commit('SET_SALES', clonSale)
         } catch (error) {
           console.error(error)
         }

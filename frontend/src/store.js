@@ -15,7 +15,8 @@ export default new Vuex.Store({
     tips: [],
     type_class: [],
     users: [],
-    products: []
+    products: [],
+    sales: []
   },
   mutations: {
     SET_LAYOUT (state, newLayout) {
@@ -33,6 +34,9 @@ export default new Vuex.Store({
     SET_TYPE_CLASS (state, newType_class) {
       state.type_class = newType_class
     },
+    SET_SALES (state, newSale){
+      state.sales = newSale
+     },
     SET_PRODUCTS (state, newProduct){
       state.products = newProduct
     },
