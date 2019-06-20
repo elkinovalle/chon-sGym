@@ -86,8 +86,8 @@ module.exports = async function () {
   ProductModel.hasMany(Detail_SaleModel)
   Detail_SaleModel.belongsTo(ProductModel)
   //relaciones de productos  a ventas 
-  SaleModel.hasMany(productModel)
-  Product_SaleModel.belongsTo(SaleModel)
+  SaleModel.hasMany(ProductModel)
+  ProductModel.belongsTo(SaleModel)
   // relacion de venta a usuarios
   UserModel.hasMany(SaleModel, {foreignKey: 'clienteId'})
   SaleModel.belongsTo(UserModel, {foreignKey: 'empleadoId'})
